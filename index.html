@@ -1828,111 +1828,63 @@ function animateNumberEl(el, start, end, duration, suffix) {
   }
   requestAnimationFrame(step);
 }
+// ---- SCHEDULE FORM QUOTE ----
+let schedulePriceLow = 0;
 
-// ---- BOOKING FORM ----
-function toggleTag(el) {
-  el.classList.toggle('selected');
-}
-
-function submitBooking() {
-  const name = document.getElementById('s-name').value;
-  const phone = document.getElementById('s-phone').value;
-  const email = document.getElementById('s-email').value;
-  if (!name || !phone || !email) { showToast('Please fill in your name, phone, and email'); return; }
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'booking_submitted', { name, service: document.querySelector('.service-tag.selected')?.textContent || 'not selected' });
+function calcScheduleQuote() {
+  const city = document.getElementById('s-city').value;
+  const service = document.getElementById('s-service').value;
+  const miles = parseFloat(document.getElementById('s-miles').value) || 0;
+  const stops = parseInt(document.getElementById('s-stops').value) || 1;
+  const pickup = document.getElementById('s-pickup').value;
+  const dropoff = document.getElementById('s-dropoff').value;
+  const box = document.getElementById('schedulePrice');
+  if (!city || !service || miles <= 0 || pickup.length < 5 || dropoff.length < 5 || !PRICING[city] || !PRICING[city][service]) {
+    box.style.display = 'none';
+    return;
   }
-  showToast('🎉 Booking confirmed! Check your email for details.');
-  // Reset form
-  ['s-name','s-phone','s-email','s-date','s-pickup','s-dropoff'].forEach(id => document.getElementById(id).value = '');
-  document.querySelectorAll('.service-tag.selected').forEach(t => t.classList.remove('selected'));
+  const p = PRICING[city][service];
+  schedulePriceLow = Math.max(p.min + (miles * p.perMile) + ((stops-1) * p.perStop), p.min);
+  document.getElementById('schedulePriceVal').textContent = '$' + schedulePriceLow.toFixed(2);
+  document.getElementById('schedulePriceBreak').textContent = 'Base: $' + p.min + ' | ' + miles + ' mi x $' + p.perMile;
+  box.style.display = 'block';
 }
 
-// ---- CHAT ----
-let chatOpen = false;
-const chatResponses = {
-  'get a quote': "Of course! You can use our Instant Quote calculator at the top of the page, or scroll down to Schedule a Pickup for a full booking. What service do you need?",
-  'track my package': "To track your package, scroll up to the **Track Your Package** section and enter your tracking number (format: NS-XXXXXXX). I can also look it up — what's your tracking number?",
-  'speak to someone': "Absolutely! Our team is available 24/7. 📞 Call us at (800) NORTHSTAR or email dispatch@northstardelivery.com. Typical response time is under 5 minutes!",
-  'default': "Thanks for reaching out! Our team is online right now. For fastest service, call us at (800) NORTHSTAR or use the booking form below. Is there anything else I can help with?"
-};
-
-function toggleChat() {
-  chatOpen = !chatOpen;
-  document.getElementById('chat-panel').classList.toggle('open', chatOpen);
+function submitAndPay() {
+  const name = document.getElementById('s-name').value.trim();
+  const phone = document.getElementById('s-phone').value.trim();
+  const email = document.getElementById('s-email').value.trim();
+  const pickup = document.getElementById('s-pickup').value.trim();
+  const dropoff = document.getElementById('s-dropoff').value.trim();
+  const city = document.getElementById('s-city').value;
+  const service = document.getElementById('s-service').value;
+  const miles = parseFloat(document.getElementById('s-miles').value) || 0;
+  const stops = parseInt(document.getElementById('s-stops').value) || 1;
+  const date = document.getElementById('s-date').value;
+  const instructions = document.getElementById('s-instructions').value.trim();
+  if (!name || !phone || !email) { showToast('Please fill in your name, phone, and email'); return; }
+  if (!pickup || !dropoff) { showToast('Please enter pickup and delivery addresses'); return; }
+  if (!city || !service) { showToast('Please select your city and service type'); return; }
+  if (schedulePriceLow <= 0) { showToast('Please enter estimated miles to calculate your price'); return; }
+  const job = {
+    id: 'job_' + Date.now(), customerName: name, phone: phone, email: email,
+    pickup: pickup, delivery: dropoff, city: city, service: service,
+    miles: miles, stops: stops, price: schedulePriceLow, driverId: '',
+    notes: instructions, date: date, status: 'pending',
+    createdAt: new Date().toISOString(), source: 'website'
+  };
+  const existing = JSON.parse(localStorage.getItem('ns_jobs') || '[]');
+  existing.push(job);
+  localStorage.setItem('ns_jobs', JSON.stringify(existing));
+  document.querySelector('.schedule-form').innerHTML =
+    '<div style="text-align:center;padding:48px 20px;">' +
+    '<div style="font-size:3.5rem;margin-bottom:16px;">&#x2705;</div>' +
+    '<div style="font-family:Bebas Neue,sans-serif;font-size:2.2rem;color:#22c55e;letter-spacing:2px;margin-bottom:10px;">Request Received!</div>' +
+    '<div style="font-size:0.95rem;color:#94a3b8;line-height:1.9;max-width:460px;margin:0 auto;">' +
+    'Thank you <strong style="color:#f8fafc;">' + name + '</strong>! We will contact you at ' +
+    '<strong style="color:#f8fafc;">' + phone + '</strong> within 15 minutes.<br><br>' +
+    'Estimated price: <strong style="color:#fcd34d;font-family:Bebas Neue,sans-serif;font-size:1.6rem;">$' + schedulePriceLow.toFixed(2) + '</strong><br><br>' +
+    '<span style="font-size:0.82rem;">Reference: <strong style="color:#3b82f6;">#' + job.id.slice(-6).toUpperCase() + '</strong></span>' +
+    '</div></div>';
 }
 
-function chatReply(msg) {
-  addChatMsg(msg, 'user');
-  setTimeout(() => {
-    const key = msg.toLowerCase();
-    const resp = chatResponses[key] || chatResponses['default'];
-    addChatMsg(resp, 'bot');
-  }, 600);
-}
-
-function sendChat() {
-  const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if (!msg) return;
-  input.value = '';
-  chatReply(msg);
-}
-
-function chatEnter(e) {
-  if (e.key === 'Enter') sendChat();
-}
-
-function addChatMsg(text, type) {
-  const body = document.getElementById('chatBody');
-  const div = document.createElement('div');
-  div.className = `chat-msg ${type}`;
-  div.innerHTML = `<div class="chat-bubble">${text}</div>`;
-  body.appendChild(div);
-  body.scrollTop = body.scrollHeight;
-}
-
-// ---- NEWSLETTER ----
-function subscribeNewsletter() {
-  const email = document.getElementById('newsletter-email').value;
-  if (!email || !email.includes('@')) { showToast('Please enter a valid email'); return; }
-  showToast(`✓ You're subscribed! Welcome to the NorthStar family.`);
-  document.getElementById('newsletter-email').value = '';
-}
-
-// ---- TOAST ----
-let toastTimer;
-function showToast(msg) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toast-msg').textContent = msg;
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
-}
-
-// ---- REVEAL ON SCROLL ----
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), 0);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(el => observer.observe(el));
-
-// ---- HERO COUNTER TRIGGER ----
-const heroObs = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) { animateCounters(); heroObs.disconnect(); }
-}, { threshold: 0.3 });
-heroObs.observe(document.querySelector('.hero-stats'));
-
-// ---- SET MIN DATE ----
-if (dateInput) {
-  const todayDate = new Date().toISOString().split('T')[0];
-  dateInput.setAttribute('min', todayDate);
-}
-</script>
-</body>
-</html>
