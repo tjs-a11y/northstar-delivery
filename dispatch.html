@@ -396,7 +396,7 @@
     <div id="mContent"></div>
     <div class="mactions">
       <button class="btn-primary" style="width:auto;padding:9px 18px;font-size:0.82rem;" onclick="applyStatus()">Update Status</button>
-      <a href="https://square.link/u/LEEKuGG9" target="_blank" class="btn-gold" style="padding:9px 18px;font-size:0.82rem;">💳 Square</a>
+      <button class="btn-gold" style="padding:9px 18px;font-size:0.82rem;" onclick="sendPaymentEmail()">📧 Send Payment Email</button>
       <button class="btn-secondary" onclick="cm('jobModal')">Close</button>
     </div>
   </div>
@@ -428,7 +428,7 @@
 <script>
 const DRIVER_SPLIT = 0.65;
 const ADMIN_CREDS = { email:'tjs@northstardeliveryservice.com', pass:'Northstar2025!' };
-const SQUARE = 'https://square.link/u/LEEKuGG9';
+const STRIPE_LINK = 'https://buy.stripe.com/cNi7sN1jpgBtgnT9j92Fa00';
 const PRICING = {
   chicago:    { standard:{min:30,perMile:0.80,perStop:0.30},'same-day':{min:45,perMile:1.10,perStop:0.40},medical:{min:45,perMile:1.10,perStop:0.40} },
   pittsburgh: { standard:{min:25,perMile:0.75,perStop:0.25},'same-day':{min:40,perMile:1.00,perStop:0.35},medical:{min:40,perMile:1.00,perStop:0.35} },
@@ -650,7 +650,7 @@ function createJob(openSq=false){
   };
   jobs.push(job); save(); renderJobs(); updateStats();
   showToast(`✅ Job #${job.id.slice(-4).toUpperCase()} created!`);
-  if(openSq) window.open(SQUARE,'_blank');
+  if(openSq) window.open(STRIPE_LINK,'_blank');
   clearJob(); switchTab('jobs');
 }
 function clearJob(){
@@ -738,6 +738,48 @@ function renderDP(driver){
 }
 function drvStart(jid){ const j=jobs.find(x=>x.id===jid); if(j){j.status='transit';save();renderDP(drivers.find(d=>d.id===currentDriverId));showToast('🚗 Delivery started!');} }
 function drvDone(jid){ const j=jobs.find(x=>x.id===jid); if(!j)return; j.status='delivered'; const pay=(parseFloat(j.price)*DRIVER_SPLIT).toFixed(2); save(); renderDP(drivers.find(d=>d.id===currentDriverId)); showToast(`✅ Delivered! You earned $${pay}`); }
+
+// SEND PAYMENT EMAIL
+function sendPaymentEmail() {
+  const job = jobs.find(j => j.id === activeJobId);
+  if (!job) return;
+
+  const subject = encodeURIComponent(`Your NorthStar Pickup Confirmation — Job #${job.id.slice(-6).toUpperCase()}`);
+  const body = encodeURIComponent(
+`Hi ${job.customerName},
+
+Thank you for your pickup request with NorthStar Delivery Service!
+
+Here are your job details:
+─────────────────────────
+Job #: ${job.id.slice(-6).toUpperCase()}
+Pickup: ${job.pickup}
+Drop-off: ${job.delivery}
+Service: ${job.service}
+Date: ${job.date || 'TBD'}
+${job.notes ? `Instructions: ${job.notes}` : ''}
+─────────────────────────
+Quoted Price: $${parseFloat(job.price).toFixed(2)}
+
+To confirm your booking, please complete your payment using the secure link below:
+
+${STRIPE_LINK}
+
+Simply enter $${parseFloat(job.price).toFixed(2)} as the amount when prompted.
+
+Once payment is received, we will assign a driver and send you a final confirmation with tracking details.
+
+Questions? Call or text us anytime.
+
+Thank you,
+NorthStar Delivery Service
+northstardeliveryservice.com`
+  );
+
+  // Open default email client pre-filled
+  window.location.href = `mailto:${job.email}?subject=${subject}&body=${body}`;
+  showToast(`📧 Email draft opened for ${job.customerName}!`);
+}
 
 // MODAL HELPERS
 function om(id){ document.getElementById(id).classList.add('open'); }
