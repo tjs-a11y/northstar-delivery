@@ -1421,7 +1421,7 @@
   <div class="schedule-wrap">
     <div class="section-label reveal">Book A Delivery</div>
     <div class="section-title reveal">Schedule A Pickup</div>
-    <p class="section-subtitle reveal" style="margin-bottom:0">Fill out the form below and we'll confirm your booking within minutes. No account needed.</p>
+    <p class="section-subtitle reveal" style="margin-bottom:0">Fill out the form, see your exact price, and request pickup. We'll confirm within 15 minutes.</p>
     <div class="schedule-form reveal">
       <div class="form-cols">
         <div class="form-group">
@@ -1441,32 +1441,62 @@
           <input type="date" class="form-input" id="s-date" />
         </div>
         <div class="form-group">
+          <label class="form-label">City / Market</label>
+          <select class="form-select" id="s-city" onchange="calcScheduleQuote()">
+            <option value="">Select your city...</option>
+            <option value="chicago">🏙️ Chicago</option>
+            <option value="pittsburgh">🌉 Pittsburgh / Cranberry</option>
+            <option value="stlouis">⛩️ St. Louis</option>
+            <option value="charlotte">🌳 Charlotte</option>
+            <option value="atlanta">🍑 Atlanta</option>
+            <option value="cleveland">⚡ Cleveland</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Type</label>
+          <select class="form-select" id="s-service" onchange="calcScheduleQuote()">
+            <option value="">Select a service...</option>
+            <option value="standard">📦 Standard Delivery</option>
+            <option value="same-day">⚡ Same-Day Rush</option>
+            <option value="medical">🏥 Medical/Priority</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label class="form-label">Pickup Address</label>
-          <input type="text" class="form-input" id="s-pickup" placeholder="123 Main St, City" oninput="calcScheduleQuote()" required />
+          <input type="text" class="form-input" id="s-pickup" placeholder="123 Main St, City, NC" oninput="calcScheduleQuote()" required />
         </div>
         <div class="form-group">
           <label class="form-label">Delivery Address</label>
-          <input type="text" class="form-input" id="s-dropoff" placeholder="456 Oak Ave, City" oninput="calcScheduleQuote()" required />
+          <input type="text" class="form-input" id="s-dropoff" placeholder="456 Oak Ave, City, NC" oninput="calcScheduleQuote()" required />
         </div>
-        <div class="form-group form-full">
-          <label class="form-label" style="margin-bottom:14px;">Service Type</label>
-          <div class="service-tags">
-            <button class="service-tag" onclick="toggleTag(this)">⚡ Same-Day Rush</button>
-            <button class="service-tag" onclick="toggleTag(this)">📅 Next-Day</button>
-            <button class="service-tag" onclick="toggleTag(this)">📦 Standard</button>
-            <button class="service-tag" onclick="toggleTag(this)">🏥 Medical Courier</button>
-            <button class="service-tag" onclick="toggleTag(this)">🚛 Freight</button>
-            <button class="service-tag" onclick="toggleTag(this)">🔄 Recurring</button>
-          </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Miles</label>
+          <input type="number" class="form-input" id="s-miles" placeholder="e.g. 10" min="1" oninput="calcScheduleQuote()" />
         </div>
-        <div class="form-group form-full">
+        <div class="form-group">
+          <label class="form-label">Number of Stops</label>
+          <select class="form-select" id="s-stops" onchange="calcScheduleQuote()">
+            <option value="1">1 stop (point to point)</option>
+            <option value="2">2 stops</option>
+            <option value="3">3 stops</option>
+            <option value="4">4+ stops</option>
+          </select>
+        </div>
+        <div class="form-group" style="grid-column: 1 / -1;">
           <label class="form-label">Special Instructions</label>
-          <textarea class="form-input" rows="3" placeholder="Fragile items, gate code, call on arrival..." style="resize:vertical; line-height:1.6;"></textarea>
+          <textarea class="form-input" id="s-instructions" rows="3" placeholder="Fragile items, gate code, call on arrival..." style="resize:vertical; line-height:1.6;"></textarea>
         </div>
       </div>
+      <!-- PRICE RESULT -->
+      <div id="schedulePrice" style="display:none; background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.25); border-radius:12px; padding:20px; margin:20px 0;">
+        <div style="font-size:0.7rem; font-family:'Space Mono'; letter-spacing:2px; text-transform:uppercase; color:var(--electric); margin-bottom:6px;">Your Price</div>
+        <div id="schedulePriceVal" style="font-family:'Bebas Neue'; font-size:3rem; color:var(--gold); line-height:1;">—</div>
+        <div id="schedulePriceBreak" style="font-size:0.75rem; color:var(--muted); margin-top:4px;"></div>
+        <div style="font-size:0.75rem; color:var(--muted); margin-top:6px;">✅ This is your estimated charge — no hidden fees.</div>
+      </div>
       <div class="submit-row">
-        <p class="privacy-note">🔒 Your info is secure. We never sell your data. Confirmation sent within 15 minutes.</p>
-        <button class="btn-primary" style="border:none;" onclick="submitBooking()">Schedule My Pickup →</button>
+        <p class="privacy-note">🔒 Your info goes directly to our team. We'll confirm within 15 minutes.</p>
+        <button class="btn-primary" style="border:none;" onclick="submitAndPay()">🚀 Request Pickup →</button>
       </div>
     </div>
   </div>
@@ -1630,55 +1660,16 @@ const PRICING = {
 let pickupAutocomplete, deliveryAutocomplete, mapsReady = false;
 let currentDistanceMiles = null;
 
-let sPickupAuto, sDeliveryAuto;
-
 function initMaps() {
   mapsReady = true;
   const options = { types: ['address'], componentRestrictions: { country: 'us' } };
-
-  // Hero quick quote autocomplete
   const pickupInput = document.getElementById('q-pickup');
   const deliveryInput = document.getElementById('q-delivery');
-  if (pickupInput && deliveryInput) {
-    pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, options);
-    deliveryAutocomplete = new google.maps.places.Autocomplete(deliveryInput, options);
-    pickupAutocomplete.addListener('place_changed', () => calcDistanceAndQuote());
-    deliveryAutocomplete.addListener('place_changed', () => calcDistanceAndQuote());
-  }
-
-  // Schedule form autocomplete with real distance
-  const sPickup = document.getElementById('s-pickup');
-  const sDelivery = document.getElementById('s-dropoff');
-  if (sPickup && sDelivery) {
-    sPickupAuto = new google.maps.places.Autocomplete(sPickup, options);
-    sDeliveryAuto = new google.maps.places.Autocomplete(sDelivery, options);
-    sPickupAuto.addListener('place_changed', calcScheduleDistance);
-    sDeliveryAuto.addListener('place_changed', calcScheduleDistance);
-  }
-}
-
-function calcScheduleDistance() {
-  const pickupPlace = sPickupAuto && sPickupAuto.getPlace();
-  const deliveryPlace = sDeliveryAuto && sDeliveryAuto.getPlace();
-
-  if (pickupPlace && deliveryPlace && pickupPlace.geometry && deliveryPlace.geometry) {
-    const svc = new google.maps.DistanceMatrixService();
-    svc.getDistanceMatrix({
-      origins: [pickupPlace.geometry.location],
-      destinations: [deliveryPlace.geometry.location],
-      travelMode: google.maps.TravelMode.DRIVING,
-      unitSystem: google.maps.UnitSystem.IMPERIAL
-    }, (response, status) => {
-      if (status === 'OK' && response.rows[0].elements[0].status === 'OK') {
-        const meters = response.rows[0].elements[0].distance.value;
-        const miles = meters / 1609.34;
-        document.getElementById('s-miles').value = miles.toFixed(2);
-        document.getElementById('s-miles-text').textContent = miles.toFixed(1) + ' miles (calculated by Google Maps)';
-        document.getElementById('s-miles-display').style.display = 'block';
-        calcScheduleQuote();
-      }
-    });
-  }
+  if (!pickupInput || !deliveryInput) return;
+  pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, options);
+  deliveryAutocomplete = new google.maps.places.Autocomplete(deliveryInput, options);
+  pickupAutocomplete.addListener('place_changed', () => calcDistanceAndQuote());
+  deliveryAutocomplete.addListener('place_changed', () => calcDistanceAndQuote());
 }
 
 function calcDistanceAndQuote() {
