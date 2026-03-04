@@ -1073,7 +1073,12 @@ function sendPayEmailFor(job){
 'Enter $'+parseFloat(job.price).toFixed(2)+' as the amount.\n\n'+
 'Once payment is confirmed, your driver will be dispatched.\n\n'+
 'Questions? Call or text us anytime.\n\nThank you,\nNorthStar Delivery Service\nnorthstardeliveryservice.com');
-  window.location.href='mailto:'+(job.email||'')+`?subject=${sub}&body=${body}`;
+  // Open Gmail in browser — bypasses default mail app
+  const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+    + '&to=' + encodeURIComponent(job.email||'')
+    + '&su=' + sub
+    + '&body=' + body;
+  window.open(gmailUrl, '_blank');
   showToast('📧 Email draft opened!');
 }
 
