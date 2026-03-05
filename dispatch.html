@@ -796,11 +796,25 @@ function calcPrice(city, svc, miles){
 function load(key, def){ try{ return JSON.parse(localStorage.getItem(key)) || def; }catch(e){ return def; } }
 function save(){ localStorage.setItem('ns_jobs', JSON.stringify(jobs)); localStorage.setItem('ns_drivers', JSON.stringify(drivers)); localStorage.setItem('ns_clients', JSON.stringify(clients)); }
 
+// ── FORCE SYNC real drivers (clears stale localStorage data) ──
+const REAL_DRIVER_IDS = ['d1','d2','d3','d4','d5','d6','d7','d8','d9'];
+const REAL_DRIVER_VERSION = 'v2_real'; // bump this string to force-reset again anytime
+if(localStorage.getItem('ns_driver_version') !== REAL_DRIVER_VERSION){
+  localStorage.removeItem('ns_drivers');
+  localStorage.setItem('ns_driver_version', REAL_DRIVER_VERSION);
+}
+
 let jobs    = load('ns_jobs', []);
 let drivers = load('ns_drivers', [
-  {id:'d1', name:'Marcus Williams', phone:'(555)201-4567', vehicle:'2022 Ford Transit',  city:'stlouis',  status:'available', pin:'1234'},
-  {id:'d2', name:'Tanya Brooks',    phone:'(555)309-8821', vehicle:'2021 Chevy Express', city:'stlouis',  status:'available', pin:'5678'},
-  {id:'d3', name:'James Carter',    phone:'(555)412-3390', vehicle:'2023 Ram ProMaster', city:'chicago',  status:'available', pin:'9012'},
+  {id:'d1', name:'Lance Murphy',    phone:'(618)855-4015', address:"611 Shamrock Dr, O'Fallon, IL",          vehicle:'Car',                                           city:'stlouis',   status:'available', pin:'4823'},
+  {id:'d2', name:'Myeisha James',   phone:'(618)606-4140', address:'325 N. Dupo, IL 62239',                  vehicle:'Car',                                           city:'stlouis',   status:'available', pin:'7361'},
+  {id:'d3', name:'Sharitha Dixon',  phone:'(708)243-9162', address:'S. Crannberry St, Bolingbrook, IL',      vehicle:'SUV',                                           city:'chicago',   status:'available', pin:'5190'},
+  {id:'d4', name:'Sandra Castillo', phone:'(312)632-0831', address:'6116 S. Artesian Ave, Chicago, IL',      vehicle:'Sprinter',      company:'C-Fast LLC',           city:'chicago',   status:'available', pin:'2748'},
+  {id:'d5', name:'Chris Allen',     phone:'(404)345-1053', address:'3789 Benjamin Ct, Atlanta, GA',          vehicle:'Car / Sprinter',                                city:'atlanta',   status:'available', pin:'9034'},
+  {id:'d6', name:'Skye Coles',      phone:'(943)267-5895', address:'12674 Lugo Lane, Covington, GA',         vehicle:'Sprinter',                                      city:'atlanta',   status:'available', pin:'6512'},
+  {id:'d7', name:'Trina Smith',     phone:'(770)539-4159', address:'401 Summerbrook Circle Apt 422, Athens, GA', vehicle:'Sprinter', company:'Qwick Fast in a Hurry Logistics LLC', city:'atlanta', status:'available', pin:'3867'},
+  {id:'d8', name:'Mannie Johnson',  phone:'(704)807-6515', address:'6440 Pennacook Drive, Charlotte, NC',    vehicle:'Cargo Van',                                     city:'charlotte', status:'available', pin:'1594'},
+  {id:'d9', name:'Saul Rubio',      phone:'(708)267-7752', address:'368 Timber Pointe Dr, Joliet, IL 60431', vehicle:'2025 Nissan Altima / 2025 Chevy Silverado',     city:'chicago',   status:'available', pin:'8203'},
 ]);
 let clients = load('ns_clients', [
   {id:'c1', company:'Demo Medical Group',  contact:'Dr. Jane Smith',  email:'client@medgroup.com',  pass:'MedGroup2025!',  city:'stlouis', type:'medical',   balance:500.00},
@@ -1400,8 +1414,10 @@ function renderDrivers(){
     return `<div class="driver-card">
       <div class="dav">${d.name.split(' ').map(n=>n[0]).join('')}</div>
       <div class="dname">${d.name}</div>
+      ${d.company?`<div style="font-size:.7rem;color:var(--blue);font-weight:600;margin-bottom:2px;">🏢 ${d.company}</div>`:''}
       <div class="dphone">${d.phone||'—'}</div>
       <div class="dvehicle">🚗 ${d.vehicle||'—'} · 📍 ${d.city||'—'}</div>
+      ${d.address?`<div style="font-size:.7rem;color:var(--muted);margin-top:2px;">📌 ${d.address}</div>`:''}
       <div class="pin-badge" onclick="revealPin('${d.id}',this)">🔑 PIN: ••••</div>
       <div class="dstatus"><span class="dot ${d.status}"></span><span style="text-transform:capitalize;">${d.status}</span></div>
       <div class="dstats">
