@@ -254,6 +254,11 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue2),var(--gol
     <div class="suc-title">Application Submitted!</div>
     <p class="suc-sub">We've received your application and will review your documents within 24-48 hours. Keep an eye on your phone and email.</p>
     <div class="suc-box" id="sucDetails"></div>
+    <div id="exportBox" style="margin-top:20px;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.25);border-radius:10px;padding:16px 18px;text-align:left;">
+      <div style="font-size:.82rem;font-weight:700;color:#e8a020;margin-bottom:6px;">📤 One more step — send your application file</div>
+      <p style="font-size:.76rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:12px;">Download your application file and email it to <strong style="color:rgba(255,255,255,0.7);">dispatch@northstardelivery.com</strong> — this ensures your documents reach the team immediately.</p>
+      <button id="exportBtn" onclick="exportApp()" style="background:linear-gradient(135deg,#e8a020,#f5c842);color:#1a1200;font-weight:800;font-size:.82rem;padding:11px 22px;border:none;border-radius:8px;cursor:pointer;letter-spacing:.5px;width:100%;">⬇️ Download My Application File</button>
+    </div>
   </div>
 
 </div>
@@ -334,6 +339,7 @@ function submitApp(){
     const existing = JSON.parse(localStorage.getItem('ns_driver_apps') || '[]');
     existing.push(app);
     localStorage.setItem('ns_driver_apps', JSON.stringify(existing));
+    lastApp = app; // for export
 
     // Show success
     document.getElementById('sucDetails').innerHTML =
@@ -362,6 +368,27 @@ function readFile(file){
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
+}
+
+// ─── EXPORT APPLICATION AS JSON FILE ─────────
+let lastApp = null; // set after successful submit
+
+function exportApp(){
+  if(!lastApp){ showToast('No application to export yet',true); return; }
+  const json = JSON.stringify([lastApp], null, 2);
+  const blob = new Blob([json], {type:'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'northstar-application-' + lastApp.name.replace(/\s+/g,'-').toLowerCase() + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  document.getElementById('exportBtn').textContent = '✅ Downloaded! Email this file to dispatch@northstardelivery.com';
+  document.getElementById('exportBtn').style.background = 'rgba(24,199,106,0.15)';
+  document.getElementById('exportBtn').style.color = '#18c76a';
+  document.getElementById('exportBtn').style.border = '1px solid rgba(24,199,106,0.3)';
 }
 
 // ─── TOAST ───────────────────────────────────
