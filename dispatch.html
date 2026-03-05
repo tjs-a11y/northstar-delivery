@@ -798,11 +798,11 @@ function save(){ localStorage.setItem('ns_jobs', JSON.stringify(jobs)); localSto
 
 // ── FORCE SYNC real drivers (clears stale localStorage data) ──
 const REAL_DRIVER_IDS = ['d1','d2','d3','d4','d5','d6','d7','d8','d9'];
-const REAL_DRIVER_VERSION = 'v2_real'; // bump this string to force-reset again anytime
-if(localStorage.getItem('ns_driver_version') !== REAL_DRIVER_VERSION){
-  localStorage.removeItem('ns_drivers');
-  localStorage.setItem('ns_driver_version', REAL_DRIVER_VERSION);
-}
+const REAL_DRIVER_VERSION = 'v3_real';
+// Always wipe and reload real drivers on every page load
+localStorage.removeItem('ns_drivers');
+localStorage.removeItem('ns_jobs');
+localStorage.setItem('ns_driver_version', REAL_DRIVER_VERSION);
 
 let jobs    = load('ns_jobs', []);
 let drivers = load('ns_drivers', [
@@ -1748,4 +1748,4 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 </body>
-</html> 
+</html>
