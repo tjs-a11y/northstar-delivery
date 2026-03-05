@@ -269,6 +269,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .done-icon{font-size:4rem;margin-bottom:16px;}
 .done-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;color:var(--green);margin-bottom:8px;}
 .done-pay{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);margin-bottom:20px;}
+/* ── EMAIL MODAL ── */
+.email-modal-box{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow);}
+.em-field{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:4px;font-size:.85rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;font-family:'DM Sans',sans-serif;}
+.em-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.em-label{font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.em-copy{background:none;border:none;color:var(--blue2);font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.5px;padding:2px 6px;}
+.em-copy:hover{color:var(--white);}
+.btn-copy-all{width:100%;background:linear-gradient(135deg,var(--electric),var(--electric2));color:white;border:none;padding:14px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:3px;cursor:pointer;margin-top:16px;transition:all .2s;}
+.btn-copy-all:hover{opacity:.9;}
+.em-instruction{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:12px 16px;font-size:.78rem;color:var(--green);margin-top:12px;line-height:1.7;}
+/* ── DRIVER APPLICATIONS ── */
+.app-badge{background:rgba(245,158,11,.15);color:var(--gold);border:1px solid rgba(245,158,11,.3);
+  font-size:.62rem;font-weight:700;letter-spacing:2px;padding:3px 8px;border-radius:4px;text-transform:uppercase;}
+.app-card{background:var(--card);border:1px solid rgba(245,158,11,.25);border-radius:var(--radius);padding:24px;position:relative;}
+.app-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.app-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;}
+.app-meta{font-size:.78rem;color:var(--muted2);margin-bottom:16px;line-height:1.8;}
+.app-docs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.doc-thumb{border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.04);}
+.doc-thumb:hover{border-color:var(--electric);transform:scale(1.02);}
+.doc-thumb img{width:120px;height:80px;object-fit:cover;display:block;}
+.doc-label{font-size:.6rem;letter-spacing:1px;text-align:center;padding:4px;color:var(--muted2);text-transform:uppercase;}
+.doc-file{width:120px;height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.4rem;}
+.app-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-approve{background:linear-gradient(135deg,var(--green),#16a34a);color:white;border:none;
+  padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.82rem;transition:all .2s;}
+.btn-approve:hover{opacity:.9;}
+.btn-reject{background:rgba(229,53,53,.1);border:1px solid rgba(229,53,53,.3);color:var(--red);
+  padding:10px 16px;border-radius:8px;cursor:pointer;font-size:.82rem;transition:all .2s;}
+.btn-reject:hover{background:rgba(229,53,53,.2);}
+.pin-set-row{display:flex;gap:8px;align-items:center;margin-bottom:12px;}
+.pin-set-input{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;
+  padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;width:120px;
+  letter-spacing:4px;text-align:center;}
+.pin-set-input:focus{outline:none;border-color:var(--electric2);}
+.apps-empty{text-align:center;padding:40px;color:var(--muted);font-size:.88rem;}
+/* Doc viewer modal */
+.doc-modal-img{max-width:100%;max-height:70vh;border-radius:10px;display:block;margin:0 auto;}
 /* ── TOAST ── */
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy2);border:1px solid var(--border);border-radius:10px;padding:12px 22px;font-size:.86rem;z-index:9999;transition:transform .3s;white-space:nowrap;box-shadow:var(--shadow);}
 .toast.show{transform:translateX(-50%) translateY(0);}
@@ -354,6 +392,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="tab" onclick="sw('drivers')">🚗 Drivers</div>
     <div class="tab" onclick="sw('clients')">🏬 Clients</div>
     <div class="tab" onclick="sw('alerts')">🔔 Alerts</div>
+    <div class="tab" onclick="sw('apps')" id="appsTab">📋 Applications <span id="appsBadge" style="display:none;background:var(--gold);color:#000;border-radius:4px;padding:1px 6px;font-size:.65rem;font-weight:800;margin-left:4px;">0</span></div>
   </div>
 
   <!-- JOBS TAB -->
@@ -454,6 +493,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 
   <!-- ALERTS TAB -->
+  <!-- APPLICATIONS TAB -->
+  <div class="content" id="tab-apps">
+    <div class="sh"><div class="sh-title">Driver Applications</div><div id="appCount" style="font-size:.8rem;color:var(--muted2);"></div></div>
+    <!-- SAME-ORIGIN NOTICE + IMPORT TOOL -->
+    <div id="sameOriginBanner" style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:10px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:14px;">
+      <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px;">⚠️</div>
+      <div style="flex:1;">
+        <div style="font-size:.85rem;font-weight:700;color:#e8a020;margin-bottom:6px;">How to receive driver applications on this dashboard</div>
+        <div style="font-size:.78rem;color:var(--muted2);line-height:1.7;margin-bottom:10px;">
+          Driver submissions only appear here automatically when <strong>both files are opened from the same folder on your computer</strong> (or hosted on the same website). If drivers are using a different copy of the form, use the Import button below.<br><br>
+          <strong>Best setup:</strong> Host both <code style="background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:3px;">driver-apply.html</code> and <code style="background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:3px;">northstar-dispatch.html</code> on the same web server or share both from the same folder.
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <label style="background:var(--blue);color:#fff;padding:8px 16px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;letter-spacing:.5px;">
+            📥 Import Applications File
+            <input type="file" accept=".json" style="display:none;" onchange="importAppsFile(event)"/>
+          </label>
+          <button onclick="addTestApplication()" style="background:rgba(24,199,106,0.12);border:1px solid rgba(24,199,106,0.3);color:#18c76a;padding:8px 16px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;">🧪 Add Test Application</button>
+          <button onclick="document.getElementById('sameOriginBanner').style.display='none'" style="background:transparent;border:none;color:var(--muted);font-size:.78rem;cursor:pointer;margin-left:auto;">Dismiss</button>
+        </div>
+      </div>
+    </div>
+    <div id="appsList"><div class="apps-empty">No pending applications.</div></div>
+  </div>
+
   <div class="content" id="tab-alerts">
     <div class="sh"><div class="sh-title">Notification Settings</div></div>
     <div class="alert-card">
@@ -602,6 +666,39 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 
 <!-- Toast -->
 <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+<!-- Email Modal -->
+<div class="modal" id="emailModal">
+  <div class="email-modal-box">
+    <div class="modal-title">
+      <span>📧 Payment Email</span>
+      <button class="modal-close" onclick="cm('emailModal')">✕</button>
+    </div>
+
+    <div class="em-row">
+      <div class="em-label">To</div>
+      <button class="em-copy" onclick="copyEmailField('emailTo',this)">Copy</button>
+    </div>
+    <div class="em-field" id="emailTo"></div>
+
+    <div class="em-row" style="margin-top:12px;">
+      <div class="em-label">Subject</div>
+      <button class="em-copy" onclick="copyEmailField('emailSubject',this)">Copy</button>
+    </div>
+    <div class="em-field" id="emailSubject"></div>
+
+    <div class="em-row" style="margin-top:12px;">
+      <div class="em-label">Message</div>
+      <button class="em-copy" onclick="copyEmailField('emailBody',this)">Copy</button>
+    </div>
+    <div class="em-field" id="emailBody" style="max-height:220px;overflow-y:auto;"></div>
+
+    <button class="btn-copy-all" onclick="copyFullEmail()">📋 Copy Full Email To Clipboard</button>
+    <div class="em-instruction">
+      ✅ <strong>How to send:</strong> Click the button above → open Gmail → click Compose → paste with Ctrl+V → hit Send. Takes 10 seconds!
+    </div>
+  </div>
+</div>
 
 <!-- Delivery Confirmation Modal -->
 <div class="delivery-modal" id="deliveryModal">
@@ -823,8 +920,10 @@ function sw(t){
   document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+t).classList.add('active');
-  const tabs=['jobs','new','drivers','clients','alerts'];
-  document.querySelectorAll('.tab')[tabs.indexOf(t)].classList.add('active');
+  const tabs=['jobs','new','drivers','clients','alerts','apps'];
+  const idx=tabs.indexOf(t);
+  if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
+  if(t==='apps') renderApps();
 }
 
 // ─────────────────────────────────────
@@ -1054,12 +1153,17 @@ function clearJob(){
 // ─────────────────────────────────────
 // PAYMENT EMAIL
 // ─────────────────────────────────────
-function sendPayEmail(){ sendPayEmailFor(jobs.find(j=>j.id===activeJobId)); cm('jobModal'); }
+function sendPayEmail(){ 
+  const job = jobs.find(j=>j.id===activeJobId);
+  cm('jobModal'); 
+  sendPayEmailFor(job); 
+}
 function sendPayEmailFor(job){
   if(!job) return;
-  const sub=encodeURIComponent('Your NorthStar Pickup Confirmation — Job #'+job.id.slice(-6).toUpperCase());
-  const body=encodeURIComponent(
-'Hi '+job.customerName+',\n\nThank you for choosing NorthStar Delivery Service!\n\n'+
+  const subject = 'Your NorthStar Pickup Confirmation — Job #'+job.id.slice(-6).toUpperCase();
+  const body = 
+'Hi '+job.customerName+',\n\n'+
+'Thank you for choosing NorthStar Delivery Service!\n\n'+
 '─────────────────────────\n'+
 'Job #: '+job.id.slice(-6).toUpperCase()+'\n'+
 'Pickup: '+job.pickup+'\n'+
@@ -1069,22 +1173,223 @@ function sendPayEmailFor(job){
 (job.notes?'Instructions: '+job.notes+'\n':'')+
 '─────────────────────────\n'+
 'Quoted Price: $'+parseFloat(job.price).toFixed(2)+'\n\n'+
-'Please complete your secure payment here:\n'+STRIPE+'\n\n'+
+'To complete your booking, please pay securely here:\n'+STRIPE+'\n\n'+
 'Enter $'+parseFloat(job.price).toFixed(2)+' as the amount.\n\n'+
-'Once payment is confirmed, your driver will be dispatched.\n\n'+
-'Questions? Call or text us anytime.\n\nThank you,\nNorthStar Delivery Service\nnorthstardeliveryservice.com');
-  // Open Gmail in browser — bypasses default mail app
-  const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
-    + '&to=' + encodeURIComponent(job.email||'')
-    + '&su=' + sub
-    + '&body=' + body;
-  window.open(gmailUrl, '_blank');
-  showToast('📧 Email draft opened!');
+'Once payment is confirmed your driver will be dispatched.\n\n'+
+'Questions? Call or text us anytime.\n\n'+
+'Thank you,\nNorthStar Delivery Service\nnorthstardeliveryservice.com';
+
+  // Show email popup
+  document.getElementById('emailTo').textContent = job.email||'(no email on file)';
+  document.getElementById('emailSubject').textContent = subject;
+  document.getElementById('emailBody').textContent = body;
+  document.getElementById('emailModal').classList.add('open');
+}
+
+function copyEmailField(id, btn){
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    btn.style.color = 'var(--green)';
+    setTimeout(()=>{ btn.textContent=orig; btn.style.color=''; }, 2000);
+  });
+}
+
+function copyFullEmail(){
+  const to      = document.getElementById('emailTo').textContent;
+  const subject = document.getElementById('emailSubject').textContent;
+  const body    = document.getElementById('emailBody').textContent;
+  const full    = 'TO: '+to+'\nSUBJECT: '+subject+'\n\n'+body;
+  navigator.clipboard.writeText(full).then(()=>{
+    showToast('📋 Full email copied! Paste into Gmail.');
+  });
 }
 
 // ─────────────────────────────────────
 // DRIVERS
 // ─────────────────────────────────────
+// ─────────────────────────────────────
+// DRIVER APPLICATIONS
+// ─────────────────────────────────────
+const CITY_NAMES_MAP = {stlouis:'St. Louis, MO',chicago:'Chicago, IL',atlanta:'Atlanta, GA',charlotte:'Charlotte, NC',pittsburgh:'Pittsburgh, PA',cleveland:'Cleveland, OH'};
+
+function loadApps(){ return JSON.parse(localStorage.getItem('ns_driver_apps')||'[]'); }
+function saveApps(apps){ localStorage.setItem('ns_driver_apps', JSON.stringify(apps)); }
+
+// ── IMPORT from exported JSON file (from driver-apply.html) ──
+function importAppsFile(event){
+  const file = event.target.files[0];
+  if(!file){ return; }
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const imported = JSON.parse(e.target.result);
+      const apps = Array.isArray(imported) ? imported : [imported];
+      if(!apps.length || !apps[0].id){ showToast('Invalid file format',true); return; }
+      const existing = loadApps();
+      const existingIds = new Set(existing.map(a=>a.id));
+      let added = 0;
+      apps.forEach(a=>{ if(!existingIds.has(a.id)){ existing.push(a); added++; } });
+      saveApps(existing);
+      checkNewApps();
+      renderApps();
+      showToast('✅ Imported '+added+' new application'+(added!==1?'s':'')+(apps.length-added>0?' ('+( apps.length-added)+' duplicates skipped)':''));
+    } catch(err){
+      showToast('Could not read file — make sure it\'s the exported JSON',true);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value='';
+}
+
+// ── ADD A SAMPLE APPLICATION for testing ──
+function addTestApplication(){
+  const existing = loadApps();
+  const app = {
+    id: 'app_test_'+Date.now(),
+    name: 'James Rivera',
+    fname: 'James', lname: 'Rivera',
+    phone: '(314) 555-0192',
+    email: 'james.rivera@email.com',
+    city: 'stlouis',
+    vehicle: '2021 Toyota Camry',
+    plate: 'MO-4492XJ',
+    color: 'Silver',
+    licenseDoc: null,
+    licenseFileName: 'license_sample.pdf',
+    insuranceDoc: null,
+    insuranceFileName: 'insurance_sample.pdf',
+    status: 'pending',
+    submittedAt: new Date().toISOString(),
+    isTest: true
+  };
+  existing.push(app);
+  saveApps(existing);
+  checkNewApps();
+  renderApps();
+  sw('apps');
+  showToast('🧪 Test application added — click the Apps tab to review');
+}
+
+function checkNewApps(){
+  const apps = loadApps().filter(a=>a.status==='pending');
+  const badge = document.getElementById('appsBadge');
+  if(apps.length > 0){
+    badge.style.display='inline';
+    badge.textContent = apps.length;
+  } else {
+    badge.style.display='none';
+  }
+}
+
+function renderApps(){
+  const apps = loadApps();
+  const pending = apps.filter(a=>a.status==='pending');
+  const list = document.getElementById('appsList');
+  document.getElementById('appCount').textContent = pending.length + ' pending application' + (pending.length!==1?'s':'');
+  if(!pending.length){ list.innerHTML='<div class="apps-empty">✅ No pending applications — all caught up!</div>'; return; }
+  list.innerHTML = pending.map(app => {
+    const dt = new Date(app.submittedAt).toLocaleString();
+    const licIsImg = app.licenseDoc && app.licenseDoc.startsWith('data:image');
+    const insIsImg = app.insuranceDoc && app.insuranceDoc.startsWith('data:image');
+    return `<div class="app-card" id="appcard-${app.id}" style="margin-bottom:16px;">
+      <div class="app-card-header">
+        <div>
+          <div class="app-name">${app.name}</div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:2px;">Applied ${dt}</div>
+        </div>
+        <span class="app-badge">🟡 Pending Review</span>
+      </div>
+      <div class="app-meta">
+        📞 ${app.phone}&nbsp;&nbsp;|&nbsp;&nbsp;✉️ ${app.email}<br>
+        📍 ${CITY_NAMES_MAP[app.city]||app.city}&nbsp;&nbsp;|&nbsp;&nbsp;🚗 ${app.vehicle}${app.color?' · '+app.color:''}&nbsp;&nbsp;|&nbsp;&nbsp;🪪 ${app.plate}
+      </div>
+      <div class="app-docs">
+        <div class="doc-thumb" onclick="viewDoc('${app.id}','license')">
+          ${licIsImg
+            ? `<img src="${app.licenseDoc}" alt="License"/>`
+            : `<div class="doc-file">📄</div>`}
+          <div class="doc-label">🪪 License</div>
+        </div>
+        <div class="doc-thumb" onclick="viewDoc('${app.id}','insurance')">
+          ${insIsImg
+            ? `<img src="${app.insuranceDoc}" alt="Insurance"/>`
+            : `<div class="doc-file">📋</div>`}
+          <div class="doc-label">📄 Insurance</div>
+        </div>
+      </div>
+      <div class="pin-set-row">
+        <input type="number" class="pin-set-input" id="pin-${app.id}" placeholder="PIN" min="1000" max="9999" maxlength="4"/>
+        <span style="font-size:.72rem;color:var(--muted2);">Set a 4-digit PIN for this driver</span>
+      </div>
+      <div class="app-actions">
+        <button class="btn-approve" onclick="approveApp('${app.id}')">✅ Approve & Activate Driver</button>
+        <button class="btn-reject" onclick="rejectApp('${app.id}')">❌ Reject</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function viewDoc(appId, type){
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  const data = type==='license' ? app.licenseDoc : app.insuranceDoc;
+  const label = type==='license' ? "Driver's License" : "Proof of Insurance";
+  if(!data){ showToast('Document not available', true); return; }
+  // Open in new tab
+  const win = window.open('', '_blank');
+  win.document.write('<html><head><title>'+label+' — '+app.name+'</title></head><body style="margin:0;background:#000;display:flex;align-items:center;justify-content:center;min-height:100vh;"><img src="'+data+'" style="max-width:100%;max-height:100vh;object-fit:contain;"/></body></html>');
+  win.document.close();
+}
+
+function approveApp(appId){
+  const pin = document.getElementById('pin-'+appId).value.trim();
+  if(!pin||!/^\d{4}$/.test(pin)){ showToast('Please enter a valid 4-digit PIN first', true); return; }
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  // Add to drivers
+  const newDriver = {
+    id: 'd'+Date.now(),
+    name: app.name,
+    phone: app.phone,
+    email: app.email,
+    vehicle: app.vehicle,
+    plate: app.plate,
+    city: app.city,
+    pin: pin,
+    status: 'available',
+    licenseDoc: app.licenseDoc,
+    insuranceDoc: app.insuranceDoc,
+  };
+  drivers.push(newDriver);
+  save();
+  // Mark app as approved
+  app.status = 'approved';
+  app.approvedAt = new Date().toISOString();
+  saveApps(apps);
+  renderApps();
+  renderDrivers();
+  fillDriverSel();
+  checkNewApps();
+  showToast('✅ '+app.name+' approved and activated as a driver! PIN: '+pin);
+}
+
+function rejectApp(appId){
+  if(!confirm('Reject this application? This cannot be undone.')) return;
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  app.status = 'rejected';
+  app.rejectedAt = new Date().toISOString();
+  saveApps(apps);
+  renderApps();
+  checkNewApps();
+  showToast('Application rejected.');
+}
+
 function renderDrivers(){
   const list=document.getElementById('driversList');
   const td=new Date().toISOString().split('T')[0];
@@ -1411,6 +1716,19 @@ function today(){ return new Date().toISOString().split('T')[0]; }
 document.addEventListener('DOMContentLoaded',()=>{
   setRole('admin');
   document.getElementById('nj-date').value=today();
+  // Auto-poll for new driver applications every 10 seconds
+  let lastAppCount = loadApps().filter(a=>a.status==='pending').length;
+  setInterval(()=>{
+    const current = loadApps().filter(a=>a.status==='pending').length;
+    if(current !== lastAppCount){
+      lastAppCount = current;
+      checkNewApps();
+      // If apps tab is active, refresh it live
+      const appsTab = document.getElementById('tab-apps');
+      if(appsTab && appsTab.style.display==='block') renderApps();
+      if(current > lastAppCount) showToast('🔔 New driver application received! Check the Apps tab.');
+    }
+  }, 10000);
 });
 </script>
 </body>
