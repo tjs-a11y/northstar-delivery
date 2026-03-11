@@ -1931,27 +1931,27 @@ initDriverPortal(localDriver);
 
 }else{
 
-const tempDriver={
-id:driver.id,
-name:driver.full_name,
-phone:"",
-vehicle:driver.vehicle_type || "",
-city:driver.city,
-status:driver.status || "available",
-pin:pinBuf
+const tempDriver = {
+  id: driver.id,
+  name: driver.full_name,
+  phone: "",
+  vehicle: driver.vehicle_type || "",
+  city: driver.city,
+  status: driver.status || "available",
+  pin: pinBuf
 };
 
 drivers.push(tempDriver);
 initDriverPortal(tempDriver);
-
 }
 
-pinBuf="";
+pinBuf = "";
 updPin();
-
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+  loadDriversFromSupabase();
+});
 </script>
-
 </body>
 </html>
