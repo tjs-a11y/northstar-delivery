@@ -1,105 +1,134 @@
-<!-- DRIVER LOGIN -->
-<div id="driver-login-box" style="max-width:420px;margin:20px auto;padding:20px;border:1px solid #ddd;border-radius:12px;background:#fff;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NorthStar Dispatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h3>🚗 Driver Login</h3>
+<style>
 
-<label for="driverName" style="display:block;margin:10px 0 6px;">Your Name</label>
-<input id="driverName" type="text" placeholder="Enter your name" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;" />
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:0;
+text-align:center;
+}
 
-<label for="driverSelect" style="display:block;margin:14px 0 6px;">Select driver...</label>
-<select id="driverSelect" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;">
-<option value="">Loading drivers...</option>
+header{
+background:#0b3d91;
+color:white;
+padding:20px;
+font-size:24px;
+}
+
+.container{
+margin-top:40px;
+}
+
+button{
+padding:12px 18px;
+margin:8px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+.admin-btn{background:#222;color:white;}
+.driver-btn{background:#0b3d91;color:white;}
+.client-btn{background:#444;color:white;}
+
+input,select{
+width:260px;
+padding:10px;
+margin:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+#driverLogin{
+margin-top:20px;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+NorthStar  
+<br>
+DISPATCH & PORTAL
+</header>
+
+<div class="container">
+
+<button class="admin-btn">🏢 Admin</button>
+<button class="driver-btn" onclick="showDriver()">🚗 Driver</button>
+<button class="client-btn">🏬 Client</button>
+
+<div id="driverLogin">
+
+<br>
+
+<input id="driverName" placeholder="Your Name">
+
+<br>
+
+<select id="driverSelect">
+<option value="">Select driver...</option>
 </select>
 
-<label for="driverPin" style="display:block;margin:14px 0 6px;">Enter Your PIN</label>
-<input id="driverPin" type="password" placeholder="Enter Your PIN" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;" />
+<br>
 
-<button id="driverLoginBtn" style="margin-top:16px;width:100%;padding:12px;border:none;border-radius:8px;background:#0b3d91;color:#fff;font-size:16px;cursor:pointer;">
-Login as Driver
-</button>
+<input id="driverPin" type="password" maxlength="4" placeholder="Enter Your PIN">
 
-<div id="driverLoginMsg" style="margin-top:14px;font-size:14px;"></div>
+<br>
+
+<button id="driverLoginBtn">Login</button>
+
+<br>
+
+<div id="driverLoginMsg"></div>
+
+</div>
 
 </div>
 
 
-<!-- DRIVER DASHBOARD -->
-<div id="driver-dashboard" style="display:none;max-width:900px;margin:30px auto;padding:20px;border:1px solid #ddd;border-radius:12px;background:#fff;">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<h2>Driver Dashboard</h2>
+<script>
 
-<p id="driverWelcome"></p>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px;">
-
-<div style="padding:16px;border:1px solid #ddd;border-radius:10px;">
-<h4>Status</h4>
-<p id="driverStatus">-</p>
-</div>
-
-<div style="padding:16px;border:1px solid #ddd;border-radius:10px;">
-<h4>City</h4>
-<p id="driverCity">-</p>
-</div>
-
-<div style="padding:16px;border:1px solid #ddd;border-radius:10px;">
-<h4>Vehicle</h4>
-<p id="driverVehicle">-</p>
-</div>
-
-</div>
-
-<button id="driverLogoutBtn" style="margin-top:20px;padding:10px 16px;border:none;border-radius:8px;background:#b91c1c;color:#fff;cursor:pointer;">
-Logout
-</button>
-
-</div>
+function showDriver(){
+document.getElementById("driverLogin").style.display="block";
+}
 
 
-<script type="module">
-
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+/* SUPABASE CONNECTION */
 
 const SUPABASE_URL = "https://imljjaurxiawfxjckkqf.supabase.co";
+const SUPABASE_ANON_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y ";
 
-const SUPABASE_ANON_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y";
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+/* LOAD DRIVER LIST */
+
+async function loadDrivers(){
 
 const driverSelect = document.getElementById("driverSelect");
-const driverPin = document.getElementById("driverPin");
-const driverName = document.getElementById("driverName");
-const driverLoginBtn = document.getElementById("driverLoginBtn");
-const driverLoginMsg = document.getElementById("driverLoginMsg");
-
-const driverLoginBox = document.getElementById("driver-login-box");
-const driverDashboard = document.getElementById("driver-dashboard");
-
-const driverWelcome = document.getElementById("driverWelcome");
-const driverStatus = document.getElementById("driverStatus");
-const driverCity = document.getElementById("driverCity");
-const driverVehicle = document.getElementById("driverVehicle");
-
-const driverLogoutBtn = document.getElementById("driverLogoutBtn");
-
-
-async function loadDrivers() {
 
 driverSelect.innerHTML = '<option value="">Loading drivers...</option>';
 
-const { data, error } = await supabase
-.from("drivers")
-.select("id, full_name, city, status")
-.order("full_name", { ascending: true });
+const { data, error } = await supabase.rpc("get_driver_list");
 
-if (error) {
+if(error){
 
 driverSelect.innerHTML = '<option value="">Unable to load drivers</option>';
-
-driverLoginMsg.style.color = "red";
-
-driverLoginMsg.textContent = "Could not load drivers.";
-
 return;
 
 }
@@ -111,8 +140,7 @@ data.forEach(driver => {
 const option = document.createElement("option");
 
 option.value = driver.id;
-
-option.textContent = `${driver.full_name} (${driver.city})`;
+option.textContent = driver.full_name + " (" + driver.city + ")";
 
 driverSelect.appendChild(option);
 
@@ -121,137 +149,67 @@ driverSelect.appendChild(option);
 }
 
 
+/* DRIVER LOGIN */
 
-async function loginDriver() {
+async function loginDriver(){
 
-const selectedDriverId = driverSelect.value;
+const driverSelect = document.getElementById("driverSelect");
+const driverPin = document.getElementById("driverPin");
+const msg = document.getElementById("driverLoginMsg");
 
-const enteredPin = driverPin.value.trim();
+const driverId = driverSelect.value;
+const pin = driverPin.value.trim();
 
-const enteredName = driverName.value.trim();
+msg.innerHTML="";
 
-driverLoginMsg.textContent = "";
-
-driverLoginMsg.style.color = "red";
-
-if (!selectedDriverId) {
-
-driverLoginMsg.textContent = "Please select your name.";
-
+if(!driverId){
+msg.innerHTML="Select your name";
 return;
-
 }
 
-if (!enteredPin) {
-
-driverLoginMsg.textContent = "Please enter your PIN.";
-
+if(!pin){
+msg.innerHTML="Enter your PIN";
 return;
-
 }
 
-const { data, error } = await supabase
-.from("drivers")
-.select("id, full_name, city, vehicle_type, status, pin")
-.eq("id", selectedDriverId)
-.single();
-
-if (error || !data) {
-
-driverLoginMsg.textContent = "Driver not found.";
-
+if(pin.length !== 4){
+msg.innerHTML="PIN must be 4 digits";
 return;
-
 }
 
-if (data.pin !== enteredPin) {
-
-driverLoginMsg.textContent = "Invalid PIN.";
-
-return;
-
-}
-
-localStorage.setItem("northstar_driver_session", JSON.stringify({
-
-id: data.id,
-full_name: data.full_name,
-city: data.city,
-vehicle_type: data.vehicle_type,
-status: data.status
-
-}));
-
-showDriverDashboard(data, enteredName);
-
-}
-
-
-
-function showDriverDashboard(driver, enteredName = "") {
-
-driverLoginBox.style.display = "none";
-
-driverDashboard.style.display = "block";
-
-const displayName = enteredName || driver.full_name;
-
-driverWelcome.textContent = `Welcome, ${displayName}.`;
-
-driverStatus.textContent = driver.status || "-";
-
-driverCity.textContent = driver.city || "-";
-
-driverVehicle.textContent = driver.vehicle_type || "-";
-
-}
-
-
-
-function restoreDriverSession() {
-
-const saved = localStorage.getItem("northstar_driver_session");
-
-if (!saved) return;
-
-try {
-
-const driver = JSON.parse(saved);
-
-showDriverDashboard(driver);
-
-}
-
-catch {
-
-localStorage.removeItem("northstar_driver_session");
-
-}
-
-}
-
-
-
-driverLoginBtn.addEventListener("click", loginDriver);
-
-driverLogoutBtn.addEventListener("click", () => {
-
-localStorage.removeItem("northstar_driver_session");
-
-driverDashboard.style.display = "none";
-
-driverLoginBox.style.display = "block";
-
-driverPin.value = "";
-
-driverLoginMsg.textContent = "";
-
+const { data, error } = await supabase.rpc("driver_pin_login",{
+p_driver_id: driverId,
+p_pin: pin
 });
 
+if(error || !data || data.length === 0){
 
+msg.innerHTML="Invalid PIN";
+return;
+
+}
+
+msg.style.color="green";
+msg.innerHTML="Login successful";
+
+localStorage.setItem("northstar_driver_session", JSON.stringify(data[0]));
+
+}
+
+
+/* EVENT LISTENERS */
+
+document.addEventListener("DOMContentLoaded", () => {
 
 loadDrivers();
 
-restoreDriverSession();
+document
+.getElementById("driverLoginBtn")
+.addEventListener("click", loginDriver);
+
+});
 
 </script>
+
+</body>
+</html>
