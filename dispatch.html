@@ -1747,5 +1747,84 @@ document.addEventListener('DOMContentLoaded',()=>{
   }, 10000);
 });
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "https://imljjaurxiawfxjckkqf.supabase.co";
+const SUPABASE_ANON_KEY = "YOUR_ANON_KEY_HERE";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+// Load drivers into your EXISTING dropdown
+async function loadDrivers(){
+
+const select = document.getElementById("driverSelect");
+if(!select) return;
+
+const { data, error } = await supabaseClient.rpc("get_driver_list");
+
+if(error) return;
+
+select.innerHTML = '<option value="">Select driver...</option>';
+
+data.forEach(d => {
+
+const opt = document.createElement("option");
+opt.value = d.id;
+opt.textContent = d.full_name + " (" + d.city + ")";
+
+select.appendChild(opt);
+
+});
+
+}
+
+
+// Validate PIN using Supabase
+async function driverLogin(){
+
+const select = document.getElementById("driverSelect");
+const pinInput = document.getElementById("driverPin");
+
+if(!select || !pinInput) return;
+
+const driverId = select.value;
+const pin = pinInput.value.trim();
+
+const { data } = await supabaseClient.rpc("driver_pin_login",{
+p_driver_id: driverId,
+p_pin: pin
+});
+
+if(!data || data.length === 0){
+
+alert("Invalid PIN");
+return;
+
+}
+
+alert("Driver login successful");
+
+localStorage.setItem("northstar_driver_session", JSON.stringify(data[0]));
+
+}
+
+
+// connect to your EXISTING login button
+document.addEventListener("DOMContentLoaded", () => {
+
+loadDrivers();
+
+const btn = document.getElementById("driverLoginBtn");
+
+if(btn){
+btn.addEventListener("click", driverLogin);
+}
+
+});
+
+</script>
 </body>
 </html>
