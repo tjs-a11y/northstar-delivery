@@ -1747,84 +1747,94 @@ document.addEventListener('DOMContentLoaded',()=>{
   }, 10000);
 });
 </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-
 const SUPABASE_URL = "https://imljjaurxiawfxjckkqf.supabase.co";
-const SUPABASE_ANON_KEY = ";eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+async function loadDriversFromSupabase() {
 
-// Load drivers into your EXISTING dropdown
-async function loadDrivers(){
+  const select = document.getElementById("driverSel");
+  if (!select) return;
 
-const select = document.getElementById("driverSelect");
-if(!select) return;
+  const { data, error } = await supabaseClient.rpc("get_driver_list");
 
-const { data, error } = await supabaseClient.rpc("get_driver_list");
+  if (error) {
+    console.error("Driver load error:", error);
+    return;
+  }
 
-if(error) return;
+  select.innerHTML = '<option value="">Select driver...</option>';
 
-select.innerHTML = '<option value="">Select driver...</option>';
-
-data.forEach(d => {
-
-const opt = document.createElement("option");
-opt.value = d.id;
-opt.textContent = d.full_name + " (" + d.city + ")";
-
-select.appendChild(opt);
-
-});
-
+  data.forEach((driver) => {
+    const option = document.createElement("option");
+    option.value = driver.id;
+    option.textContent = driver.full_name + " (" + driver.city + ")";
+    select.appendChild(option);
+  });
 }
 
+populateDriverSel = function () {
+  loadDriversFromSupabase();
+};
 
-// Validate PIN using Supabase
-async function driverLogin(){
+checkPin = async function () {
 
-const select = document.getElementById("driverSelect");
-const pinInput = document.getElementById("driverPin");
+  const driverId = document.getElementById("driverSel").value;
 
-if(!select || !pinInput) return;
+  if (!driverId) {
+    showToast("Select your name first", true);
+    pinBuf = "";
+    updPin();
+    return;
+  }
 
-const driverId = select.value;
-const pin = pinInput.value.trim();
+  if (pinBuf.length !== 4) return;
 
-const { data } = await supabaseClient.rpc("driver_pin_login",{
-p_driver_id: driverId,
-p_pin: pin
-});
+  const { data, error } = await supabaseClient.rpc("driver_pin_login", {
+    p_driver_id: driverId,
+    p_pin: pinBuf
+  });
 
-if(!data || data.length === 0){
+  if (error || !data || data.length === 0) {
 
-alert("Invalid PIN");
-return;
+    document.getElementById("loginErr").style.display = "block";
 
-}
+    pinBuf = "";
+    updPin();
+    return;
+  }
 
-alert("Driver login successful");
+  const driver = data[0];
 
-localStorage.setItem("northstar_driver_session", JSON.stringify(data[0]));
+  currentDriverId = driver.id;
+  currentRole = "driver";
 
-}
+  document.getElementById("loginScreen").style.display = "none";
+  document.getElementById("driverPortal").style.display = "block";
 
+  initDriverPortal({
+    id: driver.id,
+    name: driver.full_name,
+    city: driver.city,
+    vehicle: driver.vehicle_type || "",
+    status: driver.status || "available",
+    pin: pinBuf
+  });
 
-// connect to your EXISTING login button
+  pinBuf = "";
+  updPin();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
 
-loadDrivers();
-
-const btn = document.getElementById("driverLoginBtn");
-
-if(btn){
-btn.addEventListener("click", driverLogin);
-}
+  loadDriversFromSupabase();
 
 });
-
+</script>
 </script>
 </body>
 </html>
