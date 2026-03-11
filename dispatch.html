@@ -1509,74 +1509,83 @@ function initDriverPortal(driver){
   renderDP(driver);
 }
 
-function renderDP(driver){
-  const myJobs=jobs.filter(j=>j.driverId===driver.id);
-  const td=new Date().toISOString().split('T')[0];
-  const todayDone=myJobs.filter(j=>j.status==='delivered'&&j.date===td);
-  const earned=todayDone.reduce((s,j)=>s+(j.price||0)*DRIVER_CUT,0);
-  const active=myJobs.filter(j=>['transit','assigned'].includes(j.status));
-  document.getElementById('dpEarnings').textContent='$'+earned.toFixed(2);
-  document.getElementById('dpActive').textContent=active.length;
-  document.getElementById('dpDelivered').textContent=todayDone.length;
-  document.getElementById('dpTotal').textContent=myJobs.length;
-  const show=[...active,...myJobs.filter(j=>j.status==='pending')].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
-  if(!show.length){ document.getElementById('dpJobsList').innerHTML='<div class="no-jobs">✅ No active jobs right now. Check back soon!</div>'; return; }
-  document.getElementById('dpJobsList').innerHTML=show.map(job=>{
-    const myPay=((job.price||0)*DRIVER_CUT).toFixed(2);
-    const isUrgent=job.service==='stat';
-    return `<div class="dp-job${isUrgent?' urgent':''}">
-      <div class="dp-job-top">
-        <div><div class="dp-job-id">Job #${job.id.slice(-4).toUpperCase()}${isUrgent?' <span style="font-size:.65rem;background:rgba(239,68,68,.2);color:var(--red);padding:2px 8px;border-radius:4px;">STAT</span>':''}</div>
-          <div style="font-size:.7rem;color:var(--muted);">${job.date||'—'} · ${svcLabel(job.service)}</div></div>
-        <div style="text-align:right;"><div class="dp-pay">$${myPay}</div><div class="dp-pay-label">Your pay</div></div>
+async function renderDP(driver){
+  const box = document.getElementById("dpJobsList");
+  if (!box || !driver || !driver.id) return;
+
+  const { data, error } = await supabaseClient
+    .from("jobs")
+    .select("*")
+    .eq("driver_id", driver.id)
+    .in("status", ["assigned", "transit"])
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Assigned jobs load error:", error);
+    box.innerHTML = '<div class="no-jobs">Unable to load your assigned jobs.</div>';
+    return;
+  }
+
+  const jobs = data || [];
+
+  const assignedJobs = jobs.filter(j => j.status === "assigned");
+  const transitJobs = jobs.filter(j => j.status === "transit");
+  const deliveredToday = 0;
+  const todayPay = jobs.reduce((sum, job) => sum + Number(job.driver_pay || 0), 0);
+
+  document.getElementById('dpEarnings').textContent = '$' + todayPay.toFixed(2);
+  document.getElementById('dpActive').textContent = jobs.length;
+  document.getElementById('dpDelivered').textContent = deliveredToday;
+  document.getElementById('dpTotal').textContent = jobs.length;
+
+  if (!jobs.length) {
+    box.innerHTML = '<div class="no-jobs">No assigned jobs right now.</div>';
+    return;
+  }
+
+  box.innerHTML = jobs.map((job) => {
+    const isUrgent = job.service === "stat";
+
+    return `
+      <div class="dp-job${isUrgent ? ' urgent' : ''}">
+        <div class="dp-job-top">
+          <div>
+            <div class="dp-job-id">${job.city || ""}${isUrgent ? ' <span style="font-size:.65rem;background:rgba(239,68,68,.2);color:var(--red);padding:2px 8px;border-radius:4px;">STAT</span>' : ''}</div>
+            <div style="font-size:.7rem;color:var(--muted);">${job.service || "Delivery"}</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="dp-pay">$${Number(job.driver_pay || 0).toFixed(2)}</div>
+            <div class="dp-pay-label">Pay</div>
+          </div>
+        </div>
+
+        <div class="dp-route">
+          <strong>Pickup:</strong> ${job.pickup_name || ""}<br>
+          ${job.pickup_address || ""}<br><br>
+
+          <strong>Drop:</strong> ${job.dropoff_name || ""}<br>
+          ${job.dropoff_address || ""}
+        </div>
+
+        <div style="font-size:.82rem;color:var(--muted2);margin-bottom:10px;">
+          Miles: ${Number(job.miles || 0).toFixed(0)}
+        </div>
+
+        ${job.notes ? `<div class="dp-note">📝 ${job.notes}</div>` : ""}
+
+        <div style="margin-bottom:10px;">
+          <span class="badge s-${job.status}">${job.status === "assigned" ? "👤 Assigned" : "🚗 Transit"}</span>
+        </div>
+
+        <div class="dp-actions">
+          ${job.status === "assigned" ? `<button class="btn-start" onclick="drvStart('${job.id}')">START DELIVERY</button>` : ``}
+          ${job.status === "transit" ? `<button class="btn-done" onclick="drvDone('${job.id}')">COMPLETE DELIVERY</button>` : ``}
+        </div>
       </div>
-      <div class="dp-route">📍 <strong>Pickup:</strong> ${job.pickup}<br>🏁 <strong>Drop-off:</strong> ${job.delivery}</div>
-      ${job.notes?`<div class="dp-note">📝 ${job.notes}</div>`:''}
-      <div style="margin-bottom:10px;"><span class="badge s-${job.status}">${statusLabel(job.status)}</span></div>
-      <div class="dp-actions">
-        ${job.status==='assigned'?`<button class="btn-start" onclick="drvStart('${job.id}')">🚗 Start Delivery</button>`:''}
-        ${job.status==='transit'?`<button class="btn-done" onclick="drvDone('${job.id}')">✅ Mark Delivered</button>`:''}
-        ${job.status==='assigned'?`<button class="btn-decline" onclick="drvDecline('${job.id}')">❌ Decline</button>`:''}
-      </div>
-    </div>`;
-  }).join('');
+    `;
+  }).join("");
 }
 
-function drvStart(jid){ const j=jobs.find(x=>x.id===jid); if(j){j.status='transit';save();renderDP(drivers.find(d=>d.id===currentDriverId));showToast('🚗 On your way!');} }
-function drvDone(jid){
-  // Open confirmation modal instead of instant complete
-  window._deliveryJobId = jid;
-  const j = jobs.find(x=>x.id===jid); if(!j) return;
-  document.getElementById('dmJobRef').textContent = 'Job #'+j.id.slice(-6).toUpperCase()+' · '+j.pickup+' → '+j.delivery;
-  document.getElementById('dmNotes').value = '';
-  document.getElementById('photoPreview').classList.remove('show');
-  document.getElementById('photoPlaceholder').style.display = 'block';
-  document.getElementById('photoArea').classList.remove('has-photo');
-  document.getElementById('photoInput').value = '';
-  document.getElementById('dmForm').style.display = 'block';
-  document.getElementById('dmDone').classList.remove('show');
-  clearSig();
-  document.getElementById('deliveryModal').classList.add('open');
-  setTimeout(initSigCanvas, 100);
-}
-
-function closeDeliveryModal(){
-  document.getElementById('deliveryModal').classList.remove('open');
-  window._deliveryJobId = null;
-}
-
-function handlePhoto(input){
-  if(!input.files||!input.files[0]) return;
-  const file = input.files[0];
-  const reader = new FileReader();
-  reader.onload = e => {
-    const preview = document.getElementById('photoPreview');
-    preview.src = e.target.result;
-    preview.classList.add('show');
-    document.getElementById('photoPlaceholder').style.display = 'none';
-    document.getElementById('photoArea').classList.add('has-photo');
-  };
-  reader.readAsDataURL(file);
 }
 
 // Signature canvas
@@ -1662,7 +1671,57 @@ function drvDecline(jid){
     j.urgent=true; save();
     renderDP(drivers.find(d=>d.id===currentDriverId));
     showToast('⚠️ No drivers available — admin alerted!');
+  }// ─── START DELIVERY ─────────────────────────────
+async function drvStart(jid){
+  const { error } = await supabaseClient
+    .from("jobs")
+    .update({ status: "transit" })
+    .eq("id", jid);
+
+  if (error) {
+    console.error("Start delivery error:", error);
+    showToast("Could not start delivery.", true);
+    return;
   }
+
+  const driver = drivers.find(d => d.id === currentDriverId);
+
+  if (driver) {
+    await renderDP(driver);
+    if (typeof renderAvailableJobs === "function") {
+      await renderAvailableJobs(driver);
+    }
+  }
+
+  showToast("🚗 Delivery started");
+}
+
+
+// ─── COMPLETE DELIVERY ─────────────────────────────
+async function drvDone(jid){
+  const { error } = await supabaseClient
+    .from("jobs")
+    .update({ status: "delivered" })
+    .eq("id", jid);
+
+  if (error) {
+    console.error("Complete delivery error:", error);
+    showToast("Could not complete delivery.", true);
+    return;
+  }
+
+  const driver = drivers.find(d => d.id === currentDriverId);
+
+  if (driver) {
+    await renderDP(driver);
+    if (typeof renderAvailableJobs === "function") {
+      await renderAvailableJobs(driver);
+    }
+  }
+
+  showToast("✅ Delivery complete");
+}
+
 }
 
 function toggleAvail(){
