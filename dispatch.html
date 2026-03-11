@@ -1760,20 +1760,55 @@ async function loadDriversFromSupabase() {
   const select = document.getElementById("driverSel");
   if (!select) return;
 
-  const { data, error } = await supabaseClient.rpc("get_driver_list");
-
-  if (error) {
-    console.error("Driver load error:", error);
-    return;
-  }
+  const currentValue = select.value;
 
   select.innerHTML = '<option value="">Select driver...</option>';
 
-  data.forEach((driver) => {
-    const option = document.createElement("option");
-    option.value = driver.id;
-    option.textContent = driver.full_name + " (" + driver.city + ")";
-    select.appendChild(option);
+  const seen = new Set();
+
+  /* ADD ORIGINAL DRIVERS FIRST */
+  if (Array.isArray(drivers)) {
+
+    drivers.forEach((d) => {
+
+      if (!d || !d.id || seen.has(d.id)) return;
+
+      seen.add(d.id);
+
+      const option = document.createElement("option");
+      option.value = d.id;
+      option.textContent = d.name + " (" + d.city + ")";
+      select.appendChild(option);
+
+    });
+
+  }
+
+  /* ADD SUPABASE DRIVERS */
+  const { data, error } = await supabaseClient.rpc("get_driver_list");
+
+  if (!error && data) {
+
+    data.forEach((driver) => {
+
+      if (!driver || !driver.id || seen.has(driver.id)) return;
+
+      seen.add(driver.id);
+
+      const option = document.createElement("option");
+      option.value = driver.id;
+      option.textContent = driver.full_name + " (" + driver.city + ")";
+      select.appendChild(option);
+
+    });
+
+  }
+
+  if (currentValue) {
+    select.value = currentValue;
+  }
+
+};
   });
 }
 
