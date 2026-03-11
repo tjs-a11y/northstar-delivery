@@ -1747,7 +1747,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   }, 10000);
 });
 </script>
- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 const SUPABASE_URL = "https://imljjaurxiawfxjckkqf.supabase.co";
@@ -1755,121 +1755,140 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-async function loadDriversFromSupabase() {
+async function loadDriversFromSupabase(){
 
-  const select = document.getElementById("driverSel");
-  if (!select) return;
+const select = document.getElementById("driverSel");
+if(!select) return;
 
-  const currentValue = select.value;
+const currentValue = select.value;
 
-  select.innerHTML = '<option value="">Select driver...</option>';
+select.innerHTML = '<option value="">Select driver...</option>';
 
-  const seen = new Set();
+const seen = new Set();
 
-  /* ADD ORIGINAL DRIVERS FIRST */
-  if (Array.isArray(drivers)) {
+if(Array.isArray(drivers)){
+drivers.forEach((d)=>{
 
-    drivers.forEach((d) => {
+if(!d || !d.id || seen.has(d.id)) return;
 
-      if (!d || !d.id || seen.has(d.id)) return;
+seen.add(d.id);
 
-      seen.add(d.id);
-
-      const option = document.createElement("option");
-      option.value = d.id;
-      option.textContent = d.name + " (" + d.city + ")";
-      select.appendChild(option);
-
-    });
-
-  }
-
-  /* ADD SUPABASE DRIVERS */
-  const { data, error } = await supabaseClient.rpc("get_driver_list");
-
-  if (!error && data) {
-
-    data.forEach((driver) => {
-
-      if (!driver || !driver.id || seen.has(driver.id)) return;
-
-      seen.add(driver.id);
-
-      const option = document.createElement("option");
-      option.value = driver.id;
-      option.textContent = driver.full_name + " (" + driver.city + ")";
-      select.appendChild(option);
-
-    });
-
-  }
-
-  if (currentValue) {
-    select.value = currentValue;
-  }
-
-};
-  });
-}
-
-populateDriverSel = function () {
-  loadDriversFromSupabase();
-};
-
-checkPin = async function () {
-
-  const driverId = document.getElementById("driverSel").value;
-
-  if (!driverId) {
-    showToast("Select your name first", true);
-    pinBuf = "";
-    updPin();
-    return;
-  }
-
-  if (pinBuf.length !== 4) return;
-
-  const { data, error } = await supabaseClient.rpc("driver_pin_login", {
-    p_driver_id: driverId,
-    p_pin: pinBuf
-  });
-
-  if (error || !data || data.length === 0) {
-
-    document.getElementById("loginErr").style.display = "block";
-
-    pinBuf = "";
-    updPin();
-    return;
-  }
-
-  const driver = data[0];
-
-  currentDriverId = driver.id;
-  currentRole = "driver";
-
-  document.getElementById("loginScreen").style.display = "none";
-  document.getElementById("driverPortal").style.display = "block";
-
-  initDriverPortal({
-    id: driver.id,
-    name: driver.full_name,
-    city: driver.city,
-    vehicle: driver.vehicle_type || "",
-    status: driver.status || "available",
-    pin: pinBuf
-  });
-
-  pinBuf = "";
-  updPin();
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  loadDriversFromSupabase();
+const option=document.createElement("option");
+option.value=d.id;
+option.textContent=d.name+" ("+d.city+")";
+select.appendChild(option);
 
 });
+}
+
+try{
+
+const {data,error}=await supabaseClient.rpc("get_driver_list");
+
+if(!error && data){
+
+data.forEach((driver)=>{
+
+if(!driver || !driver.id || seen.has(driver.id)) return;
+
+seen.add(driver.id);
+
+const option=document.createElement("option");
+option.value=driver.id;
+option.textContent=driver.full_name+" ("+driver.city+")";
+select.appendChild(option);
+
+});
+
+}
+
+}catch(err){
+console.error("Supabase driver load error",err);
+}
+
+if(currentValue){
+select.value=currentValue;
+}
+
+}
+
+populateDriverSel=function(){
+loadDriversFromSupabase();
+};
+
+checkPin=async function(){
+
+const driverId=document.getElementById("driverSel").value;
+
+if(!driverId){
+showToast("Select your name first",true);
+pinBuf="";
+updPin();
+return;
+}
+
+if(pinBuf.length!==4) return;
+
+const {data,error}=await supabaseClient.rpc("driver_pin_login",{
+p_driver_id:driverId,
+p_pin:pinBuf
+});
+
+if(error || !data || data.length===0){
+
+document.getElementById("loginErr").style.display="block";
+
+pinBuf="";
+updPin();
+return;
+
+}
+
+const driver=data[0];
+
+currentDriverId=driver.id;
+currentRole="driver";
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("driverPortal").style.display="block";
+
+const localDriver=drivers.find(x=>x.id===driver.id);
+
+if(localDriver){
+
+localDriver.name=driver.full_name;
+localDriver.city=driver.city;
+localDriver.vehicle=driver.vehicle_type || localDriver.vehicle;
+localDriver.status=driver.status || localDriver.status;
+
+initDriverPortal(localDriver);
+
+}else{
+
+const tempDriver={
+id:driver.id,
+name:driver.full_name,
+phone:"",
+vehicle:driver.vehicle_type || "",
+city:driver.city,
+status:driver.status || "available",
+pin:pinBuf
+};
+
+drivers.push(tempDriver);
+initDriverPortal(tempDriver);
+
+}
+
+pinBuf="";
+updPin();
+
+};
+
+document.addEventListener("DOMContentLoaded",()=>{
+loadDriversFromSupabase();
+});
 </script>
-</script>
+
 </body>
 </html>
