@@ -192,7 +192,7 @@ async function submitApp(){
       availability:selectedAvail.join(', ')||'Flexible',
       notes:[vehicleYear+' '+vehicleModel,notes].filter(Boolean).join(' — '),
       status:'pending',
-      license_url:'',insurance_url:'',resume_url:'',pin:'0000'
+      license_url:'',insurance_url:'',resume_url:'',pin:String(Math.floor(1000+Math.random()*9000))
     })
     if(error)throw error
     document.getElementById('formCard').style.display='none'
