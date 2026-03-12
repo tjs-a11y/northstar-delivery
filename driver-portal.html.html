@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthStar — Payment System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Figtree:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --navy2: #0f2040;
+  --navy3: #162d54;
+  --bg: #f4f6fb;
+  --white: #ffffff;
+  --surface: #fafbfd;
+  --border: #e2e8f4;
+  --border2: #c8d4e8;
+  --ink: #0a1628;
+  --ink2: #2d4270;
+  --ink3: #6b80a8;
+  --ink4: #a8b8d4;
+  --gold: #c8860a;
+  --gold2: #e8a020;
+  --gold-bg: #fffbf0;
+  --gold-border: rgba(200,134,10,0.2);
+  --green: #0a7c4a;
+  --green2: #12a060;
+  --green-bg: #f0fdf7;
+  --green-border: rgba(10,124,74,0.2);
+  --red: #c0112a;
+  --red-bg: #fff5f6;
+  --red-border: rgba(192,17,42,0.2);
+  --blue: #1a52c8;
+  --blue-bg: #f0f4ff;
+  --shadow-sm: 0 1px 3px rgba(10,22,40,0.06), 0 2px 8px rgba(10,22,40,0.04);
+  --shadow: 0 2px 12px rgba(10,22,40,0.08), 0 1px 3px rgba(10,22,40,0.06);
+  --shadow-lg: 0 8px 32px rgba(10,22,40,0.12), 0 2px 8px rgba(10,22,40,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Figtree', sans-serif;
+  min-height: 100vh;
+}
+
+/* ═══ LAYOUT ═══ */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* ═══ SIDEBAR ═══ */
+.sidebar {
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  padding: 1.75rem 1.5rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.25rem;
+}
+
+.brand-star {
+  width: 28px; height: 28px;
+  background: var(--gold2);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  filter: drop-shadow(0 0 8px rgba(232,160,32,0.5));
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-left: 38px;
+}
+
+.sidebar-section {
+  padding: 1.25rem 1rem 0.5rem;
+}
+
+.sidebar-section-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  padding: 0 0.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+
+.nav-item.active {
+  background: rgba(232,160,32,0.12);
+  color: var(--gold2);
+  border: 1px solid rgba(232,160,32,0.15);
+}
+
+.nav-icon { font-size: 0.9rem; width: 18px; text-align: center; flex-shrink:0; }
+
+.nav-badge {
+  margin-left: auto;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.nb-gold { background: rgba(232,160,32,0.2); color: var(--gold2); }
+.nb-green { background: rgba(18,160,96,0.2); color: #34d399; }
+.nb-red { background: rgba(192,17,42,0.2); color: #f87171; }
+
+.sidebar-balance {
+  margin-top: auto;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.balance-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.bc-label {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+
+.bc-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gold2);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.bc-sub {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.payout-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  border: none;
+  color: var(--navy);
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.625rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  transition: all 0.2s;
+}
+
+.payout-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* ═══ MAIN ═══ */
+.main {
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ═══ PAGE HEADER ═══ */
+.page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.page-sub {
+  font-size: 0.82rem;
+  color: var(--ink3);
+}
+
+.header-actions { display: flex; gap: 0.625rem; }
+
+.btn {
+  border: none;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline {
+  background: var(--white);
+  border: 1.5px solid var(--border2);
+  color: var(--ink2);
+}
+
+.btn-outline:hover { border-color: var(--navy3); color: var(--navy); }
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--navy2); box-shadow: var(--shadow); }
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.btn-gold:hover { filter: brightness(1.05); box-shadow: 0 4px 16px rgba(200,134,10,0.3); }
+
+.btn-green {
+  background: var(--green2);
+  color: #fff;
+}
+
+.btn-green:hover { background: var(--green); }
+
+/* ═══ STAT CARDS ═══ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover { box-shadow: var(--shadow); }
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.sc-navy::after { background: var(--navy); }
+.sc-gold::after { background: var(--gold2); }
+.sc-green::after { background: var(--green2); }
+.sc-blue::after { background: var(--blue); }
+
+.sc-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink3);
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}
+
+.sc-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+}
+
+.sv-navy { color: var(--navy); }
+.sv-gold { color: var(--gold); }
+.sv-green { color: var(--green2); }
+.sv-blue { color: var(--blue); }
+
+.sc-sub { font-size: 0.72rem; color: var(--ink4); }
+.sc-change { font-size: 0.72rem; color: var(--green2); font-weight: 600; margin-top: 0.25rem; }
+
+/* ═══ SECTION TITLE ═══ */
+.section-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink3);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ═══ CHECKOUT CARD ═══ */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.checkout-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.checkout-header {
+  background: var(--navy);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout-header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+
+.checkout-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.checkout-sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+.checkout-body { padding: 1.75rem; }
+
+/* STRIPE CARD FIELD */
+.stripe-field {
+  margin-bottom: 1.25rem;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink2);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.stripe-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.875rem;
+  color: var(--ink);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.stripe-input:focus {
+  border-color: var(--navy3);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(10,22,40,0.06);
+}
+
+.stripe-input::placeholder { color: var(--ink4); }
+
+.stripe-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+/* CARD NUMBER STYLED */
+.card-number-wrap {
+  position: relative;
+}
+
+.card-icons {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.card-icon {
+  width: 32px; height: 20px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ci-visa { background: #1a1f71; color: #fff; }
+.ci-mc { background: #eb001b; color: #fff; }
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  padding: 0.625rem 0.875rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.72rem;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.powered-by {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--ink4);
+  margin-top: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.stripe-logo {
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* ORDER SUMMARY */
+.order-summary {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: sticky;
+  top: 1rem;
+}
+
+.os-header {
+  background: var(--gold-bg);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 1rem 1.25rem;
+}
+
+.os-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.os-body { padding: 1.25rem; }
+
+.os-plan {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.os-plan::before {
+  content: '';
+  position: absolute;
+  top: -30px; left: -30px;
+  width: 80px; height: 80px;
+  background: rgba(232,160,32,0.1);
+  border-radius: 50%;
+}
+
+.os-plan-name {
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+
+.os-plan-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold2);
+  line-height: 1;
+}
+
+.os-plan-price span {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Figtree', sans-serif;
+}
+
+.os-plan-desc {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.375rem;
+}
+
+.os-rows { margin-bottom: 1rem; }
+
+.os-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+
+.os-row:last-child { border-bottom: none; }
+.os-row-label { color: var(--ink3); }
+.os-row-val { font-family: 'IBM Plex Mono', monospace; font-weight: 500; color: var(--ink2); }
+.os-row-val.green { color: var(--green2); }
+
+.os-total {
+  background: var(--bg);
+  border: 1.5px solid var(--border2);
+  border-radius: 6px;
+  padding: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.os-total-label { font-weight: 700; font-size: 0.875rem; color: var(--ink); }
+
+.os-total-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.os-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.os-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--ink3);
+}
+
+.ob-check {
+  width: 16px; height: 16px;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--green2);
+  flex-shrink: 0;
+}
+
+/* ═══ TABLES ═══ */
+.data-table {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.dt-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+}
+
+.dt-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink2);
+  text-transform: uppercase;
+}
+
+.dt-head {
+  display: grid;
+  padding: 0.625rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  gap: 0.5rem;
+}
+
+.dth {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink4);
+  text-transform: uppercase;
+}
+
+.dt-row {
+  display: grid;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+
+.dt-row:last-child { border-bottom: none; }
+.dt-row:hover { background: var(--surface); }
+
+.dtc { font-size: 0.8rem; color: var(--ink2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dtc.bold { font-weight: 600; color: var(--ink); }
+.dtc.mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--ink3); }
+.dtc.green { color: var(--green2); font-weight: 700; font-family: 'IBM Plex Mono', monospace; }
+.dtc.gold { color: var(--gold); font-weight: 600; }
+.dtc.navy { color: var(--navy); font-weight: 600; }
+
+/* STATUS CHIPS */
+.chip {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.chip-paid { background: var(--green-bg); color: var(--green2); border: 1px solid var(--green-border); }
+.chip-pending { background: var(--gold-bg); color: var(--gold); border: 1px solid var(--gold-border); }
+.chip-processing { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(26,82,200,0.2); }
+.chip-failed { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.chip-refunded { background: #f8f0ff; color: #7c3aed; border: 1px solid rgba(124,58,237,0.2); }
+.chip-sub { background: var(--navy); color: var(--gold2); border: 1px solid rgba(232,160,32,0.3); }
+.chip-trial { background: var(--gold-bg); color: var(--gold); border: 1px solid var(--gold-border); }
+
+/* ACTION BTNS */
+.tbl-btn {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Figtree', sans-serif;
+  transition: all 0.2s;
+}
+
+.tb-pay { background: var(--green-bg); color: var(--green2); border: 1px solid var(--green-border); }
+.tb-pay:hover { background: var(--green2); color: #fff; }
+.tb-view { background: var(--bg); color: var(--ink2); border: 1px solid var(--border2); }
+.tb-view:hover { border-color: var(--navy3); color: var(--navy); }
+.tb-cancel { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tb-cancel:hover { background: var(--red); color: #fff; }
+
+/* ═══ PAYOUT FLOW ═══ */
+.payout-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.payout-queue {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.pq-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pq-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ink2);
+  text-transform: uppercase;
+}
+
+.driver-payout-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+  transition: background 0.15s;
+}
+
+.driver-payout-row:last-child { border-bottom: none; }
+.driver-payout-row:hover { background: var(--surface); }
+
+.dr-avatar {
+  width: 38px; height: 38px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--gold2);
+  flex-shrink: 0;
+}
+
+.dr-info { flex: 1; }
+.dr-name { font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.dr-meta { font-size: 0.68rem; color: var(--ink3); }
+
+.dr-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--green2);
+  margin-right: 0.75rem;
+}
+
+.payout-summary-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: sticky;
+  top: 1rem;
+}
+
+.ps-header {
+  background: var(--navy);
+  padding: 1.25rem;
+}
+
+.ps-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.875rem;
+}
+
+.ps-total-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gold2);
+  line-height: 1;
+}
+
+.ps-total-label { font-size: 0.68rem; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
+
+.ps-body { padding: 1.25rem; }
+
+.ps-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+
+.ps-row:last-child { border-bottom: none; }
+.ps-label { color: var(--ink3); }
+.ps-val { font-family: 'IBM Plex Mono', monospace; font-weight: 500; color: var(--ink2); }
+
+.run-payout-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--green), var(--green2));
+  border: none;
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.875rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.run-payout-btn:hover { filter: brightness(1.08); box-shadow: 0 4px 16px rgba(18,160,96,0.3); }
+
+/* ═══ CHART ═══ */
+.chart-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.chart-title { font-size: 0.82rem; font-weight: 700; color: var(--ink2); }
+
+.chart-legend {
+  display: flex;
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.68rem;
+  color: var(--ink3);
+}
+
+.legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+
+.mini-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 120px;
+}
+
+.mbc-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.mbc-bars { display: flex; gap: 3px; align-items: flex-end; width: 100%; }
+
+.mbc-bar {
+  flex: 1;
+  min-height: 4px;
+  border-radius: 2px 2px 0 0;
+}
+
+.mbc-label { font-size: 0.58rem; color: var(--ink4); text-transform: uppercase; }
+
+/* ═══ CONFIRMATION MODAL ═══ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes modalIn {
+  from { opacity:0; transform:scale(0.92) translateY(20px); }
+  to { opacity:1; transform:scale(1) translateY(0); }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.mi-green { background: var(--green-bg); border: 1px solid var(--green-border); }
+.mi-gold { background: var(--gold-bg); border: 1px solid var(--gold-border); }
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.375rem;
+}
+
+.modal-desc { font-size: 0.8rem; color: var(--ink3); line-height: 1.5; }
+
+.modal-body { padding: 1.25rem 1.5rem; }
+
+.modal-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.modal-detail-row:last-child { border-bottom: none; }
+.mdr-label { color: var(--ink3); }
+.mdr-val { font-family: 'IBM Plex Mono', monospace; font-weight: 500; color: var(--ink); }
+.mdr-val.green { color: var(--green2); }
+
+.modal-actions {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.modal-btn-cancel {
+  background: var(--bg);
+  border: 1.5px solid var(--border2);
+  color: var(--ink3);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.modal-btn-cancel:hover { border-color: var(--red); color: var(--red); }
+
+.modal-btn-confirm {
+  flex: 1;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.modal-btn-confirm.green { background: var(--green2); }
+.modal-btn-confirm.gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); }
+.modal-btn-confirm:hover { filter: brightness(1.08); }
+
+/* ═══ PROCESSING ═══ */
+.processing-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 400;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.processing-overlay.open { display: flex; }
+
+.processing-spinner {
+  width: 56px; height: 56px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: var(--gold2);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.processing-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.processing-sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: -1rem;
+}
+
+/* SUCCESS */
+.success-card {
+  display: none;
+  background: var(--green-bg);
+  border: 1.5px solid var(--green-border);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeUp 0.4s ease-out;
+}
+
+.success-card.show { display: block; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.success-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.875rem;
+}
+
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 0.375rem;
+}
+
+.success-desc { font-size: 0.82rem; color: var(--green); opacity: 0.8; }
+
+/* ═══ TOAST ═══ */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 500;
+  display: none;
+  animation: toastIn 0.3s ease-out;
+  max-width: 320px;
+}
+
+@keyframes toastIn {
+  from { opacity:0; transform:translateY(12px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.toast-title { font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom:3px; }
+.toast-body { font-size: 0.72rem; color: var(--ink3); }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+<!-- ═══════════ SIDEBAR ═══════════ -->
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-row">
+      <div class="brand-star"></div>
+      <div class="brand-name">NorthStar</div>
+    </div>
+    <div class="brand-sub">Payment System</div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Overview</div>
+    <div class="nav-item active" onclick="showPanel('overview',this)"><span class="nav-icon">📊</span> Financial Overview</div>
+    <div class="nav-item" onclick="showPanel('transactions',this)"><span class="nav-icon">📋</span> All Transactions <span class="nav-badge nb-gold" id="txCount">0</span></div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Businesses</div>
+    <div class="nav-item" onclick="showPanel('checkout',this)"><span class="nav-icon">💳</span> Subscription Checkout</div>
+    <div class="nav-item" onclick="showPanel('subscriptions',this)"><span class="nav-icon">⭐</span> Subscriptions <span class="nav-badge nb-gold" id="subCount">0</span></div>
+    <div class="nav-item" onclick="showPanel('invoices',this)"><span class="nav-icon">🧾</span> Job Invoices</div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Drivers</div>
+    <div class="nav-item" onclick="showPanel('payouts',this)"><span class="nav-icon">💸</span> Driver Payouts <span class="nav-badge nb-green" id="payoutCount">0</span></div>
+    <div class="nav-item" onclick="showPanel('payout-history',this)"><span class="nav-icon">📜</span> Payout History</div>
+  </div>
+
+  <div class="sidebar-balance">
+    <div class="balance-card">
+      <div class="bc-label">Stripe Balance</div>
+      <div class="bc-amount" id="stripeBalance">$0.00</div>
+      <div class="bc-sub">Available for payout</div>
+    </div>
+    <button class="payout-btn" onclick="openPayoutModal()">Transfer to Bank →</button>
+  </div>
+</div>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<div class="main">
+
+  <!-- OVERVIEW -->
+  <div class="panel active" id="panel-overview">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Financial Overview</div>
+        <div class="page-sub">Real-time revenue, payouts, and platform performance</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-outline" onclick="showToast('Export Ready','Financial report downloaded.')">↓ Export</button>
+        <button class="btn btn-gold" onclick="showPanel('payouts',document.querySelectorAll('.nav-item')[5])">Run Payouts →</button>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card sc-gold">
+        <div class="sc-label">Total Revenue</div>
+        <div class="sc-val sv-gold" id="ovRevTotal">$0</div>
+        <div class="sc-sub">All time platform margin</div>
+        <div class="sc-change" id="ovRevChange">↑ Growing</div>
+      </div>
+      <div class="stat-card sc-green">
+        <div class="sc-label">This Month</div>
+        <div class="sc-val sv-green" id="ovMonth">$0</div>
+        <div class="sc-sub">Jobs + subscriptions</div>
+      </div>
+      <div class="stat-card sc-navy">
+        <div class="sc-label">Driver Payouts</div>
+        <div class="sc-val sv-navy" id="ovPayouts">$0</div>
+        <div class="sc-sub">Paid this month</div>
+      </div>
+      <div class="stat-card sc-blue">
+        <div class="sc-label">MRR</div>
+        <div class="sc-val" style="color:var(--blue)" id="ovMRR">$0</div>
+        <div class="sc-sub">Monthly recurring revenue</div>
+      </div>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div class="chart-title">Revenue — Last 7 Days</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--navy)"></div>Job Margin</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--gold2)"></div>Subscriptions</div>
+        </div>
+      </div>
+      <div class="mini-bar-chart" id="revenueChart"></div>
+    </div>
+
+    <!-- SUMMARY GRID -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.75rem;">
+      <div>
+        <div class="section-title">Revenue Breakdown</div>
+        <div class="data-table">
+          <div id="revenueBreakdown"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">Pending Actions</div>
+        <div class="data-table">
+          <div id="pendingActions"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECENT TX -->
+    <div class="section-title">Recent Transactions</div>
+    <div class="data-table">
+      <div class="dt-head" style="grid-template-columns:110px 1fr 90px 90px 80px 80px;">
+        <div class="dth">TX ID</div><div class="dth">Description</div><div class="dth">Amount</div>
+        <div class="dth">Type</div><div class="dth">Date</div><div class="dth">Status</div>
+      </div>
+      <div id="recentTx"></div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT -->
+  <div class="panel" id="panel-checkout">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Subscription Checkout</div>
+        <div class="page-sub">Secure payment powered by Stripe</div>
+      </div>
+    </div>
+
+    <div id="checkoutForm">
+      <div class="checkout-layout">
+        <div class="checkout-card">
+          <div class="checkout-header">
+            <div class="checkout-title">Complete Your Subscription</div>
+            <div class="checkout-sub">NorthStar Business Pro · $88.88/month · Cancel anytime</div>
+          </div>
+          <div class="checkout-body">
+            <div class="stripe-field">
+              <label class="field-label">Business Name</label>
+              <input class="stripe-input" type="text" id="coBizName" placeholder="Your business name" value="Kirkwood Pharmacy">
+            </div>
+            <div class="stripe-field">
+              <label class="field-label">Email Address</label>
+              <input class="stripe-input" type="email" id="coEmail" placeholder="billing@business.com" value="billing@kirkwoodpharmacy.com">
+            </div>
+            <div class="stripe-field">
+              <label class="field-label">Cardholder Name</label>
+              <input class="stripe-input" type="text" id="coName" placeholder="Name on card" value="David Kim">
+            </div>
+            <div class="stripe-field">
+              <label class="field-label">Card Number</label>
+              <div class="card-number-wrap">
+                <input class="stripe-input" type="text" id="coCard" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)" value="4242 4242 4242 4242">
+                <div class="card-icons">
+                  <div class="card-icon ci-visa">VISA</div>
+                  <div class="card-icon ci-mc">MC</div>
+                </div>
+              </div>
+            </div>
+            <div class="stripe-row stripe-field">
+              <div>
+                <label class="field-label">Expiry Date</label>
+                <input class="stripe-input" type="text" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)" value="12 / 28">
+              </div>
+              <div>
+                <label class="field-label">CVC</label>
+                <input class="stripe-input" type="text" placeholder="•••" maxlength="3" value="123">
+              </div>
+            </div>
+            <div class="secure-badge">
+              🔒 Your payment is secured with 256-bit SSL encryption. We never store your full card number.
+            </div>
+            <button class="btn btn-primary" style="width:100%;padding:0.875rem;font-size:0.85rem;font-weight:700;letter-spacing:1px;border-radius:6px;" onclick="processCheckout()">
+              SUBSCRIBE — $88.88/MONTH
+            </button>
+            <div class="powered-by">Secured by <div class="stripe-logo">stripe</div> · Cancel anytime · No hidden fees</div>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div class="os-header">
+            <div class="os-title">Order Summary</div>
+          </div>
+          <div class="os-body">
+            <div class="os-plan">
+              <div class="os-plan-name">NorthStar Business Pro</div>
+              <div class="os-plan-price">$88<span>.88/mo</span></div>
+              <div class="os-plan-desc">Billed monthly · Cancel anytime</div>
+            </div>
+            <div class="os-rows">
+              <div class="os-row"><div class="os-row-label">Monthly subscription</div><div class="os-row-val">$88.88</div></div>
+              <div class="os-row"><div class="os-row-label">Setup fee</div><div class="os-row-val green">$0.00</div></div>
+              <div class="os-row"><div class="os-row-label">Trial credit applied</div><div class="os-row-val green">$0.00</div></div>
+            </div>
+            <div class="os-total">
+              <div class="os-total-label">Due Today</div>
+              <div class="os-total-val">$88.88</div>
+            </div>
+            <div class="os-benefits">
+              <div class="os-benefit"><div class="ob-check">✓</div>10% discount on every job</div>
+              <div class="os-benefit"><div class="ob-check">✓</div>Priority driver assignment</div>
+              <div class="os-benefit"><div class="ob-check">✓</div>Unlimited job posting</div>
+              <div class="os-benefit"><div class="ob-check">✓</div>Full delivery history & invoices</div>
+              <div class="os-benefit"><div class="ob-check">✓</div>Dedicated account support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-card" id="checkoutSuccess">
+      <div class="success-icon">✅</div>
+      <div class="success-title">Subscription Activated!</div>
+      <div class="success-desc">Your NorthStar Business Pro subscription is now active.<br>Your 10% discount has been applied to all future jobs.</div>
+      <div style="margin-top:1.5rem;display:flex;justify-content:center;gap:0.75rem;">
+        <button class="btn btn-outline" style="border-radius:6px;" onclick="showPanel('subscriptions',document.querySelectorAll('.nav-item')[4])">View Subscription →</button>
+        <button class="btn btn-primary" style="border-radius:6px;" onclick="resetCheckout()">New Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBSCRIPTIONS -->
+  <div class="panel" id="panel-subscriptions">
+    <div class="page-header">
+      <div><div class="page-title">Subscriptions</div><div class="page-sub">Active business subscriptions — $88.88/month each</div></div>
+      <div class="header-actions"><button class="btn btn-outline" onclick="showToast('Export Ready','Subscription data exported.')">↓ Export</button></div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card sc-gold"><div class="sc-label">Active Subscribers</div><div class="sc-val sv-gold" id="subActiveCount">0</div><div class="sc-sub">Paying businesses</div></div>
+      <div class="stat-card sc-green"><div class="sc-label">MRR</div><div class="sc-val sv-green" id="subMRR">$0</div><div class="sc-sub">Monthly recurring</div></div>
+      <div class="stat-card sc-navy"><div class="sc-label">In Trial</div><div class="sc-val sv-navy" id="subTrialCount">0</div><div class="sc-sub">Free trial accounts</div></div>
+      <div class="stat-card sc-blue"><div class="sc-label">Churn Risk</div><div class="sc-val" style="color:var(--red)" id="subChurn">0</div><div class="sc-sub">Trial expiring soon</div></div>
+    </div>
+    <div class="data-table">
+      <div class="dt-header"><div class="dt-title">All Subscriptions</div></div>
+      <div class="dt-head" style="grid-template-columns:1fr 120px 80px 90px 90px 80px 90px;">
+        <div class="dth">Business</div><div class="dth">Plan</div><div class="dth">Jobs</div>
+        <div class="dth">Monthly</div><div class="dth">Next Bill</div><div class="dth">Status</div><div class="dth">Action</div>
+      </div>
+      <div id="subsBody"></div>
+    </div>
+  </div>
+
+  <!-- INVOICES -->
+  <div class="panel" id="panel-invoices">
+    <div class="page-header">
+      <div><div class="page-title">Job Invoices</div><div class="page-sub">Per-delivery charges billed to business accounts</div></div>
+    </div>
+    <div class="data-table">
+      <div class="dt-header"><div class="dt-title">Invoice Ledger</div><span class="dt-title" style="color:var(--ink3);font-size:0.72rem;font-weight:400;" id="invTotal">—</span></div>
+      <div class="dt-head" style="grid-template-columns:110px 1fr 120px 80px 80px 70px 80px;">
+        <div class="dth">Invoice #</div><div class="dth">Business</div><div class="dth">Route</div>
+        <div class="dth">Job Type</div><div class="dth">Amount</div><div class="dth">Date</div><div class="dth">Status</div>
+      </div>
+      <div id="invoicesBody"></div>
+    </div>
+  </div>
+
+  <!-- PAYOUTS -->
+  <div class="panel" id="panel-payouts">
+    <div class="page-header">
+      <div><div class="page-title">Driver Payouts</div><div class="page-sub">Weekly driver payments via Stripe Connect / Upwork</div></div>
+      <div class="header-actions">
+        <button class="btn btn-outline" onclick="showToast('Export Ready','Payout data exported.')">↓ Export</button>
+        <button class="btn btn-green" onclick="runAllPayouts()">Run All Payouts →</button>
+      </div>
+    </div>
+    <div class="payout-layout">
+      <div>
+        <div class="section-title">Payout Queue</div>
+        <div class="payout-queue">
+          <div class="pq-header">
+            <div class="pq-title">Pending Driver Payments</div>
+            <div style="font-size:0.72rem;color:var(--green2);font-weight:600;" id="totalPendingLabel">$0 total pending</div>
+          </div>
+          <div id="payoutQueue"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">Summary</div>
+        <div class="payout-summary-card">
+          <div class="ps-header">
+            <div class="ps-title">This Week's Payouts</div>
+            <div class="ps-total-val" id="payoutTotalVal">$0.00</div>
+            <div class="ps-total-label">Total pending</div>
+          </div>
+          <div class="ps-body">
+            <div class="ps-row"><div class="ps-label">Drivers in queue</div><div class="ps-val" id="psDriverCount">0</div></div>
+            <div class="ps-row"><div class="ps-label">Avg per driver</div><div class="ps-val" id="psAvg">$0</div></div>
+            <div class="ps-row"><div class="ps-label">Jobs completed</div><div class="ps-val" id="psJobs">0</div></div>
+            <div class="ps-row"><div class="ps-label">Payout method</div><div class="ps-val">Upwork / ACH</div></div>
+            <div class="ps-row"><div class="ps-label">Processing time</div><div class="ps-val">1–2 business days</div></div>
+          </div>
+          <div style="padding:0 1.25rem 1.25rem;">
+            <button class="run-payout-btn" onclick="runAllPayouts()">✓ Run All Payouts</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYOUT HISTORY -->
+  <div class="panel" id="panel-payout-history">
+    <div class="page-header">
+      <div><div class="page-title">Payout History</div><div class="page-sub">Complete record of all driver payments processed</div></div>
+    </div>
+    <div class="data-table">
+      <div class="dt-header"><div class="dt-title">Payment History</div></div>
+      <div class="dt-head" style="grid-template-columns:110px 1fr 80px 90px 80px 80px;">
+        <div class="dth">Payout ID</div><div class="dth">Driver</div><div class="dth">Jobs</div>
+        <div class="dth">Amount</div><div class="dth">Date</div><div class="dth">Status</div>
+      </div>
+      <div id="payoutHistoryBody"></div>
+    </div>
+  </div>
+
+  <!-- TRANSACTIONS -->
+  <div class="panel" id="panel-transactions">
+    <div class="page-header">
+      <div><div class="page-title">All Transactions</div><div class="page-sub">Complete financial ledger</div></div>
+      <div class="header-actions"><button class="btn btn-outline" onclick="showToast('Export Ready','Transaction ledger exported.')">↓ CSV Export</button></div>
+    </div>
+    <div class="data-table">
+      <div class="dt-header"><div class="dt-title">Transaction Ledger</div><span style="font-size:0.72rem;color:var(--ink3);" id="txTotal">—</span></div>
+      <div class="dt-head" style="grid-template-columns:120px 1fr 90px 100px 80px 80px;">
+        <div class="dth">TX ID</div><div class="dth">Description</div><div class="dth">Amount</div>
+        <div class="dth">Type</div><div class="dth">Date</div><div class="dth">Status</div>
+      </div>
+      <div id="allTxBody"></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- BANK TRANSFER MODAL -->
+<div class="modal-overlay" id="bankModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-icon mi-gold">🏦</div>
+      <div class="modal-title">Transfer to Bank Account</div>
+      <div class="modal-desc">Funds will be transferred to your connected bank account within 1–2 business days.</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-detail-row"><div class="mdr-label">Available Balance</div><div class="mdr-val green" id="modalBalance">$0.00</div></div>
+      <div class="modal-detail-row"><div class="mdr-label">Destination</div><div class="mdr-val">Chase Business ····4821</div></div>
+      <div class="modal-detail-row"><div class="mdr-label">Processing Time</div><div class="mdr-val">1–2 business days</div></div>
+      <div class="modal-detail-row"><div class="mdr-label">Transfer Fee</div><div class="mdr-val green">$0.00</div></div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn-cancel" onclick="closeModal('bankModal')">Cancel</button>
+      <button class="modal-btn-confirm gold" onclick="processBankTransfer()">Confirm Transfer →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAYOUT CONFIRM MODAL -->
+<div class="modal-overlay" id="payoutModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-icon mi-green">💸</div>
+      <div class="modal-title" id="payoutModalTitle">Confirm Payout</div>
+      <div class="modal-desc" id="payoutModalDesc">This will process the driver's pending payment immediately.</div>
+    </div>
+    <div class="modal-body" id="payoutModalBody"></div>
+    <div class="modal-actions">
+      <button class="modal-btn-cancel" onclick="closeModal('payoutModal')">Cancel</button>
+      <button class="modal-btn-confirm green" onclick="confirmPayout()">Send Payment →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESSING -->
+<div class="processing-overlay" id="processingOverlay">
+  <div class="processing-spinner"></div>
+  <div class="processing-text" id="processingText">Processing Payment...</div>
+  <div class="processing-sub" id="processingSub">Connecting to Stripe — please wait</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-title" id="toastTitle"></div>
+  <div class="toast-body" id="toastBody"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════
+const DRIVERS = [
+  {id:'NS-DRV-001',name:'James Davidson',initials:'JD',jobs:47,earned:3840,pending:142.00,city:'St. Louis',vehicle:'Cargo Van'},
+  {id:'NS-DRV-002',name:'Maria Santos',initials:'MS',jobs:124,earned:9200,pending:215.50,city:'Atlanta',vehicle:'Sedan'},
+  {id:'NS-DRV-004',name:'Angela Moore',initials:'AM',jobs:89,earned:6700,pending:98.75,city:'Charlotte',vehicle:'SUV'},
+  {id:'NS-DRV-005',name:'Derek Williams',initials:'DW',jobs:210,earned:15200,pending:340.00,city:'Atlanta',vehicle:'Sedan'},
+  {id:'NS-DRV-006',name:'Rosa Gutierrez',initials:'RG',jobs:31,earned:2400,pending:67.25,city:'Chicago',vehicle:'Cargo Van'},
+  {id:'NS-DRV-007',name:'Tyrone Jackson',initials:'TJ',jobs:18,earned:4800,pending:320.00,city:'St. Louis',vehicle:'Semi'},
+  {id:'NS-DRV-008',name:'Priya Nair',initials:'PN',jobs:55,earned:4100,pending:88.50,city:'Charlotte',vehicle:'Sedan'},
+];
+
+const BUSINESSES = [
+  {name:'Clayton Dental Group',type:'Dental Office',city:'St. Louis',jobs:12,spent:540,plan:'subscriber',nextBill:'Apr 11, 2026',trialDays:0},
+  {name:'Hawkins Parnell LLP',type:'Law Firm',city:'Atlanta',jobs:44,spent:2640,plan:'subscriber',nextBill:'Apr 8, 2026',trialDays:0},
+  {name:'Minuteman Press Chicago',type:'Print Company',city:'Chicago',jobs:31,spent:1240,plan:'subscriber',nextBill:'Apr 5, 2026',trialDays:0},
+  {name:'Baker Tilly Chicago',type:'Accounting',city:'Chicago',jobs:37,spent:1850,plan:'subscriber',nextBill:'Apr 3, 2026',trialDays:0},
+  {name:'Kirkwood Pharmacy',type:'Pharmacy',city:'St. Louis',jobs:28,spent:1420,plan:'trial',nextBill:'—',trialDays:6},
+  {name:'Mid-States Court Reporters',type:'Court Reporter',city:'St. Louis',jobs:19,spent:760,plan:'trial',nextBill:'—',trialDays:11},
+  {name:'Flat Branch Home Loans',type:'Mortgage',city:'St. Louis',jobs:22,spent:990,plan:'trial',nextBill:'—',trialDays:3},
+  {name:'BluePearl Vet Sandy Springs',type:'Vet Clinic',city:'Atlanta',jobs:8,spent:360,plan:'trial',nextBill:'—',trialDays:14},
+];
+
+const TX_TYPES = ['job_charge','job_charge','job_charge','subscription','job_charge','subscription','driver_payout','driver_payout','job_charge','refund'];
+const TX_DESCS = [
+  ['Job charge — NS-4821','Kirkwood Pharmacy','standard',52.40],
+  ['Job charge — NS-4819','Clayton Dental Group','express',78.60],
+  ['Job charge — NS-4815','Hawkins Parnell LLP','route',142.00],
+  ['Monthly subscription','Baker Tilly Chicago','subscriber',88.88],
+  ['Job charge — NS-4809','Minuteman Press','freight',215.50],
+  ['Monthly subscription','Hawkins Parnell LLP','subscriber',88.88],
+  ['Driver payout — Maria Santos','NS-DRV-002','payout',-215.50],
+  ['Driver payout — Derek Williams','NS-DRV-005','payout',-340.00],
+  ['Job charge — NS-4802','Mid-States Court Reporters','standard',44.80],
+  ['Refund — NS-4798','Kirkwood Pharmacy','refund',-38.50],
+];
+
+let transactions = [];
+let payoutHistory = [];
+let pendingPayouts = [...DRIVERS];
+let stripeBalance = 0;
+let txCounter = 8000;
+let payoutCounter = 9000;
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+function init() {
+  seedTransactions();
+  seedPayoutHistory();
+  calculateMetrics();
+  renderAll();
+  setTimeout(() => autoAddTx(), 8000);
+}
+
+function seedTransactions() {
+  const dates = ['Mar 11','Mar 11','Mar 10','Mar 10','Mar 10','Mar 9','Mar 9','Mar 8','Mar 8','Mar 8'];
+  TX_DESCS.forEach((tx, i) => {
+    transactions.push({
+      id: 'TX-' + (++txCounter),
+      desc: tx[0],
+      entity: tx[1],
+      type: TX_TYPES[i],
+      amount: tx[3],
+      date: dates[i],
+      status: i === 9 ? 'refunded' : (i >= 6 ? 'paid' : 'paid'),
+    });
+  });
+  stripeBalance = transactions.filter(t=>t.amount>0).reduce((a,t)=>a+t.amount,0)
+    + transactions.filter(t=>t.amount<0).reduce((a,t)=>a+t.amount,0);
+}
+
+function seedPayoutHistory() {
+  const past = [
+    {id:'PO-9001',driver:'Maria Santos',jobs:28,amount:487.50,date:'Mar 7, 2026',status:'paid'},
+    {id:'PO-9002',driver:'Derek Williams',jobs:44,amount:720.00,date:'Mar 7, 2026',status:'paid'},
+    {id:'PO-9003',driver:'James Davidson',jobs:12,amount:215.00,date:'Mar 7, 2026',status:'paid'},
+    {id:'PO-9004',driver:'Angela Moore',jobs:18,amount:298.00,date:'Feb 28, 2026',status:'paid'},
+    {id:'PO-9005',driver:'Rosa Gutierrez',jobs:8,amount:142.00,date:'Feb 28, 2026',status:'paid'},
+    {id:'PO-9006',driver:'Tyrone Jackson',jobs:4,amount:680.00,date:'Feb 28, 2026',status:'paid'},
+  ];
+  payoutHistory = past;
+}
+
+function calculateMetrics() {
+  const subs = BUSINESSES.filter(b=>b.plan==='subscriber');
+  const jobRevenue = transactions.filter(t=>t.type==='job_charge'&&t.amount>0).reduce((a,t)=>a+t.amount,0);
+  const subRevenue = subs.length * 88.88;
+  const totalRev = jobRevenue + subRevenue;
+  const totalPaid = payoutHistory.reduce((a,p)=>a+p.amount,0);
+  const pending = pendingPayouts.reduce((a,d)=>a+d.pending,0);
+
+  document.getElementById('ovRevTotal').textContent = '$' + totalRev.toFixed(0);
+  document.getElementById('ovRevChange').textContent = '↑ $' + jobRevenue.toFixed(0) + ' job margin + $' + subRevenue.toFixed(0) + ' subscriptions';
+  document.getElementById('ovMonth').textContent = '$' + (totalRev * 0.35).toFixed(0);
+  document.getElementById('ovPayouts').textContent = '$' + totalPaid.toFixed(0);
+  document.getElementById('ovMRR').textContent = '$' + subRevenue.toFixed(2);
+
+  document.getElementById('stripeBalance').textContent = '$' + Math.abs(stripeBalance).toFixed(2);
+  document.getElementById('modalBalance').textContent = '$' + Math.abs(stripeBalance).toFixed(2);
+
+  document.getElementById('subActiveCount').textContent = subs.length;
+  document.getElementById('subMRR').textContent = '$' + (subs.length * 88.88).toFixed(2);
+  document.getElementById('subTrialCount').textContent = BUSINESSES.filter(b=>b.plan==='trial').length;
+  document.getElementById('subChurn').textContent = BUSINESSES.filter(b=>b.plan==='trial'&&b.trialDays<=3).length;
+
+  const pendingTotal = pendingPayouts.reduce((a,d)=>a+d.pending,0);
+  const withPending = pendingPayouts.filter(d=>d.pending>0);
+  document.getElementById('payoutTotalVal').textContent = '$' + pendingTotal.toFixed(2);
+  document.getElementById('totalPendingLabel').textContent = '$' + pendingTotal.toFixed(2) + ' total pending';
+  document.getElementById('psDriverCount').textContent = withPending.length;
+  document.getElementById('psAvg').textContent = '$' + (withPending.length > 0 ? (pendingTotal/withPending.length).toFixed(2) : '0.00');
+  document.getElementById('psJobs').textContent = pendingPayouts.reduce((a,d)=>a+d.jobs,0);
+
+  document.getElementById('payoutCount').textContent = withPending.length;
+  document.getElementById('subCount').textContent = subs.length;
+  document.getElementById('txCount').textContent = transactions.length;
+}
+
+function renderAll() {
+  buildChart();
+  renderRevenueBreakdown();
+  renderPendingActions();
+  renderRecentTx();
+  renderSubscriptions();
+  renderInvoices();
+  renderPayoutQueue();
+  renderPayoutHistory();
+  renderAllTx();
+}
+
+function buildChart() {
+  const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Today'];
+  const jobData = [142,198,167,221,185,94,127];
+  const subData = [88,88,177,88,88,0,177];
+  const maxVal = Math.max(...jobData.map((v,i)=>v+subData[i]));
+
+  document.getElementById('revenueChart').innerHTML = days.map((d,i) => {
+    const jh = Math.round((jobData[i]/maxVal)*108);
+    const sh = Math.round((subData[i]/maxVal)*108);
+    return `<div class="mbc-col">
+      <div class="mbc-bars">
+        <div class="mbc-bar" style="height:${jh}px;background:var(--navy);"></div>
+        <div class="mbc-bar" style="height:${sh}px;background:var(--gold2);opacity:0.8;"></div>
+      </div>
+      <div class="mbc-label">${d}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderRevenueBreakdown() {
+  const subs = BUSINESSES.filter(b=>b.plan==='subscriber');
+  const jobRev = transactions.filter(t=>t.type==='job_charge'&&t.amount>0).reduce((a,t)=>a+t.amount,0);
+  const rows = [
+    ['Job Delivery Margin','$'+jobRev.toFixed(2),'green'],
+    ['Subscription Revenue','$'+(subs.length*88.88).toFixed(2),'gold'],
+    ['Total Gross','$'+(jobRev+subs.length*88.88).toFixed(2),'navy'],
+    ['Driver Payouts','-$'+payoutHistory.reduce((a,p)=>a+p.amount,0).toFixed(2),''],
+    ['Net Platform','$'+(jobRev+subs.length*88.88-payoutHistory.reduce((a,p)=>a+p.amount,0)).toFixed(2),'green'],
+  ];
+  document.getElementById('revenueBreakdown').innerHTML = rows.map(([l,v,c])=>`
+    <div style="display:flex;justify-content:space-between;padding:0.75rem 1.25rem;border-bottom:1px solid var(--border);font-size:0.8rem;">
+      <div style="color:var(--ink3)">${l}</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;color:${c==='green'?'var(--green2)':c==='gold'?'var(--gold)':c==='navy'?'var(--navy)':'var(--ink2)'};">${v}</div>
+    </div>
+  `).join('');
+}
+
+function renderPendingActions() {
+  const churn = BUSINESSES.filter(b=>b.plan==='trial'&&b.trialDays<=3);
+  const pending = pendingPayouts.filter(d=>d.pending>0);
+  const items = [
+    ...churn.map(b=>`<div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1.25rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:0.875rem;">⚠️</span>
+      <div style="flex:1;font-size:0.75rem;color:var(--ink2);">${b.name} — trial ends in <strong style="color:var(--red)">${b.trialDays} days</strong></div>
+      <button class="tbl-btn tb-view" onclick="showPanel('subscriptions',document.querySelectorAll('.nav-item')[4])">Outreach</button>
+    </div>`),
+    ...pending.slice(0,3).map(d=>`<div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1.25rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:0.875rem;">💸</span>
+      <div style="flex:1;font-size:0.75rem;color:var(--ink2);">${d.name} — <strong style="color:var(--green2)">$${d.pending.toFixed(2)}</strong> pending payout</div>
+      <button class="tbl-btn tb-pay" onclick="openSinglePayout('${d.id}')">Pay</button>
+    </div>`),
+  ];
+  document.getElementById('pendingActions').innerHTML = items.slice(0,5).join('') ||
+    '<div style="padding:1.5rem;text-align:center;color:var(--ink4);font-size:0.78rem;">All clear — no pending actions</div>';
+}
+
+function renderRecentTx() {
+  document.getElementById('recentTx').innerHTML = transactions.slice(0,6).map(t => txRow(t, '110px 1fr 90px 90px 80px 80px')).join('');
+}
+
+function txRow(t, cols) {
+  const typeLabel = {job_charge:'Job Charge',subscription:'Subscription',driver_payout:'Driver Payout',refund:'Refund'}[t.type]||t.type;
+  const chipClass = {job_charge:'chip-paid',subscription:'chip-sub',driver_payout:'chip-paid',refund:'chip-refunded'}[t.type]||'chip-pending';
+  const amtColor = t.amount < 0 ? 'var(--red)' : 'var(--green2)';
+  return `<div class="dt-row" style="grid-template-columns:${cols};">
+    <div class="dtc mono">${t.id}</div>
+    <div class="dtc bold">${t.desc}</div>
+    <div class="dtc" style="font-family:'IBM Plex Mono',monospace;font-weight:600;color:${amtColor};">${t.amount<0?'-':'+'} $${Math.abs(t.amount).toFixed(2)}</div>
+    <div class="dtc"><span class="chip ${chipClass}">${typeLabel}</span></div>
+    <div class="dtc">${t.date}</div>
+    <div class="dtc"><span class="chip chip-paid">Settled</span></div>
+  </div>`;
+}
+
+function renderSubscriptions() {
+  document.getElementById('subsBody').innerHTML = BUSINESSES.map(b=>`
+    <div class="dt-row" style="grid-template-columns:1fr 120px 80px 90px 90px 80px 90px;">
+      <div class="dtc bold">${b.name}</div>
+      <div class="dtc">${b.plan==='subscriber'?'Pro — $88.88/mo':'Free Trial'}</div>
+      <div class="dtc navy">${b.jobs}</div>
+      <div class="dtc green">${b.plan==='subscriber'?'$88.88':'$0.00'}</div>
+      <div class="dtc">${b.nextBill}</div>
+      <div class="dtc"><span class="chip ${b.plan==='subscriber'?'chip-sub':'chip-trial'}">${b.plan==='subscriber'?'ACTIVE':'TRIAL '+b.trialDays+'d'}</span></div>
+      <div class="dtc" style="display:flex;gap:4px;">
+        ${b.plan==='subscriber'
+          ? `<button class="tbl-btn tb-cancel" onclick="showToast('Subscription Cancelled','${b.name} subscription has been cancelled.')">Cancel</button>`
+          : `<button class="tbl-btn tb-pay" onclick="showToast('Outreach Sent','Upgrade email sent to ${b.name}.')">Convert</button>`}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderInvoices() {
+  const types=['Standard','Express','Route','Freight'];
+  const routes=[
+    'Kirkwood → Clayton','Buckhead → Midtown','Loop → Lincoln Park','Uptown → SouthPark',
+    'Clayton → Webster Groves','Decatur → Sandy Springs','Kirkwood → Brentwood','Chicago → Evanston',
+  ];
+  let total = 0;
+  const rows = BUSINESSES.flatMap((b,bi)=>
+    Array.from({length:Math.min(b.jobs,3)},(_,i)=>{
+      const amt = [52.40,78.60,142.00,44.80,88.50,110.00,67.20,95.00][(bi+i)%8];
+      total += amt;
+      return {
+        id:'INV-'+String(8800+bi*3+i).padStart(4,'0'),
+        biz:b.name,
+        route:routes[(bi+i)%routes.length],
+        type:types[(bi+i)%types.length],
+        amount:amt,
+        date:'Mar '+(11-bi)
+      };
+    })
+  );
+  document.getElementById('invTotal').textContent = 'Total: $'+total.toFixed(2);
+  document.getElementById('invoicesBody').innerHTML = rows.map(r=>`
+    <div class="dt-row" style="grid-template-columns:110px 1fr 120px 80px 80px 70px 80px;">
+      <div class="dtc mono">${r.id}</div>
+      <div class="dtc bold">${r.biz}</div>
+      <div class="dtc">${r.route}</div>
+      <div class="dtc">${r.type}</div>
+      <div class="dtc green">$${r.amount.toFixed(2)}</div>
+      <div class="dtc">${r.date}</div>
+      <div class="dtc"><span class="chip chip-paid">Paid</span></div>
+    </div>
+  `).join('');
+}
+
+function renderPayoutQueue() {
+  const queue = pendingPayouts.filter(d=>d.pending>0);
+  document.getElementById('payoutQueue').innerHTML = queue.length === 0
+    ? '<div style="padding:2rem;text-align:center;color:var(--ink4);font-size:0.78rem;">All drivers paid up to date ✓</div>'
+    : queue.map(d=>`
+      <div class="driver-payout-row">
+        <div class="dr-avatar">${d.initials}</div>
+        <div class="dr-info">
+          <div class="dr-name">${d.name}</div>
+          <div class="dr-meta">${d.jobs} jobs · ${d.vehicle} · ${d.city}</div>
+        </div>
+        <div class="dr-amount">$${d.pending.toFixed(2)}</div>
+        <button class="tbl-btn tb-pay" onclick="openSinglePayout('${d.id}')">Pay →</button>
+      </div>
+    `).join('');
+}
+
+function renderPayoutHistory() {
+  document.getElementById('payoutHistoryBody').innerHTML = payoutHistory.map(p=>`
+    <div class="dt-row" style="grid-template-columns:110px 1fr 80px 90px 80px 80px;">
+      <div class="dtc mono">${p.id}</div>
+      <div class="dtc bold">${p.driver}</div>
+      <div class="dtc navy">${p.jobs}</div>
+      <div class="dtc green">$${p.amount.toFixed(2)}</div>
+      <div class="dtc">${p.date}</div>
+      <div class="dtc"><span class="chip chip-paid">PAID</span></div>
+    </div>
+  `).join('');
+}
+
+function renderAllTx() {
+  const total = transactions.filter(t=>t.amount>0).reduce((a,t)=>a+t.amount,0);
+  document.getElementById('txTotal').textContent = 'Total inflow: $'+total.toFixed(2);
+  document.getElementById('allTxBody').innerHTML = transactions.map(t=>txRow(t,'120px 1fr 90px 100px 80px 80px')).join('');
+}
+
+// ═══════════════════════════════════════
+// CHECKOUT
+// ═══════════════════════════════════════
+function formatCard(el) {
+  let v = el.value.replace(/\D/g,'').substring(0,16);
+  el.value = v.replace(/(\d{4})/g,'$1 ').trim();
+}
+
+function formatExpiry(el) {
+  let v = el.value.replace(/\D/g,'');
+  if(v.length>=2) v = v.substring(0,2)+' / '+v.substring(2,4);
+  el.value = v;
+}
+
+function processCheckout() {
+  const biz = document.getElementById('coBizName').value;
+  const card = document.getElementById('coCard').value;
+  if(!biz||!card){ showToast('Missing Info','Please complete all fields.'); return; }
+
+  document.getElementById('processingText').textContent = 'Processing Payment...';
+  document.getElementById('processingSub').textContent = 'Connecting to Stripe — please wait';
+  document.getElementById('processingOverlay').classList.add('open');
+
+  setTimeout(()=>{
+    document.getElementById('processingSub').textContent = 'Verifying card details...';
+  }, 800);
+
+  setTimeout(()=>{
+    document.getElementById('processingSub').textContent = 'Charging $88.88...';
+  }, 1600);
+
+  setTimeout(()=>{
+    document.getElementById('processingSub').textContent = 'Activating subscription...';
+  }, 2400);
+
+  setTimeout(()=>{
+    document.getElementById('processingOverlay').classList.remove('open');
+    document.getElementById('checkoutForm').style.display = 'none';
+    document.getElementById('checkoutSuccess').classList.add('show');
+
+    // Add to transactions
+    transactions.unshift({
+      id:'TX-'+(++txCounter),
+      desc:'Monthly subscription — '+biz,
+      entity:biz,
+      type:'subscription',
+      amount:88.88,
+      date:'Mar 11',
+      status:'paid',
+    });
+    stripeBalance += 88.88;
+    calculateMetrics();
+    renderAllTx();
+    showToast('Payment Successful','$88.88 charged. Subscription activated for '+biz+'.');
+  }, 3200);
+}
+
+function resetCheckout() {
+  document.getElementById('checkoutForm').style.display = 'block';
+  document.getElementById('checkoutSuccess').classList.remove('show');
+}
+
+// ═══════════════════════════════════════
+// PAYOUTS
+// ═══════════════════════════════════════
+let currentPayoutDriver = null;
+
+function openSinglePayout(driverId) {
+  const driver = pendingPayouts.find(d=>d.id===driverId);
+  if(!driver||driver.pending<=0) return;
+  currentPayoutDriver = driver;
+  document.getElementById('payoutModalTitle').textContent = 'Pay ' + driver.name;
+  document.getElementById('payoutModalDesc').textContent = 'This will send a payment to ' + driver.name + ' via Upwork.';
+  document.getElementById('payoutModalBody').innerHTML = `
+    <div class="modal-detail-row"><div class="mdr-label">Driver</div><div class="mdr-val">${driver.name}</div></div>
+    <div class="modal-detail-row"><div class="mdr-label">Jobs Completed</div><div class="mdr-val">${driver.jobs}</div></div>
+    <div class="modal-detail-row"><div class="mdr-label">Amount</div><div class="mdr-val green">$${driver.pending.toFixed(2)}</div></div>
+    <div class="modal-detail-row"><div class="mdr-label">Method</div><div class="mdr-val">Upwork / ACH Transfer</div></div>
+    <div class="modal-detail-row"><div class="mdr-label">Processing</div><div class="mdr-val">1–2 business days</div></div>
+  `;
+  document.getElementById('payoutModal').classList.add('open');
+}
+
+function confirmPayout() {
+  if(!currentPayoutDriver) return;
+  closeModal('payoutModal');
+
+  document.getElementById('processingText').textContent = 'Processing Payout...';
+  document.getElementById('processingSub').textContent = 'Sending payment to ' + currentPayoutDriver.name;
+  document.getElementById('processingOverlay').classList.add('open');
+
+  setTimeout(()=>{
+    document.getElementById('processingOverlay').classList.remove('open');
+    const driver = currentPayoutDriver;
+    payoutHistory.unshift({
+      id:'PO-'+(++payoutCounter),
+      driver:driver.name,
+      jobs:driver.jobs,
+      amount:driver.pending,
+      date:'Mar 11, 2026',
+      status:'paid',
+    });
+    stripeBalance -= driver.pending;
+    driver.pending = 0;
+    calculateMetrics();
+    renderPayoutQueue();
+    renderPayoutHistory();
+    renderAllTx();
+    showToast('Payout Sent!','$'+driver.pending.toFixed(2)+' sent to '+driver.name+' via Upwork.');
+    currentPayoutDriver = null;
+  }, 2500);
+}
+
+function runAllPayouts() {
+  const queue = pendingPayouts.filter(d=>d.pending>0);
+  if(queue.length===0){ showToast('All Paid','All drivers are fully paid up.'); return; }
+
+  document.getElementById('processingText').textContent = 'Running All Payouts...';
+  document.getElementById('processingSub').textContent = 'Processing '+queue.length+' driver payments';
+  document.getElementById('processingOverlay').classList.add('open');
+
+  setTimeout(()=>{
+    document.getElementById('processingOverlay').classList.remove('open');
+    let totalSent = 0;
+    queue.forEach(d=>{
+      payoutHistory.unshift({
+        id:'PO-'+(++payoutCounter),
+        driver:d.name,
+        jobs:d.jobs,
+        amount:d.pending,
+        date:'Mar 11, 2026',
+        status:'paid',
+      });
+      totalSent += d.pending;
+      stripeBalance -= d.pending;
+      d.pending = 0;
+    });
+    calculateMetrics();
+    renderPayoutQueue();
+    renderPayoutHistory();
+    showToast('All Payouts Complete!','$'+totalSent.toFixed(2)+' sent to '+queue.length+' drivers.');
+  }, 3000);
+}
+
+function openPayoutModal() {
+  document.getElementById('bankModal').classList.add('open');
+}
+
+function processBankTransfer() {
+  closeModal('bankModal');
+  document.getElementById('processingText').textContent = 'Initiating Transfer...';
+  document.getElementById('processingSub').textContent = 'Transferring to Chase Business ····4821';
+  document.getElementById('processingOverlay').classList.add('open');
+  setTimeout(()=>{
+    document.getElementById('processingOverlay').classList.remove('open');
+    showToast('Transfer Initiated','Funds will arrive in your account within 1–2 business days.');
+  }, 2500);
+}
+
+// ═══════════════════════════════════════
+// AUTO TX
+// ═══════════════════════════════════════
+function autoAddTx() {
+  const job = {
+    id:'TX-'+(++txCounter),
+    desc:'Job charge — NS-'+(Math.floor(Math.random()*500)+5000),
+    entity:BUSINESSES[Math.floor(Math.random()*BUSINESSES.length)].name,
+    type:'job_charge',
+    amount: Math.round((Math.random()*160+25)*100)/100,
+    date:'Mar 11',
+    status:'paid',
+  };
+  transactions.unshift(job);
+  stripeBalance += job.amount;
+  calculateMetrics();
+  renderRecentTx();
+  renderAllTx();
+  showToast('New Payment','$'+job.amount.toFixed(2)+' received — '+job.desc);
+  document.getElementById('txCount').textContent = transactions.length;
+  setTimeout(autoAddTx, Math.random()*15000+12000);
+}
+
+// ═══════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════
+function showPanel(name, el) {
+  document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  if(el) el.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+function showToast(title, body, color) {
+  const el=document.getElementById('toast');
+  document.getElementById('toastTitle').textContent=title;
+  document.getElementById('toastBody').textContent=body;
+  el.style.borderLeftColor=color==='red'?'var(--red)':color==='gold'?'var(--gold2)':'var(--green2)';
+  el.style.display='block';
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.style.display='none',5000);
+}
+
+init();
+</script>
+</body>
+</html>
