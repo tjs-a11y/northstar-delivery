@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthStar — Driver Portal</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#04080f;--surface:#080f1e;--surface2:#0c1528;--surface3:#101d35;
+  --border:#162040;--border2:#1e2e52;--accent:#00d4ff;--accent2:#0099cc;
+  --green:#00e676;--green2:#00c853;--gold:#ffab00;--red:#ff1744;--purple:#d500f9;
+  --text:#e8f0fe;--text2:#8ba3c7;--text3:#3d5a8a;
+  --glow:0 0 30px rgba(0,212,255,0.25);--glow-green:0 0 30px rgba(0,230,118,0.25);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(0,212,255,0.07) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 80%,rgba(0,230,118,0.04) 0%,transparent 50%);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+
+.screen{display:none;position:relative;z-index:1;min-height:100vh;}
+.screen.active{display:flex;}
+
+/* LOGIN */
+#loginScreen{align-items:center;justify-content:center;flex-direction:column;padding:2rem;}
+.login-box{width:100%;max-width:420px;animation:fadeUp 0.6s ease-out;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.login-logo{text-align:center;margin-bottom:2.5rem;}
+.login-star{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--purple));clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);margin:0 auto 1rem;filter:drop-shadow(0 0 12px rgba(0,212,255,0.6));animation:starPulse 3s ease-in-out infinite;}
+@keyframes starPulse{0%,100%{filter:drop-shadow(0 0 12px rgba(0,212,255,0.6))}50%{filter:drop-shadow(0 0 20px rgba(213,0,249,0.6))}}
+.login-title{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:4px;}
+.login-title span{color:var(--accent);}
+.login-subtitle{font-size:0.78rem;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-top:0.25rem;}
+.login-card{background:var(--surface);border:1px solid var(--border2);padding:2rem;position:relative;overflow:hidden;}
+.login-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),transparent);}
+.tabs{display:flex;margin-bottom:1.5rem;border-bottom:1px solid var(--border2);}
+.tab-btn{flex:1;background:transparent;border:none;color:var(--text3);padding:0.625rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;text-transform:uppercase;transition:all 0.2s;border-bottom:2px solid transparent;margin-bottom:-1px;}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.field-group{margin-bottom:1.25rem;}
+.field-label{display:block;font-size:0.68rem;font-weight:600;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:0.5rem;}
+.field-input,.field-select{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:0.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.875rem;outline:none;transition:all 0.2s;appearance:none;}
+.field-input:focus,.field-select:focus{border-color:var(--accent);box-shadow:var(--glow);}
+.field-input::placeholder{color:var(--text3);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.login-btn{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#000;font-family:'Orbitron',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:3px;padding:0.875rem;cursor:pointer;text-transform:uppercase;transition:all 0.2s;margin-top:0.5rem;}
+.login-btn:hover{box-shadow:var(--glow);transform:translateY(-1px);}
+.login-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+.error-msg{background:rgba(255,23,68,0.1);border:1px solid rgba(255,23,68,0.3);color:#ff6b6b;padding:0.625rem 1rem;font-size:0.78rem;margin-top:0.75rem;text-align:center;display:none;}
+.success-msg{background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.3);color:var(--green);padding:0.625rem 1rem;font-size:0.78rem;margin-top:0.75rem;text-align:center;display:none;}
+
+/* APP */
+#appScreen{flex-direction:column;}
+.driver-nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:sticky;top:0;z-index:50;}
+.nav-logo{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:3px;color:var(--accent);}
+.nav-driver-info{display:flex;align-items:center;gap:0.75rem;}
+.driver-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:0.75rem;font-weight:700;color:#000;}
+.driver-name-nav{font-size:0.85rem;font-weight:600;}
+.driver-tier-nav{font-size:0.62rem;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;}
+.nav-status{display:flex;align-items:center;gap:6px;background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.25);padding:4px 12px;font-size:0.68rem;letter-spacing:2px;color:var(--green);cursor:pointer;font-family:'DM Mono',monospace;transition:all 0.2s;}
+.nav-status.offline{background:rgba(255,23,68,0.1);border-color:rgba(255,23,68,0.25);color:var(--red);}
+.status-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.2s infinite;}
+.offline .status-dot{background:var(--red);animation:none;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.nav-logout{background:transparent;border:1px solid var(--border2);color:var(--text3);padding:4px 12px;font-size:0.68rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.nav-logout:hover{border-color:var(--red);color:var(--red);}
+.tab-bar{background:var(--surface2);border-bottom:1px solid var(--border);display:flex;padding:0 1.5rem;flex-shrink:0;}
+.tab-btn2{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text3);padding:0.875rem 1.25rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;text-transform:uppercase;transition:all 0.2s;display:flex;align-items:center;gap:0.4rem;}
+.tab-btn2.active{color:var(--accent);border-bottom-color:var(--accent);}
+.count-badge{background:var(--accent);color:#000;font-size:0.6rem;font-weight:700;padding:1px 6px;border-radius:10px;}
+.driver-stats{background:var(--surface2);border-bottom:1px solid var(--border);padding:0.875rem 1.5rem;display:flex;gap:2rem;align-items:center;flex-shrink:0;overflow-x:auto;}
+.dstat{display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;}
+.dstat-val{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:var(--accent);}
+.dstat-val.green{color:var(--green);}
+.dstat-val.gold{color:var(--gold);}
+.dstat-label{font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;}
+.dstat-divider{width:1px;height:32px;background:var(--border2);flex-shrink:0;}
+.tier-pill{padding:4px 14px;font-family:'Orbitron',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:2px;border:1px solid;}
+.tier-rookie{background:rgba(61,90,138,0.2);border-color:var(--text3);color:var(--text3);}
+.tier-active{background:rgba(0,212,255,0.1);border-color:var(--accent);color:var(--accent);}
+.tier-preferred{background:rgba(255,171,0,0.1);border-color:var(--gold);color:var(--gold);}
+.tier-elite{background:rgba(213,0,249,0.1);border-color:var(--purple);color:var(--purple);}
+.tab-panel{display:none;flex:1;overflow:hidden;}
+.tab-panel.active{display:flex;flex-direction:column;}
+
+/* JOB BOARD */
+.board-container{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:0.875rem;}
+.board-container::-webkit-scrollbar{width:3px;}
+.board-container::-webkit-scrollbar-thumb{background:var(--border2);}
+.empty-board{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:var(--text3);padding:3rem;text-align:center;}
+.empty-icon{font-size:3rem;opacity:0.3;}
+.empty-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;letter-spacing:2px;}
+
+/* JOB CARDS */
+.djob-card{background:var(--surface);border:1px solid var(--border2);position:relative;overflow:hidden;transition:all 0.2s;cursor:pointer;animation:cardIn 0.35s ease-out;}
+@keyframes cardIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.djob-card:hover{border-color:var(--accent);background:var(--surface2);box-shadow:var(--glow);transform:translateY(-1px);}
+.card-accent{position:absolute;left:0;top:0;bottom:0;width:3px;}
+.accent-standard{background:var(--accent)}.accent-express{background:var(--red)}.accent-route{background:var(--purple)}.accent-freight{background:var(--gold)}
+.djob-inner{padding:1rem 1rem 0.75rem 1.25rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;}
+.djob-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;flex-wrap:wrap;}
+.djob-id{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text3);}
+.type-chip{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;padding:2px 8px;text-transform:uppercase;}
+.chip-standard{background:rgba(0,212,255,0.12);color:var(--accent);border:1px solid rgba(0,212,255,0.25);}
+.chip-express{background:rgba(255,23,68,0.12);color:#ff6b6b;border:1px solid rgba(255,23,68,0.25);}
+.chip-route{background:rgba(213,0,249,0.12);color:#e040fb;border:1px solid rgba(213,0,249,0.25);}
+.chip-freight{background:rgba(255,171,0,0.12);color:var(--gold);border:1px solid rgba(255,171,0,0.25);}
+.vehicle-chip{font-size:0.6rem;padding:2px 8px;background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:var(--text2);font-weight:600;}
+.djob-route{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;}
+.route-from,.route-to{display:flex;flex-direction:column;gap:1px;}
+.route-label{font-size:0.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;}
+.route-loc{font-size:0.9rem;font-weight:600;color:#fff;}
+.route-addr{font-size:0.7rem;color:var(--text2);font-family:'DM Mono',monospace;}
+.route-line{flex:1;display:flex;align-items:center;gap:4px;color:var(--accent);}
+.route-dash{flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0.4;}
+.djob-footer{display:flex;gap:1.25rem;align-items:center;}
+.djob-meta{font-size:0.7rem;color:var(--text3);display:flex;align-items:center;gap:4px;}
+.djob-meta b{color:var(--text2);}
+.djob-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;min-width:110px;}
+.pay-label{font-size:0.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;}
+.pay-amount{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--green);line-height:1;text-shadow:0 0 20px rgba(0,230,118,0.3);}
+.view-btn{background:transparent;border:1px solid var(--accent);color:var(--accent);font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;padding:5px 14px;cursor:pointer;letter-spacing:1px;transition:all 0.2s;}
+.view-btn:hover{background:rgba(0,212,255,0.1);}
+.urgency-strip{height:3px;background:var(--border);}
+.urgency-fill{height:100%;min-width:4%;transition:width 3s linear;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(4,8,15,0.85);backdrop-filter:blur(4px);z-index:200;align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--surface);border:1px solid var(--border2);width:100%;max-width:560px;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn 0.3s ease-out;}
+@keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--green),var(--accent));}
+.modal-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.modal-title{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:2px;color:var(--accent);}
+.modal-close{background:transparent;border:1px solid var(--border2);color:var(--text3);width:28px;height:28px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.modal-close:hover{border-color:var(--red);color:var(--red);}
+.modal-body{padding:1.5rem;}
+.detail-section{margin-bottom:1.5rem;}
+.detail-section-title{font-size:0.65rem;font-weight:700;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.detail-section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.detail-route-card{background:var(--surface2);border:1px solid var(--border2);padding:1.25rem;display:flex;flex-direction:column;gap:1rem;}
+.detail-point{display:flex;gap:0.875rem;align-items:flex-start;}
+.point-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;font-weight:700;}
+.icon-pickup{background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.3);color:var(--accent);}
+.icon-dropoff{background:rgba(0,230,118,0.15);border:1px solid rgba(0,230,118,0.3);color:var(--green);}
+.point-type{font-size:0.62rem;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:2px;}
+.point-name{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:2px;}
+.point-addr{font-size:0.75rem;color:var(--text2);font-family:'DM Mono',monospace;}
+.point-contact{font-size:0.72rem;color:var(--accent);margin-top:4px;}
+.route-connector{display:flex;align-items:center;gap:0.5rem;padding-left:1rem;}
+.connector-line{width:2px;height:20px;background:linear-gradient(180deg,var(--accent),var(--green));opacity:0.4;}
+.connector-dist{font-size:0.7rem;color:var(--text3);font-family:'DM Mono',monospace;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.detail-item{background:var(--surface2);border:1px solid var(--border);padding:0.75rem;}
+.detail-item-label{font-size:0.62rem;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-bottom:0.3rem;}
+.detail-item-val{font-size:0.875rem;font-weight:600;color:var(--text);font-family:'DM Mono',monospace;}
+.detail-item-val.accent{color:var(--accent);}
+.special-instructions{background:rgba(255,171,0,0.06);border:1px solid rgba(255,171,0,0.2);padding:0.875rem;font-size:0.8rem;color:var(--text2);line-height:1.6;}
+.pay-breakdown{background:var(--surface2);border:1px solid var(--border2);overflow:hidden;}
+.pay-row{display:flex;justify-content:space-between;align-items:center;padding:0.625rem 1rem;border-bottom:1px solid var(--border);}
+.pay-row:last-child{border-bottom:none;}
+.pay-row-label{font-size:0.75rem;color:var(--text3);}
+.pay-row-val{font-family:'DM Mono',monospace;font-size:0.875rem;color:var(--text2);}
+.pay-row.total{background:rgba(0,230,118,0.06);}
+.pay-row.total .pay-row-label{font-weight:700;color:var(--text);font-size:0.82rem;}
+.pay-row.total .pay-row-val{color:var(--green);font-size:1.1rem;font-family:'Orbitron',sans-serif;}
+.modal-actions{padding:1.25rem 1.5rem;border-top:1px solid var(--border);display:flex;gap:0.75rem;}
+.btn-accept{flex:1;background:linear-gradient(135deg,var(--green),var(--green2));border:none;color:#000;font-family:'Orbitron',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;padding:0.875rem;cursor:pointer;text-transform:uppercase;transition:all 0.2s;}
+.btn-accept:hover{box-shadow:var(--glow-green);}
+.btn-pass{background:transparent;border:1px solid var(--border2);color:var(--text3);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:0.875rem 1.25rem;cursor:pointer;transition:all 0.2s;}
+.btn-pass:hover{border-color:var(--red);color:var(--red);}
+
+/* ACTIVE JOB */
+.active-job-panel{flex:1;overflow-y:auto;padding:1.5rem;}
+.no-active{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:var(--text3);padding:3rem;text-align:center;}
+.active-job-card{background:var(--surface);border:1px solid var(--green);box-shadow:var(--glow-green);overflow:hidden;margin-bottom:1.5rem;}
+.active-header{background:linear-gradient(135deg,rgba(0,230,118,0.08),transparent);border-bottom:1px solid rgba(0,230,118,0.2);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.active-title{font-family:'Orbitron',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;color:var(--green);}
+.active-body{padding:1.25rem;}
+.progress-steps{display:flex;align-items:center;gap:0;margin-bottom:1.5rem;}
+.progress-step{display:flex;flex-direction:column;align-items:center;gap:0.4rem;flex:1;}
+.step-circle{width:32px;height:32px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text3);background:var(--surface2);transition:all 0.3s;}
+.step-circle.done{background:var(--green);border-color:var(--green);color:#000;font-weight:700;}
+.step-circle.current{border-color:var(--accent);color:var(--accent);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,0.4)}50%{box-shadow:0 0 0 8px rgba(0,212,255,0)}}
+.step-label{font-size:0.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;text-align:center;}
+.step-label.active{color:var(--accent);}
+.step-label.done-label{color:var(--green);}
+.step-connector{flex:1;height:2px;background:var(--border2);margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.step-connector.filled::after{content:'';position:absolute;inset:0;background:var(--green);}
+.btn-primary{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#000;font-family:'Orbitron',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;padding:0.875rem;cursor:pointer;transition:all 0.2s;margin-bottom:0.75rem;}
+.btn-complete{width:100%;background:linear-gradient(135deg,var(--green),var(--green2));border:none;color:#000;font-family:'Orbitron',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;padding:0.875rem;cursor:pointer;transition:all 0.2s;}
+
+/* HISTORY */
+.history-panel{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;}
+.earnings-summary{background:var(--surface2);border:1px solid var(--border2);padding:1rem 1.25rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem;}
+.earn-val{font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:700;color:var(--green);display:block;}
+.earn-label{font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.history-item{background:var(--surface);border:1px solid var(--border);padding:0.875rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.625rem;transition:background 0.15s;}
+.history-item:hover{background:var(--surface2);}
+.history-id{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text3);margin-bottom:3px;}
+.history-route{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:3px;}
+.history-date{font-size:0.68rem;color:var(--text3);}
+.history-pay{font-family:'Orbitron',sans-serif;font-size:0.95rem;font-weight:700;color:var(--green);}
+.history-rating{font-size:0.68rem;color:var(--gold);margin-top:2px;}
+.status-badge{font-size:0.6rem;padding:2px 8px;background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.25);color:var(--green);font-weight:700;letter-spacing:1px;margin-top:4px;display:inline-block;}
+
+/* NOTIFICATION */
+.notif{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--green);border-left:4px solid var(--green);padding:0.875rem 1.5rem;box-shadow:var(--glow-green);z-index:300;display:none;animation:notifUp 0.3s ease-out;min-width:300px;text-align:center;}
+@keyframes notifUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.notif-t{font-family:'Orbitron',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;}
+.notif-b{font-size:0.75rem;color:var(--text2);margin-top:3px;}
+
+.loading-overlay{position:fixed;inset:0;background:rgba(4,8,15,0.9);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;z-index:500;}
+.loading-spinner{width:40px;height:40px;border:3px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-family:'Orbitron',sans-serif;font-size:0.75rem;letter-spacing:3px;color:var(--accent);}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--border2);}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">CONNECTING...</div>
+</div>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="screen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-star"></div>
+      <div class="login-title">NORTH<span>STAR</span></div>
+      <div class="login-subtitle">Driver Portal</div>
+    </div>
+    <div class="login-card">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchAuthTab('login',this)">Sign In</button>
+        <button class="tab-btn" onclick="switchAuthTab('register',this)">Register</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="tab-content active" id="tab-login">
+        <div class="field-group">
+          <label class="field-label">Email</label>
+          <input class="field-input" id="loginEmail" type="email" placeholder="your@email.com">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Password</label>
+          <input class="field-input" id="loginPass" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+        </div>
+        <button class="login-btn" id="loginBtn" onclick="doLogin()">ACCESS PORTAL →</button>
+        <div class="error-msg" id="loginError"></div>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="tab-content" id="tab-register">
+        <div class="field-row">
+          <div class="field-group">
+            <label class="field-label">First Name</label>
+            <input class="field-input" id="regFirst" type="text" placeholder="First">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Last Name</label>
+            <input class="field-input" id="regLast" type="text" placeholder="Last">
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Phone</label>
+          <input class="field-input" id="regPhone" type="tel" placeholder="(555) 000-0000">
+        </div>
+        <div class="field-group">
+          <label class="field-label">City</label>
+          <select class="field-select" id="regCity">
+            <option value="">Select your city</option>
+            <option>St. Louis, MO</option>
+            <option>Atlanta, GA</option>
+            <option>Chicago, IL</option>
+            <option>Charlotte, NC</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Vehicle Class</label>
+          <select class="field-select" id="regVehicle">
+            <option value="">Select vehicle type</option>
+            <option value="car">Sedan (Class 1)</option>
+            <option value="suv">SUV / Minivan (Class 2)</option>
+            <option value="van">Cargo Van (Class 3)</option>
+            <option value="box">Box Truck (Class 4)</option>
+            <option value="semi">Tractor Trailer (Class 5)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Email</label>
+          <input class="field-input" id="regEmail" type="email" placeholder="your@email.com">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Password</label>
+          <input class="field-input" id="regPass" type="password" placeholder="Create a password (min 6 chars)" onkeydown="if(event.key==='Enter')doRegister()">
+        </div>
+        <button class="login-btn" id="registerBtn" onclick="doRegister()">CREATE DRIVER ACCOUNT →</button>
+        <div class="error-msg" id="registerError"></div>
+        <div class="success-msg" id="registerSuccess"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appScreen" class="screen">
+  <nav class="driver-nav">
+    <div class="nav-logo">★ NORTHSTAR</div>
+    <div class="nav-driver-info">
+      <div class="driver-avatar" id="driverAvatar">--</div>
+      <div>
+        <div class="driver-name-nav" id="driverNameNav">Loading...</div>
+        <div class="driver-tier-nav" id="driverTierNav">DRIVER</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <div class="nav-status" id="onlineToggle" onclick="toggleOnline()">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusLabel">ONLINE</span>
+      </div>
+      <button class="nav-logout" onclick="doLogout()">LOGOUT</button>
+    </div>
+  </nav>
+
+  <div class="tab-bar">
+    <button class="tab-btn2 active" onclick="switchTab('board',this)">📋 Job Board <span class="count-badge" id="boardBadge">0</span></button>
+    <button class="tab-btn2" onclick="switchTab('active',this)">🚗 Active Job <span class="count-badge" id="activeBadge" style="display:none;background:var(--green);">1</span></button>
+    <button class="tab-btn2" onclick="switchTab('history',this)">📊 Job History</button>
+  </div>
+
+  <div class="driver-stats">
+    <div class="dstat"><div class="dstat-val" id="statJobs">0</div><div class="dstat-label">Total Jobs</div></div>
+    <div class="dstat-divider"></div>
+    <div class="dstat"><div class="dstat-val green" id="statEarnings">$0</div><div class="dstat-label">Total Earned</div></div>
+    <div class="dstat-divider"></div>
+    <div class="dstat"><div class="dstat-val gold" id="statRating">—</div><div class="dstat-label">Rating</div></div>
+    <div class="dstat-divider"></div>
+    <div class="dstat"><div class="dstat-val" id="statPending" style="color:var(--gold)">$0</div><div class="dstat-label">Pending Pay</div></div>
+    <div class="dstat-divider"></div>
+    <div><div class="tier-pill tier-rookie" id="tierPill">ROOKIE</div></div>
+    <div class="dstat-divider"></div>
+    <div class="dstat"><div class="dstat-val" id="statStrikes" style="color:var(--red)">0</div><div class="dstat-label">Strikes</div></div>
+  </div>
+
+  <!-- BOARD -->
+  <div class="tab-panel active" id="panel-board">
+    <div class="board-container" id="driverBoard">
+      <div class="empty-board">
+        <div class="loading-spinner"></div>
+        <div class="empty-title">LOADING JOBS...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVE -->
+  <div class="tab-panel" id="panel-active">
+    <div class="active-job-panel" id="activeJobPanel">
+      <div class="no-active">
+        <div class="empty-icon">🚗</div>
+        <div class="empty-title" style="font-family:'Orbitron',sans-serif;font-size:0.85rem;letter-spacing:2px;">NO ACTIVE JOB</div>
+        <div style="font-size:0.78rem;max-width:260px;">Accept a job from the board to begin your delivery.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="tab-panel" id="panel-history">
+    <div class="history-panel">
+      <div class="earnings-summary">
+        <div><span class="earn-val" id="earnTotal">$0.00</span><div class="earn-label">All Time</div></div>
+        <div><span class="earn-val" id="earnWeek">$0.00</span><div class="earn-label">This Week</div></div>
+        <div><span class="earn-val" id="earnJobs">0</span><div class="earn-label">Completed</div></div>
+      </div>
+      <div id="historyList"><div style="text-align:center;padding:2rem;color:var(--text3);font-size:0.78rem;">Loading history...</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- JOB MODAL -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modalJobId">JOB DETAIL</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-actions">
+      <button class="btn-pass" onclick="closeModal()">PASS</button>
+      <button class="btn-accept" onclick="acceptFromModal()">ACCEPT JOB →</button>
+    </div>
+  </div>
+</div>
+
+<div class="notif" id="notif">
+  <div class="notif-t" id="notifT"></div>
+  <div class="notif-b" id="notifB"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// SUPABASE INIT
+// ═══════════════════════════════════════
+const SUPABASE_URL = 'https://imljjaurxiawfxjckkqf.supabase.co'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y'
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+
+// ═══════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════
+let currentDriver = null
+let jobs = []
+let activeJob = null
+let activeStep = 0
+let isOnline = false
+let modalJob = null
+let realtimeChannel = null
+let urgencyInterval = null
+
+const VEHICLE_LABELS = {car:'Sedan',suv:'SUV',van:'Cargo Van',box:'Box Truck',semi:'Semi'}
+const TYPE_LABELS = {standard:'STANDARD',express:'EXPRESS',route:'ROUTE',freight:'FREIGHT'}
+const CHIP_CLASS = {standard:'chip-standard',express:'chip-express',route:'chip-route',freight:'chip-freight'}
+const ACCENT_CLASS = {standard:'accent-standard',express:'accent-express',route:'accent-route',freight:'accent-freight'}
+const TIER_CLASS = {rookie:'tier-rookie',active:'tier-active',preferred:'tier-preferred',elite:'tier-elite'}
+
+// ═══════════════════════════════════════
+// BOOT — check existing session
+// ═══════════════════════════════════════
+async function boot() {
+  try {
+    const { data: { session } } = await db.auth.getSession()
+    if (session) {
+      await loadDriver(session.user.id)
+    } else {
+      document.getElementById('loadingOverlay').style.display = 'none'
+      document.getElementById('loginScreen').classList.add('active')
+    }
+  } catch(e) {
+    document.getElementById('loadingOverlay').style.display = 'none'
+    document.getElementById('loginScreen').classList.add('active')
+  }
+}
+
+// ═══════════════════════════════════════
+// AUTH
+// ═══════════════════════════════════════
+function switchAuthTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'))
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'))
+  btn.classList.add('active')
+  document.getElementById('tab-' + tab).classList.add('active')
+}
+
+async function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim()
+  const pass = document.getElementById('loginPass').value
+  const btn = document.getElementById('loginBtn')
+  const err = document.getElementById('loginError')
+
+  if (!email || !pass) { showErr(err, 'Please enter your email and password.'); return }
+
+  btn.disabled = true
+  btn.textContent = 'SIGNING IN...'
+  err.style.display = 'none'
+
+  const { data, error } = await db.auth.signInWithPassword({ email, password: pass })
+
+  if (error) {
+    showErr(err, error.message)
+    btn.disabled = false
+    btn.textContent = 'ACCESS PORTAL →'
+    return
+  }
+
+  await loadDriver(data.user.id)
+}
+
+async function doRegister() {
+  const first = document.getElementById('regFirst').value.trim()
+  const last = document.getElementById('regLast').value.trim()
+  const phone = document.getElementById('regPhone').value.trim()
+  const city = document.getElementById('regCity').value
+  const vehicle = document.getElementById('regVehicle').value
+  const email = document.getElementById('regEmail').value.trim()
+  const pass = document.getElementById('regPass').value
+  const btn = document.getElementById('registerBtn')
+  const err = document.getElementById('registerError')
+  const suc = document.getElementById('registerSuccess')
+
+  if (!first||!last||!phone||!city||!vehicle||!email||!pass) {
+    showErr(err, 'Please fill in all fields.'); return
+  }
+  if (pass.length < 6) { showErr(err, 'Password must be at least 6 characters.'); return }
+
+  btn.disabled = true
+  btn.textContent = 'CREATING ACCOUNT...'
+  err.style.display = 'none'
+  suc.style.display = 'none'
+
+  const { data, error } = await db.auth.signUp({ email, password: pass })
+
+  if (error) {
+    showErr(err, error.message)
+    btn.disabled = false
+    btn.textContent = 'CREATE DRIVER ACCOUNT →'
+    return
+  }
+
+  // Create driver profile — include all required NOT NULL fields
+  const { error: profileError } = await db.from('drivers').insert({
+    id: data.user.id,
+    email,
+    full_name: first + ' ' + last,
+    phone,
+    city,
+    vehicle_type: vehicle,
+    status: 'pending',
+    license_url: '',
+    insurance_url: '',
+    resume_url: '',
+    pin: '0000'
+  })
+
+  if (profileError && !profileError.message.includes('duplicate')) {
+    showErr(err, 'Account created but profile setup failed: ' + profileError.message)
+    btn.disabled = false
+    btn.textContent = 'CREATE DRIVER ACCOUNT →'
+    return
+  }
+
+  suc.style.display = 'block'
+  suc.textContent = '✓ Account created! Signing you in...'
+  setTimeout(() => loadDriver(data.user.id), 1500)
+}
+
+async function doLogout() {
+  if (realtimeChannel) db.removeChannel(realtimeChannel)
+  if (urgencyInterval) clearInterval(urgencyInterval)
+  // Set offline
+  if (currentDriver) {
+    await db.from('drivers').update({ is_online: false }).eq('id', currentDriver.id)
+  }
+  await db.auth.signOut()
+  currentDriver = null
+  jobs = []
+  activeJob = null
+  document.getElementById('appScreen').classList.remove('active')
+  document.getElementById('loginScreen').classList.add('active')
+}
+
+// ═══════════════════════════════════════
+// LOAD DRIVER PROFILE
+// ═══════════════════════════════════════
+async function loadDriver(userId) {
+  document.getElementById('loadingOverlay').style.display = 'flex'
+
+  const { data: driver, error } = await db
+    .from('drivers')
+    .select('*')
+    .eq('id', userId)
+    .single()
+
+  if (error || !driver) {
+    document.getElementById('loadingOverlay').style.display = 'none'
+    document.getElementById('loginScreen').classList.add('active')
+    return
+  }
+
+  currentDriver = driver
+  document.getElementById('loginScreen').classList.remove('active')
+  document.getElementById('appScreen').classList.add('active')
+  document.getElementById('loadingOverlay').style.display = 'none'
+
+  initApp()
+}
+
+// ═══════════════════════════════════════
+// INIT APP
+// ═══════════════════════════════════════
+function initApp() {
+  const initials = currentDriver.full_name
+    ? currentDriver.full_name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()
+    : '--'
+
+  document.getElementById('driverAvatar').textContent = initials
+  document.getElementById('driverNameNav').textContent = currentDriver.full_name || 'Driver'
+  document.getElementById('driverTierNav').textContent = (currentDriver.tier||'rookie').toUpperCase() + ' DRIVER'
+
+  const tc = document.getElementById('tierPill')
+  const tier = currentDriver.tier || 'rookie'
+  tc.className = 'tier-pill ' + (TIER_CLASS[tier] || 'tier-rookie')
+  tc.textContent = tier.toUpperCase()
+
+  updateStats()
+  loadJobs()
+  loadHistory()
+  subscribeToJobs()
+  startUrgencyDecay()
+}
+
+function updateStats() {
+  document.getElementById('statJobs').textContent = currentDriver.jobs_completed || 0
+  document.getElementById('statEarnings').textContent = '$' + (currentDriver.total_earned || 0).toFixed(2)
+  document.getElementById('statRating').textContent = currentDriver.rating > 0 ? (currentDriver.rating).toFixed(1) + ' ★' : '—'
+  document.getElementById('statPending').textContent = '$' + (currentDriver.pending_payout || 0).toFixed(2)
+  document.getElementById('statStrikes').textContent = currentDriver.strikes || 0
+  document.getElementById('earnTotal').textContent = '$' + (currentDriver.total_earned || 0).toFixed(2)
+  document.getElementById('earnJobs').textContent = currentDriver.jobs_completed || 0
+}
+
+// ═══════════════════════════════════════
+// ONLINE TOGGLE
+// ═══════════════════════════════════════
+async function toggleOnline() {
+  isOnline = !isOnline
+  const tog = document.getElementById('onlineToggle')
+  const dot = document.getElementById('statusDot')
+  const lbl = document.getElementById('statusLabel')
+
+  if (isOnline) {
+    tog.className = 'nav-status'
+    dot.style.background = 'var(--green)'
+    lbl.style.color = 'var(--green)'
+    lbl.textContent = 'ONLINE'
+    dot.style.animation = 'blink 1.2s infinite'
+    // Ask for push notification permission when driver goes online
+    requestPushPermission()
+  } else {
+    tog.className = 'nav-status offline'
+    lbl.textContent = 'OFFLINE'
+  }
+
+  await db.from('drivers').update({ is_online: isOnline }).eq('id', currentDriver.id)
+  renderBoard()
+}
+
+// ═══════════════════════════════════════
+// LOAD & RENDER JOBS
+// ═══════════════════════════════════════
+async function loadJobs() {
+  const { data, error } = await db
+    .from('jobs')
+    .select('*')
+    .eq('status', 'posted')
+    .order('posted_at', { ascending: false })
+    .limit(40)
+
+  if (error) { console.error('Jobs load error:', error); return }
+
+  jobs = (data || []).map(j => ({ ...j, urgency: 100 - Math.min(90, Math.floor((Date.now() - new Date(j.posted_at)) / 36000)) }))
+  renderBoard()
+}
+
+function renderBoard() {
+  const board = document.getElementById('driverBoard')
+  document.getElementById('boardBadge').textContent = jobs.length
+
+  if (!isOnline) {
+    board.innerHTML = `<div class="empty-board"><div class="empty-icon">📴</div><div class="empty-title">YOU ARE OFFLINE</div><div style="font-size:0.78rem;margin-top:0.5rem;">Toggle online to see available jobs.</div></div>`
+    return
+  }
+
+  if (jobs.length === 0) {
+    board.innerHTML = `<div class="empty-board"><div class="empty-icon">⏳</div><div class="empty-title">NO JOBS AVAILABLE</div><div style="font-size:0.78rem;margin-top:0.5rem;">New jobs appear instantly when businesses post them.</div></div>`
+    return
+  }
+
+  board.innerHTML = jobs.map(job => {
+    const urg = job.urgency || 50
+    const urgColor = urg > 60 ? '#00e676' : urg > 30 ? '#ffab00' : '#ff1744'
+    return `
+      <div class="djob-card" id="djob-${job.id}" onclick="openModal('${job.id}')">
+        <div class="card-accent ${ACCENT_CLASS[job.job_type] || 'accent-standard'}"></div>
+        <div class="djob-inner">
+          <div>
+            <div class="djob-header">
+              <span class="djob-id">${job.job_number || job.id.slice(0,8)}</span>
+              <span class="type-chip ${CHIP_CLASS[job.job_type] || 'chip-standard'}">${TYPE_LABELS[job.job_type] || 'STANDARD'}</span>
+              <span class="vehicle-chip">${VEHICLE_LABELS[job.vehicle_class] || job.vehicle_class}</span>
+              ${job.stops > 1 ? `<span class="vehicle-chip">${job.stops} stops</span>` : ''}
+            </div>
+            <div class="djob-route">
+              <div class="route-from">
+                <div class="route-label">PICKUP</div>
+                <div class="route-loc">${job.pickup_city || '—'}</div>
+                <div class="route-addr">${job.pickup_name || ''}</div>
+              </div>
+              <div class="route-line"><div class="route-dash"></div><span style="font-size:0.8rem;">→</span></div>
+              <div class="route-to">
+                <div class="route-label">DROPOFF</div>
+                <div class="route-loc">${job.dropoff_city || '—'}</div>
+                <div class="route-addr">${job.dropoff_name || ''}</div>
+              </div>
+            </div>
+            <div class="djob-footer">
+              <div class="djob-meta">📍 <b>${job.distance_miles || '?'} mi</b></div>
+              <div class="djob-meta">⏱ <b>${timeAgo(job.posted_at)}</b></div>
+            </div>
+          </div>
+          <div class="djob-right">
+            <div>
+              <div class="pay-label">YOUR PAY</div>
+              <div class="pay-amount">$${Number(job.driver_pay || 0).toFixed(2)}</div>
+            </div>
+            <button class="view-btn" onclick="event.stopPropagation();openModal('${job.id}')">VIEW →</button>
+          </div>
+        </div>
+        <div class="urgency-strip">
+          <div class="urgency-fill" id="ufill-${job.id}" style="width:${urg}%;background:${urgColor};"></div>
+        </div>
+      </div>`
+  }).join('')
+}
+
+// ═══════════════════════════════════════
+// REAL-TIME SUBSCRIPTION
+// ═══════════════════════════════════════
+// ═══════════════════════════════════════
+// PUSH NOTIFICATIONS
+// ═══════════════════════════════════════
+async function requestPushPermission() {
+  if (!('Notification' in window)) return
+  if (Notification.permission === 'granted') return
+  if (Notification.permission === 'denied') return
+  await Notification.requestPermission()
+}
+
+function sendPushNotification(title, body, tag) {
+  if (!('Notification' in window)) return
+  if (Notification.permission !== 'granted') return
+  if (!document.hidden) return
+  try {
+    const n = new Notification(title, {
+      body,
+      tag: tag || 'northstar-job',
+      icon: 'https://northstardeliveryservice.com/favicon.ico',
+      requireInteraction: true
+    })
+    n.onclick = () => { window.focus(); n.close() }
+  } catch(e) {}
+}
+
+function subscribeToJobs() {
+  realtimeChannel = db.channel('jobs-live')
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'jobs', filter: 'status=eq.posted' },
+      payload => {
+        const newJob = { ...payload.new, urgency: 100 }
+        jobs.unshift(newJob)
+        renderBoard()
+        showNotif('NEW JOB', (newJob.job_number || '') + ' — $' + Number(newJob.driver_pay||0).toFixed(2), 'green')
+        const pay = '$' + Number(newJob.driver_pay||0).toFixed(2)
+        const route = (newJob.pickup_city||'Pickup') + ' → ' + (newJob.dropoff_city||'Dropoff')
+        sendPushNotification(
+          '⭐ New Job Available — ' + pay,
+          route + ' · ' + (newJob.job_type||'Delivery') + ' · Tap to view',
+          'northstar-job-' + newJob.id
+        )
+      })
+    .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'jobs' },
+      payload => {
+        if (payload.new.status !== 'posted') {
+          jobs = jobs.filter(j => j.id !== payload.new.id)
+          renderBoard()
+        }
+      })
+    .subscribe()
+}
+
+// ═══════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════
+function openModal(id) {
+  const job = jobs.find(j => j.id === id)
+  if (!job) return
+  modalJob = job
+
+  document.getElementById('modalJobId').textContent = (job.job_number || 'JOB') + ' — ' + (TYPE_LABELS[job.job_type] || 'STANDARD')
+
+
+
+
+
+
+
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="detail-section">
+      <div class="detail-section-title">Route</div>
+      <div class="detail-route-card">
+        <div class="detail-point">
+          <div class="point-icon icon-pickup">P</div>
+          <div>
+            <div class="point-type">PICKUP</div>
+            <div class="point-name">${job.pickup_name || '—'}</div>
+            <div class="point-addr">${job.pickup_address || ''}</div>
+            ${job.pickup_contact ? `<div class="point-contact">${job.pickup_contact}</div>` : ''}
+          </div>
+        </div>
+        <div class="route-connector">
+          <div class="connector-line"></div>
+          <div class="connector-dist">${job.distance_miles || '?'} miles · est. ${Math.ceil((job.distance_miles||8)*2.5)} min</div>
+        </div>
+        <div class="detail-point">
+          <div class="point-icon icon-dropoff">D</div>
+          <div>
+            <div class="point-type">DROPOFF</div>
+            <div class="point-name">${job.dropoff_name || '—'}</div>
+            <div class="point-addr">${job.dropoff_address || ''}</div>
+            ${job.dropoff_contact ? `<div class="point-contact" style="color:var(--green)">${job.dropoff_contact}</div>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">Job Details</div>
+      <div class="detail-grid">
+        <div class="detail-item"><div class="detail-item-label">Type</div><div class="detail-item-val accent">${TYPE_LABELS[job.job_type]||'Standard'}</div></div>
+        <div class="detail-item"><div class="detail-item-label">Vehicle</div><div class="detail-item-val">${VEHICLE_LABELS[job.vehicle_class]||job.vehicle_class}</div></div>
+        <div class="detail-item"><div class="detail-item-label">Distance</div><div class="detail-item-val">${job.distance_miles||'?'} miles</div></div>
+        <div class="detail-item"><div class="detail-item-label">Stops</div><div class="detail-item-val">${job.stops||1}</div></div>
+      </div>
+    </div>
+    ${job.instructions ? `<div class="detail-section"><div class="detail-section-title">Special Instructions</div><div class="special-instructions">⚠️ ${job.instructions}</div></div>` : ''}
+    <div class="detail-section">
+      <div class="detail-section-title">Your Pay</div>
+      <div class="pay-breakdown">
+        <div class="pay-row total"><div class="pay-row-label">YOU EARN</div><div class="pay-row-val">$${Number(job.driver_pay||0).toFixed(2)}</div></div>
+      </div>
+    </div>`
+
+  document.getElementById('jobModal').classList.add('open')
+}
+
+function closeModal() {
+  document.getElementById('jobModal').classList.remove('open')
+  modalJob = null
+}
+
+async function acceptFromModal() {
+  if (!modalJob || activeJob) return
+  closeModal()
+  await acceptJob(modalJob)
+}
+
+// ═══════════════════════════════════════
+// ACCEPT JOB
+// ═══════════════════════════════════════
+async function acceptJob(job) {
+  if (activeJob) { showNotif('BUSY', 'Complete your current job first.', 'gold'); return }
+
+  const { error } = await db.from('jobs').update({
+    status: 'accepted',
+    driver_id: currentDriver.id,
+    accepted_at: new Date().toISOString()
+  }).eq('id', job.id).eq('status', 'posted') // optimistic lock — only update if still posted
+
+  if (error) {
+    showNotif('JOB TAKEN', 'Another driver got there first. Pick another!', 'red')
+    jobs = jobs.filter(j => j.id !== job.id)
+    renderBoard()
+    return
+  }
+
+  activeJob = { ...job, status: 'accepted' }
+  activeStep = 0
+  jobs = jobs.filter(j => j.id !== job.id)
+  renderBoard()
+  renderActiveJob()
+
+  document.querySelectorAll('.tab-btn2').forEach((b,i) => b.classList.toggle('active', i===1))
+  document.querySelectorAll('.tab-panel').forEach((p,i) => p.classList.toggle('active', i===1))
+  document.getElementById('activeBadge').style.display = 'inline-block'
+
+  showNotif('JOB ACCEPTED!', (job.job_number||'') + ' — Head to pickup', 'green')
+}
+
+// ═══════════════════════════════════════
+// ACTIVE JOB FLOW
+// ═══════════════════════════════════════
+const STEPS = [
+  {label:'Accepted', icon:'✓'},
+  {label:'En Route', icon:'🚗'},
+  {label:'Picked Up', icon:'📦'},
+  {label:'Delivering', icon:'→'},
+  {label:'Complete', icon:'★'}
+]
+
+function renderActiveJob() {
+  const panel = document.getElementById('activeJobPanel')
+  if (!activeJob) {
+    panel.innerHTML = `<div class="no-active"><div class="empty-icon">🚗</div><div class="empty-title" style="font-family:'Orbitron',sans-serif;font-size:0.85rem;letter-spacing:2px;">NO ACTIVE JOB</div><div style="font-size:0.78rem;max-width:260px;">Accept a job from the board to begin.</div></div>`
+    document.getElementById('activeBadge').style.display = 'none'
+    return
+  }
+
+  const stepsHTML = STEPS.map((s,i) => {
+    const done = i < activeStep, current = i === activeStep
+    return `
+      <div class="progress-step">
+        <div class="step-circle ${done?'done':current?'current':''}">${done?'✓':s.icon}</div>
+        <div class="step-label ${done?'done-label':current?'active':''}">${s.label}</div>
+      </div>
+      ${i < STEPS.length-1 ? `<div class="step-connector ${i<activeStep?'filled':''}"></div>` : ''}`
+  }).join('')
+
+  const isAtPickup = activeStep <= 1
+  const actionLabel = ['🚗 START DRIVING','📦 CONFIRM PICKUP','🚀 START DELIVERY','📸 CONFIRM DELIVERY'][activeStep] || ''
+
+  panel.innerHTML = `
+    <div class="active-job-card">
+      <div class="active-header">
+        <div class="active-title">ACTIVE — ${activeJob.job_number || ''}</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:0.68rem;color:var(--green);font-family:'DM Mono',monospace;"><div class="status-dot"></div>IN PROGRESS</div>
+      </div>
+      <div class="active-body">
+        <div class="progress-steps">${stepsHTML}</div>
+        <div style="background:var(--surface2);border:1px solid var(--border2);padding:1rem;margin-bottom:1rem;">
+          <div style="font-size:0.65rem;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;">${isAtPickup?'HEAD TO PICKUP':'HEAD TO DROPOFF'}</div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px;">${isAtPickup?(activeJob.pickup_name||''):(activeJob.dropoff_name||'')}</div>
+          <div style="font-size:0.78rem;color:var(--text2);font-family:'DM Mono',monospace;">${isAtPickup?(activeJob.pickup_address||''):(activeJob.dropoff_address||'')}</div>
+          <div style="font-size:0.72rem;color:${isAtPickup?'var(--accent)':'var(--green)'};margin-top:6px;">${isAtPickup?(activeJob.pickup_contact||''):(activeJob.dropoff_contact||'')}</div>
+        </div>
+        ${activeJob.instructions ? `<div class="special-instructions" style="margin-bottom:1rem;">⚠️ ${activeJob.instructions}</div>` : ''}
+        <div style="display:flex;justify-content:space-between;background:var(--surface2);border:1px solid var(--border2);padding:0.75rem 1rem;margin-bottom:1rem;">
+          <div><div style="font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Distance</div><div style="font-size:0.875rem;font-weight:600;font-family:'DM Mono',monospace;">${activeJob.distance_miles||'?'} mi</div></div>
+          <div><div style="font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Your Pay</div><div style="font-size:1rem;font-weight:700;color:var(--green);font-family:'Orbitron',sans-serif;">$${Number(activeJob.driver_pay||0).toFixed(2)}</div></div>
+          <div><div style="font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">Stops</div><div style="font-size:0.875rem;font-weight:600;">${activeJob.stops||1}</div></div>
+        </div>
+        ${activeStep < 4
+          ? `<button class="btn-primary" onclick="advanceStep()">${actionLabel}</button>`
+          : `<button class="btn-complete" onclick="completeJob()">★ MARK COMPLETE</button>`}
+      </div>
+    </div>`
+}
+
+async function advanceStep() {
+  activeStep++
+  const statusMap = [,'accepted','picked_up','delivering','delivering']
+  if (statusMap[activeStep]) {
+    await db.from('jobs').update({ status: statusMap[activeStep] }).eq('id', activeJob.id)
+  }
+  renderActiveJob()
+  showNotif(STEPS[activeStep].label.toUpperCase(), '', 'green')
+}
+
+async function completeJob() {
+  const { error } = await db.from('jobs').update({
+    status: 'completed',
+    completed_at: new Date().toISOString()
+  }).eq('id', activeJob.id)
+
+  if (!error) {
+    // Update driver stats
+    const newJobs = (currentDriver.jobs_completed||0) + 1
+    const newEarned = (currentDriver.total_earned||0) + Number(activeJob.driver_pay||0)
+    const newPending = (currentDriver.pending_payout||0) + Number(activeJob.driver_pay||0)
+
+    await db.from('drivers').update({
+      jobs_completed: newJobs,
+      total_earned: newEarned,
+      pending_payout: newPending
+    }).eq('id', currentDriver.id)
+
+    currentDriver.jobs_completed = newJobs
+    currentDriver.total_earned = newEarned
+    currentDriver.pending_payout = newPending
+
+    updateStats()
+    loadHistory()
+
+    const earned = activeJob.driver_pay
+    activeJob = null
+    activeStep = 0
+    renderActiveJob()
+
+    switchTab('board', document.querySelectorAll('.tab-btn2')[0])
+    showNotif('🎉 JOB COMPLETE!', 'Payment of $' + Number(earned).toFixed(2) + ' added to your earnings.', 'green')
+  }
+}
+
+// ═══════════════════════════════════════
+// HISTORY
+// ═══════════════════════════════════════
+async function loadHistory() {
+  const { data, error } = await db
+    .from('jobs')
+    .select('*')
+    .eq('driver_id', currentDriver.id)
+    .eq('status', 'completed')
+    .order('completed_at', { ascending: false })
+    .limit(30)
+
+  if (error) return
+
+  const list = document.getElementById('historyList')
+  if (!data || data.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text3);font-size:0.78rem;">No completed jobs yet.</div>'
+    return
+  }
+
+  const weekTotal = data.filter(j => {
+    const d = new Date(j.completed_at)
+    return (Date.now() - d) < 7 * 24 * 3600000
+  }).reduce((a,j) => a + Number(j.driver_pay||0), 0)
+  document.getElementById('earnWeek').textContent = '$' + weekTotal.toFixed(2)
+
+  list.innerHTML = data.map(j => `
+    <div class="history-item">
+      <div>
+        <div class="history-id">${j.job_number || j.id.slice(0,8)}</div>
+        <div class="history-route">${j.pickup_city||'—'} → ${j.dropoff_city||'—'}</div>
+        <div class="history-date">${j.completed_at ? new Date(j.completed_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '—'}</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="history-pay">$${Number(j.driver_pay||0).toFixed(2)}</div>
+        <div class="status-badge">COMPLETED</div>
+      </div>
+    </div>`).join('')
+}
+
+// ═══════════════════════════════════════
+// URGENCY DECAY
+// ═══════════════════════════════════════
+function startUrgencyDecay() {
+  urgencyInterval = setInterval(() => {
+    jobs.forEach(j => {
+      j.urgency = Math.max(5, (j.urgency||50) - 0.5)
+      const fill = document.getElementById('ufill-' + j.id)
+      if (fill) {
+        const c = j.urgency > 60 ? '#00e676' : j.urgency > 30 ? '#ffab00' : '#ff1744'
+        fill.style.width = j.urgency + '%'
+        fill.style.background = c
+      }
+    })
+  }, 3000)
+}
+
+// ═══════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════
+function timeAgo(ts) {
+  if (!ts) return '—'
+  const s = Math.floor((Date.now() - new Date(ts)) / 1000)
+  if (s < 60) return s + 's ago'
+  const m = Math.floor(s/60)
+  if (m < 60) return m + 'm ago'
+  return Math.floor(m/60) + 'h ago'
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-btn2').forEach(b => b.classList.remove('active'))
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'))
+  btn.classList.add('active')
+  document.getElementById('panel-' + name).classList.add('active')
+}
+
+function showErr(el, msg) { el.textContent = msg; el.style.display = 'block' }
+
+function showNotif(title, body, type) {
+  const colors = {green:'var(--green)',gold:'var(--gold)',red:'var(--red)',blue:'var(--accent)'}
+  const el = document.getElementById('notif')
+  document.getElementById('notifT').textContent = title
+  document.getElementById('notifT').style.color = colors[type]||colors.green
+  document.getElementById('notifB').textContent = body
+  el.style.borderColor = colors[type]||colors.green
+  el.style.display = 'block'
+  clearTimeout(el._t)
+  el._t = setTimeout(() => el.style.display = 'none', 4000)
+}
+
+// Start
+boot()
+</script>
+</body>
+</html>
