@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthStar — Connect Your Bank</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1628;--navy2:#0f1f3d;--gold:#C9A84C;--gold2:#e8c96a;--white:#ffffff;--green:#10b981;--red:#ef4444;--electric:#1a56db;--muted:rgba(255,255,255,0.5);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,0.15) 0%,transparent 100%),radial-gradient(1px 1px at 80% 10%,rgba(255,255,255,0.1) 0%,transparent 100%),radial-gradient(1px 1px at 50% 60%,rgba(255,255,255,0.12) 0%,transparent 100%);pointer-events:none;z-index:0;}
+.header{background:rgba(10,22,40,0.95);border-bottom:1px solid rgba(201,168,76,0.2);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:3px;color:var(--gold);text-decoration:none;}
+.logo span{color:var(--white);}
+
+/* SCREENS */
+.screen{display:none;flex:1;align-items:center;justify-content:center;padding:40px 5%;position:relative;z-index:1;}
+.screen.active{display:flex;}
+
+/* LOGIN */
+.card{width:100%;max-width:440px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:40px;}
+.card::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--electric));margin:-40px -40px 32px;}
+.card-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;margin-bottom:6px;}
+.card-title span{color:var(--gold);}
+.card-sub{font-size:0.85rem;color:var(--muted);margin-bottom:28px;line-height:1.6;}
+.field-group{margin-bottom:16px;}
+.field-label{display:block;font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px;}
+.field-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:var(--white);padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.field-input:focus{border-color:var(--gold);}
+.field-input::placeholder{color:rgba(255,255,255,0.2);}
+.btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:var(--navy);font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;padding:14px;cursor:pointer;transition:all 0.2s;margin-top:8px;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3);}
+.btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+.btn.secondary{background:rgba(255,255,255,0.08);color:var(--white);margin-top:10px;}
+.msg{padding:10px 14px;font-size:0.8rem;margin-top:12px;text-align:center;display:none;}
+.msg.error{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;}
+.msg.success{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;}
+
+/* DASHBOARD */
+.dash{width:100%;max-width:520px;}
+.dash-header{text-align:center;margin-bottom:36px;}
+.driver-avatar{width:64px;height:64px;background:linear-gradient(135deg,var(--gold),var(--electric));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--navy);margin:0 auto 14px;}
+.driver-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;}
+.driver-status{font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.driver-status.pending{color:var(--gold);}
+.driver-status.active{color:var(--green);}
+
+/* PAYOUT CARD */
+.payout-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:28px;margin-bottom:16px;}
+.payout-card::before{content:'';display:block;height:2px;background:linear-gradient(90deg,var(--gold),var(--electric));margin:-28px -28px 24px;}
+.payout-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;margin-bottom:6px;}
+.payout-desc{font-size:0.83rem;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+
+/* CONNECTED STATE */
+.connected-badge{display:flex;align-items:center;gap:10px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);padding:14px 18px;margin-bottom:16px;}
+.connected-dot{width:10px;height:10px;background:var(--green);border-radius:50%;flex-shrink:0;}
+.connected-text{font-size:0.85rem;color:#6ee7b7;font-weight:500;}
+
+/* EARNINGS */
+.earnings-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.earn-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:16px;text-align:center;}
+.earn-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--gold);}
+.earn-label{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+
+/* PAYMENT METHODS */
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.pm-btn{background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
+.pm-btn:hover{border-color:rgba(201,168,76,0.4);}
+.pm-btn.active{background:rgba(201,168,76,0.1);border-color:var(--gold);}
+.pm-btn .pm-icon{font-size:1.4rem;display:block;margin-bottom:6px;}
+.pm-btn .pm-name{font-size:0.8rem;font-weight:600;color:var(--white);}
+.pm-btn .pm-desc{font-size:0.7rem;color:var(--muted);margin-top:2px;}
+
+.divider{height:1px;background:rgba(255,255,255,0.07);margin:20px 0;}
+.note{font-size:0.73rem;color:rgba(255,255,255,0.25);text-align:center;line-height:1.6;margin-top:14px;}
+</style>
+</head>
+<body>
+<header class="header">
+  <a href="/dispatch.html" class="logo">NORTH<span>STAR</span></a>
+  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:1px;">PAYMENT SETUP</div>
+</header>
+
+<!-- LOGIN SCREEN -->
+<div class="screen active" id="loginScreen">
+  <div class="card">
+    <div class="card-title">Connect Your <span>Bank</span></div>
+    <div class="card-sub">Enter your email and PIN to access your payment settings.</div>
+    <div class="field-group">
+      <label class="field-label">Email Address</label>
+      <input class="field-input" id="loginEmail" type="email" placeholder="you@email.com">
+    </div>
+    <div class="field-group">
+      <label class="field-label">Your PIN</label>
+      <input class="field-input" id="loginPin" type="password" maxlength="4" placeholder="4-digit PIN" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <button class="btn" id="loginBtn" onclick="doLogin()">ACCESS MY ACCOUNT &rarr;</button>
+    <div class="msg error" id="loginError"></div>
+    <p class="note" style="margin-top:16px;">Don't know your PIN? Contact NorthStar at tjs@northstardeliveryservice.com</p>
+  </div>
+</div>
+
+<!-- DASHBOARD SCREEN -->
+<div class="screen" id="dashScreen">
+  <div class="dash">
+    <div class="dash-header">
+      <div class="driver-avatar" id="driverAvatar">--</div>
+      <div class="driver-name" id="driverName">Driver</div>
+      <div class="driver-status" id="driverStatus">Loading...</div>
+    </div>
+
+    <!-- EARNINGS -->
+    <div class="earnings-grid">
+      <div class="earn-box">
+        <div class="earn-val" id="earnTotal">$0.00</div>
+        <div class="earn-label">Total Earned</div>
+      </div>
+      <div class="earn-box">
+        <div class="earn-val" id="earnPending">$0.00</div>
+        <div class="earn-label">Pending Payout</div>
+      </div>
+    </div>
+
+    <!-- PAYOUT SETUP -->
+    <div class="payout-card">
+      <div class="payout-title">&#128179; Payout Method</div>
+      <div class="payout-desc">Choose how you want to receive your earnings. We pay out after every completed job.</div>
+
+      <!-- NOT CONNECTED -->
+      <div id="notConnected">
+        <div class="pm-grid">
+          <div class="pm-btn active" id="pmStripe" onclick="selectMethod('stripe',this)">
+            <span class="pm-icon">&#127970;</span>
+            <div class="pm-name">Bank Account</div>
+            <div class="pm-desc">Direct deposit via Stripe</div>
+          </div>
+          <div class="pm-btn" id="pmManual" onclick="selectMethod('manual',this)">
+            <span class="pm-icon">&#128241;</span>
+            <div class="pm-name">Venmo / Zelle</div>
+            <div class="pm-desc">Manual transfer</div>
+          </div>
+        </div>
+
+        <!-- STRIPE CONNECT -->
+        <div id="stripeSection">
+          <button class="btn" id="connectBtn" onclick="connectStripe()">CONNECT BANK ACCOUNT &rarr;</button>
+          <p class="note">Powered by Stripe. Your bank info is never stored on our servers. Direct deposit after every job.</p>
+        </div>
+
+        <!-- MANUAL -->
+        <div id="manualSection" style="display:none;">
+          <div class="field-group">
+            <label class="field-label">Venmo / Zelle / Cash App Handle</label>
+            <input class="field-input" id="payHandle" type="text" placeholder="@yourhandle or phone number">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Payment App</label>
+            <select class="field-input" id="payApp" style="appearance:none;">
+              <option value="">Select app...</option>
+              <option>Venmo</option>
+              <option>Zelle</option>
+              <option>Cash App</option>
+              <option>PayPal</option>
+            </select>
+          </div>
+          <button class="btn" id="saveManualBtn" onclick="saveManual()">SAVE PAYMENT INFO &rarr;</button>
+          <div class="msg error" id="manualError"></div>
+          <div class="msg success" id="manualSuccess"></div>
+        </div>
+      </div>
+
+      <!-- CONNECTED STATE -->
+      <div id="connectedState" style="display:none;">
+        <div class="connected-badge">
+          <div class="connected-dot"></div>
+          <div class="connected-text" id="connectedText">Bank account connected</div>
+        </div>
+        <button class="btn secondary" onclick="changeMethod()">CHANGE PAYOUT METHOD</button>
+      </div>
+    </div>
+
+    <button class="btn secondary" onclick="doLogout()">BACK TO DISPATCH</button>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL='https://imljjaurxiawfxjckkqf.supabase.co'
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y'
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY)
+const STRIPE_ACCOUNT='acct_1TAGOeP1sS66vAnJ'
+
+let currentDriver=null
+let selectedPayMethod='stripe'
+
+function selectMethod(method,el){
+  selectedPayMethod=method
+  document.querySelectorAll('.pm-btn').forEach(b=>b.classList.remove('active'))
+  el.classList.add('active')
+  document.getElementById('stripeSection').style.display=method==='stripe'?'block':'none'
+  document.getElementById('manualSection').style.display=method==='manual'?'block':'none'
+}
+
+async function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim()
+  const pin=document.getElementById('loginPin').value.trim()
+  const err=document.getElementById('loginError')
+  const btn=document.getElementById('loginBtn')
+  err.style.display='none'
+  if(!email||!pin){err.style.display='block';err.textContent='Please enter your email and PIN.';return}
+  btn.disabled=true;btn.textContent='CHECKING...'
+  try{
+    const{data,error}=await db.from('drivers').select('*').eq('email',email).eq('pin',pin).maybeSingle()
+    if(error||!data){
+      err.style.display='block';err.textContent='Email or PIN not found. Contact NorthStar for help.'
+      btn.disabled=false;btn.textContent='ACCESS MY ACCOUNT \u2192';return
+    }
+    currentDriver=data
+    showDash()
+  }catch(e){
+    err.style.display='block';err.textContent='Connection error: '+e.message
+    btn.disabled=false;btn.textContent='ACCESS MY ACCOUNT \u2192'
+  }
+}
+
+function showDash(){
+  document.getElementById('loginScreen').classList.remove('active')
+  document.getElementById('dashScreen').classList.add('active')
+  const initials=currentDriver.full_name?currentDriver.full_name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase():'DR'
+  document.getElementById('driverAvatar').textContent=initials
+  document.getElementById('driverName').textContent=currentDriver.full_name||'Driver'
+  const statusEl=document.getElementById('driverStatus')
+  statusEl.textContent=currentDriver.status==='active'?'✓ Active Driver':'⏳ Pending Approval'
+  statusEl.className='driver-status '+(currentDriver.status==='active'?'active':'pending')
+  document.getElementById('earnTotal').textContent='$'+(currentDriver.total_earned||0).toFixed(2)
+  document.getElementById('earnPending').textContent='$'+(currentDriver.pending_payout||0).toFixed(2)
+
+  // Check if payout already set up
+  if(currentDriver.payout_method){
+    showConnected()
+  }
+}
+
+function showConnected(){
+  document.getElementById('notConnected').style.display='none'
+  document.getElementById('connectedState').style.display='block'
+  const method=currentDriver.payout_method
+  const handle=currentDriver.payout_handle||''
+  if(method==='stripe'){
+    document.getElementById('connectedText').textContent='&#127970; Bank account connected via Stripe'
+  } else {
+    document.getElementById('connectedText').textContent=method+' connected: '+handle
+  }
+}
+
+function changeMethod(){
+  document.getElementById('notConnected').style.display='block'
+  document.getElementById('connectedState').style.display='none'
+}
+
+async function connectStripe(){
+  const btn=document.getElementById('connectBtn')
+  btn.disabled=true;btn.textContent='OPENING STRIPE...'
+  // Build Stripe Connect OAuth URL
+  const redirectUri=encodeURIComponent('https://northstardeliveryservice.com/driver-payout-setup.html?stripe=connected')
+  const state=encodeURIComponent(currentDriver.id)
+  const stripeUrl=`https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_&scope=read_write&redirect_uri=${redirectUri}&state=${state}&stripe_user[email]=${encodeURIComponent(currentDriver.email||'')}&stripe_user[first_name]=${encodeURIComponent((currentDriver.full_name||'').split(' ')[0])}&stripe_user[last_name]=${encodeURIComponent((currentDriver.full_name||'').split(' ').slice(1).join(' '))}&stripe_user[business_type]=individual`
+
+  // Save pending stripe connection
+  await db.from('drivers').update({payout_method:'stripe_pending'}).eq('id',currentDriver.id)
+  window.location.href=stripeUrl
+}
+
+async function saveManual(){
+  const handle=document.getElementById('payHandle').value.trim()
+  const app=document.getElementById('payApp').value
+  const err=document.getElementById('manualError')
+  const suc=document.getElementById('manualSuccess')
+  err.style.display='none';suc.style.display='none'
+  if(!handle||!app){err.style.display='block';err.textContent='Please enter your handle and select an app.';return}
+  const btn=document.getElementById('saveManualBtn')
+  btn.disabled=true;btn.textContent='SAVING...'
+  try{
+    await db.from('drivers').update({payout_method:app,payout_handle:handle}).eq('id',currentDriver.id)
+    currentDriver.payout_method=app;currentDriver.payout_handle=handle
+    suc.style.display='block';suc.textContent='&#10003; Payment info saved!'
+    setTimeout(()=>showConnected(),1500)
+  }catch(e){
+    err.style.display='block';err.textContent='Error saving: '+e.message
+    btn.disabled=false;btn.textContent='SAVE PAYMENT INFO \u2192'
+  }
+}
+
+function doLogout(){window.location.href='/dispatch.html'}
+
+// Handle Stripe return
+async function handleStripeReturn(){
+  const params=new URLSearchParams(window.location.search)
+  if(params.get('stripe')==='connected'){
+    history.replaceState({},'',window.location.pathname)
+    // Find driver by state param
+    const driverId=params.get('state')
+    if(driverId){
+      await db.from('drivers').update({payout_method:'stripe',stripe_connected:true}).eq('id',driverId)
+    }
+  }
+}
+
+handleStripeReturn()
+</script>
+</body>
+</html>
