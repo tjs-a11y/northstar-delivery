@@ -767,7 +767,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 // ─────────────────────────────────────
 // CONSTANTS & CONFIGURATION
 // ─────────────────────────────────────
-const ADMIN  = { email:'tjs@northstardeliveryservice.com', pass:'Northstar2025!' };
+const ADMIN  = { email:'tjs@northstardeliveryservice.com', pass:'NorthStar2026!' };
 const STRIPE = 'https://buy.stripe.com/cNi7sN1jpgBtgnT9j92Fa00';
 const DRIVER_CUT = 0.65;
 const CUTOFF_HOUR = 18;
@@ -924,18 +924,19 @@ async function loadSupabaseDrivers(){
     });
     if (!res.ok) { console.warn('Supabase fetch error:', res.status); return; }
     const data = await res.json();
-    if (!data || data.length === 0) { return; }
+    if (!Array.isArray(data) || data.length === 0) { return; }
 
-    // Get seed driver names to avoid duplicates by name
+    // Merge Supabase drivers into global drivers array
     const seedNames = new Set(SEED_DRIVERS.map(d => d.name.toLowerCase().trim()));
-    let added = 0;
+    const existingIds = new Set(drivers.map(d => d.id));
 
     data.forEach(d => {
+      if (!d.full_name && !d.email) return; // skip empty rows
       const dName = (d.full_name || '').toLowerCase().trim();
-      if (seedNames.has(dName)) return;
-      if (drivers.find(x => x.id === d.id)) return;
+      if (seedNames.has(dName)) return; // skip duplicates of seed drivers
+      if (existingIds.has(d.id)) return; // skip already added
 
-      drivers.push({
+      const mapped = {
         id: d.id,
         name: d.full_name || d.email || 'Unknown',
         phone: d.phone || '—',
@@ -943,22 +944,27 @@ async function loadSupabaseDrivers(){
         vehicle: d.vehicle_type || '—',
         city: normCity(d.city),
         status: d.status === 'active' ? 'available' : (d.status || 'pending'),
-        pin: d.pin || '0000',
+        pin: String(d.pin || '0000'),
         email: d.email || '',
         payout_method: d.payout_method || '',
         payout_handle: d.payout_handle || '',
         fromSupabase: true
-      });
-      added++;
+      };
+      drivers.push(mapped);
+      existingIds.add(d.id);
     });
 
-    if (added > 0) showToast('✅ ' + added + ' new drivers loaded');
-    renderDrivers();
+    // Always refresh dropdown (needed for driver PIN login)
     fillDriverSel();
     populateDriverSel();
-    updateStats();
+
+    // Only re-render dashboard if admin is logged in
+    if (currentRole === 'admin') {
+      renderDrivers();
+      updateStats();
+    }
   } catch(e) {
-    showToast('⚠️ Load failed: ' + e.message, true);
+    console.warn('loadSupabaseDrivers error:', e.message);
   }
 }
 
@@ -1003,7 +1009,7 @@ async function saveDriverToSupabase(driverData) {
 
 function initAdmin(){
   updateClock(); setInterval(updateClock,1000);
-  seedDemo(); fillDriverSel(); renderAll();
+  seedDemo(); fillDriverSel(); renderAll(); loadSupabaseDrivers();
   // Poll for new website jobs every 20s
   setInterval(()=>{
     const fresh = load('ns_jobs',[]);
