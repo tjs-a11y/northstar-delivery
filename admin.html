@@ -644,7 +644,7 @@ function renderDrivers() {
   document.getElementById('driversList').innerHTML = allDrivers.length === 0
     ? '<div class="loading">No drivers registered</div>'
     : allDrivers.map(d=>`
-      <div class="dt-row" style="grid-template-columns:1fr 100px 100px 80px 80px 60px 120px;">
+      <div class="dt-row" style="grid-template-columns:1fr 100px 100px 80px 80px 120px 60px 120px;">
         <div>
           <div class="dtc bold">${d.full_name||'—'}</div>
           <div class="dtc mono" style="font-size:0.65rem;">${d.email||''}</div>
@@ -653,6 +653,11 @@ function renderDrivers() {
         <div class="dtc">${d.vehicle_type||d.vehicle_class||'—'}</div>
         <div class="dtc">${d.jobs_completed||0}</div>
         <div class="dtc green">$${Number(d.total_earned||0).toFixed(0)}</div>
+        <div class="dtc" style="font-size:0.72rem;">
+          ${d.payout_method
+            ? `<span style="color:var(--green);">✓ ${d.payout_method}</span>${d.payout_handle ? '<br><span style="font-family:monospace;font-size:0.65rem;color:var(--text3);">'+d.payout_handle+'</span>' : ''}`
+            : '<span style="color:var(--text3);">Not set</span>'}
+        </div>
         <div class="dtc ${Number(d.strikes||0)>0?'red':''}">${d.strikes||0}</div>
         <div class="dtc" style="display:flex;gap:4px;flex-wrap:wrap;">
           ${d.status==='pending'
@@ -727,6 +732,8 @@ function viewDriver(id) {
     ['Jobs Completed', d.jobs_completed||0],
     ['Total Earned', '$'+(d.total_earned||0).toFixed(2), 'green'],
     ['Pending Payout', '$'+(d.pending_payout||0).toFixed(2), 'gold'],
+    ['Payout Method', d.payout_method||'Not set yet'],
+    ['Payout Handle', d.payout_handle||'—'],
     ['Strikes', d.strikes||0],
     ['Joined', d.created_at ? new Date(d.created_at).toLocaleDateString() : '—'],
   ].map(([l,v,c])=>`<div class="modal-row"><div class="mr-label">${l}</div><div class="mr-val ${c||''}">${v}</div></div>`).join('')
@@ -780,12 +787,17 @@ function renderPayouts() {
   document.getElementById('payoutsList').innerHTML = drivers.length === 0
     ? '<div class="loading">No pending payouts</div>'
     : drivers.map(d=>`
-      <div class="dt-row" style="grid-template-columns:1fr 100px 80px 80px 80px 80px;">
+      <div class="dt-row" style="grid-template-columns:1fr 100px 130px 80px 80px 80px;">
         <div>
           <div class="dtc bold">${d.full_name||'—'}</div>
           <div class="dtc mono" style="font-size:0.65rem;">${d.email||''}</div>
         </div>
         <div class="dtc">${d.city||'—'}</div>
+        <div class="dtc" style="font-size:0.72rem;">
+          ${d.payout_method
+            ? `<span style="color:var(--green);font-weight:600;">${d.payout_method}</span>${d.payout_handle ? '<br><span style="font-family:monospace;font-size:0.65rem;color:var(--text3);">'+d.payout_handle+'</span>' : ''}`
+            : '<span style="color:var(--gold);">⚠ Not set</span>'}
+        </div>
         <div class="dtc">${d.jobs_completed||0}</div>
         <div class="dtc green">$${Number(d.total_earned||0).toFixed(2)}</div>
         <div class="dtc gold">$${Number(d.pending_payout||0).toFixed(2)}</div>
