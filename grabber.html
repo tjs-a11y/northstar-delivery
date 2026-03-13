@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRABBER — Lead Intelligence System</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root {
+  --black: #020304;
+  --bg: #060810;
+  --bg2: #0A0D14;
+  --bg3: #0F1420;
+  --green: #00FF88;
+  --green2: #00CC6A;
+  --green3: rgba(0,255,136,0.12);
+  --green4: rgba(0,255,136,0.06);
+  --amber: #FFB800;
+  --amber2: rgba(255,184,0,0.15);
+  --red: #FF3B3B;
+  --red2: rgba(255,59,59,0.15);
+  --blue: #00A8FF;
+  --blue2: rgba(0,168,255,0.15);
+  --white: #E8EDF5;
+  --muted: rgba(232,237,245,0.45);
+  --muted2: rgba(232,237,245,0.2);
+  --border: rgba(0,255,136,0.1);
+  --border2: rgba(232,237,245,0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* SCANLINE EFFECT */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,255,136,0.01) 2px,
+    rgba(0,255,136,0.01) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* GRID */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,136,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════ HEADER ═══════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6,8,16,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  color: var(--green);
+  text-shadow: 0 0 20px rgba(0,255,136,0.4);
+}
+
+.logo-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--green);
+  letter-spacing: 2px;
+}
+
+.pulse-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted2);
+  letter-spacing: 2px;
+}
+
+.header-btn {
+  background: var(--green3);
+  border: 1px solid var(--border);
+  color: var(--green);
+  padding: 7px 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-btn:hover {
+  background: var(--green);
+  color: var(--black);
+}
+
+/* ═══════════════════════ LAYOUT ═══════════════════════ */
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: calc(100vh - 56px);
+  position: relative;
+  z-index: 1;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: var(--bg);
+  border-right: 1px solid var(--border2);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  padding: 12px 20px 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+  letter-spacing: 0.5px;
+}
+
+.nav-item:hover { color: var(--white); background: var(--bg2); }
+
+.nav-item.active {
+  color: var(--green);
+  background: var(--green4);
+  border-left-color: var(--green);
+}
+
+.nav-icon { font-size: 0.9rem; width: 18px; text-align: center; }
+
+.nav-badge {
+  margin-left: auto;
+  background: var(--green);
+  color: var(--black);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.nav-badge.amber { background: var(--amber); }
+.nav-badge.red { background: var(--red); }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border2);
+}
+
+.sidebar-stat {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.sidebar-stat strong {
+  color: var(--green);
+  font-size: 0.75rem;
+}
+
+/* MAIN */
+.main {
+  background: var(--bg);
+  overflow-y: auto;
+}
+
+/* ═══════════════════════ TOP METRICS ═══════════════════════ */
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--border2);
+}
+
+.metric-card {
+  padding: 20px 24px;
+  border-right: 1px solid var(--border2);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.metric-card:last-child { border-right: none; }
+.metric-card:hover { background: var(--bg2); }
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.metric-card:hover::before { transform: scaleX(1); }
+
+.metric-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.metric-value.green { color: var(--green); text-shadow: 0 0 16px rgba(0,255,136,0.3); }
+.metric-value.amber { color: var(--amber); }
+.metric-value.red { color: var(--red); }
+
+.metric-delta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-delta.up { color: var(--green); }
+.metric-delta.down { color: var(--red); }
+
+/* ═══════════════════════ CONTENT AREA ═══════════════════════ */
+.content { padding: 24px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--green);
+}
+
+.section-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  padding: 5px 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-sm:hover { border-color: var(--green); color: var(--green); }
+.btn-sm.active { border-color: var(--green); color: var(--green); background: var(--green3); }
+
+/* ═══════════════════════ TWO-COLUMN LAYOUT ═══════════════════════ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* ═══════════════════════ LEAD TABLE ═══════════════════════ */
+.table-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  overflow: hidden;
+}
+
+.table-toolbar {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border2);
+  color: var(--white);
+  padding: 6px 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: var(--green); }
+.search-input::placeholder { color: var(--muted2); }
+
+.filter-chip {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--muted2);
+  padding: 4px 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-chip:hover, .filter-chip.active {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-bottom: 1px solid var(--border2);
+}
+
+th {
+  padding: 10px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(232,237,245,0.04);
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+tbody tr:hover { background: rgba(0,255,136,0.03); }
+tbody tr:last-child { border-bottom: none; }
+
+td {
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.company-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.company-name {
+  font-weight: 500;
+  color: var(--white);
+  font-size: 0.82rem;
+}
+
+.company-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+}
+
+.signal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.signal-badge.job { background: var(--blue2); color: var(--blue); border: 1px solid rgba(0,168,255,0.2); }
+.signal-badge.search { background: var(--amber2); color: var(--amber); border: 1px solid rgba(255,184,0,0.2); }
+.signal-badge.new-biz { background: var(--green3); color: var(--green); border: 1px solid var(--border); }
+.signal-badge.visit { background: var(--red2); color: var(--red); border: 1px solid rgba(255,59,59,0.2); }
+
+.status-pill {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+}
+
+.status-pill.detected { background: rgba(232,237,245,0.08); color: var(--muted); }
+.status-pill.profiled { background: var(--blue2); color: var(--blue); }
+.status-pill.ad-live { background: var(--amber2); color: var(--amber); }
+.status-pill.emailed { background: var(--green3); color: var(--green); }
+.status-pill.converted { background: var(--green); color: var(--black); font-weight: 700; }
+
+.score-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+  max-width: 60px;
+}
+
+.score-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: var(--green);
+  transition: width 0.5s ease;
+}
+
+.score-fill.medium { background: var(--amber); }
+.score-fill.low { background: var(--red); }
+
+.score-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  width: 28px;
+  text-align: right;
+}
+
+.action-btn {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--muted2);
+  padding: 4px 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.action-btn:hover { border-color: var(--green); color: var(--green); }
+.action-btn.strike { border-color: rgba(255,59,59,0.3); color: var(--red); }
+.action-btn.strike:hover { background: var(--red2); }
+
+/* ═══════════════════════ RIGHT PANEL ═══════════════════════ */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  padding: 16px;
+}
+
+.panel-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.live-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.feed-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(232,237,245,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: feedIn 0.4s ease both;
+}
+
+.feed-item:last-child { border-bottom: none; }
+
+@keyframes feedIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.feed-company {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.feed-signal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+}
+
+.feed-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--green);
+}
+
+/* FUNNEL */
+.funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funnel-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.funnel-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.funnel-bar-wrap {
+  flex: 1;
+  height: 16px;
+  background: rgba(255,255,255,0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.funnel-bar {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  transition: width 1s ease;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.funnel-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+/* PIPELINE CHART */
+.pipeline-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 80px;
+  padding-bottom: 4px;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--green3);
+  border: 1px solid var(--border);
+  transition: height 0.5s ease;
+  position: relative;
+}
+
+.bar-fill:hover { background: var(--green); }
+
+.bar-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  color: var(--muted2);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════ BOTTOM SECTION ═══════════════════════ */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.outreach-queue {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  padding: 16px;
+}
+
+.queue-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(232,237,245,0.04);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.queue-item:last-child { border-bottom: none; }
+
+.queue-step {
+  width: 24px; height: 24px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.queue-content { flex: 1; }
+.queue-company { font-size: 0.78rem; font-weight: 500; color: var(--white); }
+.queue-action { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: var(--muted2); margin-top: 2px; }
+
+.queue-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  padding: 2px 6px;
+}
+
+.queue-status.pending { color: var(--amber); border: 1px solid rgba(255,184,0,0.2); }
+.queue-status.sending { color: var(--green); border: 1px solid var(--border); }
+
+/* INDUSTRY BREAKDOWN */
+.industry-list { display: flex; flex-direction: column; gap: 10px; }
+
+.industry-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.industry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.industry-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.industry-pct {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+}
+
+.industry-track {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.industry-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: linear-gradient(90deg, var(--green), var(--green2));
+}
+
+/* RECENT CONVERSIONS */
+.conversion-list { display: flex; flex-direction: column; gap: 0; }
+
+.conversion-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(232,237,245,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conversion-item:last-child { border-bottom: none; }
+
+.conversion-left { display: flex; flex-direction: column; gap: 2px; }
+.conversion-company { font-size: 0.78rem; font-weight: 500; color: var(--white); }
+.conversion-type { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--muted2); }
+
+.conversion-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+
+/* ═══════════════════════ MODAL ═══════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2,3,4,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  width: 560px;
+  max-width: 95vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: modalIn 0.2s ease both;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  color: var(--green);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--muted2);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.modal-close:hover { color: var(--white); }
+
+.modal-body { padding: 20px; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-field { display: flex; flex-direction: column; gap: 4px; }
+
+.profile-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.profile-val {
+  font-size: 0.84rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.strike-sequence {
+  margin-top: 20px;
+  border-top: 1px solid var(--border2);
+  padding-top: 16px;
+}
+
+.strike-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 12px;
+}
+
+.strike-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.strike-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border2);
+}
+
+.strike-step.done { border-color: var(--border); background: var(--green4); }
+.strike-step.active { border-color: var(--amber); background: var(--amber2); }
+
+.strike-num {
+  width: 24px; height: 24px;
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted2);
+  flex-shrink: 0;
+}
+
+.strike-step.done .strike-num { border-color: var(--green); color: var(--green); }
+.strike-step.active .strike-num { border-color: var(--amber); color: var(--amber); }
+
+.strike-info { flex: 1; }
+.strike-name { font-size: 0.78rem; font-weight: 500; color: var(--white); }
+.strike-desc { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--muted2); margin-top: 2px; }
+
+.strike-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  padding: 2px 7px;
+}
+
+.strike-status.done { color: var(--green); border: 1px solid var(--border); }
+.strike-status.live { color: var(--amber); border: 1px solid rgba(255,184,0,0.3); }
+.strike-status.pending { color: var(--muted2); border: 1px solid var(--border2); }
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border2);
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--muted);
+}
+
+.modal-btn:hover { border-color: var(--green); color: var(--green); }
+.modal-btn.primary { background: var(--green); color: var(--black); border-color: var(--green); }
+.modal-btn.primary:hover { background: var(--green2); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,255,136,0.2); }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,136,0.4); }
+
+/* ANIMATIONS */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.metric-value { animation: countUp 0.6s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div>
+      <div class="logo">GRABBER</div>
+      <div class="logo-sub">Lead Intelligence System</div>
+    </div>
+    <div class="header-status">
+      <div class="pulse-dot"></div>
+      SYSTEM ACTIVE
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-time" id="clock">--:--:--</div>
+    <button class="header-btn" onclick="addLead()">+ NEW SCAN</button>
+    <button class="header-btn" onclick="enrichAllLeads()" style="background:var(--amber);color:#000;">⚡ ENRICH + EMAIL ALL</button>
+    <button class="header-btn" onclick="runStrike()">📡 RUN STRIKE</button>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="nav-section-label">Operations</div>
+    <div class="nav-item active" onclick="setNav(this)">
+      <span class="nav-icon">◈</span> Command
+      <span class="nav-badge">12</span>
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">◉</span> Live Feed
+      <span class="nav-badge amber">3</span>
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">▣</span> Leads
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">⊡</span> Outreach
+      <span class="nav-badge red">7</span>
+    </div>
+
+    <div class="nav-section-label">Intelligence</div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">◧</span> Signals
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">◫</span> Profiles
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">⊞</span> Industries
+    </div>
+
+    <div class="nav-section-label">Revenue</div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">$</span> Conversions
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">◱</span> Analytics
+    </div>
+    <div class="nav-item" onclick="setNav(this)">
+      <span class="nav-icon">⚙</span> Settings
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-stat">Monthly Leads<br><strong id="total-leads">247</strong></div>
+      <div class="sidebar-stat" style="margin-top:8px;">Converted<br><strong style="color:var(--amber)" id="converted-count">18</strong></div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- METRICS -->
+    <div class="metrics-bar">
+      <div class="metric-card">
+        <div class="metric-label">Detected Today</div>
+        <div class="metric-value green" id="m1">34</div>
+        <div class="metric-delta up">↑ 12% vs yesterday</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Ads Live</div>
+        <div class="metric-value amber" id="m2">89</div>
+        <div class="metric-delta up">↑ 5 new today</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Emails Sent</div>
+        <div class="metric-value" id="m3">156</div>
+        <div class="metric-delta up">↑ 24% open rate</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Converted</div>
+        <div class="metric-value green" id="m4">18</div>
+        <div class="metric-delta up">↑ 3 this week</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Revenue Pipeline</div>
+        <div class="metric-value amber" id="m5">$24K</div>
+        <div class="metric-delta up">↑ $4K this month</div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- TOP TWO COL -->
+      <div class="two-col">
+
+        <!-- LEAD TABLE -->
+        <div>
+          <div class="section-header">
+            <div class="section-title">Active Lead Pipeline</div>
+            <div class="section-actions">
+              <button class="btn-sm active">All</button>
+              <button class="btn-sm">Job Signal</button>
+              <button class="btn-sm">Search</button>
+              <button class="btn-sm">Visit</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <div class="table-toolbar">
+              <input class="search-input" type="text" placeholder="Search companies..." id="searchInput" oninput="filterTable()">
+              <button class="filter-chip active" onclick="filterCity(this,'all')">All</button>
+              <button class="filter-chip" onclick="filterCity(this,'atlanta')">Atlanta</button>
+              <button class="filter-chip" onclick="filterCity(this,'chicago')">Chicago</button>
+              <button class="filter-chip" onclick="filterCity(this,'charlotte')">Charlotte</button>
+              <button class="filter-chip" onclick="filterCity(this,'st. louis')">St. Louis</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Signal</th>
+                  <th>Status</th>
+                  <th>Score</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="leadTable">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+          <!-- LIVE FEED -->
+          <div class="panel-card">
+            <div class="panel-title">
+              Live Signal Feed
+              <div class="pulse-dot"></div>
+            </div>
+            <div class="live-feed" id="liveFeed"></div>
+          </div>
+
+          <!-- FUNNEL -->
+          <div class="panel-card">
+            <div class="panel-title">Conversion Funnel</div>
+            <div class="funnel" id="funnel">
+              <div class="funnel-row">
+                <div class="funnel-label">Detected</div>
+                <div class="funnel-bar-wrap">
+                  <div class="funnel-bar" style="width:100%;background:rgba(232,237,245,0.1);">
+                    <span class="funnel-count" style="color:var(--white);">247</span>
+                  </div>
+                </div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-label">Profiled</div>
+                <div class="funnel-bar-wrap">
+                  <div class="funnel-bar" style="width:85%;background:rgba(0,168,255,0.2);">
+                    <span class="funnel-count" style="color:var(--blue);">210</span>
+                  </div>
+                </div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-label">Ads Live</div>
+                <div class="funnel-bar-wrap">
+                  <div class="funnel-bar" style="width:60%;background:var(--amber2);">
+                    <span class="funnel-count" style="color:var(--amber);">148</span>
+                  </div>
+                </div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-label">Emailed</div>
+                <div class="funnel-bar-wrap">
+                  <div class="funnel-bar" style="width:40%;background:var(--green3);">
+                    <span class="funnel-count" style="color:var(--green);">98</span>
+                  </div>
+                </div>
+              </div>
+              <div class="funnel-row">
+                <div class="funnel-label">Converted</div>
+                <div class="funnel-bar-wrap">
+                  <div class="funnel-bar" style="width:8%;background:var(--green);">
+                    <span class="funnel-count" style="color:var(--black);">18</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BOTTOM GRID -->
+      <div class="bottom-grid">
+
+        <!-- OUTREACH QUEUE -->
+        <div class="outreach-queue">
+          <div class="section-header" style="margin-bottom:12px;">
+            <div class="section-title">Outreach Queue</div>
+          </div>
+          <div class="queue-item">
+            <div class="queue-step">1</div>
+            <div class="queue-content">
+              <div class="queue-company">Metro Health Transport</div>
+              <div class="queue-action">Strike 2 — Email sequence</div>
+            </div>
+            <div class="queue-status sending">SENDING</div>
+          </div>
+          <div class="queue-item">
+            <div class="queue-step">2</div>
+            <div class="queue-content">
+              <div class="queue-company">Reliable Parts Co.</div>
+              <div class="queue-action">Strike 1 — Launch ad</div>
+            </div>
+            <div class="queue-status pending">PENDING</div>
+          </div>
+          <div class="queue-item">
+            <div class="queue-step">3</div>
+            <div class="queue-content">
+              <div class="queue-company">Lawson & Associates</div>
+              <div class="queue-action">Strike 3 — LinkedIn touch</div>
+            </div>
+            <div class="queue-status pending">PENDING</div>
+          </div>
+          <div class="queue-item">
+            <div class="queue-step">4</div>
+            <div class="queue-content">
+              <div class="queue-company">Coastal NEMT LLC</div>
+              <div class="queue-action">Strike 2 — Email sequence</div>
+            </div>
+            <div class="queue-status pending">PENDING</div>
+          </div>
+          <div class="queue-item">
+            <div class="queue-step">5</div>
+            <div class="queue-content">
+              <div class="queue-company">SunBelt Logistics</div>
+              <div class="queue-action">Strike 1 — Launch ad</div>
+            </div>
+            <div class="queue-status pending">PENDING</div>
+          </div>
+        </div>
+
+        <!-- INDUSTRY BREAKDOWN -->
+        <div class="panel-card">
+          <div class="panel-title">Leads by Industry</div>
+          <div class="industry-list">
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">Medical / NEMT</div>
+                <div class="industry-pct">34%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:34%"></div></div>
+            </div>
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">Legal / Law Firms</div>
+                <div class="industry-pct">22%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:22%"></div></div>
+            </div>
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">Auto Parts</div>
+                <div class="industry-pct">18%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:18%"></div></div>
+            </div>
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">E-Commerce</div>
+                <div class="industry-pct">14%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:14%"></div></div>
+            </div>
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">Towing / Roadside</div>
+                <div class="industry-pct">8%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:8%"></div></div>
+            </div>
+            <div class="industry-row">
+              <div class="industry-header">
+                <div class="industry-name">Other</div>
+                <div class="industry-pct">4%</div>
+              </div>
+              <div class="industry-track"><div class="industry-fill" style="width:4%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONVERSIONS -->
+        <div class="panel-card">
+          <div class="panel-title">Recent Conversions</div>
+          <div class="conversion-list">
+            <div class="conversion-item">
+              <div class="conversion-left">
+                <div class="conversion-company">Grady Health Courier</div>
+                <div class="conversion-type">NEMT · Atlanta · Job Signal</div>
+              </div>
+              <div class="conversion-value">$1,200</div>
+            </div>
+            <div class="conversion-item">
+              <div class="conversion-left">
+                <div class="conversion-company">Parker & Webb Law</div>
+                <div class="conversion-type">Legal · Charlotte · Search</div>
+              </div>
+              <div class="conversion-value">$880</div>
+            </div>
+            <div class="conversion-item">
+              <div class="conversion-left">
+                <div class="conversion-company">AutoZone Dist. Ctr.</div>
+                <div class="conversion-type">Auto Parts · Chicago · Visit</div>
+              </div>
+              <div class="conversion-value">$2,400</div>
+            </div>
+            <div class="conversion-item">
+              <div class="conversion-left">
+                <div class="conversion-company">Midwest Pack & Ship</div>
+                <div class="conversion-type">E-Commerce · St. Louis · Email</div>
+              </div>
+              <div class="conversion-value">$650</div>
+            </div>
+            <div class="conversion-item">
+              <div class="conversion-left">
+                <div class="conversion-company">CareFirst Transport</div>
+                <div class="conversion-type">NEMT · Atlanta · LinkedIn</div>
+              </div>
+              <div class="conversion-value">$1,800</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- LEAD DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-company">COMPANY NAME</div>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="profile-grid" id="modal-profile"></div>
+      <div class="strike-sequence">
+        <div class="strike-title">Strike Sequence</div>
+        <div class="strike-steps" id="modal-strikes"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn" onclick="document.getElementById('modal').classList.remove('open')">Close</button>
+        <button class="modal-btn">View Profile</button>
+        <button class="modal-btn primary">Launch Strike ⚡</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════ DATA ═══════════════
+const leads = [];
+
+const signalLabels = { job: 'JOB POST', search: 'SEARCH', 'new-biz': 'NEW BIZ', visit: 'SITE VISIT' };
+
+const liveFeedData = [];
+
+// ═══════════════ RENDER TABLE ═══════════════
+function renderTable(data) {
+  const tbody = document.getElementById('leadTable');
+  tbody.innerHTML = data.map((l, i) => `
+    <tr onclick="openModal(${i})">
+      <td>
+        <div class="company-cell">
+          <div class="company-name">${l.company}</div>
+          <div class="company-meta">${l.city} · ${l.industry}</div>
+        </div>
+      </td>
+      <td><span class="signal-badge ${l.signal}">${signalLabels[l.signal]}</span></td>
+      <td><span class="status-pill ${l.status}">${l.status.replace('-',' ').toUpperCase()}</span></td>
+      <td>
+        <div class="score-bar">
+          <div class="score-track">
+            <div class="score-fill ${l.score>=80?'':'l.score>=60?\"medium\":\"low\"'}" style="width:${l.score}%"></div>
+          </div>
+          <div class="score-num">${l.score}</div>
+        </div>
+      </td>
+      <td>
+        <button class="action-btn" onclick="event.stopPropagation();openModal(${i})">VIEW</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+renderTable(leads);
+
+// ═══════════════ LIVE FEED ═══════════════
+function renderFeed() {
+  const feed = document.getElementById('liveFeed');
+  feed.innerHTML = liveFeedData.map(f => `
+    <div class="feed-item">
+      <div class="feed-company">${f.company}</div>
+      <div class="feed-signal">${f.signal}</div>
+      <div class="feed-time">${f.time}</div>
+    </div>
+  `).join('');
+}
+renderFeed();
+
+// ═══════════════ MODAL ═══════════════
+function openModal(i) {
+  const l = leads[i];
+  document.getElementById('modal-company').textContent = l.company;
+  document.getElementById('modal-profile').innerHTML = `
+    <div class="profile-field"><div class="profile-key">Company</div><div class="profile-val">${l.company}</div></div>
+    <div class="profile-field"><div class="profile-key">Location</div><div class="profile-val">${l.city}</div></div>
+    <div class="profile-field"><div class="profile-key">Industry</div><div class="profile-val">${l.industry}</div></div>
+    <div class="profile-field"><div class="profile-key">Contact</div><div class="profile-val">${l.contact}</div></div>
+    <div class="profile-field"><div class="profile-key">Email</div><div class="profile-val">${l.email}</div></div>
+    <div class="profile-field"><div class="profile-key">Phone</div><div class="profile-val">${l.phone}</div></div>
+    <div class="profile-field"><div class="profile-key">Intent Score</div><div class="profile-val" style="color:var(--green)">${l.score}/100</div></div>
+    <div class="profile-field"><div class="profile-key">Signal</div><div class="profile-val">${signalLabels[l.signal]}</div></div>
+  `;
+
+  const s = l.status;
+  const steps = [
+    { name: 'Strike 1 — Follow Ad', desc: 'Ads live across mobile, desktop, connected TV', done: ['ad-live','emailed','converted'].includes(s), active: s==='profiled' },
+    { name: 'Strike 2 — Personal Email', desc: 'Hyper-personalized outreach referencing their business', done: ['emailed','converted'].includes(s), active: s==='ad-live' },
+    { name: 'Strike 3 — LinkedIn Touch', desc: 'Direct message to decision maker', done: s==='converted', active: s==='emailed' },
+  ];
+
+  document.getElementById('modal-strikes').innerHTML = steps.map((step, i) => `
+    <div class="strike-step ${step.done?'done':step.active?'active':''}">
+      <div class="strike-num">${i+1}</div>
+      <div class="strike-info">
+        <div class="strike-name">${step.name}</div>
+        <div class="strike-desc">${step.desc}</div>
+      </div>
+      <div class="strike-status ${step.done?'done':step.active?'live':'pending'}">${step.done?'DONE':step.active?'LIVE':'PENDING'}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) {
+    document.getElementById('modal').classList.remove('open');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// API KEYS — PASTE YOURS HERE
+// ═══════════════════════════════════════════════
+const CONFIG = {
+  THEIRSTACK_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXIiOjEsImp0aSI6IjNiZmEzN2E1LTgyNGMtNDJlOC05NGMxLTA4NzAyMDVkYzA5OCIsImNyZWF0ZWRfYnkiOjE0ODgyNiwicGVybWlzc2lvbnMiOltdLCJhdWQiOiJhcGkiLCJpYXQiOjE3NzM0MTIwNjUsInN1YiI6IjE0ODIxMiIsIm5hbWUiOiJHcmFiYmVyIE5vcnRoU3RhciIsImVtYWlsIjoidGpzQG5vcnRoc3RhcmRlbGl2ZXJ5c2VydmljZS5jb20ifQ.tMr0ywhI6mppIZTtV_tTpSL_iOXn_ZSzWhyCw0lGcdA',
+  APOLLO_KEY:     'V3uBHnDOlMcfukiFFSnMsg',
+  HUNTER_KEY:     'f65b2406abb6510f3511a32b102cc7bbc87c4ad1',
+  SNOVIO_CLIENT:  '7f2d5f539c34647eb41cea7b33fd64f0',
+  SNOVIO_SECRET:  'f3e001c0d3e919fce99844e2f89b9ae1',
+  EMAILJS_SERVICE:  'service_hadpr5k',
+  EMAILJS_TEMPLATE: 'template_x5ogqhn',
+  EMAILJS_PUBKEY:   'gka99ITrW1k4E21Ph',
+  EMAILJS_SERVICE:  'service_hadpr5k',
+  EMAILJS_TEMPLATE: 'template_x5ogqhn',
+  EMAILJS_KEY:      'gka99ITrW1k4E21Ph',
+  SUPABASE_URL:   'https://imljjaurxiawfxjckkqf.supabase.co',
+  SUPABASE_KEY:   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y',
+  STACKADAPT_ACCOUNT: 'YOUR_STACKADAPT_ACCOUNT_ID',
+};
+
+// ═══════════════ STATUS TOAST ═══════════════
+function toast(msg, type='info') {
+  const t = document.createElement('div');
+  t.style.cssText = `
+    position:fixed;bottom:24px;right:24px;z-index:9999;
+    background:${type==='success'?'var(--green)':type==='error'?'var(--red)':'var(--steel3)'};
+    color:${type==='success'||type==='error'?'var(--black)':'var(--white)'};
+    padding:12px 20px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+    letter-spacing:1px;border:1px solid rgba(255,255,255,0.1);
+    animation:fadeUp 0.3s ease both;max-width:360px;line-height:1.5;
+  `;
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// ═══════════════ SEARCH FILTER ═══════════════
+let activeCityFilter = 'all';
+
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const filtered = leads.filter(l => {
+    const matchSearch = !q || l.company.toLowerCase().includes(q) || l.city.toLowerCase().includes(q) || l.industry.toLowerCase().includes(q);
+    const matchCity = activeCityFilter === 'all' || l.city.toLowerCase().includes(activeCityFilter);
+    return matchSearch && matchCity;
+  });
+  renderTable(filtered);
+}
+
+function filterCity(btn, city) {
+  activeCityFilter = city;
+  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTable();
+}
+
+// ═══════════════ NAV ═══════════════
+const NAV_SECTIONS = {
+  'Command':     'section-command',
+  'Live Feed':   'section-feed',
+  'Leads':       'section-leads',
+  'Outreach':    'section-outreach',
+  'Signals':     'section-signals',
+  'Profiles':    'section-profiles',
+  'Industries':  'section-industries',
+  'Conversions': 'section-conversions',
+  'Analytics':   'section-analytics',
+  'Settings':    'section-settings',
+};
+
+function setNav(el) {
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+  const label = el.textContent.trim().replace(/[^a-zA-Z ]/g, '').trim().split('\n')[0].trim();
+  // Find matching section key
+  const key = Object.keys(NAV_SECTIONS).find(k => label.includes(k));
+  if (key) {
+    const sectionId = NAV_SECTIONS[key];
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      toast(`${key} section — coming soon`, 'info');
+    }
+  }
+}
+
+// ═══════════════ CLOCK ═══════════════
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('en-US', { hour12: false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ═══════════════════════════════════════════════
+// IDEAL CUSTOMER PROFILE — FILTERS
+// ═══════════════════════════════════════════════
+
+// Industries we TARGET
+const TARGET_INDUSTRIES = ['nemt','medical','health','transport','legal','law','attorney','auto parts','automotive','courier','dispatch','freight','logistics','fulfillment','e-commerce','ecommerce'];
+
+// Brands/chains we SKIP — not our customers
+const EXCLUDED_BRANDS = ['domino','pizza hut','mcdonald','burger king','wendy','subway','starbucks','chick-fil','taco bell','dunkin','popeyes','panera','chipotle','amazon','walmart','target','fedex','ups','dhl','uber','lyft','doordash','grubhub','instacart','kroger','publix','cvs','walgreens','home depot','lowes','autozone','o\'reilly','advance auto','napa auto','pep boys','jiffy lube','firestone','midas','meineke'];
+
+function isTargetCompany(job) {
+  const name = (job.company || '').toLowerCase();
+  const industry = (job.company_object?.industry || '').toLowerCase();
+  const employeeCount = job.company_object?.employee_count || 0;
+
+  // Skip large companies (500+ employees)
+  if (employeeCount >= 500) return false;
+
+  // Skip excluded brands
+  if (EXCLUDED_BRANDS.some(b => name.includes(b))) return false;
+
+  // Skip recruiting agencies
+  if (job.company_object?.is_recruiting_agency) return false;
+
+  // Must have a domain (so Hunter can search)
+  if (!job.company_domain && !job.company_object?.domain) return false;
+
+  return true;
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 1: THEIRSTACK — HUNT JOB SIGNALS
+// ═══════════════════════════════════════════════
+async function runTheirStackScan() {
+  if (CONFIG.THEIRSTACK_KEY === 'YOUR_THEIRSTACK_API_KEY') {
+    toast('⚠ Add your TheirStack API key in CONFIG to run live scans', 'error');
+    return;
+  }
+
+  toast('🔍 Scanning for qualified intent signals...');
+  setHeaderStatus('SCANNING...');
+
+  const jobKeywords = [
+    'delivery driver', 'courier driver', 'logistics coordinator',
+    'dispatch coordinator', 'delivery coordinator', 'transport coordinator'
+  ];
+
+  const cities = ['Atlanta', 'Charlotte', 'Chicago', 'St. Louis'];
+
+  try {
+    const resp = await fetch('https://api.theirstack.com/v1/jobs/search', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${CONFIG.THEIRSTACK_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        page: 0,
+        limit: 20,
+        order_by: [{ field: 'date_posted', desc: true }],
+        job_title_or: jobKeywords,
+        job_location_pattern_or: cities,
+        posted_at_gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        remote: false
+      })
+    });
+
+    if (!resp.ok) {
+      const errText = await resp.text();
+      console.error('TheirStack error body:', errText);
+      throw new Error(`TheirStack API error: ${resp.status}`);
+    }
+    const data = await resp.json();
+    const jobs = data.data || [];
+
+    if (jobs.length === 0) {
+      toast('No signals found', 'info');
+      setHeaderStatus('SYSTEM ACTIVE');
+      return;
+    }
+
+    // STRICT FILTER — ideal clients only
+    const qualifiedJobs = jobs.filter(isTargetCompany);
+
+    if (qualifiedJobs.length === 0) {
+      toast('No qualified targets found — all filtered out', 'info');
+      setHeaderStatus('SYSTEM ACTIVE');
+      return;
+    }
+
+    // Deduplicate against existing leads
+    const existingDomains = new Set(leads.map(l => l.company_domain).filter(Boolean));
+    const existingNames = new Set(leads.map(l => l.company.toLowerCase()));
+    const freshJobs = qualifiedJobs.filter(job => {
+      const domain = job.company_domain || job.company_object?.domain || '';
+      const name = (job.company || '').toLowerCase();
+      return !existingDomains.has(domain) && !existingNames.has(name);
+    });
+
+    if (freshJobs.length === 0) {
+      toast('All qualified targets already in pipeline', 'info');
+      setHeaderStatus('SYSTEM ACTIVE');
+      return;
+    }
+
+    toast(`✓ Found ${freshJobs.length} qualified targets — looking up contacts...`, 'success');
+
+    // Convert to leads
+    const freshLeads = freshJobs.map(job => ({
+      company: job.company || 'Unknown',
+      city: job.short_location || job.long_location || 'Unknown',
+      industry: detectIndustry(job.company_object?.industry || job.job_title || ''),
+      signal: 'job',
+      status: 'detected',
+      score: calcScore(job),
+      contact: 'Looking up...',
+      email: '—',
+      phone: '—',
+      job_title: job.job_title,
+      job_url: job.url || '',
+      company_domain: job.company_domain || job.company_object?.domain || '',
+      detected_at: new Date().toISOString(),
+      source: 'theirstack'
+    }));
+
+    // Add to leads array and render immediately
+    freshLeads.forEach(l => leads.unshift(l));
+    renderTable(leads);
+    await saveLeadsToSupabase(freshLeads);
+
+    // Update live feed
+    freshLeads.slice(0, 3).forEach(l => {
+      liveFeedData.unshift({ company: l.company, signal: `Posted: "${l.job_title}"`, time: 'just now' });
+    });
+    if (liveFeedData.length > 8) liveFeedData.length = 8;
+    renderFeed();
+    document.getElementById('m1').textContent = parseInt(document.getElementById('m1').textContent) + freshLeads.length;
+
+    // AUTO HUNTER LOOKUP — only for leads with a domain
+    let hunterHits = 0;
+    for (const lead of freshLeads) {
+      if (lead.company_domain && hunterHits < 25) {
+        await sleep(300); // be gentle with API
+        const found = await hunterLookup(lead);
+        if (found) hunterHits++;
+      }
+    }
+
+    renderTable(leads);
+    await updateAllLeadsInSupabase(freshLeads);
+
+    toast(`🎯 ${freshLeads.length} targets ready — ${hunterHits} contacts found`, 'success');
+    setHeaderStatus('SYSTEM ACTIVE');
+
+  } catch (err) {
+    console.error('TheirStack error:', err);
+    toast(`Scan error: ${err.message}`, 'error');
+    setHeaderStatus('SYSTEM ACTIVE');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 2: HUNTER.IO — AUTO CONTACT LOOKUP
+// ═══════════════════════════════════════════════
+async function hunterLookup(lead) {
+  if (!lead.company_domain) return false;
+
+  try {
+    const url = `https://api.hunter.io/v2/domain-search?domain=${encodeURIComponent(lead.company_domain)}&limit=5&api_key=${CONFIG.HUNTER_KEY}`;
+    const resp = await fetch(url);
+    if (!resp.ok) return false;
+
+    const data = await resp.json();
+    const emails = data.data?.emails || [];
+
+    // Priority: Owner > CEO > Founder > Operations > Manager > first result
+    const priority = ['owner','ceo','founder','president','director of operations','operations manager','general manager','manager'];
+    let best = null;
+
+    for (const rank of priority) {
+      best = emails.find(e => (e.position || '').toLowerCase().includes(rank));
+      if (best) break;
+    }
+    if (!best && emails.length > 0) best = emails[0];
+
+    if (best) {
+      lead.contact = `${best.first_name || ''} ${best.last_name || ''}`.trim() || 'Contact Found';
+      lead.email = best.value || '—';
+      lead.title = best.position || '';
+      lead.status = 'profiled';
+      lead.score = Math.min(lead.score + 20, 99);
+      return true;
+    }
+
+    // No emails found — at least mark as searched
+    lead.contact = 'Not in Hunter';
+    return false;
+
+  } catch (err) {
+    console.log(`Hunter lookup failed for ${lead.company_domain}:`, err.message);
+    return false;
+  }
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 3: SNOV.IO — FALLBACK EMAIL FINDER
+// ═══════════════════════════════════════════════
+let snovToken = null;
+let snovTokenExpiry = 0;
+
+async function getSnovToken() {
+  if (snovToken && Date.now() < snovTokenExpiry) return snovToken;
+  try {
+    const resp = await fetch('https://api.snov.io/v1/oauth/access_token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        grant_type: 'client_credentials',
+        client_id: CONFIG.SNOVIO_CLIENT,
+        client_secret: CONFIG.SNOVIO_SECRET
+      })
+    });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    snovToken = data.access_token;
+    snovTokenExpiry = Date.now() + (data.expires_in * 1000) - 60000;
+    return snovToken;
+  } catch (err) {
+    console.log('Snov.io token error:', err.message);
+    return null;
+  }
+}
+
+async function snovLookup(lead) {
+  if (!lead.company_domain) return false;
+  try {
+    const token = await getSnovToken();
+    if (!token) return false;
+
+    const resp = await fetch(`https://api.snov.io/v2/domain-emails-with-info?domain=${encodeURIComponent(lead.company_domain)}&type=all&limit=5`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    if (!resp.ok) return false;
+
+    const data = await resp.json();
+    const emails = data.emails || [];
+
+    // Priority: Owner > CEO > Founder > Operations > Manager
+    const priority = ['owner','ceo','founder','president','director of operations','operations manager','general manager','manager'];
+    let best = null;
+    for (const rank of priority) {
+      best = emails.find(e => (e.position || '').toLowerCase().includes(rank));
+      if (best) break;
+    }
+    if (!best && emails.length > 0) best = emails[0];
+
+    if (best) {
+      lead.contact = `${best.firstName || ''} ${best.lastName || ''}`.trim() || 'Contact Found';
+      lead.email = best.email || '—';
+      lead.title = best.position || '';
+      lead.status = 'profiled';
+      lead.score = Math.min(lead.score + 20, 99);
+      return true;
+    }
+    return false;
+  } catch (err) {
+    console.log(`Snov.io lookup failed for ${lead.company_domain}:`, err.message);
+    return false;
+  }
+}
+
+async function updateAllLeadsInSupabase(leadsToUpdate) {
+  for (const lead of leadsToUpdate) {
+    if (lead.id) await updateLeadInSupabase(lead);
+  }
+}
+
+// ═══════════════════════════════════════════════
+// ENRICH ALL — Hunter lookup + auto email
+// ═══════════════════════════════════════════════
+async function enrichAllLeads() {
+  // Initialize EmailJS
+  emailjs.init(CONFIG.EMAILJS_PUBKEY);
+
+  const targets = leads.filter(l => l.status === 'detected' && l.company_domain);
+  if (targets.length === 0) {
+    toast('No uncontacted leads with domains to enrich', 'info');
+    return;
+  }
+
+  toast(`⚡ Enriching ${targets.length} leads — finding contacts & sending emails...`, 'info');
+  setHeaderStatus('ENRICHING...');
+
+  let contacted = 0;
+  let emailsSent = 0;
+
+  for (const lead of targets) {
+    // Step 1: Hunter lookup first
+    let found = await hunterLookup(lead);
+    await sleep(400);
+
+    // Step 2: Fall back to Snov.io if Hunter found nothing
+    if (!found) {
+      found = await snovLookup(lead);
+      await sleep(400);
+    }
+
+    // Step 2: Auto-send email if we got a real email
+    if (found && lead.email && lead.email !== '—') {
+      const sent = await sendOutreachEmail(lead);
+      if (sent) {
+        emailsSent++;
+        lead.status = 'emailed';
+        lead.score = Math.min(lead.score + 10, 99);
+      }
+      await sleep(500);
+    }
+
+    contacted++;
+    renderTable(leads);
+
+    // Save progress to Supabase
+    if (lead.id) await updateLeadInSupabase(lead);
+  }
+
+  toast(`✅ Done — ${contacted} enriched, ${emailsSent} emails sent`, 'success');
+  setHeaderStatus('SYSTEM ACTIVE');
+  renderTable(leads);
+}
+
+async function sendOutreachEmail(lead) {
+  try {
+    const firstName = lead.contact?.split(' ')[0] || 'there';
+    await emailjs.send(
+      CONFIG.EMAILJS_SERVICE,
+      CONFIG.EMAILJS_TEMPLATE,
+      {
+        to_name:  firstName,
+        to_email: lead.email,
+        company:  lead.company,
+      }
+    );
+    console.log(`✓ Email sent to ${lead.email} — ${lead.company}`);
+    return true;
+  } catch (err) {
+    console.error(`Email failed for ${lead.company}:`, err);
+    return false;
+  }
+}
+
+// ═══════════════════════════════════════════════
+// ENRICH ALL — Hunter lookup + auto email
+// ═══════════════════════════════════════════════
+async function enrichAllLeads() {
+  // Initialize EmailJS
+  emailjs.init(CONFIG.EMAILJS_KEY);
+
+  const targets = leads.filter(l => l.status === 'detected' && l.company_domain);
+
+  if (targets.length === 0) {
+    toast('No uncontacted leads with domains to enrich', 'info');
+    return;
+  }
+
+  toast(`⚡ Enriching ${targets.length} leads — finding contacts & sending emails...`);
+  setHeaderStatus('ENRICHING...');
+
+  let enriched = 0, emailed = 0, notFound = 0;
+
+  for (const lead of targets) {
+    await sleep(400);
+
+    // Hunter lookup
+    const found = await hunterLookup(lead);
+
+    if (found && lead.email !== '—') {
+      // Send outreach email automatically
+      const sent = await sendOutreachEmail(lead);
+      if (sent) {
+        lead.status = 'emailed';
+        emailed++;
+      } else {
+        lead.status = 'profiled';
+      }
+      enriched++;
+    } else {
+      notFound++;
+      lead.contact = 'Not found';
+    }
+
+    // Update in Supabase
+    await updateLeadInSupabase(lead);
+    renderTable(leads);
+  }
+
+  setHeaderStatus('SYSTEM ACTIVE');
+  toast(`✓ Done — ${enriched} contacts found, ${emailed} emails sent, ${notFound} not found`, 'success');
+}
+
+async function sendOutreachEmail(lead) {
+  try {
+    const firstName = lead.contact.split(' ')[0] || 'there';
+    await emailjs.send(CONFIG.EMAILJS_SERVICE, CONFIG.EMAILJS_TEMPLATE, {
+      to_name:  firstName,
+      to_email: lead.email,
+      company:  lead.company,
+    });
+    console.log(`✓ Email sent to ${lead.email} (${lead.company})`);
+    return true;
+  } catch (err) {
+    console.error(`Email failed for ${lead.company}:`, err);
+    return false;
+  }
+}
+
+function detectIndustry(text) {
+  const t = text.toLowerCase();
+  if (t.includes('medical') || t.includes('health') || t.includes('nemt') || t.includes('patient') || t.includes('hospital') || t.includes('clinic')) return 'NEMT';
+  if (t.includes('legal') || t.includes('law') || t.includes('attorney')) return 'Legal';
+  if (t.includes('auto') || t.includes('parts') || t.includes('car') || t.includes('vehicle') || t.includes('automotive')) return 'Auto Parts';
+  if (t.includes('freight') || t.includes('logistics') || t.includes('supply') || t.includes('warehouse') || t.includes('trucking')) return 'Freight';
+  if (t.includes('ecommerce') || t.includes('e-commerce') || t.includes('retail') || t.includes('shop') || t.includes('fulfillment')) return 'E-Commerce';
+  if (t.includes('restaurant') || t.includes('food') || t.includes('pizza') || t.includes('grocery')) return 'Food/Restaurant';
+  if (t.includes('construction') || t.includes('contractor') || t.includes('building')) return 'Construction';
+  return 'Courier';
+}
+
+function calcScore(job) {
+  let score = 50;
+  const title = (job.job_title || '').toLowerCase();
+  if (title.includes('delivery')) score += 20;
+  if (title.includes('coordinator')) score += 10;
+  if (title.includes('logistics')) score += 15;
+  if (job.company_object?.employee_count > 50) score += 10;
+  if (job.company_object?.employee_count > 200) score += 5;
+  return Math.min(score, 99);
+}
+
+function setHeaderStatus(msg) {
+  const el = document.querySelector('.header-status');
+  if (el) el.innerHTML = `<div class="pulse-dot"></div> ${msg}`;
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 2: APOLLO.IO — PROFILE COMPANIES
+// ═══════════════════════════════════════════════
+async function profileWithApollo(leadIndex) {
+  const lead = leads[leadIndex];
+  if (!lead) return;
+
+  // Use domain for exact match, fall back to company name
+  let apolloUrl;
+  if (lead.company_domain) {
+    apolloUrl = `https://app.apollo.io/#/people?organizationDomains[]=${encodeURIComponent(lead.company_domain)}&personTitles[]=Owner&personTitles[]=CEO&personTitles[]=Founder&personTitles[]=Operations+Manager&personTitles[]=General+Manager&personTitles[]=Director+of+Operations`;
+  } else {
+    apolloUrl = `https://app.apollo.io/#/people?organizationName=${encodeURIComponent(lead.company)}&personTitles[]=Owner&personTitles[]=CEO&personTitles[]=Founder&personTitles[]=Operations+Manager&personTitles[]=General+Manager&personTitles[]=Director+of+Operations`;
+  }
+  window.open(apolloUrl, '_blank');
+
+  toast(`🔎 Apollo opened for ${lead.company} — copy contact info then click Enter Contact Manually`, 'info');
+}
+
+// Profile all detected leads at once
+async function profileAllDetected() {
+  const detectedIndexes = leads
+    .map((l, i) => ({ l, i }))
+    .filter(({ l }) => l.status === 'detected')
+    .map(({ i }) => i);
+
+  if (detectedIndexes.length === 0) {
+    toast('No unproiled leads to process', 'info');
+    return;
+  }
+
+  toast(`Profiling ${detectedIndexes.length} leads via Apollo...`);
+  for (const idx of detectedIndexes) {
+    await profileWithApollo(idx);
+    await sleep(1200); // Apollo rate limit: be respectful
+  }
+  toast(`✓ Profiled ${detectedIndexes.length} leads`, 'success');
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 3: STACKADAPT — LAUNCH ADS
+// ═══════════════════════════════════════════════
+// StackAdapt's GraphQL API requires enterprise partner approval.
+// This function opens StackAdapt with a pre-configured campaign
+// template so you can launch in 2 clicks from their platform.
+function launchStackAdaptAd(leadIndex) {
+  const lead = leads[leadIndex];
+  if (!lead) return;
+
+  if (lead.status === 'detected') {
+    toast('Profile this lead with Apollo first before launching ads', 'error');
+    return;
+  }
+
+  // Build a deep link to StackAdapt with pre-filled campaign name
+  // and audience targeting based on company + location
+  const campaignName = encodeURIComponent(`Grabber — ${lead.company} — ${lead.city}`);
+  const stackAdaptUrl = `https://app.stackadapt.com/campaigns/new?name=${campaignName}&geo=${encodeURIComponent(lead.city)}&notes=${encodeURIComponent('Grabber lead: ' + lead.industry + ' | Intent: ' + signalLabels[lead.signal])}`;
+
+  // Open StackAdapt in new tab
+  window.open(stackAdaptUrl, '_blank');
+
+  // Update lead status
+  lead.status = 'ad-live';
+  lead.score = Math.min(lead.score + 10, 99);
+  leads[leadIndex] = lead;
+  renderTable(leads);
+
+  // Update Supabase
+  updateLeadInSupabase(lead);
+
+  // Update metrics
+  const m2 = document.getElementById('m2');
+  m2.textContent = parseInt(m2.textContent) + 1;
+
+  toast(`✓ Opening StackAdapt for ${lead.company} — finish setup in their platform`, 'success');
+}
+
+// ═══════════════════════════════════════════════
+// ENGINE 4: SUPABASE — PERSIST ALL LEAD DATA
+// ═══════════════════════════════════════════════
+async function saveLeadsToSupabase(newLeads) {
+  try {
+    const rows = newLeads.map(l => ({
+      company: l.company,
+      city: l.city,
+      industry: l.industry,
+      signal_type: l.signal,
+      status: l.status,
+      score: l.score,
+      contact_name: l.contact !== 'Profiling...' ? l.contact : null,
+      email: l.email !== '—' ? l.email : null,
+      phone: l.phone !== '—' ? l.phone : null,
+      job_title_detected: l.job_title || null,
+      job_url: l.job_url || null,
+      company_domain: l.company_domain || null,
+      source: l.source || 'manual',
+      detected_at: l.detected_at || new Date().toISOString()
+    }));
+
+    const resp = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/grabber_leads`, {
+      method: 'POST',
+      headers: {
+        'apikey': CONFIG.SUPABASE_KEY,
+        'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(rows)
+    });
+
+    if (!resp.ok) {
+      const err = await resp.text();
+      // If table doesn't exist yet, show helpful message
+      if (err.includes('relation') || err.includes('does not exist')) {
+        toast('⚠ Run Supabase SQL setup (see console) to create grabber_leads table', 'error');
+        console.log('%c📋 SUPABASE SQL TO RUN:', 'color: #00FF88; font-size: 14px');
+        console.log(SUPABASE_SETUP_SQL);
+      }
+    }
+  } catch (err) {
+    console.error('Supabase save error:', err);
+  }
+}
+
+async function updateLeadInSupabase(lead) {
+  try {
+    await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/grabber_leads?company=eq.${encodeURIComponent(lead.company)}`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': CONFIG.SUPABASE_KEY,
+        'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        status: lead.status,
+        score: lead.score,
+        contact_name: lead.contact !== 'Profiling...' ? lead.contact : null,
+        email: lead.email !== '—' ? lead.email : null,
+        phone: lead.phone !== '—' ? lead.phone : null,
+        updated_at: new Date().toISOString()
+      })
+    });
+  } catch (err) {
+    console.error('Supabase update error:', err);
+  }
+}
+
+async function loadLeadsFromSupabase() {
+  try {
+    const resp = await fetch(
+      `${CONFIG.SUPABASE_URL}/rest/v1/grabber_leads?order=detected_at.desc&limit=50`,
+      {
+        headers: {
+          'apikey': CONFIG.SUPABASE_KEY,
+          'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`
+        }
+      }
+    );
+
+    if (!resp.ok) return; // Table might not exist yet
+
+    const rows = await resp.json();
+    if (!Array.isArray(rows) || rows.length === 0) return;
+
+    // Map Supabase rows back to lead format
+    const supaLeads = rows.map(r => ({
+      company: r.company,
+      city: r.city || '',
+      industry: r.industry || 'Courier',
+      signal: r.signal_type || 'job',
+      status: r.status || 'detected',
+      score: r.score || 50,
+      contact: r.contact_name || 'Profiling...',
+      email: r.email || '—',
+      phone: r.phone || '—',
+      job_title: r.job_title_detected || '',
+      job_url: r.job_url || '',
+      company_domain: r.company_domain || '',
+      detected_at: r.detected_at,
+      source: r.source || 'supabase'
+    }));
+
+    // Merge with existing hardcoded leads (dedup by company name)
+    const existingNames = new Set(leads.map(l => l.company.toLowerCase()));
+    const freshFromDB = supaLeads.filter(l => !existingNames.has(l.company.toLowerCase()));
+    freshFromDB.forEach(l => leads.push(l));
+
+    if (freshFromDB.length > 0) {
+      renderTable(leads);
+      toast(`✓ Loaded ${freshFromDB.length} leads from database`, 'success');
+    }
+
+  } catch (err) {
+    console.error('Supabase load error:', err);
+  }
+}
+
+// ═══════════════════════════════════════════════
+// WIRE UP BUTTONS
+// ═══════════════════════════════════════════════
+
+// Replace the old addLead / runStrike with real API calls
+async function addLead() {
+  await runTheirStackScan();
+}
+
+async function runStrike() {
+  // Profile all detected leads
+  await profileAllDetected();
+}
+
+// Hook action buttons in table to use real APIs
+function renderTable(data) {
+  const tbody = document.getElementById('leadTable');
+  tbody.innerHTML = data.map((l, i) => {
+    const realIndex = leads.indexOf(l);
+    return `
+    <tr onclick="openModal(${realIndex})">
+      <td>
+        <div class="company-cell">
+          <div class="company-name">${l.company}</div>
+          <div class="company-meta">${l.city} · ${l.industry}</div>
+        </div>
+      </td>
+      <td><span class="signal-badge ${l.signal}">${signalLabels[l.signal]}</span></td>
+      <td><span class="status-pill ${l.status}">${l.status.replace('-',' ').toUpperCase()}</span></td>
+      <td>
+        <div class="score-bar">
+          <div class="score-track">
+            <div class="score-fill ${l.score>=80?'':'medium'}" style="width:${l.score}%"></div>
+          </div>
+          <div class="score-num">${l.score}</div>
+        </div>
+      </td>
+      <td>
+        ${l.status === 'detected'
+          ? `<button class="action-btn" onclick="event.stopPropagation();profileWithApollo(${realIndex})">PROFILE</button>`
+          : l.status === 'profiled'
+          ? `<button class="action-btn" onclick="event.stopPropagation();launchStackAdaptAd(${realIndex})">LAUNCH AD</button>`
+          : `<button class="action-btn" onclick="event.stopPropagation();openModal(${realIndex})">VIEW</button>`
+        }
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// Re-render with real action buttons
+renderTable(leads);
+
+// ═══════════════════════════════════════════════
+// LOAD LEADS FROM SUPABASE ON STARTUP
+// ═══════════════════════════════════════════════
+async function loadLeadsFromSupabase() {
+  try {
+    const resp = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/grabber_leads?order=detected_at.desc&limit=200`, {
+      headers: {
+        'apikey': CONFIG.SUPABASE_KEY,
+        'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`
+      }
+    });
+    if (!resp.ok) return;
+    const rows = await resp.json();
+    if (!rows.length) return;
+
+    // Map Supabase rows to lead objects
+    const saved = rows.map(r => ({
+      id: r.id,
+      company: r.company || 'Unknown',
+      city: r.city || 'Unknown',
+      industry: r.industry || 'Courier',
+      signal: r.signal_type || 'job',
+      status: r.status || 'detected',
+      score: r.score || 50,
+      contact: r.contact_name || 'Profiling...',
+      email: r.email || '—',
+      phone: r.phone || '—',
+      linkedin: r.linkedin_url || '',
+      title: r.title || '',
+      job_title: r.job_title_detected || '',
+      job_url: r.job_url || '',
+      company_domain: r.company_domain || '',
+      source: r.source || 'theirstack',
+      detected_at: r.detected_at
+    }));
+
+    // Replace leads array with saved data
+    leads.length = 0;
+    saved.forEach(l => leads.push(l));
+    renderTable(leads);
+    document.getElementById('m1').textContent = leads.length;
+    document.getElementById('total-leads').textContent = leads.length;
+    console.log(`✓ Loaded ${leads.length} leads from Supabase`);
+  } catch (err) {
+    console.log('Could not load from Supabase:', err.message);
+  }
+}
+
+loadLeadsFromSupabase();
+
+
+// ═══════════════════════════════════════════════
+// MODAL — add real API action buttons
+// ═══════════════════════════════════════════════
+function openModal(i) {
+  const l = leads[i];
+  if (!l) return;
+  document.getElementById('modal-company').textContent = l.company;
+  document.getElementById('modal-profile').innerHTML = `
+    <div class="profile-field"><div class="profile-key">Company</div><div class="profile-val">${l.company}</div></div>
+    <div class="profile-field"><div class="profile-key">Location</div><div class="profile-val">${l.city}</div></div>
+    <div class="profile-field"><div class="profile-key">Industry</div><div class="profile-val">${l.industry}</div></div>
+    <div class="profile-field"><div class="profile-key">Contact</div><div class="profile-val">${l.contact}</div></div>
+    <div class="profile-field"><div class="profile-key">Email</div><div class="profile-val">${l.email}</div></div>
+    <div class="profile-field"><div class="profile-key">Phone</div><div class="profile-val">${l.phone}</div></div>
+    <div class="profile-field"><div class="profile-key">Intent Score</div><div class="profile-val" style="color:var(--green)">${l.score}/100</div></div>
+    <div class="profile-field"><div class="profile-key">Signal</div><div class="profile-val">${signalLabels[l.signal]}</div></div>
+    ${l.job_title ? `<div class="profile-field"><div class="profile-key">Job Posted</div><div class="profile-val">${l.job_title}</div></div>` : ''}
+    ${l.company_domain ? `<div class="profile-field"><div class="profile-key">Domain</div><div class="profile-val">${l.company_domain}</div></div>` : ''}
+  `;
+
+  const s = l.status;
+  const steps = [
+    { name: 'Strike 1 — Follow Ad', desc: 'Ads live across mobile, desktop, connected TV via StackAdapt', done: ['ad-live','emailed','converted'].includes(s), active: s==='profiled' },
+    { name: 'Strike 2 — Personal Email', desc: 'Hyper-personalized outreach via Apollo sequences', done: ['emailed','converted'].includes(s), active: s==='ad-live' },
+    { name: 'Strike 3 — LinkedIn Touch', desc: 'Direct message to decision maker via PhantomBuster', done: s==='converted', active: s==='emailed' },
+  ];
+
+  document.getElementById('modal-strikes').innerHTML = steps.map((step, idx) => `
+    <div class="strike-step ${step.done?'done':step.active?'active':''}">
+      <div class="strike-num">${idx+1}</div>
+      <div class="strike-info">
+        <div class="strike-name">${step.name}</div>
+        <div class="strike-desc">${step.desc}</div>
+      </div>
+      <div class="strike-status ${step.done?'done':step.active?'live':'pending'}">${step.done?'DONE':step.active?'LIVE':'PENDING'}</div>
+    </div>
+  `).join('');
+
+  // Dynamic modal action buttons based on status
+  document.querySelector('.modal-actions').innerHTML = `
+    <button class="modal-btn" onclick="document.getElementById('modal').classList.remove('open')">Close</button>
+    ${s === 'detected' ? `<button class="modal-btn primary" onclick="profileWithApollo(${i})">🔎 Search Apollo ↗</button>` : ''}
+    ${s === 'detected' ? `<button class="modal-btn" onclick="showContactEntry(${i})">✏ Enter Contact Manually</button>` : ''}
+    ${s === 'profiled' ? `<button class="modal-btn primary" onclick="document.getElementById('modal').classList.remove('open');launchStackAdaptAd(${i})">📡 Launch Ad</button>` : ''}
+    ${s === 'profiled' ? `<button class="modal-btn" onclick="showContactEntry(${i})">✏ Edit Contact</button>` : ''}
+    ${s === 'ad-live' ? `<button class="modal-btn primary" onclick="document.getElementById('modal').classList.remove('open');markEmailed(${i})">✉ Mark Email Sent</button>` : ''}
+    ${s === 'emailed' ? `<button class="modal-btn primary" onclick="document.getElementById('modal').classList.remove('open');markConverted(${i})">✓ Mark Converted</button>` : ''}
+    ${l.job_url ? `<button class="modal-btn" onclick="window.open('${l.job_url}','_blank')">View Job Post ↗</button>` : ''}
+  `;
+
+  document.getElementById('modal').classList.add('open');
+}
+
+function showContactEntry(i) {
+  const l = leads[i];
+  document.querySelector('.modal-actions').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:8px;width:100%">
+      <input id="ce-name" placeholder="Contact Name" value="${l.contact !== 'Profiling...' ? l.contact : ''}" style="background:#0F1420;border:1px solid rgba(0,255,136,0.2);color:#E8EDF5;padding:8px 12px;border-radius:6px;font-size:0.85rem;">
+      <input id="ce-title" placeholder="Title (e.g. Owner, Operations Manager)" value="${l.title||''}" style="background:#0F1420;border:1px solid rgba(0,255,136,0.2);color:#E8EDF5;padding:8px 12px;border-radius:6px;font-size:0.85rem;">
+      <input id="ce-email" placeholder="Email" value="${l.email !== '—' ? l.email : ''}" style="background:#0F1420;border:1px solid rgba(0,255,136,0.2);color:#E8EDF5;padding:8px 12px;border-radius:6px;font-size:0.85rem;">
+      <input id="ce-phone" placeholder="Phone" value="${l.phone !== '—' ? l.phone : ''}" style="background:#0F1420;border:1px solid rgba(0,255,136,0.2);color:#E8EDF5;padding:8px 12px;border-radius:6px;font-size:0.85rem;">
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <button class="modal-btn" onclick="document.getElementById('modal').classList.remove('open')">Cancel</button>
+        <button class="modal-btn primary" onclick="saveContactEntry(${i})">✓ Save Contact</button>
+      </div>
+    </div>
+  `;
+}
+
+async function saveContactEntry(i) {
+  const name = document.getElementById('ce-name').value.trim();
+  const title = document.getElementById('ce-title').value.trim();
+  const email = document.getElementById('ce-email').value.trim();
+  const phone = document.getElementById('ce-phone').value.trim();
+
+  leads[i].contact = name || leads[i].contact;
+  leads[i].title = title || leads[i].title;
+  leads[i].email = email || leads[i].email;
+  leads[i].phone = phone || leads[i].phone;
+  leads[i].status = 'profiled';
+  leads[i].score = Math.min(leads[i].score + 15, 99);
+
+  renderTable(leads);
+  await updateLeadInSupabase(leads[i]);
+  document.getElementById('modal').classList.remove('open');
+  toast(`✓ ${leads[i].company} contact saved`, 'success');
+}
+
+
+function markEmailed(i) {
+  leads[i].status = 'emailed';
+  renderTable(leads);
+  updateLeadInSupabase(leads[i]);
+  const m3 = document.getElementById('m3');
+  m3.textContent = parseInt(m3.textContent) + 1;
+  toast(`✓ ${leads[i].company} marked as emailed`, 'success');
+}
+
+function markConverted(i) {
+  leads[i].status = 'converted';
+  leads[i].score = 99;
+  renderTable(leads);
+  updateLeadInSupabase(leads[i]);
+  const m4 = document.getElementById('m4');
+  m4.textContent = parseInt(m4.textContent) + 1;
+  toast(`🎉 ${leads[i].company} CONVERTED!`, 'success');
+}
+
+// ═══════════════════════════════════════════════
+// SUPABASE SQL — print to console for easy copy
+// ═══════════════════════════════════════════════
+const SUPABASE_SETUP_SQL = `
+-- Run this in Supabase SQL Editor to create the grabber_leads table
+create table if not exists grabber_leads (
+  id uuid default gen_random_uuid() primary key,
+  company text not null,
+  city text,
+  industry text,
+  signal_type text,
+  status text default 'detected',
+  score integer default 50,
+  contact_name text,
+  email text,
+  phone text,
+  linkedin_url text,
+  title text,
+  job_title_detected text,
+  job_url text,
+  company_domain text,
+  source text default 'manual',
+  detected_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+alter table grabber_leads disable row level security;
+grant all on grabber_leads to anon;
+grant all on grabber_leads to authenticated;
+`;
+
+// Log SQL on load so it's easy to find
+console.log('%c📋 GRABBER — Run this SQL in Supabase:', 'color:#00FF88;font-size:14px;font-weight:bold');
+console.log(SUPABASE_SETUP_SQL);
+
+// ═══════════════════════════════════════════════
+// LIVE FEED SIMULATION (until TheirStack is live)
+// ═══════════════════════════════════════════════
+const demoCompanies = ['Prime Care Transport','Delta Legal','Keystone Parts','Atlas Freight','Midtown NEMT'];
+const demoSignals = [
+  'Posted: "delivery driver needed"',
+  'Searched: "courier service near me"',
+  'Posted: "logistics coordinator"',
+];
+
+setInterval(() => {
+  liveFeedData.unshift({
+    company: demoCompanies[Math.floor(Math.random() * demoCompanies.length)],
+    signal: demoSignals[Math.floor(Math.random() * demoSignals.length)],
+    time: 'just now'
+  });
+  if (liveFeedData.length > 8) liveFeedData.pop();
+  liveFeedData.forEach((f, i) => { if (i > 0) f.time = (i * 3) + 'm ago'; });
+  renderFeed();
+}, 12000);
+
+// ═══════════════════════════════════════════════
+// INIT — Load saved leads from Supabase on startup
+// ═══════════════════════════════════════════════
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Load from Supabase on page load
+window.addEventListener('load', () => {
+  loadLeadsFromSupabase();
+});
+</script>
+</body>
+</html>
