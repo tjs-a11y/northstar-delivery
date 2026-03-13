@@ -1622,7 +1622,11 @@ async function runTheirStackScan() {
       })
     });
 
-    if (!resp.ok) throw new Error(`TheirStack API error: ${resp.status}`);
+    if (!resp.ok) {
+      const errText = await resp.text();
+      console.error('TheirStack error body:', errText);
+      throw new Error(`TheirStack API error: ${resp.status}`);
+    }
     const data = await resp.json();
     const jobs = data.data || [];
 
