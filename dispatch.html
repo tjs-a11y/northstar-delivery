@@ -1599,6 +1599,100 @@ function initDriverPortal(driver){
   btn.className='avail-toggle '+(driver.status==='available'?'avail-on':'avail-off');
   btn.textContent=driver.status==='available'?'🟢 Available':'🔴 Unavailable';
   renderDP(driver);
+  // Show payout setup popup if driver hasn't set it up yet
+  if(!driver.payout_method || driver.payout_method==='stripe_pending'){
+    setTimeout(()=>showPayoutPopup(driver), 800);
+  }
+}
+
+function showPayoutPopup(driver){
+  // Remove any existing popup
+  const existing = document.getElementById('payoutPopup');
+  if(existing) existing.remove();
+
+  const popup = document.createElement('div');
+  popup.id = 'payoutPopup';
+  popup.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  popup.innerHTML = `
+    <div style="background:#0f1f3d;border:1px solid rgba(201,168,76,0.4);max-width:400px;width:100%;padding:0;overflow:hidden;">
+      <div style="height:3px;background:linear-gradient(90deg,#C9A84C,#1a56db);"></div>
+      <div style="padding:32px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;margin-bottom:8px;">💳 GET PAID</div>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:24px;">
+          Set up how you want to receive your earnings. You'll get paid after every completed delivery.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;" id="pmChoiceGrid">
+          <div onclick="selectPayoutType('venmo',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:1.4rem;">📱</div>
+            <div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Venmo</div>
+          </div>
+          <div onclick="selectPayoutType('zelle',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:1.4rem;">🏦</div>
+            <div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Zelle</div>
+          </div>
+          <div onclick="selectPayoutType('cashapp',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:1.4rem;">💚</div>
+            <div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Cash App</div>
+          </div>
+          <div onclick="selectPayoutType('paypal',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:1.4rem;">🅿️</div>
+            <div style="font-size:0.8rem;font-weight:600;margin-top:6px;">PayPal</div>
+          </div>
+        </div>
+        <div id="payoutHandleSection" style="display:none;margin-bottom:16px;">
+          <input id="payoutHandleInput" type="text" placeholder="Enter your handle or phone number"
+            style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:white;padding:12px 16px;font-size:0.9rem;font-family:'DM Sans',sans-serif;outline:none;">
+        </div>
+        <button onclick="savePayoutPopup('" + driver.id + "')"
+          style="width:100%;background:linear-gradient(135deg,#C9A84C,#e8c96a);border:none;color:#0A1628;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;padding:14px;cursor:pointer;">
+          SAVE & START EARNING →
+        </button>
+        <button onclick="document.getElementById('payoutPopup').remove()"
+          style="width:100%;background:transparent;border:none;color:rgba(255,255,255,0.3);font-size:0.78rem;padding:12px;cursor:pointer;margin-top:4px;">
+          I'll do this later
+        </button>
+      </div>
+    </div>`;
+  document.body.appendChild(popup);
+}
+
+let selectedPayoutType = '';
+function selectPayoutType(type, el){
+  selectedPayoutType = type;
+  document.querySelectorAll('#pmChoiceGrid > div').forEach(b => {
+    b.style.borderColor = 'rgba(255,255,255,0.1)';
+    b.style.background = 'rgba(255,255,255,0.04)';
+  });
+  el.style.borderColor = '#C9A84C';
+  el.style.background = 'rgba(201,168,76,0.15)';
+  document.getElementById('payoutHandleSection').style.display = 'block';
+  const labels = {venmo:'@yourvenmo', zelle:'Phone or email for Zelle', cashapp:'$yourcashtag', paypal:'PayPal email'};
+  document.getElementById('payoutHandleInput').placeholder = labels[type] || 'Your handle';
+}
+
+async function savePayoutPopup(driverId){
+  const handle = document.getElementById('payoutHandleInput').value.trim();
+  if(!selectedPayoutType){ alert('Please select a payment method'); return; }
+  if(!handle){ alert('Please enter your handle or phone number'); return; }
+  try {
+    await fetch(SUPA_URL + '/rest/v1/drivers?id=eq.' + driverId, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ payout_method: selectedPayoutType, payout_handle: handle })
+    });
+    // Update local driver object
+    const d = drivers.find(x => x.id === driverId);
+    if(d){ d.payout_method = selectedPayoutType; d.payout_handle = handle; }
+    document.getElementById('payoutPopup').remove();
+    showToast('✅ Payout method saved! You are all set.');
+  } catch(e) {
+    alert('Error saving: ' + e.message);
+  }
 }
 
 function renderDP(driver){
