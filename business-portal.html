@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthStar — Business Portal</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#fafaf8;--surface:#ffffff;--surface2:#f5f4f0;--surface3:#edecea;
+  --border:#e4e2dc;--border2:#d4d0c8;--ink:#1a1814;--ink2:#3d3a32;
+  --ink3:#7a7468;--ink4:#b8b2a8;
+  --gold:#c8860a;--gold2:#e8a020;--gold-bg:#fffbf0;--gold-border:rgba(200,134,10,0.2);
+  --green:#0a6b3e;--green2:#0e8f52;--green-bg:#f0fdf7;--green-border:rgba(10,107,62,0.2);
+  --red:#b8100a;--red-bg:#fff5f4;--red-border:rgba(184,16,10,0.2);
+  --navy:#0f1f3d;--navy2:#162d54;
+  --shadow:0 2px 16px rgba(26,24,20,0.08);--shadow-lg:0 8px 40px rgba(26,24,20,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;min-height:100vh;}
+.screen{display:none;min-height:100vh;}
+.screen.active{display:block;}
+#authScreen{display:none;min-height:100vh;align-items:stretch;}
+#authScreen.active{display:grid;grid-template-columns:1fr 480px;}
+.auth-left{background:var(--navy);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:4rem;}
+.auth-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(200,134,10,0.12) 0%,transparent 60%);}
+.auth-left-content{position:relative;z-index:1;}
+.auth-star{width:48px;height:48px;background:var(--gold2);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);margin-bottom:1.5rem;filter:drop-shadow(0 0 16px rgba(232,160,32,0.4));}
+.auth-brand{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#fff;letter-spacing:2px;line-height:1;margin-bottom:0.5rem;}
+.auth-brand-sub{font-size:0.75rem;letter-spacing:4px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:3rem;}
+.auth-tagline{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.5;margin-bottom:2.5rem;font-style:italic;}
+.auth-features{display:flex;flex-direction:column;gap:1rem;}
+.auth-feature{display:flex;align-items:center;gap:1rem;}
+.af-dot{width:8px;height:8px;background:var(--gold2);border-radius:50%;flex-shrink:0;}
+.af-text{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.4;}
+.auth-right{background:var(--surface);display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem;}
+.auth-form-wrap{width:100%;max-width:380px;}
+.auth-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:2px solid var(--border);}
+.auth-tab{flex:1;background:transparent;border:none;padding:0.75rem;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink4);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;}
+.auth-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.form-section{display:none;}
+.form-section.active{display:block;}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.form-sub{font-size:0.78rem;color:var(--ink3);margin-bottom:1.75rem;}
+.field{margin-bottom:1rem;}
+.field-label{display:block;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:0.4rem;}
+.field-input,.field-select{width:100%;background:var(--surface2);border:1.5px solid var(--border);color:var(--ink);padding:0.7rem 0.875rem;font-family:'Outfit',sans-serif;font-size:0.875rem;outline:none;transition:all 0.2s;appearance:none;}
+.field-input:focus,.field-select:focus{border-color:var(--gold);background:var(--surface);box-shadow:0 0 0 3px var(--gold-border);}
+.field-input::placeholder{color:var(--ink4);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.auth-btn{width:100%;background:var(--navy);border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:0.875rem;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;}
+.auth-btn:hover{background:var(--navy2);}
+.auth-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.err-msg{background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);padding:0.625rem 0.875rem;font-size:0.75rem;margin-top:0.75rem;display:none;}
+.suc-msg{background:var(--green-bg);border:1px solid var(--green-border);color:var(--green);padding:0.625rem 0.875rem;font-size:0.75rem;margin-top:0.75rem;display:none;}
+#appScreen{display:none;}
+#appScreen.active{display:block;}
+.app-nav{background:var(--surface);border-bottom:1.5px solid var(--border);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;position:sticky;top:0;z-index:50;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-star{width:24px;height:24px;background:var(--gold2);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;letter-spacing:2px;color:var(--ink);}
+.nav-biz{font-size:0.82rem;font-weight:600;color:var(--ink2);}
+.nav-plan{font-size:0.62rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.nav-actions{display:flex;align-items:center;gap:0.75rem;}
+.plan-badge{padding:4px 12px;font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.pb-trial{background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold);}
+.pb-sub{background:var(--navy);color:var(--gold2);}
+.nav-logout{background:transparent;border:1.5px solid var(--border2);color:var(--ink3);padding:5px 14px;font-size:0.72rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+.nav-logout:hover{border-color:var(--red);color:var(--red);}
+.app-tabs{background:var(--surface2);border-bottom:1px solid var(--border);display:flex;padding:0 2rem;}
+.app-tab{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--ink3);padding:0.875rem 1.25rem;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;text-transform:uppercase;transition:all 0.2s;margin-bottom:-1px;}
+.app-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tab-panel{display:none;padding:2rem;}
+.tab-panel.active{display:block;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);padding:1.25rem;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.stat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;}
+.sc-gold::after{background:var(--gold2);}
+.sc-green::after{background:var(--green2);}
+.sc-navy::after{background:var(--navy);}
+.sc-warm::after{background:#c87028;}
+.sc-label{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:0.625rem;}
+.sc-val{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:500;line-height:1;margin-bottom:0.25rem;}
+.sv-gold{color:var(--gold);}
+.sv-green{color:var(--green2);}
+.sv-navy{color:var(--navy);}
+.sc-sub{font-size:0.72rem;color:var(--ink4);}
+.trial-banner{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+.tb-left{display:flex;align-items:center;gap:1rem;}
+.tb-icon{font-size:1.5rem;}
+.tb-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;margin-bottom:2px;}
+.tb-sub{font-size:0.75rem;color:rgba(255,255,255,0.55);}
+.tb-days{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:500;color:var(--gold2);margin-right:1rem;}
+.upgrade-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:var(--navy);font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.625rem 1.25rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.jobs-list{display:flex;flex-direction:column;gap:0.625rem;}
+.job-row{background:var(--surface);border:1px solid var(--border);padding:0.875rem 1.25rem;display:flex;align-items:center;gap:1rem;transition:all 0.15s;}
+.job-row:hover{border-color:var(--border2);box-shadow:var(--shadow);}
+.job-row-id{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink3);width:80px;flex-shrink:0;}
+.job-row-price{font-family:'JetBrains Mono',monospace;font-size:0.875rem;font-weight:500;color:var(--ink2);white-space:nowrap;}
+.chip{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:1px;padding:3px 9px;text-transform:uppercase;}
+.chip-posted,.chip-pending{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-border);}
+.chip-accepted{background:#f0f4ff;color:#1a52c8;border:1px solid rgba(26,82,200,0.2);}
+.chip-delivering,.chip-transit{background:rgba(213,0,249,0.08);color:#9c00d4;border:1px solid rgba(213,0,249,0.2);}
+.chip-completed,.chip-delivered{background:var(--green-bg);color:var(--green2);border:1px solid var(--green-border);}
+.empty-state{text-align:center;padding:3rem;color:var(--ink3);}
+.empty-icon{font-size:2.5rem;margin-bottom:0.875rem;opacity:0.4;}
+.empty-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;margin-bottom:0.375rem;}
+.post-layout{display:grid;grid-template-columns:1fr 340px;gap:1.5rem;align-items:start;}
+.post-card{background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
+.post-card-header{background:var(--navy);padding:1.25rem 1.5rem;}
+.pch-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.25rem;}
+.pch-sub{font-size:0.72rem;color:rgba(255,255,255,0.4);}
+.post-card-body{padding:1.5rem;}
+.type-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:0.625rem;margin-bottom:1.5rem;}
+.type-opt{border:1.5px solid var(--border);padding:0.875rem 0.5rem;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--surface2);}
+.type-opt.selected{border-color:var(--gold);background:var(--gold-bg);}
+.type-opt-icon{font-size:1.25rem;margin-bottom:0.375rem;}
+.type-opt-label{font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink2);}
+.type-opt.selected .type-opt-label{color:var(--gold);}
+.vehicle-selector{display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1.5rem;}
+.vehicle-opt{border:1.5px solid var(--border);padding:0.625rem 0.25rem;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--surface2);}
+.vehicle-opt.selected{border-color:var(--navy);background:rgba(15,31,61,0.05);}
+.vehicle-opt-icon{font-size:1rem;margin-bottom:0.25rem;}
+.vehicle-opt-label{font-size:0.6rem;font-weight:600;color:var(--ink3);}
+.vehicle-opt.selected .vehicle-opt-label{color:var(--navy);}
+.form-divider{height:1px;background:var(--border);margin:1.25rem 0;}
+.post-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:var(--navy);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:1rem;cursor:pointer;transition:all 0.2s;margin-top:1rem;}
+.post-btn:hover{filter:brightness(1.05);box-shadow:0 4px 16px rgba(200,134,10,0.3);}
+.post-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.price-card{background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;position:sticky;top:80px;}
+.price-header{background:var(--gold-bg);border-bottom:1px solid var(--gold-border);padding:1rem 1.25rem;}
+.price-header-title{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:700;color:var(--gold);}
+.price-body{padding:1.25rem;}
+.price-total{font-family:'JetBrains Mono',monospace;font-size:2.25rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:0.25rem;}
+.price-sub{font-size:0.72rem;color:var(--ink3);margin-bottom:1.25rem;}
+.price-rows{margin-bottom:1.25rem;}
+.price-row{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.78rem;}
+.price-row:last-child{border-bottom:none;}
+.pr-label{color:var(--ink3);}
+.pr-val{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--ink2);}
+.pr-val.green{color:var(--green2);}
+.discount-row{background:var(--green-bg);border:1px solid var(--green-border);padding:0.625rem 0.875rem;font-size:0.72rem;color:var(--green);font-weight:600;display:none;margin-bottom:0.875rem;}
+.active-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
+.active-card{background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
+.active-card-top{padding:1rem;border-bottom:1px solid var(--border);}
+.ac-id{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink3);margin-bottom:0.5rem;}
+.ac-route{font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.ac-type{font-size:0.72rem;color:var(--ink3);}
+.active-card-status{padding:0.875rem 1rem;background:var(--surface2);display:flex;align-items:center;justify-content:space-between;}
+.status-indicator{display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:600;}
+.si-dot{width:8px;height:8px;border-radius:50%;}
+.si-posted .si-dot,.si-pending .si-dot{background:var(--gold2);animation:blink 1.5s infinite;}
+.si-accepted .si-dot{background:#1a52c8;}
+.si-delivering .si-dot{background:#9c00d4;animation:blink 1s infinite;}
+.si-completed .si-dot{background:var(--green2);}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.si-posted,.si-pending{color:var(--gold);}
+.si-accepted{color:#1a52c8;}
+.si-delivering{color:#9c00d4;}
+.si-completed{color:var(--green2);}
+.ac-price{font-family:'JetBrains Mono',monospace;font-size:0.875rem;font-weight:500;color:var(--ink2);}
+.sub-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;}
+.plan-card{background:var(--surface);border:1.5px solid var(--border);padding:2rem;position:relative;overflow:hidden;}
+.plan-card.featured{border-color:var(--gold);background:var(--gold-bg);}
+.plan-badge2{position:absolute;top:1rem;right:1rem;background:var(--navy);color:var(--gold2);font-size:0.6rem;font-weight:700;letter-spacing:1.5px;padding:3px 10px;text-transform:uppercase;}
+.plan-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;}
+.plan-price{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:500;color:var(--navy);line-height:1;margin-bottom:0.25rem;}
+.plan-price span{font-size:0.875rem;color:var(--ink3);font-family:'Outfit',sans-serif;}
+.plan-desc{font-size:0.78rem;color:var(--ink3);margin-bottom:1.5rem;line-height:1.5;}
+.plan-features{display:flex;flex-direction:column;gap:0.625rem;margin-bottom:1.75rem;}
+.plan-feature{display:flex;align-items:center;gap:0.625rem;font-size:0.78rem;color:var(--ink2);}
+.pf-check{width:18px;height:18px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--green2);flex-shrink:0;}
+.plan-btn{width:100%;border:none;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.875rem;cursor:pointer;transition:all 0.2s;}
+.pb-upgrade{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
+.pb-upgrade:hover{filter:brightness(1.05);}
+.pb-current{background:var(--surface3);color:var(--ink3);border:1.5px solid var(--border2);cursor:default;}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--green2);padding:1rem 1.25rem;box-shadow:var(--shadow-lg);z-index:500;display:none;max-width:320px;}
+.toast-title{font-size:0.82rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.toast-body{font-size:0.72rem;color:var(--ink3);}
+.loading-overlay{position:fixed;inset:0;background:rgba(250,250,248,0.9);display:none;align-items:center;justify-content:center;flex-direction:column;gap:1rem;z-index:500;}
+.loading-overlay.active{display:flex;}
+.loading-spinner{width:36px;height:36px;border:2.5px solid var(--border2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:0.75rem;font-weight:600;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;}
+.processing-overlay{display:none;position:fixed;inset:0;background:rgba(250,250,248,0.92);backdrop-filter:blur(4px);z-index:400;align-items:center;justify-content:center;flex-direction:column;gap:1rem;}
+.processing-overlay.open{display:flex;}
+.processing-spinner{width:44px;height:44px;border:3px solid var(--border2);border-top-color:var(--navy);border-radius:50%;animation:spin 0.8s linear infinite;}
+.processing-text{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--ink);}
+.processing-sub{font-size:0.75rem;color:var(--ink3);letter-spacing:1px;}
+@media(max-width:900px){
+  #authScreen.active{grid-template-columns:1fr;}
+  .auth-left{display:none;}
+  .post-layout{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .sub-layout{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Loading...</div>
+</div>
+
+<!-- AUTH -->
+<div id="authScreen" class="screen">
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <div class="auth-star"></div>
+      <div class="auth-brand">NORTHSTAR</div>
+      <div class="auth-brand-sub">Business Portal</div>
+      <div class="auth-tagline">"The delivery platform built for businesses that move fast."</div>
+      <div class="auth-features">
+        <div class="auth-feature"><div class="af-dot"></div><div class="af-text">Post a job and have a driver en route in minutes</div></div>
+        <div class="auth-feature"><div class="af-dot"></div><div class="af-text">Live tracking from pickup to delivery</div></div>
+        <div class="auth-feature"><div class="af-dot"></div><div class="af-text">Subscribers save 10% on every single job</div></div>
+        <div class="auth-feature"><div class="af-dot"></div><div class="af-text">Serving Atlanta, Chicago, St. Louis &amp; Charlotte</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchAuthTab('login',this)">Sign In</button>
+        <button class="auth-tab" onclick="switchAuthTab('register',this)">Register</button>
+      </div>
+      <div class="form-section active" id="fs-login">
+        <div class="form-title">Welcome back</div>
+        <div class="form-sub">Sign in to your business account</div>
+        <div class="field"><label class="field-label">Email</label><input class="field-input" id="loginEmail" type="email" placeholder="you@business.com"></div>
+        <div class="field"><label class="field-label">Password</label><input class="field-input" id="loginPass" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+        <button class="auth-btn" id="loginBtn" onclick="doLogin()">Sign In →</button>
+        <div class="err-msg" id="loginErr"></div>
+      </div>
+      <div class="form-section" id="fs-register">
+        <div class="form-title">Create your account</div>
+        <div class="form-sub">Start with a free 14-day trial — no credit card needed</div>
+        <div class="field"><label class="field-label">Business Name</label><input class="field-input" id="regBizName" type="text" placeholder="Your Business Name"></div>
+        <div class="field-row field">
+          <div><label class="field-label">Contact Name</label><input class="field-input" id="regContact" type="text" placeholder="Your name"></div>
+          <div><label class="field-label">Phone</label><input class="field-input" id="regPhone" type="tel" placeholder="(555) 000-0000"></div>
+        </div>
+        <div class="field-row field">
+          <div><label class="field-label">Business Type</label>
+            <select class="field-select" id="regType">
+              <option value="">Select type</option>
+              <option>Medical / Dental</option><option>Legal / Law Firm</option>
+              <option>Pharmacy</option><option>Print / Marketing</option>
+              <option>Accounting / Finance</option><option>Real Estate</option>
+              <option>Retail</option><option>Restaurant</option><option>Other</option>
+            </select>
+          </div>
+          <div><label class="field-label">City</label>
+            <select class="field-select" id="regCity">
+              <option value="">Select city</option>
+              <option>Atlanta, GA</option><option>Chicago, IL</option>
+              <option>St. Louis, MO</option><option>Charlotte, NC</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label class="field-label">Email</label><input class="field-input" id="regEmail" type="email" placeholder="billing@business.com"></div>
+        <div class="field"><label class="field-label">Password</label><input class="field-input" id="regPass" type="password" placeholder="Create a password (min 6 chars)" onkeydown="if(event.key==='Enter')doRegister()"></div>
+        <button class="auth-btn" id="registerBtn" onclick="doRegister()">Start Free Trial →</button>
+        <div class="err-msg" id="registerErr"></div>
+        <div class="suc-msg" id="registerSuc"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appScreen" class="screen">
+  <nav class="app-nav">
+    <div class="nav-brand"><div class="nav-star"></div><div class="nav-name">NORTHSTAR</div></div>
+    <div style="text-align:right;">
+      <div class="nav-biz" id="navBizName">Business</div>
+      <div class="nav-plan" id="navPlan">Loading...</div>
+    </div>
+    <div class="nav-actions">
+      <div class="plan-badge pb-trial" id="planBadge">TRIAL</div>
+      <button class="nav-logout" onclick="doLogout()">Logout</button>
+    </div>
+  </nav>
+  <div class="app-tabs">
+    <button class="app-tab active" onclick="switchTab('dashboard',this)">Dashboard</button>
+    <button class="app-tab" onclick="switchTab('post',this)">Post a Job</button>
+    <button class="app-tab" onclick="switchTab('active',this)">Active Jobs <span id="activeCount" style="background:var(--gold);color:var(--navy);font-size:0.6rem;font-weight:700;padding:1px 7px;margin-left:4px;">0</span></button>
+    <button class="app-tab" onclick="switchTab('subscription',this)">Subscription</button>
+  </div>
+
+  <div class="tab-panel active" id="panel-dashboard">
+    <div class="trial-banner" id="trialBanner">
+      <div class="tb-left">
+        <div class="tb-icon">⭐</div>
+        <div><div class="tb-title">Free Trial Active</div><div class="tb-sub">Subscribe to unlock 10% off every job</div></div>
+      </div>
+      <div style="display:flex;align-items:center;">
+        <div class="tb-days" id="trialDays">14</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-right:1.5rem;">days left</div>
+        <button class="upgrade-btn" onclick="switchTab('subscription',document.querySelectorAll('.app-tab')[3])">Upgrade Now →</button>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card sc-gold"><div class="sc-label">Jobs Posted</div><div class="sc-val sv-gold" id="statJobsPosted">0</div><div class="sc-sub">All time</div></div>
+      <div class="stat-card sc-green"><div class="sc-label">Completed</div><div class="sc-val sv-green" id="statCompleted">0</div><div class="sc-sub">Delivered</div></div>
+      <div class="stat-card sc-navy"><div class="sc-label">Total Spent</div><div class="sc-val sv-navy" id="statSpent">$0</div><div class="sc-sub">All deliveries</div></div>
+      <div class="stat-card sc-warm"><div class="sc-label">Active Now</div><div class="sc-val" style="color:#c87028" id="statActive">0</div><div class="sc-sub">In progress</div></div>
+    </div>
+    <div class="section-label">Recent Jobs</div>
+    <div class="jobs-list" id="recentJobs">
+      <div class="empty-state"><div class="empty-icon">📦</div><div class="empty-title">No jobs yet</div><div style="font-size:0.78rem;">Post your first delivery above.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-post">
+    <div class="post-layout">
+      <div>
+        <div class="post-card">
+          <div class="post-card-header">
+            <div class="pch-title">Post a Delivery Job</div>
+            <div class="pch-sub">Pay securely via Stripe — job goes live instantly after payment</div>
+          </div>
+          <div class="post-card-body">
+            <div class="section-label" style="margin-bottom:0.875rem;">Job Type</div>
+            <div class="type-selector">
+              <div class="type-opt selected" onclick="selectType('standard',this)"><div class="type-opt-icon">📦</div><div class="type-opt-label">Standard</div></div>
+              <div class="type-opt" onclick="selectType('express',this)"><div class="type-opt-icon">⚡</div><div class="type-opt-label">Express</div></div>
+              <div class="type-opt" onclick="selectType('route',this)"><div class="type-opt-icon">🗺️</div><div class="type-opt-label">Route</div></div>
+              <div class="type-opt" onclick="selectType('freight',this)"><div class="type-opt-icon">🚛</div><div class="type-opt-label">Freight</div></div>
+            </div>
+            <div class="section-label" style="margin-bottom:0.875rem;">Vehicle Needed</div>
+            <div class="vehicle-selector">
+              <div class="vehicle-opt selected" onclick="selectVehicle('car',this)"><div class="vehicle-opt-icon">🚗</div><div class="vehicle-opt-label">Sedan</div></div>
+              <div class="vehicle-opt" onclick="selectVehicle('suv',this)"><div class="vehicle-opt-icon">🚙</div><div class="vehicle-opt-label">SUV</div></div>
+              <div class="vehicle-opt" onclick="selectVehicle('van',this)"><div class="vehicle-opt-icon">🚐</div><div class="vehicle-opt-label">Cargo Van</div></div>
+              <div class="vehicle-opt" onclick="selectVehicle('box',this)"><div class="vehicle-opt-icon">🚚</div><div class="vehicle-opt-label">Box Truck</div></div>
+              <div class="vehicle-opt" onclick="selectVehicle('semi',this)"><div class="vehicle-opt-icon">🚛</div><div class="vehicle-opt-label">Semi</div></div>
+            </div>
+            <div class="form-divider"></div>
+            <div class="section-label" style="margin-bottom:0.875rem;">Pickup Details</div>
+            <div class="field"><label class="field-label">Business / Location Name</label><input class="field-input" id="pickupName" type="text" placeholder="e.g. Clayton Dental Group" oninput="updatePrice()"></div>
+            <div class="field"><label class="field-label">Street Address</label><input class="field-input" id="pickupAddr" type="text" placeholder="123 Main St"></div>
+            <div class="field-row field">
+              <div><label class="field-label">City</label>
+                <select class="field-select" id="pickupCity" onchange="updatePrice()">
+                  <option value="">Select city</option>
+                  <option>Atlanta, GA</option><option>Chicago, IL</option>
+                  <option>St. Louis, MO</option><option>Charlotte, NC</option>
+                </select>
+              </div>
+              <div><label class="field-label">Contact / Phone</label><input class="field-input" id="pickupContact" type="text" placeholder="Contact name or phone"></div>
+            </div>
+            <div class="form-divider"></div>
+            <div class="section-label" style="margin-bottom:0.875rem;">Dropoff Details</div>
+            <div class="field"><label class="field-label">Recipient / Location Name</label><input class="field-input" id="dropoffName" type="text" placeholder="e.g. Patient John Smith" oninput="updatePrice()"></div>
+            <div class="field"><label class="field-label">Street Address</label><input class="field-input" id="dropoffAddr" type="text" placeholder="456 Oak Ave"></div>
+            <div class="field-row field">
+              <div><label class="field-label">City</label>
+                <select class="field-select" id="dropoffCity" onchange="updatePrice()">
+                  <option value="">Select city</option>
+                  <option>Atlanta, GA</option><option>Chicago, IL</option>
+                  <option>St. Louis, MO</option><option>Charlotte, NC</option>
+                </select>
+              </div>
+              <div><label class="field-label">Contact / Phone</label><input class="field-input" id="dropoffContact" type="text" placeholder="Recipient phone"></div>
+            </div>
+            <div class="form-divider"></div>
+            <div class="field-row field">
+              <div><label class="field-label">Distance (miles)</label><input class="field-input" id="distanceMiles" type="number" placeholder="e.g. 8" oninput="updatePrice()" min="1"></div>
+              <div><label class="field-label">Number of Stops</label><input class="field-input" id="numStops" type="number" placeholder="1" value="1" oninput="updatePrice()" min="1"></div>
+            </div>
+            <div class="field"><label class="field-label">Special Instructions (optional)</label><input class="field-input" id="instructions" type="text" placeholder="e.g. Call on arrival, fragile items, gate code"></div>
+            <button class="post-btn" id="postBtn" onclick="postJob()">💳 PAY &amp; POST JOB LIVE →</button>
+          </div>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-header"><div class="price-header-title">Price Calculator</div></div>
+        <div class="price-body">
+          <div class="price-total" id="calcTotal">$0.00</div>
+          <div class="price-sub">Estimated job price</div>
+          <div class="discount-row" id="discountRow">✓ 10% subscriber discount applied</div>
+          <div class="price-rows">
+            <div class="price-row"><div class="pr-label">Base rate</div><div class="pr-val" id="calcBase">$0.00</div></div>
+            <div class="price-row"><div class="pr-label">Distance</div><div class="pr-val" id="calcDistance">—</div></div>
+            <div class="price-row"><div class="pr-label">Job type multiplier</div><div class="pr-val" id="calcMultiplier">1.0×</div></div>
+            <div class="price-row"><div class="pr-label">Vehicle class</div><div class="pr-val" id="calcVehicle">Sedan</div></div>
+            <div class="price-row"><div class="pr-label">Driver earns (65%)</div><div class="pr-val green" id="calcDriverPay">$0.00</div></div>
+            <div class="price-row"><div class="pr-label">Your margin</div><div class="pr-val" id="calcMarginPct">25%</div></div>
+          </div>
+          <div style="font-size:0.68rem;color:var(--ink4);line-height:1.5;">Progressive margin: bigger jobs earn you a higher percentage.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-active">
+    <div class="section-label">Active &amp; Recent Deliveries</div>
+    <div class="active-grid" id="activeJobsGrid">
+      <div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">🚗</div><div class="empty-title">No active jobs</div><div style="font-size:0.78rem;">Jobs you post will appear here in real time.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-subscription">
+    <div class="section-label" style="margin-bottom:1.5rem;">Choose Your Plan</div>
+    <div class="sub-layout">
+      <div class="plan-card">
+        <div class="plan-name">Pay As You Go</div>
+        <div class="plan-price">$0<span>/month</span></div>
+        <div class="plan-desc">Pay only for what you use. No monthly commitment.</div>
+        <div class="plan-features">
+          <div class="plan-feature"><div class="pf-check">✓</div>Post unlimited jobs</div>
+          <div class="plan-feature"><div class="pf-check">✓</div>Real-time driver tracking</div>
+          <div class="plan-feature"><div class="pf-check">✓</div>All vehicle classes</div>
+          <div class="plan-feature"><div class="pf-check" style="background:var(--red-bg);border-color:var(--red-border);color:var(--red);">✕</div>No job discount</div>
+        </div>
+        <button class="plan-btn pb-current" id="payAsYouGoBtn">Current Plan</button>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge2">RECOMMENDED</div>
+        <div class="plan-name">Business Pro</div>
+        <div class="plan-price">$88<span>.88/month</span></div>
+        <div class="plan-desc">10% off every single job. Pays for itself after just a few deliveries.</div>
+        <div class="plan-features">
+          <div class="plan-feature"><div class="pf-check">✓</div>10% discount on all jobs</div>
+          <div class="plan-feature"><div class="pf-check">✓</div>Priority driver assignment</div>
+          <div class="plan-feature"><div class="pf-check">✓</div>Full delivery history &amp; invoices</div>
+          <div class="plan-feature"><div class="pf-check">✓</div>Dedicated account support</div>
+        </div>
+        <button class="plan-btn pb-upgrade" id="upgradeBtn" onclick="handleUpgrade()">Upgrade — $88.88/mo →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="processing-overlay" id="processingOverlay">
+  <div class="processing-spinner"></div>
+  <div class="processing-text" id="processingText">Opening Payment...</div>
+  <div class="processing-sub" id="processingSub">Redirecting to secure Stripe checkout</div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-title" id="toastTitle"></div>
+  <div class="toast-body" id="toastBody"></div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// CONFIG
+// ─────────────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://imljjaurxiawfxjckkqf.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y';
+
+// ── STRIPE LINKS ──────────────────────────────────────────────────
+const STRIPE_JOB_LINK = 'https://buy.stripe.com/cNi7sN1jpgBtgnT9j92Fa00';
+const STRIPE_SUB_LINK = 'https://buy.stripe.com/7sYdRbaTZetl6Njbrh2Fa01';
+// ─────────────────────────────────────────────────────────────────
+
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// ─────────────────────────────────────────────────────────────────
+// PRICING — Progressive margin tiers
+// ─────────────────────────────────────────────────────────────────
+let selectedType    = 'standard';
+let selectedVehicle = 'car';
+
+const TYPE_MULTIPLIER  = { standard:1.0, express:1.5, route:1.25, freight:2.0 };
+const VEHICLE_BASE     = { car:25, suv:35, van:50, box:75, semi:120 };
+const VEHICLE_LABELS   = { car:'Sedan', suv:'SUV', van:'Cargo Van', box:'Box Truck', semi:'Semi' };
+const VEHICLE_PER_MILE = { car:1.5, suv:1.75, van:2.0, box:2.5, semi:3.5 };
+
+// Progressive margin: higher price = higher % you keep
+function getMargin(price) {
+  if (price > 1000) return 0.45;
+  if (price >  500) return 0.40;
+  if (price >  300) return 0.35;
+  if (price >  150) return 0.30;
+  return 0.25;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────────────────
+let currentBusiness   = null;
+let myJobs            = [];
+let realtimeChannel   = null;
+
+// ─────────────────────────────────────────────────────────────────
+// BOOT
+// ─────────────────────────────────────────────────────────────────
+async function boot() {
+  show('loadingOverlay');
+  try {
+    const { data: { session } } = await db.auth.getSession();
+    if (session) { await loadBusiness(session.user.id); }
+    else         { hide('loadingOverlay'); show('authScreen'); }
+  } catch(e) { hide('loadingOverlay'); show('authScreen'); }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────────────────────────────
+function switchAuthTab(tab, btn) {
+  document.querySelectorAll('.auth-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('fs-' + tab).classList.add('active');
+}
+
+async function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass  = document.getElementById('loginPass').value;
+  const err   = document.getElementById('loginErr');
+  const btn   = document.getElementById('loginBtn');
+  if (!email || !pass) { showErr(err, 'Please enter email and password.'); return; }
+  btn.disabled = true; btn.textContent = 'Signing in...'; err.style.display = 'none';
+  const { data, error } = await db.auth.signInWithPassword({ email, password: pass });
+  if (error) { showErr(err, error.message); btn.disabled = false; btn.textContent = 'Sign In →'; return; }
+  await loadBusiness(data.user.id);
+}
+
+async function doRegister() {
+  const bizName = document.getElementById('regBizName').value.trim();
+  const contact = document.getElementById('regContact').value.trim();
+  const phone   = document.getElementById('regPhone').value.trim();
+  const type    = document.getElementById('regType').value;
+  const city    = document.getElementById('regCity').value;
+  const email   = document.getElementById('regEmail').value.trim();
+  const pass    = document.getElementById('regPass').value;
+  const err     = document.getElementById('registerErr');
+  const suc     = document.getElementById('registerSuc');
+  const btn     = document.getElementById('registerBtn');
+  if (!bizName||!contact||!phone||!type||!city||!email||!pass) { showErr(err,'Please fill in all fields.'); return; }
+  if (pass.length < 6) { showErr(err,'Password must be at least 6 characters.'); return; }
+  btn.disabled = true; btn.textContent = 'Creating account...';
+  err.style.display = 'none'; suc.style.display = 'none';
+  const { data, error } = await db.auth.signUp({ email, password: pass });
+  if (error) { showErr(err, error.message); btn.disabled = false; btn.textContent = 'Start Free Trial →'; return; }
+  await db.from('businesses').insert({
+    id: data.user.id, email, business_name: bizName, contact_name: contact,
+    phone, business_type: type, city, plan: 'trial',
+    trial_started: new Date().toISOString(), trial_days_remaining: 14
+  });
+  suc.style.display = 'block'; suc.textContent = '✓ Account created! Signing you in...';
+  setTimeout(() => loadBusiness(data.user.id), 1500);
+}
+
+async function doLogout() {
+  if (realtimeChannel) db.removeChannel(realtimeChannel);
+  await db.auth.signOut();
+  currentBusiness = null; myJobs = [];
+  hide('appScreen'); show('authScreen');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// LOAD BUSINESS
+// ─────────────────────────────────────────────────────────────────
+async function loadBusiness(userId) {
+  show('loadingOverlay');
+  const { data: biz, error } = await db.from('businesses').select('*').eq('id', userId).single();
+  if (error || !biz) { hide('loadingOverlay'); show('authScreen'); return; }
+  currentBusiness = biz;
+  hide('loadingOverlay'); hide('authScreen'); show('appScreen');
+  initApp();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// INIT APP
+// ─────────────────────────────────────────────────────────────────
+function initApp() {
+  const isSub = currentBusiness.plan === 'subscriber';
+  document.getElementById('navBizName').textContent = currentBusiness.business_name || 'Business';
+  document.getElementById('navPlan').textContent    = isSub ? 'Business Pro Subscriber' : `Free Trial — ${currentBusiness.trial_days_remaining || 14} days left`;
+  document.getElementById('planBadge').textContent  = isSub ? 'PRO' : 'TRIAL';
+  document.getElementById('planBadge').className    = 'plan-badge ' + (isSub ? 'pb-sub' : 'pb-trial');
+  document.getElementById('trialDays').textContent  = currentBusiness.trial_days_remaining || 14;
+  if (isSub) {
+    document.getElementById('trialBanner').style.display  = 'none';
+    document.getElementById('discountRow').style.display  = 'block';
+    document.getElementById('upgradeBtn').textContent     = '✓ Subscribed';
+    document.getElementById('upgradeBtn').className       = 'plan-btn pb-current';
+    document.getElementById('payAsYouGoBtn').textContent  = 'Downgrade';
+    document.getElementById('payAsYouGoBtn').className    = 'plan-btn pb-upgrade';
+  }
+  loadJobs();
+  subscribeToJobUpdates();
+  updatePrice();
+  checkPaymentReturn();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// STRIPE RETURN HANDLER
+// ─────────────────────────────────────────────────────────────────
+function checkPaymentReturn() {
+  const params  = new URLSearchParams(window.location.search);
+  const payment = params.get('payment');
+  if (!payment) return;
+  history.replaceState({}, '', window.location.pathname);
+  if      (payment === 'success')    confirmJobAfterPayment();
+  else if (payment === 'subscribed') confirmSubscription();
+  else if (payment === 'cancelled')  {
+    localStorage.removeItem('ns_pending_job');
+    localStorage.removeItem('ns_pending_sub');
+    showToast('Payment Cancelled', 'Your job was not posted. You can try again.', 'gold');
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// LOAD JOBS
+// ─────────────────────────────────────────────────────────────────
+async function loadJobs() {
+  const { data, error } = await db.from('jobs').select('*')
+    .eq('business_id', currentBusiness.id)
+    .order('created_at', { ascending: false }).limit(30);
+  if (error) return;
+  myJobs = data || [];
+  renderDashboard();
+  renderActiveJobs();
+}
+
+function renderDashboard() {
+  const completed = myJobs.filter(j => ['completed','delivered'].includes(j.status));
+  const active    = myJobs.filter(j => !['completed','delivered','cancelled'].includes(j.status));
+  const spent     = myJobs.reduce((a, j) => a + Number(j.total_price || j.price || 0), 0);
+  document.getElementById('statJobsPosted').textContent = myJobs.length;
+  document.getElementById('statCompleted').textContent  = completed.length;
+  document.getElementById('statSpent').textContent      = '$' + spent.toFixed(2);
+  document.getElementById('statActive').textContent     = active.length;
+  document.getElementById('activeCount').textContent    = active.length;
+  const list = document.getElementById('recentJobs');
+  if (!myJobs.length) {
+    list.innerHTML = `<div class="empty-state"><div class="empty-icon">📦</div><div class="empty-title">No jobs yet</div><div style="font-size:0.78rem;">Post your first delivery to get started.</div></div>`;
+    return;
+  }
+  list.innerHTML = myJobs.slice(0, 8).map(j => `
+    <div class="job-row">
+      <div class="job-row-id">${(j.job_number || j.tracking_number || j.id).slice(0,12)}</div>
+      <div style="flex:1;">
+        <div style="font-size:0.82rem;font-weight:600;">${j.pickup_city || j.pickup_address || '—'} → ${j.dropoff_city || j.dropoff_address || '—'}</div>
+        <div style="font-size:0.7rem;color:var(--ink3);margin-top:2px;">${j.pickup_name||''} ${j.pickup_name?'→':''} ${j.dropoff_name||''} · ${j.job_type || j.service || 'standard'}</div>
+      </div>
+      <div class="job-row-price">$${Number(j.total_price || j.price || 0).toFixed(2)}</div>
+      <div><span class="chip chip-${j.status||'posted'}">${(j.status||'posted').toUpperCase()}</span></div>
+    </div>`).join('');
+}
+
+function renderActiveJobs() {
+  const grid   = document.getElementById('activeJobsGrid');
+  const active = myJobs.filter(j => j.status !== 'cancelled');
+  if (!active.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">🚗</div><div class="empty-title">No active jobs</div><div style="font-size:0.78rem;">Jobs you post will appear here in real time.</div></div>`;
+    return;
+  }
+  const statusMap = {
+    posted:'Waiting for Driver', pending:'Pending Assignment',
+    accepted:'Driver Assigned', picked_up:'Picked Up',
+    delivering:'Out for Delivery', transit:'In Transit',
+    completed:'Delivered ✓', delivered:'Delivered ✓'
+  };
+  const classMap = {
+    posted:'si-posted', pending:'si-pending', accepted:'si-accepted',
+    picked_up:'si-accepted', delivering:'si-delivering', transit:'si-delivering',
+    completed:'si-completed', delivered:'si-completed'
+  };
+  grid.innerHTML = active.map(j => `
+    <div class="active-card">
+      <div class="active-card-top">
+        <div class="ac-id">${(j.job_number || j.tracking_number || j.id).slice(0,12)}</div>
+        <div class="ac-route">${j.pickup_city || j.pickup_address || '—'} → ${j.dropoff_city || j.dropoff_address || '—'}</div>
+        <div class="ac-type">${j.pickup_name||''} ${j.pickup_name?'→':''} ${j.dropoff_name||''}</div>
+      </div>
+      <div class="active-card-status">
+        <div class="status-indicator ${classMap[j.status]||'si-posted'}">
+          <div class="si-dot"></div>${statusMap[j.status]||'Posted'}
+        </div>
+        <div class="ac-price">$${Number(j.total_price || j.price || 0).toFixed(2)}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// REALTIME
+// ─────────────────────────────────────────────────────────────────
+function subscribeToJobUpdates() {
+  realtimeChannel = db.channel('biz-jobs-' + currentBusiness.id)
+    .on('postgres_changes', { event:'UPDATE', schema:'public', table:'jobs' }, payload => {
+      const idx = myJobs.findIndex(j => j.id === payload.new.id);
+      if (idx !== -1) {
+        myJobs[idx] = payload.new;
+        renderDashboard(); renderActiveJobs();
+        const labels = {
+          accepted:'Driver accepted your job!', picked_up:'Driver picked up your delivery',
+          delivering:'Your delivery is on the way!', completed:'Delivery completed ✓', delivered:'Delivery completed ✓'
+        };
+        if (labels[payload.new.status]) showToast('Update', labels[payload.new.status]);
+      }
+    }).subscribe();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// PRICE CALCULATOR
+// ─────────────────────────────────────────────────────────────────
+function updatePrice() {
+  const miles = parseFloat(document.getElementById('distanceMiles').value) || 0;
+  const stops = parseInt(document.getElementById('numStops').value) || 1;
+  const base  = VEHICLE_BASE[selectedVehicle] || 25;
+  const mult  = TYPE_MULTIPLIER[selectedType] || 1.0;
+  const ppm   = VEHICLE_PER_MILE[selectedVehicle] || 1.5;
+
+  let price = (base + (miles * ppm) + ((stops - 1) * 15)) * mult;
+  const isSub = currentBusiness?.plan === 'subscriber';
+  if (isSub) price *= 0.9;
+
+  const margin    = getMargin(price);
+  const driverPay = price * (1 - margin);
+  const yourCut   = price * margin;
+
+  document.getElementById('calcTotal').textContent      = '$' + price.toFixed(2);
+  document.getElementById('calcBase').textContent       = '$' + base.toFixed(2);
+  document.getElementById('calcDistance').textContent   = miles > 0 ? `${miles} mi × $${ppm}/mi` : '—';
+  document.getElementById('calcMultiplier').textContent = mult.toFixed(1) + '×';
+  document.getElementById('calcVehicle').textContent    = VEHICLE_LABELS[selectedVehicle];
+  document.getElementById('calcDriverPay').textContent  = '$' + driverPay.toFixed(2);
+  document.getElementById('calcMarginPct').textContent  = Math.round(margin * 100) + '% ($' + yourCut.toFixed(2) + ')';
+  document.getElementById('discountRow').style.display  = isSub ? 'block' : 'none';
+
+  return { price, driverPay, margin: yourCut };
+}
+
+function selectType(type, el) {
+  document.querySelectorAll('.type-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected'); selectedType = type; updatePrice();
+}
+function selectVehicle(v, el) {
+  document.querySelectorAll('.vehicle-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected'); selectedVehicle = v; updatePrice();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// POST JOB
+// FIX 1: Stripe URL params now actually applied
+// FIX 2: Job fields include dispatch-compatible columns
+// ─────────────────────────────────────────────────────────────────
+async function postJob() {
+  const pickupName     = document.getElementById('pickupName').value.trim();
+  const pickupAddr     = document.getElementById('pickupAddr').value.trim();
+  const pickupCity     = document.getElementById('pickupCity').value;
+  const pickupContact  = document.getElementById('pickupContact').value.trim();
+  const dropoffName    = document.getElementById('dropoffName').value.trim();
+  const dropoffAddr    = document.getElementById('dropoffAddr').value.trim();
+  const dropoffCity    = document.getElementById('dropoffCity').value;
+  const dropoffContact = document.getElementById('dropoffContact').value.trim();
+  const miles          = parseFloat(document.getElementById('distanceMiles').value);
+  const stops          = parseInt(document.getElementById('numStops').value) || 1;
+  const instructions   = document.getElementById('instructions').value.trim();
+
+  if (!pickupName||!pickupAddr||!pickupCity||!dropoffName||!dropoffAddr||!dropoffCity||!miles) {
+    showToast('Missing Info','Please fill in all pickup, dropoff, and distance fields.','red');
+    return;
+  }
+
+  const { price, driverPay, margin } = updatePrice();
+  const jobNumber = 'NST-' + new Date().getFullYear() + '-' + Math.random().toString(36).substring(2,6).toUpperCase() + Date.now().toString().slice(-4);
+
+  // Map city name to dispatch key
+  const c = pickupCity.toLowerCase();
+  const cityKey = c.includes('chicago') ? 'chicago'
+                : c.includes('pittsburgh') ? 'pittsburgh'
+                : c.includes('st. louis') || c.includes('st louis') ? 'stlouis'
+                : c.includes('charlotte') ? 'charlotte'
+                : c.includes('atlanta') ? 'atlanta'
+                : c.includes('cleveland') ? 'cleveland'
+                : 'other';
+
+  // Build job row — includes BOTH portal fields AND dispatch-compatible fields
+  const pendingJob = {
+    // Portal / business-portal fields
+    business_id:      currentBusiness.id,
+    job_number:       jobNumber,
+    job_type:         selectedType,
+    vehicle_class:    selectedVehicle,
+    pickup_name:      pickupName,
+    pickup_address:   pickupAddr,
+    pickup_city:      pickupCity,
+    pickup_contact:   pickupContact,
+    dropoff_name:     dropoffName,
+    dropoff_address:  dropoffAddr,
+    dropoff_city:     dropoffCity,
+    dropoff_contact:  dropoffContact,
+    distance_miles:   miles,
+    stops,
+    instructions,
+    total_price:      parseFloat(price.toFixed(2)),
+    driver_pay:       parseFloat(driverPay.toFixed(2)),
+    platform_margin:  parseFloat(margin.toFixed(2)),
+    // Dispatch-compatible fields — makes jobs show in dispatch.html
+    tracking_number:  jobNumber,
+    customer_name:    currentBusiness.business_name || currentBusiness.contact_name || '',
+    customer_email:   currentBusiness.email || '',
+    customer_phone:   currentBusiness.phone || '',
+    city:             cityKey,
+    service:          selectedType === 'express' ? 'same-day' : selectedType === 'route' ? 'standard' : selectedType,
+    miles:            miles,
+    price:            parseFloat(price.toFixed(2)),
+    driver_id:        '',
+    driver_name:      '',
+    notes:            instructions || '',
+    source:           'business-portal',
+    // Status
+    status:           'posted',
+    payment_status:   'paid',
+    posted_at:        new Date().toISOString()
+  };
+
+  localStorage.setItem('ns_pending_job', JSON.stringify(pendingJob));
+
+  // FIX 1: Build Stripe URL WITH params and USE the built URL (not the raw base link)
+  const base       = window.location.origin + window.location.pathname;
+  const successUrl = encodeURIComponent(base + '?payment=success');
+  const cancelUrl  = encodeURIComponent(base + '?payment=cancelled');
+
+  const stripeUrl = STRIPE_JOB_LINK
+    + '?prefilled_email=' + encodeURIComponent(currentBusiness.email || '')
+    + '&client_reference_id=' + encodeURIComponent(jobNumber)
+    + '&success_url=' + successUrl
+    + '&cancel_url='  + cancelUrl;
+
+  document.getElementById('processingText').textContent = 'Opening Secure Payment...';
+  document.getElementById('processingSub').textContent  = 'Redirecting to Stripe checkout';
+  document.getElementById('processingOverlay').classList.add('open');
+
+  // FIX 1: Use stripeUrl — NOT the raw STRIPE_JOB_LINK
+  setTimeout(() => { window.location.href = stripeUrl; }, 600);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CONFIRM JOB AFTER STRIPE RETURN
+// ─────────────────────────────────────────────────────────────────
+async function confirmJobAfterPayment() {
+  const pending = localStorage.getItem('ns_pending_job');
+  if (!pending) return;
+  const jobData = JSON.parse(pending);
+  jobData.status         = 'posted';
+  jobData.payment_status = 'paid';
+  jobData.created_at     = new Date().toISOString();
+  jobData.updated_at     = new Date().toISOString();
+
+  const { data, error } = await db.from('jobs').insert(jobData).select().single();
+  localStorage.removeItem('ns_pending_job');
+
+  if (error) {
+    console.error('Job insert error:', error);
+    showToast('Error', 'Payment received but job post failed. Please contact support.', 'red');
+    return;
+  }
+
+  await db.from('businesses')
+    .update({ jobs_posted: (currentBusiness.jobs_posted || 0) + 1 })
+    .eq('id', currentBusiness.id);
+  currentBusiness.jobs_posted = (currentBusiness.jobs_posted || 0) + 1;
+
+  myJobs.unshift(data);
+  renderDashboard();
+  renderActiveJobs();
+  showToast('🎉 Payment Received! Job is Live!', (data.job_number || data.tracking_number || '') + ' — drivers can see it now.');
+  switchTab('active', document.querySelectorAll('.app-tab')[2]);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SUBSCRIPTION
+// ─────────────────────────────────────────────────────────────────
+async function handleUpgrade() {
+  if (currentBusiness.plan === 'subscriber') return;
+  localStorage.setItem('ns_pending_sub', currentBusiness.id);
+  const base = window.location.origin + window.location.pathname;
+  const stripeSubUrl = STRIPE_SUB_LINK
+    + '?prefilled_email=' + encodeURIComponent(currentBusiness.email || '')
+    + '&client_reference_id=' + encodeURIComponent(currentBusiness.id)
+    + '&success_url=' + encodeURIComponent(base + '?payment=subscribed')
+    + '&cancel_url='  + encodeURIComponent(base + '?payment=cancelled');
+  document.getElementById('processingText').textContent = 'Opening Subscription...';
+  document.getElementById('processingSub').textContent  = 'Redirecting to Stripe checkout';
+  document.getElementById('processingOverlay').classList.add('open');
+  setTimeout(() => { window.location.href = stripeSubUrl; }, 600);
+}
+
+async function confirmSubscription() {
+  await db.from('businesses').update({ plan: 'subscriber' }).eq('id', currentBusiness.id);
+  currentBusiness.plan = 'subscriber';
+  localStorage.removeItem('ns_pending_sub');
+  document.getElementById('trialBanner').style.display = 'none';
+  document.getElementById('planBadge').textContent     = 'PRO';
+  document.getElementById('planBadge').className       = 'plan-badge pb-sub';
+  document.getElementById('navPlan').textContent       = 'Business Pro Subscriber';
+  document.getElementById('discountRow').style.display = 'block';
+  document.getElementById('upgradeBtn').textContent    = '✓ Subscribed';
+  document.getElementById('upgradeBtn').className      = 'plan-btn pb-current';
+  updatePrice();
+  showToast('🎉 Subscribed!', '10% discount now applied to all your jobs.');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// UTILS
+// ─────────────────────────────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.app-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+function show(id) { document.getElementById(id).classList.add('active'); }
+function hide(id) { document.getElementById(id).classList.remove('active'); }
+function showErr(el, msg) { el.textContent = msg; el.style.display = 'block'; }
+function showToast(title, body, type) {
+  const el = document.getElementById('toast');
+  document.getElementById('toastTitle').textContent = title;
+  document.getElementById('toastBody').textContent  = body;
+  el.style.borderLeftColor = type === 'red' ? 'var(--red)' : type === 'gold' ? 'var(--gold2)' : 'var(--green2)';
+  el.style.display = 'block';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.style.display = 'none', 5000);
+}
+
+boot();
+</script>
+</body>
+</html>
