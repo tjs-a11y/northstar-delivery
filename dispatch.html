@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>NorthStar — Dispatch & Portal</title>
@@ -1225,6 +1226,28 @@ function renderJobs(){
 function fj(f,btn){ activeFilter=f; document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderJobs(); }
 
 function assignDrv(jid,did){
+  const job = jobs.find(j=>j.id===jid); 
+  if(!job) return;
+
+  const wasUnassigned = !job.driverId;
+
+  job.driverId = did; 
+  job.status = did ? 'assigned' : 'pending';
+
+  save(); 
+  renderJobs();
+
+  if(did){
+    const d = drivers.find(x=>x.id===did);
+    showToast('✅ Assigned to ' + d?.name + ' — sending payment link...');
+
+    if(wasUnassigned){
+      sendPaymentEmail(job, d);
+    }
+  }
+
+  updateJobInSupabase(job);
+}
   const job=jobs.find(j=>j.id===jid); if(!job) return;
   job.driverId=did; job.status=did?'assigned':'pending';
   save(); renderJobs();
@@ -2210,6 +2233,83 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
   }, 10000);
 });
-</script>
+// AUTO PAYMENT EMAIL — fires when driver first assigned
+async function sendPaymentEmail(job, driver) {
+  if (!job) return;
+
+  const customerEmail = job.email || job.customer_email || '';
+  const customerName  = job.customerName || job.customer_name || 'Customer';
+  const tracking      = job.tracking_number || ('#' + job.id.slice(-6).toUpperCase());
+  const driverName    = driver ? driver.name : 'your driver';
+  const amount        = parseFloat(job.price || job.quoted_price || 0);
+
+  if (!customerEmail) {
+    showToast('⚠️ No customer email — payment link not sent'); 
+    return;
+  }
+
+  if (amount <= 0) {
+    showToast('⚠️ Price is $0 — set a price first'); 
+    return;
+  }
+
+  const stripeUrl = STRIPE
+    + '?prefilled_email=' + encodeURIComponent(customerEmail)
+    + '&client_reference_id=' + encodeURIComponent(tracking);
+
+  const body =
+`Hi ${customerName},
+
+🚗 Driver Assigned: ${driverName}
+📦 Tracking: ${tracking}
+📍 Pickup: ${job.pickup || job.pickup_address || '—'}
+🏁 Drop-off: ${job.delivery || job.dropoff_address || '—'}
+💰 Amount Due: $${amount.toFixed(2)}
+
+Please complete your secure payment below:
+
+💳 PAY NOW: ${stripeUrl}
+
+Your driver departs once payment is confirmed.
+
+— NorthStar Delivery`;
+
+  try {
+    if (typeof emailjs === 'undefined') {
+      showToast('⚠️ EmailJS not loaded'); 
+      return;
+    }
+
+    emailjs.init('gka99ITrW1k4E21Ph');
+
+    await emailjs.send('service_hadpr5k', 'template_x5ogqhn', {
+      to_name: customerName,
+      to_email: customerEmail,
+      from_name: 'NorthStar Delivery',
+      subject: '💳 Complete Your Payment — ' + tracking,
+      message: body
+    });
+
+    // Update Supabase payment status
+    fetch(SUPA_URL + '/rest/v1/jobs?id=eq.' + job.id, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        payment_status: 'link_sent',
+        updated_at: new Date().toISOString()
+      })
+    });
+
+    showToast('💳 Payment link sent to ' + customerEmail);
+
+  } catch(err) {
+    console.error(err);
+    showToast('⚠️ Payment email failed');
+  }
+}</script>
 </body>
 </html>
