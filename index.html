@@ -1420,10 +1420,10 @@
 <!-- SCHEDULE / CONTACT -->
 <section id="schedule">
   <div class="schedule-wrap">
-    <div class="section-label reveal">Book A Delivery</div>
-    <div class="section-title reveal">Schedule A Pickup</div>
-    <p class="section-subtitle reveal" style="margin-bottom:0">Fill out the form below and we'll confirm your booking within minutes. No account needed.</p>
-    <div class="schedule-form reveal">
+    <div class="section-label">Book A Delivery</div>
+    <div class="section-title">Schedule A Pickup</div>
+    <p class="section-subtitle" style="margin-bottom:0">Fill out the form below and we'll confirm your booking within minutes. No account needed.</p>
+    <div class="schedule-form">
       <div class="form-cols">
         <div class="form-group">
           <label class="form-label">Your Name</label>
@@ -1467,7 +1467,7 @@
       </div>
       <div class="submit-row">
         <p class="privacy-note">🔒 Your info is secure. We never sell your data. Confirmation sent within 15 minutes.</p>
-        <button class="btn-primary" style="border:none;" onclick="window.location.href='business-portal.html'">Schedule My Pickup →</button>
+        <button class="btn-primary" style="border:none;" id="scheduleBtn" onclick="submitBooking()">Schedule My Pickup →</button>
       </div>
     </div>
   </div>
