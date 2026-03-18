@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>NorthStar — Dispatch & Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#080d1a; --navy2:#0d1628; --navy3:#111d35;
+  --electric:#2563eb; --electric2:#3b82f6;
+  --gold:#f59e0b; --gold2:#fbbf24;
+  --green:#22c55e; --red:#ef4444; --purple:#a855f7;
+  --white:#f8fafc; --muted:#64748b; --muted2:#94a3b8;
+  --border:rgba(255,255,255,0.08); --card:rgba(255,255,255,0.04);
+  --radius:12px; --shadow:0 24px 64px rgba(0,0,0,.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
+
+/* ── LOGIN ── */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 30% 40%,rgba(37,99,235,.12),transparent 60%),radial-gradient(ellipse at 70% 70%,rgba(245,158,11,.06),transparent 50%),var(--navy);}
+.login-box{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:40px;width:360px;box-shadow:var(--shadow);}
+.login-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:6px;}
+.logo-star{width:28px;height:28px;background:linear-gradient(135deg,var(--electric),var(--gold));clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.login-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;background:linear-gradient(90deg,var(--white),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.login-sub{text-align:center;font-size:.75rem;color:var(--muted);letter-spacing:2px;margin-bottom:28px;}
+.role-toggle{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:24px;background:rgba(0,0,0,.3);padding:4px;border-radius:10px;}
+.role-btn{padding:9px 4px;border-radius:8px;border:none;cursor:pointer;font-size:.75rem;font-weight:700;letter-spacing:1px;transition:all .2s;background:transparent;color:var(--muted);}
+.role-btn.active{background:var(--electric);color:white;}
+.fl{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fl label{font-size:.68rem;font-weight:700;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;}
+.fi{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:var(--white);font-size:.9rem;font-family:'DM Sans',sans-serif;width:100%;}
+.fi:focus{outline:none;border-color:var(--electric2);}
+.fi option{background:var(--navy2);}
+.btn-p{background:linear-gradient(135deg,var(--electric),var(--electric2));color:white;padding:13px;border-radius:10px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;width:100%;margin-top:6px;transition:all .2s;letter-spacing:.5px;}
+.btn-p:hover{opacity:.9;transform:translateY(-1px);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;padding:13px;border-radius:10px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;width:100%;margin-top:6px;transition:all .2s;letter-spacing:.5px;}
+.login-err{color:var(--red);font-size:.78rem;text-align:center;margin-top:12px;display:none;}
+/* PIN PAD */
+.pin-display{display:flex;justify-content:center;gap:12px;margin:16px 0;}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border);transition:all .2s;}
+.pin-dot.filled{background:var(--electric2);border-color:var(--electric2);transform:scale(1.1);}
+.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.pin-key{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;cursor:pointer;font-size:1.1rem;font-weight:600;transition:all .15s;user-select:none;}
+.pin-key:hover{background:rgba(255,255,255,.12);}
+.pin-key.clr{font-size:.75rem;color:var(--muted2);}
+
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(8,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:56px;}
+.tb-logo{display:flex;align-items:center;gap:8px;}
+.tb-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;}
+.tb-right{display:flex;align-items:center;gap:14px;}
+.live-badge{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:.65rem;font-weight:700;letter-spacing:2px;padding:3px 10px;border-radius:100px;}
+.clock{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.btn-logout{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted2);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.75rem;transition:all .2s;}
+.btn-logout:hover{border-color:rgba(255,255,255,.2);color:var(--white);}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--navy2);padding:0 24px;overflow-x:auto;}
+.tab{padding:14px 20px;font-size:.8rem;font-weight:600;letter-spacing:1px;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);transition:all .2s;white-space:nowrap;text-transform:uppercase;}
+.tab:hover{color:var(--white);}
+.tab.active{color:var(--electric2);border-bottom-color:var(--electric2);}
+
+/* ── CONTENT ── */
+.content{display:none;padding:24px;max-width:1400px;margin:0 auto;}
+.content.active{display:block;}
+
+/* ── STAT CARDS ── */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;}
+.stat-card.blue{border-left:3px solid var(--electric2);}
+.stat-card.gold{border-left:3px solid var(--gold);}
+.stat-card.green{border-left:3px solid var(--green);}
+.stat-card.purple{border-left:3px solid var(--purple);}
+.sc-label{font-size:.65rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.sc-value{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;line-height:1;}
+.sc-sub{font-size:.7rem;color:var(--muted);margin-top:4px;}
+
+/* ── SECTION HEADER ── */
+.sh{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.sh-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;}
+.sh-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.filter-bar{display:flex;gap:6px;flex-wrap:wrap;}
+.fbtn{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:.75rem;font-weight:600;cursor:pointer;color:var(--muted2);transition:all .2s;}
+.fbtn:hover,.fbtn.active{background:var(--electric);border-color:var(--electric);color:white;}
+.action-btn{padding:7px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.75rem;font-weight:700;letter-spacing:.5px;transition:all .2s;}
+.ab-green{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--green);}
+.ab-blue{background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);color:var(--electric2);}
+.ab-gold{background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:var(--gold);}
+.ab-red{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:var(--red);}
+
+/* ── JOBS TABLE ── */
+.jobs-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.t-head{display:grid;grid-template-columns:70px 160px 1fr 110px 90px 120px 160px 90px;gap:0;padding:10px 16px;border-bottom:1px solid var(--border);font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.t-row{display:grid;grid-template-columns:70px 160px 1fr 110px 90px 120px 160px 90px;gap:0;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:background .15s;align-items:center;}
+.t-row:hover{background:rgba(255,255,255,.03);}
+.t-row:last-child{border-bottom:none;}
+.jid{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:1px;}
+.jname{font-weight:600;font-size:.88rem;}
+.jphone{font-size:.75rem;color:var(--muted2);}
+.jaddr{font-size:.75rem;color:var(--muted2);line-height:1.5;}
+.jprice{font-weight:700;font-size:.95rem;color:var(--white);}
+.badge{font-size:.65rem;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:100px;text-transform:uppercase;}
+.s-pending{background:rgba(245,158,11,.15);color:var(--gold);}
+.s-assigned{background:rgba(37,99,235,.15);color:var(--electric2);}
+.s-transit{background:rgba(168,85,247,.15);color:var(--purple);}
+.s-delivered{background:rgba(34,197,94,.15);color:var(--green);}
+.s-cancelled{background:rgba(239,68,68,.1);color:var(--red);}
+.s-urgent{background:rgba(239,68,68,.2);color:var(--red);}
+.dsel{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;padding:5px 8px;color:var(--white);font-size:.75rem;font-family:'DM Sans',sans-serif;width:100%;}
+.dsel option{background:var(--navy2);}
+.abtns{display:flex;gap:4px;}
+.abtn{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;padding:5px 9px;cursor:pointer;font-size:.8rem;transition:all .15s;}
+.abtn:hover{background:rgba(255,255,255,.1);}
+.abtn.del:hover{background:rgba(239,68,68,.2);border-color:rgba(239,68,68,.3);}
+.empty{padding:60px;text-align:center;color:var(--muted);}
+
+/* ── NEW JOB FORM ── */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:.68rem;font-weight:700;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;}
+.form-input,.form-select{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--white);font-size:.88rem;font-family:'DM Sans',sans-serif;transition:border-color .2s;width:100%;}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--electric2);}
+.form-select option{background:var(--navy2);}
+.price-box{display:none;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:10px;padding:16px;margin-top:4px;}
+.price-box.show{display:block;}
+.pb-price{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--electric2);letter-spacing:2px;}
+.pb-split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+.pb-half{background:rgba(0,0,0,.2);border-radius:8px;padding:10px;text-align:center;}
+.pb-half-num{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;}
+.pb-half-label{font-size:.62rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.full{grid-column:1/-1;}
+.btn-create{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;padding:13px 32px;border-radius:10px;border:none;cursor:pointer;transition:all .2s;}
+.btn-create:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(245,158,11,.3);}
+
+/* ── JOB MODAL ── */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;align-items:center;justify-content:center;padding:20px;}
+.modal.open{display:flex;}
+.modal-box{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow);}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;}
+.modal-close{cursor:pointer;color:var(--muted);font-size:1.2rem;background:none;border:none;color:inherit;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.detail-row{display:flex;flex-direction:column;gap:3px;}
+.detail-label{font-size:.65rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.detail-val{font-size:.9rem;font-weight:500;}
+.margin-box{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:16px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;}
+.mb-num{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;}
+.mb-label{font-size:.62rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-modal{padding:10px 18px;border-radius:8px;font-size:.8rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;letter-spacing:.5px;}
+
+/* ── DRIVERS ── */
+.drivers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.driver-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .2s;}
+.driver-card:hover{border-color:rgba(37,99,235,.3);}
+.dav{width:48px;height:48px;background:linear-gradient(135deg,var(--electric),var(--electric2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1px;margin-bottom:12px;}
+.dname{font-weight:700;font-size:1rem;margin-bottom:2px;}
+.dphone{font-size:.8rem;color:var(--muted2);margin-bottom:4px;}
+.dvehicle{font-size:.78rem;color:var(--muted);margin-bottom:10px;}
+.dstatus{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:.8rem;font-weight:600;}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot.available{background:var(--green);box-shadow:0 0 8px var(--green);}
+.dot.busy,.dot.transit{background:var(--gold);}
+.dot.unavailable,.dot.offline{background:var(--red);}
+.dstats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px;}
+.dst{background:rgba(0,0,0,.2);border-radius:8px;padding:10px;text-align:center;}
+.dst-num{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:1px;}
+.dst-label{font-size:.6rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.pin-badge{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:5px 10px;font-size:.74rem;font-weight:600;color:var(--gold);cursor:pointer;margin-bottom:10px;display:inline-block;}
+.dactions{display:flex;gap:6px;}
+.btn-secondary{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted2);padding:7px 12px;border-radius:8px;cursor:pointer;font-size:.75rem;font-weight:600;transition:all .2s;flex:1;text-align:center;}
+.btn-secondary:hover{border-color:rgba(255,255,255,.2);color:var(--white);}
+.add-card{background:transparent;border:1px dashed var(--border);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;cursor:pointer;transition:all .2s;}
+.add-card:hover{border-color:rgba(37,99,235,.4);background:rgba(37,99,235,.04);}
+
+/* ── CLIENT CARDS ── */
+.clients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.client-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+.cbal{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);letter-spacing:2px;}
+.cbal-label{font-size:.65rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+
+/* ── DRIVER PORTAL ── */
+.dp-wrap{min-height:calc(100vh - 56px);background:var(--navy);padding:20px;}
+.dp-inner{max-width:600px;margin:0 auto;}
+.dp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
+.dp-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;}
+.avail-toggle{padding:8px 18px;border-radius:100px;border:none;cursor:pointer;font-size:.8rem;font-weight:700;letter-spacing:1px;transition:all .2s;}
+.avail-on{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--green);}
+.avail-off{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:var(--red);}
+.dp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+.dp-stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;}
+.dp-stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;}
+.dp-stat-label{font-size:.62rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;}
+.dp-job{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;transition:border-color .2s;}
+.dp-job.urgent{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.03);}
+.dp-job-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+.dp-job-id{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1px;}
+.dp-pay{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--green);}
+.dp-pay-label{font-size:.65rem;color:var(--muted);text-align:right;}
+.dp-route{background:rgba(0,0,0,.2);border-radius:8px;padding:12px;font-size:.85rem;line-height:1.7;margin-bottom:10px;}
+.dp-note{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:8px;padding:10px;font-size:.82rem;color:var(--gold2);margin-bottom:10px;}
+.dp-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-start{background:linear-gradient(135deg,var(--electric),var(--electric2));color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.85rem;flex:1;transition:all .2s;}
+.btn-start:hover{opacity:.9;}
+.btn-done{background:linear-gradient(135deg,var(--green),#16a34a);color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.85rem;flex:1;transition:all .2s;}
+.btn-decline{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--red);padding:10px 20px;border-radius:8px;cursor:pointer;font-size:.82rem;font-weight:700;transition:all .2s;}
+.btn-decline:hover{background:rgba(239,68,68,.2);}
+.no-jobs{text-align:center;padding:48px 20px;color:var(--muted);}
+
+/* ── CLIENT PORTAL ── */
+.cp-wrap{min-height:calc(100vh - 56px);background:var(--navy);padding:20px;}
+.cp-inner{max-width:800px;margin:0 auto;}
+.cp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
+.cp-company{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;}
+.cp-meta{font-size:.78rem;color:var(--muted2);}
+.cp-bal-box{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:10px 18px;text-align:right;}
+.cp-bal-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--green);}
+.cp-bal-label{font-size:.62rem;letter-spacing:1.5px;color:var(--muted);}
+.cp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;}
+.cp-card-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:18px;}
+.cp-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cp-job-row{border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;transition:background .2s;}
+.cp-job-row:hover{background:rgba(255,255,255,.02);}
+.cp-job-info{font-size:.85rem;line-height:1.6;}
+.cp-job-date{font-size:.7rem;color:var(--muted);}
+
+/* ── ALERTS TAB ── */
+.alert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:600px;}
+.alert-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:.88rem;}
+.alert-row:last-child{border-bottom:none;}
+.toggle{width:44px;height:24px;background:rgba(255,255,255,.1);border-radius:100px;position:relative;cursor:pointer;transition:background .2s;border:none;}
+.toggle.on{background:var(--green);}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:white;border-radius:50%;transition:transform .2s;}
+.toggle.on::after{transform:translateX(20px);}
+
+/* ── DELIVERY CONFIRM MODAL ── */
+.delivery-modal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:none;flex-direction:column;overflow-y:auto;}
+.delivery-modal.open{display:flex;}
+.dm-inner{max-width:520px;width:100%;margin:0 auto;padding:24px;}
+.dm-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;margin-bottom:6px;}
+.dm-sub{font-size:.8rem;color:var(--muted2);margin-bottom:24px;}
+.dm-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
+.dm-section-title{font-size:.68rem;font-weight:700;letter-spacing:2px;color:var(--muted2);text-transform:uppercase;margin-bottom:14px;}
+.photo-area{border:2px dashed var(--border);border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.photo-area:hover,.photo-area.has-photo{border-color:var(--green);border-style:solid;}
+.photo-area input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.photo-preview{width:100%;max-height:220px;object-fit:cover;border-radius:8px;display:none;}
+.photo-preview.show{display:block;}
+.photo-placeholder{pointer-events:none;}
+.photo-icon{font-size:2.4rem;margin-bottom:8px;}
+.photo-text{font-size:.85rem;color:var(--muted2);}
+.photo-hint{font-size:.72rem;color:var(--muted);margin-top:4px;}
+.sig-wrap{position:relative;}
+#sigCanvas{width:100%;height:160px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:crosshair;touch-action:none;display:block;}
+.sig-btns{display:flex;justify-content:flex-end;margin-top:8px;}
+.btn-clear-sig{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.75rem;}
+.btn-confirm-delivery{background:linear-gradient(135deg,var(--green),#16a34a);color:white;border:none;padding:16px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:3px;cursor:pointer;width:100%;transition:all .2s;margin-top:4px;}
+.btn-confirm-delivery:hover{opacity:.9;transform:translateY(-1px);}
+.btn-confirm-delivery:disabled{opacity:.4;transform:none;cursor:not-allowed;}
+.dm-cancel{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:12px;border-radius:10px;cursor:pointer;width:100%;margin-top:8px;font-size:.85rem;}
+.delivery-done{text-align:center;padding:40px 20px;display:none;}
+.delivery-done.show{display:block;}
+.done-icon{font-size:4rem;margin-bottom:16px;}
+.done-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;color:var(--green);margin-bottom:8px;}
+.done-pay{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);margin-bottom:20px;}
+
+/* ── EMAIL MODAL ── */
+.email-modal-box{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow);}
+.em-field{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:4px;font-size:.85rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;font-family:'DM Sans',sans-serif;}
+.em-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.em-label{font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.em-copy{background:none;border:none;color:var(--electric2);font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.5px;padding:2px 6px;}
+.em-copy:hover{color:var(--white);}
+.btn-copy-all{width:100%;background:linear-gradient(135deg,var(--electric),var(--electric2));color:white;border:none;padding:14px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:3px;cursor:pointer;margin-top:16px;transition:all .2s;}
+.btn-copy-all:hover{opacity:.9;}
+.em-instruction{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:12px 16px;font-size:.78rem;color:var(--green);margin-top:12px;line-height:1.7;}
+
+/* ── DRIVER APPLICATIONS ── */
+.app-badge{background:rgba(245,158,11,.15);color:var(--gold);border:1px solid rgba(245,158,11,.3);font-size:.62rem;font-weight:700;letter-spacing:2px;padding:3px 8px;border-radius:4px;text-transform:uppercase;}
+.app-card{background:var(--card);border:1px solid rgba(245,158,11,.25);border-radius:var(--radius);padding:24px;position:relative;}
+.app-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.app-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;}
+.app-meta{font-size:.78rem;color:var(--muted2);margin-bottom:16px;line-height:1.8;}
+.app-docs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.doc-thumb{border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.04);}
+.doc-thumb:hover{border-color:var(--electric);transform:scale(1.02);}
+.doc-thumb img{width:120px;height:80px;object-fit:cover;display:block;}
+.doc-label{font-size:.6rem;letter-spacing:1px;text-align:center;padding:4px;color:var(--muted2);text-transform:uppercase;}
+.doc-file{width:120px;height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.4rem;}
+.app-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-approve{background:linear-gradient(135deg,var(--green),#16a34a);color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.82rem;transition:all .2s;}
+.btn-approve:hover{opacity:.9;}
+.btn-reject{background:rgba(229,53,53,.1);border:1px solid rgba(229,53,53,.3);color:var(--red);padding:10px 16px;border-radius:8px;cursor:pointer;font-size:.82rem;transition:all .2s;}
+.btn-reject:hover{background:rgba(229,53,53,.2);}
+.pin-set-row{display:flex;gap:8px;align-items:center;margin-bottom:12px;}
+.pin-set-input{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;width:120px;letter-spacing:4px;text-align:center;}
+.pin-set-input:focus{outline:none;border-color:var(--electric2);}
+.apps-empty{text-align:center;padding:40px;color:var(--muted);font-size:.88rem;}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy2);border:1px solid var(--border);border-radius:10px;padding:12px 22px;font-size:.86rem;z-index:9999;transition:transform .3s;white-space:nowrap;box-shadow:var(--shadow);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.toast.err{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.08);}
+
+@media(max-width:768px){
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .t-head{display:none;}
+  .t-row{grid-template-columns:1fr;gap:4px;padding:14px;}
+  .dsel,.abtns{margin-top:6px;}
+  .detail-grid{grid-template-columns:1fr;}
+  .dp-stats{grid-template-columns:1fr 1fr;}
+  .cp-form-grid{grid-template-columns:1fr;}
+  .margin-box{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-wrap" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="logo-star"></div>
+      <span class="login-title">NorthStar</span>
+    </div>
+    <p class="login-sub">DISPATCH & PORTAL</p>
+    <div class="role-toggle">
+      <button class="role-btn active" id="rAdmin" onclick="setRole('admin')">🏢 Admin</button>
+      <button class="role-btn" id="rDriver" onclick="setRole('driver')">🚗 Driver</button>
+      <button class="role-btn" id="rClient" onclick="setRole('client')">🏬 Client</button>
+    </div>
+    <div id="adminForm">
+      <div class="fl"><label>Email</label><input type="email" class="fi" id="aEmail" placeholder="tjs@northstardeliveryservice.com"/></div>
+      <div class="fl"><label>Password</label><input type="password" class="fi" id="aPass" placeholder="••••••••" onkeypress="if(event.key==='Enter')adminLogin()"/></div>
+      <button class="btn-p" onclick="adminLogin()">Access Dashboard →</button>
+    </div>
+    <div id="driverForm" style="display:none;">
+      <div class="fl"><label>Your Name</label><select class="fi" id="driverSel"><option value="">Select driver...</option></select></div>
+      <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;display:block;text-align:center;margin-bottom:8px;">Enter Your PIN</label>
+      <div class="pin-display"><div class="pin-dot" id="p0"></div><div class="pin-dot" id="p1"></div><div class="pin-dot" id="p2"></div><div class="pin-dot" id="p3"></div></div>
+      <div class="pin-pad">
+        <div class="pin-key" onclick="pp('1')">1</div><div class="pin-key" onclick="pp('2')">2</div><div class="pin-key" onclick="pp('3')">3</div>
+        <div class="pin-key" onclick="pp('4')">4</div><div class="pin-key" onclick="pp('5')">5</div><div class="pin-key" onclick="pp('6')">6</div>
+        <div class="pin-key" onclick="pp('7')">7</div><div class="pin-key" onclick="pp('8')">8</div><div class="pin-key" onclick="pp('9')">9</div>
+        <div class="pin-key clr" onclick="pclr()">CLR</div><div class="pin-key" onclick="pp('0')">0</div><div class="pin-key clr" onclick="pbk()">⌫</div>
+      </div>
+    </div>
+    <div id="clientForm" style="display:none;">
+      <div class="fl"><label>Company Email</label><input type="email" class="fi" id="cEmail" placeholder="you@company.com"/></div>
+      <div class="fl"><label>Password</label><input type="password" class="fi" id="cPass" placeholder="••••••••" onkeypress="if(event.key==='Enter')clientLogin()"/></div>
+      <button class="btn-gold" onclick="clientLogin()">Access Client Portal →</button>
+    </div>
+    <p class="login-err" id="loginErr">Invalid credentials. Please try again.</p>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminDash" style="display:none;">
+  <div class="topbar">
+    <div class="tb-logo"><div class="logo-star"></div><span class="tb-title">NorthStar Dispatch</span></div>
+    <div class="tb-right">
+      <span class="live-badge">● LIVE</span>
+      <span class="clock" id="clock"></span>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <div class="tab active" onclick="sw('jobs')">📋 Jobs</div>
+    <div class="tab" onclick="sw('new')">➕ New Job</div>
+    <div class="tab" onclick="sw('drivers')">🚗 Drivers</div>
+    <div class="tab" onclick="sw('clients')">🏬 Clients</div>
+    <div class="tab" onclick="sw('alerts')">🔔 Alerts</div>
+    <div class="tab" onclick="sw('apps')" id="appsTab">📋 Applications <span id="appsBadge" style="display:none;background:var(--gold);color:#000;border-radius:4px;padding:1px 6px;font-size:.65rem;font-weight:800;margin-left:4px;">0</span></div>
+  </div>
+
+  <!-- JOBS TAB -->
+  <div class="content active" id="tab-jobs">
+    <div class="stats-row">
+      <div class="stat-card blue"><div class="sc-label">Today's Jobs</div><div class="sc-value" id="s-total">0</div><div class="sc-sub">All statuses</div></div>
+      <div class="stat-card gold"><div class="sc-label">Pending</div><div class="sc-value" id="s-pending">0</div><div class="sc-sub">Need driver</div></div>
+      <div class="stat-card purple"><div class="sc-label">In Transit</div><div class="sc-value" id="s-transit">0</div><div class="sc-sub">On the road</div></div>
+      <div class="stat-card green"><div class="sc-label">Today Revenue</div><div class="sc-value" id="s-revenue">$0</div><div class="sc-sub">Delivered today</div></div>
+    </div>
+    <div class="sh">
+      <div class="sh-title">All Jobs</div>
+      <div class="sh-actions">
+        <div class="filter-bar">
+          <button class="fbtn active" onclick="fj('all',this)">All</button>
+          <button class="fbtn" onclick="fj('pending',this)">⏳ Pending</button>
+          <button class="fbtn" onclick="fj('assigned',this)">👤 Assigned</button>
+          <button class="fbtn" onclick="fj('transit',this)">🚗 Transit</button>
+          <button class="fbtn" onclick="fj('delivered',this)">✅ Delivered</button>
+        </div>
+        <button class="action-btn ab-green" onclick="autoAssign()">⚡ Auto-Assign</button>
+        <button class="action-btn ab-blue" onclick="showEarnings()">📊 Earnings</button>
+      </div>
+    </div>
+    <div class="jobs-table">
+      <div class="t-head"><div>#</div><div>Customer</div><div>Route</div><div>Service</div><div>Price</div><div>Status</div><div>Driver</div><div>Actions</div></div>
+      <div id="jobsList"></div>
+    </div>
+  </div>
+
+  <!-- NEW JOB TAB -->
+  <div class="content" id="tab-new">
+    <div class="sh"><div class="sh-title">Create New Job</div></div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group"><label class="form-label">Customer Name *</label><input type="text" class="form-input" id="nj-name" placeholder="John Smith"/></div>
+        <div class="form-group"><label class="form-label">Phone *</label><input type="tel" class="form-input" id="nj-phone" placeholder="(555) 000-0000"/></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="nj-email" placeholder="john@company.com"/></div>
+        <div class="form-group"><label class="form-label">City *</label>
+          <select class="form-select" id="nj-city" onchange="calcJob()">
+            <option value="">Select...</option>
+            <option value="chicago">Chicago, IL</option>
+            <option value="pittsburgh">Pittsburgh, PA</option>
+            <option value="stlouis">St. Louis, MO</option>
+            <option value="charlotte">Charlotte, NC</option>
+            <option value="atlanta">Atlanta, GA</option>
+            <option value="cleveland">Cleveland, OH</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Service *</label>
+          <select class="form-select" id="nj-service" onchange="calcJob()">
+            <option value="">Select...</option>
+            <option value="standard">Standard</option>
+            <option value="same-day">Same-Day Rush</option>
+            <option value="medical">Medical / Priority</option>
+            <option value="stat">🚨 STAT Emergency</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Miles *</label><input type="number" class="form-input" id="nj-miles" placeholder="10" oninput="calcJob()"/></div>
+        <div class="form-group"><label class="form-label">Stops</label>
+          <select class="form-select" id="nj-stops" onchange="calcJob()">
+            <option value="1">1 stop</option><option value="2">2 stops</option><option value="3">3 stops</option><option value="4">4 stops</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Date</label><input type="date" class="form-input" id="nj-date"/></div>
+        <div class="form-group"><label class="form-label">Assign Driver</label>
+          <select class="form-select" id="nj-driver"><option value="">Unassigned</option></select>
+        </div>
+        <div class="form-group" style="grid-column:1/-1"><label class="form-label">Pickup Address</label><input type="text" class="form-input" id="nj-pickup" placeholder="123 Main St"/></div>
+        <div class="form-group" style="grid-column:1/-1"><label class="form-label">Delivery Address</label><input type="text" class="form-input" id="nj-delivery" placeholder="456 Oak Ave"/></div>
+        <div class="form-group" style="grid-column:1/-1"><label class="form-label">Notes</label><input type="text" class="form-input" id="nj-notes" placeholder="Fragile, call on arrival..."/></div>
+      </div>
+      <div class="price-box" id="priceBox">
+        <div class="pb-price" id="pbFull">$0.00</div>
+        <div class="pb-split">
+          <div class="pb-half"><div class="pb-half-num" style="color:var(--green);" id="pbDriver">$0</div><div class="pb-half-label">Driver 65%</div></div>
+          <div class="pb-half"><div class="pb-half-num" style="color:var(--electric2);" id="pbCompany">$0</div><div class="pb-half-label">Company 35%</div></div>
+        </div>
+        <div id="pbNote" style="font-size:.72rem;color:var(--muted);margin-top:8px;"></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+        <button class="btn-create" onclick="createJob()">✅ Create Job</button>
+        <button class="btn-create" style="background:linear-gradient(135deg,var(--electric),var(--electric2));color:white;" onclick="createJob(true)">💳 Create + Send Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVERS TAB -->
+  <div class="content" id="tab-drivers">
+    <div class="sh"><div class="sh-title">Driver Roster</div><button class="action-btn ab-green" onclick="openAddDriver()">+ Add Driver</button></div>
+    <div class="drivers-grid" id="driversList"></div>
+  </div>
+
+  <!-- CLIENTS TAB -->
+  <div class="content" id="tab-clients">
+    <div class="sh"><div class="sh-title">Anchor Clients</div><button class="action-btn ab-gold" onclick="openAddClient()">+ Add Client</button></div>
+    <div class="clients-grid" id="clientsList"></div>
+  </div>
+
+  <!-- APPLICATIONS TAB -->
+  <div class="content" id="tab-apps">
+    <div class="sh"><div class="sh-title">Driver Applications</div><div id="appCount" style="font-size:.8rem;color:var(--muted2);"></div></div>
+    <div id="sameOriginBanner" style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:10px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:14px;">
+      <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px;">⚠️</div>
+      <div style="flex:1;">
+        <div style="font-size:.85rem;font-weight:700;color:#e8a020;margin-bottom:6px;">How to receive driver applications on this dashboard</div>
+        <div style="font-size:.78rem;color:var(--muted2);line-height:1.7;margin-bottom:10px;">
+          Driver submissions only appear here automatically when <strong>both files are opened from the same folder on your computer</strong> (or hosted on the same website). If drivers are using a different copy of the form, use the Import button below.<br><br>
+          <strong>Best setup:</strong> Host both <code style="background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:3px;">driver-apply.html</code> and <code style="background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:3px;">northstar-dispatch.html</code> on the same web server or share both from the same folder.
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <label style="background:var(--electric);color:#fff;padding:8px 16px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;letter-spacing:.5px;">
+            📥 Import Applications File
+            <input type="file" accept=".json" style="display:none;" onchange="importAppsFile(event)"/>
+          </label>
+          <button onclick="addTestApplication()" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:8px 16px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;">🧪 Add Test Application</button>
+          <button onclick="document.getElementById('sameOriginBanner').style.display='none'" style="background:transparent;border:none;color:var(--muted);font-size:.78rem;cursor:pointer;margin-left:auto;">Dismiss</button>
+        </div>
+      </div>
+    </div>
+    <div id="appsList"><div class="apps-empty">No pending applications.</div></div>
+  </div>
+
+  <!-- ALERTS TAB -->
+  <div class="content" id="tab-alerts">
+    <div class="sh"><div class="sh-title">Notification Settings</div></div>
+    <div class="alert-card">
+      <div class="alert-row"><span>New job from website</span><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="alert-row"><span>Driver declines job</span><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="alert-row"><span>All drivers declined (URGENT)</span><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="alert-row"><span>Job delivered</span><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="alert-row"><span>Client low balance warning</span><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+      <div class="alert-row"><span>After-hours order received</span><button class="toggle" onclick="this.classList.toggle('on')"></button></div>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+        <div style="font-size:.68rem;letter-spacing:2px;color:var(--muted);margin-bottom:8px;">NOTIFICATION EMAIL</div>
+        <input type="email" class="form-input" value="tjs@northstardeliveryservice.com" style="margin-bottom:10px;"/>
+        <button class="btn-create" style="font-size:.85rem;padding:10px 20px;">Save Settings</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DRIVER PORTAL -->
+<div id="driverPortal" style="display:none;">
+  <div class="topbar">
+    <div class="tb-logo"><div class="logo-star"></div><span class="tb-title">Driver Portal</span></div>
+    <div class="tb-right">
+      <button class="avail-toggle avail-on" id="availBtn" onclick="toggleAvail()">🟢 Available</button>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+  <div class="dp-wrap">
+    <div class="dp-inner">
+      <div class="dp-header">
+        <div><div class="dp-name" id="dpName">Driver</div><div style="font-size:.75rem;color:var(--muted);">Your active jobs are shown below</div></div>
+      </div>
+      <div class="dp-stats">
+        <div class="dp-stat"><div class="dp-stat-num" style="color:var(--green);" id="dpEarnings">$0</div><div class="dp-stat-label">Today Pay</div></div>
+        <div class="dp-stat"><div class="dp-stat-num" style="color:var(--gold);" id="dpActive">0</div><div class="dp-stat-label">Active</div></div>
+        <div class="dp-stat"><div class="dp-stat-num" id="dpDelivered">0</div><div class="dp-stat-label">Done Today</div></div>
+        <div class="dp-stat"><div class="dp-stat-num" id="dpTotal">0</div><div class="dp-stat-label">All Time</div></div>
+      </div>
+      <div id="dpJobsList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT PORTAL -->
+<div id="clientPortal" style="display:none;">
+  <div class="topbar">
+    <div class="tb-logo"><div class="logo-star"></div><span class="tb-title" id="cpTopName">Client Portal</span></div>
+    <div class="tb-right"><button class="btn-logout" onclick="clientLogout()">Logout</button></div>
+  </div>
+  <div class="cp-wrap">
+    <div class="cp-inner">
+      <div class="cp-header">
+        <div>
+          <div class="cp-company" id="cpCompany">Company</div>
+          <div class="cp-meta" id="cpContact"></div>
+        </div>
+        <div class="cp-bal-box">
+          <div class="cp-bal-label">ACCOUNT BALANCE</div>
+          <div class="cp-bal-num" id="cpBalance">$0.00</div>
+        </div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-card-title">📦 Request a Pickup</div>
+        <div class="cp-form-grid">
+          <div class="form-group"><label class="form-label">Pickup Address</label><input type="text" class="form-input" id="cp-pickup" placeholder="123 Main St"/></div>
+          <div class="form-group"><label class="form-label">Delivery Address</label><input type="text" class="form-input" id="cp-delivery" placeholder="456 Oak Ave"/></div>
+          <div class="form-group"><label class="form-label">Service</label>
+            <select class="form-select" id="cp-service">
+              <option value="standard">📦 Standard</option>
+              <option value="same-day">⚡ Same-Day Rush</option>
+              <option value="medical">🏥 Medical / Priority</option>
+              <option value="stat">🚨 STAT Emergency</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Date Needed</label><input type="date" class="form-input" id="cp-date"/></div>
+          <div class="form-group" style="grid-column:1/-1"><label class="form-label">Special Instructions</label><input type="text" class="form-input" id="cp-notes" placeholder="Handle with care, call on arrival..."/></div>
+        </div>
+        <button class="btn-create" style="margin-top:16px;" onclick="cpRequest()">🚀 Request Pickup</button>
+      </div>
+      <div class="cp-card">
+        <div class="cp-card-title">📋 My Deliveries</div>
+        <div id="cpJobsList"><div class="no-jobs">No deliveries yet.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Job detail modal -->
+<div class="modal" id="jobModal">
+  <div class="modal-box">
+    <div class="modal-title"><span>Job Details</span><button class="modal-close" onclick="cm('jobModal')">✕</button></div>
+    <div class="detail-grid" id="modalDetails"></div>
+    <div class="margin-box" id="modalMargin"></div>
+    <div class="modal-actions" id="modalActions"></div>
+  </div>
+</div>
+
+<!-- Driver modal -->
+<div class="modal" id="driverModal">
+  <div class="modal-box">
+    <div class="modal-title"><span id="dmTitle">Add Driver</span><button class="modal-close" onclick="cm('driverModal')">✕</button></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Full Name *</label><input type="text" class="form-input" id="dm-name" placeholder="Marcus Williams"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Phone</label><input type="text" class="form-input" id="dm-phone" placeholder="(555) 000-0000"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Vehicle</label><input type="text" class="form-input" id="dm-vehicle" placeholder="2022 Ford Transit"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">City</label>
+      <select class="form-select" id="dm-city">
+        <option value="stlouis">St. Louis</option><option value="chicago">Chicago</option><option value="pittsburgh">Pittsburgh</option>
+        <option value="charlotte">Charlotte</option><option value="atlanta">Atlanta</option><option value="cleveland">Cleveland</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">PIN (4 digits) *</label><input type="text" class="form-input" id="dm-pin" placeholder="1234" maxlength="4"/></div>
+    <div class="form-group" style="margin-bottom:20px;"><label class="form-label">Status</label>
+      <select class="form-select" id="dm-status"><option value="available">Available</option><option value="unavailable">Unavailable</option><option value="offline">Offline</option></select>
+    </div>
+    <button class="btn-create" id="dmSave" onclick="saveDriver()">Add Driver</button>
+  </div>
+</div>
+
+<!-- Client modal -->
+<div class="modal" id="clientModal">
+  <div class="modal-box">
+    <div class="modal-title"><span id="cmTitle">Add Client</span><button class="modal-close" onclick="cm('clientModal')">✕</button></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Company Name *</label><input type="text" class="form-input" id="cl-company" placeholder="ABC Medical Group"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Contact Name</label><input type="text" class="form-input" id="cl-contact" placeholder="Dr. Jane Smith"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Email (login) *</label><input type="email" class="form-input" id="cl-email" placeholder="admin@company.com"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Password *</label><input type="text" class="form-input" id="cl-pass" placeholder="TempPassword123!"/></div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">City</label>
+      <select class="form-select" id="cl-city">
+        <option value="stlouis">St. Louis</option><option value="chicago">Chicago</option><option value="pittsburgh">Pittsburgh</option>
+        <option value="charlotte">Charlotte</option><option value="atlanta">Atlanta</option><option value="cleveland">Cleveland</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Account Type</label>
+      <select class="form-select" id="cl-type"><option value="standard">Standard</option><option value="premium">Premium (Priority)</option><option value="medical">Medical Account</option></select>
+    </div>
+    <div class="form-group" style="margin-bottom:20px;"><label class="form-label">Opening Balance ($)</label><input type="number" class="form-input" id="cl-balance" placeholder="500" min="0"/></div>
+    <button class="btn-gold" id="clSave" onclick="saveClient()">Add Client Account</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+<!-- Email Modal -->
+<div class="modal" id="emailModal">
+  <div class="email-modal-box">
+    <div class="modal-title">
+      <span>📧 Payment Email</span>
+      <button class="modal-close" onclick="cm('emailModal')">✕</button>
+    </div>
+    <div class="em-row"><div class="em-label">To</div><button class="em-copy" onclick="copyEmailField('emailTo',this)">Copy</button></div>
+    <div class="em-field" id="emailTo"></div>
+    <div class="em-row" style="margin-top:12px;"><div class="em-label">Subject</div><button class="em-copy" onclick="copyEmailField('emailSubject',this)">Copy</button></div>
+    <div class="em-field" id="emailSubject"></div>
+    <div class="em-row" style="margin-top:12px;"><div class="em-label">Message</div><button class="em-copy" onclick="copyEmailField('emailBody',this)">Copy</button></div>
+    <div class="em-field" id="emailBody" style="max-height:220px;overflow-y:auto;"></div>
+    <button class="btn-copy-all" onclick="copyFullEmail()">📋 Copy Full Email To Clipboard</button>
+    <div class="em-instruction">✅ <strong>How to send:</strong> Click the button above → open Gmail → click Compose → paste with Ctrl+V → hit Send. Takes 10 seconds!</div>
+  </div>
+</div>
+
+<!-- Delivery Confirmation Modal -->
+<div class="delivery-modal" id="deliveryModal">
+  <div class="dm-inner">
+    <div id="dmForm">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-top:8px;">
+        <div class="logo-star" style="width:24px;height:24px;flex-shrink:0;"></div>
+        <div>
+          <div class="dm-title">Confirm Delivery</div>
+          <div class="dm-sub" id="dmJobRef">Job #------</div>
+        </div>
+      </div>
+      <div class="dm-section">
+        <div class="dm-section-title">📸 Proof of Delivery Photo</div>
+        <div class="photo-area" id="photoArea">
+          <input type="file" accept="image/*" capture="environment" id="photoInput" onchange="handlePhoto(this)"/>
+          <img class="photo-preview" id="photoPreview" src="" alt="Delivery photo"/>
+          <div class="photo-placeholder" id="photoPlaceholder">
+            <div class="photo-icon">📷</div>
+            <div class="photo-text">Tap to take photo or upload</div>
+            <div class="photo-hint">Use your phone camera to capture proof of delivery</div>
+          </div>
+        </div>
+      </div>
+      <div class="dm-section">
+        <div class="dm-section-title">✍️ Recipient Signature <span style="font-weight:400;color:var(--muted);">(optional)</span></div>
+        <div class="sig-wrap"><canvas id="sigCanvas"></canvas></div>
+        <div class="sig-btns"><button class="btn-clear-sig" onclick="clearSig()">Clear Signature</button></div>
+      </div>
+      <div class="dm-section">
+        <div class="dm-section-title">📝 Delivery Notes <span style="font-weight:400;color:var(--muted);">(optional)</span></div>
+        <input type="text" class="form-input" id="dmNotes" placeholder="Left at front desk, handed to receptionist..."/>
+      </div>
+      <button class="btn-confirm-delivery" id="dmSubmitBtn" onclick="confirmDelivery()">✅ Confirm Delivery</button>
+      <button class="dm-cancel" onclick="closeDeliveryModal()">Cancel</button>
+    </div>
+    <div class="delivery-done" id="dmDone">
+      <div class="done-icon">🎉</div>
+      <div class="done-title">Delivery Complete!</div>
+      <div class="done-pay" id="dmPayAmt"></div>
+      <div style="font-size:.85rem;color:var(--muted2);margin-bottom:24px;">Great work! Your earnings have been updated.</div>
+      <button class="btn-confirm-delivery" onclick="closeDeliveryModal()">Back to My Jobs</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────
+// CONSTANTS & CONFIGURATION
+// ─────────────────────────────────────
+const ADMIN  = { email:'tjs@northstardeliveryservice.com', pass:'NorthStar2026!' };
+const STRIPE = 'https://buy.stripe.com/cNi7sN1jpgBtgnT9j92Fa00';
+const DRIVER_CUT = 0.65;
+const CUTOFF_HOUR = 18;
+
+// ─────────────────────────────────────
+// PRICING ENGINE
+// ─────────────────────────────────────
+const PRICING = {
+  chicago:    { standard:{min:45,perMile:1.10}, 'same-day':{min:65,perMile:1.50}, medical:{min:75,perMile:1.75}, stat:{min:110,perMile:2.25} },
+  pittsburgh: { standard:{min:40,perMile:1.00}, 'same-day':{min:58,perMile:1.40}, medical:{min:68,perMile:1.60}, stat:{min:100,perMile:2.10} },
+  stlouis:    { standard:{min:40,perMile:1.00}, 'same-day':{min:58,perMile:1.40}, medical:{min:68,perMile:1.60}, stat:{min:100,perMile:2.10} },
+  charlotte:  { standard:{min:40,perMile:1.00}, 'same-day':{min:58,perMile:1.40}, medical:{min:68,perMile:1.60}, stat:{min:100,perMile:2.10} },
+  atlanta:    { standard:{min:45,perMile:1.10}, 'same-day':{min:65,perMile:1.50}, medical:{min:75,perMile:1.75}, stat:{min:110,perMile:2.25} },
+  cleveland:  { standard:{min:42,perMile:1.05}, 'same-day':{min:60,perMile:1.45}, medical:{min:70,perMile:1.65}, stat:{min:105,perMile:2.15} },
+};
+function isAfterHours(){ return new Date().getHours() >= CUTOFF_HOUR; }
+function getMultiplier(svc){ return svc==='stat'?1.60:isAfterHours()?1.40:1.00; }
+function calcPrice(city, svc, miles){
+  if(!PRICING[city]?.[svc]) return 0;
+  const p = PRICING[city][svc], m = getMultiplier(svc);
+  return Math.max((p.min + miles * p.perMile) * m, p.min * m);
+}
+
+// ─────────────────────────────────────
+// SUPABASE
+// ─────────────────────────────────────
+const SUPA_URL = 'https://imljjaurxiawfxjckkqf.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbGpqYXVyeGlhd2Z4amNra3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxOTk1ODMsImV4cCI6MjA4ODc3NTU4M30.Qx0cxOGsndpJyJyhtTxN3qjua1j7meDMfav5WknNP5Y';
+const sdb = supabase.createClient(SUPA_URL, SUPA_KEY);
+
+// STATE
+function load(key, def){ try{ return JSON.parse(localStorage.getItem(key)) || def; }catch(e){ return def; } }
+function save(){ localStorage.setItem('ns_jobs', JSON.stringify(jobs)); localStorage.setItem('ns_clients', JSON.stringify(clients)); }
+
+// ─────────────────────────────────────
+// TRACKING NUMBER GENERATOR
+// ─────────────────────────────────────
+function generateTrackingNumber() {
+  const year = new Date().getFullYear();
+  const rand = Math.random().toString(36).substring(2, 6).toUpperCase();
+  const ts   = Date.now().toString().slice(-4);
+  return `NST-${year}-${rand}${ts}`;
+}
+
+// ─────────────────────────────────────
+// SAVE JOB TO SUPABASE
+// ─────────────────────────────────────
+async function saveJobToSupabase(job) {
+  try {
+    const driver = drivers.find(d => d.id === job.driverId);
+    const row = {
+      id:              job.id,
+      tracking_number: job.tracking_number || generateTrackingNumber(),
+      customer_name:   job.customerName || '',
+      customer_email:  job.email || '',
+      customer_phone:  job.phone || '',
+      pickup_address:  job.pickup || '',
+      dropoff_address: job.delivery || '',
+      city:            job.city || '',
+      service:         job.service || '',
+      miles:           job.miles || 0,
+      price:           job.price || 0,
+      driver_id:       job.driverId || '',
+      driver_name:     driver ? driver.name : '',
+      status:          job.status || 'pending',
+      notes:           job.notes || '',
+      source:          job.source || 'manual',
+      created_at:      job.createdAt || new Date().toISOString(),
+      updated_at:      new Date().toISOString()
+    };
+    job.tracking_number = row.tracking_number;
+    const resp = await fetch(`${SUPA_URL}/rest/v1/jobs`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': `Bearer ${SUPA_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates,return=minimal'
+      },
+      body: JSON.stringify(row)
+    });
+    if (!resp.ok) console.warn('Job save error:', resp.status);
+    else console.log(`✅ Job saved — ${row.tracking_number}`);
+  } catch(e) { console.warn('saveJobToSupabase error:', e.message); }
+}
+
+// ─────────────────────────────────────
+// UPDATE JOB STATUS IN SUPABASE
+// ─────────────────────────────────────
+async function updateJobInSupabase(job) {
+  if (!job?.id) return;
+  try {
+    const driver = drivers.find(d => d.id === job.driverId);
+    await fetch(`${SUPA_URL}/rest/v1/jobs?id=eq.${job.id}`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': `Bearer ${SUPA_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        status:      job.status,
+        driver_id:   job.driverId || '',
+        driver_name: driver ? driver.name : '',
+        updated_at:  new Date().toISOString()
+      })
+    });
+  } catch(e) { console.warn('updateJobInSupabase error:', e.message); }
+}
+
+// ─────────────────────────────────────
+// LOAD JOBS FROM SUPABASE ON STARTUP
+// ─────────────────────────────────────
+async function loadJobsFromSupabase() {
+  try {
+    const resp = await fetch(`${SUPA_URL}/rest/v1/jobs?order=created_at.desc&limit=200`, {
+      headers: { 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}` }
+    });
+    if (!resp.ok) return;
+    const rows = await resp.json();
+    if (!rows.length) return;
+    const localIds = new Set(jobs.map(j => j.id));
+    rows.forEach(r => {
+      if (localIds.has(r.id)) return;
+      jobs.unshift({
+        id:             r.id,
+        tracking_number: r.tracking_number,
+        customerName:   r.customer_name,
+        email:          r.customer_email,
+        phone:          r.customer_phone,
+        pickup:         r.pickup_address,
+        delivery:       r.dropoff_address,
+        city:           r.city,
+        service:        r.service,
+        miles:          r.miles,
+        price:          r.price,
+        driverId:       r.driver_id,
+        notes:          r.notes,
+        status:         r.status,
+        source:         r.source,
+        date:           r.created_at?.split('T')[0],
+        createdAt:      r.created_at
+      });
+    });
+    save();
+    renderAll();
+    console.log(`✅ Loaded ${rows.length} jobs from Supabase`);
+  } catch(e) { console.warn('loadJobsFromSupabase error:', e.message); }
+}
+
+// ─────────────────────────────────────
+// SEED DRIVERS
+// ─────────────────────────────────────
+const SEED_DRIVERS = [
+  {id:'d1', name:'Lance Murphy',    phone:'(618)855-4015', address:"611 Shamrock Dr, O'Fallon, IL",              vehicle:'Car',                                           city:'stlouis',   status:'available', pin:'4823'},
+  {id:'d2', name:'Myeisha James',   phone:'(618)606-4140', address:'325 N. Dupo, IL 62239',                      vehicle:'Car',                                           city:'stlouis',   status:'available', pin:'7361'},
+  {id:'d3', name:'Sharitha Dixon',  phone:'(708)243-9162', address:'S. Crannberry St, Bolingbrook, IL',          vehicle:'SUV',                                           city:'chicago',   status:'available', pin:'5190'},
+  {id:'d4', name:'Sandra Castillo', phone:'(312)632-0831', address:'6116 S. Artesian Ave, Chicago, IL',          vehicle:'Sprinter',      company:'C-Fast LLC',           city:'chicago',   status:'available', pin:'2748'},
+  {id:'d5', name:'Chris Allen',     phone:'(404)345-1053', address:'3789 Benjamin Ct, Atlanta, GA',              vehicle:'Car / Sprinter',                                city:'atlanta',   status:'available', pin:'9034'},
+  {id:'d6', name:'Skye Coles',      phone:'(943)267-5895', address:'12674 Lugo Lane, Covington, GA',             vehicle:'Sprinter',                                      city:'atlanta',   status:'available', pin:'6512'},
+  {id:'d7', name:'Trina Smith',     phone:'(770)539-4159', address:'401 Summerbrook Circle Apt 422, Athens, GA', vehicle:'Sprinter', company:'Qwick Fast in a Hurry Logistics LLC', city:'atlanta', status:'available', pin:'3867'},
+  {id:'d8', name:'Mannie Johnson',  phone:'(704)807-6515', address:'6440 Pennacook Drive, Charlotte, NC',        vehicle:'Cargo Van',                                     city:'charlotte', status:'available', pin:'1594'},
+  {id:'d9', name:'Saul Rubio',      phone:'(708)267-7752', address:'368 Timber Pointe Dr, Joliet, IL 60431',     vehicle:'2025 Nissan Altima / 2025 Chevy Silverado',     city:'chicago',   status:'available', pin:'8203'},
+];
+
+let jobs    = load('ns_jobs', []);
+let drivers = [...SEED_DRIVERS];
+let clients = load('ns_clients', [
+  {id:'c1', company:'Demo Medical Group',  contact:'Dr. Jane Smith',  email:'client@medgroup.com',  pass:'MedGroup2025!',  city:'stlouis', type:'medical',   balance:500.00},
+  {id:'c2', company:'Downtown Law Firm',   contact:'Mike Johnson',    email:'client@lawfirm.com',   pass:'LawFirm2025!',   city:'stlouis', type:'standard',  balance:250.00},
+]);
+
+function seedDemo(){
+  if(jobs.length) return;
+  const t = new Date().toISOString().split('T')[0];
+  jobs = [
+    {id:'job_001', customerName:'Sarah Mitchell', phone:'(312)555-0192', email:'sarah@email.com', pickup:'123 N Michigan Ave, Chicago', delivery:'456 W Madison St, Chicago', city:'chicago', service:'same-day', miles:4.2, price:91.00, driverId:'d3', notes:'Call on arrival', date:t, status:'transit',   createdAt:new Date().toISOString(), source:'manual'},
+    {id:'job_002', customerName:'Dr. Kevin Park',  phone:'(314)555-0341', email:'kpark@med.com',  pickup:'BJC Hospital, St. Louis',    delivery:'820 Lindell Blvd Lab',     city:'stlouis', service:'medical',  miles:2.1, price:95.36, driverId:'',   notes:'Medical specimens', date:t, status:'pending',  createdAt:new Date().toISOString(), source:'website', urgent:false},
+    {id:'job_003', customerName:'Demo Medical Group', phone:'—', email:'client@medgroup.com', pickup:'201 S Tryon St, Charlotte', delivery:'3400 Shamrock Dr, Charlotte', city:'charlotte', service:'standard', miles:6.8, price:46.80, driverId:'d1', notes:'Fragile', date:t, status:'delivered', createdAt:new Date().toISOString(), source:'client', clientId:'c1'},
+  ];
+  save();
+}
+
+// ─────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────
+let currentRole = null, currentDriverId = null, currentClientId = null;
+let pinBuf = '', editDriverId = null, editClientId = null, activeJobId = null, activeFilter = 'all';
+
+function setRole(r){
+  ['admin','driver','client'].forEach(x => {
+    document.getElementById(x+'Form').style.display = r===x?'block':'none';
+    document.getElementById('r'+x.charAt(0).toUpperCase()+x.slice(1)).classList.toggle('active', r===x);
+  });
+  document.getElementById('loginErr').style.display = 'none';
+  if(r==='driver') populateDriverSel();
+}
+
+function adminLogin(){
+  const e = document.getElementById('aEmail').value.trim();
+  const p = document.getElementById('aPass').value;
+  if(e===ADMIN.email && p===ADMIN.pass){ showAdmin(); }
+  else { document.getElementById('loginErr').style.display='block'; }
+}
+
+function showAdmin(){
+  currentRole = 'admin';
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminDash').style.display = 'block';
+  initAdmin();
+}
+
+function clientLogin(){
+  const e = document.getElementById('cEmail').value.trim();
+  const p = document.getElementById('cPass').value;
+  const c = clients.find(x => x.email===e && x.pass===p);
+  if(c){ currentClientId=c.id; showClientPortal(c); }
+  else { document.getElementById('loginErr').style.display='block'; }
+}
+
+function logout(){
+  currentRole=null; currentDriverId=null; currentClientId=null; pinBuf=''; updPin();
+  ['adminDash','driverPortal','clientPortal'].forEach(id => document.getElementById(id).style.display='none');
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('aPass').value = '';
+  document.getElementById('loginErr').style.display = 'none';
+  setRole('admin');
+}
+function clientLogout(){ currentClientId=null; logout(); }
+
+// ─────────────────────────────────────
+// DRIVER PIN
+// ─────────────────────────────────────
+function populateDriverSel(){
+  document.getElementById('driverSel').innerHTML = '<option value="">Select driver...</option>' + drivers.map(d=>`<option value="${d.id}">${d.name}</option>`).join('');
+}
+function pp(d){ if(pinBuf.length>=4)return; pinBuf+=d; updPin(); if(pinBuf.length===4) checkPin(); }
+function pbk(){ pinBuf=pinBuf.slice(0,-1); updPin(); }
+function pclr(){ pinBuf=''; updPin(); }
+function updPin(){ for(let i=0;i<4;i++) document.getElementById('p'+i).classList.toggle('filled',i<pinBuf.length); }
+function checkPin(){
+  const did = document.getElementById('driverSel').value;
+  if(!did){ showToast('Select your name first',true); pinBuf=''; updPin(); return; }
+  const d = drivers.find(x=>x.id===did);
+  if(d && String(d.pin)===String(pinBuf)){
+    currentDriverId=did; currentRole='driver';
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('driverPortal').style.display='block';
+    initDriverPortal(d);
+  } else {
+    document.getElementById('loginErr').style.display='block';
+    pinBuf=''; updPin();
+  }
+}
+
+// ─────────────────────────────────────
+// LOAD DRIVERS FROM SUPABASE
+// ─────────────────────────────────────
+async function loadSupabaseDrivers(){
+  try {
+    const res = await fetch(SUPA_URL + '/rest/v1/drivers?select=*&order=created_at.asc', {
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!res.ok) { console.warn('Supabase fetch error:', res.status); return; }
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) { return; }
+    const seedNames = new Set(SEED_DRIVERS.map(d => d.name.toLowerCase().trim()));
+    const existingIds = new Set(drivers.map(d => d.id));
+    data.forEach(d => {
+      if (!d.full_name && !d.email) return;
+      const dName = (d.full_name || '').toLowerCase().trim();
+      if (seedNames.has(dName)) {
+        const seedDriver = drivers.find(x => x.name.toLowerCase().trim() === dName);
+        if (seedDriver && d.pin) {
+          seedDriver.pin = String(d.pin);
+          seedDriver.id = d.id || seedDriver.id;
+        }
+        return;
+      }
+      if (existingIds.has(d.id)) return;
+      const mapped = {
+        id: d.id,
+        name: d.full_name || d.email || 'Unknown',
+        phone: d.phone || '—',
+        address: '',
+        vehicle: d.vehicle_type || '—',
+        city: normCity(d.city),
+        status: d.status === 'active' ? 'available' : (d.status || 'pending'),
+        pin: String(d.pin || '0000'),
+        email: d.email || '',
+        payout_method: d.payout_method || '',
+        payout_handle: d.payout_handle || '',
+        fromSupabase: true
+      };
+      drivers.push(mapped);
+      existingIds.add(d.id);
+    });
+    fillDriverSel();
+    populateDriverSel();
+    if (currentRole === 'admin') {
+      renderDrivers();
+      updateStats();
+    }
+  } catch(e) {
+    console.warn('loadSupabaseDrivers error:', e.message);
+  }
+}
+
+function normCity(cityStr) {
+  if (!cityStr) return 'stlouis';
+  const c = cityStr.toLowerCase();
+  if (c.includes('atlanta')) return 'atlanta';
+  if (c.includes('chicago')) return 'chicago';
+  if (c.includes('charlotte')) return 'charlotte';
+  if (c.includes('pittsburgh')) return 'pittsburgh';
+  if (c.includes('cleveland')) return 'cleveland';
+  if (c.includes('louis')) return 'stlouis';
+  return cityStr.toLowerCase().replace(/[^a-z]/g,'');
+}
+
+async function saveDriverToSupabase(driverData) {
+  try {
+    if (driverData.fromSupabase && driverData.id) {
+      await sdb.from('drivers').update({
+        full_name: driverData.name,
+        phone: driverData.phone,
+        vehicle_type: driverData.vehicle,
+        city: driverData.city,
+        status: driverData.status === 'available' ? 'active' : driverData.status,
+        pin: driverData.pin
+      }).eq('id', driverData.id);
+    } else if (!driverData.fromSupabase) {
+      await sdb.from('drivers').insert({
+        full_name: driverData.name,
+        phone: driverData.phone,
+        vehicle_type: driverData.vehicle,
+        city: driverData.city,
+        status: driverData.status === 'available' ? 'active' : 'pending',
+        pin: driverData.pin,
+        email: driverData.email || '',
+        license_url: '', insurance_url: '', resume_url: ''
+      });
+    }
+  } catch(e) { console.warn('Supabase save error:', e); }
+}
+
+// ─────────────────────────────────────
+// ADMIN INIT
+// ─────────────────────────────────────
+function initAdmin(){
+  updateClock(); setInterval(updateClock,1000);
+  seedDemo(); fillDriverSel(); renderAll(); loadSupabaseDrivers();
+  setInterval(()=>{
+    const fresh = load('ns_jobs',[]);
+    if(fresh.length !== jobs.length){
+      const newCount = fresh.filter(j=>j.source==='website'&&j.status==='pending').length;
+      const oldCount = jobs.filter(j=>j.source==='website'&&j.status==='pending').length;
+      jobs = fresh;
+      renderJobs();
+      if(newCount > oldCount) showToast('🆕 New pickup request from website!');
+    }
+  }, 20000);
+}
+function updateClock(){ const el=document.getElementById('clock'); if(el) el.textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
+function renderAll(){ renderJobs(); renderDrivers(); renderClients(); updateStats(); }
+function fillDriverSel(){ document.getElementById('nj-driver').innerHTML='<option value="">Unassigned</option>'+drivers.map(d=>`<option value="${d.id}">${d.name} (${d.city})</option>`).join(''); }
+
+// ─────────────────────────────────────
+// TABS
+// ─────────────────────────────────────
+function sw(t){
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  const tabs=['jobs','new','drivers','clients','alerts','apps'];
+  const idx=tabs.indexOf(t);
+  if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
+  if(t==='jobs') renderAll();
+  if(t==='apps') renderApps();
+}
+
+// ─────────────────────────────────────
+// STATS
+// ─────────────────────────────────────
+function updateStats(){
+  const td = new Date().toISOString().split('T')[0];
+  document.getElementById('s-total').textContent   = jobs.filter(j=>j.date===td).length;
+  document.getElementById('s-pending').textContent = jobs.filter(j=>j.status==='pending').length;
+  document.getElementById('s-transit').textContent = jobs.filter(j=>j.status==='transit').length;
+  const rev = jobs.filter(j=>j.status==='delivered'&&j.date===td).reduce((s,j)=>s+(j.price||0),0);
+  document.getElementById('s-revenue').textContent = '$'+rev.toFixed(0);
+}
+
+// ─────────────────────────────────────
+// JOBS
+// ─────────────────────────────────────
+function statusLabel(s){ return {pending:'⏳ Pending',assigned:'👤 Assigned',transit:'🚗 Transit',delivered:'✅ Delivered',cancelled:'❌ Cancelled'}[s]||s; }
+function svcLabel(s){ return {standard:'Standard','same-day':'Same-Day',medical:'Medical',stat:'🚨 STAT'}[s]||s; }
+
+function renderJobs(){
+  const list = document.getElementById('jobsList');
+  const filtered = activeFilter==='all' ? jobs : jobs.filter(j=>j.status===activeFilter);
+  if(!filtered.length){ list.innerHTML='<div class="empty">📋 No jobs found.</div>'; updateStats(); return; }
+  list.innerHTML = [...filtered].reverse().map(job=>{
+    const dr = drivers.find(d=>d.id===job.driverId);
+    const isNew    = job.source==='website' && job.status==='pending';
+    const isUrgent = job.urgent && job.status==='pending';
+    const borderStyle = isUrgent?'border-left:3px solid var(--red)':isNew?'border-left:3px solid var(--green)':'';
+    const badge = isUrgent
+      ? '<br><span style="font-size:.55rem;background:rgba(239,68,68,.2);color:var(--red);padding:1px 6px;border-radius:4px;letter-spacing:1px;">URGENT</span>'
+      : isNew
+      ? '<br><span style="font-size:.55rem;background:rgba(34,197,94,.15);color:var(--green);padding:1px 6px;border-radius:4px;letter-spacing:1px;">NEW</span>'
+      : '';
+    return `<div class="t-row" onclick="openJob('${job.id}')" style="${borderStyle}">
+      <div class="jid">#${job.id.slice(-4).toUpperCase()}${badge}</div>
+      <div><div class="jname">${job.customerName}</div><div class="jphone">${job.phone}</div></div>
+      <div class="jaddr">📍 ${job.pickup}<br>🏁 ${job.delivery}</div>
+      <div style="font-size:.78rem;">${svcLabel(job.service)}</div>
+      <div class="jprice">$${(job.price||0).toFixed(2)}</div>
+      <div><span class="badge s-${job.status}">${statusLabel(job.status)}</span></div>
+      <div><select class="dsel" onclick="event.stopPropagation()" onchange="assignDrv('${job.id}',this.value)">
+        <option value="">Unassigned</option>
+        ${drivers.map(d=>`<option value="${d.id}" ${job.driverId===d.id?'selected':''}>${d.name}</option>`).join('')}
+      </select></div>
+      <div class="abtns" onclick="event.stopPropagation()">
+        <button class="abtn" onclick="openJob('${job.id}')">👁</button>
+        <button class="abtn del" onclick="cancelJob('${job.id}')">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+  updateStats();
+}
+
+function fj(f,btn){ activeFilter=f; document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderJobs(); }
+
+// ─────────────────────────────────────
+// ASSIGN DRIVER  ← THE FIXED FUNCTION
+// ─────────────────────────────────────
+function assignDrv(jid, did){
+  const job = jobs.find(j=>j.id===jid);
+  if(!job) return;
+  const wasUnassigned = !job.driverId;
+  job.driverId = did;
+  job.status = did ? 'assigned' : 'pending';
+  save();
+  renderJobs();
+  if(did){
+    const d = drivers.find(x=>x.id===did);
+    showToast('✅ Assigned to ' + d?.name + ' — sending payment link...');
+    if(wasUnassigned){
+      sendPaymentEmail(job, d);
+    }
+  }
+  updateJobInSupabase(job);
+}
+
+function cancelJob(jid){
+  if(!confirm('Cancel this job?')) return;
+  const j=jobs.find(x=>x.id===jid);
+  if(j){ j.status='cancelled'; save(); renderJobs(); showToast('Job cancelled'); updateJobInSupabase(j); }
+}
+
+function openJob(jid){
+  const job=jobs.find(j=>j.id===jid); if(!job) return;
+  activeJobId=jid;
+  const dr=drivers.find(d=>d.id===job.driverId);
+  const price=parseFloat(job.price)||0;
+  const dPay=(price*DRIVER_CUT).toFixed(2);
+  const cPay=(price*(1-DRIVER_CUT)).toFixed(2);
+  const proofHTML = (job.deliveryPhoto||job.signature) ? `
+    <div style="grid-column:1/-1;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:16px;margin-bottom:4px;">
+      <div style="font-size:.65rem;letter-spacing:2px;color:var(--muted);margin-bottom:12px;">DELIVERY PROOF</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        ${job.deliveryPhoto?`<div><div style="font-size:.68rem;color:var(--muted2);margin-bottom:6px;">📸 PHOTO</div><img src="${job.deliveryPhoto}" style="width:160px;height:110px;object-fit:cover;border-radius:8px;border:1px solid var(--border);"/></div>`:''}
+        ${job.signature?`<div><div style="font-size:.68rem;color:var(--muted2);margin-bottom:6px;">✍️ SIGNATURE</div><img src="${job.signature}" style="width:160px;height:110px;object-fit:cover;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,.04);"/></div>`:''}
+        ${job.deliveryNotes?`<div style="width:100%;"><div style="font-size:.68rem;color:var(--muted2);margin-bottom:4px;">📝 NOTES</div><div style="font-size:.85rem;">${job.deliveryNotes}</div></div>`:''}
+      </div>
+    </div>` : '';
+  document.getElementById('modalDetails').innerHTML = proofHTML + [
+    ['Job #','#'+job.id.slice(-6).toUpperCase()],['Customer',job.customerName],['Phone',job.phone],['Email',job.email||'—'],
+    ['City',job.city],['Service',svcLabel(job.service)],['Miles',job.miles],['Date',job.date],
+    ['Status',statusLabel(job.status)],['Driver',dr?dr.name:'Unassigned'],
+    ['Pickup',job.pickup],['Dropoff',job.delivery],['Notes',job.notes||'—']
+  ].map(([l,v])=>`<div class="detail-row"><div class="detail-label">${l}</div><div class="detail-val">${v}</div></div>`).join('');
+  document.getElementById('modalMargin').innerHTML =
+    `<div><div class="mb-num">$${price.toFixed(2)}</div><div class="mb-label">Total</div></div>
+     <div><div class="mb-num" style="color:var(--green);">$${dPay}</div><div class="mb-label">Driver 65%</div></div>
+     <div><div class="mb-num" style="color:var(--electric2);">$${cPay}</div><div class="mb-label">Company 35%</div></div>`;
+  const statusOpts = ['pending','assigned','transit','delivered','cancelled'];
+  document.getElementById('modalActions').innerHTML =
+    `<select class="form-select" id="modalStatus" style="flex:1;max-width:160px;">
+      ${statusOpts.map(s=>`<option value="${s}" ${job.status===s?'selected':''}>${statusLabel(s)}</option>`).join('')}
+    </select>
+    <button class="btn-modal" style="background:var(--electric);color:white;" onclick="applyStatus()">Update Status</button>
+    <button class="btn-modal" style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--green);" onclick="sendPayEmail()">📧 Send Payment Email</button>`;
+  om('jobModal');
+}
+
+function applyStatus(){
+  const job=jobs.find(j=>j.id===activeJobId); if(!job) return;
+  job.status=document.getElementById('modalStatus').value;
+  save(); renderJobs(); cm('jobModal'); showToast('Status updated');
+  updateJobInSupabase(job);
+}
+
+// ─────────────────────────────────────
+// AUTO-ASSIGN
+// ─────────────────────────────────────
+function autoAssign(){
+  let assigned=0;
+  jobs.forEach(job=>{
+    if(job.status==='pending' && !job.driverId){
+      const cityDrivers = drivers.filter(d=>d.status==='available'&&d.city===job.city&&!(job.declinedBy||[]).includes(d.id));
+      if(!cityDrivers.length) return;
+      const ranked = cityDrivers.map(d=>({d,count:jobs.filter(j=>j.driverId===d.id&&['assigned','transit'].includes(j.status)).length})).sort((a,b)=>a.count-b.count);
+      job.driverId=ranked[0].d.id; job.status='assigned'; assigned++;
+    }
+  });
+  save(); renderJobs(); updateStats();
+  showToast(assigned?'⚡ '+assigned+' job(s) auto-assigned!':'All jobs already assigned');
+}
+
+// ─────────────────────────────────────
+// EARNINGS MODAL
+// ─────────────────────────────────────
+function showEarnings(){
+  const td = new Date().toISOString().split('T')[0];
+  const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate()-7);
+  const todayD = jobs.filter(j=>j.status==='delivered'&&j.date===td);
+  const weekD  = jobs.filter(j=>j.status==='delivered'&&new Date(j.createdAt)>=weekAgo);
+  const todayRev=todayD.reduce((s,j)=>s+(j.price||0),0);
+  const weekRev =weekD.reduce((s,j)=>s+(j.price||0),0);
+  const rows=drivers.map(d=>{
+    const dJobs=weekD.filter(j=>j.driverId===d.id);
+    const pay=dJobs.reduce((s,j)=>s+(j.price||0)*DRIVER_CUT,0);
+    return `<tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px 14px;">${d.name}</td>
+      <td style="padding:10px 14px;">${d.city}</td>
+      <td style="padding:10px 14px;">${dJobs.length}</td>
+      <td style="padding:10px 14px;color:var(--green);font-weight:700;">$${pay.toFixed(2)}</td>
+    </tr>`;
+  }).join('');
+  const html=`<div style="position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;" onclick="this.remove()">
+    <div style="background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;" onclick="event.stopPropagation()">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;margin-bottom:20px;">📊 Earnings Report</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
+        <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:16px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);">$${todayRev.toFixed(0)}</div>
+          <div style="font-size:.62rem;letter-spacing:2px;color:var(--muted);">TODAY</div>
+        </div>
+        <div style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:10px;padding:16px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--electric2);">$${weekRev.toFixed(0)}</div>
+          <div style="font-size:.62rem;letter-spacing:2px;color:var(--muted);">THIS WEEK</div>
+        </div>
+        <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:16px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);">$${(weekRev*0.35).toFixed(0)}</div>
+          <div style="font-size:.62rem;letter-spacing:2px;color:var(--muted);">CO. MARGIN</div>
+        </div>
+      </div>
+      <table style="width:100%;font-size:.82rem;border-collapse:collapse;">
+        <tr style="font-size:.62rem;letter-spacing:2px;color:var(--muted);border-bottom:1px solid var(--border);">
+          <th style="padding:8px 14px;text-align:left;">DRIVER</th><th style="padding:8px 14px;text-align:left;">CITY</th>
+          <th style="padding:8px 14px;text-align:left;">JOBS</th><th style="padding:8px 14px;text-align:left;">PAY (65%)</th>
+        </tr>${rows}
+      </table>
+      <button onclick="this.closest('[style*=fixed]').remove()" style="margin-top:20px;background:rgba(255,255,255,.08);border:1px solid var(--border);color:white;padding:10px 24px;border-radius:8px;cursor:pointer;width:100%;">Close</button>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend',html);
+}
+
+// ─────────────────────────────────────
+// NEW JOB
+// ─────────────────────────────────────
+function calcJob(){
+  const city=document.getElementById('nj-city').value, svc=document.getElementById('nj-service').value;
+  const miles=parseFloat(document.getElementById('nj-miles').value)||0;
+  const box=document.getElementById('priceBox');
+  if(!city||!svc||miles<=0){box.classList.remove('show');return null;}
+  const price=calcPrice(city,svc,miles);
+  document.getElementById('pbFull').textContent='$'+price.toFixed(2);
+  document.getElementById('pbDriver').textContent='$'+(price*DRIVER_CUT).toFixed(2);
+  document.getElementById('pbCompany').textContent='$'+(price*(1-DRIVER_CUT)).toFixed(2);
+  const note=svc==='stat'?'🚨 STAT premium (+60%) applied':isAfterHours()?'🌙 After-hours surcharge (+40%) applied':'';
+  document.getElementById('pbNote').textContent=note;
+  box.classList.add('show');
+  return price;
+}
+
+function createJob(sendPayment=false){
+  const name=document.getElementById('nj-name').value.trim(), phone=document.getElementById('nj-phone').value.trim();
+  const pickup=document.getElementById('nj-pickup').value.trim(), delivery=document.getElementById('nj-delivery').value.trim();
+  const svc=document.getElementById('nj-service').value, city=document.getElementById('nj-city').value;
+  if(!name||!phone||!svc||!city){showToast('Fill required fields',true);return;}
+  const price=calcJob()||0;
+  const did=document.getElementById('nj-driver').value;
+  const job={
+    id:'job_'+Date.now(), customerName:name, phone, email:document.getElementById('nj-email').value,
+    pickup, delivery, city, service:svc,
+    miles:parseFloat(document.getElementById('nj-miles').value)||0,
+    price:parseFloat(price.toFixed(2)), driverId:did,
+    notes:document.getElementById('nj-notes').value,
+    date:document.getElementById('nj-date').value||new Date().toISOString().split('T')[0],
+    status:did?'assigned':'pending', source:'manual', createdAt:new Date().toISOString()
+  };
+  jobs.push(job); save();
+  showToast('✅ Job #'+job.id.slice(-4).toUpperCase()+' created!');
+  if(sendPayment) sendPayEmailFor(job);
+  saveJobToSupabase(job).then(() => {
+    showToast(`📦 Tracking: ${job.tracking_number}`);
+  });
+  alertDriversInCity(job);
+  clearJob();
+  activeFilter = 'all';
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.fbtn')[0].classList.add('active');
+  sw('jobs');
+}
+
+function clearJob(){
+  ['nj-name','nj-phone','nj-email','nj-pickup','nj-delivery','nj-miles','nj-notes','nj-date'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+  ['nj-city','nj-service','nj-driver'].forEach(id=>{ const el=document.getElementById(id); if(el) el.selectedIndex=0; });
+  document.getElementById('nj-stops').selectedIndex=0;
+  document.getElementById('priceBox').classList.remove('show');
+}
+
+// ─────────────────────────────────────
+// TWILIO — DRIVER SMS ALERTS
+// ─────────────────────────────────────
+const TWILIO_SID   = 'AC1d688ceb31fda39e57f9bb01f29e02a6';
+const TWILIO_TOKEN = '9edfcb07860dbf6a1d882507eee40a05';
+const TWILIO_FROM  = '+18339688253';
+
+const CITY_COVERAGE = {
+  atlanta:   ['atlanta','alpharetta','marietta','roswell','sandy springs','smyrna','decatur','norcross','duluth','lawrenceville','covington','canton','cumming','buford','gainesville','athens','conyers','stockbridge','jonesboro','fayetteville','peachtree city','newnan','douglasville','lithonia'],
+  chicago:   ['chicago','bolingbrook','schaumburg','naperville','aurora','joliet','evanston','oak park','cicero','berwyn','waukegan','elgin','palatine','arlington heights','downers grove','lombard','addison','elmhurst','oak lawn','orland park'],
+  charlotte: ['charlotte','concord','gastonia','rock hill','matthews','huntersville','kannapolis','mooresville','salisbury','monroe','indian trail','mint hill','cornelius','davidson','statesville'],
+  stlouis:   ['st. louis','st louis','o\'fallon','chesterfield','florissant','ballwin','kirkwood','webster groves','maryland heights','hazelwood','belleville','edwardsville','alton','granite city','collinsville','swansea','fairview heights'],
+};
+
+function formatPhone(phone) {
+  const digits = phone.replace(/\D/g, '');
+  return digits.length === 10 ? '+1' + digits : '+' + digits;
+}
+
+async function sendTwilioSMS(to, body) {
+  try {
+    const formData = new URLSearchParams();
+    formData.append('To', to);
+    formData.append('From', TWILIO_FROM);
+    formData.append('Body', body);
+    const resp = await fetch(
+      `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_SID}/Messages.json`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + btoa(`${TWILIO_SID}:${TWILIO_TOKEN}`),
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData.toString()
+      }
+    );
+    const data = await resp.json();
+    if (data.sid) { console.log(`✅ SMS sent to ${to} — SID: ${data.sid}`); return true; }
+    else { console.error('Twilio error:', data.message); return false; }
+  } catch (err) { console.error('SMS failed:', err.message); return false; }
+}
+
+const CITY_NAMES_MAP = {stlouis:'St. Louis, MO',chicago:'Chicago, IL',atlanta:'Atlanta, GA',charlotte:'Charlotte, NC',pittsburgh:'Pittsburgh, PA',cleveland:'Cleveland, OH'};
+
+async function alertDriversInCity(job) {
+  const jobCity = (job.city || '').toLowerCase();
+  const cityDrivers = drivers.filter(d => {
+    const dc = (d.city || '').toLowerCase();
+    return dc === jobCity && d.status === 'available' && d.phone && d.phone !== '—';
+  });
+  if (cityDrivers.length === 0) { console.log('No available drivers in', jobCity); return; }
+  const jobNum   = job.id.slice(-4).toUpperCase();
+  const svcMap   = { 'same-day':'Same-Day', 'next-day':'Next-Day', 'medical':'Medical', 'stat':'STAT', 'standard':'Standard', 'freight':'Freight' };
+  const svc      = svcMap[job.service] || job.service;
+  const price    = parseFloat(job.price || 0).toFixed(2);
+  const msg = `🚀 NORTHSTAR — NEW JOB #${jobNum} 📍 Pickup: ${job.pickup || 'TBD'} 🏁 Drop-off: ${job.delivery || 'TBD'} 🚗 Service: ${svc} 💰 Pay: $${(price * 0.7).replace(/(\.\d{2})\d*/,'$1')} (your cut) ⏰ ${new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'})}  Log in to accept: northstardeliveryservice.com/dispatch.html`;
+  let sent = 0;
+  for (const driver of cityDrivers) {
+    const phone = formatPhone(driver.phone);
+    const ok = await sendTwilioSMS(phone, msg);
+    if (ok) sent++;
+    await new Promise(r => setTimeout(r, 200));
+  }
+  console.log(`📱 Alerted ${sent}/${cityDrivers.length} drivers in ${jobCity}`);
+  if (sent > 0) showToast(`📱 ${sent} driver${sent>1?'s':''} in ${CITY_NAMES_MAP[jobCity]||jobCity} alerted!`);
+}
+
+// ─────────────────────────────────────
+// AUTO PAYMENT REQUEST ON DELIVERY
+// ─────────────────────────────────────
+async function sendDeliveryPaymentRequest(job) {
+  if (!job) return;
+  const jobNum = job.tracking_number || job.id.slice(-6).toUpperCase();
+  const amount = parseFloat(job.price || 0).toFixed(2);
+  if (job.phone && job.phone !== '—') {
+    const phone = formatPhone(job.phone);
+    const sms = `✅ NorthStar Delivery — DELIVERED!  Tracking: ${jobNum} 📍 Dropped off at: ${job.delivery || 'destination'}  💳 Pay now: ${STRIPE} Amount due: $${amount}  Thank you for choosing NorthStar! northstardeliveryservice.com`;
+    const sent = await sendTwilioSMS(phone, sms);
+    if (sent) showToast(`💳 Payment request sent to ${job.customerName}`);
+  }
+}
+
+function sendPayEmail(){
+  const job = jobs.find(j=>j.id===activeJobId);
+  cm('jobModal');
+  sendPayEmailFor(job);
+}
+function sendPayEmailFor(job){
+  if(!job) return;
+  const subject = 'Your NorthStar Pickup Confirmation — Job #'+job.id.slice(-6).toUpperCase();
+  const body =
+    'Hi '+job.customerName+',\n\n'+
+    'Thank you for choosing NorthStar Delivery Service!\n\n'+
+    '─────────────────────────\n'+
+    'Job #: '+job.id.slice(-6).toUpperCase()+'\n'+
+    'Pickup: '+job.pickup+'\n'+
+    'Drop-off: '+job.delivery+'\n'+
+    'Service: '+svcLabel(job.service)+'\n'+
+    'Date: '+(job.date||'TBD')+'\n'+
+    (job.notes?'Instructions: '+job.notes+'\n':'')+
+    '─────────────────────────\n'+
+    'Quoted Price: $'+parseFloat(job.price).toFixed(2)+'\n\n'+
+    'To complete your booking, please pay securely here:\n'+STRIPE+'\n\n'+
+    'Enter $'+parseFloat(job.price).toFixed(2)+' as the amount.\n\n'+
+    'Once payment is confirmed your driver will be dispatched.\n\n'+
+    'Questions? Call or text us anytime.\n\n'+
+    'Thank you,\nNorthStar Delivery Service\nnorthstardeliveryservice.com';
+  document.getElementById('emailTo').textContent = job.email||'(no email on file)';
+  document.getElementById('emailSubject').textContent = subject;
+  document.getElementById('emailBody').textContent = body;
+  document.getElementById('emailModal').classList.add('open');
+}
+
+function copyEmailField(id, btn){
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    btn.style.color = 'var(--green)';
+    setTimeout(()=>{ btn.textContent=orig; btn.style.color=''; }, 2000);
+  });
+}
+
+function copyFullEmail(){
+  const to      = document.getElementById('emailTo').textContent;
+  const subject = document.getElementById('emailSubject').textContent;
+  const body    = document.getElementById('emailBody').textContent;
+  const full    = 'TO: '+to+'\nSUBJECT: '+subject+'\n\n'+body;
+  navigator.clipboard.writeText(full).then(()=>{
+    showToast('📋 Full email copied! Paste into Gmail.');
+  });
+}
+
+// ─────────────────────────────────────
+// DRIVER APPLICATIONS
+// ─────────────────────────────────────
+function loadApps(){ return JSON.parse(localStorage.getItem('ns_driver_apps')||'[]'); }
+function saveApps(apps){ localStorage.setItem('ns_driver_apps', JSON.stringify(apps)); }
+
+function importAppsFile(event){
+  const file = event.target.files[0];
+  if(!file){ return; }
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const imported = JSON.parse(e.target.result);
+      const apps = Array.isArray(imported) ? imported : [imported];
+      if(!apps.length || !apps[0].id){ showToast('Invalid file format',true); return; }
+      const existing = loadApps();
+      const existingIds = new Set(existing.map(a=>a.id));
+      let added = 0;
+      apps.forEach(a=>{ if(!existingIds.has(a.id)){ existing.push(a); added++; } });
+      saveApps(existing);
+      checkNewApps();
+      renderApps();
+      showToast('✅ Imported '+added+' new application'+(added!==1?'s':'')+(apps.length-added>0?' ('+(apps.length-added)+' duplicates skipped)':''));
+    } catch(err){
+      showToast('Could not read file — make sure it\'s the exported JSON',true);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value='';
+}
+
+function addTestApplication(){
+  const existing = loadApps();
+  const app = {
+    id: 'app_test_'+Date.now(),
+    name: 'James Rivera',
+    fname: 'James', lname: 'Rivera',
+    phone: '(314) 555-0192',
+    email: 'james.rivera@email.com',
+    city: 'stlouis',
+    vehicle: '2021 Toyota Camry',
+    plate: 'MO-4492XJ',
+    color: 'Silver',
+    licenseDoc: null,
+    licenseFileName: 'license_sample.pdf',
+    insuranceDoc: null,
+    insuranceFileName: 'insurance_sample.pdf',
+    status: 'pending',
+    submittedAt: new Date().toISOString(),
+    isTest: true
+  };
+  existing.push(app);
+  saveApps(existing);
+  checkNewApps();
+  renderApps();
+  sw('apps');
+  showToast('🧪 Test application added — click the Apps tab to review');
+}
+
+function checkNewApps(){
+  const apps = loadApps().filter(a=>a.status==='pending');
+  const badge = document.getElementById('appsBadge');
+  if(apps.length > 0){
+    badge.style.display='inline';
+    badge.textContent = apps.length;
+  } else {
+    badge.style.display='none';
+  }
+}
+
+function renderApps(){
+  const apps = loadApps();
+  const pending = apps.filter(a=>a.status==='pending');
+  const list = document.getElementById('appsList');
+  document.getElementById('appCount').textContent = pending.length + ' pending application' + (pending.length!==1?'s':'');
+  if(!pending.length){ list.innerHTML='<div class="apps-empty">✅ No pending applications — all caught up!</div>'; return; }
+  list.innerHTML = pending.map(app => {
+    const dt = new Date(app.submittedAt).toLocaleString();
+    const licIsImg = app.licenseDoc && app.licenseDoc.startsWith('data:image');
+    const insIsImg = app.insuranceDoc && app.insuranceDoc.startsWith('data:image');
+    return `<div class="app-card" id="appcard-${app.id}" style="margin-bottom:16px;">
+      <div class="app-card-header">
+        <div>
+          <div class="app-name">${app.name}</div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:2px;">Applied ${dt}</div>
+        </div>
+        <span class="app-badge">🟡 Pending Review</span>
+      </div>
+      <div class="app-meta">
+        📞 ${app.phone}&nbsp;&nbsp;|&nbsp;&nbsp;✉️ ${app.email}<br>
+        📍 ${CITY_NAMES_MAP[app.city]||app.city}&nbsp;&nbsp;|&nbsp;&nbsp;🚗 ${app.vehicle}${app.color?' · '+app.color:''}&nbsp;&nbsp;|&nbsp;&nbsp;🪪 ${app.plate}
+      </div>
+      <div class="app-docs">
+        <div class="doc-thumb" onclick="viewDoc('${app.id}','license')">
+          ${licIsImg ? `<img src="${app.licenseDoc}" alt="License"/>` : `<div class="doc-file">📄</div>`}
+          <div class="doc-label">🪪 License</div>
+        </div>
+        <div class="doc-thumb" onclick="viewDoc('${app.id}','insurance')">
+          ${insIsImg ? `<img src="${app.insuranceDoc}" alt="Insurance"/>` : `<div class="doc-file">📋</div>`}
+          <div class="doc-label">📄 Insurance</div>
+        </div>
+      </div>
+      <div class="pin-set-row">
+        <input type="number" class="pin-set-input" id="pin-${app.id}" placeholder="PIN" min="1000" max="9999" maxlength="4"/>
+        <span style="font-size:.72rem;color:var(--muted2);">Set a 4-digit PIN for this driver</span>
+      </div>
+      <div class="app-actions">
+        <button class="btn-approve" onclick="approveApp('${app.id}')">✅ Approve & Activate Driver</button>
+        <button class="btn-reject" onclick="rejectApp('${app.id}')">❌ Reject</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function viewDoc(appId, type){
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  const data = type==='license' ? app.licenseDoc : app.insuranceDoc;
+  const label = type==='license' ? "Driver's License" : "Proof of Insurance";
+  if(!data){ showToast('Document not available', true); return; }
+  const win = window.open('', '_blank');
+  win.document.write('<html><head><title>'+label+' — '+app.name+'</title></head><body style="margin:0;background:#000;display:flex;align-items:center;justify-content:center;min-height:100vh;"><img src="'+data+'" style="max-width:100%;max-height:100vh;object-fit:contain;"/></body></html>');
+  win.document.close();
+}
+
+function approveApp(appId){
+  const pin = document.getElementById('pin-'+appId).value.trim();
+  if(!pin||!/^\d{4}$/.test(pin)){ showToast('Please enter a valid 4-digit PIN first', true); return; }
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  const newDriver = {
+    id: 'd'+Date.now(),
+    name: app.name,
+    phone: app.phone,
+    email: app.email,
+    vehicle: app.vehicle,
+    plate: app.plate,
+    city: app.city,
+    pin: pin,
+    status: 'available',
+    licenseDoc: app.licenseDoc,
+    insuranceDoc: app.insuranceDoc,
+  };
+  drivers.push(newDriver);
+  save();
+  app.status = 'approved';
+  app.approvedAt = new Date().toISOString();
+  saveApps(apps);
+  renderApps();
+  renderDrivers();
+  fillDriverSel();
+  checkNewApps();
+  showToast('✅ '+app.name+' approved and activated as a driver! PIN: '+pin);
+}
+
+function rejectApp(appId){
+  if(!confirm('Reject this application? This cannot be undone.')) return;
+  const apps = loadApps();
+  const app = apps.find(a=>a.id===appId);
+  if(!app) return;
+  app.status = 'rejected';
+  app.rejectedAt = new Date().toISOString();
+  saveApps(apps);
+  renderApps();
+  checkNewApps();
+  showToast('Application rejected.');
+}
+
+// ─────────────────────────────────────
+// DRIVERS
+// ─────────────────────────────────────
+function renderDrivers(){
+  const list=document.getElementById('driversList');
+  list.innerHTML=drivers.map(d=>{
+    const done=jobs.filter(j=>j.driverId===d.id&&j.status==='delivered').length;
+    const active=jobs.filter(j=>j.driverId===d.id&&['transit','assigned'].includes(j.status)).length;
+    const earned=jobs.filter(j=>j.driverId===d.id&&j.status==='delivered').reduce((s,j)=>s+(j.price||0)*DRIVER_CUT,0);
+    return `<div class="driver-card">
+      <div class="dav">${d.name.split(' ').map(n=>n[0]).join('')}</div>
+      <div class="dname">${d.name}</div>
+      ${d.company?`<div style="font-size:.7rem;color:var(--electric2);font-weight:600;margin-bottom:2px;">🏢 ${d.company}</div>`:''}
+      <div class="dphone">${d.phone||'—'}</div>
+      <div class="dvehicle">🚗 ${d.vehicle||'—'} · 📍 ${d.city||'—'}</div>
+      ${d.address?`<div style="font-size:.7rem;color:var(--muted);margin-top:2px;">📌 ${d.address}</div>`:''}
+      <div class="pin-badge" onclick="revealPin('${d.id}',this)">🔑 PIN: ••••</div>
+      <div class="dstatus"><span class="dot ${d.status}"></span><span style="text-transform:capitalize;">${d.status}</span></div>
+      <div class="dstats">
+        <div class="dst"><div class="dst-num">${done}</div><div class="dst-label">Done</div></div>
+        <div class="dst"><div class="dst-num">${active}</div><div class="dst-label">Active</div></div>
+        <div class="dst"><div class="dst-num" style="color:var(--green);">$${earned.toFixed(0)}</div><div class="dst-label">Earned</div></div>
+      </div>
+      <div class="dactions">
+        <button class="btn-secondary" onclick="editDriver('${d.id}')">✏️ Edit</button>
+        <button class="btn-secondary" style="border-color:var(--red);color:var(--red);" onclick="removeDriver('${d.id}')">Remove</button>
+      </div>
+    </div>`;
+  }).join('')+'<div class="add-card" onclick="openAddDriver()"><div style="font-size:2rem;color:var(--muted);margin-bottom:8px;">+</div><div style="font-size:.82rem;color:var(--muted);">Add Driver</div></div>';
+}
+
+function revealPin(did,el){ const d=drivers.find(x=>x.id===did); if(d){el.innerHTML='🔑 PIN: <strong>'+d.pin+'</strong>';setTimeout(()=>{el.innerHTML='🔑 PIN: ••••';},5000);} }
+function openAddDriver(){ editDriverId=null; document.getElementById('dmTitle').textContent='Add Driver'; document.getElementById('dmSave').textContent='Add Driver'; ['dm-name','dm-phone','dm-vehicle','dm-pin'].forEach(id=>document.getElementById(id).value=''); document.getElementById('dm-status').selectedIndex=0; om('driverModal'); }
+function editDriver(did){ editDriverId=did; const d=drivers.find(x=>x.id===did); if(!d)return; document.getElementById('dmTitle').textContent='Edit Driver'; document.getElementById('dmSave').textContent='Save Changes'; document.getElementById('dm-name').value=d.name; document.getElementById('dm-phone').value=d.phone||''; document.getElementById('dm-vehicle').value=d.vehicle||''; document.getElementById('dm-pin').value=d.pin; document.getElementById('dm-city').value=d.city||'stlouis'; document.getElementById('dm-status').value=d.status; om('driverModal'); }
+function saveDriver(){
+  const name=document.getElementById('dm-name').value.trim(), phone=document.getElementById('dm-phone').value.trim(), pin=document.getElementById('dm-pin').value.trim();
+  if(!name||!pin){showToast('Name and PIN required',true);return;}
+  if(!/^\d{4}$/.test(pin)){showToast('PIN must be 4 digits',true);return;}
+  const data={name,phone,vehicle:document.getElementById('dm-vehicle').value,city:document.getElementById('dm-city').value,pin,status:document.getElementById('dm-status').value};
+  if(editDriverId){ const existing = drivers.find(x=>x.id===editDriverId); Object.assign(existing,data); saveDriverToSupabase(existing); showToast('✅ '+name+' updated!'); }
+  else { const nd={id:'d'+Date.now(),...data}; drivers.push(nd); saveDriverToSupabase(nd); showToast('✅ '+name+' added!'); }
+  save(); renderDrivers(); fillDriverSel(); populateDriverSel(); cm('driverModal');
+}
+function removeDriver(did){ const d=drivers.find(x=>x.id===did); if(!confirm('Remove '+d?.name+'?'))return; drivers=drivers.filter(x=>x.id!==did); save(); renderDrivers(); fillDriverSel(); showToast('Driver removed'); }
+
+// ─────────────────────────────────────
+// CLIENTS
+// ─────────────────────────────────────
+function renderClients(){
+  const list=document.getElementById('clientsList');
+  list.innerHTML=clients.map(c=>{
+    const cJobs=jobs.filter(j=>j.clientId===c.id);
+    const spent=cJobs.filter(j=>j.status==='delivered').reduce((s,j)=>s+(j.price||0),0);
+    return `<div class="client-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div><div style="font-weight:700;font-size:1rem;">${c.company}</div><div style="font-size:.78rem;color:var(--muted2);">${c.contact||'—'}</div></div>
+        <span style="font-size:.65rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:var(--gold);padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:1px;">${c.type||'standard'}</span>
+      </div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:6px;">📧 ${c.email}</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:14px;">📍 ${c.city}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+        <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:10px;">
+          <div class="cbal">$${(c.balance||0).toFixed(2)}</div><div class="cbal-label">BALANCE</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;">$${spent.toFixed(0)}</div><div class="cbal-label">SPENT</div>
+        </div>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted2);margin-bottom:14px;">${cJobs.length} total job${cJobs.length!==1?'s':''}</div>
+      <div class="dactions">
+        <button class="btn-secondary" onclick="editClient('${c.id}')">✏️ Edit</button>
+        <button class="btn-secondary" style="border-color:var(--red);color:var(--red);" onclick="removeClient('${c.id}')">Remove</button>
+      </div>
+    </div>`;
+  }).join('')+'<div class="add-card" onclick="openAddClient()"><div style="font-size:2rem;color:var(--muted);margin-bottom:8px;">+</div><div style="font-size:.82rem;color:var(--muted);">Add Client Account</div></div>';
+}
+
+function openAddClient(){ editClientId=null; document.getElementById('cmTitle').textContent='Add Client'; document.getElementById('clSave').textContent='Add Client Account'; ['cl-company','cl-contact','cl-email','cl-pass','cl-balance'].forEach(id=>document.getElementById(id).value=''); document.getElementById('cl-city').selectedIndex=0; document.getElementById('cl-type').selectedIndex=0; om('clientModal'); }
+function editClient(cid){ editClientId=cid; const c=clients.find(x=>x.id===cid); if(!c)return; document.getElementById('cmTitle').textContent='Edit Client'; document.getElementById('clSave').textContent='Save Changes'; document.getElementById('cl-company').value=c.company; document.getElementById('cl-contact').value=c.contact||''; document.getElementById('cl-email').value=c.email; document.getElementById('cl-pass').value=c.pass; document.getElementById('cl-city').value=c.city||'stlouis'; document.getElementById('cl-type').value=c.type||'standard'; document.getElementById('cl-balance').value=c.balance||0; om('clientModal'); }
+function saveClient(){
+  const company=document.getElementById('cl-company').value.trim(), email=document.getElementById('cl-email').value.trim(), pass=document.getElementById('cl-pass').value.trim();
+  if(!company||!email||!pass){showToast('Company, email & password required',true);return;}
+  const data={company,contact:document.getElementById('cl-contact').value,email,pass,city:document.getElementById('cl-city').value,type:document.getElementById('cl-type').value,balance:parseFloat(document.getElementById('cl-balance').value)||0};
+  if(editClientId){ Object.assign(clients.find(x=>x.id===editClientId),data); showToast('✅ '+company+' updated!'); }
+  else { clients.push({id:'c'+Date.now(),...data}); showToast('✅ '+company+' added!'); }
+  save(); renderClients(); cm('clientModal');
+}
+function removeClient(cid){ const c=clients.find(x=>x.id===cid); if(!confirm('Remove '+c?.company+'?'))return; clients=clients.filter(x=>x.id!==cid); save(); renderClients(); showToast('Client removed'); }
+
+// ─────────────────────────────────────
+// DRIVER PORTAL
+// ─────────────────────────────────────
+function initDriverPortal(driver){
+  document.getElementById('dpName').textContent=driver.name;
+  const btn=document.getElementById('availBtn');
+  btn.className='avail-toggle '+(driver.status==='available'?'avail-on':'avail-off');
+  btn.textContent=driver.status==='available'?'🟢 Available':'🔴 Unavailable';
+  renderDP(driver);
+  if(!driver.payout_method || driver.payout_method==='stripe_pending'){
+    setTimeout(()=>showPayoutPopup(driver), 800);
+  }
+}
+
+function showPayoutPopup(driver){
+  const existing = document.getElementById('payoutPopup');
+  if(existing) existing.remove();
+  const popup = document.createElement('div');
+  popup.id = 'payoutPopup';
+  popup.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  popup.innerHTML = `
+    <div style="background:#0f1f3d;border:1px solid rgba(201,168,76,0.4);max-width:400px;width:100%;padding:0;overflow:hidden;">
+      <div style="height:3px;background:linear-gradient(90deg,#C9A84C,#1a56db);"></div>
+      <div style="padding:32px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;margin-bottom:8px;">💳 GET PAID</div>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:24px;">Set up how you want to receive your earnings. You'll get paid after every completed delivery.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;" id="pmChoiceGrid">
+          <div onclick="selectPayoutType('venmo',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;"><div style="font-size:1.4rem;">📱</div><div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Venmo</div></div>
+          <div onclick="selectPayoutType('zelle',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;"><div style="font-size:1.4rem;">🏦</div><div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Zelle</div></div>
+          <div onclick="selectPayoutType('cashapp',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;"><div style="font-size:1.4rem;">💚</div><div style="font-size:0.8rem;font-weight:600;margin-top:6px;">Cash App</div></div>
+          <div onclick="selectPayoutType('paypal',this)" style="background:rgba(255,255,255,0.04);border:2px solid rgba(255,255,255,0.1);padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;"><div style="font-size:1.4rem;">🅿️</div><div style="font-size:0.8rem;font-weight:600;margin-top:6px;">PayPal</div></div>
+        </div>
+        <div id="payoutHandleSection" style="display:none;margin-bottom:16px;">
+          <input id="payoutHandleInput" type="text" placeholder="Enter your handle or phone number" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:white;padding:12px 16px;font-size:0.9rem;font-family:'DM Sans',sans-serif;outline:none;">
+        </div>
+        <button onclick="savePayoutPopup('${driver.id}')" style="width:100%;background:linear-gradient(135deg,#C9A84C,#e8c96a);border:none;color:#0A1628;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;padding:14px;cursor:pointer;">SAVE & START EARNING →</button>
+        <button onclick="document.getElementById('payoutPopup').remove()" style="width:100%;background:transparent;border:none;color:rgba(255,255,255,0.3);font-size:0.78rem;padding:12px;cursor:pointer;margin-top:4px;">I'll do this later</button>
+      </div>
+    </div>`;
+  document.body.appendChild(popup);
+}
+
+let selectedPayoutType = '';
+function selectPayoutType(type, el){
+  selectedPayoutType = type;
+  document.querySelectorAll('#pmChoiceGrid > div').forEach(b => {
+    b.style.borderColor = 'rgba(255,255,255,0.1)';
+    b.style.background = 'rgba(255,255,255,0.04)';
+  });
+  el.style.borderColor = '#C9A84C';
+  el.style.background = 'rgba(201,168,76,0.15)';
+  document.getElementById('payoutHandleSection').style.display = 'block';
+  const labels = {venmo:'@yourvenmo', zelle:'Phone or email for Zelle', cashapp:'$yourcashtag', paypal:'PayPal email'};
+  document.getElementById('payoutHandleInput').placeholder = labels[type] || 'Your handle';
+}
+
+async function savePayoutPopup(driverId){
+  const handle = document.getElementById('payoutHandleInput').value.trim();
+  if(!selectedPayoutType){ alert('Please select a payment method'); return; }
+  if(!handle){ alert('Please enter your handle or phone number'); return; }
+  try {
+    await fetch(SUPA_URL + '/rest/v1/drivers?id=eq.' + driverId, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ payout_method: selectedPayoutType, payout_handle: handle })
+    });
+    const d = drivers.find(x => x.id === driverId);
+    if(d){ d.payout_method = selectedPayoutType; d.payout_handle = handle; }
+    document.getElementById('payoutPopup').remove();
+    showToast('✅ Payout method saved! You are all set.');
+  } catch(e) {
+    alert('Error saving: ' + e.message);
+  }
+}
+
+function renderDP(driver){
+  const myJobs=jobs.filter(j=>j.driverId===driver.id);
+  const td=new Date().toISOString().split('T')[0];
+  const todayDone=myJobs.filter(j=>j.status==='delivered'&&j.date===td);
+  const earned=todayDone.reduce((s,j)=>s+(j.price||0)*DRIVER_CUT,0);
+  const active=myJobs.filter(j=>['transit','assigned'].includes(j.status));
+  document.getElementById('dpEarnings').textContent='$'+earned.toFixed(2);
+  document.getElementById('dpActive').textContent=active.length;
+  document.getElementById('dpDelivered').textContent=todayDone.length;
+  document.getElementById('dpTotal').textContent=myJobs.length;
+  const show=[...active,...myJobs.filter(j=>j.status==='pending')].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  if(!show.length){ document.getElementById('dpJobsList').innerHTML='<div class="no-jobs">✅ No active jobs right now. Check back soon!</div>'; return; }
+  document.getElementById('dpJobsList').innerHTML=show.map(job=>{
+    const myPay=((job.price||0)*DRIVER_CUT).toFixed(2);
+    const isUrgent=job.service==='stat';
+    return `<div class="dp-job${isUrgent?' urgent':''}">
+      <div class="dp-job-top">
+        <div><div class="dp-job-id">Job #${job.id.slice(-4).toUpperCase()}${isUrgent?' <span style="font-size:.65rem;background:rgba(239,68,68,.2);color:var(--red);padding:2px 8px;border-radius:4px;">STAT</span>':''}</div>
+          <div style="font-size:.7rem;color:var(--muted);">${job.date||'—'} · ${svcLabel(job.service)}</div></div>
+        <div style="text-align:right;"><div class="dp-pay">$${myPay}</div><div class="dp-pay-label">Your pay</div></div>
+      </div>
+      <div class="dp-route">📍 <strong>Pickup:</strong> ${job.pickup}<br>🏁 <strong>Drop-off:</strong> ${job.delivery}</div>
+      ${job.notes?`<div class="dp-note">📝 ${job.notes}</div>`:''}
+      <div style="margin-bottom:10px;"><span class="badge s-${job.status}">${statusLabel(job.status)}</span></div>
+      <div class="dp-actions">
+        ${job.status==='assigned'?`<button class="btn-start" onclick="drvStart('${job.id}')">🚗 Start Delivery</button>`:''}
+        ${job.status==='transit'?`<button class="btn-done" onclick="drvDone('${job.id}')">✅ Mark Delivered</button>`:''}
+        ${job.status==='assigned'?`<button class="btn-decline" onclick="drvDecline('${job.id}')">❌ Decline</button>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function drvStart(jid){ const j=jobs.find(x=>x.id===jid); if(j){j.status='transit';save();renderDP(drivers.find(d=>d.id===currentDriverId));showToast('🚗 On your way!');} }
+
+function drvDone(jid){
+  window._deliveryJobId = jid;
+  const j = jobs.find(x=>x.id===jid); if(!j) return;
+  document.getElementById('dmJobRef').textContent = 'Job #'+j.id.slice(-6).toUpperCase()+' · '+j.pickup+' → '+j.delivery;
+  document.getElementById('dmNotes').value = '';
+  document.getElementById('photoPreview').classList.remove('show');
+  document.getElementById('photoPlaceholder').style.display = 'block';
+  document.getElementById('photoArea').classList.remove('has-photo');
+  document.getElementById('photoInput').value = '';
+  document.getElementById('dmForm').style.display = 'block';
+  document.getElementById('dmDone').classList.remove('show');
+  clearSig();
+  document.getElementById('deliveryModal').classList.add('open');
+  setTimeout(initSigCanvas, 100);
+}
+
+function closeDeliveryModal(){
+  document.getElementById('deliveryModal').classList.remove('open');
+  window._deliveryJobId = null;
+}
+
+function handlePhoto(input){
+  if(!input.files||!input.files[0]) return;
+  const file = input.files[0];
+  const reader = new FileReader();
+  reader.onload = e => {
+    const preview = document.getElementById('photoPreview');
+    preview.src = e.target.result;
+    preview.classList.add('show');
+    document.getElementById('photoPlaceholder').style.display = 'none';
+    document.getElementById('photoArea').classList.add('has-photo');
+  };
+  reader.readAsDataURL(file);
+}
+
+let sigDrawing=false, sigCtx=null, sigHasSig=false;
+function initSigCanvas(){
+  const canvas = document.getElementById('sigCanvas');
+  if(!canvas) return;
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 160;
+  sigCtx = canvas.getContext('2d');
+  sigCtx.strokeStyle = '#ffffff';
+  sigCtx.lineWidth = 2.5;
+  sigCtx.lineCap = 'round';
+  sigCtx.lineJoin = 'round';
+  sigHasSig = false;
+  function getPos(e){
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches ? e.touches[0] : e;
+    return { x:(touch.clientX-rect.left)*(canvas.width/rect.width), y:(touch.clientY-rect.top)*(canvas.height/rect.height) };
+  }
+  function start(e){ e.preventDefault(); sigDrawing=true; sigHasSig=true; const p=getPos(e); sigCtx.beginPath(); sigCtx.moveTo(p.x,p.y); }
+  function draw(e){ e.preventDefault(); if(!sigDrawing)return; const p=getPos(e); sigCtx.lineTo(p.x,p.y); sigCtx.stroke(); }
+  function end(e){ e.preventDefault(); sigDrawing=false; }
+  canvas.addEventListener('mousedown',start); canvas.addEventListener('mousemove',draw); canvas.addEventListener('mouseup',end);
+  canvas.addEventListener('touchstart',start,{passive:false}); canvas.addEventListener('touchmove',draw,{passive:false}); canvas.addEventListener('touchend',end,{passive:false});
+}
+
+function clearSig(){
+  if(sigCtx){ const c=document.getElementById('sigCanvas'); sigCtx.clearRect(0,0,c.width,c.height); }
+  sigHasSig=false;
+}
+
+function confirmDelivery(){
+  const jid = window._deliveryJobId;
+  const j = jobs.find(x=>x.id===jid); if(!j) return;
+  const btn = document.getElementById('dmSubmitBtn');
+  btn.disabled=true; btn.textContent='Saving...';
+  if(sigHasSig){
+    const canvas=document.getElementById('sigCanvas');
+    j.signature = canvas.toDataURL('image/png');
+  }
+  const preview = document.getElementById('photoPreview');
+  if(preview.src && preview.classList.contains('show')){
+    j.deliveryPhoto = preview.src;
+  }
+  const notes = document.getElementById('dmNotes').value.trim();
+  if(notes) j.deliveryNotes = notes;
+  j.status = 'delivered';
+  j.deliveredAt = new Date().toISOString();
+  const pay = ((j.price||0)*DRIVER_CUT).toFixed(2);
+  save();
+  updateJobInSupabase(j);
+  sendDeliveryPaymentRequest(j);
+  document.getElementById('dmPayAmt').textContent = 'You earned $'+pay;
+  document.getElementById('dmForm').style.display='none';
+  document.getElementById('dmDone').classList.add('show');
+  renderDP(drivers.find(d=>d.id===currentDriverId));
+  btn.disabled=false; btn.textContent='✅ Confirm Delivery';
+}
+
+function drvDecline(jid){
+  const j=jobs.find(x=>x.id===jid); if(!j) return;
+  if(!j.declinedBy) j.declinedBy=[];
+  j.declinedBy.push(j.driverId);
+  j.driverId=''; j.status='pending';
+  const candidates=drivers.filter(d=>d.status==='available'&&d.city===j.city&&!j.declinedBy.includes(d.id));
+  if(candidates.length){
+    const ranked=candidates.map(d=>({d,count:jobs.filter(x=>x.driverId===d.id&&['assigned','transit'].includes(x.status)).length})).sort((a,b)=>a.count-b.count);
+    j.driverId=ranked[0].d.id; j.status='assigned';
+    save(); renderDP(drivers.find(d=>d.id===currentDriverId));
+    showToast('Job passed to next available driver');
+  } else {
+    j.urgent=true; save();
+    renderDP(drivers.find(d=>d.id===currentDriverId));
+    showToast('⚠️ No drivers available — admin alerted!');
+  }
+}
+
+function toggleAvail(){
+  const d=drivers.find(x=>x.id===currentDriverId); if(!d) return;
+  d.status=d.status==='available'?'unavailable':'available';
+  save();
+  const btn=document.getElementById('availBtn');
+  btn.className='avail-toggle '+(d.status==='available'?'avail-on':'avail-off');
+  btn.textContent=d.status==='available'?'🟢 Available':'🔴 Unavailable';
+  showToast(d.status==='available'?'🟢 You are now Available':'🔴 You are now Unavailable');
+}
+
+// ─────────────────────────────────────
+// CLIENT PORTAL
+// ─────────────────────────────────────
+function showClientPortal(client){
+  currentRole='client';
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('clientPortal').style.display='block';
+  document.getElementById('cpTopName').textContent=client.company;
+  document.getElementById('cpCompany').textContent=client.company;
+  document.getElementById('cpContact').textContent=client.contact||client.email;
+  document.getElementById('cpBalance').textContent='$'+(client.balance||0).toFixed(2);
+  document.getElementById('cp-date').value=new Date().toISOString().split('T')[0];
+  renderCPJobs(client);
+}
+
+function renderCPJobs(client){
+  const myJobs=jobs.filter(j=>j.clientId===client.id).reverse();
+  const list=document.getElementById('cpJobsList');
+  if(!myJobs.length){ list.innerHTML='<div class="no-jobs">No deliveries yet. Request your first pickup above!</div>'; return; }
+  list.innerHTML=myJobs.map(j=>`
+    <div class="cp-job-row">
+      <div>
+        <div class="cp-job-date">Job #${j.id.slice(-6).toUpperCase()} · ${j.date||'—'}</div>
+        <div class="cp-job-info">📍 ${j.pickup}<br>🏁 ${j.delivery}</div>
+        <div style="font-size:.72rem;color:var(--muted);">${svcLabel(j.service)}</div>
+      </div>
+      <span class="badge s-${j.status}">${statusLabel(j.status)}</span>
+    </div>`).join('');
+}
+
+function cpRequest(){
+  const c=clients.find(x=>x.id===currentClientId); if(!c){showToast('Session error',true);return;}
+  const pickup=document.getElementById('cp-pickup').value.trim();
+  const delivery=document.getElementById('cp-delivery').value.trim();
+  const svc=document.getElementById('cp-service').value;
+  const date=document.getElementById('cp-date').value;
+  const notes=document.getElementById('cp-notes').value.trim();
+  if(!pickup||!delivery){showToast('Enter pickup and delivery address',true);return;}
+  const job={id:'job_'+Date.now(),customerName:c.company,phone:'—',email:c.email,pickup,delivery,city:c.city,service:svc,miles:10,price:0,driverId:'',notes,date,status:'pending',source:'client',clientId:c.id,createdAt:new Date().toISOString()};
+  jobs.push(job); save(); renderCPJobs(c);
+  ['cp-pickup','cp-delivery','cp-notes'].forEach(id=>document.getElementById(id).value='');
+  showToast('✅ Pickup requested! We\'ll assign a driver shortly.');
+  alertDriversInCity(job);
+  saveJobToSupabase(job);
+}
+
+// ─────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────
+function om(id){ document.getElementById(id).classList.add('open'); }
+function cm(id){ document.getElementById(id).classList.remove('open'); }
+let tt;
+function showToast(msg,isErr=false){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.className=isErr?'toast err show':'toast show';
+  clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('show'),3500);
+}
+function today(){ return new Date().toISOString().split('T')[0]; }
+
+// ─────────────────────────────────────
+// SEND PAYMENT EMAIL (EmailJS)
+// ─────────────────────────────────────
+async function sendPaymentEmail(job, driver) {
+  if (!job) return;
+  const customerEmail = job.email || job.customer_email || '';
+  const customerName  = job.customerName || job.customer_name || 'Customer';
+  const tracking      = job.tracking_number || ('#' + job.id.slice(-6).toUpperCase());
+  const driverName    = driver ? driver.name : 'your driver';
+  const amount        = parseFloat(job.price || job.quoted_price || 0);
+  if (!customerEmail) { showToast('⚠️ No customer email — payment link not sent'); return; }
+  if (amount <= 0) { showToast('⚠️ Price is $0 — set a price first'); return; }
+  const stripeUrl = STRIPE
+    + '?prefilled_email=' + encodeURIComponent(customerEmail)
+    + '&client_reference_id=' + encodeURIComponent(tracking);
+  const body = `Hi ${customerName},\n\n🚗 Driver Assigned: ${driverName}\n📦 Tracking: ${tracking}\n📍 Pickup: ${job.pickup || job.pickup_address || '—'}\n🏁 Drop-off: ${job.delivery || job.dropoff_address || '—'}\n💰 Amount Due: $${amount.toFixed(2)}\n\nPlease complete your secure payment below:\n\n💳 PAY NOW: ${stripeUrl}\n\nYour driver departs once payment is confirmed.\n\n— NorthStar Delivery`;
+  try {
+    if (typeof emailjs === 'undefined') { showToast('⚠️ EmailJS not loaded'); return; }
+    emailjs.init('gka99ITrW1k4E21Ph');
+    await emailjs.send('service_hadpr5k', 'template_x5ogqhn', {
+      to_name: customerName,
+      to_email: customerEmail,
+      from_name: 'NorthStar Delivery',
+      subject: '💳 Complete Your Payment — ' + tracking,
+      message: body
+    });
+    fetch(SUPA_URL + '/rest/v1/jobs?id=eq.' + job.id, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ payment_status: 'link_sent', updated_at: new Date().toISOString() })
+    });
+    showToast('💳 Payment link sent to ' + customerEmail);
+  } catch(err) {
+    console.error(err);
+    showToast('⚠️ Payment email failed');
+  }
+}
+
+// ─────────────────────────────────────
+// INIT
+// ─────────────────────────────────────
+document.addEventListener('DOMContentLoaded',()=>{
+  setRole('admin');
+  document.getElementById('nj-date').value=today();
+  loadSupabaseDrivers();
+  loadJobsFromSupabase();
+  let lastAppCount = loadApps().filter(a=>a.status==='pending').length;
+  setInterval(()=>{
+    const current = loadApps().filter(a=>a.status==='pending').length;
+    if(current !== lastAppCount){
+      lastAppCount = current;
+      checkNewApps();
+      const appsTab = document.getElementById('tab-apps');
+      if(appsTab && appsTab.style.display==='block') renderApps();
+      if(current > lastAppCount) showToast('🔔 New driver application received! Check the Apps tab.');
+    }
+  }, 10000);
+});
+</script>
+</body>
+</html>
