@@ -3,442 +3,476 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NorthStar Solutions — Freight Intelligence Tools</title>
-<meta name="description" content="Professional tools built for freight dispatchers and brokers. Know your true net on every load before you confirm it.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<title>NorthStar Delivery Solutions | Freight Brokerage — All Equipment Types</title>
+<meta name="description" content="NorthStar Delivery Solutions LLC — licensed freight brokerage moving Reefer, Van, Flatbed, Power Only, Tanker, Hopper Bottom, Auto, RGN, Conestoga, and more. Owner-operators and drivers welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --black:#050608;--black2:#080A0D;--surface:#111620;--surface2:#161D2A;
-  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.11);
-  --gold:#C9A84C;--gold2:#E8C97A;--gold-dim:rgba(201,168,76,0.08);
-  --text:#E8E4DC;--text2:#8A8880;--text3:#3A3830;
-  --fd:'Cormorant Garamond',serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--fb);font-weight:300;line-height:1.7;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 60px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,var(--black),transparent)}
-.nav-logo{font-family:var(--fd);font-size:18px;font-weight:500;color:#F4F1EB;letter-spacing:.1em;text-transform:uppercase}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-size:11px;color:var(--text2);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:10px 22px!important}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 60px 80px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(201,168,76,0.04),transparent 70%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent)}
-.hero-eyebrow{font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fadeUp .7s ease .2s forwards}
-.hero-title{font-family:var(--fd);font-size:clamp(48px,6vw,84px);font-weight:300;line-height:1.08;color:#F4F1EB;letter-spacing:-.01em;max-width:800px;opacity:0;animation:fadeUp .7s ease .4s forwards}
-.hero-title em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:15px;color:var(--text2);max-width:440px;margin:28px auto 0;font-weight:300;line-height:1.9;opacity:0;animation:fadeUp .7s ease .6s forwards}
-.hero-cta{margin-top:48px;opacity:0;animation:fadeUp .7s ease .8s forwards}
-.btn-gold{display:inline-block;background:var(--gold);color:var(--black);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 36px;text-decoration:none;transition:all .2s}
-.btn-gold:hover{background:var(--gold2)}
-.btn-outline{display:inline-block;border:1px solid var(--border2);color:var(--text2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:13px 32px;text-decoration:none;transition:all .2s;margin-left:16px}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-section{padding:110px 60px}
-.section-eyebrow{font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
-.section-title{font-family:var(--fd);font-size:clamp(34px,4vw,52px);font-weight:300;line-height:1.1;color:#F4F1EB}
-.section-title em{font-style:italic;color:var(--gold)}
-.divider{width:36px;height:1px;background:var(--gold);opacity:.4;margin:24px 0}
-.product-section{background:var(--black2)}
-.product-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.product-features{display:flex;flex-direction:column;gap:0;margin:28px 0 32px;border-top:1px solid var(--border)}
-.feature{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
-.feature-num{font-family:var(--fm);font-size:10px;color:var(--gold);flex-shrink:0;margin-top:3px}
-.feature-text{font-size:13px;color:var(--text2);line-height:1.7;font-weight:300}
-.feature-text strong{color:var(--text);font-weight:500;display:block;margin-bottom:2px}
-.price-box{background:var(--surface);border:1px solid var(--border2);padding:26px 30px;margin-bottom:16px;position:relative}
-.price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.price-label{font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-.price-amt{font-family:var(--fd);font-size:52px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em}
-.price-amt sup{font-size:22px;color:var(--gold);vertical-align:super}
-.price-amt sub{font-size:14px;color:var(--text2);font-family:var(--fb);font-weight:300}
-.price-desc{font-size:13px;color:var(--text2);margin-top:10px;line-height:1.7}
-.price-note{font-size:11px;color:var(--text3);margin-top:12px;font-family:var(--fm)}
-.demo-box{background:var(--surface2);border:1px solid var(--border2);padding:28px;position:relative}
-.demo-box::before{content:'LIVE DEMO';position:absolute;top:12px;right:16px;font-family:var(--fm);font-size:9px;color:var(--text3);letter-spacing:.1em}
-.demo-title{font-family:var(--fd);font-size:18px;font-weight:400;color:#F4F1EB;margin-bottom:20px}
-.demo-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.diw label{font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:5px}
-.diw input{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--fb);font-size:12px;padding:8px 10px;outline:none;transition:border-color .15s;width:100%}
-.diw input:focus{border-color:var(--gold)}
-.diw input::placeholder{color:var(--text3)}
-.demo-btn{background:var(--gold);color:var(--black);border:none;padding:11px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;font-family:var(--fb);cursor:pointer;transition:all .2s;width:100%;margin-top:6px}
-.demo-btn:hover{background:var(--gold2)}
-.demo-result{margin-top:16px;padding:16px;background:var(--surface);border:1px solid var(--border);display:none}
-.demo-result.show{display:block}
-.rr{display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
-.rr:last-child{border:none}
-.rl{color:var(--text2)}
-.rv{font-weight:500;color:var(--text)}
-.rv.g{color:var(--gold)}
-.rv.b{color:#FF6B6B}
-.verdict{font-family:var(--fd);font-size:22px;font-weight:400;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
-.coming-section{background:var(--black);border-top:1px solid var(--border)}
-.coming-inner{max-width:1100px;margin:0 auto}
-.coming-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:60px}
-.coming-card{background:var(--black2);padding:44px 40px;position:relative}
-.coming-card::after{content:'Coming Soon';position:absolute;top:18px;right:18px;font-family:var(--fm);font-size:9px;color:var(--text3);letter-spacing:.1em;border:1px solid var(--border2);padding:3px 10px}
-.coming-name{font-family:var(--fd);font-size:26px;font-weight:400;color:#F4F1EB;margin-bottom:6px}
-.coming-tag{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
-.coming-desc{font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:20px}
-.coming-apis{display:flex;flex-wrap:wrap;gap:5px}
-.api-tag{font-family:var(--fm);font-size:10px;color:var(--text3);border:1px solid var(--border);padding:3px 9px}
-.nf{display:flex;gap:8px;margin-top:24px}
-.ni{flex:1;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-family:var(--fb);font-size:12px;padding:9px 12px;outline:none}
-.ni:focus{border-color:var(--gold)}
-.ni::placeholder{color:var(--text3)}
-.nb{background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;cursor:pointer;font-family:var(--fb);transition:all .2s;white-space:nowrap}
-.nb:hover{background:var(--gold);color:var(--black)}
-footer{background:var(--black);border-top:1px solid var(--border);padding:48px 60px}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.footer-logo{font-family:var(--fd);font-size:15px;font-weight:500;color:#F4F1EB;letter-spacing:.1em;text-transform:uppercase}
-.footer-logo span{color:var(--gold)}
-.footer-links{display:flex;gap:32px}
-.footer-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--gold)}
-.footer-copy{font-size:11px;color:var(--text3)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:860px){
-  nav{padding:20px 24px}.nav-links{display:none}
-  section{padding:72px 24px}.hero{padding:100px 24px 60px}
-  .product-inner,.coming-grid{grid-template-columns:1fr}
-  .product-inner{gap:40px}
-  .footer-inner{flex-direction:column;gap:20px;text-align:center}
-  .footer-links{flex-wrap:wrap;justify-content:center}
-}
+  :root{
+    --asphalt:#0E151C;
+    --asphalt-2:#16212B;
+    --steel:#1F3448;
+    --steel-line:#2C4257;
+    --amber:#F2A93B;
+    --amber-dim:#C98A2C;
+    --paper:#F4F1E9;
+    --paper-dim:#C9C7BE;
+    --route-green:#3E8C63;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--asphalt);
+    color:var(--paper);
+    font-family:'Public Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(14,21,28,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--steel-line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:74px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Oswald', sans-serif;
+    font-size:19px; font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .logo .mark{
+    width:34px; height:34px;
+    border:2px solid var(--amber);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:700; color:var(--amber);
+    flex-shrink:0;
+  }
+  .logo .sub{display:block; font-family:'Public Sans',sans-serif; font-size:10px; letter-spacing:0.14em; color:var(--paper-dim); text-transform:uppercase; font-weight:600;}
+  nav ul{list-style:none; display:flex; gap:34px; margin:0; padding:0;}
+  nav ul a{
+    font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;
+    text-decoration:none; color:var(--paper-dim);
+    transition:color 0.2s ease;
+    padding-bottom:4px; border-bottom:2px solid transparent;
+  }
+  nav ul a:hover{color:var(--amber); border-bottom-color:var(--amber);}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 22px;
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;
+    text-decoration:none;
+    border-radius:var(--radius);
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    white-space:nowrap;
+  }
+  .btn-amber{background:var(--amber); color:var(--asphalt);}
+  .btn-amber:hover{background:#ffbf5c; transform:translateY(-1px);}
+  .btn-outline{border:1.5px solid var(--paper-dim); color:var(--paper);}
+  .btn-outline:hover{border-color:var(--amber); color:var(--amber);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:26px; cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 84px;
+    overflow:hidden;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 78px, rgba(242,169,59,0.05) 78px, rgba(242,169,59,0.05) 80px),
+      linear-gradient(180deg, var(--asphalt) 0%, var(--asphalt-2) 100%);
+    border-bottom:1px solid var(--steel-line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.95fr;
+    gap:60px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:26px; height:2px; background:var(--amber);}
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px);
+    line-height:1.04;
+    font-weight:700;
+    color:var(--paper);
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--amber);
+  }
+  .hero p.lede{
+    font-size:17px; line-height:1.6; color:var(--paper-dim);
+    max-width:520px; margin:22px 0 34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* placard */
+  .placard{
+    background:var(--paper);
+    color:var(--asphalt);
+    border-radius:4px;
+    padding:26px 26px 22px;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.06);
+    position:relative;
+    transform:rotate(-1.2deg);
+  }
+  .placard::before{
+    content:'';
+    position:absolute; inset:8px;
+    border:1.5px solid rgba(14,21,28,0.18);
+    border-radius:2px;
+    pointer-events:none;
+  }
+  .placard-head{
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:2px solid var(--asphalt);
+    padding-bottom:10px; margin-bottom:16px;
+  }
+  .placard-head .co{
+    font-family:'Oswald', sans-serif; font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.02em;
+  }
+  .placard-head .badge{
+    background:var(--asphalt); color:var(--amber);
+    font-size:10px; font-weight:700; letter-spacing:0.08em;
+    padding:4px 8px; border-radius:2px; text-transform:uppercase;
+  }
+  .placard-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:9px 0;
+    border-bottom:1px dashed rgba(14,21,28,0.2);
+  }
+  .placard-row:last-child{border-bottom:none;}
+  .placard-row .label{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#5b5748; font-weight:700;}
+  .placard-row .val{font-family:'IBM Plex Mono', monospace; font-size:18px; font-weight:600; letter-spacing:0.02em;}
+  .placard-foot{
+    margin-top:14px; padding-top:12px; border-top:2px solid var(--asphalt);
+    font-size:11px; color:#5b5748; letter-spacing:0.03em; line-height:1.5;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
+  .section-head .eyebrow{justify-content:center; display:flex;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); line-height:1.1; margin-bottom:14px;}
+  .section-head p{color:var(--paper-dim); font-size:16px; line-height:1.6;}
+
+  /* ---------- EQUIPMENT GRID ---------- */
+  .equip-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .equip-card{
+    background:var(--steel);
+    border:1px solid var(--steel-line);
+    border-radius:var(--radius);
+    padding:22px 18px;
+    transition:border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .equip-card:hover{
+    border-color:var(--amber);
+    background:#213B50;
+    transform:translateY(-3px);
+  }
+  .equip-card .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--amber); font-weight:600;
+    letter-spacing:0.05em;
+  }
+  .equip-card h3{
+    font-size:16px; margin-top:8px; font-weight:600; letter-spacing:0.01em;
+    color:var(--paper);
+  }
+  .equip-card p{
+    font-size:13px; color:var(--paper-dim); margin:8px 0 0; line-height:1.5;
+  }
+
+  /* ---------- DRIVERS SECTION ---------- */
+  .drivers{
+    background:var(--asphalt-2);
+    border-top:1px solid var(--steel-line);
+    border-bottom:1px solid var(--steel-line);
+  }
+  .drivers-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .drivers h2{font-size:clamp(28px,3.6vw,40px); line-height:1.1; margin-bottom:18px;}
+  .drivers p.lede{color:var(--paper-dim); font-size:16px; line-height:1.65; margin-bottom:28px;}
+  .perk-list{list-style:none; margin:0 0 32px; padding:0; display:grid; gap:14px;}
+  .perk-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    font-size:15px; color:var(--paper); line-height:1.5;
+  }
+  .perk-list .dot{
+    flex-shrink:0; width:20px; height:20px; margin-top:1px;
+    background:var(--route-green); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:var(--asphalt); font-weight:700;
+  }
+  .driver-card{
+    background:var(--steel);
+    border:1px solid var(--steel-line);
+    border-radius:4px;
+    padding:36px 32px;
+  }
+  .driver-card h3{font-size:22px; margin-bottom:8px;}
+  .driver-card p{color:var(--paper-dim); font-size:14px; line-height:1.6; margin:0 0 24px;}
+  .form-row{display:grid; gap:14px; margin-bottom:14px;}
+  .form-row.two{grid-template-columns:1fr 1fr;}
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%;
+    background:var(--asphalt);
+    border:1px solid var(--steel-line);
+    color:var(--paper);
+    padding:12px 14px;
+    font-family:'Public Sans', sans-serif;
+    font-size:14px;
+    border-radius:2px;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
+    outline:2px solid var(--amber); outline-offset:1px; border-color:var(--amber);
+  }
+  .form-row label{font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--paper-dim); font-weight:700; display:block; margin-bottom:6px;}
+
+  /* ---------- COMPLIANCE STRIP ---------- */
+  .strip{
+    padding:34px 0;
+    border-bottom:1px solid var(--steel-line);
+  }
+  .strip .wrap{
+    display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;
+  }
+  .strip .item{display:flex; align-items:center; gap:10px;}
+  .strip .item .k{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--paper-dim); font-weight:700;}
+  .strip .item .v{font-family:'IBM Plex Mono', monospace; font-size:15px; color:var(--amber); font-weight:600;}
+  .strip .div{width:1px; height:22px; background:var(--steel-line);}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{padding:70px 0 34px;}
+  .footer-grid{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px;
+    padding-bottom:48px; border-bottom:1px solid var(--steel-line); margin-bottom:28px;
+  }
+  footer h4{font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--paper-dim); margin-bottom:16px; font-weight:700;}
+  footer .foot-links{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  footer .foot-links a{text-decoration:none; color:var(--paper); font-size:14px;}
+  footer .foot-links a:hover{color:var(--amber);}
+  footer p.blurb{color:var(--paper-dim); font-size:14px; line-height:1.6; max-width:340px; margin-top:12px;}
+  .bottom-bar{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .bottom-bar span{font-size:12px; color:var(--paper-dim);}
+
+  @media (max-width: 940px){
+    .hero-grid{grid-template-columns:1fr;}
+    .placard{transform:none; max-width:420px;}
+    .equip-grid{grid-template-columns:repeat(2,1fr);}
+    .drivers-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
+    nav ul{display:none;}
+    .menu-toggle{display:block;}
+  }
+  @media (max-width: 560px){
+    .equip-grid{grid-template-columns:1fr 1fr;}
+    .form-row.two{grid-template-columns:1fr;}
+    .strip .wrap{gap:20px;}
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">North<span>Star</span> Solutions</div>
-  <div class="nav-links">
-    <a href="#copilot">Load Intelligence</a>
-    <a href="#coming">Coming Soon</a>
-    <a href="https://tjs-a11y.github.io/sentinel-freightos/sentinel-freightos.html">Platform Login</a>
-    <a href="#copilot" class="nav-cta">Get Started</a>
-  </div>
-</nav>
+<header>
+  <nav class="wrap">
+    <div class="logo">
+      <span class="mark">N</span>
+      <span>NorthStar Delivery<span class="sub">Solutions LLC · Freight Brokerage</span></span>
+    </div>
+    <ul>
+      <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#drivers">Drive With Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-links">
+      <a href="mailto:Tjs@Northstardeliveryservice.com?subject=Load%20Request" class="btn btn-amber">Get A Quote</a>
+    </div>
+  </nav>
+</header>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-eyebrow">Freight Intelligence · Built for Dispatchers & Brokers</div>
-  <h1 class="hero-title">Know your true net<br><em>before you confirm</em><br>every load.</h1>
-  <p class="hero-sub">Professional tools built for freight dispatchers and brokers. No guessing. No surprises. Just the numbers you need to make the right call every time.</p>
-  <div class="hero-cta">
-    <a href="#copilot" class="btn-gold">Get Load Intelligence — $19/mo</a>
-    <a href="#coming" class="btn-outline">See What's Coming</a>
-  </div>
-</section>
-
-<section class="product-section" id="copilot">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="reveal" style="text-align:center;margin-bottom:52px">
-      <div class="section-eyebrow">Available Now</div>
-      <h2 class="section-title" style="text-align:center">Choose your<br><em>starting point.</em></h2>
-      <p style="font-size:14px;color:var(--text2);margin-top:16px;font-weight:300;line-height:1.9">Start where it makes sense for your operation. Upgrade anytime.</p>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Licensed Freight Brokerage</span>
+      <h1>Every truck type.<br>Every lane. <em>One dispatch call.</em></h1>
+      <p class="lede">NorthStar Delivery Solutions LLC moves freight across the full range of equipment — from dry van and reefer to specialized flatbed, tanker, and intermodal. Shippers get coverage. Carriers get consistent, well-vetted loads.</p>
+      <div class="hero-ctas">
+        <a href="mailto:Tjs@Northstardeliveryservice.com?subject=Load%20Request" class="btn btn-amber">Request Capacity</a>
+        <a href="#drivers" class="btn btn-outline">Drive With Us</a>
+      </div>
     </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)">
-
-      <!-- P&L TRACKER $9 -->
-      <div class="reveal" style="background:var(--black2);padding:40px 36px">
-        <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">For Owner-Operators</div>
-        <div style="font-family:var(--fd);font-size:26px;font-weight:400;color:#F4F1EB;margin-bottom:6px">P&L Tracker</div>
-        <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px">Know your real numbers</div>
-        <div style="font-family:var(--fd);font-size:44px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em;margin-bottom:6px"><sup style="font-size:20px;color:var(--gold);vertical-align:super">$</sup>9<sub style="font-size:13px;color:var(--text2);font-family:var(--fb);font-weight:300">/month</sub></div>
-        <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:24px">True net on every load after all deductions. Weekly P&L tracking. Expense logging by IRS category.</p>
-        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-bottom:28px">
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>True net calculator</div>
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Weekly P&L tracker</div>
-          <div style="display:flex;gap:10px;padding:11px 0;font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Expense logger by IRS category</div>
-        </div>
-        <a href="https://buy.stripe.com/3cI5kF2nt9918Vr52T2Fa02" style="display:block;text-align:center;border:1px solid var(--border2);color:var(--text2);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:13px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.11)';this.style.color='var(--text2)'">Get Started — $9/month</a>
-        <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:10px;font-family:var(--fm)">Cancel anytime</div>
+    <div class="placard">
+      <div class="placard-head">
+        <span class="co">NorthStar Delivery</span>
+        <span class="badge">Authorized Carrier/Broker</span>
       </div>
-
-      <!-- DISPATCH CO-PILOT $19 -->
-      <div class="reveal rd1" style="background:var(--surface);padding:40px 36px;position:relative">
-        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
-        <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">For Dispatchers</div>
-        <div style="font-family:var(--fd);font-size:26px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Dispatch Co-Pilot</div>
-        <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px">Analyze every load instantly</div>
-        <div style="font-family:var(--fd);font-size:44px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em;margin-bottom:6px"><sup style="font-size:20px;color:var(--gold);vertical-align:super">$</sup>19<sub style="font-size:13px;color:var(--text2);font-family:var(--fb);font-weight:300">/month</sub></div>
-        <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:24px">Load analyzer with market rate check and word-for-word counter-offer scripts backed by real math.</p>
-        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-bottom:28px">
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Load analyzer with instant verdict</div>
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Market rate check per lane</div>
-          <div style="display:flex;gap:10px;padding:11px 0;font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Counter-offer script generator</div>
-        </div>
-        <a href="https://buy.stripe.com/3cI5kF7HN991gnT7b12Fa03" style="display:block;text-align:center;background:var(--gold);color:var(--black);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='var(--gold)'">Get Started — $19/month</a>
-        <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:10px;font-family:var(--fm)">Cancel anytime</div>
+      <div class="placard-row">
+        <span class="label">MC Number</span>
+        <span class="val">1819020</span>
       </div>
-
-      <!-- LOAD INTELLIGENCE $29 -->
-      <div class="reveal rd2" style="background:var(--black2);padding:40px 36px;position:relative">
-        <div style="position:absolute;top:18px;right:18px;font-family:var(--fm);font-size:9px;color:var(--gold);letter-spacing:.1em;border:1px solid rgba(201,168,76,0.3);padding:3px 10px">Best Value</div>
-        <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">Complete Suite</div>
-        <div style="font-family:var(--fd);font-size:26px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Load Intelligence</div>
-        <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px">Everything in one place</div>
-        <div style="font-family:var(--fd);font-size:44px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em;margin-bottom:6px"><sup style="font-size:20px;color:var(--gold);vertical-align:super">$</sup>29<sub style="font-size:13px;color:var(--text2);font-family:var(--fb);font-weight:300">/month</sub></div>
-        <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:24px">All seven tools combined. Load analyzer, break-even calculator, counter-offer generator, P&L tracker, expense logger, performance scorecard, and load history.</p>
-        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-bottom:28px">
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Everything in P&L Tracker</div>
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Everything in Dispatch Co-Pilot</div>
-          <div style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Break-even calculator</div>
-          <div style="display:flex;gap:10px;padding:11px 0;font-size:12px;color:var(--text2)"><span style="color:var(--gold);flex-shrink:0">—</span>Performance scorecard + load history</div>
-        </div>
-        <a href="https://buy.stripe.com/14AcN7fafetlc7Dbrh2Fa07" style="display:block;text-align:center;border:1px solid var(--border2);color:var(--text2);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:13px;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.11)';this.style.color='var(--text2)'">Get Started — $29/month</a>
-        <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:10px;font-family:var(--fm)">Cancel anytime</div>
+      <div class="placard-row">
+        <span class="label">USDOT Number</span>
+        <span class="val">4572562</span>
       </div>
-
+      <div class="placard-row">
+        <span class="label">Entity</span>
+        <span class="val" style="font-size:14px;">NorthStar Delivery Solutions LLC</span>
+      </div>
+      <div class="placard-foot">Registered with the Federal Motor Carrier Safety Administration (FMCSA). Verify authority at fmcsa.dot.gov.</div>
     </div>
   </div>
 </section>
 
-<section class="coming-section" id="coming">
-  <div class="coming-inner">
-    <div class="reveal">
-      <div class="section-eyebrow">In Development</div>
-      <h2 class="section-title">More tools<br><em>coming soon.</em></h2>
-      <p style="font-size:14px;color:var(--text2);margin-top:16px;line-height:1.9;max-width:520px;font-weight:300">We are building the fraud detection and document verification infrastructure the freight industry has been missing. Enter your email to be first in line when each product launches.</p>
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><span class="k">MC</span><span class="v">1819020</span></div>
+    <div class="div"></div>
+    <div class="item"><span class="k">USDOT</span><span class="v">4572562</span></div>
+    <div class="div"></div>
+    <div class="item"><span class="k">Coverage</span><span class="v">48 States</span></div>
+    <div class="div"></div>
+    <div class="item"><span class="k">Equipment</span><span class="v">18 Types</span></div>
+  </div>
+</div>
+
+<section id="equipment">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Equipment We Cover</span>
+      <h2>Loads booked across every trailer type.</h2>
+      <p>Whatever's on your yard, our dispatch team is sourcing freight for it — daily.</p>
     </div>
-    <div class="coming-grid">
-      <div class="coming-card reveal rd1">
-        <div class="coming-name">Sentinel</div>
-        <div class="coming-tag">Fraud Detection API</div>
-        <p class="coming-desc">Real-time carrier fraud detection, double booking prevention, and load verification. Plugs directly into your existing TMS or dispatch system — no new software to learn.</p>
-        <div class="coming-apis">
-          <span class="api-tag">/scan</span>
-          <span class="api-tag">/verify</span>
-          <span class="api-tag">/carrier</span>
-          <span class="api-tag">/webhook</span>
-        </div>
-        <div class="nf">
-          <input type="email" class="ni" placeholder="your@email.com" id="s-email" />
-          <button class="nb" onclick="notify('s-email','s-ok')">Notify Me</button>
-        </div>
-        <div id="s-ok" style="display:none;font-size:11px;color:var(--gold);margin-top:8px;font-family:var(--fm)">✓ You are on the list.</div>
-      </div>
-      <div class="coming-card reveal rd2">
-        <div class="coming-name">PortGuard</div>
-        <div class="coming-tag">Document Integrity API</div>
-        <p class="coming-desc">Tamper-proof authentication for every document in the freight chain. BOLs, rate confirmations, and customs filings — cryptographically verified at every point of the journey.</p>
-        <div class="coming-apis">
-          <span class="api-tag">/authenticate</span>
-          <span class="api-tag">/verify</span>
-          <span class="api-tag">/customs</span>
-          <span class="api-tag">/chain</span>
-        </div>
-        <div class="nf">
-          <input type="email" class="ni" placeholder="your@email.com" id="p-email" />
-          <button class="nb" onclick="notify('p-email','p-ok')">Notify Me</button>
-        </div>
-        <div id="p-ok" style="display:none;font-size:11px;color:var(--gold);margin-top:8px;font-family:var(--fm)">✓ You are on the list.</div>
-      </div>
+    <div class="equip-grid">
+      <div class="equip-card"><span class="tag">01 · TEMP-CONTROLLED</span><h3>Reefer</h3><p>Temperature-controlled freight, produce to pharma.</p></div>
+      <div class="equip-card"><span class="tag">02 · TEMP-CONTROLLED</span><h3>Reefer Team</h3><p>Team-driven reefer for expedited cold chain runs.</p></div>
+      <div class="equip-card"><span class="tag">03 · DRY FREIGHT</span><h3>Van</h3><p>Standard 53' dry van, general commodities.</p></div>
+      <div class="equip-card"><span class="tag">04 · DRY FREIGHT</span><h3>Van Team</h3><p>Team van service for time-critical dry loads.</p></div>
+      <div class="equip-card"><span class="tag">05 · POWER</span><h3>Power Only</h3><p>Drop-and-hook and trailer-pool power only runs.</p></div>
+      <div class="equip-card"><span class="tag">06 · BULK</span><h3>Tanker</h3><p>Liquid bulk hauls for approved commodities.</p></div>
+      <div class="equip-card"><span class="tag">07 · BULK</span><h3>Hopper Bottom</h3><p>Dry bulk — grain, feed, and aggregate freight.</p></div>
+      <div class="equip-card"><span class="tag">08 · BULK</span><h3>Bottom Dump</h3><p>Aggregate and construction material hauls.</p></div>
+      <div class="equip-card"><span class="tag">09 · SPECIALIZED</span><h3>Dump Truck</h3><p>Local and regional dump freight.</p></div>
+      <div class="equip-card"><span class="tag">10 · SPECIALIZED</span><h3>Auto Trailer</h3><p>Vehicle transport, single and multi-car.</p></div>
+      <div class="equip-card"><span class="tag">11 · MULTIMODAL</span><h3>Rail / Intermodal</h3><p>Container drayage and rail-connected moves.</p></div>
+      <div class="equip-card"><span class="tag">12 · FLATBED</span><h3>Flatbed</h3><p>Open-deck freight, standard 48'–53'.</p></div>
+      <div class="equip-card"><span class="tag">13 · FLATBED</span><h3>Flatbed with Sides</h3><p>Flatbed with removable side panels.</p></div>
+      <div class="equip-card"><span class="tag">14 · FLATBED</span><h3>Flatbed Team</h3><p>Team-driven flatbed for expedited open-deck loads.</p></div>
+      <div class="equip-card"><span class="tag">15 · HEAVY HAUL</span><h3>Step Deck</h3><p>Taller freight requiring a lowered deck.</p></div>
+      <div class="equip-card"><span class="tag">16 · HEAVY HAUL</span><h3>Removable Gooseneck</h3><p>RGN for heavy equipment and oversized loads.</p></div>
+      <div class="equip-card"><span class="tag">17 · HEAVY HAUL</span><h3>Double Drop</h3><p>Low-clearance freight and tall machinery.</p></div>
+      <div class="equip-card"><span class="tag">18 · SPECIALIZED</span><h3>Conestoga / Chassis</h3><p>Rolling-tarp flatbed and container chassis moves.</p></div>
     </div>
   </div>
 </section>
 
-<!-- WHY IT MATTERS + TOOLS + RESOURCES -->
-<section style="background:var(--black2);border-top:1px solid var(--border)" id="tools">
-  <div style="max-width:1100px;margin:0 auto">
-
-    <!-- PHILOSOPHY -->
-    <div class="reveal" style="text-align:center;margin-bottom:80px">
-      <div class="section-eyebrow">The Information Advantage</div>
-      <h2 class="section-title" style="text-align:center;max-width:700px;margin:0 auto">The operators building wealth<br>and the ones wondering where it went<br><em>have the same loads.</em></h2>
-      <div style="width:36px;height:1px;background:var(--gold);opacity:.4;margin:28px auto"></div>
-      <p style="font-size:15px;color:var(--text2);max-width:580px;margin:0 auto;line-height:1.9;font-weight:300">The difference is not the truck. Not the lane. Not the broker relationship or the miles on the clock. It is knowing your exact numbers before you make a decision — not after. Same market. Same rates. Same diesel prices. Completely different outcomes.</p>
+<section class="drivers" id="drivers">
+  <div class="wrap drivers-grid">
+    <div>
+      <span class="eyebrow">For Owner-Operators &amp; Drivers</span>
+      <h2>Drive with NorthStar.</h2>
+      <p class="lede">We're building our carrier network across every equipment type on this page. If you run your own authority or drive as a 1099 contractor, we want your truck on our board.</p>
+      <ul class="perk-list">
+        <li><span class="dot">✓</span>Consistent freight sourced daily across dry van, reefer, flatbed, and specialized equipment</li>
+        <li><span class="dot">✓</span>Direct dispatch — no runaround, a real person on the load</li>
+        <li><span class="dot">✓</span>Fast, transparent settlements</li>
+        <li><span class="dot">✓</span>Freight matched to your equipment and preferred lanes</li>
+      </ul>
+      <a href="mailto:Tjs@Northstardeliveryservice.com?subject=Owner-Operator%20Application" class="btn btn-amber">Apply To Drive</a>
     </div>
-
-    <!-- TWO TOOLS -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1px">
-
-      <!-- P&L TRACKER -->
-      <div class="reveal rd1" style="background:var(--black);padding:52px 48px">
-        <div style="font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px">For Owner-Operators</div>
-        <div style="font-family:var(--fd);font-size:32px;font-weight:400;color:#F4F1EB;margin-bottom:6px">P&L Tracker</div>
-        <div style="font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px">Know your real numbers on every load</div>
-        <p style="font-size:13px;color:var(--text2);line-height:1.9;font-weight:300;margin-bottom:28px">Diesel prices change weekly. A load that calculated to strong profit three months ago may look completely different today on the exact same gross rate and the exact same miles. The P&L Tracker calculates your true net in real time — after fuel at today's actual price, dispatch percentage, factoring fees, and every cost specific to your operation.</p>
-        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-bottom:32px">
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">01</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">True net on every load</strong>Real numbers after every deduction — before you confirm anything.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">02</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Break-even calculator</strong>The exact minimum rate you need on any load to cover your costs.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">03</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Expense tracking</strong>Log every fuel receipt, toll, and cost by IRS deduction category.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">04</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Weekly P&L report</strong>Your full financial picture every week — ready for your accountant.</div>
-          </div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border2);padding:22px 26px;margin-bottom:16px;position:relative">
-          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
-          <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Monthly Subscription</div>
-          <div style="font-family:var(--fd);font-size:44px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em"><sup style="font-size:20px;color:var(--gold);vertical-align:super">$</sup>9<sub style="font-size:13px;color:var(--text2);font-family:var(--fb);font-weight:300">/month</sub></div>
-          <div style="font-size:11px;color:var(--text3);margin-top:8px;font-family:var(--fm)">Cancel anytime · Instant access</div>
-        </div>
-        <a href="https://buy.stripe.com/3cI5kF2nt9918Vr52T2Fa02" style="display:block;text-align:center;background:var(--gold);color:var(--black);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='var(--gold)'">Get P&L Tracker — $9/month</a>
+    <div class="driver-card">
+      <h3>Owner-Operator Application</h3>
+      <p>Email us your equipment type, home base, and preferred lanes and our dispatch team will follow up with available freight.</p>
+      <div class="form-row">
+        <label>Send Your Info To</label>
+        <input type="email" value="Tjs@Northstardeliveryservice.com" readonly>
       </div>
-
-      <!-- DISPATCH CO-PILOT -->
-      <div class="reveal rd2" style="background:var(--surface);padding:52px 48px;position:relative">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
-        <div style="font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px">For Dispatchers & Brokers</div>
-        <div style="font-family:var(--fd);font-size:32px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Load Intelligence</div>
-        <div style="font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px">Know your numbers before every decision</div>
-        <p style="font-size:13px;color:var(--text2);line-height:1.9;font-weight:300;margin-bottom:28px">Every dispatcher has confirmed a load that looked right and settled wrong. The Load Intelligence eliminates that gap. Before you tender a single load it calculates the true net for your driver — after every deduction — and tells you clearly whether that load is worth running, worth negotiating, or worth walking away from entirely.</p>
-        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-bottom:32px">
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">01</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Load profit analysis</strong>True net for your driver on every load before you confirm anything.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">02</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Market rate intelligence</strong>Know if the rate is above or below market before you respond to a broker.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">03</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Counter-offer generator</strong>The exact number to counter at — backed by the math, not a guess.</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0">
-            <span style="color:var(--gold);font-family:var(--fm);font-size:10px;flex-shrink:0;margin-top:2px">04</span>
-            <div style="font-size:13px;color:var(--text2);line-height:1.7;font-weight:300"><strong style="color:var(--text);font-weight:500;display:block;margin-bottom:2px">Instant verdict</strong>Take it. Negotiate. Walk away. A clear answer every time.</div>
-          </div>
-        </div>
-        <div style="background:var(--black2);border:1px solid var(--border2);padding:22px 26px;margin-bottom:16px;position:relative">
-          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
-          <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Monthly Subscription</div>
-          <div style="font-family:var(--fd);font-size:44px;font-weight:300;color:#F4F1EB;letter-spacing:-.02em"><sup style="font-size:20px;color:var(--gold);vertical-align:super">$</sup>19<sub style="font-size:13px;color:var(--text2);font-family:var(--fb);font-weight:300">/month</sub></div>
-          <div style="font-size:11px;color:var(--text3);margin-top:8px;font-family:var(--fm)">Cancel anytime · Instant access</div>
-        </div>
-        <a href="https://buy.stripe.com/14AcN7fafetlc7Dbrh2Fa07" style="display:block;text-align:center;background:var(--gold);color:var(--black);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='var(--gold)'">Get Load Intelligence — $29/month</a>
-      </div>
+      <a href="mailto:Tjs@Northstardeliveryservice.com?subject=Owner-Operator%20Application&body=Name%3A%0APhone%3A%0AEquipment%20Type%3A%0AHome%20Base%2FPreferred%20Lanes%3A%0ANotes%3A" class="btn btn-amber" style="width:100%; justify-content:center; margin-top:6px;">Email Us To Apply</a>
     </div>
+  </div>
+</section>
 
-    <!-- THIRD PARTY RESOURCES -->
-    <div style="background:var(--black);border:1px solid var(--border);padding:52px 48px;margin-top:1px">
-      <div class="reveal" style="margin-bottom:40px">
-        <div style="font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px">Recommended Third-Party Resources</div>
-        <h3 style="font-family:var(--fd);font-size:28px;font-weight:300;color:#F4F1EB">Tools we trust.<br><em style="color:var(--gold)">Not ours. Worth knowing.</em></h3>
-        <p style="font-size:13px;color:var(--text2);margin-top:14px;line-height:1.8;max-width:560px;font-weight:300">These are not NorthStar products. They are resources we have vetted and believe are genuinely useful for operators in this industry. We may earn a small commission if you purchase through these links — at no additional cost to you.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
-
-        <!-- VIN -->
-        <div class="reveal rd1" style="background:var(--black2);padding:32px 28px">
-          <div style="font-size:22px;margin-bottom:14px">🔍</div>
-          <div style="font-family:var(--fd);font-size:20px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Vehicle History Report</div>
-          <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px">Before you buy any vehicle</div>
-          <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:20px">Accident records. Title history. Odometer at every service interval. Open recalls. Insurance claim history. The full picture before you spend a dollar on any truck, trailer, or work vehicle. In a strong equipment market, knowing what you are buying is not optional.</p>
-          <a href="https://bit.ly/3QHbJqh" target="_blank" rel="noopener" style="font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px">Get Vehicle History Report →</a>
-        </div>
-
-        <!-- MEDICAL COURIER -->
-        <div class="reveal rd2" style="background:var(--black2);padding:32px 28px">
-          <div style="font-size:22px;margin-bottom:14px">🚐</div>
-          <div style="font-family:var(--fd);font-size:20px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Medical Courier Income</div>
-          <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px">For any reliable vehicle</div>
-          <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:20px">Medical courier work is one of the fastest-growing segments in domestic delivery. Hospitals, clinics, and laboratories need reliable drivers for time-sensitive deliveries every day. No CDL required. Runs alongside OTR work or on its own as a standalone income stream.</p>
-          <a href="https://bit.ly/3Re4czl" target="_blank" rel="noopener" style="font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px">Learn About Medical Courier Work →</a>
-        </div>
-
-        <!-- MENTAL PERFORMANCE -->
-        <div class="reveal rd3" style="background:var(--black2);padding:32px 28px">
-          <div style="font-size:22px;margin-bottom:14px">🧠</div>
-          <div style="font-family:var(--fd);font-size:20px;font-weight:400;color:#F4F1EB;margin-bottom:6px">Operator Mental Performance</div>
-          <div style="font-size:11px;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px">Clarity is a performance metric</div>
-          <p style="font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:20px">The decisions that cost operators the most money are not made with bad information. They are made tired. At mile 400 when a broker calls with a load that needs an answer right now — mental sharpness is worth real dollars. Science-backed cognitive support used by serious OTR operators.</p>
-          <a href="https://bit.ly/48B4C90" target="_blank" rel="noopener" style="font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px">Learn More →</a>
-        </div>
-
-      </div>
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Move a load. Book a truck.</h2>
+      <p>Shippers and carriers — reach our dispatch team directly.</p>
     </div>
-
+    <div class="driver-card" style="max-width:640px; margin:0 auto; text-align:center;">
+      <h3>Contact Dispatch</h3>
+      <p>For load requests, capacity, and owner-operator applications — email us directly and our team will respond.</p>
+      <a href="mailto:Tjs@Northstardeliveryservice.com" class="btn btn-amber" style="justify-content:center; margin-top:10px;">Tjs@Northstardeliveryservice.com</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">North<span>Star</span> Solutions</div>
-    <div class="footer-links">
-      <a href="#copilot">Load Intelligence</a>
-      <a href="#coming">Coming Soon</a>
-      <a href="https://tjs-a11y.github.io/sentinel-freightos/sentinel-freightos.html">Platform</a>
-      <a href="https://northstardeliveryservice.com/delivery">Delivery Service</a>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:10px;">
+          <span class="mark">N</span>
+          <span>NorthStar Delivery<span class="sub">Solutions LLC</span></span>
+        </div>
+        <p class="blurb">Licensed freight brokerage covering dry van, reefer, flatbed, specialized, and bulk equipment nationwide. MC 1819020 · USDOT 4572562.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="foot-links">
+          <li><a href="#equipment">Equipment</a></li>
+          <li><a href="#drivers">Drive With Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compliance</h4>
+        <ul class="foot-links">
+          <li>MC 1819020</li>
+          <li>USDOT 4572562</li>
+          <li><a href="https://safer.fmcsa.dot.gov" target="_blank" rel="noopener">Verify on FMCSA SAFER →</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 NorthStar Solutions</div>
+    <div class="bottom-bar">
+      <span>© 2026 NorthStar Delivery Solutions LLC. All rights reserved.</span>
+      <span>MC 1819020 · USDOT 4572562</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-function analyze() {
-  const rate = parseFloat(document.getElementById('d-rate').value) || 0;
-  const miles = parseFloat(document.getElementById('d-miles').value) || 0;
-  const dh = parseFloat(document.getElementById('d-dh').value) || 0;
-  const disp = parseFloat(document.getElementById('d-disp').value) || 15;
-  const fact = parseFloat(document.getElementById('d-fact').value) || 5;
-  const fuel = parseFloat(document.getElementById('d-fuel').value) || 3.89;
-  const el = document.getElementById('demo-result');
-
-  if(!rate || !miles) {
-    el.innerHTML = '<div style="font-size:12px;color:#FF6B6B">Please enter at least a rate and load miles.</div>';
-    el.classList.add('show'); return;
-  }
-
-  const total = miles + dh;
-  const dispAmt = rate * (disp/100);
-  const factAmt = rate * (fact/100);
-  const fuelCost = (total/8) * fuel;
-  const net = rate - dispAmt - factAmt - fuelCost;
-  const netRPM = net / miles;
-  const grossRPM = rate / miles;
-
-  let verdict, vc, tip = '';
-  if(netRPM >= 1.75){ verdict='TAKE IT'; vc='var(--gold)'; }
-  else if(netRPM >= 1.20){ verdict='NEGOTIATE'; vc='#FFB300'; tip=`Counter at $${Math.round(miles*1.85).toLocaleString()} to improve your margin.`; }
-  else { verdict='PASS OR COUNTER'; vc='#FF6B6B'; tip=`Counter at $${Math.round(miles*1.85).toLocaleString()} minimum to make this worth running.`; }
-
-  el.innerHTML = `
-    <div class="rr"><span class="rl">Gross rate</span><span class="rv">$${rate.toLocaleString()} · $${grossRPM.toFixed(2)}/mi</span></div>
-    <div class="rr"><span class="rl">Dispatch (${disp}%)</span><span class="rv b">-$${dispAmt.toFixed(0)}</span></div>
-    <div class="rr"><span class="rl">Factoring (${fact}%)</span><span class="rv b">-$${factAmt.toFixed(0)}</span></div>
-    <div class="rr"><span class="rl">Fuel estimate</span><span class="rv b">-$${fuelCost.toFixed(0)}</span></div>
-    <div class="rr"><span class="rl" style="font-weight:500;color:var(--text)">Net to you</span><span class="rv g" style="font-size:16px">$${net.toFixed(0)} · $${netRPM.toFixed(2)}/mi</span></div>
-    <div class="verdict" style="color:${vc}">${verdict}</div>
-    ${tip?`<div style="font-size:12px;color:var(--text2);margin-top:8px">${tip}</div>`:''}
-    <div style="font-size:11px;color:var(--text3);margin-top:10px;font-family:var(--fm)">DH: ${dh} mi · Total miles: ${total} · Market avg: $2.45/mi</div>`;
-  el.classList.add('show');
-}
-
-document.querySelectorAll('.demo-box input').forEach(i => {
-  i.addEventListener('keydown', e => { if(e.key==='Enter') analyze(); });
-});
-
-function notify(inputId, confirmId) {
-  const v = document.getElementById(inputId).value.trim();
-  if(!v || !v.includes('@')) return;
-  document.getElementById(inputId).value = '';
-  document.getElementById(confirmId).style.display = 'block';
-}
-</script>
 </body>
 </html>
