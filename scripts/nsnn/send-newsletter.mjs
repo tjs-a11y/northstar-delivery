@@ -1,16 +1,20 @@
 import { config, requireKey } from './lib/config.mjs';
-import { escapeHtml, formatDateLong } from './lib/render.mjs';
+import { escapeHtml, formatDateLong, PARTNERS } from './lib/render.mjs';
 
-const AFFILIATE_FOOTER_HTML = `
+function buildPartnersHtml() {
+  const rows = PARTNERS.map(
+    (p) =>
+      `<li style="margin-bottom:6px;"><a href="${escapeHtml(p.href)}" style="color:#3d8bfd;">${escapeHtml(p.name)}</a> — ${escapeHtml(p.blurb)}</li>`
+  ).join('');
+
+  return `
   <hr>
-  <p style="font-size:13px;color:#64748b;">
-    Recommended for owner-operators and carriers:
-    <a href="https://www.summarfinancial.com">Summar Financial</a> (freight factoring) ·
-    <a href="https://www.trucking365.com">Trucking365 TMS</a> ·
-    <a href="https://www.rtsfinancial.com">RTS Fuel Card</a>
-  </p>
+  <p style="font-size:13px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Recommended Partners</p>
+  <ul style="font-size:13px;color:#64748b;padding-left:18px;margin:0 0 10px;">${rows}</ul>
+  <p style="font-size:11px;color:#94a3b8;">NorthStar Delivery Solutions may earn a commission if you sign up through these links, at no extra cost to you. (Placeholder links — swap in the real affiliate URLs before this goes live.)</p>
   <p style="font-size:12px;color:#94a3b8;">NSNN — NorthStar News Network, a production of NorthStar Delivery Solutions LLC.</p>
 `;
+}
 
 function buildEmailHtml(entry) {
   const sourcesList = (entry.sources || [])
@@ -22,7 +26,7 @@ function buildEmailHtml(entry) {
     <p style="font-size:12px;text-transform:uppercase;color:#3d8bfd;">${escapeHtml(formatDateLong(entry.date))}</p>
     <p style="font-size:16px;line-height:1.6;white-space:pre-line;">${escapeHtml(entry.script)}</p>
     ${sourcesList ? `<p style="font-size:12px;color:#94a3b8;">Sources referenced:</p><ul style="font-size:13px;">${sourcesList}</ul>` : ''}
-    ${AFFILIATE_FOOTER_HTML}
+    ${buildPartnersHtml()}
   `;
 }
 

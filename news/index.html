@@ -117,11 +117,40 @@
 
   .nsnn .empty{color:var(--nsnn-paper-dim); font-size:15px; padding:40px 0 80px;}
 
-  .nsnn footer{padding:40px 0 50px; border-top:1px solid var(--nsnn-line); margin-top:20px;}
-  .nsnn footer .aff{font-size:12px; color:var(--nsnn-paper-dim); line-height:1.8;}
-  .nsnn footer .aff a{color:var(--nsnn-blue); text-decoration:none;}
-  .nsnn footer .aff a:hover{text-decoration:underline;}
-  .nsnn footer .bottom{margin-top:22px; font-size:12px; color:var(--nsnn-paper-dim);}
+  .nsnn .partners{padding:20px 0 44px;}
+  .nsnn .partners-head{max-width:560px; margin:0 0 26px;}
+  .nsnn .partners-head h2{font-size:clamp(20px,2.6vw,28px); line-height:1.15; margin:10px 0 0;}
+  .nsnn .partners-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+  }
+  .nsnn .partner-card{
+    display:flex; flex-direction:column; gap:8px;
+    background:var(--nsnn-navy-2);
+    border:1px solid var(--nsnn-line);
+    border-radius:4px;
+    padding:20px 20px 18px;
+    text-decoration:none;
+    color:var(--nsnn-paper);
+    transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .nsnn .partner-card:hover{border-color:var(--nsnn-blue); transform:translateY(-2px);}
+  .nsnn .partner-card .partner-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600;
+    letter-spacing:0.08em; color:var(--nsnn-amber);
+  }
+  .nsnn .partner-card h3{font-size:16px; margin:2px 0 0;}
+  .nsnn .partner-card p{font-size:13px; line-height:1.55; color:var(--nsnn-paper-dim); margin:0; flex-grow:1;}
+  .nsnn .partner-card .partner-cta{font-size:12px; font-weight:700; letter-spacing:0.04em; color:var(--nsnn-blue);}
+  .nsnn .partners-disclosure{font-size:11px; color:var(--nsnn-paper-dim); line-height:1.6; margin:16px 0 0;}
+
+  .nsnn footer{padding:36px 0 50px; border-top:1px solid var(--nsnn-line); margin-top:0;}
+  .nsnn footer .bottom{font-size:12px; color:var(--nsnn-paper-dim);}
+
+  @media (max-width: 700px){
+    .nsnn .partners-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body class="nsnn">
@@ -151,9 +180,36 @@
   
 </section>
 
+
+<section class="wrap partners">
+  <div class="partners-head">
+    <span class="eyebrow">Recommended Partners</span>
+    <h2>Tools our carriers actually use.</h2>
+  </div>
+  <div class="partners-grid">
+    <a class="partner-card" href="#affiliate-link-summar-financial" target="_blank" rel="noopener sponsored">
+      <span class="partner-tag">FACTORING</span>
+      <h3>Summar Financial</h3>
+      <p>Freight factoring built for owner-operators — get paid on your terms, not the shipper’s.</p>
+      <span class="partner-cta">Learn More →</span>
+    </a>
+    <a class="partner-card" href="#affiliate-link-trucking365-tms" target="_blank" rel="noopener sponsored">
+      <span class="partner-tag">DISPATCH &amp; TMS</span>
+      <h3>Trucking365 TMS</h3>
+      <p>Dispatch, invoicing, and load tracking in one system built for small carriers.</p>
+      <span class="partner-cta">Learn More →</span>
+    </a>
+    <a class="partner-card" href="#affiliate-link-rts-fuel-card" target="_blank" rel="noopener sponsored">
+      <span class="partner-tag">FUEL CARD</span>
+      <h3>RTS Fuel Card</h3>
+      <p>Discounted fuel pricing and one card across major truck stop networks nationwide.</p>
+      <span class="partner-cta">Learn More →</span>
+    </a>
+  </div>
+  <p class="partners-disclosure">NorthStar Delivery Solutions may earn a commission if you sign up through these links, at no extra cost to you. (Links above are placeholders — swap in the real affiliate URLs before this goes live.)</p>
+</section>
 <footer>
   <div class="wrap">
-    <p class="aff">Recommended for owner-operators and carriers: <a href="https://www.summarfinancial.com" target="_blank" rel="noopener sponsored">Summar Financial</a> (freight factoring) · <a href="https://www.trucking365.com" target="_blank" rel="noopener sponsored">Trucking365 TMS</a> · <a href="https://www.rtsfinancial.com" target="_blank" rel="noopener sponsored">RTS Fuel Card</a></p>
     <div class="bottom">© 2026 NorthStar Delivery Solutions LLC. NSNN is an independent NorthStar Delivery Solutions production, not affiliated with any broadcast news network.</div>
   </div>
 </footer>
