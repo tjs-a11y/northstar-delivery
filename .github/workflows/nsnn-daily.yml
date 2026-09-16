@@ -1,0 +1,62 @@
+name: NSNN Daily Brief
+
+on:
+  schedule:
+    # ~6am ET. GitHub Actions cron is UTC only, so this drifts by an hour across the
+    # US DST transitions (10:00 UTC = 6am EDT / 5am EST). Adjust if that matters to you.
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run only: fetch headlines + write script, do not publish or send'
+        type: boolean
+        default: false
+      send:
+        description: 'Send the newsletter via Beehiiv (ignored if dry_run is true)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  nsnn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Run NSNN pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo "Dry run — fetch + script only, no publish/send."
+            node scripts/nsnn/run-daily.mjs
+          elif [ "${{ github.event.inputs.send }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            node scripts/nsnn/run-daily.mjs --publish --send
+          else
+            node scripts/nsnn/run-daily.mjs --publish
+          fi
+
+      - name: Commit updated news page
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "nsnn-bot"
+          git config user.email "nsnn-bot@users.noreply.github.com"
+          git add news/
+          if ! git diff --cached --quiet; then
+            git commit -m "NSNN daily brief: $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to commit."
+          fi

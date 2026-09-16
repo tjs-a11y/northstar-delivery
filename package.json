@@ -1,0 +1,19 @@
+{
+  "name": "nsnn-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NSNN (NorthStar News Network) daily freight brief pipeline: RSS fetch, Claude-written script, static news page, Beehiiv newsletter.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "nsnn": "node scripts/nsnn/run-daily.mjs",
+    "nsnn:publish": "node scripts/nsnn/run-daily.mjs --publish",
+    "nsnn:send": "node scripts/nsnn/run-daily.mjs --publish --send"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "rss-parser": "^3.13.0"
+  }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSNN Archive — NorthStar News Network</title>
+<meta name="description" content="Archive of past NSNN daily freight briefs from NorthStar Delivery Solutions LLC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nsnn-navy:#0b1520;
+    --nsnn-navy-2:#101f2e;
+    --nsnn-line:#1c2c3d;
+    --nsnn-blue:#3d8bfd;
+    --nsnn-amber:#f2994a;
+    --nsnn-paper:#eef2f6;
+    --nsnn-paper-dim:#9aa9ba;
+  }
+  *{box-sizing:border-box;}
+  body.nsnn{
+    margin:0;
+    background:var(--nsnn-navy);
+    color:var(--nsnn-paper);
+    font-family:'Public Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .nsnn h1,.nsnn h2,.nsnn h3{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+  .nsnn a{color:inherit;}
+  .nsnn .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  .nsnn header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,21,32,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--nsnn-line);
+  }
+  .nsnn nav.wrap{display:flex; align-items:center; justify-content:space-between; height:70px;}
+  .nsnn .logo{display:flex; align-items:center; gap:10px; text-decoration:none; font-family:'Oswald',sans-serif; font-size:18px; font-weight:600; letter-spacing:0.04em;}
+  .nsnn .logo .mark{
+    width:32px; height:32px; border:2px solid var(--nsnn-blue); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--nsnn-blue);
+  }
+  .nsnn .logo .sub{display:block; font-family:'Public Sans',sans-serif; font-size:9px; letter-spacing:0.14em; color:var(--nsnn-paper-dim); text-transform:uppercase; font-weight:600;}
+  .nsnn nav ul{list-style:none; display:flex; gap:26px; margin:0; padding:0;}
+  .nsnn nav ul a{font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; text-decoration:none; color:var(--nsnn-paper-dim);}
+  .nsnn nav ul a:hover{color:var(--nsnn-blue);}
+
+  .nsnn .ticker{
+    border-bottom:1px solid var(--nsnn-line);
+    background:var(--nsnn-navy-2);
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+  }
+  .nsnn .ticker-track{
+    display:inline-block;
+    padding:9px 0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--nsnn-amber);
+    animation:nsnn-scroll 32s linear infinite;
+  }
+  .nsnn .ticker-track span{padding:0 28px; color:var(--nsnn-paper-dim);}
+  .nsnn .ticker-track span.hl{color:var(--nsnn-blue); font-weight:600;}
+  @keyframes nsnn-scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .nsnn .ticker-track{animation:none;}
+  }
+
+  .nsnn .page-head{padding:48px 0 8px;}
+  .nsnn .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--nsnn-blue); margin-bottom:14px;
+  }
+  .nsnn .eyebrow::before{content:''; width:22px; height:2px; background:var(--nsnn-blue);}
+  .nsnn .page-head h1{font-size:clamp(26px,4vw,38px); line-height:1.1;}
+  .nsnn .page-head p.lede{color:var(--nsnn-paper-dim); font-size:15px; line-height:1.6; margin:14px 0 0; max-width:600px;}
+
+  .nsnn .brief{
+    background:var(--nsnn-navy-2);
+    border:1px solid var(--nsnn-line);
+    border-radius:4px;
+    padding:26px 28px;
+    margin:22px 0;
+  }
+  .nsnn .brief .date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--nsnn-blue);
+  }
+  .nsnn .brief h2{font-size:20px; margin:8px 0 14px; line-height:1.25;}
+  .nsnn .brief .script{font-size:15px; line-height:1.7; color:var(--nsnn-paper); white-space:pre-line;}
+  .nsnn .brief .sources{margin-top:18px; padding-top:14px; border-top:1px dashed var(--nsnn-line);}
+  .nsnn .brief .sources .k{font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--nsnn-paper-dim); font-weight:700; display:block; margin-bottom:8px;}
+  .nsnn .brief .sources ul{list-style:none; margin:0; padding:0; display:grid; gap:6px;}
+  .nsnn .brief .sources li{font-size:13px;}
+  .nsnn .brief .sources a{color:var(--nsnn-paper-dim); text-decoration:none;}
+  .nsnn .brief .sources a:hover{color:var(--nsnn-blue);}
+  .nsnn .brief .sources .src-tag{color:var(--nsnn-amber); font-family:'IBM Plex Mono',monospace; font-size:11px; margin-right:6px;}
+
+  .nsnn .archive-link{margin:36px 0 60px; text-align:center;}
+  .nsnn .archive-link a{
+    display:inline-block; padding:11px 22px; border:1.5px solid var(--nsnn-paper-dim); border-radius:2px;
+    font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; text-decoration:none;
+  }
+  .nsnn .archive-link a:hover{border-color:var(--nsnn-blue); color:var(--nsnn-blue);}
+
+  .nsnn .empty{color:var(--nsnn-paper-dim); font-size:15px; padding:40px 0 80px;}
+
+  .nsnn footer{padding:40px 0 50px; border-top:1px solid var(--nsnn-line); margin-top:20px;}
+  .nsnn footer .aff{font-size:12px; color:var(--nsnn-paper-dim); line-height:1.8;}
+  .nsnn footer .aff a{color:var(--nsnn-blue); text-decoration:none;}
+  .nsnn footer .aff a:hover{text-decoration:underline;}
+  .nsnn footer .bottom{margin-top:22px; font-size:12px; color:var(--nsnn-paper-dim);}
+</style>
+</head>
+<body class="nsnn">
+
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">
+      <span class="mark">N</span>
+      <span>NSNN<span class="sub">NorthStar News Network</span></span>
+    </a>
+    <ul>
+      <li><a href="index.html">Today</a></li>
+      <li><a href="archive.html" class="active">Archive</a></li>
+      <li><a href="../index.html">Main Site</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">NSNN Archive</span>
+    <h1>Past Briefs</h1>
+    <p class="lede">Every previous NSNN daily brief, newest first.</p>
+  </div>
+  <p class="empty">Nothing archived yet — recent briefs live on the <a href="index.html" style="color:var(--nsnn-blue);">Today</a> page until they roll off.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="aff">Recommended for owner-operators and carriers: <a href="https://www.summarfinancial.com" target="_blank" rel="noopener sponsored">Summar Financial</a> (freight factoring) · <a href="https://www.trucking365.com" target="_blank" rel="noopener sponsored">Trucking365 TMS</a> · <a href="https://www.rtsfinancial.com" target="_blank" rel="noopener sponsored">RTS Fuel Card</a></p>
+    <div class="bottom">© 2026 NorthStar Delivery Solutions LLC. NSNN is an independent NorthStar Delivery Solutions production, not affiliated with any broadcast news network.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "_comment": "RSS sources for the NSNN daily fetch. URLs below are the standard/documented feed addresses for each publisher but were NOT verified against a live network at build time (this build ran in a sandbox with no internet egress). Confirm each URL resolves and returns XML before relying on it, and swap in a different feed for 'tariff-trade' if you have one you prefer.",
+  "feeds": [
+    {
+      "name": "FreightWaves",
+      "url": "https://www.freightwaves.com/news/feed",
+      "category": "freight"
+    },
+    {
+      "name": "Supply Chain Dive",
+      "url": "https://www.supplychaindive.com/feeds/news/",
+      "category": "tariff-trade"
+    }
+  ]
+}
