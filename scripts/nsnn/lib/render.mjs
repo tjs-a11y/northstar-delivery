@@ -160,6 +160,11 @@ const STYLE = `
   @media (max-width: 700px){
     .nsnn .partners-grid{grid-template-columns:1fr;}
   }
+  @media (max-width: 480px){
+    .nsnn nav.wrap{flex-wrap:wrap; height:auto; padding-top:14px; padding-bottom:14px; row-gap:10px;}
+    .nsnn nav ul{gap:18px; width:100%; justify-content:flex-start;}
+    .nsnn .logo .sub{display:none;}
+  }
 `;
 
 // Placeholder affiliate links — swap each "#affiliate-link-*" for the real tracked
@@ -269,7 +274,8 @@ function briefBlock(entry) {
 </div>`;
 }
 
-function pageShell({ title, description, active, body }) {
+function pageShell({ title, description, active, body, path }) {
+  const url = `https://northstardeliveryservice.com/${path}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,6 +283,24 @@ function pageShell({ title, description, active, body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${url}">
+<meta property="og:site_name" content="NorthStar Delivery Solutions">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:image" content="https://northstardeliveryservice.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escapeHtml(title)}">
+<meta name="twitter:description" content="${escapeHtml(description)}">
+<meta name="twitter:image" content="https://northstardeliveryservice.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -316,6 +340,7 @@ ${footer()}`;
     description: 'NSNN (NorthStar News Network) — a daily, original freight industry brief from NorthStar Delivery Solutions LLC covering rates, diesel prices, and trade news.',
     active: 'today',
     body,
+    path: 'news/index.html',
   });
 }
 
@@ -343,5 +368,6 @@ ${footer()}`;
     description: 'Archive of past NSNN daily freight briefs from NorthStar Delivery Solutions LLC.',
     active: 'archive',
     body,
+    path: 'news/archive.html',
   });
 }

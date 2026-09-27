@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | NorthStar Delivery Solutions</title>
+<meta name="description" content="The page you're looking for doesn't exist. Find equipment info, rate tools, or dispatch contact on NorthStar Delivery Solutions.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt:#0E151C;
+    --asphalt-2:#16212B;
+    --steel:#1F3448;
+    --steel-line:#2C4257;
+    --amber:#F2A93B;
+    --paper:#F4F1E9;
+    --paper-dim:#C9C7BE;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 78px, rgba(242,169,59,0.05) 78px, rgba(242,169,59,0.05) 80px),
+      linear-gradient(180deg, var(--asphalt) 0%, var(--asphalt-2) 100%);
+    color:var(--paper);
+    font-family:'Public Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:24px;
+  }
+  .wrap{max-width:560px; width:100%; text-align:center;}
+  .logo{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Oswald', sans-serif; font-size:17px; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.03em; text-decoration:none; color:var(--paper);
+    margin-bottom:44px;
+  }
+  .logo .mark{
+    width:32px; height:32px; border:2px solid var(--amber); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700; color:var(--amber); flex-shrink:0;
+  }
+  .code{
+    font-family:'IBM Plex Mono', monospace; font-size:14px; font-weight:600;
+    letter-spacing:0.16em; color:var(--amber); margin-bottom:18px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.01em;
+    font-size:clamp(30px, 5vw, 44px); line-height:1.1; margin:0 0 16px; font-weight:700;
+  }
+  p.lede{font-size:16px; line-height:1.6; color:var(--paper-dim); margin:0 0 40px;}
+  .links{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:44px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 22px;
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;
+    text-decoration:none; border-radius:var(--radius);
+    transition:transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    white-space:nowrap;
+  }
+  .btn-amber{background:var(--amber); color:var(--asphalt);}
+  .btn-amber:hover{background:#ffbf5c; transform:translateY(-1px);}
+  .btn-outline{border:1.5px solid var(--paper-dim); color:var(--paper);}
+  .btn-outline:hover{border-color:var(--amber); color:var(--amber);}
+  .placard{
+    background:var(--paper); color:var(--asphalt); border-radius:4px;
+    padding:16px 22px; font-size:12px; letter-spacing:0.03em; line-height:1.6;
+    display:inline-block;
+  }
+  .placard b{font-family:'IBM Plex Mono', monospace;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="/" class="logo">
+    <span class="mark">N</span>
+    <span>NorthStar Delivery Solutions</span>
+  </a>
+  <div class="code">404 · ROUTE NOT FOUND</div>
+  <h1>Wrong turn.</h1>
+  <p class="lede">That page doesn't exist or has moved. Here's how to get back on route.</p>
+  <div class="links">
+    <a href="/" class="btn btn-amber">Back To Home</a>
+    <a href="/rate-tools.html" class="btn btn-outline">Rate Tools</a>
+    <a href="/news/index.html" class="btn btn-outline">NSNN News</a>
+    <a href="/#contact" class="btn btn-outline">Contact Dispatch</a>
+  </div>
+  <div class="placard">MC <b>1819020</b> &nbsp;·&nbsp; USDOT <b>4572562</b></div>
+</div>
+</body>
+</html>

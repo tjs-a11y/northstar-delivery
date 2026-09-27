@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NorthStar Delivery Solutions | Freight Brokerage — All Equipment Types</title>
 <meta name="description" content="NorthStar Delivery Solutions LLC — licensed freight brokerage moving Reefer, Van, Flatbed, Power Only, Tanker, Hopper Bottom, Auto, RGN, Conestoga, and more. Owner-operators and drivers welcome.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://northstardeliveryservice.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northstardeliveryservice.com/">
+<meta property="og:site_name" content="NorthStar Delivery Solutions">
+<meta property="og:title" content="NorthStar Delivery Solutions | Freight Brokerage — All Equipment Types">
+<meta property="og:description" content="Licensed freight brokerage moving Reefer, Van, Flatbed, Power Only, Tanker, Hopper Bottom, Auto, RGN, Conestoga, and more. Owner-operators and drivers welcome.">
+<meta property="og:image" content="https://northstardeliveryservice.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NorthStar Delivery Solutions | Freight Brokerage — All Equipment Types">
+<meta name="twitter:description" content="Licensed freight brokerage moving Reefer, Van, Flatbed, Power Only, Tanker, Hopper Bottom, Auto, RGN, Conestoga, and more. Owner-operators and drivers welcome.">
+<meta name="twitter:image" content="https://northstardeliveryservice.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -53,6 +71,7 @@
   nav.wrap{
     display:flex; align-items:center; justify-content:space-between;
     height:74px;
+    position:relative;
   }
   .logo{
     display:flex; align-items:center; gap:10px;
@@ -92,7 +111,7 @@
   .btn-amber:hover{background:#ffbf5c; transform:translateY(-1px);}
   .btn-outline{border:1.5px solid var(--paper-dim); color:var(--paper);}
   .btn-outline:hover{border-color:var(--amber); color:var(--amber);}
-  .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:26px; cursor:pointer;}
+  .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:24px; line-height:1; padding:10px; margin:-10px; cursor:pointer;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -184,7 +203,7 @@
   /* ---------- EQUIPMENT GRID ---------- */
   .equip-grid{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(4, minmax(0,1fr));
     gap:14px;
   }
   .equip-card{
@@ -292,16 +311,37 @@
   @media (max-width: 940px){
     .hero-grid{grid-template-columns:1fr;}
     .placard{transform:none; max-width:420px;}
-    .equip-grid{grid-template-columns:repeat(2,1fr);}
+    .equip-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
     .drivers-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr; gap:32px;}
-    nav ul{display:none;}
+    nav ul{
+      display:none;
+      position:absolute;
+      top:100%; left:0; right:0;
+      flex-direction:column;
+      gap:0;
+      background:var(--asphalt);
+      border-bottom:1px solid var(--steel-line);
+      box-shadow:0 16px 28px -12px rgba(0,0,0,0.55);
+    }
+    nav.open ul{display:flex;}
+    nav ul li{width:100%;}
+    nav ul a{
+      display:block;
+      padding:16px 24px;
+      border-bottom:1px solid var(--steel-line);
+    }
     .menu-toggle{display:block;}
   }
   @media (max-width: 560px){
-    .equip-grid{grid-template-columns:1fr 1fr;}
+    .equip-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
     .form-row.two{grid-template-columns:1fr;}
     .strip .wrap{gap:20px;}
+    .nav-links{gap:14px;}
+    nav.wrap .logo{font-size:15px; gap:8px;}
+    nav.wrap .logo .mark{width:28px; height:28px; font-size:12px;}
+    nav.wrap .logo .sub{display:none;}
+    .nav-links .btn-amber{padding:9px 14px; font-size:12px;}
   }
 </style>
 </head>
@@ -322,6 +362,7 @@
     </ul>
     <div class="nav-links">
       <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener" class="btn btn-amber">Get A Quote</a>
+      <button type="button" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
     </div>
   </nav>
 </header>
@@ -479,5 +520,23 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.menu-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var nav = btn.closest('nav');
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? '✕' : '☰';
+    });
+  });
+  document.querySelectorAll('nav ul a').forEach(function(link){
+    link.addEventListener('click', function(){
+      var nav = link.closest('nav');
+      nav.classList.remove('open');
+      var btn = nav.querySelector('.menu-toggle');
+      if (btn){ btn.setAttribute('aria-expanded', 'false'); btn.textContent = '☰'; }
+    });
+  });
+</script>
 </body>
 </html>
