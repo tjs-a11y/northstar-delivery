@@ -165,6 +165,12 @@ const STYLE = `
 // Placeholder affiliate links — swap each "#affiliate-link-*" for the real tracked
 // affiliate URL before launch. Kept as data so both the web page and the newsletter
 // email render the same copy from one place.
+// Free tools for carriers (Quickwell). Not affiliate links; ?ref= tells Quickwell which channel sent the visit.
+export const FREE_TOOLS = [
+  { name: 'Rate Con Checker', href: 'https://quickwell.app/rate-con-checker/?ref=nsnn-news', blurb: 'Paste a rate confirmation and see risky fine print (fines, TONU, detention, setoff) before you sign.' },
+  { name: 'New Entrant Audit Self-Check', href: 'https://quickwell.app/audit-kit/?ref=nsnn-news', blurb: 'New authority? Check yourself against the 16 automatic-fail rules of the FMCSA safety audit.' },
+];
+
 export const PARTNERS = [
   {
     tag: 'FACTORING',
@@ -243,8 +249,20 @@ function partnersSection() {
 </section>`;
 }
 
+function freeToolsSection() {
+  const items = FREE_TOOLS.map(
+    (t) => `<li><a href="${escapeHtml(t.href)}" rel="noopener">${escapeHtml(t.name)}</a> — ${escapeHtml(t.blurb)}</li>`
+  ).join('');
+  return `
+<section class="wrap" style="margin-top:28px;">
+  <h2 style="font-size:1.1rem;">Free tools for carriers</h2>
+  <ul>${items}</ul>
+</section>`;
+}
+
 function footer() {
   return `
+${freeToolsSection()}
 ${partnersSection()}
 <footer>
   <div class="wrap">
