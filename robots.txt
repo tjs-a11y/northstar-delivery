@@ -1,0 +1,9 @@
+# Public pages are listed in the sitemap. Internal tools stay out of search results.
+User-agent: *
+Disallow: /dispatch.html
+Disallow: /driver-portal.html
+Disallow: /driver-payout-setup.html
+Disallow: /grabber.html
+Disallow: /scripts/
+
+Sitemap: https://northstardeliveryservice.com/sitemap.xml
