@@ -1,5 +1,5 @@
 import { config, requireKey } from './lib/config.mjs';
-import { escapeHtml, formatDateLong, PARTNERS } from './lib/render.mjs';
+import { escapeHtml, formatDateLong, PARTNERS, FREE_TOOLS } from './lib/render.mjs';
 
 function buildPartnersHtml() {
   const rows = PARTNERS.map(
@@ -7,8 +7,15 @@ function buildPartnersHtml() {
       `<li style="margin-bottom:6px;"><a href="${escapeHtml(p.href)}" style="color:#3d8bfd;">${escapeHtml(p.name)}</a> — ${escapeHtml(p.blurb)}</li>`
   ).join('');
 
+  const tools = FREE_TOOLS.map(
+    (t) =>
+      `<li style="margin-bottom:6px;"><a href="${escapeHtml(t.href.replace('ref=nsnn-news', 'ref=nsnn-email'))}" style="color:#3d8bfd;">${escapeHtml(t.name)}</a> — ${escapeHtml(t.blurb)}</li>`
+  ).join('');
+
   return `
   <hr>
+  <p style="font-size:13px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Free tools for carriers</p>
+  <ul style="font-size:13px;color:#64748b;padding-left:18px;margin:0 0 10px;">${tools}</ul>
   <p style="font-size:13px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Recommended Partners</p>
   <ul style="font-size:13px;color:#64748b;padding-left:18px;margin:0 0 10px;">${rows}</ul>
   <p style="font-size:11px;color:#94a3b8;">NorthStar Delivery Solutions may earn a commission if you sign up through these links, at no extra cost to you. (Placeholder links — swap in the real affiliate URLs before this goes live.)</p>
