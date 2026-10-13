@@ -249,6 +249,83 @@ ${'{{CTA}}'}
     ],
     sources: ['broker', 'bond', 'safer'],
   },
+  {
+    slug: 'freight-accessorial-charges',
+    nav: 'Accessorial charges explained',
+    blurb: 'Detention, TONU, layover, lumper, liftgate: what they are and how to avoid them.',
+    title: 'Freight Accessorial Charges Explained: Detention, TONU, Layover | NorthStar',
+    desc: 'Plain-English glossary of truckload accessorial charges (detention, layover, TONU, lumper, liftgate, inside delivery, redelivery, tarps) and how shippers avoid them.',
+    h1: 'Accessorial charges: the extras that change your freight bill.',
+    lede: 'Accessorials are charges for anything beyond a standard pickup and delivery. They are the most common reason a final freight bill is higher than the quote. Here is what each one means, and how to keep it off your invoice.',
+    body: `
+<h2>The common ones</h2>
+<ul>
+<li><strong>Detention</strong>: the truck waits at pickup or delivery beyond the agreed free time. <em>Avoid it:</em> have freight and paperwork ready at the appointment, and tell your receiver the delivery window.</li>
+<li><strong>Layover</strong>: the driver is held overnight or longer because the load can't be picked up or delivered as scheduled. <em>Avoid it:</em> confirm both appointments before booking.</li>
+<li><strong>TONU (truck ordered, not used)</strong>: the truck was dispatched but the load was cancelled or wasn't ready. <em>Avoid it:</em> cancel as early as possible.</li>
+<li><strong>Lumper</strong>: a third-party crew unloads the truck, common at grocery and food warehouses. <em>Avoid surprises:</em> ask the receiver whether a lumper is required and who pays.</li>
+<li><strong>Liftgate</strong>: a powered platform lowers freight to the ground where there is no dock. Request it in advance.</li>
+<li><strong>Inside delivery / residential delivery</strong>: delivery beyond the dock or to a home. Request it in advance.</li>
+<li><strong>Redelivery</strong>: a second delivery attempt after a refused or missed delivery. <em>Avoid it:</em> put the receiver's hours and contact in the order.</li>
+<li><strong>Stop-off</strong>: each extra pickup or delivery stop on a multi-stop load.</li>
+<li><strong>Tarp</strong>, for flatbeds: covering the load for weather protection. It is often priced by tarp size.</li>
+<li><strong>Driver assist</strong>: the driver helps load or unload. Not every carrier allows it.</li>
+</ul>
+${'{{CTA}}'}
+<h2>Get them in writing</h2>
+<p>Before you book, check that the quote or rate confirmation lists what is <strong>included</strong>, the <strong>free time</strong> at each stop, and the <strong>rate for each accessorial</strong> that might apply. Most billing disputes start with something that wasn't written down.</p>
+<p>New to shipping? Start with <a href="how-to-get-a-freight-quote.html">how to get an accurate freight quote</a>, or print the <a href="freight-quote-checklist.html">one-page quote checklist</a>.</p>`,
+    faq: [
+      ['Are accessorial charges negotiable?', 'Rates and free time are agreed before the load moves, so discuss them when you request the quote, not after delivery.'],
+      ['What is the difference between detention and layover?', 'Detention covers hours of waiting at a stop. Layover covers being held a full day or overnight.'],
+    ],
+    sources: [],
+  },
+  {
+    slug: 'freight-quote-checklist',
+    nav: 'Printable quote checklist',
+    blurb: 'One page to fill in before you request any truckload quote. Free to print and share.',
+    title: 'Free Freight Quote Checklist (Printable) | NorthStar',
+    desc: 'A free one-page checklist of everything to have ready before requesting a full-truckload freight quote. Print it, share it, or keep it by the dock.',
+    h1: 'The one-page freight quote checklist.',
+    lede: 'Fill this in before you ask for a quote and your quote will match your load. Print it, keep it at the shipping desk, or share it with your team. Free to use and link to.',
+    body: `
+<h2>Shipment</h2>
+<ul>
+<li>☐ Pickup: company, address, ZIP, dock or no dock, hours</li>
+<li>☐ Delivery: company, address, ZIP, dock or no dock, hours</li>
+<li>☐ Earliest pickup date ____ · Latest delivery date ____</li>
+<li>☐ Appointments needed? Pickup ☐ Delivery ☐</li>
+</ul>
+<h2>Freight</h2>
+<ul>
+<li>☐ Commodity, in plain words: __________</li>
+<li>☐ Total weight ____ lb · heaviest piece ____ lb</li>
+<li>☐ Pallets or pieces: count ____ · size ____ · stackable? Y / N</li>
+<li>☐ Oversize? Length ____ · width ____ · height ____</li>
+<li>☐ Hazardous materials? Y / N (if yes, UN number and class)</li>
+</ul>
+<h2>Equipment</h2>
+<ul>
+<li>☐ Dry van ☐ Reefer (set point ____ °F, continuous / cycle) ☐ Flatbed ☐ Step deck ☐ RGN ☐ Power only ☐ Other ____</li>
+<li>☐ Tarps / straps / chains needed?</li>
+<li>☐ Team drivers needed?</li>
+</ul>
+<h2>Extras</h2>
+<ul>
+<li>☐ Liftgate ☐ Inside delivery ☐ Lumper at delivery ☐ Driver assist ☐ Extra stops (how many ____)</li>
+<li>☐ Free time agreed at each stop: ____ hours</li>
+</ul>
+${'{{CTA}}'}
+<h2>Share this checklist</h2>
+<p>You're welcome to link to this page from your own site, intranet or vendor guide:</p>
+<pre style="white-space:pre-wrap; background:var(--asphalt-2); border:1px solid var(--steel-line); padding:14px; font-size:13px; color:var(--paper);">&lt;a href="https://northstardeliveryservice.com/ship/freight-quote-checklist.html"&gt;Free freight quote checklist&lt;/a&gt;</pre>
+<p>What do the extras mean? See <a href="freight-accessorial-charges.html">accessorial charges explained</a>.</p>`,
+    faq: [
+      ['Can I print this?', 'Yes. Use your browser\'s print option; the page prints on one or two sheets.'],
+    ],
+    sources: [],
+  },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');

@@ -257,6 +257,8 @@ function freeToolsSection() {
 <section class="wrap" style="margin-top:28px;">
   <h2 style="font-size:1.1rem;">Free tools for carriers</h2>
   <ul>${items}</ul>
+  <h2 style="font-size:1.1rem;">Shipping freight?</h2>
+  <p><a href="../ship/" rel="noopener">Shipper guides</a> (reefer, dry van, flatbed, heavy haul, power only) and an <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored">instant truckload quote</a>. Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.</p>
 </section>`;
 }
 
