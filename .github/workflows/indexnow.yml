@@ -1,0 +1,29 @@
+name: IndexNow ping
+# After each push to main, tell IndexNow search engines about every page in sitemap.xml. No account or secret needed.
+on:
+  push:
+    branches: [main]
+    paths: ['sitemap.xml', 'ship/**', 'index.html', 'rate-tools.html', 'news/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for GitHub Pages to publish
+        run: sleep 120
+      - name: Check the key file is live
+        run: |
+          KEY_FILE=$(ls | grep -E '^[0-9a-f]{32}\.txt$' | head -n1)
+          curl -fsS --retry 5 --retry-delay 30 --retry-all-errors "https://northstardeliveryservice.com/${KEY_FILE}" > /dev/null
+      - name: Ping IndexNow
+        run: node scripts/indexnow.mjs
