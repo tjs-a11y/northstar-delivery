@@ -88,6 +88,10 @@ export async function run(opts, { env = process.env, now = new Date(), client, f
   log(`CTAs: ${ctas.map((c) => `${c.product} [${c.signal}]`).join(', ') || 'none'}`);
 
   if (opts.sourcesOnly) {
+    const f = harvest.fuel;
+    if (f) log(`diesel by week: ${f.weeks.map((w) => `${w.period} $${w.value.toFixed(3)}`).join(', ')}`);
+    for (const r of harvest.regulatory) log(`${r.id} ${r.agency} ${r.type} ${r.published}: ${r.title}`);
+    for (const h of harvest.headlines) log(`${h.id} [${h.source}] ${h.published?.slice(0, 16) ?? '?'} ${h.title}`);
     await ghSummary([`### NSNN sources check, ${date}`, '', `- Headlines: ${harvest.headlines.length}`, `- Federal Register documents: ${harvest.regulatory.length}`,
       `- Diesel: ${harvest.fuel ? `${harvest.fuel.formatted.latest} (week of ${harvest.fuel.latest.period}, ${harvest.fuel.formatted.weeklyChange ?? 'no prior week'})` : 'unavailable'}`,
       `- Source errors: ${(harvest.errors ?? []).map((e) => `${e.source}: ${e.message}`).join('; ') || 'none'}`,
