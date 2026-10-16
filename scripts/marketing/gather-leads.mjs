@@ -103,6 +103,8 @@ export async function fetchFeed(feed, { max, parser = new Parser({ timeout: TIME
       link: item.link || '',
       published: item.isoDate || (item.pubDate ? new Date(item.pubDate).toISOString() : null),
       snippet: clean(item.contentSnippet || item.summary || '', 400),
+      categories: (item.categories ?? []).map((c) => clean(typeof c === 'string' ? c : c?._ ?? c?.name ?? '', 60)).filter(Boolean).slice(0, 8),
+      creator: clean(item.creator || item.author || '', 80),
     }))
     .filter((i) => i.title && /^https?:\/\//.test(i.link));
 }
