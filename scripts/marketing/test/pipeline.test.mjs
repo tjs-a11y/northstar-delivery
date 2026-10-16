@@ -13,7 +13,7 @@ import { writeBrief, buildUserPrompt, BriefWriteError } from '../lib/writer.mjs'
 import { postPayload, createPost } from '../lib/beehiiv.mjs';
 import { updateSitemap } from '../lib/site.mjs';
 import { renderEmailHtml, renderWebPage, renderMarkdown } from '../lib/render-brief.mjs';
-import { summarizeFuel } from '../gather-leads.mjs';
+import { summarizeFuel, freshOnly } from '../gather-leads.mjs';
 import { commitAndPush } from '../lib/git.mjs';
 import { run, parseArgs } from '../pipeline.mjs';
 
@@ -288,4 +288,14 @@ test('pipeline: the fact-check rewrite can rescue a draft', async () => {
   const r = await run({ ...parseArgs([`--fixture=${FIXTURE}`]), root }, { env: {}, now: NOW, client: fakeClient(bad, await load('brief-good.json')) });
   assert.equal(r.code, 0);
   await rm(root, { recursive: true });
+});
+
+test('harvest: stale and undated feed items are dropped (feeds resurface years-old stories)', () => {
+  const items = [
+    { title: 'today', published: '2026-10-16T08:00:00.000Z' },
+    { title: 'last week', published: '2026-10-10T08:00:00.000Z' },
+    { title: '2022', published: '2022-05-12T15:46:00.000Z' },
+    { title: 'undated', published: null },
+  ];
+  assert.deepEqual(freshOnly(items, { now: NOW, maxAgeDays: 7 }).map((i) => i.title), ['today', 'last week']);
 });

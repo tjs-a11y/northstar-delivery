@@ -13,7 +13,9 @@ export function loadConfig(env = process.env) {
     beehiivPublicationId: env.BEEHIIV_PUBLICATION_ID || '',
     // Local send time for scheduled Beehiiv posts (America/Chicago).
     sendTime: /^\d{2}:\d{2}$/.test(env.NSNN_SEND_TIME || '') ? env.NSNN_SEND_TIME : '06:30',
-    maxHeadlinesPerFeed: num(env.NSNN_MAX_HEADLINES_PER_FEED, 8),
+    maxHeadlinesPerFeed: num(env.NSNN_MAX_HEADLINES_PER_FEED, 20),
+    // Feeds sometimes resurface years-old stories; anything older than this (or undated) is dropped.
+    maxHeadlineAgeDays: num(env.NSNN_MAX_HEADLINE_AGE_DAYS, 7),
     recentEntriesOnIndex: num(env.NSNN_RECENT_ENTRIES, 10),
     thresholds: {
       // Week-over-week rise in the EIA U.S. diesel average that counts as a spike, in cents per gallon.

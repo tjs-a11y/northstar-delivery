@@ -131,6 +131,16 @@ export async function fetchFederalRegister({ agency, label, since, term, types, 
     .filter((d) => d.title && /^https:\/\/www\.federalregister\.gov\//.test(d.link));
 }
 
+// Keeps items published within maxAgeDays of now (allowing a day of clock skew ahead).
+export function freshOnly(items, { now, maxAgeDays }) {
+  return items.filter((h) => {
+    const t = Date.parse(h.published ?? '');
+    if (!Number.isFinite(t)) return false;
+    const ageDays = (now.getTime() - t) / 864e5;
+    return ageDays <= maxAgeDays && ageDays >= -1;
+  });
+}
+
 // Collects everything. Each source fails independently.
 export async function gather({ env = process.env, now = new Date(), fetchImpl = fetch, parser } = {}) {
   const cfg = loadConfig(env);
@@ -158,7 +168,7 @@ export async function gather({ env = process.env, now = new Date(), fetchImpl = 
   ]);
 
   const seen = new Set();
-  const headlines = feedItems.flat()
+  const headlines = freshOnly(feedItems.flat(), { now, maxAgeDays: cfg.maxHeadlineAgeDays })
     .filter((h) => (seen.has(h.link) ? false : seen.add(h.link)))
     .sort((a, b) => String(b.published ?? '').localeCompare(String(a.published ?? '')))
     .map((h, i) => ({ id: `H${i + 1}`, ...h }));

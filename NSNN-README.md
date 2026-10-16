@@ -73,6 +73,7 @@ second Beehiiv post. `--force` rewrites the brief.
 `NSNN_SEND_TIME` = local send time in America/Chicago, default `06:30`.
 
 **Optional env**: `NSNN_MODEL` (default `claude-opus-5-5`), `NSNN_EFFORT` (default `medium`),
+`NSNN_MAX_HEADLINES_PER_FEED` (20), `NSNN_MAX_HEADLINE_AGE_DAYS` (7),
 `NSNN_FUEL_SPIKE_WEEKLY_CENTS` (5), `NSNN_FUEL_SPIKE_4WK_CENTS` (12), `NSNN_FRAUD_MIN_HEADLINES` (2),
 `NSNN_FRAUD_LOOKBACK_HOURS` (72), `NSNN_FMCSA_LOOKBACK_DAYS` (7), `NSNN_TAX_LOOKBACK_DAYS` (14).
 
