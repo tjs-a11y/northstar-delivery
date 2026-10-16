@@ -80,6 +80,7 @@ export async function run(opts, { env = process.env, now = new Date(), client, f
   const { date } = harvest;
   log(`${date}: ${harvest.headlines.length} headlines, ${harvest.regulatory.length} Federal Register documents, diesel ${harvest.fuel ? harvest.fuel.formatted.latest : 'unavailable'}`);
   for (const e of harvest.errors ?? []) warn(`source failed: ${e.source}: ${e.message}`);
+  for (const s of harvest.skipped ?? []) log(`skipped non-news item (${s.reason}): [${s.source}] ${s.title}`);
 
   // 2. Signals and CTAs
   const signals = detectSignals(harvest, { thresholds: cfg.thresholds, now });

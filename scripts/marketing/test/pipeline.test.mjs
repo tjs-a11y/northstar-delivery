@@ -13,7 +13,7 @@ import { writeBrief, buildUserPrompt, BriefWriteError } from '../lib/writer.mjs'
 import { postPayload, createPost } from '../lib/beehiiv.mjs';
 import { updateSitemap } from '../lib/site.mjs';
 import { renderEmailHtml, renderWebPage, renderMarkdown } from '../lib/render-brief.mjs';
-import { summarizeFuel, freshOnly } from '../gather-leads.mjs';
+import { summarizeFuel, freshOnly, isNonNews } from '../gather-leads.mjs';
 import { commitAndPush } from '../lib/git.mjs';
 import { run, parseArgs } from '../pipeline.mjs';
 
@@ -346,4 +346,20 @@ test('fact check: sections must be bullets', async () => {
   const b = await load('brief-good.json');
   b.sections[0] = { heading: 'x', body: 'A paragraph instead of bullets.', source_ids: ['H1'] };
   assert.ok(checkBrief(b, await load('harvest-friday.json')).problems.some((p) => p.includes('bullets')));
+});
+
+test('harvest: sponsored, podcast and video items are dropped by their feed tags', () => {
+  const live = [ // tags as they appeared in the FreightWaves feed on 2026-10-16
+    { title: 'Freight Visibility Gets a Second Set of Eyes', categories: ['Media', 'Podcast', 'Sponsored Insights', 'WHAT THE TRUCK?!?'] },
+    { title: 'How AI Agents Boost Fleet Safety & Efficiency by 30%', categories: ['FreightWaves Today', 'FreightWaves TV'] },
+    { title: 'Is Your Trailer Leasing EXPOSURE Covered?', categories: ['FreightWaves Today', 'FreightWaves TV'] },
+    { title: 'Sponsored: Fuel cards compared', categories: [] },
+  ];
+  for (const item of live) assert.ok(isNonNews(item), item.title);
+  const news = [
+    { title: 'Jury hits Wyoming logistics broker with $9.4M fraud verdict', categories: ['Legal issues', 'News', 'Top Stories'] },
+    { title: 'California diesel prices remain above $8 per gallon', categories: [] },
+    { title: 'Partner carriers report delays', categories: ['News'] },
+  ];
+  for (const item of news) assert.ok(!isNonNews(item), item.title);
 });

@@ -24,7 +24,7 @@ gather-leads.mjs  ──>  signals.mjs  ──>  writer.mjs (Claude)  ──>  f
 
 | Path | Purpose |
 |---|---|
-| `scripts/marketing/gather-leads.mjs` | Harvester. EIA Open Data API v2 (weekly U.S. diesel), RSS feeds from `scripts/nsnn/sources.json`, Federal Register API (FMCSA rules; IRS documents about 1099s). No HTML scraping and no personal data. A failing source is logged and skipped. |
+| `scripts/marketing/gather-leads.mjs` | Harvester. Drops sponsored, podcast and video items by their feed tags (e.g. FreightWaves "Sponsored Insights", "FreightWaves TV") and items older than 7 days. EIA Open Data API v2 (weekly U.S. diesel), RSS feeds from `scripts/nsnn/sources.json`, Federal Register API (FMCSA rules; IRS documents about 1099s). No HTML scraping and no personal data. A failing source is logged and skipped. |
 | `scripts/marketing/lib/signals.mjs` | Deterministic rules that decide which CTAs run. Thresholds are env-configurable (below). |
 | `scripts/marketing/lib/ctas.mjs` | CTA catalog and the injection loop. |
 | `scripts/marketing/lib/writer.mjs` | Claude call (Opus 5.5, structured JSON output, server-side refusal fallback). Source text is passed as escaped, id-tagged data; the model is told to write no links or promotions. |

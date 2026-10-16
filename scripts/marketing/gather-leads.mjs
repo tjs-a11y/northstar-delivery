@@ -133,6 +133,15 @@ export async function fetchFederalRegister({ agency, label, since, term, types, 
     .filter((d) => d.title && /^https:\/\/www\.federalregister\.gov\//.test(d.link));
 }
 
+// Publisher labels for paid or non-article items. FreightWaves tags sponsored pieces "Sponsored Insights"
+// and its video segments "FreightWaves TV" (seen in the live feed, 2026-10-16). These are never news.
+export const NON_NEWS_TAG_RE = /\b(sponsor\w*|partner content|brand(?:ed)? content|paid (?:post|content)|advertorial|press release|webinar|podcast|freightwaves tv)\b/i;
+const NON_NEWS_TITLE_RE = /^\s*(sponsored|advertorial|partner content|paid post)\b|\[(sponsored|ad)\]/i;
+
+export function isNonNews(item) {
+  return (item.categories ?? []).some((c) => NON_NEWS_TAG_RE.test(c)) || NON_NEWS_TITLE_RE.test(item.title ?? '');
+}
+
 // Keeps items published within maxAgeDays of now (allowing a day of clock skew ahead).
 export function freshOnly(items, { now, maxAgeDays }) {
   return items.filter((h) => {
@@ -170,13 +179,16 @@ export async function gather({ env = process.env, now = new Date(), fetchImpl = 
   ]);
 
   const seen = new Set();
-  const headlines = freshOnly(feedItems.flat(), { now, maxAgeDays: cfg.maxHeadlineAgeDays })
+  const all = feedItems.flat();
+  const nonNews = all.filter(isNonNews);
+  const headlines = freshOnly(all.filter((h) => !isNonNews(h)), { now, maxAgeDays: cfg.maxHeadlineAgeDays })
     .filter((h) => (seen.has(h.link) ? false : seen.add(h.link)))
     .sort((a, b) => String(b.published ?? '').localeCompare(String(a.published ?? '')))
     .map((h, i) => ({ id: `H${i + 1}`, ...h }));
   const regulatory = [...fmcsa, ...irs].map((d, i) => ({ id: `R${i + 1}`, ...d }));
 
-  return { generatedAt: now.toISOString(), date, timezone: 'America/Chicago', fuel, headlines, regulatory, errors };
+  const skipped = nonNews.map((h) => ({ source: h.source, title: h.title, reason: (h.categories ?? []).find((c) => NON_NEWS_TAG_RE.test(c)) ?? 'title' }));
+  return { generatedAt: now.toISOString(), date, timezone: 'America/Chicago', fuel, headlines, regulatory, skipped, errors };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
