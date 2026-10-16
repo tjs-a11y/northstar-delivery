@@ -48,12 +48,14 @@ export function checkBrief(brief, harvest) {
 
   const ids = new Set([...(harvest.fuel ? [harvest.fuel.id] : []), ...harvest.headlines.map((h) => h.id), ...harvest.regulatory.map((r) => r.id)]);
   sections.forEach((s, i) => {
-    if (!s?.heading || !s?.body) problems.push(`section ${i + 1} is missing a heading or body`);
+    if (!s?.heading) problems.push(`section ${i + 1} is missing a heading`);
+    if (!Array.isArray(s?.bullets) || s.bullets.length < 1 || s.bullets.length > 5) problems.push(`section ${i + 1} has ${s?.bullets?.length ?? 0} bullets (expected 2 to 4)`);
+    for (const [j, t] of (s?.bullets ?? []).entries()) if (String(t).length > 220) problems.push(`section ${i + 1} bullet ${j + 1} is too long (${String(t).length} characters)`);
     if (!Array.isArray(s?.source_ids) || s.source_ids.length === 0) problems.push(`section ${i + 1} cites no sources`);
     for (const id of s?.source_ids ?? []) if (!ids.has(id)) problems.push(`section ${i + 1} cites unknown source "${id}"`);
   });
 
-  const texts = [brief?.subject, brief?.headline, brief?.dek, brief?.lede, brief?.seo_description, ...sections.flatMap((s) => [s?.heading, s?.body])];
+  const texts = [brief?.subject, brief?.headline, brief?.dek, brief?.lede, brief?.seo_description, ...sections.flatMap((s) => [s?.heading, ...(s?.bullets ?? [])])];
   const allowed = allowedNumbers(harvest);
   const unknown = new Set();
   for (const t of texts) {

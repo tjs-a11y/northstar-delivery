@@ -12,7 +12,7 @@ gather-leads.mjs  ──>  signals.mjs  ──>  writer.mjs (Claude)  ──>  f
  freight RSS            fraud trend?       citing source ids          in the source data;
  Federal Register       FMCSA rule?                                   no links or ads
  (FMCSA, IRS 1099)      1099 change?                                  (one rewrite allowed)
-                        Friday?                     │
+                        Fri/Sat?                    │
                                                     v
                 ctas.mjs: inject CTAs next to the story that triggered them
                                                     │
@@ -42,11 +42,18 @@ gather-leads.mjs  ──>  signals.mjs  ──>  writer.mjs (Claude)  ──>  f
 | 2+ fraud or theft headlines in 72 hours | Loadmark: "Secure your loads today" | Right after the lede (priority) |
 | New FMCSA rule in the Federal Register, or FMCSA rule-change headlines | Quickwell Audit Kit | After the section covering that rule |
 | IRS 1099 document in the Federal Register, or 1099 headlines | Quickwell Vendor Check | After the section covering it |
-| Friday (America/Chicago) | Riddlebound: "Unwind over the weekend with interactive thrillers" | End of the brief |
+| None of the four data signals above | Quickwell Rate Con Checker (default) | End of the brief |
+| Friday or Saturday (America/Chicago) | Riddlebound: "Unwind over the weekend with interactive thrillers" | End of the brief |
 
-Each product appears at most once. Every CTA is labeled "From our network", and each brief ends
-with a disclosure that the products come from affiliated companies. Links carry UTM tags
-(`utm_source=nsnn`, `utm_medium=email|web`, `utm_campaign=freight-brief-DATE`, `utm_content=<signal>`).
+Each product appears at most once in the body, and every CTA is repeated in an "Our products" list
+at the end of the brief (tracked separately: `utm_content=<signal>-footer`). Every CTA is labeled
+"Our product", and every brief ends with this disclosure: *Loadmark, Quickwell and Riddlebound are our
+own products. NorthStar Delivery Solutions and the companies that make them have the same owner, so we
+benefit when you use them.* Links carry UTM tags (`utm_source=nsnn`, `utm_medium=email|web`,
+`utm_campaign=freight-brief-DATE`, `utm_content=<signal>`).
+
+**Writing style:** each section is 2 to 4 short bullets that lead with the number or fact. The fact
+check enforces the bullet format.
 
 ## Running it
 

@@ -2,11 +2,39 @@
   "subject": "Diesel up 6.2 cents as freight fraud spreads",
   "headline": "Diesel climbs to $3.842 while double brokering spreads",
   "dek": "Fuel is up 14.1 cents in four weeks, fraud reports pile up, and FMCSA clarified the short-haul rule.",
-  "lede": "The U.S. diesel average hit $3.842 a gallon for the week of October 12, up 6.2 cents in a week. At the same time, fraud and theft reports are climbing.",
+  "lede": "Diesel hit $3.842 a gallon for the week of October 12, up 6.2 cents. Fraud and theft reports are climbing.",
   "sections": [
-    { "heading": "Fraud keeps spreading", "body": "A double brokering scheme hit 40 Midwest loads, and cargo theft rose 12% in the third quarter.", "source_ids": ["H1", "H2"] },
-    { "heading": "Short-haul rule clarified", "body": "FMCSA clarified the 150 air-mile short-haul exception in its hours of service rules.", "source_ids": ["R1"] },
-    { "heading": "Spot rates steady", "body": "Spot van rates are holding near $2.05 a mile, with tender rejections at 5.8%.", "source_ids": ["H3"] }
+    {
+      "heading": "Fraud keeps spreading",
+      "bullets": [
+        "A double brokering scheme hit 40 Midwest loads.",
+        "Cargo theft rose 12% in the third quarter."
+      ],
+      "source_ids": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "heading": "Short-haul rule clarified",
+      "bullets": [
+        "FMCSA clarified the 150 air-mile short-haul exception.",
+        "Check your logs if you run local routes."
+      ],
+      "source_ids": [
+        "R1"
+      ]
+    },
+    {
+      "heading": "Spot rates steady",
+      "bullets": [
+        "Spot van rates are holding near $2.05 a mile.",
+        "Tender rejections eased to 5.8%."
+      ],
+      "source_ids": [
+        "H3"
+      ]
+    }
   ],
   "seo_description": "Diesel at $3.842, freight fraud rising, and the FMCSA short-haul clarification: the NSNN freight brief for October 16."
 }

@@ -36,10 +36,10 @@ function fakeClient(...briefs) {
   };
 }
 
-test('signals: the Friday fixture triggers fuel, fraud, FMCSA, tax and Friday', async () => {
+test('signals: the Friday fixture triggers fuel, fraud, FMCSA, tax and weekend', async () => {
   const h = await load('harvest-friday.json');
   const keys = detectSignals(h, { thresholds, now: NOW }).map((s) => s.key);
-  assert.deepEqual(keys, ['fuel_spike', 'fraud_trend', 'fmcsa_change', 'tax_change', 'friday']);
+  assert.deepEqual(keys, ['fuel_spike', 'fraud_trend', 'fmcsa_change', 'tax_change', 'weekend']);
 });
 
 test('signals: a quiet Tuesday triggers nothing', async () => {
@@ -72,12 +72,13 @@ test('CTAs: one Loadmark CTA for fuel+fraud, priority order, Riddlebound last', 
   assert.ok(ctas[0].evidence.includes('F1') && ctas[0].evidence.includes('H1'));
 });
 
-test('CTA injection: Loadmark after the lede, Audit Kit after the FMCSA section, the rest at the end', async () => {
+test('CTA injection: Loadmark after the lede, Audit Kit after the FMCSA section, the rest at the end, all repeated in the footer', async () => {
   const h = await load('harvest-friday.json');
   const brief = await load('brief-good.json');
   const blocks = injectCtas(brief, selectCtas(detectSignals(h, { thresholds, now: NOW })));
   const shape = blocks.map((b) => (b.type === 'cta' ? `cta:${b.cta.id}` : b.type === 'section' ? `sec:${b.section.source_ids[0]}` : b.type));
-  assert.deepEqual(shape, ['lede', 'cta:loadmark', 'sec:H1', 'sec:R1', 'cta:audit-kit', 'sec:H3', 'cta:vendor-check', 'cta:riddlebound']);
+  assert.deepEqual(shape, ['lede', 'cta:loadmark', 'sec:H1', 'sec:R1', 'cta:audit-kit', 'sec:H3', 'cta:vendor-check', 'cta:riddlebound', 'footer']);
+  assert.deepEqual(blocks.at(-1).ctas.map((c) => c.id), ['loadmark', 'audit-kit', 'vendor-check', 'riddlebound']);
 });
 
 test('tracked URLs carry UTM tags, and ref= for Quickwell', () => {
@@ -97,9 +98,9 @@ test('fact check: the good brief passes', async () => {
 test('fact check: invented numbers, links, product mentions and unknown ids are rejected', async () => {
   const h = await load('harvest-friday.json');
   const b = await load('brief-good.json');
-  b.sections[0].body += ' Losses topped $9.4 million.';
-  b.sections[1].body += ' Details at https://evil.example.';
-  b.sections[2].body += ' Track loads with Loadmark.';
+  b.sections[0].bullets.push('Losses topped $9.4 million.');
+  b.sections[1].bullets.push('Details at https://evil.example.');
+  b.sections[2].bullets.push('Track loads with Loadmark.');
   b.sections[2].source_ids.push('H99');
   const { ok, problems } = checkBrief(b, h);
   assert.equal(ok, false);
@@ -146,8 +147,10 @@ test('renderers: CTAs are labeled, disclosed and escaped', async () => {
   const blocks = injectCtas(brief, selectCtas(detectSignals(h, { thresholds, now: NOW })));
   const ctx = { brief, blocks, harvest: h, date: '2026-10-16' };
   for (const out of [renderEmailHtml(ctx), renderWebPage(ctx)]) {
-    assert.ok(out.includes('From our network'));
-    assert.ok(out.includes('affiliated with NorthStar Delivery Solutions'));
+    assert.ok(out.includes('Our product · Loadmark'));
+    assert.ok(out.includes('Loadmark, Quickwell and Riddlebound are our own products'));
+    assert.ok(out.includes('utm_content=fraud_trend-footer'), 'footer repeats are tracked separately');
+    assert.ok(out.includes('<li>') || out.includes('<li '), 'sections render as bullets');
     assert.ok(out.includes('Rates &lt;b&gt;steady&lt;/b&gt;'));
     assert.ok(out.includes('utm_source=nsnn'));
     assert.ok(out.includes('Unwind over the weekend with interactive thrillers'));
@@ -155,7 +158,10 @@ test('renderers: CTAs are labeled, disclosed and escaped', async () => {
   const web = renderWebPage(ctx);
   assert.ok(web.includes('<link rel="canonical" href="https://northstardeliveryservice.com/news/briefs/2026-10-16.html">'));
   assert.ok(web.includes('"@type":"NewsArticle"'));
-  assert.ok(renderMarkdown(ctx).includes('> **From our network · Loadmark:**'));
+  const md = renderMarkdown(ctx);
+  assert.ok(md.includes('> **Our product · Loadmark:**'));
+  assert.ok(md.includes('- A double brokering scheme hit 40 Midwest loads.'));
+  assert.ok(md.includes('**Our products:**'));
 });
 
 test('Beehiiv: draft and schedule payloads', () => {
@@ -257,7 +263,8 @@ test('pipeline: publish + Beehiiv draft, then a re-run neither rewrites nor doub
   assert.ok((await readFile(path.join(root, 'news/index.html'), 'utf8')).includes('briefs/2026-10-16.html'));
   assert.equal(posts.length, 1);
   assert.equal(posts[0].status, 'draft');
-  assert.ok(posts[0].body_content.includes('From our network'));
+  assert.ok(posts[0].body_content.includes('Our product · Loadmark'));
+  assert.ok(posts[0].body_content.includes('are our own products'));
   const entries = JSON.parse(await readFile(path.join(root, 'news/data/entries.json'), 'utf8'));
   assert.equal(entries[0].beehiiv.id, 'post_9');
 
@@ -298,4 +305,45 @@ test('harvest: stale and undated feed items are dropped (feeds resurface years-o
     { title: 'undated', published: null },
   ];
   assert.deepEqual(freshOnly(items, { now: NOW, maxAgeDays: 7 }).map((i) => i.title), ['today', 'last week']);
+});
+
+test('CTAs: a quiet weekday gets the default Quickwell Rate Con Checker CTA only', async () => {
+  const h = await load('harvest-friday.json');
+  h.date = '2026-10-14'; // Wednesday
+  h.fuel = summarizeFuel([{ period: '2026-10-12', value: 3.8 }, { period: '2026-10-05', value: 3.79 }]);
+  h.headlines = [h.headlines[2]];
+  h.regulatory = [];
+  const ctas = selectCtas(detectSignals(h, { thresholds, now: NOW }));
+  assert.deepEqual(ctas.map((c) => c.id), ['rate-con-checker']);
+  assert.ok(new URL(trackedUrl(ctas[0], { medium: 'email', date: h.date, signal: ctas[0].signal })).pathname.startsWith('/rate-con-checker/'));
+});
+
+test('CTAs: a quiet Saturday gets the default Quickwell CTA plus the Riddlebound weekend plug', async () => {
+  const h = await load('harvest-friday.json');
+  h.date = '2026-10-17'; // Saturday
+  h.fuel = null;
+  h.headlines = [h.headlines[2]];
+  h.regulatory = [];
+  const signals = detectSignals(h, { thresholds, now: NOW });
+  assert.deepEqual(signals.map((s) => s.key), ['weekend']);
+  assert.deepEqual(selectCtas(signals).map((c) => c.id), ['rate-con-checker', 'riddlebound']);
+});
+
+test('CTAs: the default Quickwell CTA does not run when a data signal fires', async () => {
+  const h = await load('harvest-friday.json');
+  assert.ok(!selectCtas(detectSignals(h, { thresholds, now: NOW })).some((c) => c.id === 'rate-con-checker'));
+});
+
+test('signals: Sunday through Thursday get no weekend plug', async () => {
+  const h = await load('harvest-friday.json');
+  for (const date of ['2026-10-18', '2026-10-19', '2026-10-22']) {
+    h.date = date;
+    assert.ok(!detectSignals(h, { thresholds, now: NOW }).some((s) => s.key === 'weekend'), date);
+  }
+});
+
+test('fact check: sections must be bullets', async () => {
+  const b = await load('brief-good.json');
+  b.sections[0] = { heading: 'x', body: 'A paragraph instead of bullets.', source_ids: ['H1'] };
+  assert.ok(checkBrief(b, await load('harvest-friday.json')).problems.some((p) => p.includes('bullets')));
 });

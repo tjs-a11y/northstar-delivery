@@ -56,8 +56,9 @@ export function detectSignals(harvest, { thresholds, now = new Date(harvest.gene
     });
   }
 
-  if (weekdayOf(harvest.date) === 'Friday') {
-    signals.push({ key: 'friday', reason: 'Friday edition', evidence: [] });
+  const day = weekdayOf(harvest.date);
+  if (day === 'Friday' || day === 'Saturday') {
+    signals.push({ key: 'weekend', reason: `${day} edition`, evidence: [] });
   }
   return signals;
 }
