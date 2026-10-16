@@ -1,62 +1,77 @@
 name: NSNN Daily Brief
 
+# Daily NorthStar Freight Brief: harvest public data, write and fact-check the brief with Claude,
+# inject signal-based CTAs, publish the page to this site, create the Beehiiv post, push.
+# Scheduled runs publish to the site. The Beehiiv step follows the repository variable
+# NSNN_BEEHIIV_MODE: "draft" (default: wait in Beehiiv for review), "schedule" (send unattended)
+# or "off".
+
 on:
   schedule:
-    # ~6am ET. GitHub Actions cron is UTC only, so this drifts by an hour across the
-    # US DST transitions (10:00 UTC = 6am EDT / 5am EST). Adjust if that matters to you.
+    # 10:00 UTC = 5:00 am Central (daylight time) / 4:00 am Central (standard time).
     - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: 'Dry run only: fetch headlines + write script, do not publish or send'
-        type: boolean
-        default: false
-      send:
-        description: 'Send the newsletter via Beehiiv (ignored if dry_run is true)'
-        type: boolean
-        default: false
+      mode:
+        description: 'sources = fetch data only (free); dry = write the brief but publish nothing; publish = update the site'
+        type: choice
+        options: [sources, dry, publish]
+        default: dry
+      beehiiv:
+        description: 'Beehiiv step (publish mode only)'
+        type: choice
+        options: ['off', 'draft', 'schedule']
+        default: 'off'
 
 permissions:
   contents: write
 
+concurrency:
+  group: nsnn-daily
+  cancel-in-progress: false
+
 jobs:
   nsnn:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - run: npm ci
 
-      - name: Run NSNN pipeline
+      - name: Unit tests
+        run: npm test
+
+      - name: Run pipeline
+        id: pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
-        run: |
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            echo "Dry run — fetch + script only, no publish/send."
-            node scripts/nsnn/run-daily.mjs
-          elif [ "${{ github.event.inputs.send }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
-            node scripts/nsnn/run-daily.mjs --publish --send
-          else
-            node scripts/nsnn/run-daily.mjs --publish
-          fi
-
-      - name: Commit updated news page
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+          NSNN_SEND_TIME: ${{ vars.NSNN_SEND_TIME }}
+          MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+          BEEHIIV_MODE: ${{ github.event_name == 'schedule' && (vars.NSNN_BEEHIIV_MODE || 'draft') || inputs.beehiiv }}
         run: |
           git config user.name "nsnn-bot"
           git config user.email "nsnn-bot@users.noreply.github.com"
-          git add news/
-          if ! git diff --cached --quiet; then
-            git commit -m "NSNN daily brief: $(date -u +%Y-%m-%d)"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          case "$MODE" in
+            sources) node scripts/marketing/pipeline.mjs --sources-only ;;
+            dry)     node scripts/marketing/pipeline.mjs ;;
+            publish) node scripts/marketing/pipeline.mjs --publish --beehiiv="$BEEHIIV_MODE" --git-push ;;
+            *) echo "Unknown mode: $MODE"; exit 1 ;;
+          esac
+
+      # Pushes made with GITHUB_TOKEN don't start other workflows, so the IndexNow ping runs here.
+      - name: Wait for GitHub Pages to publish
+        if: steps.pipeline.outputs.pushed == 'true'
+        run: sleep 120
+
+      - name: Ping IndexNow
+        if: steps.pipeline.outputs.pushed == 'true'
+        run: node scripts/indexnow.mjs

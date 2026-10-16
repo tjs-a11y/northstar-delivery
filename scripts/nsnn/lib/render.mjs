@@ -157,6 +157,18 @@ const STYLE = `
   .nsnn footer{padding:36px 0 50px; border-top:1px solid var(--nsnn-line); margin-top:0;}
   .nsnn footer .bottom{font-size:12px; color:var(--nsnn-paper-dim);}
 
+  .nsnn .read-more a{color:var(--nsnn-blue); font-weight:700; font-size:13px; text-decoration:none;}
+  .nsnn .full-brief{max-width:720px;}
+  .nsnn .full-brief p{font-size:16px; line-height:1.7;}
+  .nsnn .full-brief h2{font-size:20px; margin:30px 0 8px;}
+  .nsnn .full-brief .cites{font-size:12px; color:var(--nsnn-paper-dim);}
+  .nsnn .full-brief .cites a{color:var(--nsnn-paper-dim);}
+  .nsnn .cta-card{border:1px solid var(--nsnn-line); border-left:4px solid var(--nsnn-amber); background:var(--nsnn-navy-2); border-radius:8px; padding:14px 16px; margin:22px 0;}
+  .nsnn .cta-card .cta-tag{display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--nsnn-amber); margin-bottom:4px;}
+  .nsnn .cta-card p{font-size:14px; line-height:1.6; margin:4px 0 8px;}
+  .nsnn .cta-card a{color:var(--nsnn-blue); font-weight:700; text-decoration:none;}
+  .nsnn .disclosure{font-size:12px; color:var(--nsnn-paper-dim); line-height:1.6; margin-top:28px;}
+
   @media (max-width: 700px){
     .nsnn .partners-grid{grid-template-columns:1fr;}
   }
@@ -207,20 +219,20 @@ function ticker(entries) {
   return `<div class="ticker"><div class="ticker-track">${track}</div></div>`;
 }
 
-function navHeader(active) {
+function navHeader(active, prefix = '') {
   const link = (href, label, key) =>
     `<li><a href="${href}"${active === key ? ' class="active"' : ''}>${label}</a></li>`;
   return `
 <header>
   <nav class="wrap">
-    <a href="index.html" class="logo">
+    <a href="${prefix}index.html" class="logo">
       <span class="mark">N</span>
       <span>NSNN<span class="sub">NorthStar News Network</span></span>
     </a>
     <ul>
-      ${link('index.html', 'Today', 'today')}
-      ${link('archive.html', 'Archive', 'archive')}
-      ${link('../index.html', 'Main Site', 'main')}
+      ${link(`${prefix}index.html`, 'Today', 'today')}
+      ${link(`${prefix}archive.html`, 'Archive', 'archive')}
+      ${link(`${prefix}../index.html`, 'Main Site', 'main')}
     </ul>
   </nav>
 </header>`;
@@ -249,7 +261,7 @@ function partnersSection() {
 </section>`;
 }
 
-function freeToolsSection() {
+function freeToolsSection(prefix = '') {
   const items = FREE_TOOLS.map(
     (t) => `<li><a href="${escapeHtml(t.href)}" rel="noopener">${escapeHtml(t.name)}</a> — ${escapeHtml(t.blurb)}</li>`
   ).join('');
@@ -258,13 +270,13 @@ function freeToolsSection() {
   <h2 style="font-size:1.1rem;">Free tools for carriers</h2>
   <ul>${items}</ul>
   <h2 style="font-size:1.1rem;">Shipping freight?</h2>
-  <p><a href="../ship/" rel="noopener">Shipper guides</a> (reefer, dry van, flatbed, heavy haul, power only) and an <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored">instant truckload quote</a>. Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.</p>
+  <p><a href="${prefix}../ship/" rel="noopener">Shipper guides</a> (reefer, dry van, flatbed, heavy haul, power only) and an <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored">instant truckload quote</a>. Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.</p>
 </section>`;
 }
 
-function footer() {
+function footer(prefix = '') {
   return `
-${freeToolsSection()}
+${freeToolsSection(prefix)}
 ${partnersSection()}
 <footer>
   <div class="wrap">
@@ -285,11 +297,12 @@ function briefBlock(entry) {
   <span class="date">${escapeHtml(formatDateLong(entry.date))}</span>
   <h2>${escapeHtml(entry.subject || 'NSNN Daily Freight Brief')}</h2>
   <div class="script">${escapeHtml(entry.script || '')}</div>
+  ${entry.url ? `<p class="read-more"><a href="${escapeHtml(entry.url)}">Read the full brief →</a></p>` : ''}
   ${sourcesList ? `<div class="sources"><span class="k">Sources referenced</span><ul>${sourcesList}</ul></div>` : ''}
 </div>`;
 }
 
-function pageShell({ title, description, active, body }) {
+export function pageShell({ title, description, active, body, head = '' }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -301,6 +314,7 @@ function pageShell({ title, description, active, body }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>${STYLE}</style>
+${head}
 </head>
 <body class="nsnn">
 ${body}
@@ -308,6 +322,8 @@ ${body}
 </html>
 `;
 }
+
+export { navHeader, footer };
 
 export function renderIndexPage(entries, recentCount) {
   const recent = entries.slice(0, recentCount);
