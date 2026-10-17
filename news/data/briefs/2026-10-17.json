@@ -1,0 +1,501 @@
+{
+  "brief": {
+    "subject": "Robinson nuclear verdict upheld; California diesel stays above $8",
+    "headline": "Texas Judge Upholds C.H. Robinson Nuclear Verdict; California Diesel Holds Above $8",
+    "dek": "A major broker verdict stands, California fuel stays painful, cargo crime cases hit trucking, and intermodal and port volumes run hot.",
+    "lede": "A Texas judge has affirmed the nuclear verdict against C.H. Robinson. That keeps liability risk front and center for anyone moving freight through brokers.",
+    "sections": [
+      {
+        "heading": "Robinson Nuclear Verdict Stands",
+        "bullets": [
+          "A Texas judge affirmed the nuclear verdict against C.H. Robinson, one of the largest freight brokers.",
+          "Large jury awards remain a live threat across the supply chain, so watch for knock-on effects on insurance and carrier vetting."
+        ],
+        "source_ids": [
+          "H1"
+        ]
+      },
+      {
+        "heading": "California Diesel Stuck Above $8",
+        "bullets": [
+          "Above $8 per gallon: California diesel stays elevated as truckers push for relief.",
+          "An energy expert warns high costs could last well into next year, so price fuel into every West Coast lane.",
+          "Big shippers are hedging and using route optimization to absorb diesel costs, so expect pushback on fuel surcharges."
+        ],
+        "source_ids": [
+          "H21",
+          "H20"
+        ]
+      },
+      {
+        "heading": "Crime Cases Target Trucking",
+        "bullets": [
+          "25 charged: a drug ring used unsuspecting trucking companies to move cocaine from California to Florida.",
+          "More than 45 kilograms of cocaine seized; know your shippers and inspect loads that seem off.",
+          "32 months: Louisiana staged-accident mastermind Danny Keating was sentenced in a case tied to fraud against truckers."
+        ],
+        "source_ids": [
+          "H6",
+          "H5"
+        ]
+      },
+      {
+        "heading": "Volumes Run Hot at Rail and Ports",
+        "bullets": [
+          "10%: intermodal rail volumes kept a strong pace in the latest U.S. traffic count, competing for long-haul freight.",
+          "Near 1M containers: Port of Long Beach set an all-time monthly record in September, feeding drayage and outbound loads.",
+          "J.B. Hunt reported Q3 growing pains and cost pressures, though management called it a speed bump toward recovery."
+        ],
+        "source_ids": [
+          "H12",
+          "H15",
+          "H17"
+        ]
+      }
+    ],
+    "seo_description": "Texas judge upholds C.H. Robinson nuclear verdict, California diesel above $8, drug ring used truckers, and intermodal up 10%."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-17T13:25:29.823Z",
+    "date": "2026-10-17",
+    "timezone": "America/Chicago",
+    "fuel": null,
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "BREAKING: Texas judge upholds nuclear verdict against C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/breaking-texas-judge-upholds-nuclear-verdict-against-c-h-robinson",
+        "published": "2026-10-17T00:15:48.000Z",
+        "snippet": "The nuclear verdict against C.H. Robinson in Texas has been affirmed. The post BREAKING: Texas judge upholds nuclear verdict against C.H. Robinson appeared first on FreightWaves.",
+        "categories": [
+          "3PL and Brokerage",
+          "Legal issues",
+          "News",
+          "Top Stories",
+          "broker liability",
+          "C.H. Robinson",
+          "Lipe vs. Lupus Superior",
+          "Montgomery vs. Caribe Transport II"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Evos raises $9M to build AI operators for industrial businesses",
+        "link": "https://www.freightwaves.com/news/evos-raises-9m-to-build-ai-operators-for-industrial-businesses",
+        "published": "2026-10-16T19:55:52.000Z",
+        "snippet": "Evos raised $9 million in pre-seed funding to develop AI operators that learn employees' workflows and perform tasks within existing business software. One freight brokerage has used the technology to make nearly 3,500 invoice-auditing decisions in two months, according to the startup. The post Evos raises $9M to build AI operators for industrial businesses appeared first on FreightWaves.",
+        "categories": [
+          "FreightTech Award",
+          "News",
+          "Technology",
+          "Freight",
+          "FreightWaves",
+          "invoice auditing",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tesla staffs up Nevada Semi plant as fleet orders stack up",
+        "link": "https://www.freightwaves.com/news/tesla-semi-nevada-hiring",
+        "published": "2026-10-16T19:52:19.000Z",
+        "snippet": "Job boards show Tesla recruiting for Semi assembly, quality and service roles in Sparks as WattEV, IMC and the ZET SCALE alliance line up electric Class 8 orders. The post Tesla staffs up Nevada Semi plant as fleet orders stack up appeared first on FreightWaves.",
+        "categories": [
+          "Electric Trucks",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "electric truck",
+          "EV",
+          "OEM",
+          "OEM trucking"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Veteran trucker launches free parking, fuel-price platform for drivers",
+        "link": "https://www.freightwaves.com/news/veteran-trucker-launches-free-parking-fuel-price-platform-for-drivers",
+        "published": "2026-10-16T19:50:24.000Z",
+        "snippet": "Georgia trucker Shawn Gresham has launched a free platform combining parking locations, roadside repair listings, diesel prices and driver resources. The post Veteran trucker launches free parking, fuel-price platform for drivers appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Playbook: Equipment, Maintenance & Tech",
+          "Technology",
+          "Trucking",
+          "emergency roadside assistance",
+          "truck parking",
+          "Truck repairs",
+          "truck towing"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Louisiana attorney, staged accident scammer, finally sentenced",
+        "link": "https://www.freightwaves.com/news/louisiana-attorney-staged-accident-scammer-finally-sentenced",
+        "published": "2026-10-16T19:26:51.000Z",
+        "snippet": "Louisiana staged accident mastermind Danny Keating got 32 months in jail. The post Louisiana attorney, staged accident scammer, finally sentenced appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Top Stories",
+          "Truck Driver Issues",
+          "Trucking",
+          "Louisiana staged accidents"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "25 charged after drug ring used unsuspecting truckers to haul cocaine from California to Florida",
+        "link": "https://www.freightwaves.com/news/25-charged-after-drug-ring-used-unsuspecting-truckers-to-haul-cocaine-from-california-to-florida",
+        "published": "2026-10-16T17:43:14.000Z",
+        "snippet": "Operation Icebreaker exposed a drug trafficking network that moved cocaine from California through unsuspecting trucking companies. Authorities seized more than 45 kilograms of cocaine, while a suspected supplier reportedly claimed deliveries of up to 60 kilograms every 15 days. The post 25 charged after drug ring used unsuspecting truckers to haul cocaine from California to Florida appeared first",
+        "categories": [
+          "Business",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "Trucking",
+          "drug bust",
+          "logistics"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ATRI gets a new head: TeamOne’s Siplon",
+        "link": "https://www.freightwaves.com/news/atri-gets-a-new-head-teamones-siplon",
+        "published": "2026-10-16T17:10:32.000Z",
+        "snippet": "ATRI named a new head to replace retiring Rebecca Brewster. The post ATRI gets a new head: TeamOne’s Siplon appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Truck Driver Issues",
+          "Trucking",
+          "American Transportation Research Institute",
+          "American Trucking Associations"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Carrier Logistics, LSP44 announce partnership to automate LTL shipment identification",
+        "link": "https://www.freightwaves.com/news/carrier-logistics-lsp44-announce-partnership-to-automate-ltl-shipment-identification",
+        "published": "2026-10-16T16:08:59.000Z",
+        "snippet": "Carrier Logistics and LSP44 have launched an API that uses shipment details such as company names, delivery locations and approximate dates to identify LTL freight when a valid tracking number is missing or incorrect. The post Carrier Logistics, LSP44 announce partnership to automate LTL shipment identification appeared first on FreightWaves.",
+        "categories": [
+          "FreightTech Award",
+          "News",
+          "Technology",
+          "AI",
+          "Carrier Logistics",
+          "Freight",
+          "FreightWaves",
+          "LSP44"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Larger UPS air hub in Philippines boosts Asia service levels",
+        "link": "https://www.freightwaves.com/news/larger-ups-air-hub-in-philippines-boosts-asia-service-levels",
+        "published": "2026-10-16T14:52:48.000Z",
+        "snippet": "UPS has opened a larger air cargo and package terminal in the Philippines to better connect Asia with its global network. The post Larger UPS air hub in Philippines boosts Asia service levels appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo",
+          "Asia-Pacific",
+          "Philippines",
+          "UPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Container ship attacks escalate in Strait of Hormuz",
+        "link": "https://www.freightwaves.com/news/container-ship-attacks-escalate-in-strait-of-hormuz",
+        "published": "2026-10-16T14:51:24.000Z",
+        "snippet": "Container ships are being increasingly targeted in the Strait of Hormuz, with one Singapore-flagged vessel sinking after a strike. The post Container ship attacks escalate in Strait of Hormuz appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Geopolitics",
+          "Iran war"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "From library to logistics: Cathy Morrow Roberson shares career insights",
+        "link": "https://www.supplychaindive.com/news/from-library-to-logistics-cathy-morrow-roberson-shares-career-insights/833023/",
+        "published": "2026-10-16T14:34:00.000Z",
+        "snippet": "“There are so many more opportunities today than there were when I started my business,\" the managing director of Logistics Trends & Insights told Supply Chain Dive.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Intermodal rail better by 10% in latest count",
+        "link": "https://www.freightwaves.com/news/intermodal-rail-better-by-10-in-latest-count",
+        "published": "2026-10-16T14:31:00.000Z",
+        "snippet": "Intermodal volumes continued to set a strong pace in the latest U.S. rail traffic data. The post Intermodal rail better by 10% in latest count appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Railroad",
+          "Association of American Railroads",
+          "carloads",
+          "intermodal",
+          "railroads"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FMC proposes fees on Spanish-flagged vessels, import restrictions",
+        "link": "https://www.supplychaindive.com/news/fmc-proposes-fees-on-spanish-flagged-vessels-import-restrictions/833122/",
+        "published": "2026-10-16T14:13:39.000Z",
+        "snippet": "The Federal Maritime Commission wants to impose a $200,000 per-voyage fee on Spanish-flagged vessels and restrict certain goods from the country.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx, UPS delivery prices set for record-high Q4: TD Cowen/AFS",
+        "link": "https://www.supplychaindive.com/news/fedex-ups-delivery-prices-set-for-record-high-q4-td-cowenafs/832992/",
+        "published": "2026-10-16T13:31:02.000Z",
+        "snippet": "Easing fuel prices and a rebound in discounting activity offered shippers relief in Q3, but peak season surcharges will turn up the heat.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New Long Beach record as volume nears 1M containers",
+        "link": "https://www.freightwaves.com/news/new-long-beach-record-as-volume-nears-1m-containers",
+        "published": "2026-10-16T13:09:32.000Z",
+        "snippet": "The Port of Long Beach set an all-time monthly cargo record in September as shipper managed soaring diesel costs. The post New Long Beach record as volume nears 1M containers appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "diesel fuel costs",
+          "imports"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL earmarks $450M for Eastern Europe logistics expansion",
+        "link": "https://www.freightwaves.com/news/dhl-earmarks-450m-for-eastern-europe-logistics-expansion",
+        "published": "2026-10-16T12:39:06.000Z",
+        "snippet": "DHL Group plans to make big logistics investments in Central and Eastern Europe. The post DHL earmarks $450M for Eastern Europe logistics expansion appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Europe",
+          "Global Supply Chain",
+          "News",
+          "DHL",
+          "Eastern Europe",
+          "supply chain investment"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "J.B. Hunt experiences growing pains in Q3",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-experiences-growing-pains-in-q3",
+        "published": "2026-10-16T12:20:27.000Z",
+        "snippet": "J.B. Hunt Transport Services’ third quarter displayed growth pains and other cost pressures, but management said this was likely a speed bump on the road to recovery. The post J.B. Hunt experiences growing pains in Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Intermodal",
+          "News",
+          "Top Stories",
+          "3PL",
+          "company earnings",
+          "intermodal",
+          "intermodal marketing companies"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "5 trends defining consumer electronics supply chains",
+        "link": "https://www.supplychaindive.com/news/5-trends-defining-consumer-electronics-supply-chains/832717/",
+        "published": "2026-10-15T16:00:00.000Z",
+        "snippet": "Fighting the memory supply crisis is front and center, pushing companies to refine planning practices and rethink product mix and logistics tactics, experts say.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unilever puts business results first in factory digital twin rollout",
+        "link": "https://www.supplychaindive.com/news/unilever-puts-business-results-first-in-factory-digital-twin-rollout/833011/",
+        "published": "2026-10-15T15:14:00.000Z",
+        "snippet": "As it expands digital twins to 40 sites worldwide, the consumer goods manufacturer is prioritizing measurable gains, repeatable processes and workforce training.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How UNFI tackles higher fuel prices",
+        "link": "https://www.supplychaindive.com/news/how-unfi-tackles-higher-fuel-prices/832977/",
+        "published": "2026-10-15T14:06:00.000Z",
+        "snippet": "The wholesale food distributor is managing surging diesel costs by hedging and using an AI platform to optimize routes.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "California diesel prices remain above $8 per gallon as truckers call for relief",
+        "link": "https://www.supplychaindive.com/news/california-diesel-prices-remain-above-8-per-gallon-as-truckers-call-for-re/833092/",
+        "published": "2026-10-15T13:45:10.000Z",
+        "snippet": "Elevated costs could extend well into next year, an energy expert tells Trucking Dive.",
+        "categories": [],
+        "creator": "David Taube"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "GlobalFoundries building $21B New York fabs under US-Japan trade deal",
+        "link": "https://www.supplychaindive.com/news/globalfoundries-building-21b-new-york-fabs-under-us-japan-trade-deal/832995/",
+        "published": "2026-10-15T11:12:00.000Z",
+        "snippet": "The multibillion-dollar agreement will accelerate U.S. semiconductor manufacturing, strengthen critical supply chains and support growing automotive and industrial demand, GlobalFoundries said in a news release.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS’ Happy Returns comes to TikTok Shop",
+        "link": "https://www.supplychaindive.com/news/ups-happy-returns-comes-to-tiktok-shop/832990/",
+        "published": "2026-10-14T15:40:17.000Z",
+        "snippet": "Pacsun and Everlane are among the retailers tapping into the new integration ahead of the post-holiday returns rush.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Best Buy pilots battery-powered vehicles at California distribution sites",
+        "link": "https://www.supplychaindive.com/news/best-buy-pilots-battery-powered-vehicles-at-california-distribution-sites/832802/",
+        "published": "2026-10-14T14:32:12.000Z",
+        "snippet": "The retailer deployed electric yard switchers as part of its efforts to curb emissions and will gauge future deployment potential across its supply chain.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Agency Information Collection Activities; Comment Request on Returns Regarding Payments of Interest",
+        "abstract": "In accordance with the Paperwork Reduction Act of 1995, the IRS is inviting comments on the information collection request outlined in this notice.",
+        "link": "https://www.federalregister.gov/documents/2026/10/07/2026-20540/agency-information-collection-activities-comment-request-on-returns-regarding-payments-of-interest",
+        "published": "2026-10-07",
+        "documentNumber": "2026-20540"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      }
+    ],
+    "errors": [
+      {
+        "source": "EIA diesel",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "signals": [
+    {
+      "key": "weekend",
+      "reason": "Saturday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

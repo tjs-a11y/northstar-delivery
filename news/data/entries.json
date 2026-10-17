@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "date": "2026-10-17",
+    "subject": "Robinson nuclear verdict upheld; California diesel stays above $8",
+    "headline": "Texas Judge Upholds C.H. Robinson Nuclear Verdict; California Diesel Holds Above $8",
+    "script": "A major broker verdict stands, California fuel stays painful, cargo crime cases hit trucking, and intermodal and port volumes run hot.\n\nA Texas judge has affirmed the nuclear verdict against C.H. Robinson. That keeps liability risk front and center for anyone moving freight through brokers.",
+    "url": "briefs/2026-10-17.html",
+    "dieselPrice": null,
+    "topHeadline": "Texas Judge Upholds C.H. Robinson Nuclear Verdict; California Diesel Holds Above $8",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "BREAKING: Texas judge upholds nuclear verdict against C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/breaking-texas-judge-upholds-nuclear-verdict-against-c-h-robinson"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "California diesel prices remain above $8 per gallon as truckers call for relief",
+        "link": "https://www.supplychaindive.com/news/california-diesel-prices-remain-above-8-per-gallon-as-truckers-call-for-re/833092/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "How UNFI tackles higher fuel prices",
+        "link": "https://www.supplychaindive.com/news/how-unfi-tackles-higher-fuel-prices/832977/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "25 charged after drug ring used unsuspecting truckers to haul cocaine from California to Florida",
+        "link": "https://www.freightwaves.com/news/25-charged-after-drug-ring-used-unsuspecting-truckers-to-haul-cocaine-from-california-to-florida"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Louisiana attorney, staged accident scammer, finally sentenced",
+        "link": "https://www.freightwaves.com/news/louisiana-attorney-staged-accident-scammer-finally-sentenced"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Intermodal rail better by 10% in latest count",
+        "link": "https://www.freightwaves.com/news/intermodal-rail-better-by-10-in-latest-count"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  }
+]
