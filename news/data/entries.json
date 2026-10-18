@@ -1,5 +1,52 @@
 [
   {
+    "date": "2026-10-18",
+    "subject": "Truckload capacity still not recovering; CA diesel above $8",
+    "headline": "No Truckload Capacity Rebound Yet as California Diesel Stays Above $8",
+    "script": "Capacity shows no sign of recovering, California diesel stays high, a border crackdown worries shippers, and fraud cases reach court.\n\nDespite months of rate inflation, truckload data shows no sign of capacity recovering. Small carriers waiting for a market turn should keep planning around current conditions.",
+    "url": "briefs/2026-10-18.html",
+    "dieselPrice": null,
+    "topHeadline": "No Truckload Capacity Rebound Yet as California Diesel Stays Above $8",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "No signs of truckload capacity recovering",
+        "link": "https://www.freightwaves.com/news/no-signs-of-truckload-capacity-recovering"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Intermodal rail better by 10% in latest count",
+        "link": "https://www.freightwaves.com/news/intermodal-rail-better-by-10-in-latest-count"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "California diesel prices remain above $8 per gallon as truckers call for relief",
+        "link": "https://www.supplychaindive.com/news/california-diesel-prices-remain-above-8-per-gallon-as-truckers-call-for-re/833092/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: US trucking crackdown raises concerns over freight disruptions",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-us-trucking-crackdown-raises-concerns-over-freight-disruptions"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Texas judge upholds nuclear verdict against C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/breaking-texas-judge-upholds-nuclear-verdict-against-c-h-robinson"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Louisiana attorney, staged accident scammer, finally sentenced",
+        "link": "https://www.freightwaves.com/news/louisiana-attorney-staged-accident-scammer-finally-sentenced"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      }
+    ]
+  },
+  {
     "date": "2026-10-17",
     "subject": "Robinson nuclear verdict upheld; California diesel stays above $8",
     "headline": "Texas Judge Upholds C.H. Robinson Nuclear Verdict; California Diesel Holds Above $8",
