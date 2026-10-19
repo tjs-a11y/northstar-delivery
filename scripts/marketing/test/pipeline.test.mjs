@@ -67,7 +67,7 @@ test('summarizeFuel formats the week and four-week moves', () => {
 test('CTAs: one Loadmark CTA for fuel+fraud, priority order, Riddlebound last', async () => {
   const h = await load('harvest-friday.json');
   const ctas = selectCtas(detectSignals(h, { thresholds, now: NOW }));
-  assert.deepEqual(ctas.map((c) => c.id), ['loadmark', 'audit-kit', 'vendor-check', 'riddlebound']);
+  assert.deepEqual(ctas.map((c) => c.id), ['loadmark', 'audit-kit', 'vendor-check', 'freightsidekick', 'riddlebound']);
   assert.equal(ctas[0].signal, 'fraud_trend');
   assert.ok(ctas[0].evidence.includes('F1') && ctas[0].evidence.includes('H1'));
 });
@@ -77,7 +77,7 @@ test('CTA injection: Loadmark after the lede, Audit Kit after the FMCSA section,
   const brief = await load('brief-good.json');
   const blocks = injectCtas(brief, selectCtas(detectSignals(h, { thresholds, now: NOW })));
   const shape = blocks.map((b) => (b.type === 'cta' ? `cta:${b.cta.id}` : b.type === 'section' ? `sec:${b.section.source_ids[0]}` : b.type));
-  assert.deepEqual(shape, ['lede', 'cta:loadmark', 'sec:H1', 'sec:R1', 'cta:audit-kit', 'sec:H3', 'cta:vendor-check', 'cta:riddlebound', 'footer']);
+  assert.deepEqual(shape, ['lede', 'cta:loadmark', 'sec:H1', 'sec:R1', 'cta:audit-kit', 'sec:H3', 'cta:vendor-check', 'cta:freightsidekick', 'cta:riddlebound', 'footer']);
   assert.deepEqual(blocks.at(-1).ctas.map((c) => c.id), ['loadmark', 'audit-kit', 'vendor-check', 'riddlebound']);
 });
 
@@ -162,6 +162,22 @@ test('renderers: CTAs are labeled, disclosed and escaped', async () => {
   assert.ok(md.includes('> **Our product · Loadmark:**'));
   assert.ok(md.includes('- A double brokering scheme hit 40 Midwest loads.'));
   assert.ok(md.includes('**Our products:**'));
+});
+
+test('renderers: the Freight Sidekick partner CTA is tagged Partner, disclosed, and carries the fixed ref', async () => {
+  const h = await load('harvest-friday.json');
+  const brief = await load('brief-good.json');
+  const blocks = injectCtas(brief, selectCtas(detectSignals(h, { thresholds, now: NOW })));
+  const email = renderEmailHtml({ brief, blocks, harvest: h, date: '2026-10-16' });
+  const web = renderWebPage({ brief, blocks, harvest: h, date: '2026-10-16' });
+  const md = renderMarkdown({ brief, blocks, harvest: h, date: '2026-10-16' });
+  for (const out of [email, web, md]) {
+    assert.ok(out.includes('Freight Sidekick'), 'partner CTA present');
+    assert.ok(out.includes('Partner'), 'carries the Partner tag');
+    assert.ok(out.includes('https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions'), 'fixed affiliate ref, no UTM');
+    assert.ok(out.includes('booking partner, not one of our own companies'), 'partner disclosure present');
+    assert.ok(!out.includes('Our product · Freight Sidekick'), 'partner is never labeled as our product');
+  }
 });
 
 test('Beehiiv: draft and schedule payloads', () => {
@@ -314,7 +330,7 @@ test('CTAs: a quiet weekday gets the default Quickwell Rate Con Checker CTA only
   h.headlines = [h.headlines[2]];
   h.regulatory = [];
   const ctas = selectCtas(detectSignals(h, { thresholds, now: NOW }));
-  assert.deepEqual(ctas.map((c) => c.id), ['rate-con-checker']);
+  assert.deepEqual(ctas.map((c) => c.id), ['rate-con-checker', 'freightsidekick']);
   assert.ok(new URL(trackedUrl(ctas[0], { medium: 'email', date: h.date, signal: ctas[0].signal })).pathname.startsWith('/rate-con-checker/'));
 });
 
@@ -326,7 +342,7 @@ test('CTAs: a quiet Saturday gets the default Quickwell CTA plus the Riddlebound
   h.regulatory = [];
   const signals = detectSignals(h, { thresholds, now: NOW });
   assert.deepEqual(signals.map((s) => s.key), ['weekend']);
-  assert.deepEqual(selectCtas(signals).map((c) => c.id), ['rate-con-checker', 'riddlebound']);
+  assert.deepEqual(selectCtas(signals).map((c) => c.id), ['rate-con-checker', 'freightsidekick', 'riddlebound']);
 });
 
 test('CTAs: the default Quickwell CTA does not run when a data signal fires', async () => {

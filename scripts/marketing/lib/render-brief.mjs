@@ -1,8 +1,11 @@
 // Renders one brief (a list of blocks from injectCtas) three ways: Beehiiv email HTML,
 // the public web page, and the Markdown copy committed next to it.
 import { escapeHtml as esc, formatDateLong, pageShell, navHeader, footer } from '../../nsnn/lib/render.mjs';
-import { CTA_TAG, DISCLOSURE, trackedUrl } from './ctas.mjs';
+import { CTA_TAG, PARTNER_TAG, DISCLOSURE, PARTNER_DISCLOSURE, trackedUrl } from './ctas.mjs';
 import { SITE_ORIGIN } from './config.mjs';
+
+const tagFor = (cta) => (cta.partner ? PARTNER_TAG : CTA_TAG);
+const hasPartner = (blocks) => blocks.some((b) => b.type === 'cta' && b.cta.partner);
 
 export const briefPath = (date) => `news/briefs/${date}.html`;
 export const briefUrl = (date) => `${SITE_ORIGIN}/${briefPath(date)}`;
@@ -36,7 +39,7 @@ export function renderEmailHtml({ brief, blocks, harvest, date }) {
     }
     if (b.type === 'cta') {
       parts.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:20px 0;border-left:4px solid #f2994a;background:#f8fafc;"><tr><td style="padding:14px 16px;">
-<p style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#b45309;margin:0 0 4px;">${CTA_TAG} · ${esc(b.cta.product)}</p>
+<p style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#b45309;margin:0 0 4px;">${tagFor(b.cta)} · ${esc(b.cta.product)}</p>
 <p style="font-size:14px;line-height:1.6;margin:0 0 8px;">${esc(b.cta.copy)}</p>
 <a href="${esc(ctaHref(b.cta, 'email', date))}" style="font-size:14px;font-weight:700;color:#1d4ed8;">${esc(b.cta.label)} →</a></td></tr></table>`);
     }
@@ -49,6 +52,7 @@ export function renderEmailHtml({ brief, blocks, harvest, date }) {
   parts.push(
     `<p style="font-size:13px;margin:24px 0 6px;"><a href="${esc(briefUrl(date))}?utm_source=nsnn&amp;utm_medium=email&amp;utm_campaign=freight-brief-${esc(date)}">Read this brief on the web</a></p>`,
     `<p style="font-size:12px;color:#475569;line-height:1.6;margin:16px 0 0;"><strong>${esc(DISCLOSURE)}</strong> NSNN summarizes public reporting in its own words and links every source.</p>`,
+    ...(hasPartner(blocks) ? [`<p style="font-size:12px;color:#475569;line-height:1.6;margin:8px 0 0;">${esc(PARTNER_DISCLOSURE)}</p>`] : []),
     `<p style="font-size:11px;color:#94a3b8;margin:6px 0 0;">NSNN — NorthStar News Network, a production of NorthStar Delivery Solutions LLC.</p>`,
   );
   return parts.join('\n');
@@ -65,7 +69,7 @@ export function renderWebPage({ brief, blocks, harvest, date }) {
       if (cites.length) body.push(`<p class="cites">Source: ${cites.map((c) => `<a href="${esc(c.link)}" target="_blank" rel="noopener">${esc(c.label)}: ${esc(c.title)}</a>`).join(' · ')}</p>`);
     }
     if (b.type === 'cta') {
-      body.push(`<aside class="cta-card"><span class="cta-tag">${CTA_TAG} · ${esc(b.cta.product)}</span><p>${esc(b.cta.copy)}</p><a href="${esc(ctaHref(b.cta, 'web', date))}" rel="noopener">${esc(b.cta.label)} →</a></aside>`);
+      body.push(`<aside class="cta-card"><span class="cta-tag">${tagFor(b.cta)} · ${esc(b.cta.product)}</span><p>${esc(b.cta.copy)}</p><a href="${esc(ctaHref(b.cta, 'web', date))}" rel="noopener sponsored">${esc(b.cta.label)} →</a></aside>`);
     }
     if (b.type === 'footer') {
       body.push(`<aside class="cta-card"><span class="cta-tag">${CTA_TAG}s</span><ul>${b.ctas.map((c) => `<li><a href="${esc(ctaHref(c, 'web', date, true))}" rel="noopener">${esc(c.label)} →</a> ${esc(c.product)}</li>`).join('')}</ul></aside>`);
@@ -102,6 +106,7 @@ ${navHeader('', '../')}
   <article class="full-brief">
     ${body.join('\n    ')}
     <p class="disclosure"><strong>${esc(DISCLOSURE)}</strong> NSNN summarizes public reporting in its own words and links every source.</p>
+    ${hasPartner(blocks) ? `<p class="disclosure">${esc(PARTNER_DISCLOSURE)}</p>` : ''}
   </article>
 </section>
 ${footer('../')}`;
@@ -120,8 +125,8 @@ export function renderMarkdown({ brief, blocks, harvest, date }) {
       if (cites.length) out.push(`Source: ${cites.map((c) => `[${md(c.label)}: ${md(c.title)}](${c.link})`).join(' · ')}`, '');
     }
     if (b.type === 'footer') out.push(`**${CTA_TAG}s:**`, '', ...b.ctas.map((c) => `- [${md(c.label)} →](${ctaHref(c, 'web', date, true)}) ${md(c.product)}`), '');
-    if (b.type === 'cta') out.push(`> **${CTA_TAG} · ${md(b.cta.product)}:** ${md(b.cta.copy)} [${md(b.cta.label)} →](${ctaHref(b.cta, 'web', date)})`, '');
+    if (b.type === 'cta') out.push(`> **${tagFor(b.cta)} · ${md(b.cta.product)}:** ${md(b.cta.copy)} [${md(b.cta.label)} →](${ctaHref(b.cta, 'web', date)})`, '');
   }
-  out.push('---', '', `**${md(DISCLOSURE)}**`, '', `Web version: ${briefUrl(date)}`, '');
+  out.push('---', '', `**${md(DISCLOSURE)}**`, ...(hasPartner(blocks) ? ['', md(PARTNER_DISCLOSURE)] : []), '', `Web version: ${briefUrl(date)}`, '');
   return out.join('\n');
 }

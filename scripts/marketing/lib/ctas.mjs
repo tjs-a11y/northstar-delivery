@@ -11,6 +11,11 @@
 export const CTA_TAG = 'Our product';
 export const DISCLOSURE = 'Disclosure: Loadmark, Quickwell and Riddlebound are our own products. NorthStar Delivery Solutions and the companies that make them have the same owner, so we benefit when you use them. Everything marked "Our product" is a promotion for one of them, not news coverage.';
 
+// A partner is a third party we link to as an affiliate — NOT one of our own companies.
+// It carries its own tag and disclosure so it is never presented as our product.
+export const PARTNER_TAG = 'Partner';
+export const PARTNER_DISCLOSURE = 'Freight Sidekick is our booking partner, not one of our own companies. NorthStar may earn a commission when you book through it. Anything marked "Partner" is a paid promotion, not news coverage.';
+
 export const CATALOG = {
   loadmark: {
     product: 'Loadmark',
@@ -56,6 +61,18 @@ export const CATALOG = {
       default: 'Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.',
     },
   },
+  freightsidekick: {
+    product: 'Freight Sidekick',
+    url: 'https://freightsidekick.com/freight-quote',
+    partner: true,
+    partnerRef: 'northstardeliverysolutions',
+    label: 'Get an instant freight quote',
+    priority: 6,
+    placement: 'end',
+    copy: {
+      standing: 'Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.',
+    },
+  },
   riddlebound: {
     product: 'Riddlebound',
     url: 'https://riddlebound.app/',
@@ -73,6 +90,13 @@ const DATA_SIGNALS = ['fraud_trend', 'fuel_spike', 'fmcsa_change', 'tax_change']
 
 // Adds tracking parameters. Quickwell also reads ?ref= to attribute the channel.
 export function trackedUrl(cta, { medium, date, signal, footer = false }) {
+  // A partner link carries only its fixed affiliate ref, exactly as placed across the site, so
+  // the partner's referral attribution isn't disturbed by our own UTM parameters.
+  if (cta.partner) {
+    const pu = new URL(cta.url);
+    pu.searchParams.set('ref', cta.partnerRef);
+    return pu.toString();
+  }
   const u = new URL(cta.url);
   u.searchParams.set('utm_source', 'nsnn');
   u.searchParams.set('utm_medium', medium);
@@ -98,6 +122,11 @@ export function selectCtas(signals) {
     const c = CATALOG[id];
     byProduct.set(id, { id, product: c.product, url: c.url, ref: !!c.ref, label: c.label, copy: c.copy[key], signal: key, priority: c.priority, placement: c.placement, evidence: [...sig.evidence] });
   }
+  // Freight Sidekick is a standing shipper CTA — it runs on every brief (a partner, clearly tagged).
+  if (!byProduct.has('freightsidekick')) {
+    const c = CATALOG.freightsidekick;
+    byProduct.set('freightsidekick', { id: 'freightsidekick', product: c.product, url: c.url, partner: true, partnerRef: c.partnerRef, label: c.label, copy: c.copy.standing, signal: 'standing', priority: c.priority, placement: c.placement, evidence: [] });
+  }
   return [...byProduct.values()].sort((a, b) => a.priority - b.priority);
 }
 
@@ -119,7 +148,9 @@ export function injectCtas(brief, ctas) {
   }
   // Anchored CTAs whose story didn't make the brief, then end-of-brief CTAs (weekend plug last).
   for (const cta of take(() => true).sort((a, b) => a.priority - b.priority)) blocks.push({ type: 'cta', cta });
-  // Footer: every CTA again, in the same order, tracked separately (utm_content ends in "-footer").
-  if (ctas.length) blocks.push({ type: 'footer', ctas: [...ctas].sort((a, b) => a.priority - b.priority) });
+  // Footer: our own products again, in the same order, tracked separately (utm_content ends in "-footer").
+  // Partners are left out of the "Our products" footer so nothing there is mislabeled; they show inline only.
+  const footerCtas = ctas.filter((c) => !c.partner);
+  if (footerCtas.length) blocks.push({ type: 'footer', ctas: [...footerCtas].sort((a, b) => a.priority - b.priority) });
   return blocks;
 }
