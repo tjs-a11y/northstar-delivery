@@ -318,6 +318,7 @@ ${head}
 </head>
 <body class="nsnn">
 ${body}
+<script src="/nsds-track.js" defer></script>
 </body>
 </html>
 `;
