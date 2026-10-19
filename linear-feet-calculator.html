@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linear Feet Calculator | NorthStar</title>
+<meta name="description" content="Free linear feet calculator for freight: turn pallet count and size into trailer linear feet and see if you need LTL, volume, or a full truckload.">
+<link rel="canonical" href="https://northstardeliveryservice.com/linear-feet-calculator.html">
+<meta property="og:title" content="Freight Linear Feet Calculator">
+<meta property="og:description" content="Turn pallets into trailer linear feet and find out if you need LTL, volume, or a full truckload — then get a quote.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northstardeliveryservice.com/linear-feet-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt:#0E151C; --asphalt-2:#16212B; --steel:#1F3448; --steel-line:#2C4257;
+    --amber:#F2A93B; --amber-dim:#C98A2C; --paper:#F4F1E9; --paper-dim:#C9C7BE;
+    --route-green:#3E8C63; --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--asphalt); color:var(--paper); font-family:'Public Sans', sans-serif; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.02em; margin:0;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(14,21,28,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--steel-line);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:74px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Oswald', sans-serif; font-size:19px; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; text-decoration:none;}
+  .logo .mark{width:34px; height:34px; border:2px solid var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:var(--amber); flex-shrink:0;}
+  .logo .sub{display:block; font-family:'Public Sans',sans-serif; font-size:10px; letter-spacing:0.14em; color:var(--paper-dim); text-transform:uppercase; font-weight:600;}
+  nav ul{list-style:none; display:flex; gap:34px; margin:0; padding:0;}
+  nav ul a{font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; text-decoration:none; color:var(--paper-dim); transition:color 0.2s ease; padding-bottom:4px; border-bottom:2px solid transparent;}
+  nav ul a:hover{color:var(--amber); border-bottom-color:var(--amber);}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:11px 22px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; text-decoration:none; border-radius:var(--radius); transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease; white-space:nowrap; border:none; cursor:pointer;}
+  .btn-amber{background:var(--amber); color:var(--asphalt);}
+  .btn-amber:hover{background:#ffbf5c; transform:translateY(-1px);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:26px; cursor:pointer;}
+
+  .page-head{padding:64px 0 40px; background:repeating-linear-gradient(90deg, transparent, transparent 78px, rgba(242,169,59,0.05) 78px, rgba(242,169,59,0.05) 80px), linear-gradient(180deg, var(--asphalt) 0%, var(--asphalt-2) 100%); border-bottom:1px solid var(--steel-line);}
+  .eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--amber); margin-bottom:18px;}
+  .eyebrow::before{content:''; width:26px; height:2px; background:var(--amber);}
+  .page-head h1{font-size:clamp(30px, 4vw, 46px); line-height:1.08; color:var(--paper);}
+  .page-head p.lede{font-size:16px; line-height:1.6; color:var(--paper-dim); max-width:620px; margin:18px 0 0;}
+
+  section{padding:64px 0;}
+  .calc-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start;}
+  .card{background:var(--steel); border:1px solid var(--steel-line); border-radius:4px; padding:32px;}
+  .card h3{font-size:19px; margin-bottom:6px;}
+  .card p.hint{color:var(--paper-dim); font-size:13px; line-height:1.5; margin:0 0 22px;}
+  .form-row{display:grid; gap:14px; margin-bottom:14px;}
+  .form-row.two{grid-template-columns:1fr 1fr;}
+  .form-row input, .form-row select{width:100%; background:var(--asphalt); border:1px solid var(--steel-line); color:var(--paper); padding:12px 14px; font-family:'IBM Plex Mono', monospace; font-size:14px; border-radius:2px;}
+  .form-row input:focus, .form-row select:focus{outline:2px solid var(--amber); outline-offset:1px; border-color:var(--amber);}
+  .form-row label{font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--paper-dim); font-weight:700; display:block; margin-bottom:6px;}
+
+  .result-row{display:flex; justify-content:space-between; align-items:baseline; padding:12px 0; border-bottom:1px dashed var(--steel-line);}
+  .result-row:last-child{border-bottom:none;}
+  .result-row .label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--paper-dim); font-weight:700;}
+  .result-row .val{font-family:'IBM Plex Mono', monospace; font-size:20px; font-weight:600; color:var(--amber);}
+  .result-row.total .val{font-size:26px; color:var(--route-green);}
+  .verdict{margin-top:18px; padding:16px; background:var(--asphalt); border:1px solid var(--steel-line); border-left:3px solid var(--amber); border-radius:2px; font-size:14px; line-height:1.55; color:var(--paper);}
+  .disclaimer{margin-top:18px; font-size:12px; color:var(--paper-dim); line-height:1.6;}
+
+  .quote-band{background:linear-gradient(180deg, var(--asphalt-2), var(--asphalt)); border-top:1px solid var(--steel-line); border-bottom:1px solid var(--steel-line);}
+  .quote-band .inner{display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;}
+  .quote-band h2{font-size:clamp(22px,2.8vw,30px); line-height:1.1; max-width:620px;}
+  .quote-band p.sub{color:var(--paper-dim); font-size:14px; line-height:1.6; margin:12px 0 0; max-width:620px;}
+  .disclosure{font-size:12px; color:var(--paper-dim); line-height:1.6; margin:14px 0 0;}
+
+  .copy-block{max-width:760px;}
+  .copy-block h2{font-size:clamp(20px,2.4vw,26px); margin:0 0 14px;}
+  .copy-block h3{font-size:16px; margin:26px 0 8px; color:var(--amber);}
+  .copy-block p, .copy-block li{color:var(--paper-dim); font-size:15px; line-height:1.7;}
+  .copy-block ul{padding-left:20px;}
+  .copy-block a{color:var(--amber);}
+
+  @media (max-width: 860px){.calc-grid{grid-template-columns:1fr;} nav ul{display:none;} .menu-toggle{display:block;}}
+  @media (max-width: 560px){.form-row.two{grid-template-columns:1fr;}}
+
+  footer{padding:70px 0 34px; border-top:1px solid var(--steel-line);}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid var(--steel-line); margin-bottom:28px;}
+  footer h4{font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--paper-dim); margin-bottom:16px; font-weight:700;}
+  footer .foot-links{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  footer .foot-links a{text-decoration:none; color:var(--paper); font-size:14px;}
+  footer .foot-links a:hover{color:var(--amber);}
+  footer p.blurb{color:var(--paper-dim); font-size:14px; line-height:1.6; max-width:340px; margin-top:12px;}
+  .bottom-bar{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .bottom-bar span{font-size:12px; color:var(--paper-dim);}
+  @media (max-width: 940px){.footer-grid{grid-template-columns:1fr; gap:32px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">
+      <span class="mark">N</span>
+      <span>NorthStar Delivery<span class="sub">Solutions LLC · Freight Brokerage</span></span>
+    </a>
+    <ul>
+      <li><a href="ship/">Ship Freight</a></li>
+      <li><a href="index.html#equipment">Equipment</a></li>
+      <li><a href="index.html#drivers">Drive With Us</a></li>
+      <li><a href="rate-tools.html">Rate Tools</a></li>
+      <li><a href="news/index.html">NSNN News</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-links">
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Linear Feet Calculator</span>
+    <h1>How much trailer space does your freight need?</h1>
+    <p class="lede">Enter your pallets and how they load. We'll estimate the linear feet of trailer they take and tell you whether it ships as standard LTL, volume LTL, or a full truckload — the single biggest factor in your rate.</p>
+    <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber" style="margin-top:24px;">Get An Instant Quote</a>
+    <p class="disclosure" style="max-width:620px;">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap calc-grid">
+    <div class="card">
+      <h3>Your Pallets</h3>
+      <p class="hint">A standard 48×40 pallet takes half a trailer row (can't be stacked). Totals update automatically.</p>
+
+      <div class="form-row two">
+        <div>
+          <label for="count">Pallet Count</label>
+          <input type="number" id="count" min="1" step="1" value="6" inputmode="numeric">
+        </div>
+        <div>
+          <label for="size">Pallet Footprint</label>
+          <select id="size">
+            <option value="48x40" selected>48 × 40 in (standard)</option>
+            <option value="48x48">48 × 48 in</option>
+            <option value="60x48">60 × 48 in</option>
+            <option value="custom">Custom length…</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row two">
+        <div>
+          <label for="custlen">Custom Length (in)</label>
+          <input type="number" id="custlen" min="0" step="1" value="48" inputmode="numeric" disabled>
+        </div>
+        <div>
+          <label for="stack">Stackable?</label>
+          <select id="stack">
+            <option value="1" selected>No — floor only</option>
+            <option value="2">Yes — 2 high</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Trailer Space</h3>
+      <p class="hint">Based on a 53 ft (636 in) van, two pallets across.</p>
+
+      <div class="result-row">
+        <span class="label">Pallet Positions</span>
+        <span class="val" id="out-pos">0</span>
+      </div>
+      <div class="result-row">
+        <span class="label">Linear Feet Used</span>
+        <span class="val" id="out-lf">0 ft</span>
+      </div>
+      <div class="result-row total">
+        <span class="label">Ships As</span>
+        <span class="val" id="out-mode">—</span>
+      </div>
+
+      <div class="verdict" id="verdict">Enter your pallets to see how they ship.</div>
+      <p class="disclaimer">Estimate for planning. Assumes pallets load two-across in a 53 ft van and aren't rotated. Odd sizes, overhang, or no-stack rules can change the real linear feet — confirm on your quote.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap inner">
+    <div>
+      <h2>Know your space? Price the lane.</h2>
+      <p class="sub">Whether it's a few pallets of LTL or a full truckload, get a real rate for your origin, destination, and dates in minutes.</p>
+      <p class="disclosure">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.</p>
+    </div>
+    <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap copy-block">
+    <h2>Why linear feet decide your rate</h2>
+    <p>A 53-foot trailer holds about 26 to 30 standard pallet positions in two rows. When your freight takes up a big share of that deck, carriers stop pricing it as ordinary LTL and switch to <strong>volume LTL</strong> or a <strong>full truckload</strong> rate — often cheaper per pound, but priced completely differently.</p>
+    <h3>The rough thresholds</h3>
+    <ul>
+      <li><strong>Standard LTL:</strong> up to ~6 pallets / ~12 linear feet.</li>
+      <li><strong>Volume LTL:</strong> roughly 12–24 linear feet, or more than ~6 pallets.</li>
+      <li><strong>Full truckload:</strong> freight filling most of the 53 ft deck, or that can't share space.</li>
+    </ul>
+    <p>Carriers charge for the floor space a pallet blocks even when nothing stacks on top, which is why "linear feet" — not just weight — drives the price. Get the exact number, then <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored">request a quote</a> for your lane.</p>
+    <p>Not sure what to send over? See our <a href="ship/freight-quote-checklist.html">freight quote checklist</a> and the <a href="freight-class-calculator.html">freight class calculator</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:10px;">
+          <span class="mark">N</span>
+          <span>NorthStar Delivery<span class="sub">Solutions LLC</span></span>
+        </div>
+        <p class="blurb">Licensed freight brokerage covering dry van, reefer, flatbed, specialized, and bulk equipment nationwide. MC 1819020 · USDOT 4572562.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="foot-links">
+          <li><a href="ship/">Ship Freight</a></li>
+          <li><a href="rate-tools.html">Rate Tools</a></li>
+          <li><a href="freight-class-calculator.html">Freight Class Calculator</a></li>
+          <li><a href="linear-feet-calculator.html">Linear Feet Calculator</a></li>
+          <li><a href="news/index.html">NSNN News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Free carrier tools</h4>
+        <ul class="foot-links">
+          <li><a href="https://quickwell.app/rate-con-checker/?ref=northstar-rate-tools" rel="noopener">Rate Con Checker →</a></li>
+          <li><a href="https://quickwell.app/audit-kit/?ref=northstar-rate-tools" rel="noopener">New Entrant Audit Self-Check →</a></li>
+          <li><a href="https://quickwell.app/learn/rate-con/?ref=northstar-rate-tools" rel="noopener">Rate con glossary →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compliance</h4>
+        <ul class="foot-links">
+          <li>MC 1819020</li>
+          <li>USDOT 4572562</li>
+          <li><a href="https://safer.fmcsa.dot.gov" target="_blank" rel="noopener">Verify on FMCSA SAFER →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 NorthStar Delivery Solutions LLC. All rights reserved.</span>
+      <span>MC 1819020 · USDOT 4572562</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const countEl = document.getElementById('count');
+  const sizeEl = document.getElementById('size');
+  const custEl = document.getElementById('custlen');
+  const stackEl = document.getElementById('stack');
+  const outPos = document.getElementById('out-pos');
+  const outLf = document.getElementById('out-lf');
+  const outMode = document.getElementById('out-mode');
+  const verdict = document.getElementById('verdict');
+
+  const TRAILER_IN = 636; // 53 ft van interior, inches
+
+  function palletLengthIn(){
+    switch (sizeEl.value){
+      case '48x40': return 48; // loaded 40-in face out, 48-in length down the trailer
+      case '48x48': return 48;
+      case '60x48': return 60;
+      case 'custom': return Math.max(1, parseFloat(custEl.value) || 48);
+      default: return 48;
+    }
+  }
+
+  function recalc(){
+    custEl.disabled = sizeEl.value !== 'custom';
+    const count = Math.max(0, parseInt(countEl.value) || 0);
+    const stack = parseInt(stackEl.value) || 1;
+    const lenIn = palletLengthIn();
+
+    // Two pallets load side by side in a van, so each ROW of 2 consumes one pallet-length of trailer.
+    const floorPallets = Math.ceil(count / stack);
+    const rows = Math.ceil(floorPallets / 2);
+    const linearIn = rows * lenIn;
+    const linearFt = linearIn / 12;
+
+    outPos.textContent = floorPallets.toLocaleString('en-US');
+    outLf.textContent = linearFt.toLocaleString('en-US', {maximumFractionDigits:1}) + ' ft';
+
+    let mode, note;
+    if (count <= 0){
+      mode = '—'; note = 'Enter your pallets to see how they ship.';
+    } else if (linearFt <= 12){
+      mode = 'Standard LTL';
+      note = 'This fits standard LTL. You pay for the space these pallets block on the trailer, so keeping them tight and stackable lowers the rate.';
+    } else if (linearFt <= 24){
+      mode = 'Volume LTL';
+      note = 'This is in volume-LTL territory — too big for standard LTL pricing, too small to need a dedicated truck. A volume or partial quote is usually the best value here.';
+    } else {
+      mode = 'Full Truckload';
+      note = 'This fills most of a 53 ft trailer. A full truckload (FTL) rate will almost always beat LTL at this size — get both and compare.';
+    }
+    outMode.textContent = mode;
+    verdict.textContent = note;
+  }
+
+  [countEl, sizeEl, custEl, stackEl].forEach(el => el.addEventListener('input', recalc));
+  sizeEl.addEventListener('change', recalc);
+  recalc();
+</script>
+
+</body>
+</html>
