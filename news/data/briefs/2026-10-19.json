@@ -1,0 +1,490 @@
+{
+  "brief": {
+    "subject": "Werner warns on Q3 costs; truckload capacity still not rebounding",
+    "headline": "Werner Flags Rising Costs as Truckload Capacity Shows No Recovery",
+    "dek": "Werner blames fuel, driver and claims costs for a Q3 miss, capacity stays stuck, and a nuclear verdict against C.H. Robinson stands.",
+    "lede": "Werner Enterprises warned Monday that Q3 profit will fall short, pointing to the same fuel, driver and insurance claims costs squeezing small carriers.",
+    "sections": [
+      {
+        "heading": "Werner Issues Q3 Profit Warning",
+        "bullets": [
+          "Werner preannounced weaker third-quarter earnings Monday, a sign that even large fleets are struggling with costs.",
+          "Fuel, driver pay and insurance claims were cited as the drivers, which are the same pressures hitting owner-operators.",
+          "Box truck operator Telly Arnold says newcomers often learn about insurance deposits, claims and breakdowns only after chasing revenue.",
+          "Know your cost per mile before booking loads; thin margins leave little room for surprise expenses."
+        ],
+        "source_ids": [
+          "H3",
+          "H9"
+        ]
+      },
+      {
+        "heading": "Truckload Capacity Still Not Recovering",
+        "bullets": [
+          "Despite months of rate inflation, data shows no sign that truckload capacity is coming back.",
+          "Many in the market expected a rebound by now, so carriers should plan around current conditions rather than a quick turnaround."
+        ],
+        "source_ids": [
+          "H16"
+        ]
+      },
+      {
+        "heading": "Legal Risk Stays High",
+        "bullets": [
+          "A Texas judge affirmed the nuclear verdict against C.H. Robinson, keeping large-verdict risk front and center for insurers.",
+          "Big verdicts that hold up on appeal tend to feed into the claims costs carriers see at renewal.",
+          "A California trucking company owner pleaded guilty in a $2.1M identity theft scheme affecting nearly 100 people."
+        ],
+        "source_ids": [
+          "H18",
+          "H14"
+        ]
+      },
+      {
+        "heading": "Peak Season Signals",
+        "bullets": [
+          "DHL Group raised its 2026 outlook on expectations for a strong peak season.",
+          "FedEx and UPS delivery prices are set for a record-high Q4 as peak surcharges kick in, according to the TD Cowen/AFS Freight Index.",
+          "Port of Savannah plans a 3.5M TEU terminal and expects to handle 12 million TEUs annually once it is built."
+        ],
+        "source_ids": [
+          "H6",
+          "H24",
+          "H7"
+        ]
+      },
+      {
+        "heading": "Border Freight Under Pressure",
+        "bullets": [
+          "A U.S. trucking crackdown is raising concerns about freight disruptions on Mexico cross-border lanes.",
+          "Carriers running border freight should watch for delays and shifting demand as enforcement tightens."
+        ],
+        "source_ids": [
+          "H15"
+        ]
+      }
+    ],
+    "seo_description": "Werner warns on Q3 costs, truckload capacity shows no recovery, the C.H. Robinson nuclear verdict is upheld, and peak season signals build."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-19T16:45:24.078Z",
+    "date": "2026-10-19",
+    "timezone": "America/Chicago",
+    "fuel": null,
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ceva Logistics puts Paack in charge of last-mile parcel delivery",
+        "link": "https://www.freightwaves.com/news/ceva-logistics-puts-paack-in-charge-of-last-mile-parcel-delivery",
+        "published": "2026-10-19T15:11:46.000Z",
+        "snippet": "Recently acquired Paack will be the last-mile delivery brand under Ceva Logistics, which also owns courier Colis Privé. The post Ceva Logistics puts Paack in charge of last-mile parcel delivery appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Last-Mile Delivery",
+          "News",
+          "PostalMag",
+          "Ceva Logistics",
+          "e-commerce",
+          "Europe",
+          "Last-mile delivery"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cutter & Buck eyes fulfillment boost with second automated distribution center",
+        "link": "https://www.supplychaindive.com/news/cutter-buck-eyes-fulfillment-boost-with-second-automated-distribution-cen/833237/",
+        "published": "2026-10-19T14:59:49.000Z",
+        "snippet": "The apparel brand’s new site in Grand Prairie, Texas, features over 50,000 storage bins and is equipped to process more than 1,200 bins per hour.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Werner Enterprises issues Q3 profit warning",
+        "link": "https://www.freightwaves.com/news/werner-enterprises-issues-q3-profit-warning",
+        "published": "2026-10-19T14:54:37.000Z",
+        "snippet": "Werner Enterprises issued a negative third-quarter earnings preannouncement on Monday, citing higher fuel, driver and insurance claims costs as the culprits. The post Werner Enterprises issues Q3 profit warning appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "TL contract rates",
+          "tl tender rejections",
+          "truckload carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Few major apparel brands pay garment workers a living wage: report",
+        "link": "https://www.supplychaindive.com/news/few-major-apparel-brands-pay-garment-workers-a-living-wage-report/833275/",
+        "published": "2026-10-19T14:02:00.000Z",
+        "snippet": "Out of 110 clothing brands — including Adidas, Chanel and Zara — only four disclose workers’ wage levels at garment factories in their supply chains, a new report from Clean Clothes Campaign found.",
+        "categories": [],
+        "creator": "Lauren Schenkman"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart approves 8 more parcel carriers for seller-fulfilled shipping",
+        "link": "https://www.supplychaindive.com/news/walmart-approves-8-more-parcel-carriers-for-seller-fulfilled-shipping/833259/",
+        "published": "2026-10-19T14:01:24.000Z",
+        "snippet": "The retailer's marketplace now allows businesses to use DoorDash, UniUni and others if they are managing deliveries themselves.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL Group boosts guidance on expectations for strong peak season",
+        "link": "https://www.freightwaves.com/news/dhl-group-boosts-guidance-on-expectations-for-strong-peak-season",
+        "published": "2026-10-19T13:56:03.000Z",
+        "snippet": "DHL Group has raised its 2026 outlook. The post DHL Group boosts guidance on expectations for strong peak season appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Company Earnings",
+          "Logistics",
+          "News",
+          "DHL Group",
+          "earnings"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Port of Savannah to build 3.5M TEU container terminal",
+        "link": "https://www.supplychaindive.com/news/port-of-savannah-to-build-35m-teu-container-terminal/833246/",
+        "published": "2026-10-19T13:55:00.000Z",
+        "snippet": "The port expects to be able to handle 12 million TEUs annually once construction is complete.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amerijet to repair aging 767 freighter aircraft damaged in hard landing",
+        "link": "https://www.freightwaves.com/news/amerijet-to-repair-aging-767-freighter-aircraft-damaged-in-hard-landing",
+        "published": "2026-10-19T13:11:52.000Z",
+        "snippet": "Amerijet says it will repair the buckled skin on a Boeing 767 freighter aircraft despite its age. The post Amerijet to repair aging 767 freighter aircraft damaged in hard landing appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "accident",
+          "Amerijet",
+          "Boeing 767 freighter"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Box truck carrier’s pivots show new fleets must know costs",
+        "link": "https://www.freightwaves.com/news/tla-group-box-truck-business-costs",
+        "published": "2026-10-19T12:00:00.000Z",
+        "snippet": "TLA Group’s Telly Arnold says box truck newcomers hear about revenue first, then learn about insurance deposits, freight claims and breakdowns the hard way. The post Box truck carrier’s pivots show new fleets must know costs appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Playbook: Education and Training",
+          "The Playbook",
+          "Trucking",
+          "box truck carrier",
+          "box trucks",
+          "Final mile",
+          "Telly Arnold"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unlocking the autonomous supply chain: Why execution data has to feed the plan",
+        "link": "https://www.supplychaindive.com/spons/unlocking-the-autonomous-supply-chain-why-execution-data-has-to-feed-the-p/833263/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "Ditch the war room. Build a supply chain that learns and adapts autonomously.",
+        "categories": [],
+        "creator": "Michelle Rivera"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Supply chain visibility tells you what happened. Can you see what it cost?",
+        "link": "https://www.supplychaindive.com/spons/supply-chain-visibility-tells-you-what-happened-can-you-see-what-it-cost/832819/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "Supply chain visibility can tell you what happened. Transportation Financial Intelligence™ helps explain what it cost, why it happened and what should happen next.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H12",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "The biggest risk in agentic commerce isn’t easy to see. It’s invisibility.",
+        "link": "https://www.supplychaindive.com/spons/the-biggest-risk-in-agentic-commerce-isnt-easy-to-see-its-invisibility/832344/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "As AI agents shortlist products for shoppers, incomplete data can mean lost sales.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Shift From Owning Trucks To Subscribing To Them, And What It Means For Fleet Finance",
+        "link": "https://www.freightwaves.com/news/the-shift-from-owning-trucks-to-subscribing-to-them-and-what-it-means-for-fleet-finance",
+        "published": "2026-10-18T18:07:23.000Z",
+        "snippet": "The trucking industry has fallen in love with two phrases that get tossed around in conference rooms and press releases without anyone stopping to explain them, and if you have heard the terms truck as a service and driver as a service and nodded along while quietly wondering what they actually mean for the money […] The post The Shift From Owning Trucks To Subscribing To Them, And What It Means F",
+        "categories": [
+          "Analysis",
+          "Autonomous Freight",
+          "Fleet and Maintenance",
+          "Logistics/Supply Chains",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "California trucking owner pleads guilty in $2.1M identity theft scheme",
+        "link": "https://www.freightwaves.com/news/california-trucking-owner-pleads-guilty-in-2-1m-identity-theft-scheme",
+        "published": "2026-10-18T17:37:19.000Z",
+        "snippet": "Nearly 100 people had their personal information compromised. Federal investigators traced the proceeds through international bank transfers before authorities arrested the operator following 18 months in Turkey. The post California trucking owner pleads guilty in $2.1M identity theft scheme appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "guilty plea",
+          "logistics",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Borderlands Mexico: US trucking crackdown raises concerns over freight disruptions",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-us-trucking-crackdown-raises-concerns-over-freight-disruptions",
+        "published": "2026-10-18T11:00:00.000Z",
+        "snippet": "This week in Borderlands Mexico: US trucking crackdown raises concerns over freight disruptions; M2 Global Logistics launches in Houston; and Cutter & Buck opens new distribution center in Texas. The post Borderlands Mexico: US trucking crackdown raises concerns over freight disruptions appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Canada",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "ANPACT",
+          "B-1 Visa",
+          "Cabotage",
+          "CANACAR"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "No signs of truckload capacity recovering",
+        "link": "https://www.freightwaves.com/news/no-signs-of-truckload-capacity-recovering",
+        "published": "2026-10-18T00:30:00.000Z",
+        "snippet": "Many expected a recovering truckload market after months of rate inflation. The data suggests the opposite. The post No signs of truckload capacity recovering appeared first on FreightWaves.",
+        "categories": [
+          "Chart of the Week",
+          "tender rejections",
+          "truckload capacity",
+          "Truckload rates"
+        ],
+        "creator": "Zach Strickland, FW Market Expert &#38; Market Analyst"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "What Daimler’s Finance And Global Chiefs Revealed About Diesel, Driverless Trucks, And The Future Of The Industry",
+        "link": "https://www.freightwaves.com/news/what-daimlers-finance-and-global-chiefs-revealed-about-diesel-driverless-trucks-and-the-future-of-the-industry",
+        "published": "2026-10-17T17:32:16.000Z",
+        "snippet": "On a rainy Saturday morning in Charlotte, inside the brand new North American headquarters of Daimler Truck Financial Services, four of the company’s senior leaders traded the usual press-conference script for something closer to a fireside chat, and over the better part of an hour they said more about where this industry is actually heading, […] The post What Daimler’s Finance And Global Chiefs R",
+        "categories": [
+          "Autonomous Freight",
+          "Fleet and Maintenance",
+          "Logistics/Supply Chains",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H18",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Texas judge upholds nuclear verdict against C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/breaking-texas-judge-upholds-nuclear-verdict-against-c-h-robinson",
+        "published": "2026-10-17T00:15:48.000Z",
+        "snippet": "The nuclear verdict against C.H. Robinson in Texas has been affirmed. The post Texas judge upholds nuclear verdict against C.H. Robinson appeared first on FreightWaves.",
+        "categories": [
+          "3PL and Brokerage",
+          "Legal issues",
+          "News",
+          "Top Stories",
+          "broker liability",
+          "C.H. Robinson",
+          "Lipe vs. Lupus Superior",
+          "Montgomery vs. Caribe Transport II"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H19",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Evos raises $9M to build AI operators for industrial businesses",
+        "link": "https://www.freightwaves.com/news/evos-raises-9m-to-build-ai-operators-for-industrial-businesses",
+        "published": "2026-10-16T19:55:52.000Z",
+        "snippet": "Evos raised $9 million in pre-seed funding to develop AI operators that learn employees' workflows and perform tasks within existing business software. One freight brokerage has used the technology to make nearly 3,500 invoice-auditing decisions in two months, according to the startup. The post Evos raises $9M to build AI operators for industrial businesses appeared first on FreightWaves.",
+        "categories": [
+          "FreightTech Award",
+          "News",
+          "Technology",
+          "Freight",
+          "FreightWaves",
+          "invoice auditing",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H20",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tesla staffs up Nevada Semi plant as fleet orders stack up",
+        "link": "https://www.freightwaves.com/news/tesla-semi-nevada-hiring",
+        "published": "2026-10-16T19:52:19.000Z",
+        "snippet": "Job boards show Tesla recruiting for Semi assembly, quality and service roles in Sparks as WattEV, IMC and the ZET SCALE alliance line up electric Class 8 orders. The post Tesla staffs up Nevada Semi plant as fleet orders stack up appeared first on FreightWaves.",
+        "categories": [
+          "Electric Trucks",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "electric truck",
+          "EV",
+          "OEM",
+          "OEM trucking"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H21",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Veteran trucker launches free parking, fuel-price platform for drivers",
+        "link": "https://www.freightwaves.com/news/veteran-trucker-launches-free-parking-fuel-price-platform-for-drivers",
+        "published": "2026-10-16T19:50:24.000Z",
+        "snippet": "Georgia trucker Shawn Gresham has launched a free platform combining parking locations, roadside repair listings, diesel prices and driver resources. The post Veteran trucker launches free parking, fuel-price platform for drivers appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Playbook: Equipment, Maintenance & Tech",
+          "Technology",
+          "Trucking",
+          "emergency roadside assistance",
+          "truck parking",
+          "Truck repairs",
+          "truck towing"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "From library to logistics: Cathy Morrow Roberson shares career insights",
+        "link": "https://www.supplychaindive.com/news/from-library-to-logistics-cathy-morrow-roberson-shares-career-insights/833023/",
+        "published": "2026-10-16T14:34:00.000Z",
+        "snippet": "“There are so many more opportunities today than there were when I started my business,\" the managing director of Logistics Trends & Insights told Supply Chain Dive.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FMC proposes fees on Spanish-flagged vessels, import restrictions",
+        "link": "https://www.supplychaindive.com/news/fmc-proposes-fees-on-spanish-flagged-vessels-import-restrictions/833122/",
+        "published": "2026-10-16T14:13:39.000Z",
+        "snippet": "The Federal Maritime Commission wants to impose a $200,000 per-voyage fee on Spanish-flagged vessels and restrict certain goods from the country.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx, UPS delivery prices set for record-high Q4",
+        "link": "https://www.supplychaindive.com/news/fedex-ups-delivery-prices-set-for-record-high-q4/832992/",
+        "published": "2026-10-16T13:31:02.000Z",
+        "snippet": "Easing fuel prices and a discounting activity rebound offered relief in Q3, but peak season surcharges will turn up the heat, according to the TD Cowen/AFS Freight Index.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Agency Information Collection Activities; Comment Request on Returns Regarding Payments of Interest",
+        "abstract": "In accordance with the Paperwork Reduction Act of 1995, the IRS is inviting comments on the information collection request outlined in this notice.",
+        "link": "https://www.federalregister.gov/documents/2026/10/07/2026-20540/agency-information-collection-activities-comment-request-on-returns-regarding-payments-of-interest",
+        "published": "2026-10-07",
+        "documentNumber": "2026-20540"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      }
+    ],
+    "errors": [
+      {
+        "source": "EIA diesel",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

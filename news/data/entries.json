@@ -1,5 +1,52 @@
 [
   {
+    "date": "2026-10-19",
+    "subject": "Werner warns on Q3 costs; truckload capacity still not rebounding",
+    "headline": "Werner Flags Rising Costs as Truckload Capacity Shows No Recovery",
+    "script": "Werner blames fuel, driver and claims costs for a Q3 miss, capacity stays stuck, and a nuclear verdict against C.H. Robinson stands.\n\nWerner Enterprises warned Monday that Q3 profit will fall short, pointing to the same fuel, driver and insurance claims costs squeezing small carriers.",
+    "url": "briefs/2026-10-19.html",
+    "dieselPrice": null,
+    "topHeadline": "Werner Flags Rising Costs as Truckload Capacity Shows No Recovery",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Werner Enterprises issues Q3 profit warning",
+        "link": "https://www.freightwaves.com/news/werner-enterprises-issues-q3-profit-warning"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Box truck carrier’s pivots show new fleets must know costs",
+        "link": "https://www.freightwaves.com/news/tla-group-box-truck-business-costs"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "No signs of truckload capacity recovering",
+        "link": "https://www.freightwaves.com/news/no-signs-of-truckload-capacity-recovering"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Texas judge upholds nuclear verdict against C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/breaking-texas-judge-upholds-nuclear-verdict-against-c-h-robinson"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "California trucking owner pleads guilty in $2.1M identity theft scheme",
+        "link": "https://www.freightwaves.com/news/california-trucking-owner-pleads-guilty-in-2-1m-identity-theft-scheme"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "DHL Group boosts guidance on expectations for strong peak season",
+        "link": "https://www.freightwaves.com/news/dhl-group-boosts-guidance-on-expectations-for-strong-peak-season"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      }
+    ]
+  },
+  {
     "date": "2026-10-18",
     "subject": "Truckload capacity still not recovering; CA diesel above $8",
     "headline": "No Truckload Capacity Rebound Yet as California Diesel Stays Above $8",
