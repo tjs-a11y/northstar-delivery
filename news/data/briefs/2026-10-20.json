@@ -1,0 +1,539 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 9.7 cents to $6.276 as fuel tops trucking worries",
+    "headline": "Diesel climbs 9.7 cents to $6.276; fuel tops ATRI's list of trucking concerns",
+    "dek": "Diesel rebounds after a four-week slide, safety blitzes write hundreds of violations, and a $47M verdict lands in New Mexico.",
+    "lede": "The national diesel average rose 9.7 cents to $6.276 per gallon, snapping a stretch that still leaves prices down 25.3 cents over four weeks.",
+    "sections": [
+      {
+        "heading": "Diesel bounces back up",
+        "bullets": [
+          "$6.276 per gallon is the new U.S. average retail diesel price for the week of 2026-10-19.",
+          "Up 9.7 cents (1.6%) from last week, so check fuel surcharges on loads booked at older rates.",
+          "Still down 25.3 cents over four weeks, but the reversal is a reminder to budget for swings."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Fuel is trucking's top worry",
+        "bullets": [
+          "Fuel prices ranked No. 1 in ATRI's annual top-issues survey after missing the top 10 the prior two years.",
+          "Drivers ranked fuel first and carriers ranked it second, showing cost pressure is felt across the industry."
+        ],
+        "source_ids": [
+          "H13"
+        ]
+      },
+      {
+        "heading": "Enforcement and fraud crackdowns",
+        "bullets": [
+          "Hundreds of violations and out-of-service orders came from recent CDL blitzes from California to North Dakota.",
+          "A Massachusetts man faces up to 15 years over a $3,000 Bluetooth CDL exam cheating scheme.",
+          "$30.4M in suspected meth was found in a commercial salt load at Laredo, keeping border inspections tight."
+        ],
+        "source_ids": [
+          "H4",
+          "H8",
+          "H11"
+        ]
+      },
+      {
+        "heading": "Nuclear verdict in New Mexico",
+        "bullets": [
+          "$47 million was awarded by a jury to a pickup driver and his mother after a 2022 tanker crash near Carlsbad.",
+          "Verdicts this size keep pressure on insurance premiums for small fleets."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      },
+      {
+        "heading": "Labor policy and equipment shifts",
+        "bullets": [
+          "The 2026 elections will reshape trucking labor policy regardless of which party wins, experts told an ATA committee.",
+          "Independent contractor rules may no longer split neatly along party lines, a key issue for leased owner-operators.",
+          "Daimler is building autonomy hardware into Freightliner trucks at the factory while leaving the software choice open."
+        ],
+        "source_ids": [
+          "H6",
+          "H5"
+        ]
+      }
+    ],
+    "seo_description": "Diesel rises 9.7 cents to $6.276, fuel tops ATRI concerns, CDL safety blitzes and a $47M tanker crash verdict."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-20T14:37:45.099Z",
+    "date": "2026-10-20",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "previous": {
+        "period": "2026-10-12",
+        "value": 6.179
+      },
+      "weeklyChangeCents": 9.7,
+      "weeklyChangePct": 1.6,
+      "fourWeekChangeCents": -25.3,
+      "formatted": {
+        "latest": "$6.276",
+        "weeklyChange": "up 9.7 cents",
+        "weeklyChangePct": "1.6%",
+        "fourWeekChange": "down 25.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        },
+        {
+          "period": "2026-08-24",
+          "value": 5.652
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Freight broker Fura’s latest deal adds $30M in revenue",
+        "link": "https://www.freightwaves.com/news/freight-broker-furas-latest-deal-adds-30m-in-revenue",
+        "published": "2026-10-20T14:21:03.000Z",
+        "snippet": "Freight broker Fura has acquired Road Dog Logistics, a truckload brokerage, expanding Fura's platform with an estimated $30 million in additional revenue. The post Freight broker Fura’s latest deal adds $30M in revenue appeared first on FreightWaves.",
+        "categories": [
+          "3PL and Brokerage",
+          "News",
+          "3PLs",
+          "freight brokers",
+          "Fura",
+          "Fura acquisition",
+          "transportation M&A",
+          "truckload brokerage"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Whataburger’s CSCO diversified suppliers to curb inflation — and fought fires along the way",
+        "link": "https://www.supplychaindive.com/news/how-whataburgers-csco-diversified-suppliers-to-curb-inflation-and-fought/833435/",
+        "published": "2026-10-20T14:16:00.000Z",
+        "snippet": "The burger chain has worked to diversify its partner network, as well as tackle the rising cost of beef and diesel fuel.",
+        "categories": [],
+        "creator": "Shefali Kapadia"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Australia Post expands freighter fleet ahead of holiday e-commerce rush",
+        "link": "https://www.freightwaves.com/news/australia-post-expands-freighter-fleet-ahead-of-holiday-e-commerce-rush",
+        "published": "2026-10-20T14:05:55.000Z",
+        "snippet": "Qantas Freight and Australia Post are big proponents of the Airbus A321 converted freighter, which hasn’t gained widespread popularity. The post Australia Post expands freighter fleet ahead of holiday e-commerce rush appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "PostalMag",
+          "air cargo",
+          "Airbus A321 freighter",
+          "Australia Post",
+          "e-commerce"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Truck safety blitzes uncover hundreds of violations across US",
+        "link": "https://www.freightwaves.com/news/truck-safety-blitzes-uncover-hundreds-of-violations-across-us",
+        "published": "2026-10-20T13:50:18.000Z",
+        "snippet": "State and federal authorities from California to North Dakota reported hundreds of violations and out-of-service orders in recent CDL enforcement operations. The post Truck safety blitzes uncover hundreds of violations across US appeared first on FreightWaves.",
+        "categories": [
+          "CDL Issues",
+          "News",
+          "Trucking",
+          "CDL",
+          "out-of-service",
+          "out-of-service violations"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Daimler Is Building Autonomy Into The Truck At The Factory, And Leaving The Software Choice Open",
+        "link": "https://www.freightwaves.com/news/daimler-is-building-autonomy-into-the-truck-at-the-factory-and-leaving-the-software-choice-open",
+        "published": "2026-10-20T11:44:00.000Z",
+        "snippet": "One of the quieter but more consequential points to come out of a recent candid session with Daimler Truck leadership had nothing to do with financing or freight rates and everything to do with how the trucks themselves are being built right now, because the company made clear that it is already producing a Freightliner […] The post Daimler Is Building Autonomy Into The Truck At The Factory, And L",
+        "categories": [
+          "Autonomous Freight",
+          "Fleet and Maintenance",
+          "Logistics/Supply Chains",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The 2026 Elections Will Reshape Trucking Labor Policy No Matter Which Party Wins",
+        "link": "https://www.freightwaves.com/news/the-2026-elections-will-reshape-trucking-labor-policy-no-matter-which-party-wins",
+        "published": "2026-10-20T11:24:00.000Z",
+        "snippet": "For most of the last two decades, trucking could read the politics of its workforce fights along a familiar line, with one party broadly friendly to the independent contractor model and the other broadly skeptical of it, but according to the policy and legal experts who briefed an American Trucking Associations committee at the group’s […] The post The 2026 Elections Will Reshape Trucking Labor Po",
+        "categories": [
+          "3PL and Brokerage",
+          "Labor Issue",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Modelo, Pacifico maker stabilizes beer inventory following undersupply",
+        "link": "https://www.supplychaindive.com/news/modelo-pacifico-maker-stabilizes-beer-inventory-following-undersupply/833292/",
+        "published": "2026-10-20T11:03:00.000Z",
+        "snippet": "Constellation Brands had overcorrected supply to match weaker-than-expected consumer demand, particularly among Hispanic consumers.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Failed CDL exams, $3,000 payments and Bluetooth cheating scheme lead to federal charges",
+        "link": "https://www.freightwaves.com/news/failed-cdl-exams-3000-payments-and-bluetooth-cheating-scheme-lead-to-federal-charges",
+        "published": "2026-10-19T22:14:33.000Z",
+        "snippet": "A Massachusetts man faces up to 15 years in prison after investigators linked his commercial driving exams to a Bluetooth cheating operation. Phone records and an undercover investigation exposed how the $3,000 scheme worked. The post Failed CDL exams, $3,000 payments and Bluetooth cheating scheme lead to federal charges appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "CDL testings",
+          "Cheating",
+          "Massachusetts",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Volvo folds powertrain repairs into its service contract",
+        "link": "https://www.freightwaves.com/news/volvo-silver-service-contract-powertrain",
+        "published": "2026-10-19T19:52:46.000Z",
+        "snippet": "Volvo Trucks North America launched the Silver Service Contract at ATA's Management Conference, adding powertrain repair coverage to its connected Blue maintenance plan. The post Volvo folds powertrain repairs into its service contract appeared first on FreightWaves.",
+        "categories": [
+          "Fleet and Maintenance",
+          "News",
+          "OEM Trucking",
+          "Trucking",
+          "ATRI",
+          "fleet maintenance",
+          "service contracts",
+          "TMC"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New Mexico jury awards $47M in tanker truck crash lawsuit",
+        "link": "https://www.freightwaves.com/news/new-mexico-jury-awards-47m-in-tanker-truck-crash-lawsuit",
+        "published": "2026-10-19T19:42:56.000Z",
+        "snippet": "A New Mexico jury awarded $47 million to a pick up truck driver and his mother following a 2022 tanker truck crash near Carlsbad. The post New Mexico jury awards $47M in tanker truck crash lawsuit appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Nuclear verdicts",
+          "Trucking",
+          "New Mexico",
+          "nuclear verdicts",
+          "tanker trucks"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CBP seizes $30.4M in meth hidden in commercial salt load at Laredo World Trade Bridge",
+        "link": "https://www.freightwaves.com/news/cbp-seizes-30-4m-in-meth-hidden-in-commercial-salt-load-at-laredo-world-trade-bridge",
+        "published": "2026-10-19T19:11:57.000Z",
+        "snippet": "Federal officers discovered 76 bags of suspected contraband during a secondary examination. Homeland Security Investigations now faces questions about the shipment's origin, destination and those responsible. The post CBP seizes $30.4M in meth hidden in commercial salt load at Laredo World Trade Bridge appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "Business",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "CBP",
+          "cross border freight",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Air Canada adds freighter destinations for winter season",
+        "link": "https://www.freightwaves.com/news/air-canada-adds-freighter-destinations-for-winter-season",
+        "published": "2026-10-19T19:08:52.000Z",
+        "snippet": "Air Canada is expanding its freighter network to Europe and Latin America for the winter. The post Air Canada adds freighter destinations for winter season appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "Air Canada",
+          "air cargo",
+          "freighter aircraft",
+          "freighter demand"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Pump price is trucking’s #1 concern: ATRI survey",
+        "link": "https://www.freightwaves.com/news/pump-price-is-truckings-1-concern-atri-survey",
+        "published": "2026-10-19T17:40:45.000Z",
+        "snippet": "This year’s study of the top issues facing trucking undertaken by the American Transportation Research Institute (ATRI) had a number one concern that didn’t even crack the top 10 in the prior two years: fuel prices. That issue was number one in the responses submitted by drivers and number two for carriers, finishing in the […] The post Pump price is trucking’s #1 concern: ATRI survey appeared fir",
+        "categories": [
+          "Fuel News",
+          "News",
+          "Top Stories",
+          "Truck Driver Issues",
+          "American Transportation Research Institute",
+          "American Trucking Associations",
+          "Diesel prices",
+          "Montgomery vs. Caribe Transport II"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "No. 2 container line studying US-UK route for nuclear ships",
+        "link": "https://www.freightwaves.com/news/no-2-container-line-studying-us-uk-route-for-nuclear-ships",
+        "published": "2026-10-19T17:37:31.000Z",
+        "snippet": "Maersk is studying the safety and regulatory requirements for nuclear-powered container ships, including a potential U.S.-Europe route. The post No. 2 container line studying US-UK route for nuclear ships appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Core Power",
+          "Maersk"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cutter & Buck eyes fulfillment boost with second automated distribution center",
+        "link": "https://www.supplychaindive.com/news/cutter-buck-eyes-fulfillment-boost-with-second-automated-distribution-cen/833237/",
+        "published": "2026-10-19T14:59:49.000Z",
+        "snippet": "The apparel brand’s new site in Grand Prairie, Texas, features over 50,000 storage bins and is equipped to process more than 1,200 bins per hour.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Few major apparel brands pay garment workers a living wage: report",
+        "link": "https://www.supplychaindive.com/news/few-major-apparel-brands-pay-garment-workers-a-living-wage-report/833275/",
+        "published": "2026-10-19T14:02:00.000Z",
+        "snippet": "Out of 110 clothing brands — including Adidas, Chanel and Zara — only four disclose workers’ wage levels at garment factories in their supply chains, a new report from Clean Clothes Campaign found.",
+        "categories": [],
+        "creator": "Lauren Schenkman"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart approves 8 more parcel carriers for seller-fulfilled shipping",
+        "link": "https://www.supplychaindive.com/news/walmart-approves-8-more-parcel-carriers-for-seller-fulfilled-shipping/833259/",
+        "published": "2026-10-19T14:01:24.000Z",
+        "snippet": "The retailer's marketplace now allows businesses to use DoorDash, UniUni and others if they are managing deliveries themselves.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Port of Savannah to build 3.5M TEU container terminal",
+        "link": "https://www.supplychaindive.com/news/port-of-savannah-to-build-35m-teu-container-terminal/833246/",
+        "published": "2026-10-19T13:55:00.000Z",
+        "snippet": "The port expects to be able to handle 12 million TEUs annually once construction is complete.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unlocking the autonomous supply chain: Why execution data has to feed the plan",
+        "link": "https://www.supplychaindive.com/spons/unlocking-the-autonomous-supply-chain-why-execution-data-has-to-feed-the-p/833263/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "Ditch the war room. Build a supply chain that learns and adapts autonomously.",
+        "categories": [],
+        "creator": "Michelle Rivera"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "The biggest risk in agentic commerce isn’t easy to see. It’s invisibility.",
+        "link": "https://www.supplychaindive.com/spons/the-biggest-risk-in-agentic-commerce-isnt-easy-to-see-its-invisibility/832344/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "As AI agents shortlist products for shoppers, incomplete data can mean lost sales.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Supply chain visibility tells you what happened. Can you see what it cost?",
+        "link": "https://www.supplychaindive.com/spons/supply-chain-visibility-tells-you-what-happened-can-you-see-what-it-cost/832819/",
+        "published": "2026-10-19T09:00:00.000Z",
+        "snippet": "Supply chain visibility can tell you what happened. Transportation Financial Intelligence™ helps explain what it cost, why it happened and what should happen next.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "From library to logistics: Cathy Morrow Roberson shares career insights",
+        "link": "https://www.supplychaindive.com/news/from-library-to-logistics-cathy-morrow-roberson-shares-career-insights/833023/",
+        "published": "2026-10-16T14:34:00.000Z",
+        "snippet": "“There are so many more opportunities today than there were when I started my business,\" the managing director of Logistics Trends & Insights told Supply Chain Dive.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Agency Information Collection Activities; Comment Request on Returns Regarding Payments of Interest",
+        "abstract": "In accordance with the Paperwork Reduction Act of 1995, the IRS is inviting comments on the information collection request outlined in this notice.",
+        "link": "https://www.federalregister.gov/documents/2026/10/07/2026-20540/agency-information-collection-activities-comment-request-on-returns-regarding-payments-of-interest",
+        "published": "2026-10-07",
+        "documentNumber": "2026-20540"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Freight Fraud Gets More Strategic Heading Into Peak Season",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "What Happens to Tribal Knowledge When Dispatchers Retire?",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 9.7 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

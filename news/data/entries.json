@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-10-20",
+    "subject": "Diesel jumps 9.7 cents to $6.276 as fuel tops trucking worries",
+    "headline": "Diesel climbs 9.7 cents to $6.276; fuel tops ATRI's list of trucking concerns",
+    "script": "Diesel rebounds after a four-week slide, safety blitzes write hundreds of violations, and a $47M verdict lands in New Mexico.\n\nThe national diesel average rose 9.7 cents to $6.276 per gallon, snapping a stretch that still leaves prices down 25.3 cents over four weeks.",
+    "url": "briefs/2026-10-20.html",
+    "dieselPrice": {
+      "period": "2026-10-19",
+      "dollarsPerGallon": 6.276
+    },
+    "topHeadline": "Diesel climbs 9.7 cents to $6.276; fuel tops ATRI's list of trucking concerns",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Pump price is trucking’s #1 concern: ATRI survey",
+        "link": "https://www.freightwaves.com/news/pump-price-is-truckings-1-concern-atri-survey"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Truck safety blitzes uncover hundreds of violations across US",
+        "link": "https://www.freightwaves.com/news/truck-safety-blitzes-uncover-hundreds-of-violations-across-us"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Failed CDL exams, $3,000 payments and Bluetooth cheating scheme lead to federal charges",
+        "link": "https://www.freightwaves.com/news/failed-cdl-exams-3000-payments-and-bluetooth-cheating-scheme-lead-to-federal-charges"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "CBP seizes $30.4M in meth hidden in commercial salt load at Laredo World Trade Bridge",
+        "link": "https://www.freightwaves.com/news/cbp-seizes-30-4m-in-meth-hidden-in-commercial-salt-load-at-laredo-world-trade-bridge"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "New Mexico jury awards $47M in tanker truck crash lawsuit",
+        "link": "https://www.freightwaves.com/news/new-mexico-jury-awards-47m-in-tanker-truck-crash-lawsuit"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "The 2026 Elections Will Reshape Trucking Labor Policy No Matter Which Party Wins",
+        "link": "https://www.freightwaves.com/news/the-2026-elections-will-reshape-trucking-labor-policy-no-matter-which-party-wins"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "subject": "Werner warns on Q3 costs; truckload capacity still not rebounding",
     "headline": "Werner Flags Rising Costs as Truckload Capacity Shows No Recovery",
