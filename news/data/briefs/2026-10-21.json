@@ -1,0 +1,439 @@
+{
+  "brief": {
+    "subject": "Canada tariff suit, Heartland profit turn, $1M card theft",
+    "headline": "Court challenge hits 50% Canada tariffs as Heartland posts a real Q3 profit",
+    "dek": "A lawsuit targets Canada tariffs, Heartland Express turns a profit, nearly $1M in cards vanish from a truck, and LTL and rail networks shift.",
+    "lede": "A lawsuit at the Court of International Trade challenges the 50% tariffs on Canada. Cross-border carriers should watch the case closely.",
+    "sections": [
+      {
+        "heading": "Canada Tariffs Face Legal Test",
+        "bullets": [
+          "50% tariffs on Canada are now challenged in a suit filed Tuesday at the Court of International Trade.",
+          "The suit claims the president overstepped by using a statute nearly 100 years old to impose them.",
+          "Cross-border carriers should treat the case as a key watch item for northbound and southbound lane volumes."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      },
+      {
+        "heading": "Heartland Express Turns the Corner",
+        "bullets": [
+          "Q3 brought Heartland its first net profit since 2023 that did not lean on big equipment or terminal sales.",
+          "A large truckload carrier earning from operations is one more data point small fleets can weigh when reading the market."
+        ],
+        "source_ids": [
+          "H13"
+        ]
+      },
+      {
+        "heading": "Nearly $1M Cargo Theft in California",
+        "bullets": [
+          "Nearly $1 million in trading cards disappeared from a FedEx truck outside a California grading facility.",
+          "The driver found a cargo-door lock missing, and detectives are seeking surveillance footage.",
+          "High-value, easy-to-resell loads remain prime targets, so check locks and seals at every stop."
+        ],
+        "source_ids": [
+          "H5"
+        ]
+      },
+      {
+        "heading": "Network Moves in LTL and Rail",
+        "bullets": [
+          "A. Duie Pyle is adding a Cincinnati-area LTL service center and a Camp Hill, Pennsylvania warehouse.",
+          "That expansion could mean more regional LTL competition and capacity in Ohio and Pennsylvania.",
+          "CSX cut more than 100 management positions while restructuring its engineering department."
+        ],
+        "source_ids": [
+          "H6",
+          "H1"
+        ]
+      }
+    ],
+    "seo_description": "Trucking brief: 50% Canada tariffs challenged in court, Heartland Express Q3 profit turnaround, nearly $1M cargo theft, LTL and rail network changes."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-21T14:49:08.878Z",
+    "date": "2026-10-21",
+    "timezone": "America/Chicago",
+    "fuel": null,
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CSX eliminates more than 100 management positions",
+        "link": "https://www.freightwaves.com/news/csx-eliminates-more-than-100-management-positions",
+        "published": "2026-10-21T13:41:19.000Z",
+        "snippet": "Management layoffs mark railroad’s engineering department restructuring. The post CSX eliminates more than 100 management positions appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Railroad",
+          "Top Stories",
+          "CSX",
+          "earnings",
+          "layoffs",
+          "Management",
+          "Operations"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Stord acquires e-commerce competitor AMS Fulfillment in large deal",
+        "link": "https://www.freightwaves.com/news/stord-acquires-e-commerce-competitor-ams-fulfillment-in-large-deal",
+        "published": "2026-10-21T12:59:08.000Z",
+        "snippet": "Retail fulfillment provider Stord has acquired AMS fulfillment, a large competitor. The post Stord acquires e-commerce competitor AMS Fulfillment in large deal appeared first on FreightWaves.",
+        "categories": [
+          "Fulfillment",
+          "M&A",
+          "News",
+          "Top Stories",
+          "e-commerce",
+          "fulfillment",
+          "fulfillment centers",
+          "STORD"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Primo Brands opens first new factory post merger",
+        "link": "https://www.supplychaindive.com/news/primo-brands-opens-first-new-factory-post-merger/833375/",
+        "published": "2026-10-21T11:15:00.000Z",
+        "snippet": "The Arkansas plant will increase production for sparkling water brand Mountain Valley as demand for premium beverages surges.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Highway pitches shared standards as freight fraud shifts",
+        "link": "https://www.freightwaves.com/news/highway-shared-standards-freight-fraud",
+        "published": "2026-10-21T11:00:00.000Z",
+        "snippet": "Highway has lost one load out of a million under its $100,000 performance guarantee. Its CCO says the next step is getting insurers, factors and ELD vendors to vouch for their data The post Highway pitches shared standards as freight fraud shifts appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Top Stories",
+          "Trucking",
+          "Trucking Compliance",
+          "cargo theft",
+          "carrier vetting",
+          "freight broker fraud",
+          "freight fraud"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Nearly $1M in Pokémon and sports cards vanish from FedEx truck, driver discovers missing lock",
+        "link": "https://www.freightwaves.com/news/nearly-1m-in-pokemon-and-sports-cards-vanish-from-fedex-truck-driver-discovers-missing-lock",
+        "published": "2026-10-21T01:08:08.000Z",
+        "snippet": "A FedEx driver discovered a missing cargo-door lock and nearly $1 million in stolen trading cards outside a California grading facility. Detectives are reviewing his account and seeking surveillance footage to determine how the shipment disappeared. The post Nearly $1M in Pokémon and sports cards vanish from FedEx truck, driver discovers missing lock appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "California",
+          "cargo theft",
+          "FedEx",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "A. Duie Pyle expands LTL network with new Ohio, Pennsylvania facilities",
+        "link": "https://www.freightwaves.com/news/a-duie-pyle-expands-ltl-network-with-new-ohio-pennsylvania-facilities",
+        "published": "2026-10-20T20:39:23.000Z",
+        "snippet": "A. Duie Pyle is expanding its regional freight network with a new Cincinnati-area LTL service center and an integrated warehouse facility in Camp Hill, Pennsylvania. The post A. Duie Pyle expands LTL network with new Ohio, Pennsylvania facilities appeared first on FreightWaves.",
+        "categories": [
+          "Less than Truckload (LTL)",
+          "News",
+          "Trucking",
+          "A. Duie Pyle",
+          "Cincinnati",
+          "Less than truckload",
+          "Pennslyvania"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "PACCAR builds a fleet app platform into Kenworth, Peterbilt",
+        "link": "https://www.freightwaves.com/news/paccar-connect-kenworth-peterbilt-launch",
+        "published": "2026-10-20T20:35:38.000Z",
+        "snippet": "PACCAR Connect arrives in early 2027 and links Kenworth and Peterbilt drivers to Platform Science's Virtual Vehicle app marketplace, days before PACCAR reports Q3 results. The post PACCAR builds a fleet app platform into Kenworth, Peterbilt appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "OEM Trucking",
+          "Technology",
+          "Trucking",
+          "Trucking Tech",
+          "Class 8 telematics",
+          "factory-installed truck telematics",
+          "Kenworth"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Napa Auto Parts revs up fulfillment efficiency with automation",
+        "link": "https://www.supplychaindive.com/news/napa-auto-parts-revs-up-fulfillment-efficiency-with-automation/833383/",
+        "published": "2026-10-20T19:09:00.000Z",
+        "snippet": "Alongside Hy-Tek Intralogistics and Hai Robotics, the retailer aims to maximize warehouse storage density and improve order accuracy.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Partner of Choice: Why the Best Shipper-Carrier Relationships Now Go Beyond Shipper of Choice",
+        "link": "https://www.freightwaves.com/news/partner-of-choice-why-the-best-shipper-carrier-relationships-now-go-beyond-shipper-of-choice",
+        "published": "2026-10-20T18:53:46.000Z",
+        "snippet": "Tender rejections are 2.5x last year and contract rates are up 18%. SONAR's new sitrep shows how shippers go from shipper of choice to partner of choice. The post Partner of Choice: Why the Best Shipper-Carrier Relationships Now Go Beyond Shipper of Choice appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "logistics",
+          "Shipper of choice",
+          "Trucking"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump’s 50% Canada tariffs challenged in court",
+        "link": "https://www.supplychaindive.com/news/trumps-50-canada-tariffs-challenged-in-court/833495/",
+        "published": "2026-10-20T18:18:00.000Z",
+        "snippet": "A lawsuit filed Tuesday with the Court of International Trade alleges the president exceeded his power in using a nearly 100-year-old statute to impose tariffs.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Time-definite ocean delivery? Container ship completes new Arctic route trial",
+        "link": "https://www.freightwaves.com/news/time-definite-ocean-delivery-container-ship-completes-new-arctic-route-trial",
+        "published": "2026-10-20T17:00:00.000Z",
+        "snippet": "South Korea’s Arctic shipping trial demonstrated a faster Europe route, but commercial viability remains uncertain. The post Time-definite ocean delivery? Container ship completes new Arctic route trial appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "#trade",
+          "Arctic shipping",
+          "container shipping"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H12",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "US semiconductor supply chain relies on vulnerable, hidden inputs",
+        "link": "https://www.supplychaindive.com/news/us-semiconductor-supply-chain-relies-on-vulnerable-hidden-inputs/833485/",
+        "published": "2026-10-20T16:55:46.000Z",
+        "snippet": "To guard against disruptions, the Semiconductor Industry Association called for closer government-industry collaboration to address targets for onshoring and stockpiling.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Heartland Express sees earnings turnaround in Q3",
+        "link": "https://www.freightwaves.com/news/heartland-express-sees-earnings-turnaround-in-q3",
+        "published": "2026-10-20T16:32:00.000Z",
+        "snippet": "For the first time since 2023, truckload carrier Heartland Express achieved a net profit that was not driven by large gains from selling equipment and terminals. The post Heartland Express sees earnings turnaround in Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Truckload Carriers",
+          "company earnings",
+          "Heartland Express",
+          "TL carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "World’s first ammonia-powered dry bulk ship completes sea trials",
+        "link": "https://www.freightwaves.com/news/worlds-first-ammonia-powered-dry-bulk-ship-completes-sea-trials",
+        "published": "2026-10-20T16:30:00.000Z",
+        "snippet": "Completion of sea trials marks a milestone in commercial deploying of alternative fuels for ocean shipping. The post World’s first ammonia-powered dry bulk ship completes sea trials appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "Alternative fuels",
+          "container shipping",
+          "dry bulk",
+          "Emissions"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Texas sues Nestlé’s Gerber over alleged heavy metals in baby food",
+        "link": "https://www.supplychaindive.com/news/texas-sues-nestles-gerber-over-alleged-heavy-metals-in-baby-food/833374/",
+        "published": "2026-10-20T14:48:00.000Z",
+        "snippet": "Gerber says it employs “careful ingredient sourcing, supplier requirements, testing and quality controls\" to reduce heavy metal levels in its products.",
+        "categories": [],
+        "creator": "Sarah Zimmerman"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Chocolate maker signs $6.6M sale-leaseback deal for warehouse site",
+        "link": "https://www.supplychaindive.com/news/chocolate-maker-signs-66m-sale-leaseback-deal-for-warehouse-site/833344/",
+        "published": "2026-10-20T14:39:09.000Z",
+        "snippet": "The deal for Rocky Mountain Chocolate Factory's Colorado facility, which also houses production operations and the company's headquarters, aims to cut existing debt.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Whataburger’s CSCO diversified suppliers to curb inflation — and fought fires along the way",
+        "link": "https://www.supplychaindive.com/news/how-whataburgers-csco-diversified-suppliers-to-curb-inflation-and-fought/833435/",
+        "published": "2026-10-20T14:16:00.000Z",
+        "snippet": "The burger chain has worked to diversify its partner network, as well as tackle the rising cost of beef and diesel fuel.",
+        "categories": [],
+        "creator": "Shefali Kapadia"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Bluffworks targets lower fulfillment costs after provider switch",
+        "link": "https://www.supplychaindive.com/news/bluffworks-targets-lower-fulfillment-costs-after-provider-switch/833337/",
+        "published": "2026-10-20T13:57:02.000Z",
+        "snippet": "The travel apparel brand’s CEO spoke to Supply Chain Dive on making the switch to Cart.com after invoicing failures from its previous fulfillment partner.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Modelo, Pacifico maker stabilizes beer inventory following undersupply",
+        "link": "https://www.supplychaindive.com/news/modelo-pacifico-maker-stabilizes-beer-inventory-following-undersupply/833292/",
+        "published": "2026-10-20T11:03:00.000Z",
+        "snippet": "Constellation Brands had overcorrected supply to match weaker-than-expected consumer demand, particularly among Hispanic consumers.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cutter & Buck eyes fulfillment boost with second automated distribution center",
+        "link": "https://www.supplychaindive.com/news/cutter-buck-eyes-fulfillment-boost-with-second-automated-distribution-cen/833237/",
+        "published": "2026-10-19T14:59:49.000Z",
+        "snippet": "The apparel brand’s new site in Grand Prairie, Texas, features over 50,000 storage bins and is equipped to process more than 1,200 bins per hour.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Agency Information Collection Activities; Comment Request on Returns Regarding Payments of Interest",
+        "abstract": "In accordance with the Paperwork Reduction Act of 1995, the IRS is inviting comments on the information collection request outlined in this notice.",
+        "link": "https://www.federalregister.gov/documents/2026/10/07/2026-20540/agency-information-collection-activities-comment-request-on-returns-regarding-payments-of-interest",
+        "published": "2026-10-07",
+        "documentNumber": "2026-20540"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "From Freight Management to Self-Improving Networks",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Reefer Truckload Rejections Soar: 1 in 5 Loads Rejected Nationally",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Bot Auto’s Secret to an Affordable Future",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Diesel Prices: Up, Down, or Stuck?",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": [
+      {
+        "source": "EIA diesel",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

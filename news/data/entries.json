@@ -1,5 +1,51 @@
 [
   {
+    "date": "2026-10-21",
+    "subject": "Canada tariff suit, Heartland profit turn, $1M card theft",
+    "headline": "Court challenge hits 50% Canada tariffs as Heartland posts a real Q3 profit",
+    "script": "A lawsuit targets Canada tariffs, Heartland Express turns a profit, nearly $1M in cards vanish from a truck, and LTL and rail networks shift.\n\nA lawsuit at the Court of International Trade challenges the 50% tariffs on Canada. Cross-border carriers should watch the case closely.",
+    "url": "briefs/2026-10-21.html",
+    "dieselPrice": null,
+    "topHeadline": "Court challenge hits 50% Canada tariffs as Heartland posts a real Q3 profit",
+    "sources": [
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump’s 50% Canada tariffs challenged in court",
+        "link": "https://www.supplychaindive.com/news/trumps-50-canada-tariffs-challenged-in-court/833495/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Heartland Express sees earnings turnaround in Q3",
+        "link": "https://www.freightwaves.com/news/heartland-express-sees-earnings-turnaround-in-q3"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Nearly $1M in Pokémon and sports cards vanish from FedEx truck, driver discovers missing lock",
+        "link": "https://www.freightwaves.com/news/nearly-1m-in-pokemon-and-sports-cards-vanish-from-fedex-truck-driver-discovers-missing-lock"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "A. Duie Pyle expands LTL network with new Ohio, Pennsylvania facilities",
+        "link": "https://www.freightwaves.com/news/a-duie-pyle-expands-ltl-network-with-new-ohio-pennsylvania-facilities"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "CSX eliminates more than 100 management positions",
+        "link": "https://www.freightwaves.com/news/csx-eliminates-more-than-100-management-positions"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-20",
     "subject": "Diesel jumps 9.7 cents to $6.276 as fuel tops trucking worries",
     "headline": "Diesel climbs 9.7 cents to $6.276; fuel tops ATRI's list of trucking concerns",
