@@ -1,0 +1,542 @@
+{
+  "brief": {
+    "subject": "Diesel up 9.7 cents to $6.276; Knight-Swift eyes rate hikes",
+    "headline": "Diesel climbs 9.7 cents as Knight-Swift targets double-digit contract rate gains",
+    "dek": "Diesel rose to $6.276, a big carrier signals rate hikes into bid season, railroads post strong results, and LA-Long Beach dwell times climb.",
+    "lede": "Diesel rose 9.7 cents last week to $6.276 a gallon, per EIA. Recheck fuel surcharges and lane math before quoting loads.",
+    "sections": [
+      {
+        "heading": "Diesel snaps back up",
+        "bullets": [
+          "$6.276 per gallon: U.S. average retail diesel for the week of 2026-10-19, per EIA.",
+          "Up 9.7 cents (1.6%) week over week, so fuel cost per mile just rose.",
+          "Still down 25.3 cents over four weeks, but last week's jump erased part of that relief.",
+          "Make sure surcharge tables reflect the latest weekly average before booking freight."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Knight-Swift pushes for higher rates",
+        "bullets": [
+          "Double-digit increases: Knight-Swift is targeting them as its new bid season starts next month.",
+          "Big carriers chasing contract hikes can lift the rate floor small fleets negotiate against.",
+          "Knight-Swift beat Q3 expectations, with a fourth-quarter outlook in line with consensus.",
+          "Ryder improved nearly every third-quarter metric and raised its full-year 2026 outlook."
+        ],
+        "source_ids": [
+          "H5",
+          "H13",
+          "H4"
+        ]
+      },
+      {
+        "heading": "Rail volumes and profits rise",
+        "bullets": [
+          "Record revenue: Norfolk Southern's third-quarter earnings rose on higher volume and fuel surcharges.",
+          "CSX Q3 profit also climbed on more freight and higher fuel surcharge revenue.",
+          "Stronger rail volumes mean more intermodal competition on long-haul lanes."
+        ],
+        "source_ids": [
+          "H2",
+          "H9"
+        ]
+      },
+      {
+        "heading": "Port delays and border capacity",
+        "bullets": [
+          "Record September volumes pushed up cargo dwell times at San Pedro Bay Ports for truck and rail.",
+          "Longer dwell means more waiting at LA and Long Beach, so price drayage detention accordingly.",
+          "$90 million: DSV opened a Laredo facility combining cross-border trucking, warehousing and customs.",
+          "A court challenge targets 50% tariffs on Canada, leaving the cross-border freight outlook uncertain."
+        ],
+        "source_ids": [
+          "H16",
+          "H14",
+          "H19"
+        ]
+      },
+      {
+        "heading": "Freight shifts to watch",
+        "bullets": [
+          "Nestlé will close an Ohio factory by end of 2027, moving production to South Carolina.",
+          "That move could reroute food freight from Ohio lanes toward the Southeast.",
+          "Primo Brands opened a new Arkansas plant to boost Mountain Valley sparkling water output.",
+          "Tesla says its Class 8 electric Semi entered volume production ahead of a 2027 expansion."
+        ],
+        "source_ids": [
+          "H1",
+          "H17",
+          "H10"
+        ]
+      }
+    ],
+    "seo_description": "Diesel up 9.7 cents to $6.276, Knight-Swift eyes double-digit rate hikes, rail profits rise and port dwell times climb. Daily trucking brief."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-22T14:50:17.927Z",
+    "date": "2026-10-22",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "previous": {
+        "period": "2026-10-12",
+        "value": 6.179
+      },
+      "weeklyChangeCents": 9.7,
+      "weeklyChangePct": 1.6,
+      "fourWeekChangeCents": -25.3,
+      "formatted": {
+        "latest": "$6.276",
+        "weeklyChange": "up 9.7 cents",
+        "weeklyChangePct": "1.6%",
+        "fourWeekChange": "down 25.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        },
+        {
+          "period": "2026-08-24",
+          "value": 5.652
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nestlé to close Ohio factory by end of 2027",
+        "link": "https://www.supplychaindive.com/news/nestle-to-close-ohio-factory-by-end-of-2027/833587/",
+        "published": "2026-10-22T14:21:00.000Z",
+        "snippet": "The food giant will move production to South Carolina, saying it is \"the most sustainable path forward\" as consumer needs and volumes shift.",
+        "categories": [],
+        "creator": "Christopher Doering"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: Norfolk Southern earnings",
+        "link": "https://www.freightwaves.com/news/first-look-norfolk-southern-earnings-4",
+        "published": "2026-10-22T14:09:01.000Z",
+        "snippet": "Norfolk Southern’s third-quarter earnings rose as higher freight volume and fuel surcharges drove record revenue. The post First look: Norfolk Southern earnings appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Finance",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "carloads",
+          "earnings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Stord expands network with AMS Fulfillment purchase",
+        "link": "https://www.supplychaindive.com/news/stord-expands-network-with-ams-fulfillment-purchase/833617/",
+        "published": "2026-10-22T14:00:28.000Z",
+        "snippet": "The acquisition bolsters Stord's presence in key East Coast and West Coast hubs while building upon other recent deals.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: almost all strong numbers in Ryder’s third quarter earnings",
+        "link": "https://www.freightwaves.com/news/first-look-almost-all-strong-numbers-in-ryders-third-quarter-earnings",
+        "published": "2026-10-22T13:42:38.000Z",
+        "snippet": "It was a solid third quarter for Ryder, with improvement in just about every metric compared to the third quarter of 2025. The numbers have been good enough that Ryder (NYSE: R) raised its full-year outlook for 2026. With three quarters in the books, there’s only so much higher it can go. But the company […] The post First look: almost all strong numbers in Ryder’s third quarter earnings appeared ",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "Ryder"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Knight-Swift again eyes big rate increases as new bid season nears",
+        "link": "https://www.freightwaves.com/news/knight-swift-again-eyes-big-rate-increases-as-new-bid-season-nears",
+        "published": "2026-10-22T13:31:37.000Z",
+        "snippet": "Knight-Swift Transportation’s large exposure to the one-way truckload market has it in position to capture double-digit rate increases as its new bid season kicks off next month. The post Knight-Swift again eyes big rate increases as new bid season nears appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "Knight-Swift",
+          "knight-swift guidance",
+          "Knight-Swift Transportation"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Einride’s autonomous trucks to learn from Nvidia’s Alpamayo",
+        "link": "https://www.freightwaves.com/news/einride-nvidia-alpamayo-autonomous-trucks",
+        "published": "2026-10-22T12:00:00.000Z",
+        "snippet": "A month after agreeing to build its next Einride Driver on Nvidia Hyperion, Einride said it will adapt Alpamayo to its trucks, routes and data, with a road evaluation set for 2027. The post Einride’s autonomous trucks to learn from Nvidia’s Alpamayo appeared first on FreightWaves.",
+        "categories": [
+          "Autonomous Vehicles",
+          "Business",
+          "News",
+          "Technology",
+          "Alpamayo",
+          "Alpamayo 2 Super",
+          "autonomous trucking",
+          "driverless trucks"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Motive launches AI Agents as fleets weigh how to prevent problems",
+        "link": "https://www.freightwaves.com/news/motive-launches-ai-agents-fleets",
+        "published": "2026-10-22T11:00:00.000Z",
+        "snippet": "Motive, an AI platform for physical operations, launched Agents on Monday at the American Trucking Associations’ Management Conference & Exhibition (MCE) in Charlotte, North Carolina. These AI Agents act on safety and maintenance alerts under rules a fleet sets, including calling drivers, opening work orders, and bringing in managers so teams can scale without adding […] The post Motive launches A",
+        "categories": [
+          "News",
+          "Technology",
+          "Top Stories",
+          "Trucking",
+          "AI Dashcam Plus",
+          "ATA MCE",
+          "ATA MCE 2026",
+          "Atlas AI assistant"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Late, short deliveries cost food and CPG makers $100 billion",
+        "link": "https://www.freightwaves.com/news/cleo-otif-failures-cost-cpg-100-billion",
+        "published": "2026-10-22T11:00:00.000Z",
+        "snippet": "Cleo's OTIF report models $10 billion to $11 billion in direct costs and $85 billion to $90 billion in indirect losses for North American CPG and food manufacturers. The post Late, short deliveries cost food and CPG makers $100 billion appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Fulfillment",
+          "Logistics/Supply Chains",
+          "News",
+          "Cleo",
+          "Cleo OTIF Report",
+          "CPG",
+          "CPG retailers"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CSX profit jumps on volume and revenue growth",
+        "link": "https://www.freightwaves.com/news/csx-profit-jumps-on-volume-and-revenue-growth",
+        "published": "2026-10-22T10:00:00.000Z",
+        "snippet": "Increased freight boosted CSX Q3 profits, along with higher fuel surcharge revenue and more efficient operations. The post CSX profit jumps on volume and revenue growth appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Finance",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "carloads",
+          "earnings"
+        ],
+        "creator": "Trains.com Staff"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tesla Semi enters volume production as 2027 rollout approaches",
+        "link": "https://www.freightwaves.com/news/tesla-semi-enters-volume-production-as-2027-rollout-approaches",
+        "published": "2026-10-22T00:16:11.000Z",
+        "snippet": "Automaker Tesla says it began volume production of its Class 8 electric Semi truck in the third quarter, marking a major milestone ahead of its planned 2027 commercial expansion. The post Tesla Semi enters volume production as 2027 rollout approaches appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Electric Trucks",
+          "News",
+          "Trucking",
+          "company earnings",
+          "Electric trucks",
+          "Tesla",
+          "Tesla Semi"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CEO’s letter boasts of lots of arrows pointing up at Triumph Financial",
+        "link": "https://www.freightwaves.com/news/ceos-letter-boasts-of-lots-of-arrows-pointing-up-at-triumph-financial",
+        "published": "2026-10-21T23:29:46.000Z",
+        "snippet": "It was hard not to read the quarterly letter to shareholders by Aaron Graft, the CEO of Triumph Financial, and not get a sense that he was taking the first few steps into a victory lap. Triumph’s message to investors for years has been consistent, and it has been amplified every three months in Graft’s […] The post CEO’s letter boasts of lots of arrows pointing up at Triumph Financial appeared fir",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "Factoring",
+          "Triumph Financial"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Data Your Truck Sends Home Is Becoming Your New Credit Score, And Your Insurance Rate Too",
+        "link": "https://www.freightwaves.com/news/the-data-your-truck-sends-home-is-becoming-your-new-credit-score-and-your-insurance-rate-too",
+        "published": "2026-10-21T23:11:33.000Z",
+        "snippet": "Somewhere in your truck right now, a connected system is quietly recording how it is driven, how hard it works, where it goes, and how healthy its engine is, and that stream of data is no longer just a maintenance convenience, it is becoming one of the most important numbers in your business, because at […] The post The Data Your Truck Sends Home Is Becoming Your New Credit Score, And Your Insuran",
+        "categories": [
+          "Fleet and Maintenance",
+          "Logistics/Supply Chains",
+          "Playbook: Risk & Insurance"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: Knight-Swift’s Q3 beats expectations",
+        "link": "https://www.freightwaves.com/news/first-look-knight-swifts-q3-beats-expectations",
+        "published": "2026-10-21T21:39:32.000Z",
+        "snippet": "Knight-Swift Transportation beat third-quarter expectations and issued a fourth-quarter outlook that was in line with the consensus estimate. The post First look: Knight-Swift’s Q3 beats expectations appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Truckload Carriers",
+          "AAA Cooper",
+          "company earnings",
+          "Knight-Swift",
+          "Knight-Swift Transportation",
+          "LTL carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DSV expands US-Mexico freight network with $90M Laredo facility",
+        "link": "https://www.freightwaves.com/news/dsv-expands-us-mexico-freight-network-with-90m-laredo-facility",
+        "published": "2026-10-21T21:12:45.000Z",
+        "snippet": "DSV has opened a $90 million logistics facility in Laredo, consolidating cross-border transportation, warehousing and customs services along the Texas-Mexico border. The post DSV expands US-Mexico freight network with $90M Laredo facility appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "DSV",
+          "Laredo texas",
+          "logistics centers",
+          "US-Mexico trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apple expands US supplier network for iPhone materials, components",
+        "link": "https://www.supplychaindive.com/news/apple-expands-us-supplier-network-for-iphone-materials-components/833496/",
+        "published": "2026-10-21T15:05:00.000Z",
+        "snippet": "The company added a new titanium supplier and expanded its partnership with an advanced film maker as part of a $600 billion commitment to U.S. manufacturing.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Extended peak season drives high dwell times at San Pedro Bay Ports",
+        "link": "https://www.supplychaindive.com/news/extended-peak-season-drives-high-dwell-times-at-san-pedro-bay-ports/833584/",
+        "published": "2026-10-21T14:17:43.000Z",
+        "snippet": "The Pacific Merchant Shipping Association said record volumes in September pushed up the time cargo remained idle, both for rail and truck transport.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Primo Brands opens first new factory post merger",
+        "link": "https://www.supplychaindive.com/news/primo-brands-opens-first-new-factory-post-merger/833375/",
+        "published": "2026-10-21T11:15:00.000Z",
+        "snippet": "The Arkansas plant will increase production for sparkling water brand Mountain Valley as demand for premium beverages surges.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Napa Auto Parts revs up fulfillment efficiency with automation",
+        "link": "https://www.supplychaindive.com/news/napa-auto-parts-revs-up-fulfillment-efficiency-with-automation/833383/",
+        "published": "2026-10-20T19:09:00.000Z",
+        "snippet": "Alongside Hy-Tek Intralogistics and Hai Robotics, the retailer aims to maximize warehouse storage density and improve order accuracy.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump’s 50% Canada tariffs challenged in court",
+        "link": "https://www.supplychaindive.com/news/trumps-50-canada-tariffs-challenged-in-court/833495/",
+        "published": "2026-10-20T18:18:00.000Z",
+        "snippet": "A lawsuit filed Tuesday with the Court of International Trade alleges the president exceeded his power in using a 96-year-old statute to impose tariffs.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "US semiconductor supply chain relies on vulnerable, hidden inputs",
+        "link": "https://www.supplychaindive.com/news/us-semiconductor-supply-chain-relies-on-vulnerable-hidden-inputs/833485/",
+        "published": "2026-10-20T16:55:46.000Z",
+        "snippet": "To guard against disruptions, the Semiconductor Industry Association called for closer government-industry collaboration to address targets for onshoring and stockpiling.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Texas sues Nestlé’s Gerber over alleged heavy metals in baby food",
+        "link": "https://www.supplychaindive.com/news/texas-sues-nestles-gerber-over-alleged-heavy-metals-in-baby-food/833374/",
+        "published": "2026-10-20T14:48:00.000Z",
+        "snippet": "Gerber says it employs “careful ingredient sourcing, supplier requirements, testing and quality controls\" to reduce heavy metal levels in its products.",
+        "categories": [],
+        "creator": "Sarah Zimmerman"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Chocolate maker signs $6.6M sale-leaseback deal for warehouse site",
+        "link": "https://www.supplychaindive.com/news/chocolate-maker-signs-66m-sale-leaseback-deal-for-warehouse-site/833344/",
+        "published": "2026-10-20T14:39:09.000Z",
+        "snippet": "The deal for Rocky Mountain Chocolate Factory's Colorado facility, which also houses production operations and the company's headquarters, aims to cut existing debt.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Rail Traffic SURGE: Why Intermodal Volume is Climbing",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Vertical Aerospace eVTOL: The Future of Urgent Air Cargo",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 9.7 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

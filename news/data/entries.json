@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-10-22",
+    "subject": "Diesel up 9.7 cents to $6.276; Knight-Swift eyes rate hikes",
+    "headline": "Diesel climbs 9.7 cents as Knight-Swift targets double-digit contract rate gains",
+    "script": "Diesel rose to $6.276, a big carrier signals rate hikes into bid season, railroads post strong results, and LA-Long Beach dwell times climb.\n\nDiesel rose 9.7 cents last week to $6.276 a gallon, per EIA. Recheck fuel surcharges and lane math before quoting loads.",
+    "url": "briefs/2026-10-22.html",
+    "dieselPrice": {
+      "period": "2026-10-19",
+      "dollarsPerGallon": 6.276
+    },
+    "topHeadline": "Diesel climbs 9.7 cents as Knight-Swift targets double-digit contract rate gains",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Knight-Swift again eyes big rate increases as new bid season nears",
+        "link": "https://www.freightwaves.com/news/knight-swift-again-eyes-big-rate-increases-as-new-bid-season-nears"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "First look: Knight-Swift’s Q3 beats expectations",
+        "link": "https://www.freightwaves.com/news/first-look-knight-swifts-q3-beats-expectations"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "First look: almost all strong numbers in Ryder’s third quarter earnings",
+        "link": "https://www.freightwaves.com/news/first-look-almost-all-strong-numbers-in-ryders-third-quarter-earnings"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "First look: Norfolk Southern earnings",
+        "link": "https://www.freightwaves.com/news/first-look-norfolk-southern-earnings-4"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "CSX profit jumps on volume and revenue growth",
+        "link": "https://www.freightwaves.com/news/csx-profit-jumps-on-volume-and-revenue-growth"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Extended peak season drives high dwell times at San Pedro Bay Ports",
+        "link": "https://www.supplychaindive.com/news/extended-peak-season-drives-high-dwell-times-at-san-pedro-bay-ports/833584/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-21",
     "subject": "Canada tariff suit, Heartland profit turn, $1M card theft",
     "headline": "Court challenge hits 50% Canada tariffs as Heartland posts a real Q3 profit",
