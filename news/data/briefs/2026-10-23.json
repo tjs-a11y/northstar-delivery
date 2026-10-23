@@ -1,0 +1,535 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 9.7 cents; $12M cargo theft case; trailer orders soar",
+    "headline": "Diesel Climbs 9.7 Cents to $6.276 as Cargo Theft and Equipment Buying Heat Up",
+    "dek": "Diesel rose for the week, feds charged a driver in a $12M identity-theft scheme, and trailer orders spiked 385% in September.",
+    "lede": "The national diesel average rose 9.7 cents to $6.276 per gallon, a fresh hit to per-mile costs even after a four-week decline.",
+    "sections": [
+      {
+        "heading": "Diesel Turns Higher Again",
+        "bullets": [
+          "$6.276 per gallon is the U.S. average retail diesel price for the week of 2026-10-19.",
+          "Up 9.7 cents (1.6%) from the prior week, squeezing margins on loads booked without a fuel surcharge.",
+          "Down 25.3 cents over four weeks, so the weekly jump erases part of the recent relief.",
+          "Check that fuel surcharge tables on current contracts reflect this week's price before quoting new lanes."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "$12M Theft Ring Used Hijacked Carrier IDs",
+        "bullets": [
+          "At least 24 shipments disappeared after drivers picked up freight at distribution centers, federal authorities say.",
+          "Investigators found fake licenses, altered identities and ransom demands tied to the scheme.",
+          "Hijacked authorities can damage a real carrier's reputation, so monitor your credentials and broker setup records closely."
+        ],
+        "source_ids": [
+          "H9"
+        ]
+      },
+      {
+        "heading": "Trailer Orders Jump Ahead of Price Hikes",
+        "bullets": [
+          "385% surge in U.S. trailer orders in September as carriers locked in equipment before possible price increases.",
+          "Class 8 truck purchases sent mixed signals, showing fleets are cautious about power units.",
+          "EPA '27 NOx engine rules are approaching and will affect anyone buying new heavy-duty trucks."
+        ],
+        "source_ids": [
+          "H15",
+          "H6"
+        ]
+      },
+      {
+        "heading": "Railroads Post Record Quarters",
+        "bullets": [
+          "Union Pacific reported record Q3 revenue and profits as volume and pricing gains outpaced fuel and inflation costs.",
+          "Norfolk Southern also hit record Q3 revenue on higher volumes, rates and fuel surcharges.",
+          "Strong rail pricing and volume suggest intermodal remains a competitor on long-haul lanes."
+        ],
+        "source_ids": [
+          "H12",
+          "H10"
+        ]
+      },
+      {
+        "heading": "Port Dwell Times Climb at San Pedro Bay",
+        "bullets": [
+          "Record September volumes at San Pedro Bay ports pushed up cargo dwell times for both rail and truck.",
+          "Longer dwell means more waiting at terminals, so drayage carriers should factor detention into rates."
+        ],
+        "source_ids": [
+          "H20"
+        ]
+      }
+    ],
+    "seo_description": "Diesel up 9.7 cents to $6.276, a $12M cargo theft case built on stolen carrier IDs, and trailer orders up 385%. Today's trucking brief."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-23T14:36:42.256Z",
+    "date": "2026-10-23",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "previous": {
+        "period": "2026-10-12",
+        "value": 6.179
+      },
+      "weeklyChangeCents": 9.7,
+      "weeklyChangePct": 1.6,
+      "fourWeekChangeCents": -25.3,
+      "formatted": {
+        "latest": "$6.276",
+        "weeklyChange": "up 9.7 cents",
+        "weeklyChangePct": "1.6%",
+        "fourWeekChange": "down 25.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        },
+        {
+          "period": "2026-08-24",
+          "value": 5.652
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "DHL boosts US-Asia cold chain connectivity for healthcare shippers",
+        "link": "https://www.supplychaindive.com/news/dhl-boosts-us-asia-cold-chain-connectivity-for-healthcare-shippers/833763/",
+        "published": "2026-10-23T14:30:21.000Z",
+        "snippet": "DHL Global Forwarding has added air freight corridors connecting Cincinnati with key hubs in Asia for temperature-sensitive goods.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Levi’s distribution network transition saga continues to drag",
+        "link": "https://www.supplychaindive.com/news/levis-distribution-network-transition-saga-continues-to-drag/833749/",
+        "published": "2026-10-23T14:27:10.000Z",
+        "snippet": "The retailer now expects to begin seeing benefits from the in 2027 due to a facility fire during Q3 and the complexity of its SKU mix.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Medtech execs share secrets to building resilient supply chains",
+        "link": "https://www.supplychaindive.com/news/medtech-execs-share-secrets-to-building-resilient-supply-chains/833585/",
+        "published": "2026-10-23T11:17:00.000Z",
+        "snippet": "At AdvaMed’s The MedTech Conference, company executives said they’re bracing for disruption by investing in inventory, scenario planning and their relationships with chip suppliers.",
+        "categories": [],
+        "creator": "Susan Kelly"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Workforce gaps keep supply chain AI stuck in pilot mode",
+        "link": "https://www.freightwaves.com/news/ascm-dsci-supply-chain-ai-workforce-readiness",
+        "published": "2026-10-23T11:00:00.000Z",
+        "snippet": "AI adoption across 13 supply chain functions averages 1.94 on a five-point scale. ASCM CEO Abe Eshkenazi says companies are buying the tool before fixing the process. The post Workforce gaps keep supply chain AI stuck in pilot mode appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Logistics/Supply Chains",
+          "News",
+          "Technology",
+          "Abe Eshkenazi",
+          "AI agents",
+          "AI pilots",
+          "ASCM"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Why one zero-emission truck dealer wants big rigs to wait",
+        "link": "https://www.freightwaves.com/news/range-zero-emissions-medium-duty-electric-trucks",
+        "published": "2026-10-23T10:00:00.000Z",
+        "snippet": "Johannes Ariens sells everything from electric motorcycles to hydrogen semis. He says the industry is trying to skip a step, and that small fleets with medium-duty trucks should go first. The post Why one zero-emission truck dealer wants big rigs to wait appeared first on FreightWaves.",
+        "categories": [
+          "Electric Trucks",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "battery-electric trucks",
+          "Class 5 electric trucks",
+          "Electric trucks",
+          "HVIP"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ryder fleet facing possible growth need as EPA ‘27 nears",
+        "link": "https://www.freightwaves.com/news/ryder-fleet-facing-possible-growth-need-as-epa-27-nears",
+        "published": "2026-10-22T21:47:50.000Z",
+        "snippet": "With the EPA ‘27 engine rules impacting nitrogen oxide (NoX) emissions in heavy duty vehicles getting closer every day, the new rules will have a major impact on anybody who buys new vehicles…like Ryder. Ryder’s (NYSE: R) third quarter earnings released early Thursday were solid enough that it propelled the stock up 10.49% to $265.53, […] The post Ryder fleet facing possible growth need as EPA ‘27",
+        "categories": [
+          "News",
+          "OEM Trucking",
+          "Top Stories",
+          "Trucking"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Daimler Truck sues former fleet manager over alleged $3.8M embezzlement",
+        "link": "https://www.freightwaves.com/news/daimler-truck-sues-former-fleet-manager-over-alleged-3-8m-embezzlement",
+        "published": "2026-10-22T20:59:41.000Z",
+        "snippet": "Daimler Truck North America is seeking $6.6 million in damages after accusing a former employee and his wife of misappropriating nearly $3.8 million. The post Daimler Truck sues former fleet manager over alleged $3.8M embezzlement appeared first on FreightWaves.",
+        "categories": [
+          "Legal issues",
+          "News",
+          "Trucking",
+          "Daimler",
+          "Daimler Truck North America",
+          "Embezzlement",
+          "lawsuit"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "F3 preview: AI, autonomous trucking and freight technology take center stage",
+        "link": "https://www.freightwaves.com/news/f3-preview-ai-autonomous-trucking-and-freight-technology-take-center-stage",
+        "published": "2026-10-22T19:02:37.000Z",
+        "snippet": "FreightWaves’ F3: Future of Freight Festival returns to Chattanooga next week, with sessions on AI adoption, autonomous trucking and the technologies reshaping freight operations taking center stage. The event, held Oct. 27-28 at The Signal at Chattanooga Choo Choo, will feature keynote presentations, fireside chats, technology demonstrations and discussions about how companies are applying new […",
+        "categories": [
+          "Awards",
+          "F3: Future of Freight Festival",
+          "FreightTech Award",
+          "AI",
+          "autonomous trucking",
+          "FreightWaves",
+          "logistics",
+          "Technology"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Feds charge driver in alleged $12M cargo theft scheme built on hijacked carrier identities",
+        "link": "https://www.freightwaves.com/news/feds-charge-driver-in-alleged-12m-cargo-theft-scheme-built-on-hijacked-carrier-identities",
+        "published": "2026-10-22T19:01:12.000Z",
+        "snippet": "At least 24 shipments vanished after drivers collected merchandise from distribution centers. Authorities also uncovered fraudulent licenses, altered identities and ransom demands. The post Feds charge driver in alleged $12M cargo theft scheme built on hijacked carrier identities appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "cargo theft",
+          "logistics",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Norfolk Southern profits rise on higher volume and revenue",
+        "link": "https://www.freightwaves.com/news/norfolk-southern-profits-rise-on-higher-volume-and-revenue",
+        "published": "2026-10-22T18:47:51.000Z",
+        "snippet": "Norfolk Southern posted record revenue in Q3 on higher volumes and rates, and substantial fuel surcharge The post Norfolk Southern profits rise on higher volume and revenue appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Finance",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "carloads",
+          "earnings"
+        ],
+        "creator": "Trains.com Staff"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SONAR launches new routing guide and contract rate data, plus expanded SearchCarriers monitoring",
+        "link": "https://www.freightwaves.com/news/sonar-launches-new-routing-guide-and-contract-rate-data-plus-expanded-searchcarriers-monitoring",
+        "published": "2026-10-22T18:27:48.000Z",
+        "snippet": "New SONAR datasets show what shippers pay brokers and carriers when freight falls past the first tender, plus SearchCarriers watchlists and alerts. The post SONAR launches new routing guide and contract rate data, plus expanded SearchCarriers monitoring appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "carrier qualification",
+          "Shippers",
+          "SONAR",
+          "sonar data"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Union Pacific posts record third-quarter revenue and profits",
+        "link": "https://www.freightwaves.com/news/union-pacific-posts-record-third-quarter-revenue-and-profits",
+        "published": "2026-10-22T18:07:00.000Z",
+        "snippet": "Union Pacific posted record revenue and profits in the third quarter, as volume and pricing gains offset rising fuel prices and inflation. The post Union Pacific posts record third-quarter revenue and profits appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Finance",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "carloads",
+          "earnings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Ikea accused of harmful wood sourcing in Europe’s forests",
+        "link": "https://www.supplychaindive.com/news/ikea-accused-of-harmful-wood-sourcing-in-europes-forests/833625/",
+        "published": "2026-10-22T17:56:03.000Z",
+        "snippet": "Greenpeace International alleges the furniture maker — which has long faced backlash over its sourcing — is falling short in its efforts to protect biodiversity.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CBP seizes $2.5M in meth hidden in tomatillo truck at Otay Mesa; driver’s visa canceled",
+        "link": "https://www.freightwaves.com/news/cbp-seizes-2-5m-in-meth-hidden-in-tomatillo-truck-at-otay-mesa-drivers-visa-canceled",
+        "published": "2026-10-22T16:24:13.000Z",
+        "snippet": "Nearly 1,600 pounds of narcotics, a federal investigation and an unexpected development involving the trucker. New details obtained by FreightWaves reveal what happened after the seizure. The post CBP seizes $2.5M in meth hidden in tomatillo truck at Otay Mesa; driver’s visa canceled appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "CBP",
+          "cross border",
+          "drug seizures",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US trailer orders soar 385% as Class 8 truck market sends mixed signals",
+        "link": "https://www.freightwaves.com/news/us-trailer-orders-soar-385-as-class-8-truck-market-sends-mixed-signals",
+        "published": "2026-10-22T15:42:56.000Z",
+        "snippet": "Trailer orders jumped sharply in September as carriers moved to secure equipment ahead of potential price increases, while heavy-duty truck purchases showed mixed signals. The post US trailer orders soar 385% as Class 8 truck market sends mixed signals appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Trucking",
+          "Trucking Equipment",
+          "ACT Research",
+          "Class 8 truck orders",
+          "FTR",
+          "Trailer orders"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nestlé to close Ohio factory by end of 2027",
+        "link": "https://www.supplychaindive.com/news/nestle-to-close-ohio-factory-by-end-of-2027/833587/",
+        "published": "2026-10-22T14:21:00.000Z",
+        "snippet": "The food giant will move production to South Carolina, saying it is \"the most sustainable path forward\" as consumer needs and volumes shift.",
+        "categories": [],
+        "creator": "Christopher Doering"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Stord expands network with AMS Fulfillment purchase",
+        "link": "https://www.supplychaindive.com/news/stord-expands-network-with-ams-fulfillment-purchase/833617/",
+        "published": "2026-10-22T14:00:28.000Z",
+        "snippet": "The acquisition bolsters Stord's presence in key East Coast and West Coast hubs while building upon other recent deals.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Hydro Flask maker aims tariff refunds at inventory, packaging",
+        "link": "https://www.supplychaindive.com/news/hydro-flask-maker-aims-tariff-refunds-at-inventory-packaging/833631/",
+        "published": "2026-10-22T12:09:00.000Z",
+        "snippet": "Helen of Troy plans to spend a portion of its expected $80.5 million refund to clean stock and refresh packaging design.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apple expands US supplier network for iPhone materials, components",
+        "link": "https://www.supplychaindive.com/news/apple-expands-us-supplier-network-for-iphone-materials-components/833496/",
+        "published": "2026-10-21T15:05:00.000Z",
+        "snippet": "The company added a new titanium supplier and expanded its partnership with an advanced film maker as part of a $600 billion commitment to U.S. manufacturing.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Extended peak season drives high dwell times at San Pedro Bay ports",
+        "link": "https://www.supplychaindive.com/news/extended-peak-season-drives-high-dwell-times-at-san-pedro-bay-ports/833584/",
+        "published": "2026-10-21T14:17:43.000Z",
+        "snippet": "The Pacific Merchant Shipping Association said record volumes in September pushed up the time cargo remained idle, both for rail and truck transport.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Primo Brands opens first new factory post merger",
+        "link": "https://www.supplychaindive.com/news/primo-brands-opens-first-new-factory-post-merger/833375/",
+        "published": "2026-10-21T11:15:00.000Z",
+        "snippet": "The Arkansas plant will increase production for sparkling water brand Mountain Valley as demand for premium beverages surges.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Cass Q3 Earnings Soar: 19% EPS Growth & Freight Market Boom",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "How Triumph Financial’s CEO Beat the Longest Freight Recession",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Safety Should Be Provable, Not Just Compliant",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 9.7 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "key": "weekend",
+      "reason": "Friday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

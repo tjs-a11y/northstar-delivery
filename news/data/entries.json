@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-10-23",
+    "subject": "Diesel jumps 9.7 cents; $12M cargo theft case; trailer orders soar",
+    "headline": "Diesel Climbs 9.7 Cents to $6.276 as Cargo Theft and Equipment Buying Heat Up",
+    "script": "Diesel rose for the week, feds charged a driver in a $12M identity-theft scheme, and trailer orders spiked 385% in September.\n\nThe national diesel average rose 9.7 cents to $6.276 per gallon, a fresh hit to per-mile costs even after a four-week decline.",
+    "url": "briefs/2026-10-23.html",
+    "dieselPrice": {
+      "period": "2026-10-19",
+      "dollarsPerGallon": 6.276
+    },
+    "topHeadline": "Diesel Climbs 9.7 Cents to $6.276 as Cargo Theft and Equipment Buying Heat Up",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Feds charge driver in alleged $12M cargo theft scheme built on hijacked carrier identities",
+        "link": "https://www.freightwaves.com/news/feds-charge-driver-in-alleged-12m-cargo-theft-scheme-built-on-hijacked-carrier-identities"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "US trailer orders soar 385% as Class 8 truck market sends mixed signals",
+        "link": "https://www.freightwaves.com/news/us-trailer-orders-soar-385-as-class-8-truck-market-sends-mixed-signals"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Ryder fleet facing possible growth need as EPA ‘27 nears",
+        "link": "https://www.freightwaves.com/news/ryder-fleet-facing-possible-growth-need-as-epa-27-nears"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Union Pacific posts record third-quarter revenue and profits",
+        "link": "https://www.freightwaves.com/news/union-pacific-posts-record-third-quarter-revenue-and-profits"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Norfolk Southern profits rise on higher volume and revenue",
+        "link": "https://www.freightwaves.com/news/norfolk-southern-profits-rise-on-higher-volume-and-revenue"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Extended peak season drives high dwell times at San Pedro Bay ports",
+        "link": "https://www.supplychaindive.com/news/extended-peak-season-drives-high-dwell-times-at-san-pedro-bay-ports/833584/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-10-22",
     "subject": "Diesel up 9.7 cents to $6.276; Knight-Swift eyes rate hikes",
     "headline": "Diesel climbs 9.7 cents as Knight-Swift targets double-digit contract rate gains",
