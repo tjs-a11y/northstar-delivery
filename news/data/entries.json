@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-10-24",
+    "subject": "Diesel jumps 9.7 cents to $6.276; Canada tariff changes Oct. 30",
+    "headline": "Diesel climbs 9.7 cents to $6.276 as cost pressure squeezes carriers",
+    "script": "Diesel rebounds week over week, Marten's Q3 shows cost pain, Canada tariff list shifts and Roadrunner sets a 5.9% GRI.\n\nThe U.S. average diesel price rose 9.7 cents to $6.276 per gallon for the week of 2026-10-19, reversing part of a four-week slide.",
+    "url": "briefs/2026-10-24.html",
+    "dieselPrice": {
+      "period": "2026-10-19",
+      "dollarsPerGallon": 6.276
+    },
+    "topHeadline": "Diesel climbs 9.7 cents to $6.276 as cost pressure squeezes carriers",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Russian diesel tanker heads for U.S. following Trump-Putin deal",
+        "link": "https://www.freightwaves.com/news/russian-diesel-tanker-heads-for-u-s-following-trump-putin-deal"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Cost pressures sink Marten Transport’s Q3",
+        "link": "https://www.freightwaves.com/news/cost-pressures-sink-marten-transports-q3"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump tweaks Canada tariffs, removing certain goods while adding others",
+        "link": "https://www.supplychaindive.com/news/trump-tweaks-canada-tariffs-removing-certain-goods-while-adding-others/833895/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump eschews tariffs for trade talks on wind turbine imports",
+        "link": "https://www.supplychaindive.com/news/trump-eschews-tariffs-for-trade-talks-on-wind-turbine-imports/833840/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Roadrunner announces Canada-outbound service",
+        "link": "https://www.freightwaves.com/news/roadrunner-announces-canada-outbound-service"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "New Drewry data shows import demand boosting trans-Pacific rates",
+        "link": "https://www.freightwaves.com/news/new-drewry-data-shows-import-demand-boosting-trans-pacific-rates"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-10-23",
     "subject": "Diesel jumps 9.7 cents; $12M cargo theft case; trailer orders soar",
     "headline": "Diesel Climbs 9.7 Cents to $6.276 as Cargo Theft and Equipment Buying Heat Up",

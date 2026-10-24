@@ -1,0 +1,557 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 9.7 cents to $6.276; Canada tariff changes Oct. 30",
+    "headline": "Diesel climbs 9.7 cents to $6.276 as cost pressure squeezes carriers",
+    "dek": "Diesel rebounds week over week, Marten's Q3 shows cost pain, Canada tariff list shifts and Roadrunner sets a 5.9% GRI.",
+    "lede": "The U.S. average diesel price rose 9.7 cents to $6.276 per gallon for the week of 2026-10-19, reversing part of a four-week slide.",
+    "sections": [
+      {
+        "heading": "Diesel Bounces Back",
+        "bullets": [
+          "$6.276 per gallon is the U.S. average retail diesel price for the week of 2026-10-19.",
+          "Up 9.7 cents (1.6%) from the prior week, so check that fuel surcharges keep pace.",
+          "Still down 25.3 cents over four weeks, but the weekly jump ends the recent relief.",
+          "The first Russian diesel shipment is headed to the U.S. after a Trump-Putin deal; pump impact is unclear."
+        ],
+        "source_ids": [
+          "F1",
+          "H8"
+        ]
+      },
+      {
+        "heading": "Costs Hit a Reefer Carrier",
+        "bullets": [
+          "7% drop in Marten Transport shares followed a weak third-quarter report.",
+          "Rising fuel and health insurance costs hurt results despite better supply-demand balance.",
+          "Small fleets face the same squeeze: tighter markets don't help if expenses outrun rates."
+        ],
+        "source_ids": [
+          "H5"
+        ]
+      },
+      {
+        "heading": "Canada Tariff List Shifts",
+        "bullets": [
+          "Oct. 30: plywood and certain packaging materials come off the 50% Canada tariff list.",
+          "Other goods are being added, so cross-border lane volumes may shift by commodity.",
+          "Wind turbine imports avoid new tariffs for now; officials have 180 days to report on trade talks."
+        ],
+        "source_ids": [
+          "H3",
+          "H13"
+        ]
+      },
+      {
+        "heading": "LTL Rates and Cross-Border Moves",
+        "bullets": [
+          "5.9% general rate increase from Roadrunner takes effect Nov. 2.",
+          "The LTL carrier also launched a new Canada-to-U.S. outbound service.",
+          "Shippers facing higher LTL pricing may shift some freight toward partial or truckload options."
+        ],
+        "source_ids": [
+          "H2"
+        ]
+      },
+      {
+        "heading": "Freight Demand Signals",
+        "bullets": [
+          "Drewry's World Container Index rose on trans-Pacific and Asia-Europe routes, pointing to firmer import demand.",
+          "More than $1.6 billion in five U.S. plant projects will add trailer, bus, cooling and beverage capacity.",
+          "Ryder stock rose 10.49% to $265.53 on solid Q3 as EPA '27 engine rules near."
+        ],
+        "source_ids": [
+          "H1",
+          "H6",
+          "H17"
+        ]
+      }
+    ],
+    "seo_description": "Diesel up 9.7 cents to $6.276, Marten's Q3 cost squeeze, Canada tariff changes Oct. 30 and Roadrunner's 5.9% GRI for small carriers."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-24T13:48:04.534Z",
+    "date": "2026-10-24",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "previous": {
+        "period": "2026-10-12",
+        "value": 6.179
+      },
+      "weeklyChangeCents": 9.7,
+      "weeklyChangePct": 1.6,
+      "fourWeekChangeCents": -25.3,
+      "formatted": {
+        "latest": "$6.276",
+        "weeklyChange": "up 9.7 cents",
+        "weeklyChangePct": "1.6%",
+        "fourWeekChange": "down 25.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        },
+        {
+          "period": "2026-08-24",
+          "value": 5.652
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New Drewry data shows import demand boosting trans-Pacific rates",
+        "link": "https://www.freightwaves.com/news/new-drewry-data-shows-import-demand-boosting-trans-pacific-rates",
+        "published": "2026-10-23T18:55:28.000Z",
+        "snippet": "Drewry’s World Container Index rose on higher rates on trans-Pacific and Asia-Europe routes. The post New Drewry data shows import demand boosting trans-Pacific rates appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "Capacity",
+          "container shipping",
+          "Drewry"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Roadrunner announces Canada-outbound service",
+        "link": "https://www.freightwaves.com/news/roadrunner-announces-canada-outbound-service",
+        "published": "2026-10-23T18:31:28.000Z",
+        "snippet": "Less-than-truckload carrier Roadrunner announced a new outbound Canada-to-U.S. service on Friday, alongside a 5.9% general rate increase taking effect on Nov. 2. The post Roadrunner announces Canada-outbound service appeared first on FreightWaves.",
+        "categories": [
+          "Less than Truckload (LTL)",
+          "News",
+          "less-than-truckload carriers",
+          "LTL carriers",
+          "LTL GRIs",
+          "LTL yields",
+          "roadrunner"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump tweaks Canada tariffs, removing certain goods while adding others",
+        "link": "https://www.supplychaindive.com/news/trump-tweaks-canada-tariffs-removing-certain-goods-while-adding-others/833895/",
+        "published": "2026-10-23T18:24:00.000Z",
+        "snippet": "Plywood and certain packaging materials are among the products that will no longer face the 50% tariff, effective Oct. 30.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Wabtec earnings rise on higher freight and transit sales",
+        "link": "https://www.freightwaves.com/news/wabtec-earnings-rise-on-higher-freight-and-transit-sales",
+        "published": "2026-10-23T18:06:23.000Z",
+        "snippet": "Rail equipment supplier Wabtec raised its outlook on higher third-quarter revenue and earnings. The post Wabtec earnings rise on higher freight and transit sales appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Finance",
+          "News",
+          "Railroad",
+          "Equipment",
+          "locomotives",
+          "railroads"
+        ],
+        "creator": "Trains.com Staff"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Cost pressures sink Marten Transport’s Q3",
+        "link": "https://www.freightwaves.com/news/cost-pressures-sink-marten-transports-q3",
+        "published": "2026-10-23T16:28:25.000Z",
+        "snippet": "Shares of refrigerated carrier Marten Transport dropped 7% in midday trading on Friday after a disappointing third-quarter report, which noted that rising fuel and health insurance costs dragged down performance despite improving supply-demand fundamentals. The post Cost pressures sink Marten Transport’s Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "Marten Transport",
+          "reefer capacity",
+          "Reefer TL rates"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "5 US manufacturing projects bring more than $1.6B in investments",
+        "link": "https://www.freightwaves.com/news/5-us-manufacturing-projects-bring-more-than-1-6b-in-investments",
+        "published": "2026-10-23T16:03:04.000Z",
+        "snippet": "Five shippers are investing more than $1.6 billion in new or expanded U.S. facilities, adding production capacity for commercial trailers, school buses, cooling systems and bottled beverages. The post 5 US manufacturing projects bring more than $1.6B in investments appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Reindustrialization",
+          "Trucking",
+          "Carrier Global",
+          "Hyundai",
+          "Niagara",
+          "Primo",
+          "reindustrialization"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Airbus sees 46% freighter increase by 2045 amid stable air cargo growth",
+        "link": "https://www.freightwaves.com/news/airbus-sees-46-freighter-increase-by-2045-amid-stable-air-cargo-growth",
+        "published": "2026-10-23T14:54:15.000Z",
+        "snippet": "The Airbus 20-year outlook for freighter demand is little changed from last year, showing a global fleet nearly 50% larger than today. The post Airbus sees 46% freighter increase by 2045 amid stable air cargo growth appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo industry outlook",
+          "Airbus",
+          "forecast",
+          "freighter aircraft"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Russian diesel tanker heads for U.S. following Trump-Putin deal",
+        "link": "https://www.freightwaves.com/news/russian-diesel-tanker-heads-for-u-s-following-trump-putin-deal",
+        "published": "2026-10-23T14:37:51.000Z",
+        "snippet": "The first shipment of Russian diesel fuel heads for the U.S. as Trump looks for boost ahead of midterm elections. The post Russian diesel tanker heads for U.S. following Trump-Putin deal appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Fuel News",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "Diesel fuel",
+          "Russia",
+          "sanctions"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H9",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "DHL boosts US-Asia cold chain connectivity for healthcare shippers",
+        "link": "https://www.supplychaindive.com/news/dhl-boosts-us-asia-cold-chain-connectivity-for-healthcare-shippers/833763/",
+        "published": "2026-10-23T14:30:21.000Z",
+        "snippet": "For temperature-sensitive goods, DHL Global Forwarding has added air freight corridors connecting Cincinnati with key hubs in Asia.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "NLRB ordered Amazon to bargain with Staten Island workers; it’s now in federal court",
+        "link": "https://www.freightwaves.com/news/nlrb-ordered-amazon-to-bargain-with-staten-island-workers-its-now-in-federal-court",
+        "published": "2026-10-23T14:28:07.000Z",
+        "snippet": "Four and a half years after a grassroots union was voted in by workers at an Amazon warehouse in Staten Island, New York, the battles in court over Amazon’s pushback against the vote continues. At issue in the latest set of filings in the Fifth Circuit is a National Labor Relations Board decision from April […] The post NLRB ordered Amazon to bargain with Staten Island workers; it’s now in federal",
+        "categories": [
+          "Legal issues",
+          "News",
+          "Top Stories",
+          "Truck Driver Issues",
+          "Amazon",
+          "National Labor Relations Board",
+          "Teamsters"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Levi’s distribution network transition saga continues to drag",
+        "link": "https://www.supplychaindive.com/news/levis-distribution-network-transition-saga-continues-to-drag/833749/",
+        "published": "2026-10-23T14:27:10.000Z",
+        "snippet": "Due to a facility fire during Q3 and the complexity of its SKU mix, the retailer doesn't expect to see benefits from its overhaul until 2027.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "A new PNW container port? $205M for Oregon rail project",
+        "link": "https://www.freightwaves.com/news/a-new-pnw-container-port-205m-for-oregon-rail-project",
+        "published": "2026-10-23T13:37:00.000Z",
+        "snippet": "Oregon port wins $205 million in federal funding to upgrade its rail line and boost a proposed container terminal project. The post A new PNW container port? $205M for Oregon rail project appeared first on FreightWaves.",
+        "categories": [
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "#trade",
+          "container shipping",
+          "CRISI program"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump eschews tariffs for trade talks on wind turbine imports",
+        "link": "https://www.supplychaindive.com/news/trump-eschews-tariffs-for-trade-talks-on-wind-turbine-imports/833840/",
+        "published": "2026-10-23T12:11:00.000Z",
+        "snippet": "Following a Section 232 probe, the president tasked cabinet officials to engage in negotiations and report on their progress within 180 days.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Medtech execs share secrets to building resilient supply chains",
+        "link": "https://www.supplychaindive.com/news/medtech-execs-share-secrets-to-building-resilient-supply-chains/833585/",
+        "published": "2026-10-23T11:17:00.000Z",
+        "snippet": "At AdvaMed’s The MedTech Conference, company executives said they’re bracing for disruption by investing in inventory, scenario planning and their relationships with chip suppliers.",
+        "categories": [],
+        "creator": "Susan Kelly"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Workforce gaps keep supply chain AI stuck in pilot mode",
+        "link": "https://www.freightwaves.com/news/ascm-dsci-supply-chain-ai-workforce-readiness",
+        "published": "2026-10-23T11:00:00.000Z",
+        "snippet": "AI adoption across 13 supply chain functions averages 1.94 on a five-point scale. ASCM CEO Abe Eshkenazi says companies are buying the tool before fixing the process. The post Workforce gaps keep supply chain AI stuck in pilot mode appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Logistics/Supply Chains",
+          "News",
+          "Technology",
+          "Abe Eshkenazi",
+          "AI agents",
+          "AI pilots",
+          "ASCM"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Why one zero-emission truck dealer wants big rigs to wait",
+        "link": "https://www.freightwaves.com/news/range-zero-emissions-medium-duty-electric-trucks",
+        "published": "2026-10-23T10:00:00.000Z",
+        "snippet": "Johannes Ariens sells everything from electric motorcycles to hydrogen semis. He says the industry is trying to skip a step, and that small fleets with medium-duty trucks should go first. The post Why one zero-emission truck dealer wants big rigs to wait appeared first on FreightWaves.",
+        "categories": [
+          "Electric Trucks",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "battery-electric trucks",
+          "Class 5 electric trucks",
+          "Electric trucks",
+          "HVIP"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ryder fleet facing possible growth need as EPA ‘27 nears",
+        "link": "https://www.freightwaves.com/news/ryder-fleet-facing-possible-growth-need-as-epa-27-nears",
+        "published": "2026-10-22T21:47:50.000Z",
+        "snippet": "With the EPA ‘27 engine rules impacting nitrogen oxide (NoX) emissions in heavy duty vehicles getting closer every day, the new rules will have a major impact on anybody who buys new vehicles…like Ryder. Ryder’s (NYSE: R) third quarter earnings released early Thursday were solid enough that it propelled the stock up 10.49% to $265.53, […] The post Ryder fleet facing possible growth need as EPA ‘27",
+        "categories": [
+          "News",
+          "OEM Trucking",
+          "Top Stories",
+          "Trucking"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Ikea accused of harmful wood sourcing in Europe’s forests",
+        "link": "https://www.supplychaindive.com/news/ikea-accused-of-harmful-wood-sourcing-in-europes-forests/833625/",
+        "published": "2026-10-22T17:56:03.000Z",
+        "snippet": "Greenpeace International alleges the furniture maker — which has long faced backlash over its sourcing — is falling short in its efforts to protect biodiversity.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nestlé to close Ohio factory by end of 2027",
+        "link": "https://www.supplychaindive.com/news/nestle-to-close-ohio-factory-by-end-of-2027/833587/",
+        "published": "2026-10-22T14:21:00.000Z",
+        "snippet": "The food giant will move production to South Carolina, saying it is \"the most sustainable path forward\" as consumer needs and volumes shift.",
+        "categories": [],
+        "creator": "Christopher Doering"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Stord expands network with AMS Fulfillment purchase",
+        "link": "https://www.supplychaindive.com/news/stord-expands-network-with-ams-fulfillment-purchase/833617/",
+        "published": "2026-10-22T14:00:28.000Z",
+        "snippet": "The acquisition bolsters Stord's presence in key East Coast and West Coast hubs while building upon other recent deals.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Hydro Flask maker aims tariff refunds at inventory, packaging",
+        "link": "https://www.supplychaindive.com/news/hydro-flask-maker-aims-tariff-refunds-at-inventory-packaging/833631/",
+        "published": "2026-10-22T12:09:00.000Z",
+        "snippet": "Helen of Troy plans to spend a portion of its expected $80.5 million refund to clean stock and refresh packaging design.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apple expands US supplier network for iPhone materials, components",
+        "link": "https://www.supplychaindive.com/news/apple-expands-us-supplier-network-for-iphone-materials-components/833496/",
+        "published": "2026-10-21T15:05:00.000Z",
+        "snippet": "The company added a new titanium supplier and expanded its partnership with an advanced film maker as part of a $600 billion commitment to U.S. manufacturing.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking’s “Ruthless” vs. “Conservative:” Who’s Winning?",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "How Much Do Rejected Loads REALLY Cost Shippers?",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 9.7 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "key": "weekend",
+      "reason": "Saturday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
