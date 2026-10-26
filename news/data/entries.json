@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-10-26",
+    "subject": "Diesel jumps 9.7 cents; contract rate hikes hold above 10%",
+    "headline": "Diesel Climbs to $6.276 as Truckload Contract Rate Increases Stay Above 10%",
+    "script": "Diesel rose 9.7 cents last week, contract rate gains hold above 10%, and CSX is pitching shippers on moving truckload freight to rail.\n\nThe U.S. average diesel price rose 9.7 cents to $6.276 per gallon for the week of 2026-10-19. That breaks a cooling trend and squeezes per-mile margins again.",
+    "url": "briefs/2026-10-26.html",
+    "dieselPrice": {
+      "period": "2026-10-19",
+      "dollarsPerGallon": 6.276
+    },
+    "topHeadline": "Diesel Climbs to $6.276 as Truckload Contract Rate Increases Stay Above 10%",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Truckload contract rate increases riding steady above 10%",
+        "link": "https://www.freightwaves.com/news/truckload-contract-rate-increases-riding-steady-above-10"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "CSX sees rail conversion opportunities from battered trucking market",
+        "link": "https://www.supplychaindive.com/news/csx-sees-rail-conversion-opportunities-from-battered-trucking-market/833858/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Roadrunner announces Canada-outbound service",
+        "link": "https://www.freightwaves.com/news/roadrunner-announces-canada-outbound-service"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "UPS plans 5.9% rate increase on Dec. 21",
+        "link": "https://www.supplychaindive.com/news/ups-plans-59-rate-increase-on-dec-21/872751/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump tweaks Canada tariffs, removing certain goods while adding others",
+        "link": "https://www.supplychaindive.com/news/trump-tweaks-canada-tariffs-removing-certain-goods-while-adding-others/833895/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: Avocado imports generate $641M for US trucking, warehousing",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-avocado-imports-generate-641m-for-us-trucking-warehousing"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-25",
     "subject": "Diesel jumps 9.7 cents; contract rates hold above 10%",
     "headline": "Diesel Climbs to $6.276 as Truckload Contract Rate Gains Stay Above 10%",
