@@ -1,5 +1,54 @@
 [
   {
+    "date": "2026-10-27",
+    "subject": "Diesel jumps 7.6 cents; Mexican truckers strike",
+    "headline": "Diesel climbs to $6.352 as Mexican truckers strike and Motus fix stays undated",
+    "script": "Diesel rises week over week, a Mexico strike threatens border freight, and brokers get no quick federal guidance on carrier vetting.\n\nDiesel rose 7.6 cents last week to a $6.352 national average. Recheck your fuel surcharges before booking this week's loads.",
+    "url": "briefs/2026-10-27.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel climbs to $6.352 as Mexican truckers strike and Motus fix stays undated",
+    "sources": [
+      {
+        "source": "Supply Chain Dive",
+        "title": "USPS to debut weekly fuel fee in 2027, matching FedEx, UPS practices",
+        "link": "https://www.supplychaindive.com/news/usps-to-debut-weekly-fuel-fee-in-2027-matching-fedex-ups-practices/872778/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexican truckers launch national strike over highway security, rising costs",
+        "link": "https://www.freightwaves.com/news/mexican-truckers-launch-national-strike-over-highway-security-rising-costs"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Federal guidance on carrier selection not around the corner: TIA’s Burroughs",
+        "link": "https://www.freightwaves.com/news/federal-guidance-on-carrier-selection-not-around-the-corner-tias-burroughs"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "FMCSA’s Elison addresses Motus again, still no date on full repair",
+        "link": "https://www.freightwaves.com/news/fmcsas-elison-addresses-motus-again-still-no-date-on-full-repair"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "CSX sees rail conversion opportunities from battered trucking market",
+        "link": "https://www.supplychaindive.com/news/csx-sees-rail-conversion-opportunities-from-battered-trucking-market/833858/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-26",
     "subject": "Diesel jumps 9.7 cents; contract rate hikes hold above 10%",
     "headline": "Diesel Climbs to $6.276 as Truckload Contract Rate Increases Stay Above 10%",

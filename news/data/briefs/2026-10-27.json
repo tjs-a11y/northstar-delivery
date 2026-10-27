@@ -1,0 +1,549 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 7.6 cents; Mexican truckers strike",
+    "headline": "Diesel climbs to $6.352 as Mexican truckers strike and Motus fix stays undated",
+    "dek": "Diesel rises week over week, a Mexico strike threatens border freight, and brokers get no quick federal guidance on carrier vetting.",
+    "lede": "Diesel rose 7.6 cents last week to a $6.352 national average. Recheck your fuel surcharges before booking this week's loads.",
+    "sections": [
+      {
+        "heading": "Diesel Jumps Again",
+        "bullets": [
+          "$6.352 per gallon: EIA's U.S. average retail diesel for the week of 2026-10-26.",
+          "Up 7.6 cents (1.2%) from the prior week, so make sure fuel surcharges keep pace before booking.",
+          "Down 3.0 cents over four weeks, so the jump erased only part of the recent relief.",
+          "USPS will add a weekly fuel fee in 2027 tied to diesel and jet fuel, matching FedEx and UPS."
+        ],
+        "source_ids": [
+          "F1",
+          "H11"
+        ]
+      },
+      {
+        "heading": "Mexican Truckers Strike Nationwide",
+        "bullets": [
+          "Nationwide strike began Monday, driven by highway security concerns and rising costs.",
+          "Protests are planned at major freight hubs and could slow commercial and cross-border traffic.",
+          "Border-lane carriers should expect delays and confirm pickup windows with shippers and brokers."
+        ],
+        "source_ids": [
+          "H12"
+        ]
+      },
+      {
+        "heading": "No Carrier-Vetting Rules Coming Soon",
+        "bullets": [
+          "TIA's chief says federal guidance on broker carrier selection is not close.",
+          "Brokers sought it after two court decisions this year went against them.",
+          "Without clear rules, expect brokers to keep tightening safety and insurance checks on small carriers."
+        ],
+        "source_ids": [
+          "H4"
+        ]
+      },
+      {
+        "heading": "Motus Repair Still Undated",
+        "bullets": [
+          "FMCSA deputy administrator Jesse Elison again addressed the troubled Motus registration system.",
+          "No date was given for a full repair, so allow extra time for registration tasks."
+        ],
+        "source_ids": [
+          "H9"
+        ]
+      },
+      {
+        "heading": "CSX Courts Truckload Freight",
+        "bullets": [
+          "CSX is reviewing shippers' truckload files to pitch intermodal service and cost comparisons.",
+          "The railroad sees a weak trucking market as an opening, adding pressure on long-haul truckload rates."
+        ],
+        "source_ids": [
+          "H19"
+        ]
+      }
+    ],
+    "seo_description": "Diesel rises 7.6 cents to $6.352, Mexican truckers strike, no federal carrier-vetting guidance soon, Motus fix undated, CSX targets truckload."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-27T15:41:02.334Z",
+    "date": "2026-10-27",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "previous": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "weeklyChangeCents": 7.6,
+      "weeklyChangePct": 1.2,
+      "fourWeekChangeCents": -3,
+      "formatted": {
+        "latest": "$6.352",
+        "weeklyChange": "up 7.6 cents",
+        "weeklyChangePct": "1.2%",
+        "fourWeekChange": "down 3.0 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Band24 seeks early testers for satellite-connected asset tracker ahead of Nov. 13 deadline",
+        "link": "https://www.freightwaves.com/news/band24-seeks-early-testers-for-satellite-connected-asset-tracker-ahead-of-nov-13-deadline",
+        "published": "2026-10-27T14:57:32.000Z",
+        "snippet": "Asset-tracking company Band24 is seeking businesses to test Terra, a new tracker combining Bluetooth, cellular and satellite connectivity, ahead of a Nov. 13 deadline for its early-access program. The device is designed to help logistics operators maintain visibility into trailers, shipping containers and other equipment in areas with limited network coverage, with commercial availability planned ",
+        "categories": [
+          "News",
+          "Technology",
+          "Band24",
+          "Freight",
+          "FreightWaves",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Miami airport to deploy shared logistics platform for cargo community",
+        "link": "https://www.freightwaves.com/news/miami-airport-to-deploy-shared-logistics-platform-for-cargo-community",
+        "published": "2026-10-27T14:51:49.000Z",
+        "snippet": "Miami airport is partnering with Kalé to develop a central data exchange portal for the cargo stakeholders. The post Miami airport to deploy shared logistics platform for cargo community appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "Technology",
+          "air cargo",
+          "data exchange",
+          "digital supply chain",
+          "miami international airport"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Double Nickel launches AI agent to automate driver employment checks",
+        "link": "https://www.freightwaves.com/news/double-nickel-launches-ai-agent-to-automate-driver-employment-checks",
+        "published": "2026-10-27T14:41:03.000Z",
+        "snippet": "Double Nickel has launched an artificial intelligence agent to automate employment verifications for trucking companies, targeting a time-consuming part of driver recruiting and regulatory compliance. The New York-based company said Thursday, Oct. 22, that its Vera agent completed 40% of employment verifications autonomously during beta testing. Two trucking carriers with more than 500 trucks betw",
+        "categories": [
+          "News",
+          "Technology",
+          "AI",
+          "Double Nickel",
+          "FreightWaves",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Federal guidance on carrier selection not around the corner: TIA’s Burroughs",
+        "link": "https://www.freightwaves.com/news/federal-guidance-on-carrier-selection-not-around-the-corner-tias-burroughs",
+        "published": "2026-10-27T13:49:47.000Z",
+        "snippet": "Chattanooga–The Transportation Intermediaries Association (TIA) was quick out of the box earlier this year after two key court decisions that didn’t favor the brokerage community, asking the federal government for some sort of guidance for 3PLs: tell us what sort of carrier hiring practices would protect us. Chris Burroughs is the head of TIA and […] The post Federal guidance on carrier selection ",
+        "categories": [
+          "3PL and Brokerage",
+          "Legal issues",
+          "News",
+          "Top Stories"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cycling apparel company unites planning, sourcing on single platform",
+        "link": "https://www.supplychaindive.com/news/cycling-apparel-company-unites-planning-sourcing-on-single-platform/833732/",
+        "published": "2026-10-27T13:43:00.000Z",
+        "snippet": "MAAP joins Walmart, Pacsun and others who have teamed with technology vendor Bamboo Rose to enhance supply chain operations.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Biggest Shift In Freight Liability Since Deregulation Is Here, And Few Are Ready For It",
+        "link": "https://www.freightwaves.com/news/the-biggest-shift-in-freight-liability-since-deregulation-is-here-and-few-are-ready-for-it",
+        "published": "2026-10-27T12:44:00.000Z",
+        "snippet": "The way courts decide who is responsible when a contracted truck ends up in a wreck is changing faster than most of the freight industry realizes, and the shift is not about one ruling or one eye-popping dollar figure, it is a whole direction of travel that keeps pulling responsibility up the chain toward brokers […] The post The Biggest Shift In Freight Liability Since Deregulation Is Here, And F",
+        "categories": [
+          "3PL and Brokerage",
+          "F3: Future of Freight Festival",
+          "Montgomery vs. Caribe",
+          "Nuclear verdicts"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Police recover $54K in Hot Wheels after BNSF freight train burglary in California",
+        "link": "https://www.freightwaves.com/news/police-recover-54k-in-hot-wheels-after-bnsf-freight-train-burglary-in-california",
+        "published": "2026-10-27T11:30:13.000Z",
+        "snippet": "A freight train burglary in Colton, California, ended with one arrest and $54,000 in recovered Hot Wheels. Police released footage of the investigation as questions remain about how thieves accessed the shipment. The post Police recover $54K in Hot Wheels after BNSF freight train burglary in California appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Playbook: Cash & Capital",
+          "Railroad",
+          "Top Stories",
+          "BNSF",
+          "California",
+          "cargo theft"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Spartan’s operators went from AI skeptics to agent builders",
+        "link": "https://www.freightwaves.com/news/spartan-carrier-alvys-foundry-ai-agents",
+        "published": "2026-10-27T11:00:00.000Z",
+        "snippet": "Spartan Carrier Group built its first AI agent for hourly customer reports in a week and a half. Its VP of operations, who calls himself no coder, wants dispatchers building the next ones. The post Spartan’s operators went from AI skeptics to agent builders appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Technology",
+          "Top Stories",
+          "Trucking",
+          "AI agents",
+          "AI agents trucking",
+          "Alvys",
+          "Alvys Foundry"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FMCSA’s Elison addresses Motus again, still no date on full repair",
+        "link": "https://www.freightwaves.com/news/fmcsas-elison-addresses-motus-again-still-no-date-on-full-repair",
+        "published": "2026-10-26T22:58:08.000Z",
+        "snippet": "Chattanooga–It hasn’t been that long–less than a month–since Jesse Elison spoke to an industry event and addressed the issue of the beleaguered new Motus registration system. The deputy administrator of the Federal Motor Carrier Safety Administration (FMCSA) spoke Monday at FreightWaves’ Broker Compliance Symposium, one of two one-day sessions that serve as a prelude to […] The post FMCSA’s Elison",
+        "categories": [
+          "News",
+          "Top Stories",
+          "Trucking",
+          "Trucking Regulation",
+          "Broker transparency",
+          "Federal Motor Carrier Safety Administration",
+          "Motus registration system"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USTR weighs extending pause on China-linked vessel fees to January",
+        "link": "https://www.supplychaindive.com/news/ustr-weighs-extending-pause-on-china-linked-vessel-fees-to-january/872763/",
+        "published": "2026-10-26T20:48:18.000Z",
+        "snippet": "The suspension is currently set to lift Nov. 9, but the agency said more time would allow the U.S. and China to further negotiations.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USPS to debut weekly fuel fee in 2027, matching FedEx, UPS practices",
+        "link": "https://www.supplychaindive.com/news/usps-to-debut-weekly-fuel-fee-in-2027-matching-fedex-ups-practices/872778/",
+        "published": "2026-10-26T19:12:00.000Z",
+        "snippet": "The surcharge for package shipping services will be tied to diesel and jet fuel prices, which have been climbing this year.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexican truckers launch national strike over highway security, rising costs",
+        "link": "https://www.freightwaves.com/news/mexican-truckers-launch-national-strike-over-highway-security-rising-costs",
+        "published": "2026-10-26T17:17:15.000Z",
+        "snippet": "Mexican truckers launched a nationwide strike Monday with protests planned in major freight hubs that could disrupt commercial traffic and cross-border supply chains. The post Mexican truckers launch national strike over highway security, rising costs appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "CANACAR",
+          "Protest"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "U.S. Postal Service prepared for peak season surge",
+        "link": "https://www.freightwaves.com/news/u-s-postal-service-prepared-for-peak-season-surge",
+        "published": "2026-10-26T17:09:30.000Z",
+        "snippet": "The U.S. Postal Service says it has the proper staffing levels and systems in place to keep packages moving for the holidays. The post U.S. Postal Service prepared for peak season surge appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Parcel Freight",
+          "PostalMag",
+          "e-commerce",
+          "Parcel delivery",
+          "peak season",
+          "U.S. Postal Service",
+          "USPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Japan Airlines hires B747 cargo carriers to meet high-tech demand",
+        "link": "https://www.freightwaves.com/news/japan-airlines-hires-b747-cargo-carriers-to-meet-high-tech-demand",
+        "published": "2026-10-26T16:28:24.000Z",
+        "snippet": "Japan Airlines is adding more dedicated, long-haul cargo capacity by outsourcing flying to airlines with large freighter aircraft. The post Japan Airlines hires B747 cargo carriers to meet high-tech demand appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "AI",
+          "Artificial intelligence",
+          "Atlas Air",
+          "Japan Airlines",
+          "nippon express"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking Needs More Than a Choice Between Diesel and EV Trucks",
+        "link": "https://www.freightwaves.com/news/trucking-needs-more-than-a-choice-between-diesel-and-ev-trucks",
+        "published": "2026-10-26T15:30:00.000Z",
+        "snippet": "This Range Energy whitepaper compares different ways fleets can cut diesel use. The evaluated options: do nothing, purchase an electric tractor, or purchase a Range eTrailer. Record high diesel prices are making fleets look closely at these options – especially refrigerated fleets, which face additional pressure burning diesel in two engines (TRU and truck engine). […] The post Trucking Needs More",
+        "categories": [
+          "Media",
+          "News",
+          "White Papers",
+          "Range Energy"
+        ],
+        "creator": "Sponsor"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI air freight drives Kuehne+Nagel profit increase",
+        "link": "https://www.freightwaves.com/news/ai-air-freight-drives-kuehnenagel-profit-increase",
+        "published": "2026-10-26T15:26:44.000Z",
+        "snippet": "Logistics behemoth Kuehne+Nagel reported strong results in the third quarter, powered by hyperscaler demand for air cargo and productivity gains. The post AI air freight drives Kuehne+Nagel profit increase appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "Company Earnings",
+          "News",
+          "AI",
+          "air cargo",
+          "earnings",
+          "Kuehne+Nagel"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Inside FedEx’s Network 2.0 overhaul",
+        "link": "https://www.supplychaindive.com/news/inside-fedexs-network-20-overhaul/833618/",
+        "published": "2026-10-26T15:20:25.000Z",
+        "snippet": "A facility in a Dallas suburb offers a glimpse into FedEx’s newly integrated approach for sorting and delivering packages across the country.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS plans 5.9% rate increase on Dec. 21",
+        "link": "https://www.supplychaindive.com/news/ups-plans-59-rate-increase-on-dec-21/872751/",
+        "published": "2026-10-26T15:10:00.000Z",
+        "snippet": "The carrier's average rate bump will match FedEx's upcoming increase, but UPS also has additional changes in store.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "CSX sees rail conversion opportunities from battered trucking market",
+        "link": "https://www.supplychaindive.com/news/csx-sees-rail-conversion-opportunities-from-battered-trucking-market/833858/",
+        "published": "2026-10-26T14:40:00.000Z",
+        "snippet": "The railroad is reviewing shipper truckload files to provide service and cost comparisons for intermodal opportunities.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H20",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FedEx taps AutoZone executive to be finance chief",
+        "link": "https://www.freightwaves.com/news/fedex-taps-autozone-executive-to-be-finance-chief",
+        "published": "2026-10-26T13:49:09.000Z",
+        "snippet": "FedEx has named a retail executive to be its next CFO. The post FedEx taps AutoZone executive to be finance chief appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "News",
+          "Parcel Freight",
+          "Top Stories",
+          "CFO",
+          "FedEx"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "PepsiCo shutters Tennessee bottling plant amid soda slump",
+        "link": "https://www.supplychaindive.com/news/pepsico-shutters-tennessee-bottling-plant-amid-soda-slump/833586/",
+        "published": "2026-10-26T11:27:00.000Z",
+        "snippet": "The closure comes after the beverage giant's CEO laid out a cost-cutting plan to improve flattening growth.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How shoppers define delivery success – and what they’ll do if you fall short",
+        "link": "https://www.supplychaindive.com/spons/how-shoppers-define-delivery-success-and-what-theyll-do-if-you-fall-shor/833675/",
+        "published": "2026-10-26T09:00:00.000Z",
+        "snippet": "New research from Roadie reveals how falling short on delivery promises can drive customers to shop elsewhere.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Promises vs. reality: Closing the AI adoption gap in transportation",
+        "link": "https://www.supplychaindive.com/spons/promises-vs-reality-closing-the-ai-adoption-gap-in-transportation/833070/",
+        "published": "2026-10-26T09:00:00.000Z",
+        "snippet": "As teams see AI perform reliably, trust and their willingness to give it more responsibility grow.",
+        "categories": [],
+        "creator": "Angie Mansfield"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump tweaks Canada tariffs, removing certain goods while adding others",
+        "link": "https://www.supplychaindive.com/news/trump-tweaks-canada-tariffs-removing-certain-goods-while-adding-others/833895/",
+        "published": "2026-10-23T18:24:00.000Z",
+        "snippet": "Plywood and certain packaging materials are among the products that will no longer face the 50% tariff, effective Oct. 30.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 7.6 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
