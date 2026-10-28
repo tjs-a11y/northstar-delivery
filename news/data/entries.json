@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-10-28",
+    "subject": "Diesel jumps 7.6 cents; LA-Long Beach rail backlog builds",
+    "headline": "Diesel Up 7.6 Cents to $6.352 as Executives Warn of High Prices Into 2027",
+    "script": "Diesel climbs again, a port rail backlog grows in Southern California, and FMCSA purges thousands of driver training providers.\n\nThe national diesel average rose 7.6 cents last week to $6.352 per gallon, and fuel executives say tight refining capacity could keep prices high into spring 2027.",
+    "url": "briefs/2026-10-28.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel Up 7.6 Cents to $6.352 as Executives Warn of High Prices Into 2027",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Diesel prices may stay elevated into spring 2027, fuel executives warn",
+        "link": "https://www.freightwaves.com/news/diesel-prices-may-stay-elevated-into-spring-2027-fuel-executives-warn"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Backlog grows as 35,000 containers await rail service at LA–Long Beach",
+        "link": "https://www.freightwaves.com/news/backlog-grows-as-35000-containers-await-rail-service-at-la-long-beach"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Port Houston container volumes jump 11% as imports surge in September",
+        "link": "https://www.freightwaves.com/news/port-houston-container-volumes-jump-11-as-imports-surge-in-september"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "FMCSA removes 10,000-plus driver training providers amid safety push",
+        "link": "https://www.freightwaves.com/news/fmcsa-removes-10000-plus-driver-training-providers-amid-safety-push"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Insurance claims adjustments tank Landstar’s otherwise strong Q3",
+        "link": "https://www.freightwaves.com/news/insurance-claims-adjustments-tank-landstars-otherwise-strong-q3"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Werner Enterprises sees cost headwinds lingering into Q1",
+        "link": "https://www.freightwaves.com/news/werner-enterprises-sees-cost-headwinds-lingering-into-q1"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-27",
     "subject": "Diesel jumps 7.6 cents; Mexican truckers strike",
     "headline": "Diesel climbs to $6.352 as Mexican truckers strike and Motus fix stays undated",

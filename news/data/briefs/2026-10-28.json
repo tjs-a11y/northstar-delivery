@@ -1,0 +1,574 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 7.6 cents; LA-Long Beach rail backlog builds",
+    "headline": "Diesel Up 7.6 Cents to $6.352 as Executives Warn of High Prices Into 2027",
+    "dek": "Diesel climbs again, a port rail backlog grows in Southern California, and FMCSA purges thousands of driver training providers.",
+    "lede": "The national diesel average rose 7.6 cents last week to $6.352 per gallon, and fuel executives say tight refining capacity could keep prices high into spring 2027.",
+    "sections": [
+      {
+        "heading": "Diesel Climbs Again",
+        "bullets": [
+          "$6.352 per gallon: the EIA national diesel average for the week of 2026-10-26, eating further into per-mile margins.",
+          "Up 7.6 cents (1.2%) week over week, so check that fuel surcharges on your contracts keep pace.",
+          "Down 3.0 cents over four weeks, meaning last week's jump erased most of the recent relief.",
+          "Fuel and truck stop executives warn limited refining and pipeline capacity could keep diesel elevated into spring 2027."
+        ],
+        "source_ids": [
+          "F1",
+          "H7"
+        ]
+      },
+      {
+        "heading": "Port Freight Piling Up",
+        "bullets": [
+          "Nearly 35,700 import containers are waiting on on-dock trains at Los Angeles and Long Beach amid reported railcar shortages.",
+          "Record volumes plus slow rail could push more inland moves onto trucks, opening drayage and transload opportunities.",
+          "Port Houston container volumes rose 11% in September on surging imports, a Gulf Coast lane worth watching."
+        ],
+        "source_ids": [
+          "H6",
+          "H15"
+        ]
+      },
+      {
+        "heading": "FMCSA Purges Training Providers",
+        "bullets": [
+          "More than 10,000 driver training providers have been removed from FMCSA's registry since December 2025.",
+          "Fleets hiring new CDL holders should confirm a candidate's training provider is still listed."
+        ],
+        "source_ids": [
+          "H4"
+        ]
+      },
+      {
+        "heading": "Big Carriers Report Mixed Q3",
+        "bullets": [
+          "Landstar saw strong dry van and flatbed demand from tight capacity and data center buildouts, though insurance claims hurt results.",
+          "Werner expects cost headwinds to linger into the first quarter while it works back to mid-cycle margins.",
+          "RXO founder Brad Jacobs backed C.H. Robinson's acquisition of RXO, citing the need for scale in brokerage."
+        ],
+        "source_ids": [
+          "H14",
+          "H16",
+          "H12"
+        ]
+      },
+      {
+        "heading": "Cross-Border and Policy Watch",
+        "bullets": [
+          "Mexican trucking groups agreed to four negotiating sessions with officials after a strike disrupted highways in 19 states.",
+          "USTR's pause on China-linked vessel fees is set to lift Nov. 9, but an extension to January is under consideration.",
+          "USPS plans a weekly fuel surcharge in 2027 tied to diesel and jet fuel, matching FedEx and UPS."
+        ],
+        "source_ids": [
+          "H17",
+          "H23",
+          "H24"
+        ]
+      }
+    ],
+    "seo_description": "Diesel rises 7.6 cents to $6.352, LA-Long Beach rail backlog nears 35,700 containers, and FMCSA removes 10,000-plus training providers."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-28T16:24:37.797Z",
+    "date": "2026-10-28",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "previous": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "weeklyChangeCents": 7.6,
+      "weeklyChangePct": 1.2,
+      "fourWeekChangeCents": -3,
+      "formatted": {
+        "latest": "$6.352",
+        "weeklyChange": "up 7.6 cents",
+        "weeklyChangePct": "1.2%",
+        "fourWeekChange": "down 3.0 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "F3: FreightWaves announces Shipper of Choice winners",
+        "link": "https://www.freightwaves.com/news/f3-freightwaves-announces-shipper-of-choice-winners",
+        "published": "2026-10-28T15:31:42.000Z",
+        "snippet": "FreightWaves named 10 Shipper of Choice award winners at the F3: Future of Freight Festival, recognizing companies for their carrier relationships, operational efficiency and shipping practices. The post F3: FreightWaves announces Shipper of Choice winners appeared first on FreightWaves.",
+        "categories": [
+          "Awards",
+          "Editor's Picks",
+          "News",
+          "Shipper of Choice Award",
+          "Top Stories",
+          "Freight",
+          "FreightWaves",
+          "shipper"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Stolen shoes on eBay lead police to $1 million in missing BNSF train cargo",
+        "link": "https://www.freightwaves.com/news/stolen-shoes-on-ebay-lead-police-to-1-million-in-missing-bnsf-train-cargo",
+        "published": "2026-10-28T15:02:31.000Z",
+        "snippet": "An eBay listing for stolen shoes exposed a $1 million cargo recovery in Los Angeles. Investigators arrested the business owner, but questions remain about where the merchandise originated. The post Stolen shoes on eBay lead police to $1 million in missing BNSF train cargo appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "BNSF Railroad",
+          "cargo theft",
+          "rail theft",
+          "recovery"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tesla begins humanoid production in California",
+        "link": "https://www.supplychaindive.com/news/tesla-begins-optimus-humanoid-production-california-shipments-2027/872992/",
+        "published": "2026-10-28T14:41:23.000Z",
+        "snippet": "Early customers for Optimus robots would use them for industrial applications, such as dangerous, repetitive tasks, CEO Elon Musk said.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FMCSA removes 10,000-plus driver training providers amid safety push",
+        "link": "https://www.freightwaves.com/news/fmcsa-removes-10000-plus-driver-training-providers-amid-safety-push",
+        "published": "2026-10-28T14:36:44.000Z",
+        "snippet": "The Federal Motor Carrier Safety Administration has removed more than 10,000 training providers from its registry since December 2025, officials said. The post FMCSA removes 10,000-plus driver training providers amid safety push appeared first on FreightWaves.",
+        "categories": [
+          "CDL Issues",
+          "News",
+          "Trucking",
+          "English Language Proficiency",
+          "FMCSA",
+          "non-domiciled CDLs",
+          "trucking regulations"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nvidia forges supplier agreements to expand capacity for AI",
+        "link": "https://www.supplychaindive.com/news/nvidia-forges-supplier-agreements-to-expand-capacity-for-ai/872780/",
+        "published": "2026-10-28T14:20:20.000Z",
+        "snippet": "The artificial intelligence chipmaker signed deals with six suppliers to scale production of certain components by as much as 15-fold.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Backlog grows as 35,000 containers await rail service at LA–Long Beach",
+        "link": "https://www.freightwaves.com/news/backlog-grows-as-35000-containers-await-rail-service-at-la-long-beach",
+        "published": "2026-10-28T14:01:08.000Z",
+        "snippet": "Nearly 35,700 import containers were waiting for on-dock trains at the ports of Los Angeles and Long Beach, as record cargo volumes, reported railcar shortages slowed inland traffic. The post Backlog grows as 35,000 containers await rail service at LA–Long Beach appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "container shipping",
+          "imports"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Diesel prices may stay elevated into spring 2027, fuel executives warn",
+        "link": "https://www.freightwaves.com/news/diesel-prices-may-stay-elevated-into-spring-2027-fuel-executives-warn",
+        "published": "2026-10-28T13:30:00.000Z",
+        "snippet": "Energy and truck stop executives said limited refining and pipeline capacity could leave U.S. trucking fleets vulnerable to higher diesel prices in 2027. The post Diesel prices may stay elevated into spring 2027, fuel executives warn appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Trucking",
+          "diesel",
+          "Fuel",
+          "WEX"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Forward Air saves ‘significant portion’ of major customer account",
+        "link": "https://www.freightwaves.com/news/forward-air-saves-significant-portion-of-major-customer-account",
+        "published": "2026-10-28T13:29:49.000Z",
+        "snippet": "Forward Air has finalized a two-year deal to preserve a major share of the business from a contract logistics customer it had earlier warned it could lose. The post Forward Air saves ‘significant portion’ of major customer account appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Less than Truckload (LTL)",
+          "Logistics",
+          "News",
+          "company earnings",
+          "contract logistics",
+          "Forward Air",
+          "LTL carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Frst look: almost all good news at C.H. Robinson in the third quarter",
+        "link": "https://www.freightwaves.com/news/frst-look-almost-all-good-news-at-c-h-robinson-in-the-third-quarter",
+        "published": "2026-10-28T12:35:19.000Z",
+        "snippet": "The third quarter at C.H. Robinson might be remembered for both the highs and the lows. It was the period when Lipe vs. Lupus Superior came down, and just days after the quarter ended, the giant 3PL announced the almost $6 billion acquisition of rival RXO (NYSE: RXO). But neither of those things hit the […] The post Frst look: almost all good news at C.H. Robinson in the third quarter appeared fir",
+        "categories": [
+          "3PL and Brokerage",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "C.H. Robinson",
+          "RXO"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Companies That Write The Standards Will Own The Next Decade Of Freight",
+        "link": "https://www.freightwaves.com/news/the-companies-that-write-the-standards-will-own-the-next-decade-of-freight",
+        "published": "2026-10-28T12:18:19.000Z",
+        "snippet": "The freight industry has spent years and real money chasing fraud, piling up more tracking, more data, and more awareness than it has ever had, and the losses keep climbing anyway, which is the paradox Michael Caney, Chief Customer Officer at the Carrier Identity® platform Highway, set out to unpack at the FreightWaves Broker Compliance […] The post The Companies That Write The Standards Will Own ",
+        "categories": [
+          "3PL and Brokerage",
+          "F3: Future of Freight Festival",
+          "Fraud",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "WD-40 credits supply chain for $7M in cost savings",
+        "link": "https://www.supplychaindive.com/news/wd-40-credits-supply-chain-for-7m-in-cost-savings/872902/",
+        "published": "2026-10-28T11:22:00.000Z",
+        "snippet": "The company cut costs in FY2026 through several operational improvements, such as reducing inventory levels, President and CEO Steven Brass said.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Jacobs, RXO’s creator, backs its acquisition by C.H. Robinson",
+        "link": "https://www.freightwaves.com/news/jacobs-rxos-creator-backs-its-acquisition-by-c-h-robinson",
+        "published": "2026-10-28T11:00:00.000Z",
+        "snippet": "Chattanooga–The man who created RXO gave his public support to the 3PL’s acquisition by C.H. Robinson, saying you need “scale and density” to make it in the brokerage world. Brad Jacobs, who as CEO of XPO Logistics spun off RXO into a standalone publicly-traded 3PL, told the FreightWaves Future of Freight Festival here that he […] The post Jacobs, RXO’s creator, backs its acquisition by C.H. Robin",
+        "categories": [
+          "3PL and Brokerage",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "C.H. Robinson",
+          "GXO",
+          "QXO",
+          "RXO"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "WEX, Euclid AI target 90% reduction in trucking transaction costs",
+        "link": "https://www.freightwaves.com/news/wex-euclid-ai-target-90-reduction-in-trucking-transaction-costs",
+        "published": "2026-10-28T04:27:10.000Z",
+        "snippet": "WEX and Euclid AI announced plans to offer trucking-specific AI agents that Euclid says have sharply reduced transaction costs in existing deployments. The post WEX, Euclid AI target 90% reduction in trucking transaction costs appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Technology",
+          "Trucking",
+          "AI agents",
+          "WEX"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Insurance claims adjustments tank Landstar’s otherwise strong Q3",
+        "link": "https://www.freightwaves.com/news/insurance-claims-adjustments-tank-landstars-otherwise-strong-q3",
+        "published": "2026-10-28T03:22:42.000Z",
+        "snippet": "Despite insurance claims activity clouding an otherwise strong third-quarter result, truckload broker Landstar System highlighted favorable demand for its dry van and flatbed offerings on Tuesday, driven by tight capacity and data center buildouts. The post Insurance claims adjustments tank Landstar’s otherwise strong Q3 appeared first on FreightWaves.",
+        "categories": [
+          "3PL and Brokerage",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "3PLs",
+          "company earnings",
+          "Landstar",
+          "Landstar BCOs"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Port Houston container volumes jump 11% as imports surge in September",
+        "link": "https://www.freightwaves.com/news/port-houston-container-volumes-jump-11-as-imports-surge-in-september",
+        "published": "2026-10-28T03:17:00.000Z",
+        "snippet": "Port Houston saw rising imports and improving exports in September, helping lift container activity at the Gulf Coast gateway. The post Port Houston container volumes jump 11% as imports surge in September appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Maritime",
+          "News",
+          "container shipping",
+          "Gulf Coast ports",
+          "Houston Ship Channel",
+          "Port Houston"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Werner Enterprises sees cost headwinds lingering into Q1",
+        "link": "https://www.freightwaves.com/news/werner-enterprises-sees-cost-headwinds-lingering-into-q1",
+        "published": "2026-10-28T00:10:03.000Z",
+        "snippet": "Werner Enterprises outlined a path back to mid-cycle margins on a Tuesday evening call, but noted cost headwinds—some transitory and some growth-related—could linger into the first quarter. The post Werner Enterprises sees cost headwinds lingering into Q1 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "dedicated carrier",
+          "TL contract rates",
+          "Werner"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico truckers reach deal for talks after strike disrupts 19 states",
+        "link": "https://www.freightwaves.com/news/mexico-truckers-reach-deal-for-talks-after-strike-disrupts-19-states",
+        "published": "2026-10-27T19:17:32.000Z",
+        "snippet": "Trucking organizations in Mexico have agreed to four negotiating sessions with federal officials after a nationwide strike disrupted highways and threatened freight movements across the country. The post Mexico truckers reach deal for talks after strike disrupts 19 states appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "blockade",
+          "CANACAR",
+          "Mexico",
+          "Protest"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Kroger taps RFID, computer vision data to boost inventory management",
+        "link": "https://www.supplychaindive.com/news/kroger-taps-rfid-computer-vision-data-to-boost-inventory-management/872819/",
+        "published": "2026-10-27T17:49:36.000Z",
+        "snippet": "The grocery chain is providing machine learning insights to suppliers to improve availability while piloting radio frequency identification at 1,500 store bakeries.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS gears up for peak season with less Amazon volume in tow",
+        "link": "https://www.supplychaindive.com/news/ups-gears-up-for-peak-season-with-less-amazon-volume-in-tow/872845/",
+        "published": "2026-10-27T16:06:00.000Z",
+        "snippet": "The carrier expects U.S. volume to dip year over year in Q4, but packages from other customer segments are projected to boost revenue.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cycling apparel company unites planning, sourcing on single platform",
+        "link": "https://www.supplychaindive.com/news/cycling-apparel-company-unites-planning-sourcing-on-single-platform/833732/",
+        "published": "2026-10-27T13:43:00.000Z",
+        "snippet": "MAAP joins Walmart, Pacsun and others who have teamed with technology vendor Bamboo Rose to enhance supply chain operations.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Audi investing $4B to build its first US plant in Georgia",
+        "link": "https://www.supplychaindive.com/news/audi-investing-4b-to-build-its-first-us-plant-in-georgia/872866/",
+        "published": "2026-10-27T11:31:00.000Z",
+        "snippet": "The factory will have a production capacity of up to 200,000 vehicles a year, with construction slated to begin in 2027 and the first vehicles built in the early 2030s.",
+        "categories": [],
+        "creator": "Eric Walz"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Supply Chain AI Has an Execution Problem",
+        "link": "https://www.supplychaindive.com/spons/supply-chain-ai-has-an-execution-problem/872776/",
+        "published": "2026-10-27T03:00:00.000Z",
+        "snippet": "AI is everywhere in supply chain software now—but does it actually improve decisions? Here's why language models need a decision engine underneath, and the test every planner should run before trusting an AI recommendation.",
+        "categories": [],
+        "creator": "Jonathan Wood, CEO, AIMMS"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USTR weighs extending pause on China-linked vessel fees to January",
+        "link": "https://www.supplychaindive.com/news/ustr-weighs-extending-pause-on-china-linked-vessel-fees-to-january/872763/",
+        "published": "2026-10-26T20:48:18.000Z",
+        "snippet": "The suspension is currently set to lift Nov. 9, but the agency said more time would allow the U.S. and China to further negotiations.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USPS to debut weekly fuel fee in 2027, matching FedEx, UPS practices",
+        "link": "https://www.supplychaindive.com/news/usps-to-debut-weekly-fuel-fee-in-2027-matching-fedex-ups-practices/872778/",
+        "published": "2026-10-26T19:12:00.000Z",
+        "snippet": "The surcharge for package shipping services will be tied to diesel and jet fuel prices, which have been climbing this year.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 7.6 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
