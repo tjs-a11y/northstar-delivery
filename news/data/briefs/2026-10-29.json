@@ -1,0 +1,532 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 7.6 cents to $6.352; cargo theft hits California",
+    "headline": "Diesel climbs 7.6 cents as Fed holds rates and LTL tonnage turns positive",
+    "dek": "Diesel rises to $6.352, the Fed holds steady amid inflation, California cargo theft arrests, and Old Dominion sees tonnage growth.",
+    "lede": "Diesel rose 7.6 cents last week to a $6.352 national average, squeezing margins for carriers without strong fuel surcharge coverage.",
+    "sections": [
+      {
+        "heading": "Diesel Pops 7.6 Cents",
+        "bullets": [
+          "$6.352 per gallon is the U.S. average retail diesel price for the week of 2026-10-26.",
+          "Up 7.6 cents (1.2%) week over week, so recheck fuel surcharges on spot loads now.",
+          "Down 3.0 cents over four weeks, meaning last week's jump erased part of a recent dip."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Fed Holds as Inflation Speeds Up",
+        "bullets": [
+          "Rates unchanged: the Fed kept its main interest rate steady despite accelerating inflation.",
+          "Two FOMC members dissented, favoring a 0.25 percentage point hike, so borrowing costs could still rise.",
+          "Truck loans and equipment financing stay pricey for small fleets weighing purchases."
+        ],
+        "source_ids": [
+          "H3"
+        ]
+      },
+      {
+        "heading": "California Cargo Theft Crackdown",
+        "bullets": [
+          "$500,000 SIG Sauer shipment left a Torrance warehouse via a fictitious pickup; two people were arrested.",
+          "Fake pickups remain a live threat, so verify carrier identity before loading or accepting brokered freight.",
+          "Nine alleged Sinaloa Cartel associates were arrested in Southern California over a cargo train theft ring."
+        ],
+        "source_ids": [
+          "H6",
+          "H4"
+        ]
+      },
+      {
+        "heading": "Freight Demand Signals Mixed",
+        "bullets": [
+          "Old Dominion posted positive September tonnage, its first growth in more than two years.",
+          "OD executives say a full recovery needs broader demand, which depends on easing energy costs.",
+          "XPO beat Q3 expectations on higher volumes and stronger pricing, hinting at firmer LTL rates.",
+          "CPKC set records for grain and intermodal volumes, adding rail competition for some truck freight."
+        ],
+        "source_ids": [
+          "H15",
+          "H8",
+          "H10"
+        ]
+      },
+      {
+        "heading": "Claims Worries Hit Brokers",
+        "bullets": [
+          "C.H. Robinson and Landstar shares fell despite strong results, as investors focused on rising claims.",
+          "Expect brokers to tighten scrutiny of carrier safety and claims history when tendering loads."
+        ],
+        "source_ids": [
+          "H13"
+        ]
+      }
+    ],
+    "seo_description": "Diesel rises 7.6 cents to $6.352, Fed holds rates, California cargo theft arrests, and LTL tonnage turns positive. Trucking brief for small carriers."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-29T16:33:28.231Z",
+    "date": "2026-10-29",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "previous": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "weeklyChangeCents": 7.6,
+      "weeklyChangePct": 1.2,
+      "fourWeekChangeCents": -3,
+      "formatted": {
+        "latest": "$6.352",
+        "weeklyChange": "up 7.6 cents",
+        "weeklyChangePct": "1.2%",
+        "fourWeekChange": "down 3.0 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx drawing parcel-focused shippers to its air freight services",
+        "link": "https://www.supplychaindive.com/news/fedex-drawing-parcel-focused-shippers-to-its-air-freight-services/873182/",
+        "published": "2026-10-29T15:36:00.000Z",
+        "snippet": "Air freight demand from traditionally parcel-centric customers is rising as the carrier pushes for more business in high-value segments like AI and data centers.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "OPI, Nioxin owner appoints chief supply chain officer",
+        "link": "https://www.supplychaindive.com/news/opi-nioxin-owner-appoints-chief-supply-chain-officer/872796/",
+        "published": "2026-10-29T14:26:34.000Z",
+        "snippet": "Javier Huerta will oversee The Wella Company’s sourcing, manufacturing and logistics capabilities, effective Dec. 1",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Fed holds main interest rate steady despite accelerating inflation",
+        "link": "https://www.supplychaindive.com/news/fed-holds-main-interest-rate-steady-despite-accelerating-inflation/873147/",
+        "published": "2026-10-29T14:20:00.000Z",
+        "snippet": "Two policymakers on the Federal Open Market Committee dissented in favor of raising the federal funds rate by 0.25 percentage point.",
+        "categories": [],
+        "creator": "Jim Tyson"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "9 alleged Mexican Cartel associates arrested in California train theft ring",
+        "link": "https://www.freightwaves.com/news/9-alleged-mexican-cartel-associates-arrested-in-california-train-theft-ring",
+        "published": "2026-10-29T14:09:44.000Z",
+        "snippet": "Nine men allegedly connected to Mexico's Sinaloa Cartel were arrested in Southern California as part of a cargo train theft operation. The post 9 alleged Mexican Cartel associates arrested in California train theft ring appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Railroad",
+          "BNSF",
+          "cargo crime",
+          "cargo theft",
+          "Cartel",
+          "railroad"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trailer Bridge appoints new CEO",
+        "link": "https://www.freightwaves.com/news/trailer-bridge-appoints-new-ceo",
+        "published": "2026-10-29T13:53:23.000Z",
+        "snippet": "Leading Jones Act carrier Trailer Bridge has appointed a new CEO. The post Trailer Bridge appoints new CEO appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Jones Act",
+          "leadership",
+          "Puerto Rico"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "$500,000 SIG Sauer shipment stolen in fictitious pickup, two arrested in California",
+        "link": "https://www.freightwaves.com/news/500000-sig-sauer-shipment-stolen-in-fictitious-pickup-two-arrested-in-california",
+        "published": "2026-10-29T12:20:34.000Z",
+        "snippet": "A shipment worth half a million dollars left a Torrance warehouse under fraudulent circumstances, triggering a cargo theft investigation by Los Angeles County detectives. The post $500,000 SIG Sauer shipment stolen in fictitious pickup, two arrested in California appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Fraud",
+          "Playbook: Cash & Capital",
+          "Top Stories",
+          "cargo theft",
+          "freight fraud",
+          "logistics",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump opts for trade talks over tariffs for robotics, industrial machinery",
+        "link": "https://www.supplychaindive.com/news/trump-opts-for-trade-talks-over-tariffs-for-robotics-industrial-machinery/873166/",
+        "published": "2026-10-29T12:14:00.000Z",
+        "snippet": "For the second time this month, the president directed cabinet officials to negotiate over imports deemed a threat to U.S. commerce and security by a Section 232 probe.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "XPO’s pricing, operating initiatives drive Q3 beat",
+        "link": "https://www.freightwaves.com/news/xpos-pricing-operating-initiatives-drive-q3-beat",
+        "published": "2026-10-29T12:11:31.000Z",
+        "snippet": "Driven by higher volumes and stronger pricing, XPO once again exceeded expectations as these factors continue to amplify the impact of its operational efficiency initiatives. The post XPO’s pricing, operating initiatives drive Q3 beat appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Less than Truckload (LTL)",
+          "News",
+          "#xpo",
+          "company earnings",
+          "Less-than-truckload pricing",
+          "LTL carriers",
+          "LTL pricing"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "43% of shoppers plan to spend more this peak, Kenco finds",
+        "link": "https://www.freightwaves.com/news/kenco-survey-shoppers-plan-more-peak-spending",
+        "published": "2026-10-29T11:00:00.000Z",
+        "snippet": "Kenco's 2026 Peak Season Consumer Report shows holiday budgets rising, with consumers expecting free shipping, two-day delivery and free returns on top The post 43% of shoppers plan to spend more this peak, Kenco finds appeared first on FreightWaves.",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Modern Shipper",
+          "News",
+          "Top Stories",
+          "fulfillment",
+          "Kenco",
+          "Kenco Logistics",
+          "Kenco Logistics Services"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CPKC reports record revenue on strength of grain and intermodal traffic",
+        "link": "https://www.freightwaves.com/news/cpkc-reports-record-revenue-on-strength-of-grain-and-intermodal-traffic",
+        "published": "2026-10-29T10:03:00.000Z",
+        "snippet": "CPKC turned in record 3Q revenue as the railway set records for domestic and international intermodal volumes, as well as for grain. The post CPKC reports record revenue on strength of grain and intermodal traffic appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "carloads",
+          "CPKC",
+          "earnings",
+          "intermodal"
+        ],
+        "creator": "Trains.com Staff"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Scan Global Logistics to acquire Oregon-based OIA Global",
+        "link": "https://www.freightwaves.com/news/scan-global-logistics-to-acquire-oregon-based-oia-global",
+        "published": "2026-10-29T00:07:26.000Z",
+        "snippet": "Scan Global Logistics has agreed to acquire OIA Global, based in Portland, Oregon. The post Scan Global Logistics to acquire Oregon-based OIA Global appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "M&A",
+          "News",
+          "Top Stories",
+          "Scan Global Logistics"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Aurora adds 500-truck Charger MOU toward 30,000-truck goal",
+        "link": "https://www.freightwaves.com/news/aurora-charger-logistics-500-driverless-trucks-mou",
+        "published": "2026-10-28T21:50:06.000Z",
+        "snippet": "Aurora Innovation signed a nonbinding MOU with Charger Logistics for up to 500 driverless trucks, adding to a carrier-owned pipeline Aurora needs to hit its 2030 targets. The post Aurora adds 500-truck Charger MOU toward 30,000-truck goal appeared first on FreightWaves.",
+        "categories": [
+          "Autonomous Vehicles",
+          "Business",
+          "News",
+          "Technology",
+          "Aurora Driver",
+          "Aurora Driverless Trucks",
+          "Aurora Innovation",
+          "autonomous trucking"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "C.H Robinson and Landstar stock prices slammed; insurance a factor",
+        "link": "https://www.freightwaves.com/news/c-h-robinson-and-landstar-stock-prices-slammed-insurance-costs-a-factor",
+        "published": "2026-10-28T21:40:55.000Z",
+        "snippet": "(Editor’s note: the initial article has been revised to note that the companies discussed increased claims, not insurance premiums). Strong financial numbers released between Tuesday and Wednesday by C.H. Robinson and Landstar were overshadowed on Wall Street by concern over one particular issue: insurance and claims. Landstar kicked off the issue Tuesday afternoon with its […] The post C.H Robins",
+        "categories": [
+          "3PL and Brokerage",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "C.H. Robinson",
+          "Landstar",
+          "Montgomery vs. Caribe Transport II",
+          "RXO"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "How One Trucker Turned One Video A Day Into Billions Of Views, And What It Cost Him",
+        "link": "https://www.freightwaves.com/news/how-one-trucker-turned-one-video-a-day-into-billions-of-views-and-what-it-cost-him",
+        "published": "2026-10-28T18:44:02.000Z",
+        "snippet": "Larry Cothran did not set out to become what he now calls the number one trucking content creator in the world, he set out to post one video a day and then simply refused to stop, and that stubborn daily discipline, showing up on Facebook, Instagram, and YouTube every single day for more than three […] The post How One Trucker Turned One Video A Day Into Billions Of Views, And What It Cost Him app",
+        "categories": [
+          "Playbook: Featured",
+          "The Playbook",
+          "Trucker Tools"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Old Dominion’s tonnage turns positive; recovery needs demand inflection",
+        "link": "https://www.freightwaves.com/news/old-dominions-tonnage-turns-positive-recovery-needs-demand-inflection",
+        "published": "2026-10-28T17:22:04.000Z",
+        "snippet": "Old Dominion reported positive tonnage growth in September for the first time in more than two years, but company executives emphasized that returning to upcycle-level performance likely requires a wider recovery in demand, which relies on easing energy costs. The post Old Dominion’s tonnage turns positive; recovery needs demand inflection appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Less than Truckload (LTL)",
+          "News",
+          "company earnings",
+          "Less-than-truckload pricing",
+          "LTL carriers",
+          "LTL tonnage",
+          "LTL yields"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tesla begins humanoid production in California",
+        "link": "https://www.supplychaindive.com/news/tesla-begins-optimus-humanoid-production-california-shipments-2027/872992/",
+        "published": "2026-10-28T14:41:23.000Z",
+        "snippet": "Early customers for Optimus robots would use them for industrial applications, such as dangerous, repetitive tasks, CEO Elon Musk said.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nvidia forges supplier agreements to expand capacity for AI",
+        "link": "https://www.supplychaindive.com/news/nvidia-forges-supplier-agreements-to-expand-capacity-for-ai/872780/",
+        "published": "2026-10-28T14:20:20.000Z",
+        "snippet": "The artificial intelligence chipmaker signed deals with six suppliers to scale production of certain components by as much as 15-fold.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Coty pursues less air freight, more ocean and rail transport",
+        "link": "https://www.supplychaindive.com/news/coty-pursues-less-air-freight-more-ocean-and-rail-transport/873024/",
+        "published": "2026-10-28T14:02:41.000Z",
+        "snippet": "The beauty giant has cut air cargo by 48% since 2019 as the company looks to trim emissions in its supply chain.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "WD-40 credits supply chain for $7M in cost savings",
+        "link": "https://www.supplychaindive.com/news/wd-40-credits-supply-chain-for-7m-in-cost-savings/872902/",
+        "published": "2026-10-28T11:22:00.000Z",
+        "snippet": "The company cut costs in FY2026 through several operational improvements, such as reducing inventory levels, President and CEO Steven Brass said.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Kroger taps RFID, computer vision data to boost inventory management",
+        "link": "https://www.supplychaindive.com/news/kroger-taps-rfid-computer-vision-data-to-boost-inventory-management/872819/",
+        "published": "2026-10-27T17:49:36.000Z",
+        "snippet": "The grocery chain is providing machine learning insights to suppliers to improve availability while piloting radio frequency identification at 1,500 store bakeries.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS gears up for peak season with less Amazon volume in tow",
+        "link": "https://www.supplychaindive.com/news/ups-gears-up-for-peak-season-with-less-amazon-volume-in-tow/872845/",
+        "published": "2026-10-27T16:06:00.000Z",
+        "snippet": "The carrier expects U.S. volume to dip year over year in Q4, but packages from other customer segments are projected to boost revenue.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "What the Mastio Rankings Actually Tell Shippers",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "AI in Logistics: The End of Bad Truckload Routes?",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "AI ROI: Why 90% Satisfaction Still Means Leaders Want MORE!",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 7.6 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

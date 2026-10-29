@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-10-29",
+    "subject": "Diesel jumps 7.6 cents to $6.352; cargo theft hits California",
+    "headline": "Diesel climbs 7.6 cents as Fed holds rates and LTL tonnage turns positive",
+    "script": "Diesel rises to $6.352, the Fed holds steady amid inflation, California cargo theft arrests, and Old Dominion sees tonnage growth.\n\nDiesel rose 7.6 cents last week to a $6.352 national average, squeezing margins for carriers without strong fuel surcharge coverage.",
+    "url": "briefs/2026-10-29.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel climbs 7.6 cents as Fed holds rates and LTL tonnage turns positive",
+    "sources": [
+      {
+        "source": "Supply Chain Dive",
+        "title": "Fed holds main interest rate steady despite accelerating inflation",
+        "link": "https://www.supplychaindive.com/news/fed-holds-main-interest-rate-steady-despite-accelerating-inflation/873147/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "$500,000 SIG Sauer shipment stolen in fictitious pickup, two arrested in California",
+        "link": "https://www.freightwaves.com/news/500000-sig-sauer-shipment-stolen-in-fictitious-pickup-two-arrested-in-california"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "9 alleged Mexican Cartel associates arrested in California train theft ring",
+        "link": "https://www.freightwaves.com/news/9-alleged-mexican-cartel-associates-arrested-in-california-train-theft-ring"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Old Dominion’s tonnage turns positive; recovery needs demand inflection",
+        "link": "https://www.freightwaves.com/news/old-dominions-tonnage-turns-positive-recovery-needs-demand-inflection"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "XPO’s pricing, operating initiatives drive Q3 beat",
+        "link": "https://www.freightwaves.com/news/xpos-pricing-operating-initiatives-drive-q3-beat"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "CPKC reports record revenue on strength of grain and intermodal traffic",
+        "link": "https://www.freightwaves.com/news/cpkc-reports-record-revenue-on-strength-of-grain-and-intermodal-traffic"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-28",
     "subject": "Diesel jumps 7.6 cents; LA-Long Beach rail backlog builds",
     "headline": "Diesel Up 7.6 Cents to $6.352 as Executives Warn of High Prices Into 2027",
