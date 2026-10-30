@@ -1,0 +1,579 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 7.6 cents; Schneider moves eastern rail to NS",
+    "headline": "Diesel Climbs to $6.352 as Schneider Shifts Eastern Rail Business to Norfolk Southern",
+    "dek": "Diesel rises 7.6 cents, Schneider picks Norfolk Southern over CSX, Mexico truckers pause strike, and the Fed holds rates.",
+    "lede": "Diesel rose 7.6 cents last week to $6.352 a gallon, a fresh squeeze on cash flow for small carriers.",
+    "sections": [
+      {
+        "heading": "Diesel jumps 7.6 cents",
+        "bullets": [
+          "$6.352 per gallon is the U.S. average retail diesel price for the week of 2026-10-26.",
+          "Up 7.6 cents (1.2%) week over week, so check that fuel surcharges are keeping pace.",
+          "Still down 3.0 cents over four weeks, but the one-week spike hits margins right away."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Schneider swaps CSX for Norfolk Southern",
+        "bullets": [
+          "Schneider is making Norfolk Southern its primary eastern rail provider, replacing CSX.",
+          "The move comes as Norfolk Southern pursues a merger with Union Pacific, which could reshape eastern intermodal lanes.",
+          "Schneider raised its outlook despite a slight Q3 miss, a sign that big fleets see demand holding."
+        ],
+        "source_ids": [
+          "H7",
+          "H8"
+        ]
+      },
+      {
+        "heading": "Mexico truckers pause national strike",
+        "bullets": [
+          "Mexican trucking leaders have temporarily suspended their nationwide strike over deadly highway crime.",
+          "They say talks must deliver measurable security gains, so cross-border disruptions could return."
+        ],
+        "source_ids": [
+          "H4"
+        ]
+      },
+      {
+        "heading": "Shipper and LTL signals",
+        "bullets": [
+          "11% was the jump in Amazon's Q3 shipping costs, driven by higher fuel and linehaul expenses.",
+          "FedEx Freight says LTL volumes are stabilizing and expects Q4 margins to improve.",
+          "FedEx expects a strong peak season, a possible boost for spot demand.",
+          "Covenant's Q3 revenue rose 19.2% to $353.9 million, led by growth in managed freight."
+        ],
+        "source_ids": [
+          "H12",
+          "H11",
+          "H16",
+          "H14"
+        ]
+      },
+      {
+        "heading": "Rates, rail and new freight nodes",
+        "bullets": [
+          "The Fed held its main rate steady despite accelerating inflation, so equipment financing costs stay put for now.",
+          "26,000 containers a year are targeted to move off the road by Georgia's new inland rail hub, which could cut local drayage.",
+          "$400M Walmart distribution center in Cibolo, Texas, is set to break ground this February."
+        ],
+        "source_ids": [
+          "H20",
+          "H9",
+          "H5"
+        ]
+      }
+    ],
+    "seo_description": "Diesel rises 7.6 cents to $6.352, Schneider shifts eastern rail to Norfolk Southern, Mexico truckers pause strike, and the Fed holds rates."
+  },
+  "harvest": {
+    "generatedAt": "2026-10-30T16:28:59.352Z",
+    "date": "2026-10-30",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "previous": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "weeklyChangeCents": 7.6,
+      "weeklyChangePct": 1.2,
+      "fourWeekChangeCents": -3,
+      "formatted": {
+        "latest": "$6.352",
+        "weeklyChange": "up 7.6 cents",
+        "weeklyChangePct": "1.2%",
+        "fourWeekChange": "down 3.0 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Jett McCandless named first FreightTech Vanguard Award winner at F3",
+        "link": "https://www.freightwaves.com/news/jett-mccandless-named-first-freighttech-vanguard-award-winner-at-f3",
+        "published": "2026-10-30T15:22:26.000Z",
+        "snippet": "Jett McCandless, founder and CEO of project44 and LSP44, received the first FreightTech Vanguard Award at FreightWaves’ F3 Awards Dinner in Chattanooga, recognizing his contributions to logistics technology and innovation. The post Jett McCandless named first FreightTech Vanguard Award winner at F3 appeared first on FreightWaves.",
+        "categories": [
+          "Awards",
+          "Events",
+          "F3: Future of Freight Festival",
+          "FreightTech Award",
+          "News",
+          "Technology",
+          "Freight",
+          "FreightWaves"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USDA to fund 8 fertilizer manufacturing projects totaling more than $1.3B",
+        "link": "https://www.supplychaindive.com/news/usda-fund-8-fertilizer-manufacturing-projects-totaling-1-billion/873311/",
+        "published": "2026-10-30T14:52:00.000Z",
+        "snippet": "The agency said the projects will add production capacity to drive prices lower and reduce the nation’s reliance on nutrients from other countries.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS aims to double RFID-labeled volume from customer locations",
+        "link": "https://www.supplychaindive.com/news/ups-aims-to-double-rfid-labeled-volume-from-customer-locations/872946/",
+        "published": "2026-10-30T14:45:39.000Z",
+        "snippet": "The carrier expects 6 million packages a day will benefit from the offering in 2027, increasing shipper visibility in the process, CEO Carol Tomé said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico truckers halt protests, demand action on deadly highway crime",
+        "link": "https://www.freightwaves.com/news/mexico-truckers-halt-protests-demand-action-on-deadly-highway-crime",
+        "published": "2026-10-30T14:33:18.000Z",
+        "snippet": "Mexican trucking leaders have temporarily suspended their nationwide strike but say negotiations must produce measurable improvements in highway security. The post Mexico truckers halt protests, demand action on deadly highway crime appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "cargo theft",
+          "trucker strike",
+          "US-Mexico trade",
+          "violence"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart plans $400M Texas distribution center",
+        "link": "https://www.supplychaindive.com/news/walmart-plans-400m-texas-distribution-center/873218/",
+        "published": "2026-10-30T14:17:45.000Z",
+        "snippet": "The retailer expects to break ground on the more than 744,000-square-foot facility in Cibolo this February.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Aurora reaffirms it’s on track to produce more than 1000 trucks in 2027",
+        "link": "https://www.freightwaves.com/news/aurora-q3-2026-earnings",
+        "published": "2026-10-30T14:00:45.000Z",
+        "snippet": "Aurora reported a $257 million operating loss on $3 million in revenue and cut its full-year forecast The post Aurora reaffirms it’s on track to produce more than 1000 trucks in 2027 appeared first on FreightWaves.",
+        "categories": [
+          "Autonomous Vehicles",
+          "Company Earnings",
+          "News",
+          "Technology",
+          "aurora",
+          "Aurora Driver",
+          "Aurora Driverless Trucks",
+          "Aurora Innovation"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Schneider partners with Norfolk Southern; raises outlook despite Q3 miss",
+        "link": "https://www.freightwaves.com/news/schneider-partners-with-norfolk-southern-raises-outlook-despite-q3-miss",
+        "published": "2026-10-30T13:55:20.000Z",
+        "snippet": "Alongside its slightly worse-than-expected third-quarter report on Thursday, Schneider National announced a deal to utilize Norfolk Southern’s rail network in the East. The post Schneider partners with Norfolk Southern; raises outlook despite Q3 miss appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Intermodal",
+          "News",
+          "CPKC",
+          "CSX",
+          "IMCs",
+          "intermodal cost savings",
+          "Norfolk Southern"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Schneider to shift eastern rail business to Norfolk Southern from CSX",
+        "link": "https://www.freightwaves.com/news/schneider-to-shift-eastern-rail-business-to-norfolk-southern-from-csx",
+        "published": "2026-10-30T12:40:28.000Z",
+        "snippet": "Schneider National will make Norfolk Southern its primary eastern rail provider as the railroad pursues a merger with Union Pacific. The post Schneider to shift eastern rail business to Norfolk Southern from CSX appeared first on FreightWaves.",
+        "categories": [
+          "Intermodal",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "CSX",
+          "intermodal",
+          "Norfolk Southern",
+          "Schneider National"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New Georgia hub aims to take 26,000 containers off the road",
+        "link": "https://www.freightwaves.com/news/new-georgia-hub-aims-to-take-26000-containers-off-the-road",
+        "published": "2026-10-30T11:20:00.000Z",
+        "snippet": "The state of Georgia officially opens an inland rail hub with plans to take tens of thousands of containers off the roads. The post New Georgia hub aims to take 26,000 containers off the road appeared first on FreightWaves.",
+        "categories": [
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Railroad",
+          "Top Stories",
+          "container shipping",
+          "Gainesville Inland Port",
+          "Georgia"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Venti brings driverless yard trucks to US yards",
+        "link": "https://www.freightwaves.com/news/venti-driverless-trucks-us-yards",
+        "published": "2026-10-30T11:00:00.000Z",
+        "snippet": "Venti Technologies has run driverless container trucks in Singapore for nearly three years. Its CEO says U.S. rail yards needed new skills first, starting with reverse. The post Venti brings driverless yard trucks to US yards appeared first on FreightWaves.",
+        "categories": [
+          "Autonomous Vehicles",
+          "News",
+          "Startups",
+          "Technology",
+          "autonomous intermodal",
+          "autonomous yard operations",
+          "autonomous yard tractor",
+          "Heidi Wyle"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FedEx Freight sees volumes stabilize, eyes Q4 margin improvement",
+        "link": "https://www.freightwaves.com/news/fedex-freight-sees-volumes-stabilize-eyes-q4-margin-improvement",
+        "published": "2026-10-30T00:44:55.000Z",
+        "snippet": "FedEx Freight reported Thursday that volumes continue to stabilize, and it anticipates stronger operating leverage next year, bolstered by business wins and an improved freight mix from its dedicated sales teams. The post FedEx Freight sees volumes stabilize, eyes Q4 margin improvement appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Less than Truckload (LTL)",
+          "News",
+          "Top Stories",
+          "company earnings",
+          "FedEx",
+          "FedEx Freight",
+          "FedEx Freight spinoff"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amazon battles freight inflation as shipping costs jump 11% in Q3",
+        "link": "https://www.freightwaves.com/news/amazon-battles-freight-inflation-as-shipping-costs-jump-11-in-q3",
+        "published": "2026-10-29T23:26:52.000Z",
+        "snippet": "Amazon's logistics network absorbed higher fuel and linehaul costs in the third-quarter while delivering more than 1.5 billion items same-day or overnight. The post Amazon battles freight inflation as shipping costs jump 11% in Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "E-commerce & Fulfillment",
+          "News",
+          "Amazon",
+          "Amazon Logistics",
+          "company earnings"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: TFI Truckload sparkles, but OR at LTL slips",
+        "link": "https://www.freightwaves.com/news/first-look-tfi-truckload-sparkles-but-or-at-ltl-slips",
+        "published": "2026-10-29T21:38:24.000Z",
+        "snippet": "TFI International has tried to get investors to take notice of its Truckload operations, which are substantial but smaller than its more better-known LTL segment. The third quarter results may be the catalyst that gets that recognition to occur. Where the third quarter LTL segment at TFI (NYSE: TFII) saw its operating ratio rise compared […] The post First look: TFI Truckload sparkles, but OR at L",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Trucking",
+          "TFI International"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: Covenant Logistics’ Q3 freight revenue surges 68%",
+        "link": "https://www.freightwaves.com/news/first-look-covenant-logistics-q3-freight-revenue-surges-68",
+        "published": "2026-10-29T21:15:36.000Z",
+        "snippet": "Covenant Logistics Group reported a 19.2% increase in third-quarter revenue to $353.9 million, fueled by rapid growth in its managed freight segment. The post First look: Covenant Logistics’ Q3 freight revenue surges 68% appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Trucking",
+          "company earnings",
+          "Covenant",
+          "Covenant Logistics"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "How transportation leaders are turning AI and connected data into a competitive edge",
+        "link": "https://www.freightwaves.com/news/how-transportation-leaders-are-turning-ai-and-connected-data-into-a-competitive-edge",
+        "published": "2026-10-29T20:39:40.000Z",
+        "snippet": "AI is gaining ground in transportation, but are companies actually turning that potential into results? As supply chains face constant disruption, rising expectations and growing pressure to make faster decisions, the gap between adopting new technology and putting it to work is becoming harder to ignore. To better understand where the industry stands, Blue Yonder […] The post How transportation l",
+        "categories": [
+          "Media",
+          "News",
+          "White Papers",
+          "Blue Yonder"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FedEx cashes in on premium logistics services, fuel surcharges",
+        "link": "https://www.freightwaves.com/news/fedex-cashes-in-on-premium-logistics-services-fuel-surcharges",
+        "published": "2026-10-29T19:49:41.000Z",
+        "snippet": "FedEx posted positive third quarter results on volume growth and better pricing and anticipates a strong peak season. The post FedEx cashes in on premium logistics services, fuel surcharges appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "earnings",
+          "FedEx",
+          "logistics services",
+          "parcel carriers"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Kroger accelerates direct sourcing efforts for better cost control, visibility",
+        "link": "https://www.supplychaindive.com/news/kroger-accelerates-direct-sourcing-efforts-for-better-cost-control-visibil/872931/",
+        "published": "2026-10-29T16:44:00.000Z",
+        "snippet": "The grocery chain seeks to boost first-party procurement volumes to more than 10% while working toward a fully owned import and distribution model.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx drawing parcel-focused shippers to its air freight services",
+        "link": "https://www.supplychaindive.com/news/fedex-drawing-parcel-focused-shippers-to-its-air-freight-services/873182/",
+        "published": "2026-10-29T15:36:00.000Z",
+        "snippet": "Air freight demand from traditionally parcel-centric customers is rising as the carrier pushes for more business in high-value segments like AI and data centers.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "OPI, Nioxin owner appoints chief supply chain officer",
+        "link": "https://www.supplychaindive.com/news/opi-nioxin-owner-appoints-chief-supply-chain-officer/872796/",
+        "published": "2026-10-29T14:26:34.000Z",
+        "snippet": "Javier Huerta will oversee The Wella Company’s sourcing, manufacturing and logistics capabilities, effective Dec. 1",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Fed holds main interest rate steady despite accelerating inflation",
+        "link": "https://www.supplychaindive.com/news/fed-holds-main-interest-rate-steady-despite-accelerating-inflation/873147/",
+        "published": "2026-10-29T14:20:00.000Z",
+        "snippet": "Two policymakers on the Federal Open Market Committee dissented in favor of raising the federal funds rate by 0.25 percentage point.",
+        "categories": [],
+        "creator": "Jim Tyson"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump opts for trade talks over tariffs for robotics, industrial machinery",
+        "link": "https://www.supplychaindive.com/news/trump-opts-for-trade-talks-over-tariffs-for-robotics-industrial-machinery/873166/",
+        "published": "2026-10-29T12:14:00.000Z",
+        "snippet": "For the second time this month, the president directed cabinet officials to negotiate over imports deemed a threat to U.S. commerce and security by a Section 232 probe.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tesla begins humanoid production in California",
+        "link": "https://www.supplychaindive.com/news/tesla-begins-optimus-humanoid-production-california-shipments-2027/872992/",
+        "published": "2026-10-28T14:41:23.000Z",
+        "snippet": "Early customers for Optimus robots would use them for industrial applications, such as dangerous, repetitive tasks, CEO Elon Musk said.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nvidia forges supplier agreements to expand capacity for AI",
+        "link": "https://www.supplychaindive.com/news/nvidia-forges-supplier-agreements-to-expand-capacity-for-ai/872780/",
+        "published": "2026-10-28T14:20:20.000Z",
+        "snippet": "The artificial intelligence chipmaker signed deals with six suppliers to scale production of certain components by as much as fifteenfold.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Safety Technology Is Only as Good as the Trust Behind It",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 7.6 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "key": "weekend",
+      "reason": "Friday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

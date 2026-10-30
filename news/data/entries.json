@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-10-30",
+    "subject": "Diesel jumps 7.6 cents; Schneider moves eastern rail to NS",
+    "headline": "Diesel Climbs to $6.352 as Schneider Shifts Eastern Rail Business to Norfolk Southern",
+    "script": "Diesel rises 7.6 cents, Schneider picks Norfolk Southern over CSX, Mexico truckers pause strike, and the Fed holds rates.\n\nDiesel rose 7.6 cents last week to $6.352 a gallon, a fresh squeeze on cash flow for small carriers.",
+    "url": "briefs/2026-10-30.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel Climbs to $6.352 as Schneider Shifts Eastern Rail Business to Norfolk Southern",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Schneider partners with Norfolk Southern; raises outlook despite Q3 miss",
+        "link": "https://www.freightwaves.com/news/schneider-partners-with-norfolk-southern-raises-outlook-despite-q3-miss"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Schneider to shift eastern rail business to Norfolk Southern from CSX",
+        "link": "https://www.freightwaves.com/news/schneider-to-shift-eastern-rail-business-to-norfolk-southern-from-csx"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico truckers halt protests, demand action on deadly highway crime",
+        "link": "https://www.freightwaves.com/news/mexico-truckers-halt-protests-demand-action-on-deadly-highway-crime"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Amazon battles freight inflation as shipping costs jump 11% in Q3",
+        "link": "https://www.freightwaves.com/news/amazon-battles-freight-inflation-as-shipping-costs-jump-11-in-q3"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "FedEx Freight sees volumes stabilize, eyes Q4 margin improvement",
+        "link": "https://www.freightwaves.com/news/fedex-freight-sees-volumes-stabilize-eyes-q4-margin-improvement"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "FedEx cashes in on premium logistics services, fuel surcharges",
+        "link": "https://www.freightwaves.com/news/fedex-cashes-in-on-premium-logistics-services-fuel-surcharges"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-10-29",
     "subject": "Diesel jumps 7.6 cents to $6.352; cargo theft hits California",
     "headline": "Diesel climbs 7.6 cents as Fed holds rates and LTL tonnage turns positive",
