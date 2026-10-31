@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-10-31",
+    "subject": "Diesel up 7.6 cents, Covenant sees 2027 rate hikes",
+    "headline": "Diesel Jumps 7.6 Cents to $6.352 as Covenant CEO Eyes Double-Digit 2027 Rate Hikes",
+    "script": "Diesel climbs to $6.352, Covenant forecasts double-digit contract hikes, Arkansas blitz targets English proficiency, and Mexico truckers pause their strike.\n\nDiesel rose 7.6 cents last week to a $6.352 national average, squeezing margins for carriers without solid fuel surcharges.",
+    "url": "briefs/2026-10-31.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel Jumps 7.6 Cents to $6.352 as Covenant CEO Eyes Double-Digit 2027 Rate Hikes",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Covenant Logistics CEO expects double-digit truckload rate hikes in 2027",
+        "link": "https://www.freightwaves.com/news/covenant-logistics-ceo-expects-double-digit-truckload-rate-hikes-in-2027"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Arkansas truck blitz nets 183 English violations, 44 arrests in 48 hours",
+        "link": "https://www.freightwaves.com/news/arkansas-truck-blitz-nets-183-english-violations-44-arrests-in-48-hours"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico truckers halt protests, demand action on deadly highway crime",
+        "link": "https://www.freightwaves.com/news/mexico-truckers-halt-protests-demand-action-on-deadly-highway-crime"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Schneider partners with Norfolk Southern; raises outlook despite Q3 miss",
+        "link": "https://www.freightwaves.com/news/schneider-partners-with-norfolk-southern-raises-outlook-despite-q3-miss"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Fed holds main interest rate steady despite accelerating inflation",
+        "link": "https://www.supplychaindive.com/news/fed-holds-main-interest-rate-steady-despite-accelerating-inflation/873147/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Walmart plans $400M Texas distribution center",
+        "link": "https://www.supplychaindive.com/news/walmart-plans-400m-texas-distribution-center/873218/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-10-30",
     "subject": "Diesel jumps 7.6 cents; Schneider moves eastern rail to NS",
     "headline": "Diesel Climbs to $6.352 as Schneider Shifts Eastern Rail Business to Norfolk Southern",
