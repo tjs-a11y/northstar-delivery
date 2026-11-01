@@ -1,5 +1,56 @@
 [
   {
+    "date": "2026-11-01",
+    "subject": "Covenant sees double-digit 2027 rate hikes; Arkansas blitz",
+    "headline": "Covenant CEO Expects Double-Digit 2027 Contract Hikes as Roadside Enforcement Tightens",
+    "script": "Truckload contract rates may climb again in 2027, Arkansas runs a major enforcement blitz, and border trucking faces new pressures.\n\nCovenant Logistics' CEO expects double-digit truckload contract rate increases in 2027, a sign shippers may face another year of rising costs.",
+    "url": "briefs/2026-11-01.html",
+    "dieselPrice": null,
+    "topHeadline": "Covenant CEO Expects Double-Digit 2027 Contract Hikes as Roadside Enforcement Tightens",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Covenant Logistics CEO expects double-digit truckload rate hikes in 2027",
+        "link": "https://www.freightwaves.com/news/covenant-logistics-ceo-expects-double-digit-truckload-rate-hikes-in-2027"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Freight cycles are anything but regular",
+        "link": "https://www.freightwaves.com/news/freight-cycles-are-anything-but-regular"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Arkansas truck blitz nets 183 English violations, 44 arrests in 48 hours",
+        "link": "https://www.freightwaves.com/news/arkansas-truck-blitz-nets-183-english-violations-44-arrests-in-48-hours"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: Cabotage enforcements threatening cross-border trucking",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-cabotage-enforcements-threatening-cross-border-trucking"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico truckers halt protests, demand action on deadly highway crime",
+        "link": "https://www.freightwaves.com/news/mexico-truckers-halt-protests-demand-action-on-deadly-highway-crime"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Walmart plans $400M Texas distribution center",
+        "link": "https://www.supplychaindive.com/news/walmart-plans-400m-texas-distribution-center/873218/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-10-31",
     "subject": "Diesel up 7.6 cents, Covenant sees 2027 rate hikes",
     "headline": "Diesel Jumps 7.6 Cents to $6.352 as Covenant CEO Eyes Double-Digit 2027 Rate Hikes",
