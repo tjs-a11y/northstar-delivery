@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-02",
+    "subject": "Diesel jumps 7.6 cents, SoCal port strike looms, PMI hits 55.5",
+    "headline": "Diesel Climbs 7.6 Cents as Port Strike Threat Builds and Manufacturing Grows",
+    "script": "Fuel costs rise, a Southern California port strike nears, factories keep expanding, and holiday parcel demand points up.\n\nDiesel rose 7.6 cents to $6.352 per gallon, squeezing margins for anyone without a strong fuel surcharge.",
+    "url": "briefs/2026-11-02.html",
+    "dieselPrice": {
+      "period": "2026-10-26",
+      "dollarsPerGallon": 6.352
+    },
+    "topHeadline": "Diesel Climbs 7.6 Cents as Port Strike Threat Builds and Manufacturing Grows",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Strike at busiest US port just days away as talks continue",
+        "link": "https://www.freightwaves.com/news/strike-at-busiest-us-port-just-days-away-as-talks-continue"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "October’s 55.5 manufacturing PMI beats expectations",
+        "link": "https://www.freightwaves.com/news/octobers-55-5-manufacturing-pmi-beats-expectations"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Parcel shipping demand to increase 4% during holidays, ShipMatrix says",
+        "link": "https://www.freightwaves.com/news/parcel-shipping-demand-to-increase-4-during-holidays-shipmatrix-says"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Amazon, retailers paid more for freight in 3Q",
+        "link": "https://www.freightwaves.com/news/amazon-retailers-paid-more-for-freight-in-3q"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Norfolk Southern, Schneider National team to scale East Coast intermodal reach",
+        "link": "https://www.supplychaindive.com/news/norfolk-southern-schneider-national-team-to-scale-east-coast-intermodal-re/873340/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fuel_spike"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-01",
     "subject": "Covenant sees double-digit 2027 rate hikes; Arkansas blitz",
     "headline": "Covenant CEO Expects Double-Digit 2027 Contract Hikes as Roadside Enforcement Tightens",

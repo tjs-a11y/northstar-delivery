@@ -1,0 +1,529 @@
+{
+  "brief": {
+    "subject": "Diesel jumps 7.6 cents, SoCal port strike looms, PMI hits 55.5",
+    "headline": "Diesel Climbs 7.6 Cents as Port Strike Threat Builds and Manufacturing Grows",
+    "dek": "Fuel costs rise, a Southern California port strike nears, factories keep expanding, and holiday parcel demand points up.",
+    "lede": "Diesel rose 7.6 cents to $6.352 per gallon, squeezing margins for anyone without a strong fuel surcharge.",
+    "sections": [
+      {
+        "heading": "Diesel Jumps Again",
+        "bullets": [
+          "$6.352 per gallon is the national diesel average for the week of 2026-10-26, per EIA.",
+          "Up 7.6 cents (1.2%) week over week, enough to erase thin margins on long hauls.",
+          "Down 3.0 cents over four weeks, so the latest jump reverses most of the recent relief.",
+          "Check that your fuel surcharge tables track weekly moves, not monthly averages."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "SoCal Port Strike Days Away",
+        "bullets": [
+          "A strike at the busiest U.S. port could hit within days as union watchmen and port employers keep negotiating.",
+          "Both sides extended the contract, which buys time but does not settle anything yet.",
+          "Drayage and Southern California outbound carriers should plan for possible container delays and lane disruption."
+        ],
+        "source_ids": [
+          "H12"
+        ]
+      },
+      {
+        "heading": "Factories Keep Growing",
+        "bullets": [
+          "55.5 was October's ISM manufacturing PMI, beating expectations and marking a 10th straight month of expansion.",
+          "Steady factory output supports industrial and flatbed freight demand heading into year end.",
+          "Survey respondents grew more negative, citing the Iran war, price swings and trade wars as risks.",
+          "Public LTL carriers describe demand with cautious optimism, matching the PMI signal."
+        ],
+        "source_ids": [
+          "H5",
+          "H3"
+        ]
+      },
+      {
+        "heading": "Peak Season Signals",
+        "bullets": [
+          "4% growth in holiday parcel demand is forecast by ShipMatrix, the strongest peak since 2022.",
+          "Big retailers, including Amazon, reported paying more for freight in the third quarter.",
+          "Rising shipper freight costs plus firmer peak volume may give small carriers more room on rates."
+        ],
+        "source_ids": [
+          "H2",
+          "H1"
+        ]
+      },
+      {
+        "heading": "Network Shifts to Watch",
+        "bullets": [
+          "Norfolk Southern and Schneider National are partnering to expand East Coast intermodal reach, adding rail competition on some lanes.",
+          "$400M Walmart distribution center planned for Cibolo, Texas, with groundbreaking expected this February.",
+          "The 744,000-plus-square-foot site could create new regional freight in the San Antonio area."
+        ],
+        "source_ids": [
+          "H10",
+          "H21"
+        ]
+      }
+    ],
+    "seo_description": "Diesel up 7.6 cents to $6.352, SoCal port strike looms, October PMI at 55.5, and holiday parcel demand forecast up 4%."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-02T19:56:51.068Z",
+    "date": "2026-11-02",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "previous": {
+        "period": "2026-10-19",
+        "value": 6.276
+      },
+      "weeklyChangeCents": 7.6,
+      "weeklyChangePct": 1.2,
+      "fourWeekChangeCents": -3,
+      "formatted": {
+        "latest": "$6.352",
+        "weeklyChange": "up 7.6 cents",
+        "weeklyChangePct": "1.2%",
+        "fourWeekChange": "down 3.0 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        },
+        {
+          "period": "2026-08-31",
+          "value": 5.599
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amazon, retailers paid more for freight in 3Q",
+        "link": "https://www.freightwaves.com/news/amazon-retailers-paid-more-for-freight-in-3q",
+        "published": "2026-11-02T19:30:09.000Z",
+        "snippet": "Largest retailers cite shipping inflation alongside isolated delays in getting merchandise into inventory. The post Amazon, retailers paid more for freight in 3Q appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Amazon",
+          "company earnings",
+          "container shipping",
+          "logistics"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Parcel shipping demand to increase 4% during holidays, ShipMatrix says",
+        "link": "https://www.freightwaves.com/news/parcel-shipping-demand-to-increase-4-during-holidays-shipmatrix-says",
+        "published": "2026-11-02T18:19:56.000Z",
+        "snippet": "Parcel carriers are expected to have their best peak season this year since 2022, according to forecasting from ShipMatrix. The post Parcel shipping demand to increase 4% during holidays, ShipMatrix says appeared first on FreightWaves.",
+        "categories": [
+          "Last-Mile Delivery",
+          "News",
+          "Parcel Freight",
+          "PostalMag"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/",
+        "published": "2026-11-02T17:41:00.000Z",
+        "snippet": "Increasingly negative comments from respondents also cite price vitality and trade wars in the latest Purchasing Managers’ Index from the Institute for Supply Management.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Grow Your Brokerage. Keep Profitability in Focus.",
+        "link": "https://www.freightwaves.com/news/grow-your-brokerage-keep-profitability-in-focus",
+        "published": "2026-11-02T16:43:38.000Z",
+        "snippet": "More customers. More loads. More decisions that affect your bottom line. As your brokerage grows, it becomes harder to know whether the additional volume is delivering the profit you expect. The New Rules of Freight Brokerage explores why margin discipline is becoming a competitive advantage, and five practical rules to help you stay in control […] The post Grow Your Brokerage. Keep Profitability ",
+        "categories": [
+          "Media",
+          "News",
+          "White Papers",
+          "Descartes"
+        ],
+        "creator": "Sponsor"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "October’s 55.5 manufacturing PMI beats expectations",
+        "link": "https://www.freightwaves.com/news/octobers-55-5-manufacturing-pmi-beats-expectations",
+        "published": "2026-11-02T16:41:27.000Z",
+        "snippet": "In line with recent demand commentary from public less-than-truckload carriers expressing cautious optimism, U.S. manufacturing grew for its 10th straight month in October. The post October’s 55.5 manufacturing PMI beats expectations appeared first on FreightWaves.",
+        "categories": [
+          "Less than Truckload (LTL)",
+          "News",
+          "Top Stories",
+          "#xpo",
+          "Institute for Supply Management",
+          "ISM PMI",
+          "LTL carriers",
+          "LTL shipments"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "TrashLab raises $12M to automate waste haulers’ back offices",
+        "link": "https://www.freightwaves.com/news/trashlab-raises-12m-ai-waste-haulers",
+        "published": "2026-11-02T16:11:32.000Z",
+        "snippet": "TrashLab closed a $12 million round led by Ventana and plans to extend AI agents into dispatch, billing and collections, with rollout planned through 2027. The post TrashLab raises $12M to automate waste haulers’ back offices appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "News",
+          "Startups",
+          "Technology",
+          "AI agent",
+          "AI agents trucking",
+          "Haul-E",
+          "Neil Chaudhary"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico destroys 52 tons of avocados after pest discovery raises export concerns",
+        "link": "https://www.freightwaves.com/news/mexico-destroys-52-tons-of-avocados-after-pest-discovery-raises-export-concerns",
+        "published": "2026-11-02T16:04:02.000Z",
+        "snippet": "Mexican authorities recently destroyed over 52 tons of avocados after discovering the presence of destructive agricultural pests in shipments due for international export. The post Mexico destroys 52 tons of avocados after pest discovery raises export concerns appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "avocado",
+          "avocados"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Reshoring and foreign direct investment added 247K manufacturing jobs in 2025",
+        "link": "https://www.supplychaindive.com/news/reshoring-foreign-direct-investment-247k-jobs-2025-report-reshoring-initiative/873433/",
+        "published": "2026-11-02T15:35:00.000Z",
+        "snippet": "The result “essentially matched” the previous year, per the Reshoring Initiative, which expects 25% growth in reshoring-related jobs in 2026.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Boeing secures lessor order for 767 passenger-to-freighter conversion",
+        "link": "https://www.freightwaves.com/news/boeing-secures-lessor-order-for-767-passenger-to-freighter-conversion",
+        "published": "2026-11-02T15:30:16.000Z",
+        "snippet": "Boeing will convert a 767-300 passenger jet into a freighter for Icelease, which also took options for up to two more conversions, as the leasing company continues to grow its freighter portfolio, the companies announced on Monday. The first aircraft is scheduled to take its production slot in the first quarter of 2027, with delivery […] The post Boeing secures lessor order for 767 passenger-to-fr",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo",
+          "Boeing",
+          "Boeing 767 freighter"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Norfolk Southern, Schneider National team to scale East Coast intermodal reach",
+        "link": "https://www.supplychaindive.com/news/norfolk-southern-schneider-national-team-to-scale-east-coast-intermodal-re/873340/",
+        "published": "2026-11-02T15:11:00.000Z",
+        "snippet": "The railroad’s potential merger with Union Pacific is “the icing on the cake” of the partnership, Schneider CEO Jim Filter said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart commits $6B to up distribution center automation with Symbotic",
+        "link": "https://www.supplychaindive.com/news/walmart-commits-6b-to-up-distribution-center-automation-with-symbotic/873356/",
+        "published": "2026-11-02T15:07:07.000Z",
+        "snippet": "The retailer will deploy Symbotic's technology at 25 regional facilities as it looks to improve speed and inventory replenishment.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Strike at busiest US port just days away as talks continue",
+        "link": "https://www.freightwaves.com/news/strike-at-busiest-us-port-just-days-away-as-talks-continue",
+        "published": "2026-11-02T13:48:55.000Z",
+        "snippet": "Port employers and union watchmen in Southern California extend contract as negotiations continue. The post Strike at busiest US port just days away as talks continue appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "#trade",
+          "container shipping",
+          "International Longshore and Warehouse Union"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Runnings unites forecasting, replenishment with AI",
+        "link": "https://www.supplychaindive.com/news/runnings-unites-forecasting-replenishment-with-ai/872823/",
+        "published": "2026-11-02T12:06:00.000Z",
+        "snippet": "The farm, home and outdoor goods retailer is rolling out Relex Solutions’ artificial-intelligence platform across its store and distribution network in phases.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Flexport forwarding volumes up 40% as headcount grows only 5%",
+        "link": "https://www.freightwaves.com/news/flexport-volumes-up-40-ai-headcount",
+        "published": "2026-11-02T12:00:00.000Z",
+        "snippet": "Flexport's CEO says ocean volumes have kept climbing since April and the company is weighing smaller engineering teams as AI speeds up product releases. The post Flexport forwarding volumes up 40% as headcount grows only 5% appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "News",
+          "Technology",
+          "Top Stories",
+          "AI agents",
+          "container shipping",
+          "customs",
+          "Customs and Border Protection"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ocean line sale expands Europe logistics reach for US shippers",
+        "link": "https://www.freightwaves.com/news/ocean-line-sale-expands-europe-logistics-reach-for-u-s-shippers",
+        "published": "2026-11-02T11:54:00.000Z",
+        "snippet": "The proposed deal would combine shipping, rail and trucking networks across Europe and West Africa, with implications for American exporters and cold-chain customers. The post Ocean line sale expands Europe logistics reach for US shippers appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Cold Chain",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "acquisition",
+          "Boluda"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Why more inventory won’t fix your supply chain’s fill rate",
+        "link": "https://www.supplychaindive.com/spons/why-more-inventory-wont-fix-your-supply-chains-fill-rate/873053/",
+        "published": "2026-11-02T10:00:00.000Z",
+        "snippet": "Record inventory but still missing fill rate targets? The problem isn't supply or forecasting; it's your supply chain decision layer. Here's how to fix it.",
+        "categories": [],
+        "creator": "Susana Castello Gonzalo and Alex Bowen"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Context changes everything: what supplier contracts reveal about supply chain performance",
+        "link": "https://www.supplychaindive.com/spons/context-changes-everything-what-supplier-contracts-reveal-about-supply-cha/833693/",
+        "published": "2026-11-02T10:00:00.000Z",
+        "snippet": "Clarity across supplier contracts helps procurement teams uncover savings, risk and performance insights.",
+        "categories": [],
+        "creator": ""
+      },
+      {
+        "id": "H18",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AIT Worldwide snaps up Australian forwarder involved in Big tech buildout",
+        "link": "https://www.freightwaves.com/news/ait-worldwide-snaps-up-australian-forwarder-involved-in-big-tech-buildout",
+        "published": "2026-11-02T04:06:20.000Z",
+        "snippet": "AIT Worldwide Logistics is expanding more significantly in Oceania with a deal to buy Connor Anderson International. The post AIT Worldwide snaps up Australian forwarder involved in Big tech buildout appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "M&A",
+          "News",
+          "Top Stories",
+          "AIT Worldwide Logistics",
+          "Australia",
+          "freight forwarder"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USDA to fund 8 fertilizer manufacturing projects totaling more than $1.3B",
+        "link": "https://www.supplychaindive.com/news/usda-fund-8-fertilizer-manufacturing-projects-totaling-1-billion/873311/",
+        "published": "2026-10-30T14:52:00.000Z",
+        "snippet": "The agency said the projects will add production capacity to drive prices lower and reduce the nation’s reliance on nutrients from other countries.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS aims to double RFID-labeled volume from customer locations",
+        "link": "https://www.supplychaindive.com/news/ups-aims-to-double-rfid-labeled-volume-from-customer-locations/872946/",
+        "published": "2026-10-30T14:45:39.000Z",
+        "snippet": "The carrier expects 6 million packages a day will benefit from the offering in 2027, increasing shipper visibility in the process, CEO Carol Tomé said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart plans $400M Texas distribution center",
+        "link": "https://www.supplychaindive.com/news/walmart-plans-400m-texas-distribution-center/873218/",
+        "published": "2026-10-30T14:17:45.000Z",
+        "snippet": "The retailer expects to break ground on the more than 744,000-square-foot facility in Cibolo this February.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Electric Trucking: Why 2,500 Tesla Semis Will Transform Freight",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "LTL vs. Truckload: Who emerged stronger from Q3 earnings reports?",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "WARNING: Don’t Expect This Freight Cycle to End Soon",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fuel_spike",
+      "reason": "EIA diesel average up 7.6 cents week over week (threshold 5 cents)",
+      "evidence": [
+        "F1"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "With diesel climbing, a load that goes sideways costs more than ever. Loadmark gives every load one shared, witness-confirmed status that shipper, carrier and receiver all see. Free for carriers, drivers and receivers.",
+      "signal": "fuel_spike",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "F1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
