@@ -121,6 +121,16 @@ const ROWS = [
     intro_copy: 'A lane is only a good lane if the rate clears your cost to run it. Put the offered rate against your own floor per mile and see instantly whether to accept, counter or pass. It is free, it stores nothing, and it keeps a slow week from turning into a losing one.' },
 ];
 
+// Interactive calculator pages (hand-built, real math). The generator lists them in the hub and
+// sitemap but does NOT render their HTML (they live as their own index.html files).
+const CALCS = [
+  { slug: 'trucking-operating-cost-per-mile', tool_title: 'Operating Cost Per Mile Calculator', meta_description: 'Your true cost per mile from your own fixed, fuel and maintenance numbers — plus the break-even rate on loaded miles.' },
+  { slug: 'air-cargo-chargeable-weight-calculator', tool_title: 'Air Cargo Chargeable Weight (IATA)', meta_description: 'Volumetric vs actual weight for air freight, the IATA way — see which one the airline bills.' },
+  { slug: 'dry-van-pallet-capacity-calculator', tool_title: 'Dry Van Pallet Capacity Calculator', meta_description: 'How many pallets fit a 48 or 53 foot van, by footprint, orientation and stacking.' },
+  { slug: 'reefer-fuel-consumption-estimator', tool_title: 'Reefer Fuel Burn Estimator', meta_description: 'Gallons and dollars of auxiliary diesel your reefer burns over a lane.' },
+  { slug: 'freight-tonu-detention-loss-tracker', tool_title: 'TONU & Detention Loss Calculator', meta_description: 'What the broker owes you on detention and a cancelled load, plus the deadhead it cost.' },
+];
+
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const HEAD = (title, desc, canonical) => `<!DOCTYPE html>
@@ -238,6 +248,11 @@ function renderHub(rows) {
     </a>`).join('\n');
     return `  <h2>${esc(t.name)}</h2>\n  <div class="hubgrid">\n${cards}\n  </div>`;
   }).join('\n');
+  const calcCards = CALCS.map((c) => `    <a class="hubcard" href="${ORIGIN}/tools/${c.slug}/">
+      <b>${esc(c.tool_title)}</b>
+      <span>${esc(c.meta_description)}</span>
+    </a>`).join('\n');
+  const calcSection = `  <h2>Interactive Calculators</h2>\n  <div class="hubgrid">\n${calcCards}\n  </div>`;
   return `${HEAD('Freight Tools for Carriers & Shippers | NorthStar', 'Free, on-device freight tools and calculators: rate con analysis, settlement audits, LTL freight class and density, trailer space, rate per mile and broker checks.', canonical)}
 <style>
   .hubgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 10px;}
@@ -260,6 +275,7 @@ function renderHub(rows) {
       <div class="cta-row"><a href="${QUOTE}" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div>
       <p class="disclose">${DISCLOSE}</p>
     </div>
+${calcSection}
 ${sections}
   </article>
 </div>
@@ -283,7 +299,7 @@ writeFileSync(join(root, 'tools', 'index.html'), renderHub(ROWS) + '\n');
 const smPath = join(root, 'sitemap.xml');
 const sm = readFileSync(smPath, 'utf8');
 const existing = new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
-const newUrls = [`${ORIGIN}/tools/`, ...ROWS.map((r) => `${ORIGIN}/tools/${r.slug}/`)].filter((u) => !existing.has(u));
+const newUrls = [`${ORIGIN}/tools/`, ...CALCS.map((c) => `${ORIGIN}/tools/${c.slug}/`), ...ROWS.map((r) => `${ORIGIN}/tools/${r.slug}/`)].filter((u) => !existing.has(u));
 if (newUrls.length) {
   const rows = newUrls.map((u) => `  <url><loc>${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n');
   writeFileSync(smPath, sm.replace('</urlset>', `${rows}\n</urlset>`));

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TONU & Detention Loss Calculator | NorthStar Freight</title>
+<meta name="description" content="Free calculator for what a broker owes you on detention and a Truck Order Not Used (TONU) — plus the deadhead it cost you. On-device, nothing uploaded.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/freight-tonu-detention-loss-tracker/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / TONU &amp; Detention Loss</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Owner-Operators</span>
+    <h1>When the dock holds you or the load dies, put a number on it.</h1>
+    <p class="lede">Detention and a Truck Order Not Used are real money, and "we do not pay that" only works on carriers who do not do the math. Enter the facts and get the figure to put on the invoice. Runs on your device; nothing is uploaded.</p>
+
+    <div class="calc">
+      <h2>Detention</h2>
+      <p class="hint">Most contracts give free time, then pay an hourly detention rate after it. Use the terms on your rate con.</p>
+      <div class="grid">
+        <div class="fld"><label>Free hours allowed</label><input id="free" type="number" inputmode="decimal" value="2"></div>
+        <div class="fld"><label>Hours actually held</label><input id="held" type="number" inputmode="decimal" value="6"></div>
+        <div class="fld"><label>Detention rate ($ / hour)</label><input id="rate" type="number" inputmode="decimal" value="50"></div>
+        <div class="fld"><label>Stops detained</label><input id="stops" type="number" inputmode="decimal" value="1"></div>
+      </div>
+    </div>
+
+    <div class="calc">
+      <h2>Truck Order Not Used (TONU)</h2>
+      <p class="hint">What it cost you when the load cancelled after you committed — the deadhead you ran, plus the TONU fee you are owed.</p>
+      <div class="grid">
+        <div class="fld"><label>Deadhead miles run to pickup</label><input id="dh" type="number" inputmode="decimal" value="45"></div>
+        <div class="fld"><label>Your cost per mile ($)</label><input id="cpm" type="number" inputmode="decimal" value="1.80"></div>
+        <div class="fld"><label>TONU fee you are owed ($)</label><input id="tonu" type="number" inputmode="decimal" value="150"></div>
+      </div>
+      <div class="out" id="out"></div>
+    </div>
+
+    <p class="note">How it works: <b>Detention owed</b> = max(0, hours held − free hours) × rate × stops. <b>Deadhead cost</b> = miles × your cost per mile — the real money you are out if the TONU is not paid. <b>Total to recover</b> = detention owed + the TONU fee. Take these numbers to the broker in writing. Nothing you enter leaves your device.</p>
+
+    <div class="cta-box">
+      <h3>Stop signing rate cons that are silent on this.</h3>
+      <p>Run any rate con through the free checker — it flags missing detention and TONU terms before you sign, and drafts the ask to add them.</p>
+      <a href="https://northstardeliveryservice.com/tools/detention-tonu-rate-con-check/" class="btn btn-amber">Check a Rate Con</a>
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-outline">Get An Instant Quote</a>
+      <p class="disclose">This calculator is an estimate from the numbers and contract terms you enter; what you can actually recover depends on your rate confirmation and the broker. Not legal advice.</p>
+    </div>
+
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/detention-tonu-rate-con-check/">Detention/TONU Rate Con Check →</a>
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/broker-short-pay-audit-tool/">Short-Pay Audit →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function calc(){
+    var free=+$('free').value||0,held=+$('held').value||0,rate=+$('rate').value||0,stops=+$('stops').value||1;
+    var dh=+$('dh').value||0,cpm=+$('cpm').value||0,tonu=+$('tonu').value||0;
+    var det=Math.max(0,held-free)*rate*stops;
+    var dhCost=dh*cpm;
+    var total=det+tonu;
+    $('out').innerHTML=
+      '<div class="big"><div class="n">'+money(total)+'</div><div class="l">Total to invoice / recover (detention + TONU fee)</div></div>'+
+      '<div class="cell"><div class="n">'+money(det)+'</div><div class="l">Detention owed</div></div>'+
+      '<div class="cell"><div class="n">'+money(dhCost)+'</div><div class="l">Deadhead cost (your sunk loss)</div></div>';
+  }
+  ['free','held','rate','stops','dh','cpm','tonu'].forEach(function(i){$(i).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

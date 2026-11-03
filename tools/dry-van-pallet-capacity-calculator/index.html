@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dry Van Pallet Capacity Calculator (48ft & 53ft) | NorthStar Freight</title>
+<meta name="description" content="Free calculator for how many pallets fit a 48 or 53 foot dry van — by pallet footprint, orientation and stacking. On-device, nothing uploaded.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/dry-van-pallet-capacity-calculator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Dry Van Pallet Capacity</p>
+  <article>
+    <span class="eyebrow">For Shippers &amp; Dispatchers</span>
+    <h1>How many pallets actually fit your dry van?</h1>
+    <p class="lede">Before the warehouse crew starts loading, know the real floor count. Enter the trailer and pallet footprint and the tool grids it both ways and takes the better layout. Runs on your device; nothing is uploaded.</p>
+
+    <div class="calc">
+      <h2>Pallet capacity</h2>
+      <p class="hint">Defaults are a 53ft van interior (636" × 100") and a standard GMA pallet (48" × 40"). Adjust to your real numbers.</p>
+      <div class="grid">
+        <div class="fld"><label>Trailer interior length (in)</label><input id="tl" type="number" inputmode="decimal" value="636"></div>
+        <div class="fld"><label>Trailer interior width (in)</label><input id="tw" type="number" inputmode="decimal" value="100"></div>
+        <div class="fld"><label>Pallet length (in)</label><input id="pl" type="number" inputmode="decimal" value="48"></div>
+        <div class="fld"><label>Pallet width (in)</label><input id="pw" type="number" inputmode="decimal" value="40"></div>
+        <div class="fld"><label>Stackable?</label><select id="stk"><option value="1">No — single layer</option><option value="2">Yes — double stack</option><option value="3">Yes — triple stack</option></select></div>
+        <div class="fld"><label>Max payload (lb, optional)</label><input id="cap" type="number" inputmode="decimal" value="45000"></div>
+      </div>
+      <div class="out" id="out"></div>
+    </div>
+
+    <p class="note">How it works: the tool fills the floor in both pallet orientations — length-along-trailer and rotated — and keeps the higher count. With a 636"×100" van and 48"×40" pallets that is <b>30 on the floor</b> (turned, two wide). Real-world pinwheeling can shift that a couple either way, and a <b>weight cap</b> (≈45,000 lb payload) often fills the truck before the floor does. Nothing you enter leaves your device.</p>
+
+    <div class="cta-box">
+      <h3>At or over the floor? Decide the mode.</h3>
+      <p>If it will not fit as LTL, get an instant full-truckload quote for any equipment type — or check the LTL-vs-truckload line first.</p>
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a>
+      <p class="disclose">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book. Floor count is a spacing estimate; confirm stackability, weight and load pattern for your freight.</p>
+    </div>
+
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/trailer-linear-feet-calculator/">Linear Feet →</a>
+      <a href="https://northstardeliveryservice.com/tools/ltl-vs-truckload-decision-tool/">LTL vs Truckload →</a>
+      <a href="https://northstardeliveryservice.com/tools/ltl-freight-class-calculator/">LTL Freight Class →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function calc(){
+    var tl=+$('tl').value||0,tw=+$('tw').value||0,pl=+$('pl').value||0,pw=+$('pw').value||0,stk=+$('stk').value||1;
+    if(pl<=0||pw<=0){$('out').innerHTML='';return;}
+    var a=Math.floor(tl/pl)*Math.floor(tw/pw);   // pallet length along trailer length
+    var b=Math.floor(tl/pw)*Math.floor(tw/pl);   // rotated
+    var floor=Math.max(a,b);
+    var orient=b>=a?'Turned (pallet width along trailer length)':'Straight (pallet length along trailer length)';
+    var total=floor*stk;
+    $('out').innerHTML=
+      '<div class="big"><div class="n">'+floor+'</div><div class="l">Pallets on the floor</div></div>'+
+      '<div class="cell"><div class="n">'+total+'</div><div class="l">Total with stacking (×'+stk+')</div></div>'+
+      '<div class="cell"><div class="n" style="font-size:14px;">'+orient+'</div><div class="l">Best orientation</div></div>';
+  }
+  ['tl','tw','pl','pw','stk','cap'].forEach(function(i){$(i).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

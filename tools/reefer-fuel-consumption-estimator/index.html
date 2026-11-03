@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reefer Fuel Consumption Calculator | NorthStar Freight</title>
+<meta name="description" content="Free calculator for refrigerated trailer fuel burn — gallons and cost over a lane from your run hours and burn rate. On-device, nothing uploaded.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/reefer-fuel-consumption-estimator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Reefer Fuel Burn</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Owner-Operators</span>
+    <h1>What is the reefer unit really costing you per lane?</h1>
+    <p class="lede">A continuous temperature profile burns auxiliary diesel the whole run, and it comes out of your margin, not the broker's. Enter your run hours and burn rate and see the gallons and dollars before you accept the load. Runs on your device; nothing is uploaded.</p>
+
+    <div class="calc">
+      <h2>Reefer fuel burn</h2>
+      <p class="hint">Burn rate varies by unit and mode — continuous runs higher (often ~0.5–1.0 gal/hr), start/stop (cycle-sentry) lower. Use your own unit's number.</p>
+      <div class="grid">
+        <div class="fld"><label>Transit days</label><input id="days" type="number" inputmode="decimal" value="3"></div>
+        <div class="fld"><label>Reefer run hours per day</label><input id="hpd" type="number" inputmode="decimal" value="20"></div>
+        <div class="fld"><label>Burn rate (gal / hour)</label><input id="gph" type="number" inputmode="decimal" value="0.6"></div>
+        <div class="fld"><label>Diesel price ($ / gallon)</label><input id="px" type="number" inputmode="decimal" value="3.80"></div>
+      </div>
+      <div class="out" id="out"></div>
+    </div>
+
+    <p class="note">How it works: <b>Run hours</b> = days × hours per day. <b>Gallons</b> = run hours × burn rate. <b>Fuel cost</b> = gallons × diesel price. If the broker will not add a reefer fuel line for a continuous set point, this is the number that proves why you need one. Nothing you enter leaves your device.</p>
+
+    <div class="cta-box">
+      <h3>Make sure the rate covers it.</h3>
+      <p>Get an instant reefer quote, and run the rate con through the free checker so a silent fuel or detention clause does not eat the margin.</p>
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a>
+      <p class="disclose">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book. Fuel burn is an estimate from your inputs; actual draw varies with ambient temp, set point and unit age.</p>
+    </div>
+
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/fuel-surcharge-fsc-rate-calculator/">Fuel Surcharge (FSC) →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-con-setoff-clause-checker/">Rate Con Checker →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function r(n){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:1});}
+  function calc(){
+    var d=+$('days').value||0,hpd=+$('hpd').value||0,gph=+$('gph').value||0,px=+$('px').value||0;
+    var hrs=d*hpd, gal=hrs*gph, cost=gal*px, perDay=d>0?cost/d:0;
+    $('out').innerHTML=
+      '<div class="big"><div class="n">'+money(cost)+'</div><div class="l">Reefer fuel cost for the lane</div></div>'+
+      '<div class="cell"><div class="n">'+r(gal)+' gal</div><div class="l">Diesel burned</div></div>'+
+      '<div class="cell"><div class="n">'+r(hrs)+' hrs</div><div class="l">Total run hours</div></div>'+
+      '<div class="cell" style="grid-column:1 / -1;"><div class="n">'+money(perDay)+'</div><div class="l">Cost per day</div></div>';
+  }
+  ['days','hpd','gph','px'].forEach(function(i){$(i).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Cargo Chargeable Weight Calculator (IATA) | NorthStar Freight</title>
+<meta name="description" content="Free IATA volumetric chargeable weight calculator for air freight. Enter box dimensions and actual weight; see your true chargeable weight. On-device, nothing uploaded.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/air-cargo-chargeable-weight-calculator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Air Cargo Chargeable Weight</p>
+  <article>
+    <span class="eyebrow">For Shippers &amp; Air Freight Forwarders</span>
+    <h1>Air cargo bills the bigger of actual vs volumetric. Know which one hits.</h1>
+    <p class="lede">Airlines charge on whichever is larger — your real weight or the space the box takes up (the IATA volumetric weight). Enter your dimensions and weight and see your true chargeable weight before you book. Runs on your device; nothing is uploaded.</p>
+
+    <div class="calc">
+      <h2>Chargeable weight</h2>
+      <p class="hint">IATA volumetric divisors: 6000 cm³/kg (metric) or 166 in³/lb (imperial). Enter one piece, or total weight with the piece count.</p>
+      <div class="grid">
+        <div class="fld"><label>Units</label><select id="units"><option value="metric">Metric (cm / kg)</option><option value="imperial">Imperial (in / lb)</option></select></div>
+        <div class="fld"><label>Pieces</label><input id="pieces" type="number" inputmode="decimal" value="1"></div>
+        <div class="fld"><label>Length (per piece)</label><input id="len" type="number" inputmode="decimal" value="120"></div>
+        <div class="fld"><label>Width (per piece)</label><input id="wid" type="number" inputmode="decimal" value="80"></div>
+        <div class="fld"><label>Height (per piece)</label><input id="hgt" type="number" inputmode="decimal" value="80"></div>
+        <div class="fld"><label>Actual gross weight (total)</label><input id="act" type="number" inputmode="decimal" value="90"></div>
+      </div>
+      <div class="out" id="out"></div>
+    </div>
+
+    <p class="note">How it works: <b>Volumetric weight</b> = (L × W × H × pieces) ÷ divisor (6000 for cm→kg, 166 for in→lb). <b>Chargeable weight</b> is the larger of volumetric and your actual weight. If volumetric wins, your freight is "light and bulky" and you pay for the space. Nothing you enter leaves your device.</p>
+
+    <div class="cta-box">
+      <h3>Shipping it on the ground instead?</h3>
+      <p>Get an instant truckload quote for any equipment type, or size an LTL load with the freight class and linear-feet tools.</p>
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a>
+      <p class="disclose">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book. This calculator is an estimate from the numbers you enter; confirm the exact divisor with your carrier.</p>
+    </div>
+
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/ltl-freight-class-calculator/">LTL Freight Class →</a>
+      <a href="https://northstardeliveryservice.com/tools/trailer-linear-feet-calculator/">Linear Feet →</a>
+      <a href="https://northstardeliveryservice.com/tools/dry-van-pallet-capacity-calculator/">Pallet Capacity →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function r(n){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:1});}
+  function calc(){
+    var metric=$('units').value==='metric', div=metric?6000:166, u=metric?'kg':'lb';
+    var pcs=+$('pieces').value||0,l=+$('len').value||0,w=+$('wid').value||0,h=+$('hgt').value||0,act=+$('act').value||0;
+    var vol=(l*w*h*pcs)/div;
+    var chargeable=Math.max(vol,act);
+    var bills=chargeable===vol&&vol>=act?'Volumetric (light &amp; bulky)':'Actual weight';
+    $('out').innerHTML=
+      '<div class="big"><div class="n">'+r(chargeable)+' '+u+'</div><div class="l">Chargeable weight — you are billed on this</div></div>'+
+      '<div class="cell"><div class="n">'+r(vol)+' '+u+'</div><div class="l">Volumetric weight</div></div>'+
+      '<div class="cell"><div class="n">'+r(act)+' '+u+'</div><div class="l">Actual gross weight</div></div>'+
+      '<div class="cell" style="grid-column:1 / -1;"><div class="n" style="font-size:15px;">'+bills+'</div><div class="l">What the airline charges on</div></div>';
+  }
+  ['units','pieces','len','wid','hgt','act'].forEach(function(i){$(i).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>
