@@ -278,6 +278,27 @@
   .why-card h3{font-size:18px; margin:10px 0 8px; font-weight:600;}
   .why-card p{font-size:14px; color:var(--paper-dim); line-height:1.6; margin:0;}
 
+  /* ---------- SCENARIOS (value bombs) ---------- */
+  .scene-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .scene-card{
+    display:flex; flex-direction:column;
+    background:var(--steel); border:1px solid var(--steel-line); border-radius:var(--radius);
+    padding:26px 24px 22px; position:relative; overflow:hidden;
+  }
+  .scene-card::before{content:''; position:absolute; left:0; top:0; width:3px; height:100%; background:var(--amber);}
+  .scene-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--amber);
+  }
+  .scene-card h3{font-size:19px; font-weight:600; margin:10px 0 14px; color:var(--paper); line-height:1.2;}
+  .scene-line{font-size:14px; line-height:1.55; color:var(--paper-dim); margin:0 0 11px; padding-left:16px; position:relative;}
+  .scene-line b{color:var(--paper); display:block; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:2px;}
+  .scene-line.win b{color:var(--route-green);}
+  .scene-line.win::before{content:''; position:absolute; left:0; top:3px; width:6px; height:6px; border-radius:50%; background:var(--route-green);}
+  .scene-line.cost::before{content:''; position:absolute; left:0; top:3px; width:6px; height:6px; border-radius:50%; background:var(--amber-dim);}
+  .scene-card .tool-open{margin-top:auto; padding-top:16px;}
+  .scene-foot{max-width:640px; margin:38px auto 0; text-align:center; font-size:13px; color:var(--paper-dim); line-height:1.6;}
+
   /* ---------- DRIVERS ---------- */
   .drivers{ background:var(--asphalt-2); border-top:1px solid var(--steel-line); border-bottom:1px solid var(--steel-line); }
   .drivers-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
@@ -332,8 +353,8 @@
     <ul>
       <li><a href="#tools">Freight Tools</a></li>
       <li><a href="#quote">Instant Quote</a></li>
+      <li><a href="#proof">Why It Matters</a></li>
       <li><a href="ship/">Ship</a></li>
-      <li><a href="#drivers">Drive</a></li>
       <li><a href="news/index.html">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -402,7 +423,7 @@
       </a>
 
       <a class="tool-card" data-aud="carrier" href="https://quickwell.app/rate-con-checker/?ref=northstar" target="_blank" rel="noopener">
-        <div class="tool-top"><span class="tool-badge b-free">Free · Pro</span><span class="tool-aud">Carriers</span></div>
+        <div class="tool-top"><span class="tool-badge b-free">Free daily · Pro</span><span class="tool-aud">Carriers</span></div>
         <h3>Rate Con Checker</h3>
         <p class="tool-pain">The fine print is where you lose money</p>
         <p>Paste a broker rate confirmation and see the traps before you sign — setoff, chargebacks, long payment terms, missing detention. Drafts a fix request for you.</p>
@@ -410,7 +431,7 @@
       </a>
 
       <a class="tool-card" data-aud="carrier" href="https://quickwell.app/haul-audit/?ref=northstar" target="_blank" rel="noopener">
-        <div class="tool-top"><span class="tool-badge b-free">Free · Pro</span><span class="tool-aud">Carriers</span></div>
+        <div class="tool-top"><span class="tool-badge b-free">Free daily · Pro</span><span class="tool-aud">Carriers</span></div>
         <h3>Haul Audit</h3>
         <p class="tool-pain">Were you actually paid what you agreed?</p>
         <p>Check a broker settlement and factoring deposit against the rate con. It isolates factoring fees so a short-pay can't hide in the paperwork.</p>
@@ -522,24 +543,44 @@
   </div>
 </section>
 
-<section class="drivers" id="drivers">
-  <div class="wrap drivers-grid">
-    <div>
-      <span class="eyebrow">For Owner-Operators &amp; Drivers</span>
-      <h2>Drive with NorthStar.</h2>
-      <p class="lede">We're building our carrier network across every equipment type. If you run your own authority or drive as a 1099 contractor, we want your truck on our board — and you get the whole toolbox free while you're at it.</p>
-      <ul class="perk-list">
-        <li><span class="dot">✓</span>Consistent freight sourced daily across van, reefer, flatbed and specialized equipment</li>
-        <li><span class="dot">✓</span>Direct dispatch — a real person on the load, no runaround</li>
-        <li><span class="dot">✓</span>Fast, transparent settlements — and the Haul Audit tool to check them</li>
-        <li><span class="dot">✓</span>Freight matched to your equipment and preferred lanes</li>
-      </ul>
+<section class="drivers" id="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Where The Tools Earn Their Keep</span>
+      <h2>One catch pays for the tool. Here's what a catch looks like.</h2>
+      <p>Real situations carriers and shippers hit every week. These are examples of how the tools help — not a promise of a specific result.</p>
     </div>
-    <div class="driver-card">
-      <h3>Owner-Operator Application</h3>
-      <p>Call us with your equipment type, home base and preferred lanes and our dispatch team will follow up with available freight.</p>
-      <a href="tel:872-363-2070" class="btn btn-amber" style="width:100%; justify-content:center; margin-top:6px;">Call To Apply</a>
+    <div class="scene-grid">
+
+      <div class="scene-card">
+        <span class="scene-tag">Rate Con Checker</span>
+        <h3>The setoff clause on page two</h3>
+        <p class="scene-line"><b>The setup</b>A broker sends a clean-looking rate con for a $2,400 load. Buried in the fine print: a setoff clause that lets them pull money from THIS load to cover a claim on a different one.</p>
+        <p class="scene-line cost"><b>Without it</b>You sign, you deliver clean, and a month later your pay gets short-stopped for someone else's problem — and now you're the one chasing it.</p>
+        <p class="scene-line win"><b>With the tool</b>You paste the rate con, it flags the setoff in red before you sign, and drafts the email asking them to strike it. Thirty seconds.</p>
+        <a class="tool-open" href="https://quickwell.app/rate-con-checker/?ref=northstar" target="_blank" rel="noopener">Check a rate con <span class="arrow">→</span></a>
+      </div>
+
+      <div class="scene-card">
+        <span class="scene-tag">Haul Audit</span>
+        <h3>The short-pay hiding behind the factoring fee</h3>
+        <p class="scene-line"><b>The setup</b>Your settlement lands lighter than the rate con said. Between the factoring fee, a reserve and an "adjustment," you can't tell if the broker actually short-paid you or it's just the factor's cut.</p>
+        <p class="scene-line cost"><b>Without it</b>It looks close enough, so you let it go — load after load, a few dollars at a time, money you earned and never got.</p>
+        <p class="scene-line win"><b>With the tool</b>Haul Audit rebuilds the agreed gross, isolates the factoring fees, and shows the broker variance on its own — so a real short-pay has nowhere to hide and you dispute it with the math in hand.</p>
+        <a class="tool-open" href="https://quickwell.app/haul-audit/?ref=northstar" target="_blank" rel="noopener">Audit a settlement <span class="arrow">→</span></a>
+      </div>
+
+      <div class="scene-card">
+        <span class="scene-tag">Freight Class + Linear Feet</span>
+        <h3>The reclass bill that eats the margin</h3>
+        <p class="scene-line"><b>The setup</b>You quote an LTL shipment at the class you guessed, and book the lane. The carrier re-measures at the dock and reclasses it.</p>
+        <p class="scene-line cost"><b>Without it</b>A reclass or a "you needed a full truck" surprise lands on the invoice — and the margin you quoted is gone before the freight moves.</p>
+        <p class="scene-line win"><b>With the tools</b>Enter the real dimensions and weight: get the correct freight class and density, and see exactly how much deck the load takes — so the quote holds and the mode is right the first time.</p>
+        <a class="tool-open" href="freight-class-calculator.html">Get the class right <span class="arrow">→</span></a>
+      </div>
+
     </div>
+    <p class="scene-foot">Every one of these tools is a tap away in <a href="#tools" style="color:var(--amber);">the toolbox above</a>. Start free — upgrade a tool only after it's already caught something for you.</p>
   </div>
 </section>
 
@@ -588,8 +629,8 @@
         <h4>Company</h4>
         <ul class="foot-links">
           <li><a href="#quote">Instant Quote</a></li>
+          <li><a href="#proof">Why It Matters</a></li>
           <li><a href="ship/">Ship Freight</a></li>
-          <li><a href="#drivers">Drive With Us</a></li>
           <li><a href="news/index.html">NSNN News</a></li>
           <li><a href="#contact">Contact Dispatch</a></li>
           <li>205 N. Michigan Ave, Chicago, IL 60601</li>
