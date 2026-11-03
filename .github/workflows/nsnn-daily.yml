@@ -54,6 +54,9 @@ jobs:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           NSNN_SEND_TIME: ${{ vars.NSNN_SEND_TIME }}
           MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
           BEEHIIV_MODE: ${{ github.event_name == 'schedule' && (vars.NSNN_BEEHIIV_MODE || 'draft') || inputs.beehiiv }}
