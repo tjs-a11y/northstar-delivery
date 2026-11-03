@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-03",
+    "subject": "Diesel dips 6 cents; CDL crackdown hits 15 states",
+    "headline": "Diesel Eases to $6.292 as CDL Enforcement Sweeps 15 States",
+    "script": "Diesel slips week over week, a multistate CDL crackdown nets 40-plus drivers, and carrier earnings show cost pressure persisting.\n\nDiesel fell 6.0 cents to $6.292 a gallon this week, but it is still up 9.3 cents over four weeks, so fuel relief remains thin.",
+    "url": "briefs/2026-11-03.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel Eases to $6.292 as CDL Enforcement Sweeps 15 States",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "230-plus immigrants arrested in crackdown targeting unauthorized CDL holders",
+        "link": "https://www.freightwaves.com/news/230-plus-immigrants-arrested-in-crackdown-targeting-unauthorized-cdl-holders"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Pamt Corp. reports Q3 net loss, books 109.1% truckload OR",
+        "link": "https://www.freightwaves.com/news/pamt-corp-sees-q3-net-loss-books-109-1-truckload-or"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Amazon, retailers paid more for freight in 3Q",
+        "link": "https://www.freightwaves.com/news/amazon-retailers-paid-more-for-freight-in-3q"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Parcel shipping demand to increase 4% during holidays, ShipMatrix says",
+        "link": "https://www.freightwaves.com/news/parcel-shipping-demand-to-increase-4-during-holidays-shipmatrix-says"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Is warehouse demand shifting towards inland markets?",
+        "link": "https://www.supplychaindive.com/news/is-warehouse-demand-shifting-towards-inland-markets/872921/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-02",
     "subject": "Diesel jumps 7.6 cents, SoCal port strike looms, PMI hits 55.5",
     "headline": "Diesel Climbs 7.6 Cents as Port Strike Threat Builds and Manufacturing Grows",

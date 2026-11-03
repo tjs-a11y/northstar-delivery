@@ -1,0 +1,518 @@
+{
+  "brief": {
+    "subject": "Diesel dips 6 cents; CDL crackdown hits 15 states",
+    "headline": "Diesel Eases to $6.292 as CDL Enforcement Sweeps 15 States",
+    "dek": "Diesel slips week over week, a multistate CDL crackdown nets 40-plus drivers, and carrier earnings show cost pressure persisting.",
+    "lede": "Diesel fell 6.0 cents to $6.292 a gallon this week, but it is still up 9.3 cents over four weeks, so fuel relief remains thin.",
+    "sections": [
+      {
+        "heading": "Diesel Slips, Still Elevated",
+        "bullets": [
+          "$6.292 per gallon is the U.S. average retail diesel price for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) from last week, a small break for carriers buying fuel at the pump.",
+          "Up 9.3 cents over four weeks, so surcharges and quotes still need to reflect the higher trend."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "CDL Crackdown Spans 15 States",
+        "bullets": [
+          "230-plus undocumented immigrants were arrested in a three-day federal and state operation.",
+          "Over 40 of those arrested held CDLs, signaling tighter scrutiny of driver credentials.",
+          "Fleets should expect closer checks on driver licensing paperwork during roadside stops."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      },
+      {
+        "heading": "Truckload Margins Still Underwater",
+        "bullets": [
+          "109.1% truckload operating ratio at Pamt Corp. in Q3, meaning it spent more than it earned.",
+          "Driver recruiting costs and a diesel spike drove the loss, pressures small carriers also face.",
+          "Retailers including Amazon reported paying more for freight in Q3, a sign of firming shipping costs."
+        ],
+        "source_ids": [
+          "H11",
+          "H14"
+        ]
+      },
+      {
+        "heading": "Peak Season and Demand Signals",
+        "bullets": [
+          "4% rise in holiday parcel demand is forecast, the strongest peak since 2022.",
+          "Manufacturing expanded for a 10th straight month, though the Iran war and trade fights weigh on sentiment.",
+          "Shippers are moving more inventory through inland markets, which could shift where freight originates."
+        ],
+        "source_ids": [
+          "H15",
+          "H16",
+          "H8"
+        ]
+      },
+      {
+        "heading": "Equipment and Network Shifts",
+        "bullets": [
+          "EPA '27 NOx final rule is still pending, and Rush signaled it may not arrive soon.",
+          "Norfolk Southern and Schneider are expanding East Coast intermodal, adding rail competition on some lanes.",
+          "FedEx Network 2.0 moves into Los Angeles and other markets after the holidays."
+        ],
+        "source_ids": [
+          "H12",
+          "H18",
+          "H4"
+        ]
+      }
+    ],
+    "seo_description": "Diesel averages $6.292, down 6.0 cents; a 15-state CDL crackdown, truckload losses and peak-season demand in today's trucking brief."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-03T17:28:39.054Z",
+    "date": "2026-11-03",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump sparked growth but widened trade deficit, slowed hiring",
+        "link": "https://www.supplychaindive.com/news/trump-sparked-growth-widened-trade-deficit-slowed-hiring-iw/873576/",
+        "published": "2026-11-03T16:37:00.000Z",
+        "snippet": "President Donald Trump’s sweeping tariffs and efforts to boost foreign direct investment have fallen short of their objectives, per the German Economic Institute.",
+        "categories": [],
+        "creator": "Jim Tyson"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US targets alleged labor violations at 2 Mexican factories",
+        "link": "https://www.freightwaves.com/news/us-targets-alleged-labor-violations-at-2-mexican-factories",
+        "published": "2026-11-03T16:35:57.000Z",
+        "snippet": "U.S. trade officials announced a new labor rights investigation into a Mexican packaging manufacturer and an agreement addressing labor violations at an ammunition factory. The post US targets alleged labor violations at 2 Mexican factories appeared first on FreightWaves.",
+        "categories": [
+          "Borderlands: Mexico",
+          "News",
+          "Trucking",
+          "labor issues",
+          "USMCA"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Successful quarter at Expeditors boosted by hyperscaler business",
+        "link": "https://www.freightwaves.com/news/successful-quarter-at-expeditors-boosted-by-hyperscaler-business",
+        "published": "2026-11-03T15:48:13.000Z",
+        "snippet": "All the key numbers at Expeditors International pointed upward in the third quarter at the logistics and freight forwarding company. Revenue year-on-year was up 42%, to $4.1 billion at the asset-light customs broker and freight forwarder. Despite the fact that the cost of transportation rose 49%, a faster rate than revenues, and salaries climbed 15%, […] The post Successful quarter at Expeditors b",
+        "categories": [
+          "Air Cargo",
+          "Company Earnings",
+          "Maritime",
+          "News",
+          "Expeditors International"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx Network 2.0 headed to Los Angeles, other markets post-holidays",
+        "link": "https://www.supplychaindive.com/news/fedex-network-20-headed-to-los-angeles-other-markets-post-holidays/873453/",
+        "published": "2026-11-03T15:08:40.000Z",
+        "snippet": "The integration plan, slated to wrap up in 2027, is already complete in markets like Dallas and San Francisco as the carrier preps for the peak season.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Coty upgrades warehouse lighting to slash emissions",
+        "link": "https://www.supplychaindive.com/news/coty-upgrades-warehouse-lighting-to-slash-emissions/872961/",
+        "published": "2026-11-03T15:05:00.000Z",
+        "snippet": "As part of its sustainability strategy, Coty swapped out nearly 2,600 fixtures in a Maryland facility, cutting lighting-related energy consumption by 25%.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New survey finds AI rush isn’t boosting ports earnings",
+        "link": "https://www.freightwaves.com/news/new-survey-finds-ai-rush-isnt-boosting-ports-earnings",
+        "published": "2026-11-03T14:09:39.000Z",
+        "snippet": "A survey of industry experts finds that even as container ports deploy artificial intelligence, few are seeing measurable financial returns. The post New survey finds AI rush isn’t boosting ports earnings appeared first on FreightWaves.",
+        "categories": [
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Technology",
+          "Top Stories",
+          "Artificial intelligence",
+          "Boston Consulting Group",
+          "Efficiency"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Loamy raises $6M to flag produce before a buyer rejects it",
+        "link": "https://www.freightwaves.com/news/loamy-raises-6m-flag-produce-rejections",
+        "published": "2026-11-03T13:00:00.000Z",
+        "snippet": "Loamy closed a $6 million seed round led by Zeal Capital Partners. It says its platform has cut product rejections in half for growers, packers and distributors. The post Loamy raises $6M to flag produce before a buyer rejects it appeared first on FreightWaves.",
+        "categories": [
+          "Modern Shipper",
+          "News",
+          "Startups",
+          "Technology",
+          "Amplify.LA",
+          "food waste reduction",
+          "Loamy",
+          "logistics"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Is warehouse demand shifting towards inland markets?",
+        "link": "https://www.supplychaindive.com/news/is-warehouse-demand-shifting-towards-inland-markets/872921/",
+        "published": "2026-11-03T12:35:00.000Z",
+        "snippet": "Uncertainty has led shippers to move an increased amount of inventory across inland markets versus port markets, according to experts, but it may not necessarily translate to a shift in demand.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Delivery AI should earn its authority one segment at a time",
+        "link": "https://www.freightwaves.com/news/burq-earned-autonomy-delivery-ai",
+        "published": "2026-11-03T12:00:00.000Z",
+        "snippet": "Burq CEO Salman Habib says retailers balk when AI vendors ask for full control on day one. His company's doctrine has the AI start by watching and earn its way to fully autonomous, one part of the operation at a time, only on evidence. The post Delivery AI should earn its authority one segment at a time appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "News",
+          "Startups",
+          "Technology",
+          "AI agents",
+          "AI in logistics",
+          "AI Vendors",
+          "autonomous dispatcher"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "230-plus immigrants arrested in crackdown targeting unauthorized CDL holders",
+        "link": "https://www.freightwaves.com/news/230-plus-immigrants-arrested-in-crackdown-targeting-unauthorized-cdl-holders",
+        "published": "2026-11-03T02:49:17.000Z",
+        "snippet": "Federal and state authorities arrested more than 230 undocumented immigrants, including over 40 CDL holders, during a three-day operation spanning 15 states. The post 230-plus immigrants arrested in crackdown targeting unauthorized CDL holders appeared first on FreightWaves.",
+        "categories": [
+          "CDL Issues",
+          "News",
+          "Trucking",
+          "CDL",
+          "Department of Homeland Security",
+          "Immigrants"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Pamt Corp. reports Q3 net loss, books 109.1% truckload OR",
+        "link": "https://www.freightwaves.com/news/pamt-corp-sees-q3-net-loss-books-109-1-truckload-or",
+        "published": "2026-11-03T00:16:26.000Z",
+        "snippet": "Truckload carrier Pamt Corp. lost money again during the third quarter, pointing to elevated driver procurement costs and a spike in diesel fuel prices as the main culprits, echoing similar challenges across the industry. The post Pamt Corp. reports Q3 net loss, books 109.1% truckload OR appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "PAM Transportation",
+          "pamt corp.",
+          "TL carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Waiting on EPA ‘27 rule, Rush says it might not be soon",
+        "link": "https://www.freightwaves.com/news/waiting-on-epa-27-rule-rush-says-it-might-not-be-soon",
+        "published": "2026-11-02T21:24:00.000Z",
+        "snippet": "With the trucking sector anticipating the release of the final rule by the Environmental Protection Agency on nitrogen oxide (NoX) standards–known colloquially as EPA ‘27–and what engines need to do to get there, one of the country’s biggest truck retailers took the issue head on its recent earnings call with analysts. The message by William […] The post Waiting on EPA ‘27 rule, Rush says it might",
+        "categories": [
+          "News",
+          "OEM Trucking",
+          "Top Stories",
+          "Trucking Regulation",
+          "American Trucking Associations",
+          "Cummins",
+          "Environmental Protection Agency",
+          "EPA '27"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SONAR SCI: Custom Insights Now Includes Conversion Optimization: Shows Shippers Where to Switch Modes and What They Can Save",
+        "link": "https://www.freightwaves.com/news/sonar-sci-custom-insights-now-includes-conversion-optimization-shows-shippers-where-to-switch-modes-and-what-they-can-save",
+        "published": "2026-11-02T20:14:17.000Z",
+        "snippet": "SONAR's SCI: Custom Insights now uses a shipper's own data to identify which lanes should change mode or pricing strategy, and how much a shipper stands to save. The post SONAR SCI: Custom Insights Now Includes Conversion Optimization: Shows Shippers Where to Switch Modes and What They Can Save appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "Mode Conversion",
+          "Mode Optimization",
+          "SONAR",
+          "SONAR SCI"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amazon, retailers paid more for freight in 3Q",
+        "link": "https://www.freightwaves.com/news/amazon-retailers-paid-more-for-freight-in-3q",
+        "published": "2026-11-02T19:30:09.000Z",
+        "snippet": "Largest retailers cite shipping inflation alongside isolated delays in getting merchandise into inventory. The post Amazon, retailers paid more for freight in 3Q appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "News",
+          "Top Stories",
+          "Amazon",
+          "company earnings",
+          "container shipping",
+          "logistics"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Parcel shipping demand to increase 4% during holidays, ShipMatrix says",
+        "link": "https://www.freightwaves.com/news/parcel-shipping-demand-to-increase-4-during-holidays-shipmatrix-says",
+        "published": "2026-11-02T18:19:56.000Z",
+        "snippet": "Parcel carriers are expected to have their best peak season this year since 2022, according to forecasting from ShipMatrix. The post Parcel shipping demand to increase 4% during holidays, ShipMatrix says appeared first on FreightWaves.",
+        "categories": [
+          "Last-Mile Delivery",
+          "News",
+          "Parcel Freight",
+          "PostalMag"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/",
+        "published": "2026-11-02T17:41:00.000Z",
+        "snippet": "Increasingly negative comments from respondents also cite price vitality and trade wars in the latest Purchasing Managers’ Index from the Institute for Supply Management.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Reshoring and foreign direct investment added 247K manufacturing jobs in 2025",
+        "link": "https://www.supplychaindive.com/news/reshoring-foreign-direct-investment-247k-jobs-2025-report-reshoring-initiative/873433/",
+        "published": "2026-11-02T15:35:00.000Z",
+        "snippet": "The result “essentially matched” the previous year, per the Reshoring Initiative, which expects 25% growth in reshoring-related jobs in 2026.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Norfolk Southern, Schneider National team to scale East Coast intermodal reach",
+        "link": "https://www.supplychaindive.com/news/norfolk-southern-schneider-national-team-to-scale-east-coast-intermodal-re/873340/",
+        "published": "2026-11-02T15:11:00.000Z",
+        "snippet": "The railroad’s potential merger with Union Pacific is “the icing on the cake” of the partnership, Schneider CEO Jim Filter said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart commits $6B to up distribution center automation with Symbotic",
+        "link": "https://www.supplychaindive.com/news/walmart-commits-6b-to-up-distribution-center-automation-with-symbotic/873356/",
+        "published": "2026-11-02T15:07:07.000Z",
+        "snippet": "The retailer will deploy Symbotic's technology at 25 regional facilities as it looks to improve speed and inventory replenishment.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Runnings unites forecasting, replenishment with AI",
+        "link": "https://www.supplychaindive.com/news/runnings-unites-forecasting-replenishment-with-ai/872823/",
+        "published": "2026-11-02T12:06:00.000Z",
+        "snippet": "The farm, home and outdoor goods retailer is rolling out Relex Solutions’ artificial-intelligence platform across its store and distribution network in phases.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Why more inventory won’t fix your supply chain’s fill rate",
+        "link": "https://www.supplychaindive.com/spons/why-more-inventory-wont-fix-your-supply-chains-fill-rate/873053/",
+        "published": "2026-11-02T10:00:00.000Z",
+        "snippet": "Record inventory but still missing fill rate targets? The problem isn't supply or forecasting; it's your supply chain decision layer. Here's how to fix it.",
+        "categories": [],
+        "creator": "Susana Castello Gonzalo and Alex Bowen"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Electric Trucking: Why 2,500 Tesla Semis Will Transform Freight",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "LTL vs. Truckload: Who emerged stronger from Q3 earnings reports?",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "WARNING: Don’t Expect This Freight Cycle to End Soon",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
