@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NorthStar Delivery Solutions | Freight Brokerage — All Equipment Types</title>
-<meta name="description" content="NorthStar Delivery Solutions LLC — licensed freight brokerage moving Reefer, Van, Flatbed, Power Only, Tanker, Hopper Bottom, Auto, RGN, Conestoga, and more. Owner-operators and drivers welcome.">
+<title>NorthStar Freight Solutions | Tools, Rates &amp; Instant Quotes</title>
+<meta name="description" content="The freight command center for carriers and shippers — instant truckload quotes plus free tools to check rate cons, audit settlements, price lanes, class LTL and vet brokers. Start free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -41,6 +41,7 @@
   .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+    html{scroll-behavior:auto;}
   }
 
   /* ---------- NAV ---------- */
@@ -70,7 +71,7 @@
     flex-shrink:0;
   }
   .logo .sub{display:block; font-family:'Public Sans',sans-serif; font-size:10px; letter-spacing:0.14em; color:var(--paper-dim); text-transform:uppercase; font-weight:600;}
-  nav ul{list-style:none; display:flex; gap:34px; margin:0; padding:0;}
+  nav ul{list-style:none; display:flex; gap:30px; margin:0; padding:0;}
   nav ul a{
     font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;
     text-decoration:none; color:var(--paper-dim);
@@ -78,7 +79,7 @@
     padding-bottom:4px; border-bottom:2px solid transparent;
   }
   nav ul a:hover{color:var(--amber); border-bottom-color:var(--amber);}
-  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links{display:flex; align-items:center; gap:30px;}
   .btn{
     display:inline-flex; align-items:center; gap:8px;
     padding:11px 22px;
@@ -86,18 +87,18 @@
     text-decoration:none;
     border-radius:var(--radius);
     transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    white-space:nowrap;
+    white-space:nowrap; cursor:pointer; border:none;
   }
   .btn-amber{background:var(--amber); color:var(--asphalt);}
   .btn-amber:hover{background:#ffbf5c; transform:translateY(-1px);}
-  .btn-outline{border:1.5px solid var(--paper-dim); color:var(--paper);}
+  .btn-outline{border:1.5px solid var(--paper-dim); color:var(--paper); background:none;}
   .btn-outline:hover{border-color:var(--amber); color:var(--amber);}
   .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:26px; cursor:pointer;}
 
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    padding:96px 0 84px;
+    padding:92px 0 80px;
     overflow:hidden;
     background:
       repeating-linear-gradient(90deg, transparent, transparent 78px, rgba(242,169,59,0.05) 78px, rgba(242,169,59,0.05) 80px),
@@ -117,170 +118,185 @@
   }
   .eyebrow::before{content:''; width:26px; height:2px; background:var(--amber);}
   .hero h1{
-    font-size:clamp(38px, 5vw, 60px);
+    font-size:clamp(36px, 5vw, 58px);
     line-height:1.04;
     font-weight:700;
     color:var(--paper);
   }
-  .hero h1 em{
-    font-style:normal; color:var(--amber);
-  }
+  .hero h1 em{ font-style:normal; color:var(--amber); }
   .hero p.lede{
     font-size:17px; line-height:1.6; color:var(--paper-dim);
     max-width:520px; margin:22px 0 34px;
   }
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-note{margin-top:16px; font-size:12px; color:var(--paper-dim); letter-spacing:0.02em;}
 
-  /* placard */
+  /* placard → toolkit card */
   .placard{
     background:var(--paper);
     color:var(--asphalt);
     border-radius:4px;
-    padding:26px 26px 22px;
+    padding:24px 24px 20px;
     box-shadow:0 24px 60px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.06);
     position:relative;
     transform:rotate(-1.2deg);
   }
   .placard::before{
-    content:'';
-    position:absolute; inset:8px;
-    border:1.5px solid rgba(14,21,28,0.18);
-    border-radius:2px;
-    pointer-events:none;
+    content:''; position:absolute; inset:8px;
+    border:1.5px solid rgba(14,21,28,0.18); border-radius:2px; pointer-events:none;
   }
   .placard-head{
     display:flex; align-items:center; justify-content:space-between;
     border-bottom:2px solid var(--asphalt);
-    padding-bottom:10px; margin-bottom:16px;
+    padding-bottom:10px; margin-bottom:6px;
   }
-  .placard-head .co{
-    font-family:'Oswald', sans-serif; font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.02em;
-  }
+  .placard-head .co{ font-family:'Oswald', sans-serif; font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.02em; }
   .placard-head .badge{
     background:var(--asphalt); color:var(--amber);
     font-size:10px; font-weight:700; letter-spacing:0.08em;
     padding:4px 8px; border-radius:2px; text-transform:uppercase;
   }
   .placard-row{
-    display:flex; justify-content:space-between; align-items:baseline;
-    padding:9px 0;
-    border-bottom:1px dashed rgba(14,21,28,0.2);
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 0; border-bottom:1px dashed rgba(14,21,28,0.2);
   }
   .placard-row:last-child{border-bottom:none;}
-  .placard-row .label{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#5b5748; font-weight:700;}
-  .placard-row .val{font-family:'IBM Plex Mono', monospace; font-size:18px; font-weight:600; letter-spacing:0.02em;}
+  .placard-row .label{font-size:13px; font-weight:700; color:var(--asphalt); letter-spacing:0.01em;}
+  .placard-row .free{font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:600; color:var(--route-green); letter-spacing:0.04em; text-transform:uppercase;}
   .placard-foot{
-    margin-top:14px; padding-top:12px; border-top:2px solid var(--asphalt);
+    margin-top:12px; padding-top:12px; border-top:2px solid var(--asphalt);
     font-size:11px; color:#5b5748; letter-spacing:0.03em; line-height:1.5;
   }
 
-  /* ---------- SECTION HEADS ---------- */
-  section{padding:88px 0;}
-  .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
-  .section-head .eyebrow{justify-content:center; display:flex;}
-  .section-head h2{font-size:clamp(28px,3.6vw,42px); line-height:1.1; margin-bottom:14px;}
-  .section-head p{color:var(--paper-dim); font-size:16px; line-height:1.6;}
-
-  /* ---------- EQUIPMENT GRID ---------- */
-  .equip-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:14px;
-  }
-  .equip-card{
-    background:var(--steel);
-    border:1px solid var(--steel-line);
-    border-radius:var(--radius);
-    padding:22px 18px;
-    transition:border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
-  }
-  .equip-card:hover{
-    border-color:var(--amber);
-    background:#213B50;
-    transform:translateY(-3px);
-  }
-  .equip-card .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; color:var(--amber); font-weight:600;
-    letter-spacing:0.05em;
-  }
-  .equip-card h3{
-    font-size:16px; margin-top:8px; font-weight:600; letter-spacing:0.01em;
-    color:var(--paper);
-  }
-  .equip-card p{
-    font-size:13px; color:var(--paper-dim); margin:8px 0 0; line-height:1.5;
-  }
-
-  /* ---------- DRIVERS SECTION ---------- */
-  .drivers{
-    background:var(--asphalt-2);
-    border-top:1px solid var(--steel-line);
-    border-bottom:1px solid var(--steel-line);
-  }
-  .drivers-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:56px;
-    align-items:center;
-  }
-  .drivers h2{font-size:clamp(28px,3.6vw,40px); line-height:1.1; margin-bottom:18px;}
-  .drivers p.lede{color:var(--paper-dim); font-size:16px; line-height:1.65; margin-bottom:28px;}
-  .perk-list{list-style:none; margin:0 0 32px; padding:0; display:grid; gap:14px;}
-  .perk-list li{
-    display:flex; gap:12px; align-items:flex-start;
-    font-size:15px; color:var(--paper); line-height:1.5;
-  }
-  .perk-list .dot{
-    flex-shrink:0; width:20px; height:20px; margin-top:1px;
-    background:var(--route-green); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-size:12px; color:var(--asphalt); font-weight:700;
-  }
-  .driver-card{
-    background:var(--steel);
-    border:1px solid var(--steel-line);
-    border-radius:4px;
-    padding:36px 32px;
-  }
-  .driver-card h3{font-size:22px; margin-bottom:8px;}
-  .driver-card p{color:var(--paper-dim); font-size:14px; line-height:1.6; margin:0 0 24px;}
-  .form-row{display:grid; gap:14px; margin-bottom:14px;}
-  .form-row.two{grid-template-columns:1fr 1fr;}
-  .form-row input, .form-row select, .form-row textarea{
-    width:100%;
-    background:var(--asphalt);
-    border:1px solid var(--steel-line);
-    color:var(--paper);
-    padding:12px 14px;
-    font-family:'Public Sans', sans-serif;
-    font-size:14px;
-    border-radius:2px;
-  }
-  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
-    outline:2px solid var(--amber); outline-offset:1px; border-color:var(--amber);
-  }
-  .form-row label{font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--paper-dim); font-weight:700; display:block; margin-bottom:6px;}
-
-  /* ---------- COMPLIANCE STRIP ---------- */
-  .strip{
-    padding:34px 0;
-    border-bottom:1px solid var(--steel-line);
-  }
-  .strip .wrap{
-    display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;
-  }
+  /* ---------- STATS STRIP ---------- */
+  .strip{ padding:30px 0; border-bottom:1px solid var(--steel-line); }
+  .strip .wrap{ display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; }
   .strip .item{display:flex; align-items:center; gap:10px;}
   .strip .item .k{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--paper-dim); font-weight:700;}
   .strip .item .v{font-family:'IBM Plex Mono', monospace; font-size:15px; color:var(--amber); font-weight:600;}
   .strip .div{width:1px; height:22px; background:var(--steel-line);}
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{padding:70px 0 34px;}
-  .footer-grid{
-    display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px;
-    padding-bottom:48px; border-bottom:1px solid var(--steel-line); margin-bottom:28px;
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:84px 0;}
+  .section-head{max-width:660px; margin:0 auto 44px; text-align:center;}
+  .section-head .eyebrow{justify-content:center; display:flex;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); line-height:1.1; margin-bottom:14px;}
+  .section-head p{color:var(--paper-dim); font-size:16px; line-height:1.6;}
+
+  /* ---------- TOOLS ---------- */
+  .filters{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:34px;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.04em;
+    color:var(--paper-dim); background:var(--asphalt-2);
+    border:1px solid var(--steel-line); border-radius:999px;
+    padding:9px 18px; cursor:pointer; text-transform:uppercase;
+    transition:all 0.15s ease;
   }
+  .chip:hover{color:var(--paper); border-color:var(--amber-dim);}
+  .chip[aria-pressed="true"]{background:var(--amber); color:var(--asphalt); border-color:var(--amber);}
+  .tool-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+  }
+  .tool-card{
+    display:flex; flex-direction:column;
+    background:var(--steel);
+    border:1px solid var(--steel-line);
+    border-radius:var(--radius);
+    padding:24px 22px 20px;
+    text-decoration:none; color:var(--paper);
+    transition:border-color 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    position:relative; overflow:hidden;
+  }
+  .tool-card::after{
+    content:''; position:absolute; left:0; top:0; height:3px; width:100%;
+    background:var(--amber); transform:scaleX(0); transform-origin:left;
+    transition:transform 0.25s ease;
+  }
+  .tool-card:hover{
+    border-color:var(--amber); background:#213B50; transform:translateY(-4px);
+    box-shadow:0 18px 40px -22px rgba(0,0,0,0.7);
+  }
+  .tool-card:hover::after{transform:scaleX(1);}
+  .tool-card:focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+  .tool-top{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+  .tool-badge{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:700;
+    letter-spacing:0.07em; text-transform:uppercase; padding:4px 8px; border-radius:2px;
+  }
+  .b-free{background:rgba(62,140,99,0.16); color:#6fcf97; border:1px solid rgba(62,140,99,0.5);}
+  .b-pro{background:rgba(242,169,59,0.14); color:var(--amber); border:1px solid rgba(242,169,59,0.5);}
+  .b-instant{background:var(--amber); color:var(--asphalt);}
+  .tool-aud{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--paper-dim); letter-spacing:0.06em; text-transform:uppercase;}
+  .tool-card h3{font-size:19px; font-weight:600; letter-spacing:0.01em; color:var(--paper);}
+  .tool-pain{font-size:12.5px; color:var(--amber-dim); font-weight:700; margin:9px 0 4px; letter-spacing:0.01em; text-transform:uppercase;}
+  .tool-card p{font-size:14px; color:var(--paper-dim); margin:4px 0 0; line-height:1.55; flex-grow:1;}
+  .tool-open{
+    display:inline-flex; align-items:center; gap:7px; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600;
+    color:var(--amber); letter-spacing:0.04em; text-transform:uppercase;
+  }
+  .tool-open .arrow{transition:transform 0.2s ease;}
+  .tool-card:hover .tool-open .arrow{transform:translateX(4px);}
+  .is-hidden{display:none !important;}
+
+  /* ---------- VALUE BOMB ---------- */
+  .bomb{
+    background:
+      radial-gradient(900px 300px at 80% -10%, rgba(242,169,59,0.12), transparent 60%),
+      var(--asphalt-2);
+    border-top:1px solid var(--steel-line);
+    border-bottom:1px solid var(--steel-line);
+  }
+  .bomb-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .bomb h2{font-size:clamp(28px,3.6vw,44px); line-height:1.08; margin-bottom:16px;}
+  .bomb h2 em{font-style:normal; color:var(--amber);}
+  .bomb .lede{color:var(--paper-dim); font-size:16px; line-height:1.65; margin-bottom:26px; max-width:480px;}
+  .stack{
+    background:var(--steel); border:1px solid var(--steel-line); border-radius:4px;
+    padding:28px 28px 24px;
+  }
+  .stack h3{font-size:14px; letter-spacing:0.08em; color:var(--paper-dim); margin-bottom:18px; font-weight:700;}
+  .stack ul{list-style:none; margin:0 0 22px; padding:0; display:grid; gap:14px;}
+  .stack li{display:flex; gap:12px; align-items:flex-start; font-size:15px; line-height:1.45; color:var(--paper);}
+  .stack li .chk{
+    flex-shrink:0; width:22px; height:22px; margin-top:1px;
+    background:var(--route-green); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--asphalt); font-weight:700;
+  }
+  .stack li b{color:var(--paper);}
+  .stack .close{border-top:1px dashed var(--steel-line); padding-top:18px; text-align:center;}
+  .stack .close .price-line{font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:18px; letter-spacing:0.02em; margin-bottom:14px;}
+  .stack .close .price-line .big{color:var(--amber); font-size:24px;}
+  .disc{font-size:11.5px; color:var(--paper-dim); line-height:1.6; margin-top:14px;}
+  .disc a{color:var(--amber);}
+
+  /* ---------- SUBSCRIBE / FREE→PRO ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .why-card{background:var(--asphalt-2); border:1px solid var(--steel-line); border-radius:var(--radius); padding:28px 24px;}
+  .why-card .num{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber); font-weight:600; letter-spacing:0.06em;}
+  .why-card h3{font-size:18px; margin:10px 0 8px; font-weight:600;}
+  .why-card p{font-size:14px; color:var(--paper-dim); line-height:1.6; margin:0;}
+
+  /* ---------- DRIVERS ---------- */
+  .drivers{ background:var(--asphalt-2); border-top:1px solid var(--steel-line); border-bottom:1px solid var(--steel-line); }
+  .drivers-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .drivers h2{font-size:clamp(28px,3.6vw,40px); line-height:1.1; margin-bottom:18px;}
+  .drivers p.lede{color:var(--paper-dim); font-size:16px; line-height:1.65; margin-bottom:28px;}
+  .perk-list{list-style:none; margin:0 0 32px; padding:0; display:grid; gap:14px;}
+  .perk-list li{ display:flex; gap:12px; align-items:flex-start; font-size:15px; color:var(--paper); line-height:1.5; }
+  .perk-list .dot{
+    flex-shrink:0; width:20px; height:20px; margin-top:1px;
+    background:var(--route-green); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--asphalt); font-weight:700;
+  }
+  .driver-card{ background:var(--steel); border:1px solid var(--steel-line); border-radius:4px; padding:36px 32px; }
+  .driver-card h3{font-size:22px; margin-bottom:8px;}
+  .driver-card p{color:var(--paper-dim); font-size:14px; line-height:1.6; margin:0 0 24px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:66px 0 34px;}
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; padding-bottom:44px; border-bottom:1px solid var(--steel-line); margin-bottom:26px; }
   footer h4{font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--paper-dim); margin-bottom:16px; font-weight:700;}
   footer .foot-links{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
   footer .foot-links a{text-decoration:none; color:var(--paper); font-size:14px;}
@@ -292,15 +308,15 @@
   @media (max-width: 940px){
     .hero-grid{grid-template-columns:1fr;}
     .placard{transform:none; max-width:420px;}
-    .equip-grid{grid-template-columns:repeat(2,1fr);}
+    .tool-grid{grid-template-columns:repeat(2,1fr);}
+    .bomb-grid{grid-template-columns:1fr; gap:36px;}
+    .why-grid{grid-template-columns:1fr;}
     .drivers-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr; gap:32px;}
     nav ul{display:none;}
-    .menu-toggle{display:block;}
   }
   @media (max-width: 560px){
-    .equip-grid{grid-template-columns:1fr 1fr;}
-    .form-row.two{grid-template-columns:1fr;}
+    .tool-grid{grid-template-columns:1fr;}
     .strip .wrap{gap:20px;}
   }
 </style>
@@ -311,14 +327,14 @@
   <nav class="wrap">
     <div class="logo">
       <span class="mark">N</span>
-      <span>NorthStar Delivery<span class="sub">Solutions LLC · Freight Brokerage</span></span>
+      <span>NorthStar Freight<span class="sub">Solutions LLC · Tools &amp; Capacity</span></span>
     </div>
     <ul>
-      <li><a href="ship/">Ship Freight</a></li>
-      <li><a href="#equipment">Equipment</a></li>
-      <li><a href="#drivers">Drive With Us</a></li>
-      <li><a href="rate-tools.html">Rate Tools</a></li>
-      <li><a href="news/index.html">NSNN News</a></li>
+      <li><a href="#tools">Freight Tools</a></li>
+      <li><a href="#quote">Instant Quote</a></li>
+      <li><a href="ship/">Ship</a></li>
+      <li><a href="#drivers">Drive</a></li>
+      <li><a href="news/index.html">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-links">
@@ -330,74 +346,178 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Licensed Freight Brokerage</span>
-      <h1>Every truck type.<br>Every lane. <em>One dispatch call.</em></h1>
-      <p class="lede">NorthStar Delivery Solutions LLC moves freight across the full range of equipment — from dry van and reefer to specialized flatbed, tanker, and intermodal. Shippers get coverage. Carriers get consistent, well-vetted loads.</p>
+      <span class="eyebrow">Freight Solutions · Carriers &amp; Shippers</span>
+      <h1>Your whole freight desk.<br><em>One screen.</em></h1>
+      <p class="lede">NorthStar is where owner-operators and shippers get an instant truckload quote <em>and</em> the tools to keep every dollar — check a rate con, audit a settlement, price a lane, class your LTL, vet a broker. Most of it is free. Tap a tool and go.</p>
       <div class="hero-ctas">
-        <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Request Capacity</a>
-        <a href="#drivers" class="btn btn-outline">Drive With Us</a>
+        <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a>
+        <a href="#tools" class="btn btn-outline">Open The Toolbox</a>
       </div>
+      <p class="hero-note">No login to try the free tools. Nothing you paste leaves your device.</p>
     </div>
     <div class="placard">
       <div class="placard-head">
-        <span class="co">NorthStar Delivery</span>
-        <span class="badge">Authorized Carrier/Broker</span>
+        <span class="co">The Freight Toolbox</span>
+        <span class="badge">Mostly Free</span>
       </div>
-      <div class="placard-row">
-        <span class="label">MC Number</span>
-        <span class="val">1819020</span>
-      </div>
-      <div class="placard-row">
-        <span class="label">USDOT Number</span>
-        <span class="val">4572562</span>
-      </div>
-      <div class="placard-row">
-        <span class="label">Entity</span>
-        <span class="val" style="font-size:14px;">NorthStar Delivery Solutions LLC</span>
-      </div>
-      <div class="placard-foot">Registered with the Federal Motor Carrier Safety Administration (FMCSA). Verify authority at fmcsa.dot.gov.</div>
+      <a class="placard-row" href="https://quickwell.app/rate-con-checker/?ref=northstar" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><span class="label">Rate Con Checker</span><span class="free">Free</span></a>
+      <a class="placard-row" href="https://quickwell.app/haul-audit/?ref=northstar" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><span class="label">Haul Audit</span><span class="free">Free</span></a>
+      <a class="placard-row" href="rate-tools.html" style="text-decoration:none;color:inherit;"><span class="label">Rate / Mile Tools</span><span class="free">Free</span></a>
+      <a class="placard-row" href="freight-class-calculator.html" style="text-decoration:none;color:inherit;"><span class="label">Freight Class Calc</span><span class="free">Free</span></a>
+      <div class="placard-foot">Pick a tool below. Carriers keep more of the rate; shippers book faster. Upgrade only when a tool has already paid for itself.</div>
     </div>
   </div>
 </section>
 
 <div class="strip">
   <div class="wrap">
-    <div class="item"><span class="k">MC</span><span class="v">1819020</span></div>
-    <div class="div"></div>
-    <div class="item"><span class="k">USDOT</span><span class="v">4572562</span></div>
+    <div class="item"><span class="k">Instant Quotes</span><span class="v">Every Equipment Type</span></div>
     <div class="div"></div>
     <div class="item"><span class="k">Coverage</span><span class="v">48 States</span></div>
     <div class="div"></div>
-    <div class="item"><span class="k">Equipment</span><span class="v">18 Types</span></div>
+    <div class="item"><span class="k">Free Tools</span><span class="v">On-Device</span></div>
   </div>
 </div>
 
-<section id="equipment">
+<section id="tools">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Equipment We Cover</span>
-      <h2>Loads booked across every trailer type.</h2>
-      <p>Whatever's on your yard, our dispatch team is sourcing freight for it — daily.</p>
+      <span class="eyebrow">The Toolbox</span>
+      <h2>Every freight tool, one tap away.</h2>
+      <p>Built for the people who move the load. Tap any tool — it opens ready to use. Filter by who you are.</p>
     </div>
-    <div class="equip-grid">
-      <div class="equip-card"><span class="tag">01 · TEMP-CONTROLLED</span><h3>Reefer</h3><p>Temperature-controlled freight, produce to pharma.</p></div>
-      <div class="equip-card"><span class="tag">02 · TEMP-CONTROLLED</span><h3>Reefer Team</h3><p>Team-driven reefer for expedited cold chain runs.</p></div>
-      <div class="equip-card"><span class="tag">03 · DRY FREIGHT</span><h3>Van</h3><p>Standard 53' dry van, general commodities.</p></div>
-      <div class="equip-card"><span class="tag">04 · DRY FREIGHT</span><h3>Van Team</h3><p>Team van service for time-critical dry loads.</p></div>
-      <div class="equip-card"><span class="tag">05 · POWER</span><h3>Power Only</h3><p>Drop-and-hook and trailer-pool power only runs.</p></div>
-      <div class="equip-card"><span class="tag">06 · BULK</span><h3>Tanker</h3><p>Liquid bulk hauls for approved commodities.</p></div>
-      <div class="equip-card"><span class="tag">07 · BULK</span><h3>Hopper Bottom</h3><p>Dry bulk — grain, feed, and aggregate freight.</p></div>
-      <div class="equip-card"><span class="tag">08 · BULK</span><h3>Bottom Dump</h3><p>Aggregate and construction material hauls.</p></div>
-      <div class="equip-card"><span class="tag">09 · SPECIALIZED</span><h3>Dump Truck</h3><p>Local and regional dump freight.</p></div>
-      <div class="equip-card"><span class="tag">10 · SPECIALIZED</span><h3>Auto Trailer</h3><p>Vehicle transport, single and multi-car.</p></div>
-      <div class="equip-card"><span class="tag">11 · MULTIMODAL</span><h3>Rail / Intermodal</h3><p>Container drayage and rail-connected moves.</p></div>
-      <div class="equip-card"><span class="tag">12 · FLATBED</span><h3>Flatbed</h3><p>Open-deck freight, standard 48'–53'.</p></div>
-      <div class="equip-card"><span class="tag">13 · FLATBED</span><h3>Flatbed with Sides</h3><p>Flatbed with removable side panels.</p></div>
-      <div class="equip-card"><span class="tag">14 · FLATBED</span><h3>Flatbed Team</h3><p>Team-driven flatbed for expedited open-deck loads.</p></div>
-      <div class="equip-card"><span class="tag">15 · HEAVY HAUL</span><h3>Step Deck</h3><p>Taller freight requiring a lowered deck.</p></div>
-      <div class="equip-card"><span class="tag">16 · HEAVY HAUL</span><h3>Removable Gooseneck</h3><p>RGN for heavy equipment and oversized loads.</p></div>
-      <div class="equip-card"><span class="tag">17 · HEAVY HAUL</span><h3>Double Drop</h3><p>Low-clearance freight and tall machinery.</p></div>
-      <div class="equip-card"><span class="tag">18 · SPECIALIZED</span><h3>Conestoga / Chassis</h3><p>Rolling-tarp flatbed and container chassis moves.</p></div>
+    <div class="filters" role="group" aria-label="Filter tools by audience">
+      <button class="chip" data-filter="all" aria-pressed="true">All Tools</button>
+      <button class="chip" data-filter="carrier" aria-pressed="false">For Carriers</button>
+      <button class="chip" data-filter="shipper" aria-pressed="false">For Shippers</button>
+    </div>
+    <div class="tool-grid" id="toolGrid">
+
+      <a class="tool-card" data-aud="shipper carrier" href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored">
+        <div class="tool-top"><span class="tool-badge b-instant">Instant</span><span class="tool-aud">Shippers &amp; Carriers</span></div>
+        <h3>Instant Freight Quote</h3>
+        <p class="tool-pain">Stop playing phone tag for a rate</p>
+        <p>Truckload pricing for every equipment type — van, reefer, flatbed, specialized — in minutes, not callbacks. Book the capacity you need.</p>
+        <span class="tool-open">Get my quote <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="carrier" href="https://quickwell.app/rate-con-checker/?ref=northstar" target="_blank" rel="noopener">
+        <div class="tool-top"><span class="tool-badge b-free">Free · Pro</span><span class="tool-aud">Carriers</span></div>
+        <h3>Rate Con Checker</h3>
+        <p class="tool-pain">The fine print is where you lose money</p>
+        <p>Paste a broker rate confirmation and see the traps before you sign — setoff, chargebacks, long payment terms, missing detention. Drafts a fix request for you.</p>
+        <span class="tool-open">Check a rate con <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="carrier" href="https://quickwell.app/haul-audit/?ref=northstar" target="_blank" rel="noopener">
+        <div class="tool-top"><span class="tool-badge b-free">Free · Pro</span><span class="tool-aud">Carriers</span></div>
+        <h3>Haul Audit</h3>
+        <p class="tool-pain">Were you actually paid what you agreed?</p>
+        <p>Check a broker settlement and factoring deposit against the rate con. It isolates factoring fees so a short-pay can't hide in the paperwork.</p>
+        <span class="tool-open">Audit a settlement <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="carrier" href="rate-tools.html">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Carriers</span></div>
+        <h3>Rate / Mile Tools</h3>
+        <p class="tool-pain">Know your pay before you accept</p>
+        <p>Work out your real rate per mile with deadhead, fuel and the costs that eat a load. Say yes to the good ones and no to the rest.</p>
+        <span class="tool-open">Run the numbers <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="carrier shipper" href="ship/check-a-freight-broker.html">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Carriers &amp; Shippers</span></div>
+        <h3>Check a Freight Broker</h3>
+        <p class="tool-pain">Don't hand your load to a ghost</p>
+        <p>The checklist to vet a broker before you haul — authority, bond, days-to-pay and the red flags that cost carriers their freight pay.</p>
+        <span class="tool-open">Vet a broker <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="shipper" href="freight-class-calculator.html">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Shippers</span></div>
+        <h3>Freight Class Calculator</h3>
+        <p class="tool-pain">Wrong class = a reclass bill</p>
+        <p>Enter dimensions and weight and get your LTL freight class and density in seconds — so your quote holds and you dodge the reclass.</p>
+        <span class="tool-open">Find my class <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="shipper" href="linear-feet-calculator.html">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Shippers</span></div>
+        <h3>Linear Feet Calculator</h3>
+        <p class="tool-pain">Will it even fit — and does it go LTL or FTL?</p>
+        <p>See exactly how much trailer space your pallets take, so you quote the right mode and never pay for a full truck you didn't need.</p>
+        <span class="tool-open">Measure the load <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="shipper" href="ship/">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Shippers</span></div>
+        <h3>Shipper Playbooks</h3>
+        <p class="tool-pain">Quote like you've done it a thousand times</p>
+        <p>Plain-English guides: how to get a freight quote, accessorial charges, dry van vs. flatbed vs. heavy haul, and the quote checklist.</p>
+        <span class="tool-open">Read the playbooks <span class="arrow">→</span></span>
+      </a>
+
+      <a class="tool-card" data-aud="carrier shipper" href="news/index.html">
+        <div class="tool-top"><span class="tool-badge b-free">Free</span><span class="tool-aud">Carriers &amp; Shippers</span></div>
+        <h3>NSNN Freight News</h3>
+        <p class="tool-pain">Price moves before they hit your settlement</p>
+        <p>The NorthStar freight brief — rates, fuel, capacity and the rules that change what you get paid. Updated daily.</p>
+        <span class="tool-open">Read today's brief <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="bomb" id="quote">
+  <div class="wrap bomb-grid">
+    <div>
+      <span class="eyebrow">The Instant Quote</span>
+      <h2>One quote. <em>Every truck type. No runaround.</em></h2>
+      <p class="lede">Most shippers burn an afternoon on hold to price a single load. You don't have to. Pull an instant truckload quote through our partner and book the capacity you need — then use the free tools above to make sure the rate and the paperwork are fair.</p>
+      <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get My Instant Quote</a>
+    </div>
+    <div class="stack">
+      <h3>WHAT YOU GET WHEN YOU QUOTE HERE</h3>
+      <ul>
+        <li><span class="chk">✓</span><span><b>A real rate in minutes</b> — not a day of voicemails and callbacks.</span></li>
+        <li><span class="chk">✓</span><span><b>Every equipment type</b> — van, reefer, flatbed, power only, specialized and heavy haul.</span></li>
+        <li><span class="chk">✓</span><span><b>48-state coverage</b> on one screen, no broker roulette.</span></li>
+        <li><span class="chk">✓</span><span><b>The free NorthStar toolbox</b> to sanity-check the rate, the class and the settlement — before and after you book.</span></li>
+        <li><span class="chk">✓</span><span><b>No account, no commitment</b> to see your number.</span></li>
+      </ul>
+      <div class="close">
+        <div class="price-line">Your cost to get the quote: <span class="big">$0</span></div>
+        <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber" style="width:100%; justify-content:center;">Quote My Load Free</a>
+      </div>
+      <p class="disc">Quotes are provided by our partner, Freight Sidekick. NorthStar may earn a commission when you book through this link — at no extra cost to you. <a href="ship/how-to-get-a-freight-quote.html">How quoting works →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How The Tools Work</span>
+      <h2>Start free. Upgrade only when it's already paid for itself.</h2>
+      <p>No trial trap, no card to look around. The tools earn the upgrade — you don't gamble on it.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Use it free, today</h3>
+        <p>The core of every tool is free and runs in your browser. Paste a rate con, drop a settlement, size a load — nothing you enter is uploaded or stored by us.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>See what one catch is worth</h3>
+        <p>A single missed setoff clause or short-paid load can cost more than a tool does in a year. The free check shows you the catch; you decide what avoiding the next one is worth.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Go Pro when you're ready</h3>
+        <p>Pro unlocks unlimited checks, saved history and exports for the drivers who run loads every day. Month to month. Cancel anytime. The price is on each tool's own page.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -407,17 +527,17 @@
     <div>
       <span class="eyebrow">For Owner-Operators &amp; Drivers</span>
       <h2>Drive with NorthStar.</h2>
-      <p class="lede">We're building our carrier network across every equipment type on this page. If you run your own authority or drive as a 1099 contractor, we want your truck on our board.</p>
+      <p class="lede">We're building our carrier network across every equipment type. If you run your own authority or drive as a 1099 contractor, we want your truck on our board — and you get the whole toolbox free while you're at it.</p>
       <ul class="perk-list">
-        <li><span class="dot">✓</span>Consistent freight sourced daily across dry van, reefer, flatbed, and specialized equipment</li>
-        <li><span class="dot">✓</span>Direct dispatch — no runaround, a real person on the load</li>
-        <li><span class="dot">✓</span>Fast, transparent settlements</li>
+        <li><span class="dot">✓</span>Consistent freight sourced daily across van, reefer, flatbed and specialized equipment</li>
+        <li><span class="dot">✓</span>Direct dispatch — a real person on the load, no runaround</li>
+        <li><span class="dot">✓</span>Fast, transparent settlements — and the Haul Audit tool to check them</li>
         <li><span class="dot">✓</span>Freight matched to your equipment and preferred lanes</li>
       </ul>
     </div>
     <div class="driver-card">
       <h3>Owner-Operator Application</h3>
-      <p>Call us with your equipment type, home base, and preferred lanes and our dispatch team will follow up with available freight.</p>
+      <p>Call us with your equipment type, home base and preferred lanes and our dispatch team will follow up with available freight.</p>
       <a href="tel:872-363-2070" class="btn btn-amber" style="width:100%; justify-content:center; margin-top:6px;">Call To Apply</a>
     </div>
   </div>
@@ -434,8 +554,7 @@
       <h3>Contact Dispatch</h3>
       <p>For load requests and capacity, get an instant quote using the button below. Owner-operators can call to apply.</p>
       <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber" style="justify-content:center; margin-top:10px;">Get A Quote</a>
-      <p style="font-size:12px; color:var(--paper-dim); line-height:1.6; margin-top:12px;">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book. <a href="ship/">Shipper guides →</a></p>
-      <p style="font-size:13px; color:var(--paper-dim); line-height:1.7; margin-top:14px;">Free shipper tools: <a href="freight-class-calculator.html" style="color:var(--amber);">Freight Class Calculator</a> · <a href="linear-feet-calculator.html" style="color:var(--amber);">Linear Feet Calculator</a></p>
+      <p style="font-size:12px; color:var(--paper-dim); line-height:1.6; margin-top:12px;">Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book. <a href="ship/" style="color:var(--amber);">Shipper guides →</a></p>
       <div style="margin-top:20px; font-size:14px; color:var(--paper-dim); line-height:1.7;">
         205 N. Michigan Ave, Chicago, IL 60601<br>
         <a href="tel:872-363-2070" style="color:var(--paper);">872-363-2070</a>
@@ -450,42 +569,58 @@
       <div>
         <div class="logo" style="margin-bottom:10px;">
           <span class="mark">N</span>
-          <span>NorthStar Delivery<span class="sub">Solutions LLC</span></span>
+          <span>NorthStar Freight<span class="sub">Solutions LLC</span></span>
         </div>
-        <p class="blurb">Licensed freight brokerage covering dry van, reefer, flatbed, specialized, and bulk equipment nationwide. MC 1819020 · USDOT 4572562.</p>
+        <p class="blurb">A freight-solutions hub for carriers and shippers: instant truckload quotes plus free tools to price lanes, check rate cons, audit settlements and class LTL — nationwide.</p>
       </div>
       <div>
-        <h4>Navigate</h4>
+        <h4>Freight Tools</h4>
         <ul class="foot-links">
-          <li><a href="ship/">Ship Freight</a></li>
-          <li><a href="ship/check-a-freight-broker.html">Check a freight broker</a></li>
-          <li><a href="#equipment">Equipment</a></li>
-          <li><a href="#drivers">Drive With Us</a></li>
-          <li><a href="rate-tools.html">Rate Tools</a></li>
+          <li><a href="https://quickwell.app/rate-con-checker/?ref=northstar" target="_blank" rel="noopener">Rate Con Checker</a></li>
+          <li><a href="https://quickwell.app/haul-audit/?ref=northstar" target="_blank" rel="noopener">Haul Audit</a></li>
+          <li><a href="rate-tools.html">Rate / Mile Tools</a></li>
           <li><a href="freight-class-calculator.html">Freight Class Calculator</a></li>
           <li><a href="linear-feet-calculator.html">Linear Feet Calculator</a></li>
-          <li><a href="news/index.html">NSNN News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="ship/check-a-freight-broker.html">Check a Freight Broker</a></li>
         </ul>
       </div>
       <div>
-        <h4>Compliance</h4>
+        <h4>Company</h4>
         <ul class="foot-links">
-          <li>MC 1819020</li>
-          <li>USDOT 4572562</li>
+          <li><a href="#quote">Instant Quote</a></li>
+          <li><a href="ship/">Ship Freight</a></li>
+          <li><a href="#drivers">Drive With Us</a></li>
+          <li><a href="news/index.html">NSNN News</a></li>
+          <li><a href="#contact">Contact Dispatch</a></li>
           <li>205 N. Michigan Ave, Chicago, IL 60601</li>
           <li><a href="tel:872-363-2070">872-363-2070</a></li>
-          <li><a href="https://safer.fmcsa.dot.gov" target="_blank" rel="noopener">Verify on FMCSA SAFER →</a></li>
         </ul>
       </div>
     </div>
     <div class="bottom-bar">
       <span>© 2026 NorthStar Delivery Solutions LLC. All rights reserved.</span>
-      <span>MC 1819020 · USDOT 4572562</span>
+      <span>Licensed freight brokerage · 48-state coverage</span>
     </div>
   </div>
 </footer>
 
 <script src="/nsds-track.js" defer></script>
+<script>
+(function(){
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
+  function apply(filter){
+    cards.forEach(function(card){
+      var aud = card.getAttribute('data-aud') || '';
+      var show = filter === 'all' || aud.indexOf(filter) !== -1;
+      card.classList.toggle('is-hidden', !show);
+    });
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c.getAttribute('data-filter') === filter ? 'true' : 'false'); });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){ apply(c.getAttribute('data-filter')); });
+  });
+})();
+</script>
 </body>
 </html>
