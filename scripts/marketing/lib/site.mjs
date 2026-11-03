@@ -19,7 +19,52 @@ export async function saveEntries(root, entries) {
   await writeFile(path.join(root, 'news/data/entries.json'), JSON.stringify(entries, null, 2) + '\n', 'utf8');
 }
 
-// Adds or refreshes a <url> in sitemap.xml and bumps lastmod on the NSNN index pages.
+
+// Fetches public SEO slugs from Supabase using GitHub Actions secrets.
+// SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are supplied only to the workflow;
+// the key is never written to the repository or sitemap.
+export async function fetchNorthstarSeoPages({ env = process.env, fetchImpl = fetch } = {}) {
+  const supabaseUrl = env.SUPABASE_URL;
+  const apiKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY;
+  if (!supabaseUrl || !apiKey) {
+    console.warn('[sitemap] Supabase credentials missing; NorthStar SEO matrix URLs were not added.');
+    return [];
+  }
+
+  const base = supabaseUrl.replace(/\\/+$/, '');
+  const pages = [];
+  const pageSize = 1000;
+  for (let offset = 0; ; offset += pageSize) {
+    const endpoint = new URL(`${base}/rest/v1/northstar_seo_matrix`);
+    endpoint.searchParams.set('select', 'slug,created_at');
+    endpoint.searchParams.set('slug', 'not.is.null');
+    const response = await fetchImpl(endpoint, {
+      headers: {
+        apikey: apiKey,
+        Authorization: `Bearer ${apiKey}`,
+        Accept: 'application/json',
+        Range: `${offset}-${offset + pageSize - 1}`,
+        'Range-Unit': 'items',
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Supabase sitemap query failed: HTTP ${response.status} ${response.statusText}`);
+    }
+    const batch = await response.json();
+    if (!Array.isArray(batch)) throw new Error('Supabase sitemap query returned a non-array response.');
+    pages.push(...batch);
+    if (batch.length < pageSize) break;
+  }
+  return pages;
+}
+
+function seoPageUrl(slug) {
+  if (typeof slug !== 'string') return null;
+  const clean = slug.trim().replace(/^\\/+|\\/+$/g, '');
+  if (!clean || clean.split('/').some((part) => !part || part === '.' || part === '..') || /[?#\\s]/.test(clean)) return null;
+  return `https://northstardeliveryservice.com/${clean.split('/').map(encodeURIComponent).join('/')}`;
+}
+\n// Adds or refreshes a <url> in sitemap.xml and bumps lastmod on the NSNN index pages.
 export function updateSitemap(xml, { url, date }) {
   let out = xml;
   const bump = (loc) => {
@@ -67,8 +112,22 @@ export async function publishSite({ root, date, brief, blocks, harvest, recentCo
   await writeFile(path.join(root, 'news/archive.html'), renderArchivePage(updated, recentCount), 'utf8');
 
   const smPath = path.join(root, 'sitemap.xml');
-  const xml = await readFile(smPath, 'utf8');
-  await writeFile(smPath, updateSitemap(xml, { url: briefUrl(date), date }), 'utf8');
+  let xml = await readFile(smPath, 'utf8');
+  const seoPages = await fetchNorthstarSeoPages();
+  let addedSeoUrls = 0;
+  for (const item of seoPages) {
+    const url = seoPageUrl(item.slug);
+    if (!url) continue;
+    const lastmod = item.created_at && !Number.isNaN(Date.parse(item.created_at))
+      ? new Date(item.created_at).toISOString().slice(0, 10)
+      : date;
+    const alreadyPresent = xml.includes(`<loc>${url}</loc>`);
+    xml = updateSitemap(xml, { url, date: lastmod });
+    if (!alreadyPresent) addedSeoUrls += 1;
+  }
+  xml = updateSitemap(xml, { url: briefUrl(date), date });
+  console.log(`[sitemap] Supabase SEO matrix: ${seoPages.length} rows read, ${addedSeoUrls} new URLs added.`);
+  await writeFile(smPath, xml, 'utf8');
 
   return { entry, paths: [page, mdPath, 'news/data/entries.json', 'news/index.html', 'news/archive.html', 'sitemap.xml'] };
 }
