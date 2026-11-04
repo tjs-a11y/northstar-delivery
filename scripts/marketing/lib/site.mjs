@@ -60,7 +60,7 @@ export async function fetchNorthstarSeoPages({ env = process.env, fetchImpl = fe
 
 function normalizeSeoSlug(slug) {
   if (typeof slug !== 'string') return null;
-  const clean = slug.trim().replace(/^\\/+|\\/+$/g, '');
+  const clean = slug.trim().replace(/^\/+|\/+$/g, '');
   if (!clean || clean.includes('/') || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(clean)) return null;
   return clean;
 }
