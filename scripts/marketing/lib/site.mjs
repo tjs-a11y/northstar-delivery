@@ -31,7 +31,7 @@ export async function fetchNorthstarSeoPages({ env = process.env, fetchImpl = fe
     return [];
   }
 
-  const base = supabaseUrl.replace(/\\/+$/, '');
+  const base = supabaseUrl.replace(/\/+$/, '');
   const pages = [];
   const pageSize = 1000;
   for (let offset = 0; ; offset += pageSize) {
