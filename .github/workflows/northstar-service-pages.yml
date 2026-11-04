@@ -33,7 +33,7 @@ jobs:
       - name: Generate service pages from Supabase
         env:
           SUPABASE_URL: https://imljjaurxiawfxjckkqf.supabase.co
-          SUPABASE_PUBLISHABLE_KEY: sb_publishable_7DYrr1vokqu3OYJ607INCQ_Ah3ZrObV
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
         run: node scripts/seo/sync-services.mjs
       - name: Commit and publish changed pages
         id: publish
