@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flatbed Tarping Coverage Estimator | NorthStar Freight</title>
+<meta name="description" content="Free flatbed tarping coverage estimator — size the tarp area your load needs by dimension. On-device; you add the tarp pay you negotiate.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/flatbed-oversize-tarping-estimator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Flatbed Tarping</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Owner-Operators</span>
+    <h1>Size the tarp job before you drop the chains</h1>
+    <p class="lede">Tarping is labor you should get paid for. Enter your load dimensions to size the coverage you must tarp, then hold the broker to a tarp fee you agree on. Runs on your device.</p>
+    <div class="calc">
+      <h2>Flatbed Tarping Coverage Estimator</h2>
+      <p class="hint">Enter load dimensions in feet. There is no universal "standard" tarp fee — negotiate it per load.</p>
+      <div class="grid"><div class="fld"><label>Load length (ft)</label><input id="L" type="number" inputmode="decimal" value="40"></div><div class="fld"><label>Load width (ft)</label><input id="W" type="number" inputmode="decimal" value="8.5"></div><div class="fld"><label>Load height (ft)</label><input id="H" type="number" inputmode="decimal" value="8"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: coverage ≈ top (L×W) + two sides (2×L×H) + two ends (2×W×H). It tells you the tarp size and the labor involved — the <b>fee is negotiated per load</b>, not a fixed market number, so settle it in writing on the rate con.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/step-deck-clearance-height-estimator/">Step Deck Height →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-con-setoff-clause-checker/">Rate Con Checker →</a>
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var L=v('L'),W=v('W'),H=v('H');var area=L*W+2*(L*H)+2*(W*H);return [{big:1,n:num(area,0)+' sq ft',l:'Tarp coverage to fully enclose'},{n:num(L*W,0)+' sq ft',l:'Top'},{n:num(2*(L*H)+2*(W*H),0)+' sq ft',l:'Sides + ends'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['L','W','H'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Truck Route Profit Margin Calculator | NorthStar Freight</title>
+<meta name="description" content="Free box-truck / final-mile route profit calculator after fuel, driver wage and tolls. On-device, from your own numbers.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/box-truck-delivery-fuel-margin-calc/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Box Truck Margin</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Expedited Haulers</span>
+    <h1>Is this final-mile route actually making money?</h1>
+    <p class="lede">Busy is not the same as profitable. Enter the route revenue and your real costs and see the net and margin before you take the contract. Runs on your device.</p>
+    <div class="calc">
+      <h2>Box Truck Route Profit Margin Calculator</h2>
+      
+      <div class="grid"><div class="fld"><label>Route revenue ($)</label><input id="rev" type="number" inputmode="decimal" value="900"></div><div class="fld"><label>Route miles</label><input id="miles" type="number" inputmode="decimal" value="220"></div><div class="fld"><label>Box truck MPG</label><input id="mpg" type="number" inputmode="decimal" value="10"></div><div class="fld"><label>Diesel ($ per gal)</label><input id="diesel" type="number" inputmode="decimal" value="3.80"></div><div class="fld"><label>Driver wage for the route ($)</label><input id="wage" type="number" inputmode="decimal" value="180"></div><div class="fld"><label>Tolls + parking ($)</label><input id="tolls" type="number" inputmode="decimal" value="25"></div><div class="fld"><label>Other ($)</label><input id="other" type="number" inputmode="decimal" value="15"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: <b>Fuel</b> = miles ÷ MPG × diesel. <b>Net</b> = revenue − (fuel + wage + tolls + other). If the margin is thin, the stops or the deadhead between them are usually the culprit. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-per-mile-calculator/">Rate / Mile Tools →</a>
+      <a href="https://northstardeliveryservice.com/tools/load-profitability-calculator/">Load Profitability →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var rev=v('rev'),mi=v('miles'),mpg=v('mpg'),dz=v('diesel'),wg=v('wage'),to=v('tolls'),ot=v('other');var fuel=mpg>0?mi/mpg*dz:0;var cost=fuel+wg+to+ot;var net=rev-cost;var m=rev>0?net/rev*100:0;return [{big:1,n:money(net),l:'Net profit on the route'},{n:num(m,0)+'%',l:'Margin'},{n:money(fuel),l:'Fuel cost'},{n:money(cost),l:'Total cost'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['rev','miles','mpg','diesel','wage','tolls','other'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

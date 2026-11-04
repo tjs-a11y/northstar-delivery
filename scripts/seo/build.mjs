@@ -129,6 +129,21 @@ const CALCS = [
   { slug: 'dry-van-pallet-capacity-calculator', tool_title: 'Dry Van Pallet Capacity Calculator', meta_description: 'How many pallets fit a 48 or 53 foot van, by footprint, orientation and stacking.' },
   { slug: 'reefer-fuel-consumption-estimator', tool_title: 'Reefer Fuel Burn Estimator', meta_description: 'Gallons and dollars of auxiliary diesel your reefer burns over a lane.' },
   { slug: 'freight-tonu-detention-loss-tracker', tool_title: 'TONU & Detention Loss Calculator', meta_description: 'What the broker owes you on detention and a cancelled load, plus the deadhead it cost.' },
+  { slug: 'fuel-surcharge-fsc-rate-calculator', tool_title: 'Fuel Surcharge (FSC) Calculator', meta_description: 'Fuel surcharge per mile from your base peg, the pump price and your MPG.' },
+  { slug: 'hot-shot-trucking-payload-calculator', tool_title: 'Hot Shot Payload Calculator', meta_description: 'Legal net cargo from your truck GCWR and trailer GVWR — stay under the scale.' },
+  { slug: 'box-truck-delivery-fuel-margin-calc', tool_title: 'Box Truck Route Margin Calculator', meta_description: 'Net profit and margin on a final-mile route after fuel, wages and tolls.' },
+  { slug: 'step-deck-clearance-height-estimator', tool_title: 'Step Deck Height & Clearance', meta_description: 'Total loaded height vs the legal cap — know if you need a permit.' },
+  { slug: 'conestoga-trailer-clearance-estimator', tool_title: 'Conestoga Interior Clearance', meta_description: 'Does the machine fit under the rolling tarp — width and height clearance.' },
+  { slug: 'double-drop-removable-gooseneck-calc', tool_title: 'RGN Double-Drop Capacity', meta_description: 'Cargo well length fit and weight headroom for heavy haul.' },
+  { slug: 'car-hauler-trailer-clearance-planner', tool_title: 'Multi-Car Hauler Deck Planner', meta_description: 'Deck feet left and roof clearance across a multi-car hauler.' },
+  { slug: 'straight-truck-axle-weight-balancing', tool_title: 'Straight Truck Axle Balancing', meta_description: 'Estimate steer and drive axle loads from where the cargo sits.' },
+  { slug: 'freight-demurrage-port-storage-tracker', tool_title: 'Container Demurrage Calculator', meta_description: 'Demurrage exposure once you pass the steamship line free days.' },
+  { slug: 'ltl-minimum-charge-floor-calculator', tool_title: 'LTL Minimum Charge Checker', meta_description: 'Whether your class-rate charge beats the carrier absolute minimum (AMC).' },
+  { slug: 'flatbed-oversize-tarping-estimator', tool_title: 'Flatbed Tarping Coverage', meta_description: 'Size the tarp coverage your flatbed load needs by dimension.' },
+  { slug: 'intermodal-drayage-chassis-split-calc', tool_title: 'Drayage & Chassis Split Cost', meta_description: 'Total a container move with chassis split, per-diem and prepull — your rates.' },
+  { slug: 'freight-forwarder-customs-duty-estimator', tool_title: 'Import Landed Cost Calculator', meta_description: 'Landed cost from goods value, freight and the HTS duty rate you look up.' },
+  { slug: 'hazmat-freight-insurance-surcharge-calc', tool_title: 'HAZMAT Freight Cost Calculator', meta_description: 'Roll your own hazmat premium and compliance costs into a lane rate.' },
+  { slug: 'broker-bond-claim-viability-checker', tool_title: 'BMC-84 Bond Claim Checklist', meta_description: 'Whether your unpaid freight is a bond-claim candidate and what to document.' },
 ];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

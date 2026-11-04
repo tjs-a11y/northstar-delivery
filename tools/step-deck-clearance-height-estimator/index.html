@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Deck Load Height &amp; Clearance Calculator | NorthStar Freight</title>
+<meta name="description" content="Free step deck load height calculator — deck height plus cargo vs the legal cap. On-device. Do not clip a bridge.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/step-deck-clearance-height-estimator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Step Deck Height</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Specialized Haulers</span>
+    <h1>Will your step-deck load clear, or do you need a permit?</h1>
+    <p class="lede">Tall freight plus a legal height cap is how you clip a bridge. Enter your deck and cargo height and see your total loaded height and the clearance left. Runs on your device.</p>
+    <div class="calc">
+      <h2>Step Deck Load Height &amp; Clearance Calculator</h2>
+      <p class="hint">US legal height is commonly 13'6" (162 in); some lanes differ. Use your route's real cap.</p>
+      <div class="grid"><div class="fld"><label>Step deck lower-deck height (in)</label><input id="deck" type="number" inputmode="decimal" value="42"></div><div class="fld"><label>Cargo height (in)</label><input id="cargo" type="number" inputmode="decimal" value="100"></div><div class="fld"><label>Legal height cap (in)</label><input id="legal" type="number" inputmode="decimal" value="162"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: <b>Total height</b> = deck height + cargo height. If it exceeds your route cap you need an oversize/height permit and a routed path. Confirm the exact cap for every state on the lane. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/double-drop-removable-gooseneck-calc/">RGN Capacity →</a>
+      <a href="https://northstardeliveryservice.com/tools/conestoga-trailer-clearance-estimator/">Conestoga Clearance →</a>
+      <a href="https://northstardeliveryservice.com/tools/flatbed-oversize-tarping-estimator/">Flatbed Tarping →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var d=v('deck'),c=v('cargo'),lg=v('legal');var tot=d+c;var cl=lg-tot;return [{big:1,n:ftin(tot)+' ('+num(tot,0)+' in)',l:'Total loaded height'},{n:ftin(cl),l:cl>=0?'Clearance under the cap':'OVER — oversize permit needed'},{n:ftin(lg),l:'Legal height cap'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['deck','cargo','legal'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

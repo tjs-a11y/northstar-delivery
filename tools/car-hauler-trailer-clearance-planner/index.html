@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Car Hauler Deck &amp; Clearance Planner | NorthStar Freight</title>
+<meta name="description" content="Free multi-car hauler planner — deck feet left and roof-height clearance from your vehicle sizes. On-device.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/car-hauler-trailer-clearance-planner/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Car Hauler Deck</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Auto Transport Haulers</span>
+    <h1>Will the vehicles fit your deck — without scraping a roof?</h1>
+    <p class="lede">Scrape one roof on the upper deck and the profit on the whole run is gone. Enter your deck length and vehicle sizes and check the fit before you load. Runs on your device.</p>
+    <div class="calc">
+      <h2>Multi-Car Hauler Deck &amp; Clearance Planner</h2>
+      
+      <div class="grid"><div class="fld"><label>Total usable deck length (ft)</label><input id="deck" type="number" inputmode="decimal" value="80"></div><div class="fld"><label>Total vehicle length to load (ft)</label><input id="veh" type="number" inputmode="decimal" value="72"></div><div class="fld"><label>Legal height cap (in)</label><input id="legal" type="number" inputmode="decimal" value="162"></div><div class="fld"><label>Tallest vehicle height loaded (in)</label><input id="tall" type="number" inputmode="decimal" value="80"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: <b>deck feet left</b> = usable deck − total vehicle length; you also need positive <b>roof clearance</b> on the upper deck. Ramps and angles change real clearance, so leave margin. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/step-deck-clearance-height-estimator/">Step Deck Height →</a>
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-per-mile-calculator/">Rate / Mile Tools →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var dk=v('deck'),vf=v('veh'),lg=v('legal'),th=v('tall');return [{big:1,n:num(dk-vf,1)+' ft',l:'Deck feet left after your vehicles'},{n:(th<=lg?'OK':'OVER'),l:'Tallest vs '+num(lg,0)+' in cap'},{n:num(lg-th,0)+' in',l:'Roof clearance under the cap'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['deck','veh','legal','tall'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

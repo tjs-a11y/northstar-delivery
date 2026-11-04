@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Shot Trucking Payload Calculator | NorthStar Freight</title>
+<meta name="description" content="Free hot shot payload calculator from your truck GVWR/GCWR and trailer weights. On-device; keeps you legal and under the scale.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/hot-shot-trucking-payload-calculator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Hot Shot Payload</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Hot Shot Haulers</span>
+    <h1>Know your legal hot shot payload before the scale does</h1>
+    <p class="lede">A hot shot is only profitable until a DOT scale ticket wipes the run. Enter your rig ratings and empty weights to see the net cargo weight you can legally haul. Runs on your device.</p>
+    <div class="calc">
+      <h2>Hot Shot Trucking Payload Calculator</h2>
+      <p class="hint">Net cargo is limited by whichever is lower: your combined rating (GCWR) or the trailer rating (GVWR).</p>
+      <div class="grid"><div class="fld"><label>Combined rating GCWR (lb)</label><input id="gcwr" type="number" inputmode="decimal" value="26000"></div><div class="fld"><label>Truck empty weight (lb)</label><input id="truck" type="number" inputmode="decimal" value="9000"></div><div class="fld"><label>Trailer empty weight (lb)</label><input id="trailer" type="number" inputmode="decimal" value="4500"></div><div class="fld"><label>Trailer rating GVWR (lb)</label><input id="tgvwr" type="number" inputmode="decimal" value="14000"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: <b>GCWR limit</b> = GCWR − truck − trailer. <b>Trailer limit</b> = trailer GVWR − trailer empty. Your net cargo is the smaller of the two. Axle and tire ratings can lower it further — confirm on a scale.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/straight-truck-axle-weight-balancing/">Axle Weight →</a>
+      <a href="https://northstardeliveryservice.com/tools/box-truck-delivery-fuel-margin-calc/">Box Truck Margin →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var g=v('gcwr'),t=v('truck'),tl=v('trailer'),tg=v('tgvwr');var byPower=g-t-tl;var byTrailer=tg-tl;var net=Math.max(0,Math.min(byPower,byTrailer));return [{big:1,n:num(net,0)+' lb',l:'Legal net cargo you can haul'},{n:num(byPower,0)+' lb',l:'Limit from GCWR'},{n:num(byTrailer,0)+' lb',l:'Limit from trailer GVWR'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['gcwr','truck','trailer','tgvwr'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

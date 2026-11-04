@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intermodal Drayage &amp; Chassis Split Calculator | NorthStar Freight</title>
+<meta name="description" content="Free drayage cost calculator — total a container move with a chassis split, per-diem and prepull. On-device; you enter your terminal rates.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/intermodal-drayage-chassis-split-calc/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Drayage Split</p>
+  <article>
+    <span class="eyebrow">For Shippers &amp; Intermodal Carriers</span>
+    <h1>Total the real drayage cost, split and all</h1>
+    <p class="lede">A container move is rarely just the base rate — the chassis, the split trip and the per-diem stack up. Enter the rates your terminal charges and the tool totals it. Runs on your device.</p>
+    <div class="calc">
+      <h2>Intermodal Drayage &amp; Chassis Split Calculator</h2>
+      
+      <div class="grid"><div class="fld"><label>Base drayage ($)</label><input id="base" type="number" inputmode="decimal" value="350"></div><div class="fld"><label>Chassis split fee ($)</label><input id="split" type="number" inputmode="decimal" value="75"></div><div class="fld"><label>Chassis per-diem ($ per day)</label><input id="perdiem" type="number" inputmode="decimal" value="35"></div><div class="fld"><label>Chassis days</label><input id="days" type="number" inputmode="decimal" value="3"></div><div class="fld"><label>Prepull / drop ($)</label><input id="prepull" type="number" inputmode="decimal" value="125"></div><div class="fld"><label>Congestion / other ($)</label><input id="congestion" type="number" inputmode="decimal" value="0"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: it simply totals the rates you enter — base + split + (per-diem × days) + prepull + other. Drayage accessorials vary by port and provider, so there is no "standard" to assume; use your own quote. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/freight-demurrage-port-storage-tracker/">Demurrage →</a>
+      <a href="https://northstardeliveryservice.com/tools/freight-forwarder-customs-duty-estimator/">Landed Cost →</a>
+      <a href="https://northstardeliveryservice.com/tools/air-cargo-chargeable-weight-calculator/">Air Chargeable Weight →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var b=v('base'),s=v('split'),pd=v('perdiem'),dy=v('days'),pp=v('prepull'),cg=v('congestion');var t=b+s+pd*dy+pp+cg;return [{big:1,n:money(t),l:'Total drayage cost (your rates)'},{n:money(pd*dy),l:'Chassis per-diem × '+num(dy,0)+' days'},{n:money(s+pp+cg),l:'Split + prepull + other'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['base','split','perdiem','days','prepull','congestion'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAZMAT Freight Cost &amp; Surcharge Calculator | NorthStar Freight</title>
+<meta name="description" content="Free HAZMAT lane-cost calculator — roll your own hazmat premium and compliance costs into a lane rate. On-device; no invented standard surcharge.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/hazmat-freight-insurance-surcharge-calc/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / HAZMAT Cost</p>
+  <article>
+    <span class="eyebrow">For Carriers &amp; Shippers</span>
+    <h1>Price the hazmat load on your real costs</h1>
+    <p class="lede">Regulated freight carries real extra cost, but there is no universal hazmat surcharge to quote. Enter your own premium and compliance costs and roll them into the lane. Runs on your device.</p>
+    <div class="calc">
+      <h2>HAZMAT Freight Cost &amp; Surcharge Calculator</h2>
+      
+      <div class="grid"><div class="fld"><label>Base lane rate ($)</label><input id="base" type="number" inputmode="decimal" value="1800"></div><div class="fld"><label>Your hazmat insurance premium for the load ($)</label><input id="premium" type="number" inputmode="decimal" value="120"></div><div class="fld"><label>Permits / fees ($)</label><input id="permit" type="number" inputmode="decimal" value="40"></div><div class="fld"><label>Placarding / handling ($)</label><input id="handling" type="number" inputmode="decimal" value="60"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: it adds <b>your</b> premium, permit and handling costs to the base rate — there is no standard hazmat surcharge percentage, so enter your real figures. Carrying hazmat also requires the right endorsements and placarding; this tool only prices cost. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/trucking-operating-cost-per-mile/">Cost Per Mile →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-con-setoff-clause-checker/">Rate Con Checker →</a>
+      <a href="https://northstardeliveryservice.com/tools/rate-per-mile-calculator/">Rate / Mile Tools →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var b=v('base'),pr=v('premium'),pm=v('permit'),hd=v('handling');var add=pr+pm+hd;return [{big:1,n:money(b+add),l:'Lane rate with your hazmat costs'},{n:money(add),l:'Added hazmat cost'},{n:money(pr),l:'Your insurance premium'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['base','premium','permit','handling'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>

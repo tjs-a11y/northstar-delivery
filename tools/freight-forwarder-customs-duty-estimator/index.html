@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Import Landed Cost &amp; Customs Duty Calculator | NorthStar Freight</title>
+<meta name="description" content="Free import landed cost calculator — goods value, freight and the HTS duty rate you look up. On-device; you supply the tariff rate.">
+<link rel="canonical" href="https://northstardeliveryservice.com/tools/freight-forwarder-customs-duty-estimator/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://northstardeliveryservice.com/tools/calc.css">
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="logo" href="https://northstardeliveryservice.com/"><span class="mark">N</span>NorthStar Freight</a>
+  <a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
+</nav></header>
+<div class="wrap">
+  <p class="crumbs"><a href="https://northstardeliveryservice.com/">Home</a> / <a href="https://northstardeliveryservice.com/tools/">Freight Tools</a> / Landed Cost</p>
+  <article>
+    <span class="eyebrow">For Shippers &amp; Importers</span>
+    <h1>See the real landed cost, duty included</h1>
+    <p class="lede">A cheap unit price gets expensive once duty and freight land on it. Enter your values and the HTS duty rate you look up and the tool totals the landed cost. Runs on your device.</p>
+    <div class="calc">
+      <h2>Import Landed Cost &amp; Customs Duty Calculator</h2>
+      <p class="hint">Look up your product's duty rate in the official HTS — this tool will not guess a tariff code for you.</p>
+      <div class="grid"><div class="fld"><label>Goods value / customs value ($)</label><input id="value" type="number" inputmode="decimal" value="10000"></div><div class="fld"><label>Ocean / air freight ($)</label><input id="freight" type="number" inputmode="decimal" value="1800"></div><div class="fld"><label>Insurance ($)</label><input id="ins" type="number" inputmode="decimal" value="150"></div><div class="fld"><label>Duty rate you looked up (%)</label><input id="duty" type="number" inputmode="decimal" value="5"></div><div class="fld"><label>Other port fees (%)</label><input id="other" type="number" inputmode="decimal" value="0.5"></div></div>
+      <div class="out" id="out"></div>
+    </div>
+    <p class="note">How it works: <b>landed</b> = goods value + freight + insurance + duty + other fees. Duty = value × the HTS rate <b>you supply</b> (it is product-specific; look it up officially). Some fees (MPF/HMF) have caps — treat this as an estimate. Nothing you enter leaves your device.</p>
+    <div class="cta-box"><h3>Make sure the rate covers it.</h3><p>Get an instant truckload quote for any equipment type, then use the free tools to keep the rate and the paperwork fair.</p><div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;"><a href="https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get An Instant Quote</a></div><p class="disclose">Quotes are provided by our partner, Freight Sidekick; we may earn a commission when you book. This calculator is an estimate from the numbers you enter — not legal, tax or accounting advice.</p></div>
+    <h2 class="sec">Related freight tools</h2>
+    <div class="related">
+      <a href="https://northstardeliveryservice.com/tools/freight-demurrage-port-storage-tracker/">Demurrage →</a>
+      <a href="https://northstardeliveryservice.com/tools/intermodal-drayage-chassis-split-calc/">Drayage Split →</a>
+      <a href="https://northstardeliveryservice.com/tools/air-cargo-chargeable-weight-calculator/">Air Chargeable Weight →</a>
+      <a href="https://northstardeliveryservice.com/tools/">All freight tools →</a>
+    </div>
+  </article>
+</div>
+<footer><div class="wrap">
+  <a href="https://northstardeliveryservice.com/">Home</a> · <a href="https://northstardeliveryservice.com/tools/">All freight tools</a> · <a href="https://northstardeliveryservice.com/ship/">Ship freight</a>
+  <span style="display:block;margin-top:10px;">© 2026 NorthStar Delivery Solutions LLC · Licensed freight brokerage</span>
+</div></footer>
+</body></html>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function v(i){var e=$(i);return e?(+e.value||0):0;}
+  function sv(i){var e=$(i);return e?e.value:'';}
+  function money(n){return '$'+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function num(n,d){return (isFinite(n)?n:0).toLocaleString(undefined,{maximumFractionDigits:(d==null?1:d)});}
+  function ftin(inch){var neg=inch<0;inch=Math.abs(inch);var f=Math.floor(inch/12),i=Math.round(inch-f*12);if(i===12){f++;i=0;}return (neg?'-':'')+f+"'"+i+'"';}
+  function cells(arr){$('out').innerHTML=arr.map(function(c){return c.big?'<div class="big"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>':'<div class="cell"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>';}).join('');}
+  function COMPUTE(){ var val=v('value'),fr=v('freight'),ins=v('ins'),dr=v('duty'),of=v('other');var duty=val*dr/100;var fees=val*of/100;var landed=val+fr+ins+duty+fees;return [{big:1,n:money(landed),l:'Estimated landed cost'},{n:money(duty),l:'Duty ('+num(dr,2)+'% you entered)'},{n:money(fees),l:'Other port fees'}]; }
+  function calc(){ cells(COMPUTE()); }
+  ['value','freight','ins','duty','other'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',calc);});
+  calc();
+})();
+</script>
