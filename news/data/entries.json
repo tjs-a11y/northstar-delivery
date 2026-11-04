@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-04",
+    "subject": "Diesel dips to $6.292, TL carriers push rate hikes",
+    "headline": "Diesel eases 6 cents as peak inventories back truckload rate push",
+    "script": "Diesel slips to $6.292, holiday inventory build supports truckload rate asks, and a lawsuit targets the federal carrier registration system.\n\nDiesel fell 6.0 cents to $6.292 a gallon this week, still up 9.3 cents over four weeks. Meanwhile, a holiday inventory surge is giving truckload carriers leverage in bid season.",
+    "url": "briefs/2026-11-04.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel eases 6 cents as peak inventories back truckload rate push",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Peak season inventory surge bolsters TL carriers’ double-digit rate ask",
+        "link": "https://www.freightwaves.com/news/holiday-inventory-surge-supportive-of-double-digit-plus-tl-contract-rates"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking group’s lawsuit threatens to upend federal carrier registration system",
+        "link": "https://www.freightwaves.com/news/trucking-groups-lawsuit-threatens-to-upend-federal-carrier-registration-system"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Higher shipment weights help ArcBest beat Q3 expectations",
+        "link": "https://www.freightwaves.com/news/higher-shipment-weights-help-arcbest-beat-q3-expectations"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Norfolk Southern, Schneider National team to scale East Coast intermodal reach",
+        "link": "https://www.supplychaindive.com/news/norfolk-southern-schneider-national-team-to-scale-east-coast-intermodal-re/873340/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Walmart in $6B Symbiotic deal to automate warehouses",
+        "link": "https://www.freightwaves.com/news/walmart-in-6b-symbiotic-deal-to-automate-warehouses"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-03",
     "subject": "Diesel dips 6 cents; CDL crackdown hits 15 states",
     "headline": "Diesel Eases to $6.292 as CDL Enforcement Sweeps 15 States",

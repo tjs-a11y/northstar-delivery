@@ -1,0 +1,507 @@
+{
+  "brief": {
+    "subject": "Diesel dips to $6.292, TL carriers push rate hikes",
+    "headline": "Diesel eases 6 cents as peak inventories back truckload rate push",
+    "dek": "Diesel slips to $6.292, holiday inventory build supports truckload rate asks, and a lawsuit targets the federal carrier registration system.",
+    "lede": "Diesel fell 6.0 cents to $6.292 a gallon this week, still up 9.3 cents over four weeks. Meanwhile, a holiday inventory surge is giving truckload carriers leverage in bid season.",
+    "sections": [
+      {
+        "heading": "Diesel Takes a Small Step Back",
+        "bullets": [
+          "$6.292 per gallon: the U.S. average retail diesel price for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) week over week, a modest break on per-mile fuel costs.",
+          "Up 9.3 cents over four weeks, so check that fuel surcharges still match your costs."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Inventory Surge Backs Rate Hikes",
+        "bullets": [
+          "October's Logistics Managers' Index showed a big jump in inventories ahead of the holiday season.",
+          "Some truckload carriers are seeking double-digit rate increases, and some have already entered a new bid season.",
+          "Stronger peak demand gives small carriers a firmer footing when negotiating rates with shippers and brokers."
+        ],
+        "source_ids": [
+          "H11"
+        ]
+      },
+      {
+        "heading": "Lawsuit Targets Carrier Registration",
+        "bullets": [
+          "The Small Business in Transportation Coalition has filed a legal challenge against a federal carrier registration system.",
+          "The system's operators warn that a win could disrupt registration fees for carriers.",
+          "State motor carrier safety funding tied to the system could also be affected, so watch for changes in compliance costs."
+        ],
+        "source_ids": [
+          "H9"
+        ]
+      },
+      {
+        "heading": "Demand Signals Look Mixed",
+        "bullets": [
+          "Manufacturing expanded for a 10th straight month, but survey respondents increasingly cited the Iran war and trade wars.",
+          "Heavier shipment weights lifted ArcBest's LTL tonnage and revenue per shipment, helping it beat Q3 expectations.",
+          "Norfolk Southern and Schneider are partnering to expand East Coast intermodal reach, adding competition for some long-haul lanes."
+        ],
+        "source_ids": [
+          "H17",
+          "H5",
+          "H19"
+        ]
+      },
+      {
+        "heading": "Walmart Bets Big on Automation",
+        "bullets": [
+          "$6B: Walmart's commitment to automate distribution centers with Symbotic technology.",
+          "25 regional facilities will get the systems, aimed at faster inventory replenishment.",
+          "Faster DC throughput could change appointment timing and dwell for carriers serving Walmart freight."
+        ],
+        "source_ids": [
+          "H8",
+          "H20"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls to $6.292, peak inventories support truckload rate hikes, and a lawsuit targets federal carrier registration. NorthStar Freight Brief, Nov. 4."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-04T17:41:58.760Z",
+    "date": "2026-11-04",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trimble cuts growth outlook as European freight market slows",
+        "link": "https://www.freightwaves.com/news/trimble-cuts-growth-outlook-as-european-freight-market-slows",
+        "published": "2026-11-04T15:28:49.000Z",
+        "snippet": "Trimble lowered its full-year recurring revenue growth forecast as softer European freight conditions pressured its transportation business. The post Trimble cuts growth outlook as European freight market slows appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Trucking",
+          "company earnings",
+          "Transporeeon",
+          "Trimble"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon deploys thousands of smart glasses to delivery drivers",
+        "link": "https://www.supplychaindive.com/news/amazon-deploys-thousands-of-smart-glasses-to-delivery-drivers/873620/",
+        "published": "2026-11-04T14:47:00.000Z",
+        "snippet": "The glasses provide navigation and drop-off instructions within drivers' field of view, part of the company's effort to boost delivery efficiency.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ONE lifts profit forecast to $2 billion as earnings surge",
+        "link": "https://www.freightwaves.com/news/one-lifts-profit-forecast-to-2-billion-as-earnings-surge",
+        "published": "2026-11-04T14:43:57.000Z",
+        "snippet": "Higher freight rates and cargo volumes drive a sharp earnings rebound for Ocean Network Express, though the liner expects softer market conditions in H2. The post ONE lifts profit forecast to $2 billion as earnings surge appeared first on FreightWaves.",
+        "categories": [
+          "American Shipper",
+          "Company Earnings",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "earnings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "East Midlands Airport welcomes another Chinese cargo airline",
+        "link": "https://www.freightwaves.com/news/east-midlands-airport-welcomes-another-chinese-cargo-airline",
+        "published": "2026-11-04T14:09:50.000Z",
+        "snippet": "China Central Longhao Airlines is the latest all-cargo airline to operate flights from China to East Midlands Airport. The post East Midlands Airport welcomes another Chinese cargo airline appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo",
+          "China",
+          "e-commerce",
+          "East Midlands Airport"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Higher shipment weights help ArcBest beat Q3 expectations",
+        "link": "https://www.freightwaves.com/news/higher-shipment-weights-help-arcbest-beat-q3-expectations",
+        "published": "2026-11-04T13:52:29.000Z",
+        "snippet": "Increased shipment weights fueled higher overall tonnage and revenue per shipment at ArcBest’s less-than-truckload division during the third quarter, allowing the carrier to surpass analysts’ expectations. The post Higher shipment weights help ArcBest beat Q3 expectations appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Less than Truckload (LTL)",
+          "Top Stories",
+          "3PLs",
+          "ABF Freight",
+          "ArcBest",
+          "company earnings",
+          "LTL carriers"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Shippers spread parcel volume as carrier surcharges climb",
+        "link": "https://www.freightwaves.com/news/tractor-supply-multi-carrier-parcel-surcharges",
+        "published": "2026-11-04T12:00:00.000Z",
+        "snippet": "Surcharges on big and bulky packages land unpredictably. Tractor Supply's final-mile chief says multiple carriers let the retailer redirect shipments when cost rises The post Shippers spread parcel volume as carrier surcharges climb appeared first on FreightWaves.",
+        "categories": [
+          "Last-mile delivery",
+          "Modern Shipper",
+          "News",
+          "Parcel Freight",
+          "FarEye",
+          "FarEye Intelligent Delivery Management Platform",
+          "Last mile",
+          "Last Mile Leaders America"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "First look: GXO Logistics Q3 revenue hits $3.6B",
+        "link": "https://www.freightwaves.com/news/first-look-gxo-logistics-q3-revenue-hits-3-6b",
+        "published": "2026-11-03T22:11:00.000Z",
+        "snippet": "GXO Logistics reported a 5.7% increase in third-quarter revenue to $3.59 billion as new business wins surged 34% and its sales pipeline reached a record $3.1 billion. The post First look: GXO Logistics Q3 revenue hits $3.6B appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Global Supply Chain",
+          "News",
+          "company earnings",
+          "GXO",
+          "GXO Logistics"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Walmart in $6B Symbiotic deal to automate warehouses",
+        "link": "https://www.freightwaves.com/news/walmart-in-6b-symbiotic-deal-to-automate-warehouses",
+        "published": "2026-11-03T21:42:59.000Z",
+        "snippet": "Walmart is investing heavily to automate more big warehouse facilities. The post Walmart in $6B Symbiotic deal to automate warehouses appeared first on FreightWaves.",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "News",
+          "Technology",
+          "Distribution centers",
+          "Walmart",
+          "warehouse automation"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking group’s lawsuit threatens to upend federal carrier registration system",
+        "link": "https://www.freightwaves.com/news/trucking-groups-lawsuit-threatens-to-upend-federal-carrier-registration-system",
+        "published": "2026-11-03T20:14:06.000Z",
+        "snippet": "The Small Business in Transportation Coalition is challenging the legality of the federal Uniform Crime Reporting system as its operators warn that a successful lawsuit could disrupt registration fees and state motor carrier safety funding. The post Trucking group’s lawsuit threatens to upend federal carrier registration system appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Trucking",
+          "Trucking Compliance",
+          "compliance",
+          "SBTC",
+          "Small Business in Transportation Coalition",
+          "Unified Carrier Registration"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Latam Cargo airlifts armored vehicles to Peru for Pope Leo visit",
+        "link": "https://www.freightwaves.com/news/latam-cargo-airlifts-armored-vehicles-to-peru-for-pope-leo-visit",
+        "published": "2026-11-03T18:50:12.000Z",
+        "snippet": "The cargo division of Latam Airlines has delivered two popemobiles for the Vatican to Peru. The post Latam Cargo airlifts armored vehicles to Peru for Pope Leo visit appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo",
+          "LATAM Airlines",
+          "LATAM Cargo",
+          "vehicle transport"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Peak season inventory surge bolsters TL carriers’ double-digit rate ask",
+        "link": "https://www.freightwaves.com/news/holiday-inventory-surge-supportive-of-double-digit-plus-tl-contract-rates",
+        "published": "2026-11-03T17:34:45.000Z",
+        "snippet": "The October Logistics Managers’ Index showed a big jump in inventories ahead of the holiday buying season, providing an added tailwind for truckload carriers, some of which have already entered a new bid season. The post Peak season inventory surge bolsters TL carriers’ double-digit rate ask appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Top Stories",
+          "Truckload Carriers",
+          "company earnings",
+          "CSCMP",
+          "Knight-Swift",
+          "lmi",
+          "Logistics Managers Index"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H12",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "3M closes 16 factories, plans changes at 10 more in network revamp",
+        "link": "https://www.supplychaindive.com/news/3m-closes-16-factories-plans-changes-at-10-more-in-network-revamp/873536/",
+        "published": "2026-11-03T17:20:00.000Z",
+        "snippet": "The industrial conglomerate is aiming for $1 billion in annual productivity gains by the end of 2027 through an operational overhaul, Chairman and CEO William Brown said.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump sparked growth but widened trade deficit, slowed hiring",
+        "link": "https://www.supplychaindive.com/news/trump-sparked-growth-widened-trade-deficit-slowed-hiring-iw/873576/",
+        "published": "2026-11-03T16:37:00.000Z",
+        "snippet": "President Donald Trump’s sweeping tariffs and efforts to boost foreign direct investment have fallen short of their objectives, per the German Economic Institute.",
+        "categories": [],
+        "creator": "Jim Tyson"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx Network 2.0 headed to Los Angeles, other markets post-holidays",
+        "link": "https://www.supplychaindive.com/news/fedex-network-20-headed-to-los-angeles-other-markets-post-holidays/873453/",
+        "published": "2026-11-03T15:08:40.000Z",
+        "snippet": "The integration plan, slated to wrap up in 2027, is already complete in markets like Dallas and San Francisco as the carrier preps for the peak season.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Coty upgrades warehouse lighting to slash emissions",
+        "link": "https://www.supplychaindive.com/news/coty-upgrades-warehouse-lighting-to-slash-emissions/872961/",
+        "published": "2026-11-03T15:05:00.000Z",
+        "snippet": "As part of its sustainability strategy, Coty swapped out nearly 2,600 fixtures in a Maryland facility, cutting lighting-related energy consumption by 25%.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Is warehouse demand shifting toward inland markets?",
+        "link": "https://www.supplychaindive.com/news/is-warehouse-demand-shifting-toward-inland-markets/872921/",
+        "published": "2026-11-03T12:35:00.000Z",
+        "snippet": "Uncertainty has led shippers to move an increased amount of inventory across inland markets versus port markets, according to experts, but it may not necessarily translate to a shift in demand.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing expands for 10th straight month, but Iran war weighs heavily",
+        "link": "https://www.supplychaindive.com/news/manufacturing-expands-for-10th-straight-month-but-iran-war-weighs-heavily/873468/",
+        "published": "2026-11-02T17:41:00.000Z",
+        "snippet": "Increasingly negative comments from respondents also cite price vitality and trade wars in the latest Purchasing Managers’ Index from the Institute for Supply Management.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Reshoring and foreign direct investment added 247K manufacturing jobs in 2025",
+        "link": "https://www.supplychaindive.com/news/reshoring-foreign-direct-investment-247k-jobs-2025-report-reshoring-initiative/873433/",
+        "published": "2026-11-02T15:35:00.000Z",
+        "snippet": "The result “essentially matched” the previous year, per the Reshoring Initiative, which expects 25% growth in reshoring-related jobs in 2026.",
+        "categories": [],
+        "creator": "Jeff Kinney"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Norfolk Southern, Schneider National team to scale East Coast intermodal reach",
+        "link": "https://www.supplychaindive.com/news/norfolk-southern-schneider-national-team-to-scale-east-coast-intermodal-re/873340/",
+        "published": "2026-11-02T15:11:00.000Z",
+        "snippet": "The railroad’s potential merger with Union Pacific is “the icing on the cake” of the partnership, Schneider CEO Jim Filter said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart commits $6B to up distribution center automation with Symbotic",
+        "link": "https://www.supplychaindive.com/news/walmart-commits-6b-to-up-distribution-center-automation-with-symbotic/873356/",
+        "published": "2026-11-02T15:07:07.000Z",
+        "snippet": "The retailer will deploy Symbotic's technology at 25 regional facilities as it looks to improve speed and inventory replenishment.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Logistics Alert: Capacity SHRINKS for 11 Straight Months",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Diesel Prices Collapse, Then Rebound: What’s Driving Volatility?",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Why Your Trucking Insurance Costs Are Rising & How to Fight Back",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Truckload Rates Explode: How Shippers Adapt to Rising Costs",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
