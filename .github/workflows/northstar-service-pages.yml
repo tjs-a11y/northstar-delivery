@@ -1,6 +1,11 @@
 name: NorthStar Supabase service-page sync
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/seo/sync-services.mjs'
+      - '.github/workflows/northstar-service-pages.yml'
   schedule:
     - cron: '20 14 * * 1,3'
   workflow_dispatch:
