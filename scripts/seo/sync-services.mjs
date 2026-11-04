@@ -27,7 +27,7 @@ const PAGE_GUIDES = {
       "Written set point and permitted range; whether continuous or start/stop operation is specified",
       "Whether the unit must be pre-cooled, and who verifies pulp or product temperature at loading",
       "Airflow needs, pallet pattern, blocked return-air channels and load-bar requirements",
-      "Washout, sanitation, odor, seal, temperature-recorder and receiver-report requirements"
+      "Washout, sanitation, odor, seal, temperature-recording requirements and receiver-report documentation"
     ],
     "steps": [
       "Agree on the set point and operating mode in writing before dispatch; never infer a temperature from the commodity name alone",
