@@ -1,6 +1,6 @@
 // Writes the day's brief into the static NorthStar site: the web page, its Markdown copy,
 // the NSNN index and archive, and sitemap.xml (so search engines and IndexNow find it).
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { renderIndexPage, renderArchivePage } from '../../nsnn/lib/render.mjs';
 import { renderWebPage, renderMarkdown, briefPath, briefUrl } from './render-brief.mjs';
@@ -31,7 +31,7 @@ export async function fetchNorthstarSeoPages({ env = process.env, fetchImpl = fe
     return [];
   }
 
-  const base = supabaseUrl.replace(/\\/+$/, '');
+  const base = supabaseUrl.replace(/\/+$/, '');
   const pages = [];
   const pageSize = 1000;
   for (let offset = 0; ; offset += pageSize) {
@@ -58,13 +58,40 @@ export async function fetchNorthstarSeoPages({ env = process.env, fetchImpl = fe
   return pages;
 }
 
-function seoPageUrl(slug) {
+function normalizeSeoSlug(slug) {
   if (typeof slug !== 'string') return null;
-  const clean = slug.trim().replace(/^\\/+|\\/+$/g, '');
-  if (!clean || clean.split('/').some((part) => !part || part === '.' || part === '..') || /[?#\\s]/.test(clean)) return null;
-  return `https://northstardeliveryservice.com/${clean.split('/').map(encodeURIComponent).join('/')}`;
+  const clean = slug.trim().replace(/^\/+|\/+$/g, '');
+  if (!clean || clean.includes('/') || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(clean)) return null;
+  return clean;
 }
-\n// Adds or refreshes a <url> in sitemap.xml and bumps lastmod on the NSNN index pages.
+
+// NorthStar SEO matrix slugs map to real generated tool directories, not site-root slugs.
+export function seoPageUrl(slug) {
+  const clean = normalizeSeoSlug(slug);
+  return clean ? `https://northstardeliveryservice.com/tools/${clean}/` : null;
+}
+
+export async function isPublishedSeoPage(root, slug) {
+  const clean = normalizeSeoSlug(slug);
+  if (!clean) return false;
+  try {
+    await access(path.join(root, 'tools', clean, 'index.html'));
+    return true;
+  } catch (error) {
+    if (error.code === 'ENOENT' || error.code === 'ENOTDIR') return false;
+    throw error;
+  }
+}
+
+function removeSitemapUrl(xml, url) {
+  const start = xml.indexOf(`<url><loc>${url}</loc>`);
+  if (start < 0) return xml;
+  const end = xml.indexOf('</url>', start);
+  if (end < 0) return xml;
+  return xml.slice(0, start) + xml.slice(end + '</url>'.length);
+}
+
+// Adds or refreshes a <url> in sitemap.xml and bumps lastmod on the NSNN index pages.
 export function updateSitemap(xml, { url, date }) {
   let out = xml;
   const bump = (loc) => {
@@ -115,9 +142,17 @@ export async function publishSite({ root, date, brief, blocks, harvest, recentCo
   let xml = await readFile(smPath, 'utf8');
   const seoPages = await fetchNorthstarSeoPages();
   let addedSeoUrls = 0;
+  let skippedUnpublished = 0;
+  let removedStaleUrls = 0;
   for (const item of seoPages) {
     const url = seoPageUrl(item.slug);
     if (!url) continue;
+    if (!(await isPublishedSeoPage(root, item.slug))) {
+      if (xml.includes(`<loc>${url}</loc>`)) removedStaleUrls += 1;
+      xml = removeSitemapUrl(xml, url);
+      skippedUnpublished += 1;
+      continue;
+    }
     const lastmod = item.created_at && !Number.isNaN(Date.parse(item.created_at))
       ? new Date(item.created_at).toISOString().slice(0, 10)
       : date;
@@ -126,7 +161,7 @@ export async function publishSite({ root, date, brief, blocks, harvest, recentCo
     if (!alreadyPresent) addedSeoUrls += 1;
   }
   xml = updateSitemap(xml, { url: briefUrl(date), date });
-  console.log(`[sitemap] Supabase SEO matrix: ${seoPages.length} rows read, ${addedSeoUrls} new URLs added.`);
+  console.log(`[sitemap] Supabase SEO matrix: ${seoPages.length} rows read, ${addedSeoUrls} new URLs added, ${skippedUnpublished} unpublished rows skipped, ${removedStaleUrls} stale URLs removed.`);
   await writeFile(smPath, xml, 'utf8');
 
   return { entry, paths: [page, mdPath, 'news/data/entries.json', 'news/index.html', 'news/archive.html', 'sitemap.xml'] };
