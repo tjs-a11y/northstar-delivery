@@ -53,7 +53,7 @@ test('committed NorthStar tool sitemap URLs match published tool pages exactly',
     } catch {}
   }
   const sitemap = await readFile(path.join(repoRoot, 'sitemap.xml'), 'utf8');
-  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map((match) => match[1]);
+  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
   assert.equal(new Set(urls).size, urls.length, 'sitemap URLs must be unique');
   const actual = urls.filter((url) => url.startsWith('https://northstardeliveryservice.com/tools/')).sort();
   assert.deepEqual(actual, expected.sort());
