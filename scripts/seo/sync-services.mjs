@@ -1,5 +1,5 @@
 // Build service landing pages from the NorthStar Supabase SEO matrix.
-// Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the GitHub Actions runner only.
+// Reads with the project's publishable key; RLS grants anon SELECT on this public SEO-only table.
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -43,8 +43,8 @@ export function mergeSitemap(xml,rows,date=new Date().toISOString().slice(0,10))
  return xml.replace('</urlset>',additions.map(x=>'  <url><loc>'+x+'</loc><lastmod>'+date+'</lastmod></url>').join('\n')+'\n</urlset>');
 }
 async function main(){
- const base=process.env.SUPABASE_URL?.replace(/\/+$/,''); const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
- if(!base||!key)throw Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be configured as Actions secrets.');
+ const base=process.env.SUPABASE_URL?.replace(/\/+$/,''); const key=process.env.SUPABASE_PUBLISHABLE_KEY;
+ if(!base||!key)throw Error('SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY must be configured as Actions secrets.');
  const res=await fetch(base+'/rest/v1/northstar_seo_matrix?select=slug,target_keyword,service_category,meta_title,meta_description&order=created_at.asc',{headers:{apikey:key,Authorization:'Bearer '+key,Accept:'application/json'}});
  if(!res.ok)throw Error('Supabase read failed '+res.status+': '+await res.text());
  const all=await res.json(); const rows=all.filter(r=>valid(r.slug)&&r.target_keyword&&DETAILS[r.service_category]);
