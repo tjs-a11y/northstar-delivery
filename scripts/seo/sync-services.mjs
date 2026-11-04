@@ -1,5 +1,5 @@
 // Build service landing pages from the NorthStar Supabase SEO matrix.
-// Requires SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY in the GitHub Actions runner only.
+// Reads with the project's publishable key; RLS grants anon SELECT on this public SEO-only table.
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
