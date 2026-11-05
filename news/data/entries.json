@@ -1,5 +1,49 @@
 [
   {
+    "date": "2026-11-05",
+    "subject": "Diesel dips 6 cents; 33,000 drivers sidelined on English rule",
+    "headline": "Diesel eases to $6.292 as English-proficiency enforcement sidelines 33,000 drivers",
+    "script": "Diesel fell 6.0 cents last week, roadside blitzes widen, Class 8 orders drop 36%, and the LA/Long Beach strike threat is pushed back again.\n\nDiesel slipped 6.0 cents to $6.292 a gallon but remains up 9.3 cents over four weeks. Meanwhile, DOT says 33,000 drivers have been put out of service over English-language deficiencies.",
+    "url": "briefs/2026-11-05.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel eases to $6.292 as English-proficiency enforcement sidelines 33,000 drivers",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "33,000 truckers sidelined over violations as highway blitzes hit Arkansas, Virginia",
+        "link": "https://www.freightwaves.com/news/33000-truckers-sidelined-over-violations-as-highway-blitzes-hit-arkansas-virginia"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Class 8 truck orders plunge 36% as EPA uncertainty rattles fleets",
+        "link": "https://www.freightwaves.com/news/class-8-truck-orders-plunge-36-as-epa-uncertainty-rattles-fleets"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Port strike delayed again at Los Angeles, Long Beach ports",
+        "link": "https://www.freightwaves.com/news/port-strike-delayed-again-at-los-angeles-long-beach-ports"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Transportation committee in House set for overhaul post-election",
+        "link": "https://www.freightwaves.com/news/transportation-committee-in-house-set-for-overhaul-post-election"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-04",
     "subject": "Diesel dips to $6.292, TL carriers push rate hikes",
     "headline": "Diesel eases 6 cents as peak inventories back truckload rate push",

@@ -1,0 +1,505 @@
+{
+  "brief": {
+    "subject": "Diesel dips 6 cents; 33,000 drivers sidelined on English rule",
+    "headline": "Diesel eases to $6.292 as English-proficiency enforcement sidelines 33,000 drivers",
+    "dek": "Diesel fell 6.0 cents last week, roadside blitzes widen, Class 8 orders drop 36%, and the LA/Long Beach strike threat is pushed back again.",
+    "lede": "Diesel slipped 6.0 cents to $6.292 a gallon but remains up 9.3 cents over four weeks. Meanwhile, DOT says 33,000 drivers have been put out of service over English-language deficiencies.",
+    "sections": [
+      {
+        "heading": "Diesel Takes a Small Breather",
+        "bullets": [
+          "$6.292 per gallon is the U.S. average retail diesel price for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) week over week, a modest break on fuel spend.",
+          "Up 9.3 cents over four weeks, so check that fuel surcharges still cover your real costs."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Roadside Enforcement Keeps Tightening",
+        "bullets": [
+          "33,000 drivers have been placed out of service over English-language deficiencies, according to DOT.",
+          "283 violations turned up in recent CDL blitzes across Virginia and Arkansas.",
+          "Small fleets should confirm every driver can handle roadside communication before dispatching through blitz states."
+        ],
+        "source_ids": [
+          "H9"
+        ]
+      },
+      {
+        "heading": "Class 8 Orders Fall Sharply",
+        "bullets": [
+          "36% year-over-year drop in North American Class 8 orders in October, per FTR.",
+          "Regulatory uncertainty at EPA, equipment costs and tighter budgets are holding fleets back.",
+          "Fewer new trucks entering service could help tighten capacity over time for carriers keeping current equipment."
+        ],
+        "source_ids": [
+          "H11"
+        ]
+      },
+      {
+        "heading": "LA/Long Beach Strike Threat Delayed",
+        "bullets": [
+          "A possible strike at the ports of Los Angeles and Long Beach has been delayed again.",
+          "Employers and a longshore union local are still in contract talks.",
+          "Drayage and Southern California carriers should watch for disruptions if negotiations break down."
+        ],
+        "source_ids": [
+          "H8"
+        ]
+      },
+      {
+        "heading": "Congress Shake-Up Hits Trucking Policy",
+        "bullets": [
+          "Election results will reshape the House Transportation & Infrastructure committee's membership.",
+          "Several current committee members will not return, affecting the highway bill and trucking regulations ahead."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      }
+    ],
+    "seo_description": "Diesel at $6.292, down 6.0 cents; 33,000 drivers out of service on English rule; Class 8 orders down 36%; LA/Long Beach strike delayed again."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-05T17:49:18.237Z",
+    "date": "2026-11-05",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Humble Robotics raises $51M for cabless hauler pilots",
+        "link": "https://www.freightwaves.com/news/humble-robotics-51m-series-a-cabless-hauler",
+        "published": "2026-11-05T17:05:13.000Z",
+        "snippet": "Humble Robotics raised a $51 million Series A to push its cabless, electric Humble Hauler into customer pilots, testing and early manufacturing for dock-to-dock freight. The post Humble Robotics raises $51M for cabless hauler pilots appeared first on FreightWaves.",
+        "categories": [
+          "Autonomous Vehicles",
+          "News",
+          "Startups",
+          "Technology",
+          "autonomous drayage",
+          "cabless truck",
+          "container shipping",
+          "electric Class 8 truck"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Schneider National says rail partner shift offers network boost",
+        "link": "https://www.supplychaindive.com/news/schneider-national-says-rail-partner-shift-offers-network-boost/873847/",
+        "published": "2026-11-05T15:08:00.000Z",
+        "snippet": "CEO Jim Filter said the company brings 35 years of intermodal service experience to its new partnership with Norfolk Southern.",
+        "categories": [],
+        "creator": "Larry Avila"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US Army enlists FedEx to modernize logistics at depots",
+        "link": "https://www.freightwaves.com/news/us-army-enlists-fedex-to-modernize-logistics-at-depots",
+        "published": "2026-11-05T15:03:33.000Z",
+        "snippet": "FedEx is partnering with the U.S. Army to optimize logistics and delivery for the service’s depots, arsenals and ammunition plants. The post US Army enlists FedEx to modernize logistics at depots appeared first on FreightWaves.",
+        "categories": [
+          "Logistics/Supply Chains",
+          "News",
+          "Technology",
+          "Top Stories",
+          "FedEx",
+          "logistics management",
+          "U.S. Army"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Urban Outfitters seeks material cost visibility from expanded technology suite",
+        "link": "https://www.supplychaindive.com/news/urban-outfitters-seeks-material-cost-visibility-from-expanded-technology-su/873642/",
+        "published": "2026-11-05T15:00:00.000Z",
+        "snippet": "The parent of several retail brands is tacking on additional features to its current production lifecycle management platform to improve supply chain efficiency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "EBay trims Depop shipping rates, bolsters delivery features",
+        "link": "https://www.supplychaindive.com/news/ebay-trims-depop-shipping-rates-bolsters-delivery-features/873710/",
+        "published": "2026-11-05T14:38:18.000Z",
+        "snippet": "The company is using AI to enable fast-but-reliable delivery promises and help sellers determine shipping costs more easily, CEO Jamie Iannone said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Maersk raises profit outlook as earnings surge, but shares slide on expectations miss",
+        "link": "https://www.freightwaves.com/news/maersk-raises-profit-outlook-as-earnings-surge-but-shares-slide-on-expectations-miss",
+        "published": "2026-11-05T13:58:32.000Z",
+        "snippet": "A.P. Moller-Maersk raised its full-year earnings forecast after higher rates drove a sharp increase in third-quarter profit. The post Maersk raises profit outlook as earnings surge, but shares slide on expectations miss appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "A.P. Moller-Maersk",
+          "container shipping",
+          "earnings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Americold raises full-year outlook as warehouse performance improves",
+        "link": "https://www.freightwaves.com/news/americold-raises-full-year-outlook-as-warehouse-performance-improves",
+        "published": "2026-11-05T13:00:00.000Z",
+        "snippet": "Americold Realty Trust raised its full-year earnings outlook Thursday after reporting higher third-quarter revenue. The post Americold raises full-year outlook as warehouse performance improves appeared first on FreightWaves.",
+        "categories": [
+          "Business",
+          "Company Earnings",
+          "Global Supply Chain",
+          "News",
+          "Top Stories",
+          "Warehouse",
+          "Americold Realty Trust",
+          "cold chain logistics"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Port strike delayed again at Los Angeles, Long Beach ports",
+        "link": "https://www.freightwaves.com/news/port-strike-delayed-again-at-los-angeles-long-beach-ports",
+        "published": "2026-11-05T11:00:00.000Z",
+        "snippet": "The port of Los Angeles and Long Beach delays a possible strike as employers and a longshore union local continue contract talks. The post Port strike delayed again at Los Angeles, Long Beach ports appeared first on FreightWaves.",
+        "categories": [
+          "Container Shipping",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Contract",
+          "International Longshore and Warehouse Union",
+          "labor"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "33,000 truckers sidelined over violations as highway blitzes hit Arkansas, Virginia",
+        "link": "https://www.freightwaves.com/news/33000-truckers-sidelined-over-violations-as-highway-blitzes-hit-arkansas-virginia",
+        "published": "2026-11-05T00:37:57.000Z",
+        "snippet": "Recent CDL blitzes in Virginia and Arkansas uncovered 283 violations, as DOT says 33,000 drivers have been placed out of service over English-language deficiencies. The post 33,000 truckers sidelined over violations as highway blitzes hit Arkansas, Virginia appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Trucking",
+          "Arkansas",
+          "CDL Issues",
+          "English Language Proficiency violations",
+          "operation highway shield",
+          "Out of service violations",
+          "Virginia"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Transportation committee in House set for overhaul post-election",
+        "link": "https://www.freightwaves.com/news/transportation-committee-in-house-set-for-overhaul-post-election",
+        "published": "2026-11-05T00:29:00.000Z",
+        "snippet": "The massive Democratic Party win on Election Day will have implications for government rules and regulations on trucking, including the so-called highway bill, driven in part by changes in the lineups of who will sit on Congress’ transportation-focused committees. There are several members of the House Transportation & Infrastructure (T&I) committee who won’t be around […] The post Transportation ",
+        "categories": [
+          "News",
+          "Top Stories",
+          "Trucking",
+          "Trucking Regulation",
+          "BUILD America 250 Act",
+          "Dalilah’s Law",
+          "English Language Proficiency",
+          "House Transportation & Infrastructure Committee"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Class 8 truck orders plunge 36% as EPA uncertainty rattles fleets",
+        "link": "https://www.freightwaves.com/news/class-8-truck-orders-plunge-36-as-epa-uncertainty-rattles-fleets",
+        "published": "2026-11-04T22:05:33.000Z",
+        "snippet": "North American Class 8 truck orders declined 36% year over year in October due to regulatory uncertainty, equipment costs and tighter fleet budgets, FTR said. The post Class 8 truck orders plunge 36% as EPA uncertainty rattles fleets appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Trucking",
+          "Trucking Equipment",
+          "class 8",
+          "FTR",
+          "FTR Transportation Intelligence"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "GXO’s contract wins surge 34%, but growth comes amid cost pressures",
+        "link": "https://www.freightwaves.com/news/gxos-contract-wins-surge-34-but-growth-comes-amid-cost-pressures",
+        "published": "2026-11-04T20:47:48.000Z",
+        "snippet": "GXO secured $375 million in third-quarter contracts, but the rapid pace of onboarding new customers created temporary cost pressures despite rising revenue and earnings. The post GXO’s contract wins surge 34%, but growth comes amid cost pressures appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Logistics",
+          "News",
+          "company earnings",
+          "GXO"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USTR urged to permanently suspend China-linked ship fees",
+        "link": "https://www.supplychaindive.com/news/ustr-urged-to-permanently-suspend-china-linked-ship-fees/873618/",
+        "published": "2026-11-04T19:58:00.000Z",
+        "snippet": "Stakeholders such as the World Shipping Council and the National Retail Federation are concerned fees will “add another cost layer to an already strained transportation system.”",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Emirates rolls out enhanced air cargo service for data center operators",
+        "link": "https://www.freightwaves.com/news/emirates-rolls-out-enhanced-air-cargo-service-for-data-center-operators",
+        "published": "2026-11-04T19:41:24.000Z",
+        "snippet": "Emirates is positioning itself to attract more air cargo business from hyperscalers and their suppliers. The post Emirates rolls out enhanced air cargo service for data center operators appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "American Shipper",
+          "News",
+          "air cargo",
+          "Artificial intelligence",
+          "Emirates SkyCargo",
+          "hyperscalers"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon deploys thousands of smart glasses to delivery drivers",
+        "link": "https://www.supplychaindive.com/news/amazon-deploys-thousands-of-smart-glasses-to-delivery-drivers/873620/",
+        "published": "2026-11-04T14:47:00.000Z",
+        "snippet": "The glasses provide navigation and drop-off instructions within drivers' field of view, part of the company's effort to boost delivery efficiency.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Can ‘BattMan’ secure the US battery manufacturing supply chain?",
+        "link": "https://www.supplychaindive.com/news/can-battman-secure-the-us-battery-manufacturing-supply-chain/873699/",
+        "published": "2026-11-04T12:54:00.000Z",
+        "snippet": "The Energy Department’s Battery Manufacturing Accelerator aims to plug gaps in domestic material and component supplies over the next few years as U.S. battery demand looks set to quadruple.",
+        "categories": [],
+        "creator": "Brian Martucci"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Defense tech company aims to build US supply chain for new laptop line",
+        "link": "https://www.supplychaindive.com/news/defense-tech-company-aims-to-build-us-supply-chain-for-new-laptop-line/873658/",
+        "published": "2026-11-04T12:32:00.000Z",
+        "snippet": "Anduril is assembling the circuit board and partnering with Qualcomm for the chip that powers the BlueChip line while looking for domestic suppliers for other parts.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "3M closes 16 factories, plans changes at 10 more in network revamp",
+        "link": "https://www.supplychaindive.com/news/3m-closes-16-factories-plans-changes-at-10-more-in-network-revamp/873536/",
+        "published": "2026-11-03T17:20:00.000Z",
+        "snippet": "The industrial conglomerate is aiming for $1 billion in annual productivity gains by the end of 2027 through an operational overhaul, CEO William Brown said.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump sparked growth but widened trade deficit, slowed hiring",
+        "link": "https://www.supplychaindive.com/news/trump-sparked-growth-widened-trade-deficit-slowed-hiring-iw/873576/",
+        "published": "2026-11-03T16:37:00.000Z",
+        "snippet": "President Donald Trump’s sweeping tariffs and efforts to boost foreign direct investment have fallen short of their objectives, per the German Economic Institute.",
+        "categories": [],
+        "creator": "Jim Tyson"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx Network 2.0 headed to Los Angeles, other markets post-holidays",
+        "link": "https://www.supplychaindive.com/news/fedex-network-20-headed-to-los-angeles-other-markets-post-holidays/873453/",
+        "published": "2026-11-03T15:08:40.000Z",
+        "snippet": "The integration plan, slated to wrap up in 2027, is already complete in markets like Dallas and San Francisco as the carrier preps for the peak season.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Warehouse cramming is about to begin — Freightonomics",
+        "reason": "Freightonomics podcast"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Buying Trucks in a Buyer’s Market: What Owner-Operators Are Weighing Right Now",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "The Hidden Data Challenges for Autonomous Trucking Safety",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "8 Inches of Rain Shut Down Busiest US Rail Line for 60 Hours",
+        "reason": "FreightWaves TV"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Dry Van & Reefer: Market Signals You Can’t Ignore",
+        "reason": "FreightWaves TV"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
