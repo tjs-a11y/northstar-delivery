@@ -1,0 +1,570 @@
+{
+  "brief": {
+    "subject": "Diesel dips to $6.292, truck jobs flat, Mexico trade record",
+    "headline": "Diesel Eases 6 Cents as Trucking Jobs Hold Steady and Mexico Trade Hits a Record",
+    "dek": "Diesel slips to $6.292, October trucking payrolls stay flat, Mexico cross-border trade sets a record, and container imports climb 9%.",
+    "lede": "Diesel fell 6.0 cents to $6.292 a gallon this week, a small break for carriers still paying 9.3 cents more than four weeks ago.",
+    "sections": [
+      {
+        "heading": "Diesel Takes a Small Step Back",
+        "bullets": [
+          "$6.292 per gallon is the U.S. average retail diesel price for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) from the prior week, a modest break at the pump.",
+          "Up 9.3 cents over four weeks, so fuel surcharges and lane quotes still need a close look."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Trucking Jobs Stall in October",
+        "bullets": [
+          "October truck transportation employment was unchanged from September, per the Bureau of Labor Statistics.",
+          "September was revised down to 1,471,300 from 1,473,100, a sign the driver pool is not expanding.",
+          "Flat payrolls suggest capacity is holding steady rather than flooding back into the market."
+        ],
+        "source_ids": [
+          "H4"
+        ]
+      },
+      {
+        "heading": "Mexico Trade Booms, Theft Risk Grows",
+        "bullets": [
+          "$96.3B in September trade set a record and widened Mexico's lead as the top U.S. trading partner.",
+          "Strong cross-border volume keeps freight moving through border lanes for carriers serving Mexico.",
+          "42% of Q3 cargo theft incidents in Mexico involved parked trucks, according to Overhaul.",
+          "Drivers running into Mexico should treat parking stops as the highest-risk part of the trip."
+        ],
+        "source_ids": [
+          "H5",
+          "H13"
+        ]
+      },
+      {
+        "heading": "Import Freight Climbs as Prices Rise",
+        "bullets": [
+          "9% rise in North America container imports in September, despite disruptions and higher shipping costs.",
+          "More boxes arriving means more drayage and inland freight for carriers near ports.",
+          "Aurora's autonomous truck production is delayed by supply and quality issues, though it still targets more than 1,000 trucks by end of 2027."
+        ],
+        "source_ids": [
+          "H6",
+          "H2"
+        ]
+      },
+      {
+        "heading": "Rail Fight Spills Into Public View",
+        "bullets": [
+          "The STB rejected Union Pacific's appeal and ordered release of a video with an alleged rate hike threat.",
+          "The remarks targeted shippers opposed to the Norfolk Southern merger; UP's CEO now says he was joking.",
+          "Schneider National has shifted its intermodal partnership to Norfolk Southern, reshaping rail options shippers weigh against trucks."
+        ],
+        "source_ids": [
+          "H17",
+          "H11",
+          "H19"
+        ]
+      }
+    ],
+    "seo_description": "Diesel drops to $6.292, trucking jobs flat in October, Mexico trade hits record $96.3B, and North America container imports rise 9%."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-06T17:07:07.909Z",
+    "date": "2026-11-06",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Walmart to take drone delivery nationwide as Zipline raises $1.5B",
+        "link": "https://www.freightwaves.com/news/walmart-to-take-drone-delivery-nationwide-as-zipline-raises-1-5b",
+        "published": "2026-11-06T16:20:27.000Z",
+        "snippet": "Walmart will significantly scale up its drone delivery network in partnership with Zipline, which will operate the small unmanned aerial vehicles from 300 new store locations and has raised $1.5 billion in new funding to build out a nationwide drone delivery capacity, the companies announced on Thursday. Zipline, the world’s largest drone delivery provider by […] The post Walmart to take drone del",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "News",
+          "Technology & Startups",
+          "drone delivery",
+          "e-commerce",
+          "Walmart",
+          "Zipline"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/",
+        "published": "2026-11-06T15:54:00.000Z",
+        "snippet": "The autonomous trucking company is working with Roush to upfit trucks, and despite the delay, still expects to have more than 1,000 trucks ready by the end of 2027.",
+        "categories": [],
+        "creator": "Haley Cawthon"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Conlio raises €6.4M to automate freight document checks",
+        "link": "https://www.freightwaves.com/news/conlio-funding-freight-document-checks",
+        "published": "2026-11-06T15:40:03.000Z",
+        "snippet": "Conlio's €6.4 million round, led by Piton Capital, targets the manual check European forwarders run on every load before carriers get paid and customers get billed The post Conlio raises €6.4M to automate freight document checks appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Logistics & Brokerage",
+          "News",
+          "Technology & Startups",
+          "CMR",
+          "Conlio",
+          "Europe",
+          "F-LOG Ventures"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "October truck transportation jobs = September truck transportation jobs",
+        "link": "https://www.freightwaves.com/news/october-truck-transportation-jobs-september-truck-transportation-jobs",
+        "published": "2026-11-06T15:24:18.000Z",
+        "snippet": "The number of workers employed in truck transportation in October was unchanged from September. That end result in the October report from the Bureau of Labor Statistics, released Friday, came from two developments. First, the BLS revised downward its initial figure on truck transportation jobs in September to 1,471,300 from 1,473,100. And then the BLS’s […] The post October truck transportation j",
+        "categories": [
+          "Drivers & Workforce",
+          "News",
+          "Top Stories",
+          "Truckload",
+          "Bureau of Labor Statistics"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico widens US trade lead with record $96.3B September",
+        "link": "https://www.freightwaves.com/news/mexico-widens-us-trade-lead-with-record-96-3b-september",
+        "published": "2026-11-06T15:19:33.000Z",
+        "snippet": "Mexico strengthened its position as the United States' top trading partner in September at $96 billion. The post Mexico widens US trade lead with record $96.3B September appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Borderlands",
+          "Canada",
+          "China",
+          "Laredo",
+          "Laredo texas",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "North America container imports rise 9% as as freight pricing pressures mount",
+        "link": "https://www.freightwaves.com/news/north-america-container-imports-rise-9-as-as-freight-pricing-pressures-mount",
+        "published": "2026-11-06T15:09:01.000Z",
+        "snippet": "Global container volumes surged in September despite mounting disruptions and rising freight prices. The post North America container imports rise 9% as as freight pricing pressures mount appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Container Trade Statistics",
+          "Disruptions"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Lear to open automated factory as ‘blueprint’ for global network",
+        "link": "https://www.supplychaindive.com/news/lear-to-open-automated-factory-as-blueprint-for-global-network/873888/",
+        "published": "2026-11-06T14:43:00.000Z",
+        "snippet": "The Michigan facility is expected to go live next year and be equipped with a host of automation tools, including two separate automated storage and retrieval systems.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Maersk eyes trade in deals for more than 50 terminals",
+        "link": "https://www.freightwaves.com/news/maersk-eyes-trade-in-deals-for-more-than-50-terminals",
+        "published": "2026-11-06T13:00:00.000Z",
+        "snippet": "The investment arm of Maersk’s corporate parent is expanding its international ports portfolio through agreements in Asia and Europe. The post Maersk eyes trade in deals for more than 50 terminals appeared first on FreightWaves.",
+        "categories": [
+          "Infrastructure & Reindustrialization",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "#trade",
+          "A.P. Moller Capital",
+          "container shipping"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ryder grows its FMS business with East Coast acquisition",
+        "link": "https://www.freightwaves.com/news/ryder-grows-its-fms-business-with-east-coast-acquisition",
+        "published": "2026-11-06T12:47:25.000Z",
+        "snippet": "Ryder System (NYSE: R) has acquired Efficiency Enterprises, a company with a business model similar to what Ryder does in its Fleet Management Systems (FMS) unit. Ryder, in a prepared statement, described Efficiency Enterprises as “a regional provider of fleet management, maintenance, and leasing solutions for trucks, trailers, and material handling equipment.” Those services line […] The post Ryd",
+        "categories": [
+          "Drivers & Workforce",
+          "M&A",
+          "News",
+          "Truckload",
+          "Ryder Systems"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tilray Brands targets $20M in cost savings after craft brewery closures",
+        "link": "https://www.supplychaindive.com/news/tilray-brands-targets-20m-in-cost-savings-after-craft-brewery-closures/873848/",
+        "published": "2026-11-06T12:15:00.000Z",
+        "snippet": "The Shock Top owner has reduced its SKU count and closed four facilities as it adapts to beverage industry shifts.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "EXCLUSIVE: ‘Humor is good,’ Union Pacific CEO says of video rate threat",
+        "link": "https://www.freightwaves.com/news/exclusive-humor-is-good-union-pacific-ceo-says-of-video-rate-threat",
+        "published": "2026-11-06T02:35:19.000Z",
+        "snippet": "Union Pacific CEO said his threat to raise rates on shippers in a now-released video was an attempt at humor. The post EXCLUSIVE: ‘Humor is good,’ Union Pacific CEO says of video rate threat appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Rail",
+          "Top Stories",
+          "Norfolk Southern",
+          "Surface Transportation Board",
+          "Union Pacific",
+          "union pacific-norfolk southern merger"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Teamsters say they’ve organized Amazon employees in Indiana; company demurs",
+        "link": "https://www.freightwaves.com/news/teamsters-say-theyve-organized-amazon-employees-in-indiana-company-demurs",
+        "published": "2026-11-05T21:13:16.000Z",
+        "snippet": "The Teamsters are claiming victory for a group of “W-2” drivers at an Amazon facility in Indiana who sought representation by the union. But as with the entire Amazon-Teamsters relationship, it’s complicated. In its prepared statement announcing the “march” on the company to demand it bargain for a contract, the Teamsters said it had unionized […] The post Teamsters say they’ve organized Amazon em",
+        "categories": [
+          "Drivers & Workforce",
+          "News",
+          "Top Stories",
+          "Truckload",
+          "Amazon",
+          "Card check",
+          "CEMEX",
+          "National Labor Relations Board"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico cargo thieves shift tactics as Q3 truck parking thefts surge",
+        "link": "https://www.freightwaves.com/news/mexico-cargo-thieves-shift-tactics-as-q3-truck-parking-thefts-surge",
+        "published": "2026-11-05T20:11:22.000Z",
+        "snippet": "Cargo theft involving parked trucks accounted for 42% of all incidents in Mexico during the third quarter , according to Overhaul. The post Mexico cargo thieves shift tactics as Q3 truck parking thefts surge appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Truckload",
+          "cargo theft",
+          "crime",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unilever ramps up pricing to offset higher commodity costs",
+        "link": "https://www.supplychaindive.com/news/unilever-ramps-up-pricing-to-offset-higher-commodity-costs/873793/",
+        "published": "2026-11-05T20:09:00.000Z",
+        "snippet": "Improved visibility over supply of key inputs gave the CPG clarity to implement hikes after keeping prices flat during the first half of the year.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Conrail tabs Wright as president and chief operating officer",
+        "link": "https://www.freightwaves.com/news/conrail-tabs-wright-as-president-and-chief-operating-officer",
+        "published": "2026-11-05T20:01:30.000Z",
+        "snippet": "Conrail has appointed veteran rail executive John Wright as its new corporate leader. The post Conrail tabs Wright as president and chief operating officer appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Rail",
+          "Conrail",
+          "CSX",
+          "leadership",
+          "Norfolk Southern",
+          "railroads"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "A Super El Niño Is About To Test Which Freight Enterprises Plan For Impact And Which Only React",
+        "link": "https://www.freightwaves.com/news/a-super-el-nino-is-about-to-test-which-freight-enterprises-plan-for-impact-and-which-only-react",
+        "published": "2026-11-05T18:49:00.000Z",
+        "snippet": "For most enterprises the first sign of a winter storm is still a broad, countrywide warning, the kind that tells a leadership team something is coming but says nothing about which lanes will fail, which distribution centers sit in the path, or which customer commitments are about to slip, and in a season shaping up […] The post A Super El Niño Is About To Test Which Freight Enterprises Plan For Im",
+        "categories": [
+          "Equipment & Tech",
+          "Logistics & Brokerage",
+          "SONAR",
+          "Weather & Critical Events"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "STB orders Union Pacific to make alleged rate hike threat video public",
+        "link": "https://www.freightwaves.com/news/stb-orders-union-pacific-to-make-rate-hike-threat-video-public",
+        "published": "2026-11-05T18:35:09.000Z",
+        "snippet": "Rail regulator rejects railroad’s appeal in dispute over remarks allegedly threatening shippers opposed to Norfolk Southern merger. The post STB orders Union Pacific to make alleged rate hike threat video public appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "News",
+          "Rail",
+          "CPKC",
+          "Norfolk Southern",
+          "Surface Transportation Board",
+          "Union Pacific",
+          "union pacific-norfolk southern merger"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H18",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Behind The Capitol Christmas Tree Is A Kenworth, Four Drivers, And A 2,000 Mile Haul Only Trucking Can Pull Off",
+        "link": "https://www.freightwaves.com/news/behind-the-capitol-christmas-tree-is-a-kenworth-four-drivers-and-a-2000-mile-haul-only-trucking-can-pull-off",
+        "published": "2026-11-05T17:50:28.000Z",
+        "snippet": "Every December a towering evergreen rises on the West Lawn of the U.S. Capitol and gets called the People’s Tree, but before a child from its home state flips the switch to light it, the tree has to survive something most of the public never stops to consider, a journey of more than 2,000 miles […] The post Behind The Capitol Christmas Tree Is A Kenworth, Four Drivers, And A 2,000 Mile Haul Only T",
+        "categories": [
+          "Equipment & Tech",
+          "FreightWaves Playbook",
+          "Playbook: Featured",
+          "Trade & Tariffs"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Schneider National says rail partner shift offers network boost",
+        "link": "https://www.supplychaindive.com/news/schneider-national-says-rail-partner-shift-offers-network-boost/873847/",
+        "published": "2026-11-05T15:08:00.000Z",
+        "snippet": "CEO Jim Filter said the company brings 35 years of intermodal service experience to its new partnership with Norfolk Southern.",
+        "categories": [],
+        "creator": "Larry Avila"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Urban Outfitters seeks material cost visibility from expanded technology suite",
+        "link": "https://www.supplychaindive.com/news/urban-outfitters-seeks-material-cost-visibility-from-expanded-technology-su/873642/",
+        "published": "2026-11-05T15:00:00.000Z",
+        "snippet": "The parent of several retail brands is tacking on additional features to its current production lifecycle management platform to improve supply chain efficiency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "EBay trims Depop shipping rates, bolsters delivery features",
+        "link": "https://www.supplychaindive.com/news/ebay-trims-depop-shipping-rates-bolsters-delivery-features/873710/",
+        "published": "2026-11-05T14:38:18.000Z",
+        "snippet": "The company is using AI to enable fast-but-reliable delivery promises and help sellers determine shipping costs more easily, CEO Jamie Iannone said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Logitech launches supply chain decarbonization program",
+        "link": "https://www.supplychaindive.com/news/logitech-launches-supply-chain-decarbonization-program/873778/",
+        "published": "2026-11-05T12:44:00.000Z",
+        "snippet": "The computer peripheral manufacturer’s Chain Reaction initiative will start with 17 suppliers pooling purchasing power to collectively buy renewable electricity.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USTR urged to permanently suspend China-linked ship fees",
+        "link": "https://www.supplychaindive.com/news/ustr-urged-to-permanently-suspend-china-linked-ship-fees/873618/",
+        "published": "2026-11-04T19:58:00.000Z",
+        "snippet": "Stakeholders such as the World Shipping Council and the National Retail Federation are concerned fees will “add another cost layer to an already strained transportation system.”",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon deploys thousands of smart glasses to delivery drivers",
+        "link": "https://www.supplychaindive.com/news/amazon-deploys-thousands-of-smart-glasses-to-delivery-drivers/873620/",
+        "published": "2026-11-04T14:47:00.000Z",
+        "snippet": "The glasses provide navigation and drop-off instructions within drivers' field of view, part of the company's effort to boost delivery efficiency.",
+        "categories": [],
+        "creator": "Max Garland"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "weekend",
+      "reason": "Friday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-11-06",
+    "subject": "Diesel dips to $6.292, truck jobs flat, Mexico trade record",
+    "headline": "Diesel Eases 6 Cents as Trucking Jobs Hold Steady and Mexico Trade Hits a Record",
+    "script": "Diesel slips to $6.292, October trucking payrolls stay flat, Mexico cross-border trade sets a record, and container imports climb 9%.\n\nDiesel fell 6.0 cents to $6.292 a gallon this week, a small break for carriers still paying 9.3 cents more than four weeks ago.",
+    "url": "briefs/2026-11-06.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel Eases 6 Cents as Trucking Jobs Hold Steady and Mexico Trade Hits a Record",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "October truck transportation jobs = September truck transportation jobs",
+        "link": "https://www.freightwaves.com/news/october-truck-transportation-jobs-september-truck-transportation-jobs"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico widens US trade lead with record $96.3B September",
+        "link": "https://www.freightwaves.com/news/mexico-widens-us-trade-lead-with-record-96-3b-september"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico cargo thieves shift tactics as Q3 truck parking thefts surge",
+        "link": "https://www.freightwaves.com/news/mexico-cargo-thieves-shift-tactics-as-q3-truck-parking-thefts-surge"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "North America container imports rise 9% as as freight pricing pressures mount",
+        "link": "https://www.freightwaves.com/news/north-america-container-imports-rise-9-as-as-freight-pricing-pressures-mount"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "STB orders Union Pacific to make alleged rate hike threat video public",
+        "link": "https://www.freightwaves.com/news/stb-orders-union-pacific-to-make-rate-hike-threat-video-public"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-05",
     "subject": "Diesel dips 6 cents; 33,000 drivers sidelined on English rule",
     "headline": "Diesel eases to $6.292 as English-proficiency enforcement sidelines 33,000 drivers",
