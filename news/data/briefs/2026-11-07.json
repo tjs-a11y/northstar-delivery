@@ -1,0 +1,550 @@
+{
+  "brief": {
+    "subject": "Diesel dips to $6.292, fraud calls surge, FMCSA crackdown holds",
+    "headline": "Diesel Eases 6 Cents as Freight Fraud Climbs and FMCSA Enforcement Stays Firm",
+    "dek": "Diesel falls to $6.292, a fraud report ties 40% of stolen loads to compromised communications, and FMCSA's CDL crackdown looks set to last.",
+    "lede": "Diesel slipped 6.0 cents to $6.292 a gallon, but it is still up 9.3 cents over four weeks, so fuel budgets stay tight.",
+    "sections": [
+      {
+        "heading": "Diesel Eases, Still Elevated",
+        "bullets": [
+          "$6.292 per gallon is the U.S. average retail diesel price for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) week over week, offering small relief at the pump.",
+          "Up 9.3 cents over four weeks, so fuel surcharges and quotes still need to reflect higher costs."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Freight Fraud Keeps Escalating",
+        "bullets": [
+          "40% of stolen loads in a new Highway report trace back to compromised communications.",
+          "Fraudulent calls jumped 90%, so verify every broker and shipper contact before accepting or releasing a load.",
+          "Carrier ownership reports more than doubled, a warning sign of identity hijacking aimed at small authorities."
+        ],
+        "source_ids": [
+          "H2"
+        ]
+      },
+      {
+        "heading": "FMCSA Crackdown Expected to Last",
+        "bullets": [
+          "FreightWaves' CEO says large carriers will keep pressure on FMCSA's non-domiciled CDL enforcement regardless of Washington changes.",
+          "He argued non-domiciled CDL holders were probably the main reason the freight downturn dragged on.",
+          "Lasting enforcement could tighten capacity over time, which may support rates for compliant small carriers."
+        ],
+        "source_ids": [
+          "H1"
+        ]
+      },
+      {
+        "heading": "Rail and Intermodal Shifts",
+        "bullets": [
+          "Schneider National is moving its intermodal business to a new partnership with Norfolk Southern.",
+          "Union Pacific's CEO floated higher rates for shippers opposing the Norfolk Southern merger; the railroad called it an offhand comment.",
+          "Rail network changes can shift drayage demand and lane competition for truckers near intermodal hubs."
+        ],
+        "source_ids": [
+          "H21",
+          "H4"
+        ]
+      },
+      {
+        "heading": "Autonomy and Consolidation Watch",
+        "bullets": [
+          "Aurora's autonomous truck production is delayed by supply and quality issues, though it still targets 1,000-plus trucks by end of 2027.",
+          "PS Logistics bought Tennessee flatbed carrier Roane Transportation Services and its 170-plus drivers.",
+          "Flatbed consolidation in the Southeast could reshape competition for small operators on those lanes."
+        ],
+        "source_ids": [
+          "H15",
+          "H5"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls to $6.292, freight fraud calls jump 90%, FMCSA CDL enforcement expected to last, plus rail and autonomous trucking updates."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-07T16:03:23.463Z",
+    "date": "2026-11-07",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Big carriers keep FMCSA’s crackdown alive, Fuller says",
+        "link": "https://www.freightwaves.com/news/fuller-big-carriers-fmcsa-crackdown-permanent",
+        "published": "2026-11-07T13:00:00.000Z",
+        "snippet": "FreightWaves' CEO told Optym Convergence non-domiciled CDL holders were probably the main reason the downturn dragged on, and that enforcement will outlast any change in Washingto The post Big carriers keep FMCSA’s crackdown alive, Fuller says appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Legal Issues",
+          "News",
+          "Truckload",
+          "carrier vetting",
+          "CDL Issues",
+          "Craig Fuller",
+          "FMCSA"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Compromised communications linked to 40% of stolen loads in Highway fraud report",
+        "link": "https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report",
+        "published": "2026-11-07T12:16:29.000Z",
+        "snippet": "A new freight fraud report identifies a striking license-related pattern among direct theft incidents. Meanwhile, fraudulent calls surged 90%, and carrier ownership reports more than doubled. The post Compromised communications linked to 40% of stolen loads in Highway fraud report appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Freight Fraud",
+          "Technology & Startups",
+          "Top Stories",
+          "cargo theft",
+          "freight fraud",
+          "logistics",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Why Aviation Automation Still Hasn’t Reached Small Planes",
+        "link": "https://www.freightwaves.com/news/why-aviation-automation-still-hasnt-reached-small-planes",
+        "published": "2026-11-06T20:01:15.000Z",
+        "snippet": "Self-flying planes are closer than most aviation and freight pros think. Reliable Robotics CEO Robert Rose breaks down why small aircraft still operate with outdated systems, what true aviation automation requires, and where autonomous cargo aircraft fit in the supply chain. Rose shares how his time at SpaceX shaped his approach to safety, software and […] The post Why Aviation Automation Still Ha",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UP CEO’s rate threat adds wrinkle to Norfolk Southern merger process",
+        "link": "https://www.supplychaindive.com/news/up-ceos-rate-threat-adds-wrinkle-to-norfolk-southern-merger-process/874006/",
+        "published": "2026-11-06T19:49:00.000Z",
+        "snippet": "The railroad said Jim Vena’s remarks that he would raise rates on shippers who oppose the merger was an “offhand comment.”",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "PS Logistics expands Tennessee flatbed presence with Roane acquisition",
+        "link": "https://www.freightwaves.com/news/ps-logistics-expands-tennessee-flatbed-presence-with-roane-acquisition",
+        "published": "2026-11-06T18:21:58.000Z",
+        "snippet": "PS Logistics has expanded its flatbed network by acquiring Roane Transportation Services and its more than 170 drivers. The post PS Logistics expands Tennessee flatbed presence with Roane acquisition appeared first on FreightWaves.",
+        "categories": [
+          "M&A",
+          "Truckload",
+          "Flatbed carriers",
+          "PS Logistics",
+          "transportation M&A"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CBP seizes 1,000-plus pounds of meth in produce truck at Texas border",
+        "link": "https://www.freightwaves.com/news/cbp-seizes-1000-plus-pounds-of-meth-in-produce-truck-at-texas-border",
+        "published": "2026-11-06T18:12:59.000Z",
+        "snippet": "A canine alert led customs officers to nearly $1 million in methamphetamine hidden inside a produce shipment crossing the Texas border. The post CBP seizes 1,000-plus pounds of meth in produce truck at Texas border appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Top Stories",
+          "Truckload",
+          "CBP",
+          "cross border",
+          "drug seizures",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Fleetworthy launches RADAR, new AI fleet management technology",
+        "link": "https://www.freightwaves.com/news/fleetworthy-launches-radar-new-ai-fleet-management-technology",
+        "published": "2026-11-06T17:55:09.000Z",
+        "snippet": "Fleetworthy's new RADAR technology is designed to help fleet managers identify toll discrepancies, monitor spending and make operational decisions without manually searching through reports. The post Fleetworthy launches RADAR, new AI fleet management technology appeared first on FreightWaves.",
+        "categories": [
+          "FreightTech Award",
+          "News",
+          "Technology & Startups",
+          "Fleetworthy",
+          "Freight",
+          "logistics",
+          "Technology",
+          "Toll"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Drone Wars & Pilot Skills: Is US Military Training Outdated?",
+        "link": "https://www.freightwaves.com/news/drone-wars-pilot-skills-is-us-military-training-outdated",
+        "published": "2026-11-06T17:54:06.000Z",
+        "snippet": "US pilot training is struggling to keep pace with modern warfare. Emil Mikhailov, founder of Sorian Aerospace, discusses why current training methods are outdated and how new technologies like their “Sandman” supersonic trainer jet are essential for preparing pilots for future conflicts, including collaborative combat with unmanned aircraft. He highlights the high cost of training […] The post Dro",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Flying Cars Are HERE: Joby Aviation on eVTOL Revolution [2025 Outlook]",
+        "link": "https://www.freightwaves.com/news/flying-cars-are-here-joby-aviation-on-evtol-revolution-2025-outlook",
+        "published": "2026-11-06T17:52:05.000Z",
+        "snippet": "Joby Aviation’s Chief Policy Officer, Greg Bowles, discusses the exciting future of eVTOLs (electric vertical takeoff and landing aircraft). Learn how these ‘flying cars’ are set to transform urban air mobility, logistics, and daily commuting. From overcoming regulatory hurdles with the FAA to strategic partnerships and manufacturing scale, Joby is leading the charge in a […] The post Flying Cars ",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Electric ‘Flying Boat’ Lands $5 Billion in Orders",
+        "link": "https://www.freightwaves.com/news/electric-flying-boat-lands-5-billion-in-orders",
+        "published": "2026-11-06T17:51:28.000Z",
+        "snippet": "REGENT is building electric seagliders that merge the best of boats and planes, operating on a cushion of air over the water known as ground effect. CEO Billy Thalheimer explains how this innovative technology allows for super-efficient, silent travel at speeds up to 180 MPH, overcoming traditional limitations of electric aviation. Discover how seagliders are […] The post Electric ‘Flying Boat’ La",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Florida’s Space Race: 95% Cost Drop Fuels Private Sector Boom",
+        "link": "https://www.freightwaves.com/news/floridas-space-race-95-cost-drop-fuels-private-sector-boom",
+        "published": "2026-11-06T17:50:49.000Z",
+        "snippet": "Florida is rapidly becoming the epicenter of the new space race, with groundbreaking public-private partnerships driving down costs and opening new frontiers. Rep. Mike Haridopolos explains how the private sector has dramatically reduced the cost of putting a pound into space by 95%, fueling job growth and innovation. Discover why the Sunshine State is set […] The post Florida’s Space Race: 95% Co",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Flying Taxis & Cargo: Electric Aviation’s Future Takes Off",
+        "link": "https://www.freightwaves.com/news/flying-taxis-cargo-electric-aviations-future-takes-off",
+        "published": "2026-11-06T17:50:15.000Z",
+        "snippet": "BETA Technologies just secured landmark FAA authorization for passenger flights in their electric VTOL aircraft, marking a monumental step for electric aviation. Chip Palombini, Head of Product at BETA, explains how these electric aircraft are revolutionizing cargo, logistics, and soon, passenger mobility with unprecedented reliability, lower operating costs, and zero emissions. Discover how BETA’",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "STB signals broader protection for rail-served projects against state and local restrictions",
+        "link": "https://www.freightwaves.com/news/stb-signals-broader-protection-for-rail-served-projects-against-state-and-local-restrictions",
+        "published": "2026-11-06T17:25:00.000Z",
+        "snippet": "New policy statement questions earlier decisions involving customer-owned terminals and outlines stronger arguments against taking railroad property. The post STB signals broader protection for rail-served projects against state and local restrictions appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Modes",
+          "News",
+          "Rail",
+          "Top Stories",
+          "Association of American Railroads",
+          "Federal preemption",
+          "railroads"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Walmart to take drone delivery nationwide as Zipline raises $1.5B",
+        "link": "https://www.freightwaves.com/news/walmart-to-take-drone-delivery-nationwide-as-zipline-raises-1-5b",
+        "published": "2026-11-06T16:20:27.000Z",
+        "snippet": "Walmart will significantly scale up its drone delivery network in partnership with Zipline, which will operate the small unmanned aerial vehicles from 300 new store locations and has raised $1.5 billion in new funding to build out a nationwide drone delivery capacity, the companies announced on Thursday. Zipline, the world’s largest drone delivery provider by […] The post Walmart to take drone del",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "News",
+          "Technology & Startups",
+          "drone delivery",
+          "e-commerce",
+          "Walmart",
+          "Zipline"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/",
+        "published": "2026-11-06T15:54:00.000Z",
+        "snippet": "The autonomous trucking company is working with Roush to upfit trucks, and despite the delay, still expects to have more than 1,000 trucks ready by the end of 2027.",
+        "categories": [],
+        "creator": "Haley Cawthon"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Conlio raises €6.4M to automate freight document checks",
+        "link": "https://www.freightwaves.com/news/conlio-funding-freight-document-checks",
+        "published": "2026-11-06T15:40:03.000Z",
+        "snippet": "Conlio's €6.4 million round, led by Piton Capital, targets the manual check European forwarders run on every load before carriers get paid and customers get billed The post Conlio raises €6.4M to automate freight document checks appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Logistics & Brokerage",
+          "News",
+          "Technology & Startups",
+          "CMR",
+          "Conlio",
+          "Europe",
+          "F-LOG Ventures"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Lear to open automated factory as ‘blueprint’ for global network",
+        "link": "https://www.supplychaindive.com/news/lear-to-open-automated-factory-as-blueprint-for-global-network/873888/",
+        "published": "2026-11-06T14:43:00.000Z",
+        "snippet": "The Michigan facility is expected to go live next year and be equipped with a host of automation tools, including two separate automated storage and retrieval systems.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apple boosts purchase commitments by $33B amid memory crunch",
+        "link": "https://www.supplychaindive.com/news/apple-boosts-purchase-commitments-by-33b-amid-memory-crunch/873936/",
+        "published": "2026-11-06T13:51:00.000Z",
+        "snippet": "The iPhone maker mitigated some of the higher memory costs in Q4 with price increases and carry-in inventory from the previous quarter.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tilray Brands targets $20M in cost savings after craft brewery closures",
+        "link": "https://www.supplychaindive.com/news/tilray-brands-targets-20m-in-cost-savings-after-craft-brewery-closures/873848/",
+        "published": "2026-11-06T12:15:00.000Z",
+        "snippet": "The Shock Top owner has reduced its SKU count and closed four facilities as it adapts to beverage industry shifts.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unilever ramps up pricing to offset higher commodity costs",
+        "link": "https://www.supplychaindive.com/news/unilever-ramps-up-pricing-to-offset-higher-commodity-costs/873793/",
+        "published": "2026-11-05T20:09:00.000Z",
+        "snippet": "Improved visibility over supply of key inputs gave the CPG clarity to implement hikes after keeping prices flat during the first half of the year.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Schneider National says rail partner shift offers network boost",
+        "link": "https://www.supplychaindive.com/news/schneider-national-says-rail-partner-shift-offers-network-boost/873847/",
+        "published": "2026-11-05T15:08:00.000Z",
+        "snippet": "CEO Jim Filter said the company brings 35 years of intermodal service experience to its new partnership with Norfolk Southern.",
+        "categories": [],
+        "creator": "Larry Avila"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Urban Outfitters seeks material cost visibility from expanded technology suite",
+        "link": "https://www.supplychaindive.com/news/urban-outfitters-seeks-material-cost-visibility-from-expanded-technology-su/873642/",
+        "published": "2026-11-05T15:00:00.000Z",
+        "snippet": "The parent of several retail brands is tacking on additional features to its current production lifecycle management platform to improve supply chain efficiency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "EBay trims Depop shipping rates, bolsters delivery features",
+        "link": "https://www.supplychaindive.com/news/ebay-trims-depop-shipping-rates-bolsters-delivery-features/873710/",
+        "published": "2026-11-05T14:38:18.000Z",
+        "snippet": "The company is using AI to enable fast-but-reliable delivery promises and help sellers determine shipping costs more easily, CEO Jamie Iannone said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Logitech launches supply chain decarbonization program",
+        "link": "https://www.supplychaindive.com/news/logitech-launches-supply-chain-decarbonization-program/873778/",
+        "published": "2026-11-05T12:44:00.000Z",
+        "snippet": "The computer peripheral manufacturer’s Chain Reaction initiative will start with 17 suppliers pooling purchasing power to collectively buy renewable electricity.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fmcsa_change",
+      "reason": "1 headline(s) on FMCSA rule changes",
+      "evidence": [
+        "H1"
+      ]
+    },
+    {
+      "key": "weekend",
+      "reason": "Saturday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "audit-kit",
+      "product": "Quickwell Audit Kit",
+      "url": "https://quickwell.app/audit-kit/",
+      "ref": true,
+      "label": "Check yourself against the new entrant audit",
+      "copy": "FMCSA rules moved this week. New authority? Run the free self-check against the 16 violations that automatically fail a new entrant safety audit.",
+      "signal": "fmcsa_change",
+      "priority": 2,
+      "placement": "anchor",
+      "evidence": [
+        "H1"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

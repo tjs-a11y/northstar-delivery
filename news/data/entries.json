@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-11-07",
+    "subject": "Diesel dips to $6.292, fraud calls surge, FMCSA crackdown holds",
+    "headline": "Diesel Eases 6 Cents as Freight Fraud Climbs and FMCSA Enforcement Stays Firm",
+    "script": "Diesel falls to $6.292, a fraud report ties 40% of stolen loads to compromised communications, and FMCSA's CDL crackdown looks set to last.\n\nDiesel slipped 6.0 cents to $6.292 a gallon, but it is still up 9.3 cents over four weeks, so fuel budgets stay tight.",
+    "url": "briefs/2026-11-07.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel Eases 6 Cents as Freight Fraud Climbs and FMCSA Enforcement Stays Firm",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Compromised communications linked to 40% of stolen loads in Highway fraud report",
+        "link": "https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Big carriers keep FMCSA’s crackdown alive, Fuller says",
+        "link": "https://www.freightwaves.com/news/fuller-big-carriers-fmcsa-crackdown-permanent"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Schneider National says rail partner shift offers network boost",
+        "link": "https://www.supplychaindive.com/news/schneider-national-says-rail-partner-shift-offers-network-boost/873847/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "UP CEO’s rate threat adds wrinkle to Norfolk Southern merger process",
+        "link": "https://www.supplychaindive.com/news/up-ceos-rate-threat-adds-wrinkle-to-norfolk-southern-merger-process/874006/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "PS Logistics expands Tennessee flatbed presence with Roane acquisition",
+        "link": "https://www.freightwaves.com/news/ps-logistics-expands-tennessee-flatbed-presence-with-roane-acquisition"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "audit-kit",
+        "signal": "fmcsa_change"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-06",
     "subject": "Diesel dips to $6.292, truck jobs flat, Mexico trade record",
     "headline": "Diesel Eases 6 Cents as Trucking Jobs Hold Steady and Mexico Trade Hits a Record",
