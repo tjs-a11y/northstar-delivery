@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-08",
+    "subject": "Diesel dips to $6.292; FMCSA crackdown seen outlasting DC",
+    "headline": "Diesel eases 6 cents as FMCSA enforcement push looks set to stick",
+    "script": "Diesel slips week over week, an industry CEO says the CDL crackdown will last, and a fraud report flags hacked communications in load theft.\n\nDiesel averaged $6.292 per gallon, down 6.0 cents on the week but still up 9.3 cents over four weeks. Expect fuel to keep driving rates and surcharges.",
+    "url": "briefs/2026-11-08.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Diesel eases 6 cents as FMCSA enforcement push looks set to stick",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Intermodal rates coming in hot this fall; mostly fuel driven",
+        "link": "https://www.freightwaves.com/news/intermodal-rates-coming-in-hot-this-fall-mostly-fuel-driven"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Big carriers keep FMCSA’s crackdown alive, Fuller says",
+        "link": "https://www.freightwaves.com/news/fuller-big-carriers-fmcsa-crackdown-permanent"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Compromised communications linked to 40% of stolen loads in Highway fraud report",
+        "link": "https://www.freightwaves.com/news/compromised-communications-linked-to-40-of-stolen-loads-in-highway-fraud-report"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: US foreign-trade zones push to fix USMCA tariff obstacles",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-us-foreign-trade-zones-push-to-fix-usmca-tariff-obstacles"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "CBP seizes 1,000-plus pounds of meth in produce truck at Texas border",
+        "link": "https://www.freightwaves.com/news/cbp-seizes-1000-plus-pounds-of-meth-in-produce-truck-at-texas-border"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "UP CEO’s rate threat adds wrinkle to Norfolk Southern merger process",
+        "link": "https://www.supplychaindive.com/news/up-ceos-rate-threat-adds-wrinkle-to-norfolk-southern-merger-process/874006/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "audit-kit",
+        "signal": "fmcsa_change"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-07",
     "subject": "Diesel dips to $6.292, fraud calls surge, FMCSA crackdown holds",
     "headline": "Diesel Eases 6 Cents as Freight Fraud Climbs and FMCSA Enforcement Stays Firm",
