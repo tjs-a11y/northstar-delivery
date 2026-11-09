@@ -1,5 +1,54 @@
 [
   {
+    "date": "2026-11-09",
+    "subject": "Freight demand up nearly 5%, rejections near 13%, diesel $6.292",
+    "headline": "Freight Demand Jumps Nearly 5% as Spot Rates Keep Climbing; Diesel Dips to $6.292",
+    "script": "Tighter truckload capacity, a small diesel dip, a lame-duck Congress clock and an $11.4 million theft lead today's brief.\n\nFreight demand rose nearly 5% week over week, tender rejections are near 13%, and spot rates are still climbing.",
+    "url": "briefs/2026-11-09.html",
+    "dieselPrice": {
+      "period": "2026-11-02",
+      "dollarsPerGallon": 6.292
+    },
+    "topHeadline": "Freight Demand Jumps Nearly 5% as Spot Rates Keep Climbing; Diesel Dips to $6.292",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Freight Demand Jumps 5% as Spot Rates Climb",
+        "link": "https://www.freightwaves.com/news/freight-demand-jumps-5-as-spot-rates-climb"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "What trucking can still get from a lame-duck Congress before Jan. 3",
+        "link": "https://www.freightwaves.com/news/what-trucking-can-still-get-from-a-lame-duck-congress-before-jan-3"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "$11.4 million in NVIDIA hardware vanishes during shipment from California to Texas",
+        "link": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Strike at Los Angeles-Long Beach port delayed as union contract talks continue",
+        "link": "https://www.freightwaves.com/news/strike-at-los-angeles-long-beach-port-delayed-as-union-contract-talks-continue"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Asia-U.S. West Coast ocean container spot rates up 343% since start of Iran war, says Xeneta",
+        "link": "https://www.freightwaves.com/news/asia-u-s-west-coast-ocean-container-spot-rates-up-343-since-start-of-iran-war-says-xeneta"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-08",
     "subject": "Diesel dips to $6.292; FMCSA crackdown seen outlasting DC",
     "headline": "Diesel eases 6 cents as FMCSA enforcement push looks set to stick",

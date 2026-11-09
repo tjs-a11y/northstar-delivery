@@ -1,0 +1,527 @@
+{
+  "brief": {
+    "subject": "Freight demand up nearly 5%, rejections near 13%, diesel $6.292",
+    "headline": "Freight Demand Jumps Nearly 5% as Spot Rates Keep Climbing; Diesel Dips to $6.292",
+    "dek": "Tighter truckload capacity, a small diesel dip, a lame-duck Congress clock and an $11.4 million theft lead today's brief.",
+    "lede": "Freight demand rose nearly 5% week over week, tender rejections are near 13%, and spot rates are still climbing.",
+    "sections": [
+      {
+        "heading": "Demand up, capacity tightening",
+        "bullets": [
+          "Nearly 5%: weekly freight demand gain, giving carriers more loads to choose from.",
+          "Near 13%: tender rejection rate, meaning more contract freight is spilling into the spot market.",
+          "Van contract and spot rates are both rising, a good moment to push for stronger linehaul offers.",
+          "Flatbed and LTL conditions were also tracked, with spot markets strengthening in some areas."
+        ],
+        "source_ids": [
+          "H5"
+        ]
+      },
+      {
+        "heading": "Diesel slips, still up for month",
+        "bullets": [
+          "$6.292 per gallon: U.S. average retail diesel for the week of 2026-11-02.",
+          "Down 6.0 cents (0.9%) from the prior week, a small break at the pump.",
+          "Up 9.3 cents over four weeks, so fuel surcharges still matter in rate talks."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Congress clock runs out Jan. 3",
+        "bullets": [
+          "Noon, Jan. 3, 2027: any trucking bill not passed by both chambers and sent to the president dies.",
+          "Election results shifted the political math, with Democrats winning control, changing odds for pending trucking legislation.",
+          "Unfinished bills would restart next Congress with new numbers and new committee chairs."
+        ],
+        "source_ids": [
+          "H9"
+        ]
+      },
+      {
+        "heading": "$11.4M load vanishes in transit",
+        "bullets": [
+          "$11.4 million: reported value of NVIDIA hardware that disappeared between California and Texas.",
+          "Oakland police are investigating it as grand theft; the carrier's identity remains unclear.",
+          "High-value electronics remain a top theft target, so vetting and load security deserve extra attention."
+        ],
+        "source_ids": [
+          "H8"
+        ]
+      },
+      {
+        "heading": "West Coast ports: strike delayed",
+        "bullets": [
+          "LA-Long Beach terminal watchmen and employers pushed back a strike deadline as contract talks continue.",
+          "A walkout could still disrupt drayage and container flow out of the nation's busiest port complex.",
+          "343%: rise in Asia-U.S. West Coast container spot rates since the Iran war began, per Xeneta."
+        ],
+        "source_ids": [
+          "H16",
+          "H6"
+        ]
+      }
+    ],
+    "seo_description": "Freight demand up nearly 5%, tender rejections near 13%, diesel at $6.292, lame-duck Congress deadline and an $11.4 million cargo theft."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-09T20:22:13.106Z",
+    "date": "2026-11-09",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "previous": {
+        "period": "2026-10-26",
+        "value": 6.352
+      },
+      "weeklyChangeCents": -6,
+      "weeklyChangePct": -0.9,
+      "fourWeekChangeCents": 9.3,
+      "formatted": {
+        "latest": "$6.292",
+        "weeklyChange": "down 6.0 cents",
+        "weeklyChangePct": "0.9%",
+        "fourWeekChange": "up 9.3 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        },
+        {
+          "period": "2026-09-07",
+          "value": 5.967
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Jacobs’ ‘playbook’ will target new industry, to be determined",
+        "link": "https://www.freightwaves.com/news/jacobs-playbook-will-target-new-industry-to-be-determined",
+        "published": "2026-11-09T19:34:18.000Z",
+        "snippet": "Billionaire entrepreneur Brad Jacobs, who launched LTL carrier XPO and its later spinoffs, is turning to what he calls his “playbook” once again to seek out opportunities in a different sector. The sector? We don’t know yet and he’s not saying. In an eventful Monday morning for Jacobs, the current founder and CEO of building […] The post Jacobs’ ‘playbook’ will target new industry, to be determine",
+        "categories": [
+          "Logistics & Brokerage",
+          "News",
+          "Supply Chains",
+          "Top Stories"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Cosco profit rockets 81% as ocean freight revenue climbs in Q3",
+        "link": "https://www.freightwaves.com/news/cosco-profit-rockets-81-as-ocean-freight-revenue-climbs-in-q3",
+        "published": "2026-11-09T19:06:59.000Z",
+        "snippet": "Stronger trans-Pacific trade helps lift Cosco nine-month earnings, while geopolitical disruption clouds the outlook. The post Cosco profit rockets 81% as ocean freight revenue climbs in Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Company Earnings",
+          "Maritime",
+          "Modes",
+          "News",
+          "China",
+          "container shipping",
+          "COSCO Shipping Holdings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI in Logistics: How to Get Real ROI, Not Just Hype",
+        "link": "https://www.freightwaves.com/news/ai-in-logistics-how-to-get-real-roi-not-just-hype",
+        "published": "2026-11-09T19:03:09.000Z",
+        "snippet": "The world of global trade is in constant flux, from shifting political landscapes to unexpected disruptions like drone attacks. In this dynamic environment, how can logistics professionals leverage AI to not just survive, but thrive? Adrian Smith, Co-Founder & CEO of Ripple, shares insights on navigating these challenges. Learn why bespoke AI solutions, tailored to […] The post AI in Logistics: Ho",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SELF-DRIVING Trucks Are HERE: Venti CEO Reveals US Fleet Operations",
+        "link": "https://www.freightwaves.com/news/self-driving-trucks-are-here-venti-ceo-reveals-us-fleet-operations",
+        "published": "2026-11-09T19:01:39.000Z",
+        "snippet": "Venti’s CEO Heidi Wyle shares how their autonomous truck fleets are already running 24/7 in US intermodal yards. These self-driving solutions are recreating supply chain logistics, exceeding human productivity in controlled environments. Is this the future of freight movement? Venti Technologies is not waiting for over-the-road autonomy to arrive. The MIT-founded software company told FreightWaves",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Freight Demand Jumps 5% as Spot Rates Climb",
+        "link": "https://www.freightwaves.com/news/freight-demand-jumps-5-as-spot-rates-climb",
+        "published": "2026-11-09T19:00:13.000Z",
+        "snippet": "Freight demand is up nearly 5% week over week, and spot rates are still climbing. In this SONAR update, we break down tender rejections near 13%, rising van contract and spot rates, flatbed conditions and new LTL National Insights data. You’ll also see where spot market conditions are strengthening, how LTL cost per hundredweight is […] The post Freight Demand Jumps 5% as Spot Rates Climb appeared",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Asia-U.S. West Coast ocean container spot rates up 343% since start of Iran war, says Xeneta",
+        "link": "https://www.freightwaves.com/news/asia-u-s-west-coast-ocean-container-spot-rates-up-343-since-start-of-iran-war-says-xeneta",
+        "published": "2026-11-09T18:35:00.000Z",
+        "snippet": "New ships and a continued return to Red Sea routes could ease shipping costs, but geopolitical disruption and poor reliability threaten the outlook. The post Asia-U.S. West Coast ocean container spot rates up 343% since start of Iran war, says Xeneta appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "congestion",
+          "container shipping",
+          "Geopolitics"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL calls out air cargo contribution to 16% Q3 profit gain",
+        "link": "https://www.freightwaves.com/news/dhl-calls-out-air-cargo-contribution-to-16-q3-profit-gain",
+        "published": "2026-11-09T18:29:01.000Z",
+        "snippet": "Third-quarter results continued DHL Group’s profit momentum. The post DHL calls out air cargo contribution to 16% Q3 profit gain appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Company Earnings",
+          "AI",
+          "air cargo",
+          "DHL",
+          "earnings"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "$11.4 million in NVIDIA hardware vanishes during shipment from California to Texas",
+        "link": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas",
+        "published": "2026-11-09T18:06:35.000Z",
+        "snippet": "Oakland police confirmed a grand theft investigation involving a shipment reportedly worth $11.4 million. The carrier's identity and circumstances surrounding the disappearance remain unclear. The post $11.4 million in NVIDIA hardware vanishes during shipment from California to Texas appeared first on FreightWaves.",
+        "categories": [
+          "Freight Fraud",
+          "Top Stories",
+          "Truckload",
+          "California",
+          "cargo theft",
+          "investigation",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "What trucking can still get from a lame-duck Congress before Jan. 3",
+        "link": "https://www.freightwaves.com/news/what-trucking-can-still-get-from-a-lame-duck-congress-before-jan-3",
+        "published": "2026-11-09T17:48:45.000Z",
+        "snippet": "Every bill in Congress has an expiration date. For the 119th Congress, it’s noon on Jan. 3, 2027. Anything that hasn’t passed both chambers and reached the president by then dies, and the next Congress starts over with new bill numbers, new committee chairs and new math. After Tuesday, that math changed. Democrats won control […] The post What trucking can still get from a lame-duck Congress befor",
+        "categories": [
+          "Compliance & Regulation",
+          "Legal Issues",
+          "Playbook: Compliance & Safety"
+        ],
+        "creator": "Rob Carpenter"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI scales the work. Experts make it count.",
+        "link": "https://www.freightwaves.com/news/ai-scales-the-work-experts-make-it-count",
+        "published": "2026-11-09T17:14:01.000Z",
+        "snippet": "In its latest report, Designing the Human + AI Enterprise: A Transformation Agenda for Supply Chain-intensive Industries, Everest Group examines why AI adoption is outpacing operational transformation, and what it takes to close the gap. The report explores how organizations can redesign work, align human expertise with AI, and turn technology investments into sustained business […] The post AI sc",
+        "categories": [
+          "News",
+          "White Papers",
+          "Lean Solutions Group"
+        ],
+        "creator": "Sponsor"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Bangkok airport cargo congestion frustrates freight forwarders",
+        "link": "https://www.freightwaves.com/news/bangkok-airport-cargo-congestion-frustrates-freight-forwarders",
+        "published": "2026-11-09T16:08:23.000Z",
+        "snippet": "The air logistics system at Bangkok airport is sputtering because of an IT failure at several warehouses. The post Bangkok airport cargo congestion frustrates freight forwarders appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Supply Chains",
+          "air cargo",
+          "airport congestion",
+          "Bangkok",
+          "Thailand"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H12",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Zipline raises $1.5B, plans US drone manufacturing expansion",
+        "link": "https://www.supplychaindive.com/news/zipline-raises-15b-plans-us-drone-manufacturing-expansion/874009/",
+        "published": "2026-11-09T16:01:00.000Z",
+        "snippet": "The startup is building out its drone delivery nationwide network and recently inked deals with Walmart and Uber to launch additional sites.",
+        "categories": [],
+        "creator": "Sara Samora"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SONAR National Insights Expands With Flatbed and LTL Data",
+        "link": "https://www.freightwaves.com/news/sonar-national-insights-expands-with-flatbed-and-ltl-data",
+        "published": "2026-11-09T15:48:27.000Z",
+        "snippet": "SONAR's Truckload National Insights dashboard now runs on blended datasets and adds new Flatbed and LTL tabs with rates, rejections, volumes and market movers. The post SONAR National Insights Expands With Flatbed and LTL Data appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "flatbed",
+          "Freight",
+          "freight market intelligence",
+          "logistics",
+          "LTL",
+          "SONAR",
+          "sonar data"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Chili’s supply chain improvements are helping menu consistency",
+        "link": "https://www.supplychaindive.com/news/how-chilis-supply-chain-improvements-are-helping-menu-consistency/874109/",
+        "published": "2026-11-09T15:42:00.000Z",
+        "snippet": "CSCO James Butler has reordered Chili’s supply chain priorities to focus on the customer experience, resulting in sales growth for the restaurant chain and its suppliers.",
+        "categories": [],
+        "creator": "Shefali Kapadia"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Latam Airlines dusts off Covid playbook to move cargo in passenger cabin",
+        "link": "https://www.freightwaves.com/news/latam-airlines-dusts-off-covid-playbook-to-move-cargo-in-passenger-cabin",
+        "published": "2026-11-09T14:15:25.000Z",
+        "snippet": "In an unusual move, Latam Airlines deployed a passenger jet for an all-cargo mission. The post Latam Airlines dusts off Covid playbook to move cargo in passenger cabin appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "air cargo",
+          "humanitarian aid",
+          "LATAM Airlines",
+          "passenger aircraft"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Strike at Los Angeles-Long Beach port delayed as union contract talks continue",
+        "link": "https://www.freightwaves.com/news/strike-at-los-angeles-long-beach-port-delayed-as-union-contract-talks-continue",
+        "published": "2026-11-09T13:07:00.000Z",
+        "snippet": "Los Angeles and Long Beach port terminal watchmen, employers push strike deadline forward as bargaining continues The post Strike at Los Angeles-Long Beach port delayed as union contract talks continue appeared first on FreightWaves.",
+        "categories": [
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "Disruption",
+          "International Longshore and Warehouse Union",
+          "labor"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UP CEO’s rate threat adds wrinkle to Norfolk Southern merger process",
+        "link": "https://www.supplychaindive.com/news/up-ceos-rate-threat-adds-wrinkle-to-norfolk-southern-merger-process/874006/",
+        "published": "2026-11-06T19:49:00.000Z",
+        "snippet": "The railroad said Jim Vena’s remarks that he would raise rates on shippers who oppose the merger was an “offhand comment.”",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/",
+        "published": "2026-11-06T15:54:00.000Z",
+        "snippet": "The autonomous trucking company is working with Roush to upfit trucks, and despite the delay, still expects to have more than 1,000 trucks ready by the end of 2027.",
+        "categories": [],
+        "creator": "Haley Cawthon"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Lear to open automated factory as ‘blueprint’ for global network",
+        "link": "https://www.supplychaindive.com/news/lear-to-open-automated-factory-as-blueprint-for-global-network/873888/",
+        "published": "2026-11-06T14:43:00.000Z",
+        "snippet": "The Michigan facility is expected to go live next year and be equipped with a host of automation tools, including two separate automated storage and retrieval systems.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apple boosts purchase commitments by $33B amid memory crunch",
+        "link": "https://www.supplychaindive.com/news/apple-boosts-purchase-commitments-by-33b-amid-memory-crunch/873936/",
+        "published": "2026-11-06T13:51:00.000Z",
+        "snippet": "The iPhone maker mitigated some of the higher memory costs in Q4 with price increases and carry-in inventory from the previous quarter.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Tilray Brands targets $20M in cost savings after craft brewery closures",
+        "link": "https://www.supplychaindive.com/news/tilray-brands-targets-20m-in-cost-savings-after-craft-brewery-closures/873848/",
+        "published": "2026-11-06T12:15:00.000Z",
+        "snippet": "The Shock Top owner has reduced its SKU count and closed four facilities as it adapts to beverage industry shifts.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Unilever ramps up pricing to offset higher commodity costs",
+        "link": "https://www.supplychaindive.com/news/unilever-ramps-up-pricing-to-offset-higher-commodity-costs/873793/",
+        "published": "2026-11-05T20:09:00.000Z",
+        "snippet": "Improved visibility over supply of key inputs gave the CPG clarity to implement hikes after keeping prices flat during the first half of the year.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Schneider National says rail partner shift offers network boost",
+        "link": "https://www.supplychaindive.com/news/schneider-national-says-rail-partner-shift-offers-network-boost/873847/",
+        "published": "2026-11-05T15:08:00.000Z",
+        "snippet": "CEO Jim Filter said the company brings 35 years of intermodal service experience to its new partnership with Norfolk Southern.",
+        "categories": [],
+        "creator": "Larry Avila"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Urban Outfitters seeks material cost visibility from expanded technology suite",
+        "link": "https://www.supplychaindive.com/news/urban-outfitters-seeks-material-cost-visibility-from-expanded-technology-su/873642/",
+        "published": "2026-11-05T15:00:00.000Z",
+        "snippet": "The parent of several retail brands is tacking on additional features to its current production lifecycle management platform to improve supply chain efficiency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
