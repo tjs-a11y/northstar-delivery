@@ -1,0 +1,553 @@
+{
+  "brief": {
+    "subject": "Diesel drops 16.5 cents to $6.127; fuel-card fraud warning",
+    "headline": "Diesel falls to $6.127 as fuel-card fraud and roadside enforcement hit carriers",
+    "dek": "Diesel eases, a $760K fuel-card scam shows identity-theft risk, inspectors sideline 128 drivers, and import volumes are set to cool.",
+    "lede": "The U.S. average diesel price fell 16.5 cents this week to $6.127 per gallon, a welcome break for carriers paying at the pump.",
+    "sections": [
+      {
+        "heading": "Diesel Gives Back 16.5 Cents",
+        "bullets": [
+          "$6.127 per gallon is the U.S. average retail diesel price for the week of 2026-11-09.",
+          "Down 16.5 cents (2.6%) from last week, easing per-mile fuel costs on every load.",
+          "Over four weeks, diesel is down 5.2 cents, so most of the relief came in one week."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Stolen Identity, $760K in Fuel",
+        "bullets": [
+          "$760,000+ in unpaid fuel charges stem from a scheme that allegedly impersonated a Michigan trucking company.",
+          "Eight fuel cards were used for purchases across 23 states, according to a federal indictment.",
+          "Two Georgia men face charges, a reminder for small carriers to watch for anyone opening accounts in their name."
+        ],
+        "source_ids": [
+          "H1"
+        ]
+      },
+      {
+        "heading": "Inspection Blitz Reaches Maryland, DC",
+        "bullets": [
+          "1,000+ truck inspections were run by federal and state teams in Maryland and Washington, D.C.",
+          "128 drivers were sidelined, meaning lost revenue days for any carrier caught unprepared.",
+          "Separate operations in five other states turned up hundreds of violations, so keep logs and equipment inspection-ready."
+        ],
+        "source_ids": [
+          "H17"
+        ]
+      },
+      {
+        "heading": "Imports Cooling After September Peak",
+        "bullets": [
+          "Port imports peaked in September and should slow through year-end, the NRF says, signaling softer drayage and import freight.",
+          "Retailers still expect imports to stay elevated through 2026 compared with typical levels.",
+          "U.S. and China extended their tariff truce until Jan. 10, 2027, keeping trade rules steady through the holidays."
+        ],
+        "source_ids": [
+          "H9",
+          "H21"
+        ]
+      },
+      {
+        "heading": "Driverless Trucks: Costly Now, Closer Later",
+        "bullets": [
+          "$4 a mile is the 2026 cost of autonomous trucks, per a Kearney and MIT Mobility Initiative report.",
+          "That report sees cost parity with human-driven trucks around 2028, a long-term competitive factor for small carriers.",
+          "Aurora's truck production schedule slipped on supply and quality issues, though it still targets 1,000+ trucks by end of 2027."
+        ],
+        "source_ids": [
+          "H2",
+          "H23"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 16.5 cents to $6.127, a $760K fuel-card fraud case, 128 drivers sidelined in MD/DC, and imports set to slow after September's peak."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-10T17:26:03.813Z",
+    "date": "2026-11-10",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "previous": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "weeklyChangeCents": -16.5,
+      "weeklyChangePct": -2.6,
+      "fourWeekChangeCents": -5.2,
+      "formatted": {
+        "latest": "$6.127",
+        "weeklyChange": "down 16.5 cents",
+        "weeklyChangePct": "2.6%",
+        "fourWeekChange": "down 5.2 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "$760K fuel-card fraud scheme tied to impersonated Michigan trucking company",
+        "link": "https://www.freightwaves.com/news/760k-fuel-card-fraud-scheme-tied-to-impersonated-michigan-trucking-company",
+        "published": "2026-11-10T16:59:33.000Z",
+        "snippet": "Eight fuel cards, purchases across 23 states and more than $760,000 in unpaid charges. A federal indictment details how two Georgia men allegedly exploited a Michigan trucking company's identity. The post $760K fuel-card fraud scheme tied to impersonated Michigan trucking company appeared first on FreightWaves.",
+        "categories": [
+          "Freight Fraud",
+          "News",
+          "Top Stories",
+          "Truckload",
+          "fuel card fraud",
+          "Theft",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Kearney, MIT put US driverless truck cost parity at 2028",
+        "link": "https://www.freightwaves.com/news/kearney-mit-driverless-truck-cost-parity-2028",
+        "published": "2026-11-10T16:11:02.000Z",
+        "snippet": "A Kearney and MIT Mobility Initiative report says autonomous trucks cost $4 a mile in 2026 but match the cost of human-driven trucks in the US around 2028. The post Kearney, MIT put US driverless truck cost parity at 2028 appeared first on FreightWaves.",
+        "categories": [
+          "Drivers & Workforce",
+          "Equipment & Tech",
+          "News",
+          "Truckload",
+          "autonomous trucking",
+          "cost per mile",
+          "driverless trucking",
+          "driverless trucks"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ACT Expo 2027 agenda leads with diesel and fleet costs",
+        "link": "https://www.freightwaves.com/news/act-expo-2027-agenda-diesel-costs",
+        "published": "2026-11-10T15:59:17.000Z",
+        "snippet": "ACT Expo’s founder says the agenda “isn’t just a sustainability conversation anymore,” as the clean transportation show puts diesel efficiency first for May 2027 The post ACT Expo 2027 agenda leads with diesel and fleet costs appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Fuel & Energy",
+          "News",
+          "ACT Expo",
+          "ACT Expo 2027",
+          "Alternative fuels",
+          "Energy Information Administration",
+          "Erik Neandross"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Lineage sees cold storage inventories stabilize after capacity reductions",
+        "link": "https://www.freightwaves.com/news/lineage-sees-cold-storage-inventories-stabilize-after-capacity-reductions",
+        "published": "2026-11-10T15:47:17.000Z",
+        "snippet": "Temperature-controlled warehouse operator Lineage reported on its third-quarter call Tuesday that customer inventories have stabilized at lower levels and that it continues shuttering underutilized facilities to tighten supply and reduce debt leverage. The post Lineage sees cold storage inventories stabilize after capacity reductions appeared first on FreightWaves.",
+        "categories": [
+          "Food & Beverage",
+          "Warehousing",
+          "Americold",
+          "cold storage",
+          "company earnings",
+          "Lineage",
+          "temperature-controlled warehouses",
+          "warehousing"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ASICS warehouse drones quickly find misplaced inventory",
+        "link": "https://www.freightwaves.com/news/asics-warehouse-drones-quickly-find-misplaced-inventory",
+        "published": "2026-11-10T15:46:57.000Z",
+        "snippet": "ASICS is saving time and money using drones to check for misplaced inventory. The post ASICS warehouse drones quickly find misplaced inventory appeared first on FreightWaves.",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Technology & Startups",
+          "drone inspection",
+          "e-commerce",
+          "inventory management",
+          "warehouse"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H6",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Canada Goose will revisit pricing to blunt tariffs next year, CFO says",
+        "link": "https://www.supplychaindive.com/news/canada-goose-will-revisit-pricing-to-blunt-tariffs-next-year-cfo-says/874196/",
+        "published": "2026-11-10T15:11:00.000Z",
+        "snippet": "The Toronto-based luxury apparel company worked hard to get its products into the U.S. before new import tariffs became effective in August.",
+        "categories": [],
+        "creator": "Maura Webber Sadovi"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Where Trucking Capacity Sits Right Now, And What The Fleet-Size Split Might Be Signaling",
+        "link": "https://www.freightwaves.com/news/where-trucking-capacity-sits-right-now-and-what-the-fleet-size-split-might-be-signaling",
+        "published": "2026-11-10T15:05:00.000Z",
+        "snippet": "How much trucking capacity is on the road right now depends almost entirely on which carriers you are counting, because the national fleet is really several different markets stacked together, the owner-operators running a truck or two, the mid-sized fleets, and the largest carriers, and each of those groups is in a different place heading […] The post Where Trucking Capacity Sits Right Now, And W",
+        "categories": [
+          "Analysis & Insights",
+          "Equipment & Tech",
+          "Playbook: Growth & Scaling",
+          "Truckload"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apparel shipper expands US fulfillment operations to skirt de minimis’ end",
+        "link": "https://www.supplychaindive.com/news/apparel-shipper-expands-us-fulfillment-operations-to-skirt-de-minimis-end/874073/",
+        "published": "2026-11-10T14:54:00.000Z",
+        "snippet": "Australia-based OTAA, which makes ties and cufflinks, is fulfilling U.S. orders from a facility in Longview, Texas, through a partnership with Cart.com.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Retailers forecast U.S. imports to stay elevated through 2026 after breakout peak season",
+        "link": "https://www.freightwaves.com/news/retailers-forecast-u-s-imports-to-stay-elevated-through-2026-after-breakout-peak-season",
+        "published": "2026-11-10T14:36:47.000Z",
+        "snippet": "U.S. port imports are expected to slow through year-end after peaking in September, NRF says. The post Retailers forecast U.S. imports to stay elevated through 2026 after breakout peak season appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "forecast",
+          "imports"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H10",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon, alternative carriers gained parcel volume in 2026’s first half",
+        "link": "https://www.supplychaindive.com/news/amazon-alternative-carriers-gained-parcel-volume-in-2026s-first-half/873932/",
+        "published": "2026-11-10T14:27:00.000Z",
+        "snippet": "The e-commerce giant has continued to grab market share as it relies less on UPS for shipping and expands its delivery reach, per ShipMatrix.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Wing to invest $125M in drone manufacturing plant",
+        "link": "https://www.freightwaves.com/news/wing-to-invest-125m-in-drone-manufacturing-plant",
+        "published": "2026-11-10T14:06:41.000Z",
+        "snippet": "Drone delivery company Wing plans to build an aircraft factory to support demand from Walmart and other customers. The post Wing to invest $125M in drone manufacturing plant appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Parcel & Last Mile",
+          "bvlos",
+          "drone delivery",
+          "Walmart",
+          "Wing",
+          "Zipline"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SONAR launches MCP, bringing freight market intelligence inside your AI assistant",
+        "link": "https://www.freightwaves.com/news/sonar-launches-mcp-bringing-freight-market-intelligence-inside-your-ai-assistant",
+        "published": "2026-11-10T13:28:00.000Z",
+        "snippet": "SONAR MCP connects compatible AI assistants like Claude and Copilot to SONAR data. The post SONAR launches MCP, bringing freight market intelligence inside your AI assistant appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "AI",
+          "logistics",
+          "SONAR",
+          "sonar data",
+          "SONAR MCP",
+          "Technology",
+          "Trucking"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Deere to end production at 2 Iowa plants to align with demand",
+        "link": "https://www.supplychaindive.com/news/deere-to-end-production-at-2-iowa-plants-to-align-with-demand/874059/",
+        "published": "2026-11-10T12:01:00.000Z",
+        "snippet": "The heavy equipment maker also plans to shift some production from factories in Illinois and Louisiana.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "That RICO suit vs. Robinson, TQL? Jury selection starts in ’28",
+        "link": "https://www.freightwaves.com/news/that-rico-suit-vs-robinson-tql-jury-selection-starts-in-28",
+        "published": "2026-11-10T12:00:00.000Z",
+        "snippet": "As the two sides in the RICO case against brokerage giants C.H. Robinson (NASDAQ: CHRW) and TQL begin to make their case in legal filings, a sobering reality about the litigation is that jury selection is not likely for a mere 17 months. Last week brought a flurry of submissions in the case filed in […] The post That RICO suit vs. Robinson, TQL? Jury selection starts in ’28 appeared first on Freig",
+        "categories": [
+          "Legal Issues",
+          "Logistics & Brokerage",
+          "News",
+          "Top Stories",
+          "American Trucking Associations",
+          "C.H. Robinson",
+          "Christenson transportation",
+          "E.O.S."
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Radiant Logistics touts enhanced credit facility, eyes larger M&A",
+        "link": "https://www.freightwaves.com/news/radiant-logistics-touts-expanded-credit-facility-eyes-larger-ma",
+        "published": "2026-11-10T01:40:46.000Z",
+        "snippet": "Shares of Radiant Logistics jumped 12% in after-hours trading on Monday following the third-party logistics provider's better-than-expected quarterly report. The post Radiant Logistics touts enhanced credit facility, eyes larger M&A appeared first on FreightWaves.",
+        "categories": [
+          "Logistics & Brokerage",
+          "3PLs",
+          "company earnings",
+          "Radiant Logistics"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Forward Air pauses sale of intermodal unit",
+        "link": "https://www.freightwaves.com/news/forward-air-pauses-sale-of-intermodal-unit",
+        "published": "2026-11-09T23:52:42.000Z",
+        "snippet": "Forward Air revealed it has halted a planned sale of its intermodal segment; however, with operations returning to target performance, the company remains open to offers that align with its fair market value. The post Forward Air pauses sale of intermodal unit appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "LTL",
+          "company earnings",
+          "Forward Air",
+          "Forward Air merger",
+          "forward air-omni merger",
+          "LTL carriers",
+          "LTL tonnage"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Truck enforcements widen to Maryland, DC as 128 drivers sidelined",
+        "link": "https://www.freightwaves.com/news/truck-enforcements-widen-to-maryland-dc-as-128-drivers-sidelined",
+        "published": "2026-11-09T22:40:06.000Z",
+        "snippet": "Federal and state inspectors conducted more than 1,000 truck inspections in Maryland and Washington, D.C., while separate enforcement operations uncovered hundreds of violations in five other states. The post Truck enforcements widen to Maryland, DC as 128 drivers sidelined appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Truckload",
+          "CDL",
+          "CDL enforcement",
+          "FMCSA",
+          "operation highway shield",
+          "Out of service violations",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H18",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Jacobs’ ‘playbook’ will target new industry, to be determined",
+        "link": "https://www.freightwaves.com/news/jacobs-playbook-will-target-new-industry-to-be-determined",
+        "published": "2026-11-09T19:34:18.000Z",
+        "snippet": "Billionaire entrepreneur Brad Jacobs, who launched LTL carrier XPO and its later spinoffs, is turning to what he calls his “playbook” once again to seek out opportunities in a different sector. The sector? We don’t know yet and he’s not saying. In an eventful Monday morning for Jacobs, the current founder and CEO of building […] The post Jacobs’ ‘playbook’ will target new industry, to be determine",
+        "categories": [
+          "Logistics & Brokerage",
+          "News",
+          "Supply Chains",
+          "Top Stories"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Zipline raises $1.5B, plans US drone manufacturing expansion",
+        "link": "https://www.supplychaindive.com/news/zipline-raises-15b-plans-us-drone-manufacturing-expansion/874009/",
+        "published": "2026-11-09T16:01:00.000Z",
+        "snippet": "The startup is building out its drone delivery nationwide network and recently inked deals with Walmart and Uber to launch additional sites.",
+        "categories": [],
+        "creator": "Sara Samora"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Chili’s supply chain improvements are helping menu consistency",
+        "link": "https://www.supplychaindive.com/news/how-chilis-supply-chain-improvements-are-helping-menu-consistency/874109/",
+        "published": "2026-11-09T15:42:00.000Z",
+        "snippet": "CSCO James Butler has reordered Chili’s supply chain priorities to focus on the customer experience, resulting in sales growth for the restaurant chain and its suppliers.",
+        "categories": [],
+        "creator": "Shefali Kapadia"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "US, China officially extend trade war truce by 2 months",
+        "link": "https://www.supplychaindive.com/news/us-china-officially-extend-trade-war-truce-by-2-months/874107/",
+        "published": "2026-11-09T14:00:00.000Z",
+        "snippet": "The two countries said that they would maintain tariff reductions and a pause on other trade actions until Jan. 10, 2027, cementing a pact first announced in September.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UP CEO’s rate threat adds wrinkle to Norfolk Southern merger process",
+        "link": "https://www.supplychaindive.com/news/up-ceos-rate-threat-adds-wrinkle-to-norfolk-southern-merger-process/874006/",
+        "published": "2026-11-06T19:49:00.000Z",
+        "snippet": "The railroad said Jim Vena’s remark about raising rates on shippers that oppose the merger was an “offhand comment.”",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/",
+        "published": "2026-11-06T15:54:00.000Z",
+        "snippet": "The autonomous trucking company is working with Roush to upfit trucks, and despite the delay, still expects to have more than 1,000 trucks ready by the end of 2027.",
+        "categories": [],
+        "creator": "Haley Cawthon"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Lear to open automated factory as ‘blueprint’ for global network",
+        "link": "https://www.supplychaindive.com/news/lear-to-open-automated-factory-as-blueprint-for-global-network/873888/",
+        "published": "2026-11-06T14:43:00.000Z",
+        "snippet": "The Michigan facility is expected to go live next year and be equipped with a host of automation tools, including two separate automated storage and retrieval systems.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

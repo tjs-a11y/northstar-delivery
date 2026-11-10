@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-10",
+    "subject": "Diesel drops 16.5 cents to $6.127; fuel-card fraud warning",
+    "headline": "Diesel falls to $6.127 as fuel-card fraud and roadside enforcement hit carriers",
+    "script": "Diesel eases, a $760K fuel-card scam shows identity-theft risk, inspectors sideline 128 drivers, and import volumes are set to cool.\n\nThe U.S. average diesel price fell 16.5 cents this week to $6.127 per gallon, a welcome break for carriers paying at the pump.",
+    "url": "briefs/2026-11-10.html",
+    "dieselPrice": {
+      "period": "2026-11-09",
+      "dollarsPerGallon": 6.127
+    },
+    "topHeadline": "Diesel falls to $6.127 as fuel-card fraud and roadside enforcement hit carriers",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "$760K fuel-card fraud scheme tied to impersonated Michigan trucking company",
+        "link": "https://www.freightwaves.com/news/760k-fuel-card-fraud-scheme-tied-to-impersonated-michigan-trucking-company"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Truck enforcements widen to Maryland, DC as 128 drivers sidelined",
+        "link": "https://www.freightwaves.com/news/truck-enforcements-widen-to-maryland-dc-as-128-drivers-sidelined"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Retailers forecast U.S. imports to stay elevated through 2026 after breakout peak season",
+        "link": "https://www.freightwaves.com/news/retailers-forecast-u-s-imports-to-stay-elevated-through-2026-after-breakout-peak-season"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "US, China officially extend trade war truce by 2 months",
+        "link": "https://www.supplychaindive.com/news/us-china-officially-extend-trade-war-truce-by-2-months/874107/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Kearney, MIT put US driverless truck cost parity at 2028",
+        "link": "https://www.freightwaves.com/news/kearney-mit-driverless-truck-cost-parity-2028"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Aurora’s truck production schedule delayed by supply, quality issues",
+        "link": "https://www.supplychaindive.com/news/auroras-truck-production-schedule-delayed-by-supply-quality-issues/873995/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-09",
     "subject": "Freight demand up nearly 5%, rejections near 13%, diesel $6.292",
     "headline": "Freight Demand Jumps Nearly 5% as Spot Rates Keep Climbing; Diesel Dips to $6.292",
