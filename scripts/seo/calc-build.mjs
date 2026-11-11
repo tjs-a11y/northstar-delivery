@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ORIGIN = 'https://northstardeliveryservice.com';
+const BRAND = 'NorthStar Freight Solutions / NorthStar Delivery Solutions';
 const QUOTE = 'https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions';
 const CSS = `${ORIGIN}/tools/calc.css`;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -17,8 +18,8 @@ const HEAD = (s) => `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${esc(s.tool_title)} | NorthStar Freight</title>
-<meta name="description" content="${esc(s.meta)}">
+<title>${esc(s.tool_title)} | ${BRAND}</title>
+<meta name="description" content="${esc(s.meta)} — ${BRAND}">\n<meta property="og:site_name" content="${BRAND}">
 <link rel="canonical" href="${ORIGIN}/tools/${s.slug}/">
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@ const HEAD = (s) => `<!DOCTYPE html>
 </head>
 <body>
 <header><nav class="wrap">
-  <a class="logo" href="${ORIGIN}/"><span class="mark">N</span>NorthStar Freight</a>
+  <a class="logo" href="${ORIGIN}/"><span class="mark">N</span>${BRAND}</a>
   <a href="${QUOTE}" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
 </nav></header>`;
 

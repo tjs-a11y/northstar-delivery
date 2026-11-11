@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ORIGIN = 'https://northstardeliveryservice.com';
+const BRAND = 'NorthStar Freight Solutions / NorthStar Delivery Solutions';
 const QUOTE = 'https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -337,11 +338,11 @@ function shell({ title, desc, path, body, jsonld }) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title}</title>
-<meta name="description" content="${esc(desc)}">
+<title>${title.replace(/\s*\|\s*NorthStar.*$/i, "")} | ${BRAND}</title>
+<meta name="description" content="${esc(desc)} — ${BRAND}">\n<meta property="og:site_name" content="${BRAND}">
 <link rel="canonical" href="${ORIGIN}/${path}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="${esc(title)}">
+<meta property="og:title" content="${esc(title.replace(/\s*\|\s*NorthStar.*$/i, ""))} | ${BRAND}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${ORIGIN}/${path}">
 <meta name="twitter:card" content="summary">
@@ -356,7 +357,7 @@ function shell({ title, desc, path, body, jsonld }) {
   <nav class="wrap">
     <a href="../index.html" class="logo">
       <span class="mark">N</span>
-      <span>NorthStar Delivery<span class="sub">Solutions LLC · Freight Brokerage</span></span>
+      <span>${BRAND}<span class="sub">Freight Brokerage</span></span>
     </a>
     <ul>
       <li><a href="index.html" class="active">Ship Freight</a></li>
@@ -377,7 +378,7 @@ ${body}
       <div>
         <div class="logo" style="margin-bottom:10px;">
           <span class="mark">N</span>
-          <span>NorthStar Delivery<span class="sub">Solutions LLC</span></span>
+          <span>${BRAND}<span class="sub">Freight Brokerage &amp; Tools</span></span>
         </div>
         <p class="blurb">Licensed freight brokerage covering dry van, reefer, flatbed, specialized, and bulk equipment nationwide. MC 1819020 · USDOT 4572562.</p>
       </div>
