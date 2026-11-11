@@ -41,10 +41,15 @@ function withBrandMetadata(html, relativePath) {
   const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const fallback = path.basename(relativePath, '.html').replace(/[-_]/g, ' ');
   const originalTitle = titleMatch ? titleMatch[1].trim() : fallback;
-  const cleanTitle = originalTitle
+  let cleanTitle = originalTitle.trim();
+  const brandSuffix = ' | ' + BRAND;
+  while (cleanTitle.endsWith(brandSuffix)) {
+    cleanTitle = cleanTitle.slice(0, -brandSuffix.length).trim();
+  }
+  cleanTitle = cleanTitle
     .replace(/\s*\|\s*North[Ss]tar(?:\s+(?:Freight|Delivery)(?:\s+Solutions)?)?$/i, '')
     .trim();
-  const title = cleanTitle + ' | ' + BRAND;
+  const title = cleanTitle.includes(BRAND) ? cleanTitle : cleanTitle + brandSuffix;
   if (titleMatch) html = html.replace(titleMatch[0], '<title>' + title + '</title>');
   else html = html.replace(/<\/head>/i, '<title>' + title + '</title>\n</head>');
 
