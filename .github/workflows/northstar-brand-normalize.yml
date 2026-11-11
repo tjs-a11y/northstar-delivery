@@ -1,5 +1,5 @@
 name: NorthStar sitewide brand consistency
-# Re-run the idempotent sitemap-wide brand pass after its title de-duplication fix.
+# Re-run the idempotent sitemap-wide brand pass after its metadata entity fix.
 
 on:
   push:
