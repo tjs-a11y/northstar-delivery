@@ -5,6 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT=join(dirname(fileURLToPath(import.meta.url)),'..','..');
 const ORIGIN='https://northstardeliveryservice.com';
+const BRAND='NorthStar Freight Solutions / NorthStar Delivery Solutions';
 const QUOTE='https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions';
 const DETAILS={
 'Refrigerated Freight':['Temperature-controlled freight needs a shipper-defined set point, suitable reefer equipment, a loading plan and appointment coordination.',['Commodity and handling restrictions','Required temperature range and any temperature-recording requirements','Pallet count, dimensions, weight and stackability','Pickup and delivery appointments','Washout, food-grade, seal or pre-cooling requirements'], 'Confirm product compatibility, temperature settings and any food or pharmaceutical handling requirements before dispatch.'],
@@ -702,8 +703,8 @@ export function renderPage(r,related){
  if(!valid(r.slug)) throw Error('Invalid slug '+r.slug);
  const d=DETAILS[r.service_category]; if(!d) throw Error('Unsupported category '+r.service_category);
  const g=PAGE_GUIDES[r.slug];
- const title=esc(r.meta_title||r.target_keyword+' | NorthStar Delivery');
- const desc=esc(r.meta_description||'Discuss '+r.target_keyword+' with NorthStar Delivery.');
+ const title=esc((r.meta_title||r.target_keyword+' | '+BRAND).replaceAll('NorthStar Delivery',BRAND));
+ const desc=esc((r.meta_description||'Discuss '+r.target_keyword+' with '+BRAND+'.').replaceAll('NorthStar Delivery',BRAND));
  const same=related.filter(x=>x.slug!==r.slug);
  const links=[...same.filter(x=>x.service_category===r.service_category),...same.filter(x=>x.service_category!==r.service_category)].slice(0,5);
  const schema=JSON.stringify({'@context':'https://schema.org','@type':'Service',name:r.target_keyword,serviceType:r.service_category,description:r.meta_description,provider:{'@type':'Organization',name:'NorthStar Delivery Solutions LLC',url:ORIGIN},areaServed:{'@type':'Country',name:'United States'},url:url(r.slug)}).replaceAll('<','\\\\u003c');
@@ -716,7 +717,7 @@ export function renderPage(r,related){
 export function renderHub(rows){
  const groups={}; rows.forEach(r=>(groups[r.service_category]??=[]).push(r));
  const sections=Object.entries(groups).map(([k,items])=>'<section><h2>'+esc(k)+'</h2><div class="grid">'+items.map(r=>'<a href="'+url(r.slug)+'"><strong>'+esc(r.target_keyword)+'</strong><br><span>'+esc(r.meta_description)+'</span></a>').join('')+'</div></section>').join('');
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Freight Services & Equipment | NorthStar</title><meta name="description" content="Explore NorthStar freight brokerage services by equipment and shipment type. Review requirements and request a quote."><link rel="canonical" href="'+ORIGIN+'/freight-services/"><meta name="robots" content="index,follow"><style>body{margin:0;background:#0e151c;color:#f4f1e9;font:16px/1.6 system-ui,sans-serif}.wrap{max-width:1040px;margin:auto;padding:32px 24px}a{color:#f2a93b}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid a{background:#16212b;border:1px solid #2c4257;padding:16px;text-decoration:none;color:#f4f1e9}.grid span{font-size:13px;color:#c9c7be}section{margin:30px 0}@media(max-width:620px){.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap"><p><a href="'+ORIGIN+'/">NorthStar Delivery Solutions</a> / Freight Services</p><h1>Freight services by equipment and shipment type</h1><p>Review shipment-specific planning requirements, then send details for a lane and capacity review. Equipment availability and service commitments are confirmed individually.</p>'+sections+'<p><a href="'+QUOTE+'" rel="noopener sponsored">Request a freight quote</a></p></main></body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Freight Services & Equipment | '+BRAND+'</title><meta name="description" content="Explore freight brokerage services by equipment and shipment type. Review requirements and request a quote. NorthStar Freight Solutions / NorthStar Delivery Solutions."><link rel="canonical" href="'+ORIGIN+'/freight-services/"><meta name="robots" content="index,follow"><style>body{margin:0;background:#0e151c;color:#f4f1e9;font:16px/1.6 system-ui,sans-serif}.wrap{max-width:1040px;margin:auto;padding:32px 24px}a{color:#f2a93b}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid a{background:#16212b;border:1px solid #2c4257;padding:16px;text-decoration:none;color:#f4f1e9}.grid span{font-size:13px;color:#c9c7be}section{margin:30px 0}@media(max-width:620px){.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap"><p><a href="'+ORIGIN+'/">NorthStar Freight Solutions / NorthStar Delivery Solutions</a> / Freight Services</p><h1>Freight services by equipment and shipment type</h1><p>Review shipment-specific planning requirements, then send details for a lane and capacity review. Equipment availability and service commitments are confirmed individually.</p>'+sections+'<p><a href="'+QUOTE+'" rel="noopener sponsored">Request a freight quote</a></p></main></body></html>';
 }
 export function mergeSitemap(xml,rows,date=new Date().toISOString().slice(0,10)){
  const have=new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]));
