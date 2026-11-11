@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-11",
+    "subject": "Diesel falls 16.5 cents to $6.127; tighter peak tests shippers",
+    "headline": "Diesel slides 16.5 cents as a tighter peak squeezes old shipper bid playbooks",
+    "script": "Diesel averages $6.127, rigid shipper contracts strain in a firmer market, intermodal sets a record and a Texas carrier faces federal charges.\n\nThe national diesel average dropped 16.5 cents to $6.127 per gallon, a welcome break on fuel costs, though oil markets remain volatile.",
+    "url": "briefs/2026-11-11.html",
+    "dieselPrice": {
+      "period": "2026-11-09",
+      "dollarsPerGallon": 6.127
+    },
+    "topHeadline": "Diesel slides 16.5 cents as a tighter peak squeezes old shipper bid playbooks",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Diesel Price Drop: Why Oil Markets Are Tumbling",
+        "link": "https://www.freightwaves.com/news/diesel-price-drop-why-oil-markets-are-tumbling"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Shippers running 2022-era bid playbooks face a tighter peak",
+        "link": "https://www.freightwaves.com/news/a-duie-pyle-peak-season-shipper-bids"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "US rail traffic hits intermodal record as October freight gains signal economic resilience, says AAR",
+        "link": "https://www.freightwaves.com/news/us-rail-traffic-hits-intermodal-record-as-october-freight-gains-signal-economic-resilience-says-aar"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Texas trucking owner indicted in scheme involving 57 unauthorized drivers",
+        "link": "https://www.freightwaves.com/news/texas-trucking-owner-indicted-in-scheme-involving-57-unauthorized-drivers"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "US postpones ‘million-dollar’ China ship tax until January",
+        "link": "https://www.freightwaves.com/news/us-postpones-million-dollar-china-ship-tax-until-january"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Transpacific ocean rates ease slightly as peak winds down",
+        "link": "https://www.supplychaindive.com/news/transpacific-ocean-rates-ease-slightly-as-peak-winds-down/874262/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-10",
     "subject": "Diesel drops 16.5 cents to $6.127; fuel-card fraud warning",
     "headline": "Diesel falls to $6.127 as fuel-card fraud and roadside enforcement hit carriers",

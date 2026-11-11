@@ -1,0 +1,515 @@
+{
+  "brief": {
+    "subject": "Diesel falls 16.5 cents to $6.127; tighter peak tests shippers",
+    "headline": "Diesel slides 16.5 cents as a tighter peak squeezes old shipper bid playbooks",
+    "dek": "Diesel averages $6.127, rigid shipper contracts strain in a firmer market, intermodal sets a record and a Texas carrier faces federal charges.",
+    "lede": "The national diesel average dropped 16.5 cents to $6.127 per gallon, a welcome break on fuel costs, though oil markets remain volatile.",
+    "sections": [
+      {
+        "heading": "Diesel drops sharply this week",
+        "bullets": [
+          "$6.127 per gallon is the U.S. average retail diesel price for the week of 2026-11-09.",
+          "Down 16.5 cents (2.6%) from the prior week, easing per-mile fuel costs for small carriers.",
+          "Down 5.2 cents over four weeks, so most of the relief landed in just the last week.",
+          "Oil markets remain volatile on geopolitical and refining risks, so keep fuel surcharge terms in place."
+        ],
+        "source_ids": [
+          "F1",
+          "H15"
+        ]
+      },
+      {
+        "heading": "Rigid shipper contracts strain at peak",
+        "bullets": [
+          "Long rate locks, steep penalties and little flexibility have been some shippers' standard bid strategy from 2022 through 2025.",
+          "A brokerage leader at A. Duie Pyle says that approach is breaking down as the market tightens.",
+          "Shippers stuck with stale contract rates may lean on spot capacity, opening better-paying loads for small carriers."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      },
+      {
+        "heading": "Intermodal hits record in October",
+        "bullets": [
+          "Intermodal set a record in October, according to the AAR.",
+          "Rail volumes rose across much of the freight economy, a sign of continued demand.",
+          "More intermodal means more drayage work near ramps but competition for some long-haul dry van lanes."
+        ],
+        "source_ids": [
+          "H8"
+        ]
+      },
+      {
+        "heading": "Texas owner indicted over 57 drivers",
+        "bullets": [
+          "57 unauthorized B-1 visa drivers were allegedly used by a Laredo trucking company owner to haul domestic freight.",
+          "The owner faces federal charges, showing enforcement against illegal domestic hauling is active.",
+          "Carriers playing by the rules lose loads to operators cutting corners, so this crackdown matters to rates."
+        ],
+        "source_ids": [
+          "H6"
+        ]
+      },
+      {
+        "heading": "Ocean trade: fees delayed, rates ease",
+        "bullets": [
+          "Two more months: the U.S. postponed punitive fees on China-linked ships until January.",
+          "Transpacific ocean rates eased slightly as peak demand at U.S. ports slows.",
+          "Rates stay elevated year over year, so expect import drayage volumes to cool rather than collapse."
+        ],
+        "source_ids": [
+          "H3",
+          "H4"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 16.5 cents to $6.127, shippers' rigid bids strain at peak, intermodal hits a record and a Texas carrier owner is indicted."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-11T17:39:22.008Z",
+    "date": "2026-11-11",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "previous": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "weeklyChangeCents": -16.5,
+      "weeklyChangePct": -2.6,
+      "fourWeekChangeCents": -5.2,
+      "formatted": {
+        "latest": "$6.127",
+        "weeklyChange": "down 16.5 cents",
+        "weeklyChangePct": "2.6%",
+        "fourWeekChange": "down 5.2 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "BMW announces new battery supply deals for the US, Europe",
+        "link": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/",
+        "published": "2026-11-11T17:15:00.000Z",
+        "snippet": "The automaker contracted with battery cell manufacturers Samsung SDI and LG Energy Solution as it aims for a more localized supply chain for future electric vehicles.",
+        "categories": [],
+        "creator": "Eric Walz"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Latam Cargo to increase flower exports with Bogota terminal expansion",
+        "link": "https://www.freightwaves.com/news/latam-cargo-to-increase-flower-exports-with-bogota-terminal-expansion",
+        "published": "2026-11-11T17:09:37.000Z",
+        "snippet": "Latam Airlines Group announced Wednesday it will build and finance a new cargo terminal at El Dorado International Airport in Bogotá, Colombia, tripling its existing work space and enabling faster processing of import and export shipments. The expansion project is part of a new plan to upgrade cargo handling infrastructure at its primary operating hubs. […] The post Latam Cargo to increase flower ",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "air cargo",
+          "airfreight",
+          "Colombia",
+          "LATAM Airlines",
+          "LATAM Cargo",
+          "warehouse"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US postpones ‘million-dollar’ China ship tax until January",
+        "link": "https://www.freightwaves.com/news/us-postpones-million-dollar-china-ship-tax-until-january",
+        "published": "2026-11-11T16:02:32.000Z",
+        "snippet": "The United States suspends punitive fees on China-linked shipping for another two months. The post US postpones ‘million-dollar’ China ship tax until January appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "#trade",
+          "China",
+          "container shipping"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Transpacific ocean rates ease slightly as peak winds down",
+        "link": "https://www.supplychaindive.com/news/transpacific-ocean-rates-ease-slightly-as-peak-winds-down/874262/",
+        "published": "2026-11-11T15:48:40.000Z",
+        "snippet": "Slowing demand at U.S. ports is helping ease rates, but costs remain elevated on a year-over-year basis.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "CarParts.com revs up in-house last-mile delivery for cost, speed benefits",
+        "link": "https://www.supplychaindive.com/news/carpartscom-revs-up-in-house-last-mile-delivery-for-cost-speed-benefits/874287/",
+        "published": "2026-11-11T15:23:46.000Z",
+        "snippet": "The cost savings opportunity will be “substantial” as the company aims to deliver 300,000 packages a year via its internal network, per CEO David Meniane.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Texas trucking owner indicted in scheme involving 57 unauthorized drivers",
+        "link": "https://www.freightwaves.com/news/texas-trucking-owner-indicted-in-scheme-involving-57-unauthorized-drivers",
+        "published": "2026-11-11T15:04:26.000Z",
+        "snippet": "A Laredo trucking company owner faces federal charges for allegedly employing 57 unauthorized B-1 visa drivers to haul domestic freight across the U.S. The post Texas trucking owner indicted in scheme involving 57 unauthorized drivers appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "B-1 Visa",
+          "immigrant truck drivers",
+          "Laredo",
+          "Laredo texas",
+          "Trucking",
+          "US-Mexico border"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Asics boosts inventory management using warehouse drones",
+        "link": "https://www.supplychaindive.com/news/asics-boosts-inventory-management-using-warehouse-drones/874273/",
+        "published": "2026-11-11T15:00:00.000Z",
+        "snippet": "By using the technology, the footwear brand improved misplaced inventory recovery while slashing manual labor hours and increasing counting frequency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US rail traffic hits intermodal record as October freight gains signal economic resilience, says AAR",
+        "link": "https://www.freightwaves.com/news/us-rail-traffic-hits-intermodal-record-as-october-freight-gains-signal-economic-resilience-says-aar",
+        "published": "2026-11-11T14:39:03.000Z",
+        "snippet": "Intermodal hits record mark as U.S. railroads see volumes increase across much of the freight economy, says AAR. The post US rail traffic hits intermodal record as October freight gains signal economic resilience, says AAR appeared first on FreightWaves.",
+        "categories": [
+          "Modes",
+          "News",
+          "Rail",
+          "Top Stories",
+          "Association of American Railroads",
+          "carloads",
+          "coal",
+          "consumer confidence"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US Postal Service reduces annual operating loss by 12.7%",
+        "link": "https://www.freightwaves.com/news/us-postal-service-reduces-annual-operating-loss-by-12-7",
+        "published": "2026-11-11T14:29:21.000Z",
+        "snippet": "The U.S. Postal Service lost much less money in fiscal year 2026, but still has a long road to financial stability. The post US Postal Service reduces annual operating loss by 12.7% appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Parcel & Last Mile",
+          "earnings",
+          "U.S. Postal Service",
+          "USPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Shippers running 2022-era bid playbooks face a tighter peak",
+        "link": "https://www.freightwaves.com/news/a-duie-pyle-peak-season-shipper-bids",
+        "published": "2026-11-11T13:00:00.000Z",
+        "snippet": "Some shippers are heading into peak season with the bid strategy that carried them from 2022 through 2025: long rate locks, steep penalties and little flexibility. That strategy is breaking down in a tighter market, said Craig Lough, director of strategic planning at A. Duie Pyle, who leads the company’s non-asset brokerage division. Lough has […] The post Shippers running 2022-era bid playbooks f",
+        "categories": [
+          "Logistics & Brokerage",
+          "News",
+          "3PL",
+          "A. Duie Pyle",
+          "Craig Lough",
+          "Freight broker",
+          "logistics",
+          "peak season"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Honda to invest $3B in new Ohio hybrid vehicle plant",
+        "link": "https://www.supplychaindive.com/news/honda-to-invest-3b-in-new-ohio-hybrid-vehicle-plant/874281/",
+        "published": "2026-11-11T12:39:00.000Z",
+        "snippet": "The factory will create 2,000 jobs, and as part of Honda’s focus on hybrids and swift development, it’s keeping close to the automaker’s existing U.S. footprint.",
+        "categories": [],
+        "creator": "Bengt Halvorson"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Hydrogen trucks’ fuel cell is ready. Europe’s pumps aren’t",
+        "link": "https://www.freightwaves.com/news/cellcentric-fuel-cell-hydrogen-stations-europe",
+        "published": "2026-11-11T12:30:00.000Z",
+        "snippet": "cellcentric is holding 16 hectares for a large fuel cell plant until 2029. CTO Nicholas Loughlan says it gets built when stations and fuel prices catch up The post Hydrogen trucks’ fuel cell is ready. Europe’s pumps aren’t appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Fuel & Energy",
+          "Infrastructure & Reindustrialization",
+          "News",
+          "BZA375",
+          "Cellcentric",
+          "Daimler Truck Volvo fuel cell joint venture",
+          "hydrogen"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "1 in 6 supply chain professionals report AI-related data exposure, survey finds",
+        "link": "https://www.freightwaves.com/news/1-in-6-supply-chain-professionals-report-ai-related-data-exposure-survey-finds",
+        "published": "2026-11-10T22:15:58.000Z",
+        "snippet": "One in six supply chain professionals said their company experienced an incident involving customer or supplier data being exposed through an AI tool, highlighting growing concerns about data security as businesses expand their use of the technology. The post 1 in 6 supply chain professionals report AI-related data exposure, survey finds appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "FreightTech Award",
+          "News",
+          "Technology & Startups",
+          "AI",
+          "Freight",
+          "FreightWaves",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Uber Freight cuts 80 jobs while hiring nearly 300 in growth push",
+        "link": "https://www.freightwaves.com/news/uber-freight-cuts-80-jobs-while-hiring-nearly-300-in-growth-push",
+        "published": "2026-11-10T20:15:00.000Z",
+        "snippet": "Uber Freight is eliminating approximately 80 positions while recruiting for nearly 300 openings as it shifts resources toward managed transportation. The post Uber Freight cuts 80 jobs while hiring nearly 300 in growth push appeared first on FreightWaves.",
+        "categories": [
+          "Layoffs & Bankruptcies",
+          "Logistics & Brokerage",
+          "News",
+          "layoffs",
+          "logistics",
+          "Uber Freight"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Diesel Price Drop: Why Oil Markets Are Tumbling",
+        "link": "https://www.freightwaves.com/news/diesel-price-drop-why-oil-markets-are-tumbling",
+        "published": "2026-11-10T19:42:51.000Z",
+        "snippet": "Diesel prices are taking a dive, but don’t get too comfortable. John Kingston breaks down the volatile oil market, highlighting massive price swings and the geopolitical chess game influencing global supply. From the Strait of Hormuz to damaged refining capacity, the factors keeping oil markets on edge are complex. Understand why analysts are divided on […] The post Diesel Price Drop: Why Oil Mark",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI saved air cargo? Rates up 30% YOY",
+        "link": "https://www.freightwaves.com/news/ai-saved-air-cargo-rates-up-30-yoy",
+        "published": "2026-11-10T19:41:16.000Z",
+        "snippet": "AI isn’t just for chatbots—it’s fueling a surprising boom in air cargo, preventing an anticipated recession. FreightWaves’ Eric Kulisch breaks down how global disruptions and AI equipment demand are driving rates up 30% year-over-year and volumes up 6%. Plus, find out how drone delivery leaders like Wing and Zipline are expanding partnerships with Walmart, racing […] The post AI saved air cargo? R",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tech Transformation: ShipStation Global’s AI Overhauls Freight Operations",
+        "link": "https://www.freightwaves.com/news/tech-transformation-shipstation-globals-ai-overhauls-freight-operations",
+        "published": "2026-11-10T19:32:49.000Z",
+        "snippet": "The freight industry faces unprecedented challenges, from complex peak season demands to surging cargo theft. In this exclusive interview, ShipStation Global’s Joel Clum and Nick Ciubotariu reveal how their innovative AI-powered platform is transforming logistics. Discover how specialized AI agents automate everything from quoting to booking, enhancing security, and empowering shippers to navigate",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Canada Goose will revisit pricing to blunt tariffs next year, CFO says",
+        "link": "https://www.supplychaindive.com/news/canada-goose-will-revisit-pricing-to-blunt-tariffs-next-year-cfo-says/874196/",
+        "published": "2026-11-10T15:11:00.000Z",
+        "snippet": "The Toronto-based luxury apparel company worked hard to get its products into the U.S. before new import tariffs became effective in August.",
+        "categories": [],
+        "creator": "Maura Webber Sadovi"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Apparel shipper expands US fulfillment operations to skirt de minimis’ end",
+        "link": "https://www.supplychaindive.com/news/apparel-shipper-expands-us-fulfillment-operations-to-skirt-de-minimis-end/874073/",
+        "published": "2026-11-10T14:54:00.000Z",
+        "snippet": "Australia-based OTAA, which makes ties and cufflinks, is fulfilling U.S. orders from a facility in Longview, Texas, through a partnership with Cart.com.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon, alternative carriers gained parcel volume in 2026’s first half",
+        "link": "https://www.supplychaindive.com/news/amazon-alternative-carriers-gained-parcel-volume-in-2026s-first-half/873932/",
+        "published": "2026-11-10T14:27:00.000Z",
+        "snippet": "The e-commerce giant has continued to grab market share as it relies less on UPS for shipping and expands its delivery reach, per ShipMatrix.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Bed Bath & Beyond parent to close Maryland distribution center",
+        "link": "https://www.supplychaindive.com/news/bed-bath-beyond-parent-to-close-maryland-distribution-center/874149/",
+        "published": "2026-11-10T14:17:00.000Z",
+        "snippet": "Neighborhood Intelligence is aiming “to rip out big chunks of costs” by reworking its supply chain, CEO Marcus Lemonis said.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Deere to end production at 2 Iowa plants to align with demand",
+        "link": "https://www.supplychaindive.com/news/deere-to-end-production-at-2-iowa-plants-to-align-with-demand/874059/",
+        "published": "2026-11-10T12:01:00.000Z",
+        "snippet": "The heavy equipment maker also plans to shift some production from factories in Illinois and Louisiana.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      }
+    ],
+    "regulatory": [
+      {
+        "id": "R1",
+        "agency": "IRS",
+        "type": "Notice",
+        "title": "Internal Revenue Service Advisory Council; Public Meeting",
+        "abstract": "The Internal Revenue Service Advisory Council will hold a public meeting.",
+        "link": "https://www.federalregister.gov/documents/2026/10/28/2026-21966/internal-revenue-service-advisory-council-public-meeting",
+        "published": "2026-10-28",
+        "documentNumber": "2026-21966"
+      }
+    ],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "High Diesel Prices Put Fleet Efficiency Under the Microscope",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Inside Kuebix AI: A Shipper TMS Rebuilt Around Executable AI",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
