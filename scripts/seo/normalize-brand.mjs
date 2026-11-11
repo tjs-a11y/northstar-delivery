@@ -27,47 +27,46 @@ function brandText(html) {
   return out;
 }
 
-function updateTag(html, selector, attr, transform) {
-  const re = new RegExp('<meta\\\\b(?=[^>]*' + selector + ')[^>]*>', 'i');
-  return html.replace(re, (tag) => {
-    const valueRe = new RegExp(attr + '=["\\']([^"\\']*)["\\']', 'i');
-    const match = tag.match(valueRe);
-    if (!match) return tag;
-    const next = transform(match[1]);
-    return tag.replace(valueRe, attr + '="' + next.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"');
+function updateMeta(html, key, value, transform) {
+  const tagPattern = new RegExp('<meta\\b(?=[^>]*' + key + '=["\\\']' + value + '["\\\'])[^>]*>', 'i');
+  return html.replace(tagPattern, (tag) => {
+    const content = tag.match(/content=["']([^"']*)["']/i);
+    if (!content) return tag;
+    const next = transform(content[1]);
+    return tag.replace(/content=["'][^"']*["']/i, 'content="' + next.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"');
   });
 }
 
 function withBrandMetadata(html, relativePath) {
-  const titleMatch = html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i);
+  const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const fallback = path.basename(relativePath, '.html').replace(/[-_]/g, ' ');
   const originalTitle = titleMatch ? titleMatch[1].trim() : fallback;
   const cleanTitle = originalTitle
-    .replace(/\\s*\\|\\s*North[Ss]tar(?:\\s+(?:Freight|Delivery)(?:\\s+Solutions)?)?$/i, '')
+    .replace(/\s*\|\s*North[Ss]tar(?:\s+(?:Freight|Delivery)(?:\s+Solutions)?)?$/i, '')
     .trim();
   const title = cleanTitle + ' | ' + BRAND;
   if (titleMatch) html = html.replace(titleMatch[0], '<title>' + title + '</title>');
-  else html = html.replace(/<\\/head>/i, '<title>' + title + '</title>\\n</head>');
+  else html = html.replace(/<\/head>/i, '<title>' + title + '</title>\n</head>');
 
-  html = updateTag(html, 'name=["\\']description["\\']', 'content', (value) =>
-    value.includes(BRAND) ? value : value.replace(/\\s*$/, '') + ' ' + BRAND + '.'
+  html = updateMeta(html, 'name', 'description', (value) =>
+    value.includes(BRAND) ? value : value.replace(/\s*$/, '') + ' ' + BRAND + '.'
   );
-  html = updateTag(html, 'property=["\\']og:title["\\']', 'content', () => title);
-  if (!/<meta\\b[^>]*property=["\\']og:title["\\']/i.test(html)) {
-    html = html.replace(/<\\/head>/i, '<meta property="og:title" content="' + title + '">\\n</head>');
+  html = updateMeta(html, 'property', 'og:title', () => title);
+  if (!/<meta\b[^>]*property=["']og:title["']/i.test(html)) {
+    html = html.replace(/<\/head>/i, '<meta property="og:title" content="' + title + '">\n</head>');
   }
-  if (!/<meta\\b[^>]*property=["\\']og:site_name["\\']/i.test(html)) {
-    html = html.replace(/<\\/head>/i, '<meta property="og:site_name" content="' + BRAND + '">\\n</head>');
+  if (!/<meta\b[^>]*property=["']og:site_name["']/i.test(html)) {
+    html = html.replace(/<\/head>/i, '<meta property="og:site_name" content="' + BRAND + '">\n</head>');
   }
   return brandText(html);
 }
 
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
-const urls = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map((match) => match[1]);
+const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 const paths = [...new Set(urls.map((url) => {
   const pathname = new URL(url).pathname;
   const relative = pathname.endsWith('/') ? pathname + 'index.html' : pathname;
-  return relative.replace(/^\\//, '');
+  return relative.replace(/^\//, '');
 }))].filter((file) => file.endsWith('.html'));
 
 let changed = 0;
