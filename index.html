@@ -243,28 +243,6 @@
   .tool-card:hover .tool-open .arrow{transform:translateX(4px);}
   .is-hidden{display:none !important;}
 
-  /* ---------- BRAND / PROOF / DEMO MEDIA ---------- */
-  .logo .brand-name{display:block;max-width:390px;font-size:15px;line-height:1.08;letter-spacing:0.015em;}
-  .logo .brand-name .sub{font-size:9px;line-height:1.4;margin-top:4px;}
-  .proof-section{background:var(--asphalt-2);border-top:1px solid var(--steel-line);border-bottom:1px solid var(--steel-line);}
-  .proof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 28px;}
-  .proof-stat{background:var(--steel);border:1px solid var(--steel-line);padding:22px 18px;text-align:center;}
-  .proof-stat strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,3vw,34px);color:var(--amber);margin-bottom:7px;}
-  .proof-stat span{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--paper-dim);}
-  .proof-placeholder-note{font-size:11px;color:var(--amber);font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;margin:0 0 24px;}
-  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .testimonial-card{background:var(--steel);border:1px solid var(--steel-line);border-left:3px solid var(--amber);padding:24px;}
-  .testimonial-card blockquote{margin:0 0 18px;color:var(--paper);font-size:14px;line-height:1.65;}
-  .testimonial-card .person{font-weight:700;font-size:13px;color:var(--paper);}
-  .testimonial-card .role{font-size:11px;color:var(--paper-dim);margin-top:4px;}
-  .testimonial-card .placeholder-tag{display:inline-block;margin-bottom:12px;color:var(--amber);font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.07em;}
-  .scene-card.featured{display:block;}
-  .scene-video{float:right;width:43%;aspect-ratio:16/9;margin:2px 0 16px 18px;border:1px solid var(--steel-line);background:#0a1118;position:relative;overflow:hidden;}
-  .scene-video iframe{display:block;width:100%;height:100%;border:0;}
-  .scene-video-placeholder{height:100%;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;text-align:center;color:var(--paper-dim);font-size:11px;line-height:1.45;}
-  .scene-video-placeholder .play{width:34px;height:34px;border:1px solid var(--amber);border-radius:50%;display:grid;place-items:center;color:var(--amber);font-size:13px;}
-  .scene-card.featured .tool-open{clear:both;}
-
 
   /* ---------- VALUE BOMB ---------- */
   .bomb{
@@ -364,8 +342,6 @@
   }
   @media (max-width: 560px){
     .tool-grid{grid-template-columns:1fr;}
-    .proof-stats,.testimonial-grid{grid-template-columns:1fr;}
-    .scene-video{float:none;width:100%;margin:18px 0;}
     .strip .wrap{gap:20px;}
   }
 </style>
@@ -518,43 +494,6 @@
   </div>
 </section>
 
-<!-- Customer proof placeholders: replace with verified business metrics and customer-approved testimonials before publishing. -->
-<section class="proof-section" id="customer-proof">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">NorthStar In Practice</span>
-      <h2>Proof built on real work.</h2>
-      <p>We are building this section for verified operating results and feedback from real carriers and shippers. Nothing below is a claimed result.</p>
-    </div>
-    <!-- PLACEHOLDER STATS — replace each blank with a documented, supportable count before publishing. -->
-    <div class="proof-stats" aria-label="NorthStar operating metrics (placeholders)">
-      <div class="proof-stat"><strong>___</strong><span>Rate cons checked</span></div>
-      <div class="proof-stat"><strong>___</strong><span>Settlements audited</span></div>
-      <div class="proof-stat"><strong>___</strong><span>Carriers served</span></div>
-    </div>
-    <p class="proof-placeholder-note">Placeholder content — verify and complete before publishing</p>
-    <!-- PLACEHOLDER TESTIMONIALS — do not publish as endorsements until the named customer approves the exact quote. -->
-    <div class="testimonial-grid">
-      <article class="testimonial-card">
-        <span class="placeholder-tag">TESTIMONIAL PLACEHOLDER</span>
-        <blockquote>“[Add a customer-approved quote describing a real NorthStar service experience.]”</blockquote>
-        <div class="person">[Customer name]</div><div class="role">[Owner-operator]</div>
-      </article>
-      <article class="testimonial-card">
-        <span class="placeholder-tag">TESTIMONIAL PLACEHOLDER</span>
-        <blockquote>“[Add a customer-approved quote about a real shipment, communication or audit experience.]”</blockquote>
-        <div class="person">[Customer name]</div><div class="role">[Shipper]</div>
-      </article>
-      <article class="testimonial-card">
-        <span class="placeholder-tag">TESTIMONIAL PLACEHOLDER</span>
-        <blockquote>“[Add a customer-approved quote. Include only details the customer has approved for public use.]”</blockquote>
-        <div class="person">[Customer name]</div><div class="role">[Carrier / Dispatcher]</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
 <section class="bomb" id="quote">
   <div class="wrap bomb-grid">
     <div>
@@ -619,10 +558,6 @@
 
       <div class="scene-card featured">
         <span class="scene-tag">Rate Con Checker</span>
-        <!-- VIDEO PLACEHOLDER — set data-video-id to the approved YouTube video ID when ready. -->
-        <div class="scene-video" data-video-id="" aria-label="Rate Con Checker demo video placeholder">
-          <div class="scene-video-placeholder"><span class="play" aria-hidden="true">▶</span><strong>Rate Con Checker demo</strong><span>Add a YouTube video ID to this card when the demo is ready.</span></div>
-        </div>
         <h3>The setoff clause on page two</h3>
         <p class="scene-line"><b>The setup</b>A broker sends a clean-looking rate con for a $2,400 load. Buried in the fine print: a setoff clause that lets them pull money from THIS load to cover a claim on a different one.</p>
         <p class="scene-line cost"><b>Without it</b>You sign, you deliver clean, and a month later your pay gets short-stopped for someone else's problem — and now you're the one chasing it.</p>
@@ -632,10 +567,6 @@
 
       <div class="scene-card featured">
         <span class="scene-tag">Haul Audit</span>
-        <!-- VIDEO PLACEHOLDER — set data-video-id to the approved YouTube video ID when ready. -->
-        <div class="scene-video" data-video-id="" aria-label="Haul Audit demo video placeholder">
-          <div class="scene-video-placeholder"><span class="play" aria-hidden="true">▶</span><strong>Haul Audit demo</strong><span>Add a YouTube video ID to this card when the demo is ready.</span></div>
-        </div>
         <h3>The short-pay hiding behind the factoring fee</h3>
         <p class="scene-line"><b>The setup</b>Your settlement lands lighter than the rate con said. Between the factoring fee, a reserve and an "adjustment," you can't tell if the broker actually short-paid you or it's just the factor's cut.</p>
         <p class="scene-line cost"><b>Without it</b>It looks close enough, so you let it go — load after load, a few dollars at a time, money you earned and never got.</p>
@@ -734,18 +665,6 @@
   }
   chips.forEach(function(c){
     c.addEventListener('click', function(){ apply(c.getAttribute('data-filter')); });
-  });
-  // Replace demo placeholders only when a valid YouTube video ID is supplied in data-video-id.
-  document.querySelectorAll('.scene-video[data-video-id]').forEach(function(frame){
-    var id=frame.getAttribute('data-video-id') || '';
-    if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
-    var iframe=document.createElement('iframe');
-    iframe.src='https://www.youtube-nocookie.com/embed/'+id;
-    iframe.title=frame.getAttribute('aria-label') || 'NorthStar tool demonstration';
-    iframe.loading='lazy';
-    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen=true;
-    frame.replaceChildren(iframe);
   });
 })();
 </script>
