@@ -8,6 +8,7 @@ import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ORIGIN = 'https://northstardeliveryservice.com';
+const BRAND = 'NorthStar Freight Solutions / NorthStar Delivery Solutions';
 const QUOTE = 'https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions';
 const TODAY = new Date().toISOString().slice(0, 10);
 const DISCLOSE = 'Quotes are provided by our partner, Freight Sidekick. We may earn a commission when you book.';
@@ -154,7 +155,7 @@ const HEAD = (title, desc, canonical) => `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
+<meta name="description" content="${esc(desc)} — ${BRAND}">\n<meta property="og:site_name" content="${BRAND}">
 <link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(title)}">
@@ -203,7 +204,7 @@ const HEAD = (title, desc, canonical) => `<!DOCTYPE html>
 </head>
 <body>
 <header><nav class="wrap">
-  <a class="logo" href="${ORIGIN}/"><span class="mark">N</span>NorthStar Freight</a>
+  <a class="logo" href="${ORIGIN}/"><span class="mark">N</span>${BRAND}</a>
   <a href="${QUOTE}" target="_blank" rel="noopener sponsored" class="btn btn-amber">Get A Quote</a>
 </nav></header>`;
 
@@ -218,7 +219,7 @@ function renderPage(row, siblings) {
   const canonical = `${ORIGIN}/tools/${row.slug}/`;
   const rel = siblings.filter((s) => s.slug !== row.slug).slice(0, 4);
   const relHtml = rel.map((s) => `<a href="${ORIGIN}/tools/${s.slug}/">${esc(s.tool_title)} →</a>`).join('\n    ');
-  return `${HEAD(row.tool_title + ' | NorthStar Freight Solutions', row.meta_description, canonical)}
+  return `${HEAD(row.tool_title + ' | ' + BRAND, row.meta_description, canonical)}
 <div class="wrap">
   <p class="crumbs"><a href="${ORIGIN}/">Home</a> / <a href="${ORIGIN}/tools/">Freight Tools</a> / ${esc(row.tool_title)}</p>
   <article>
