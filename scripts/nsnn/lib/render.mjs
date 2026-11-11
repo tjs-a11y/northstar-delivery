@@ -1,3 +1,5 @@
+const brand = 'NorthStar Freight Solutions / NorthStar Delivery Solutions';
+
 export function escapeHtml(str = '') {
   return str
     .replace(/&/g, '&amp;')
@@ -308,8 +310,8 @@ export function pageShell({ title, description, active, body, head = '' }) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${escapeHtml(title)}</title>
-<meta name="description" content="${escapeHtml(description)}">
+<title>${escapeHtml(title)} | ${brand}</title>
+<meta name="description" content="${escapeHtml(description)} ${brand}.">\n<meta property="og:site_name" content="${brand}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
