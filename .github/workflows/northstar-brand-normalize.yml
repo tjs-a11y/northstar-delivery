@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/northstar-brand-normalize.yml'
       - 'scripts/seo/normalize-brand.mjs'
+      - 'scripts/seo/sync-services.mjs'
 
 permissions:
   contents: write
