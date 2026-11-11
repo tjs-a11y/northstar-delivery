@@ -33,7 +33,7 @@ function updateMeta(html, key, value, transform) {
     const content = tag.match(/content=["']([^"']*)["']/i);
     if (!content) return tag;
     const next = transform(content[1]);
-    return tag.replace(/content=["'][^"']*["']/i, 'content="' + next.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"');
+    return tag.replace(/content=["'][^"']*["']/i, 'content="' + next.replace(/"/g, '&quot;') + '"');
   });
 }
 
