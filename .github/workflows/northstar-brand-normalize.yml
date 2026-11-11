@@ -43,5 +43,6 @@ jobs:
             echo "No additional HTML changes were required."
           else
             git commit -m "Standardize NorthStar brand across public pages"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
