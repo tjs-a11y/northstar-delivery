@@ -6,7 +6,6 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT=join(dirname(fileURLToPath(import.meta.url)),'..','..');
 const ORIGIN='https://northstardeliveryservice.com';
 const BRAND='NorthStar Freight Solutions / NorthStar Delivery Solutions';
-const BRAND='NorthStar Freight Solutions / NorthStar Delivery Solutions';
 const QUOTE='https://freightsidekick.com/freight-quote?ref=northstardeliverysolutions';
 const DETAILS={
 'Refrigerated Freight':['Temperature-controlled freight needs a shipper-defined set point, suitable reefer equipment, a loading plan and appointment coordination.',['Commodity and handling restrictions','Required temperature range and any temperature-recording requirements','Pallet count, dimensions, weight and stackability','Pickup and delivery appointments','Washout, food-grade, seal or pre-cooling requirements'], 'Confirm product compatibility, temperature settings and any food or pharmaceutical handling requirements before dispatch.'],
