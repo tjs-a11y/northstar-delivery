@@ -693,7 +693,649 @@ const PAGE_GUIDES = {
 "scheduled-business-freight-delivery":{"lead":"Scheduled business freight delivery depends on a ready shipment, a workable route and a receiving appointment that has been confirmed by the destination.","fit":"Businesses coordinating planned freight arrivals at warehouses, retail sites or commercial facilities.","check":["Ready time and pickup appointment","Cargo dimensions, weight and equipment","Destination receiving window","Site contact and exception procedure"],"steps":["Confirm freight readiness and pickup details.","Verify the destination appointment.","Share an exception contact and delivery documentation plan."],"risk":"A requested appointment is not a confirmed appointment until the receiving site and carrier accept it.","faqs":[["What makes a freight delivery schedule reliable?","Confirmed readiness, realistic transit assumptions and accepted receiving windows."],["What if the receiving site changes the appointment?","Notify dispatch promptly and re-confirm the revised plan."]]},
 "regional-commercial-route-distribution":{"lead":"Regional commercial route distribution should account for lane distance, shipment frequency, stop sequence and site-level restrictions before a schedule is proposed.","fit":"Businesses moving inventory or packaged freight across regional commercial routes.","check":["Origin/destination and stop sequence","Shipment frequency and load size","Vehicle fit and route restrictions","Receiving windows and unloading time"],"steps":["Map the route and stops.","Check cargo and equipment compatibility.","Confirm timing and each shipment separately."],"risk":"Route feasibility depends on actual locations, traffic, hours and receiving constraints; no fixed transit time is implied.","faqs":[["Can a route include several commercial stops?","Possibly, when the sequence and receiving windows are workable."],["What information is needed?","Addresses, shipment sizes, frequency, time windows and unloading details."]]},
 "box-truck-freight-for-store-restocking":{"lead":"Store restocking by box truck requires pallet measurements, vehicle access and a receiving plan that matches the store's loading setup.","fit":"Retailers and distributors restocking stores with packaged or palletized inventory.","check":["Pallet size and total weight","Rear-door and interior clearance","Store access and receiving hours","Dock, liftgate or ground unloading"],"steps":["Confirm the store's delivery instructions.","Check the load against the actual truck specification.","Agree on unloading and proof of delivery."],"risk":"A store's curb or parking layout may restrict vehicle access; verify before dispatch.","faqs":[["Can a box truck deliver to a store without a dock?","Only if the vehicle, unloading method and site access are suitable and confirmed."],["What should be measured?","Pallets, door clearance, cargo height and total weight."]]},
-"commercial-pallet-final-mile-delivery":{"lead":"Commercial pallet final-mile delivery should define how the pallet reaches the receiving point and who is responsible for unloading and signing.","fit":"Businesses receiving palletized freight at stores, offices, warehouses or job sites.","check":["Pallet dimensions and total weight","Site access and vehicle restrictions","Dock, liftgate or ground-level unloading","Appointment and signed receipt"],"steps":["Verify the final address and site contact.","Confirm unloading equipment and responsibility.","Record delivery condition and receipt."],"risk":"Do not promise inside placement, liftgate or job-site handling unless it is confirmed for the specific shipment.","faqs":[["What is needed for a pallet final-mile quote?","Pallet count, dimensions, weight, address, access and unloading method."],["Why confirm unloading in advance?","The wrong unloading assumption can make an otherwise suitable delivery impossible."]]}
+"commercial-pallet-final-mile-delivery":{"lead":"Commercial pallet final-mile delivery should define how the pallet reaches the receiving point and who is responsible for unloading and signing.","fit":"Businesses receiving palletized freight at stores, offices, warehouses or job sites.","check":["Pallet dimensions and total weight","Site access and vehicle restrictions","Dock, liftgate or ground-level unloading","Appointment and signed receipt"],"steps":["Verify the final address and site contact.","Confirm unloading equipment and responsibility.","Record delivery condition and receipt."],"risk":"Do not promise inside placement, liftgate or job-site handling unless it is confirmed for the specific shipment.","faqs":[["What is needed for a pallet final-mile quote?","Pallet count, dimensions, weight, address, access and unloading method."],["Why confirm unloading in advance?","The wrong unloading assumption can make an otherwise suitable delivery impossible."]]},
+{
+  "steel-coil-flatbed-freight-shipping": {
+    "lead": "Steel-coil freight requires the coil's actual weight, eye orientation, loading method and securement plan to be known before a flatbed carrier is selected.",
+    "fit": "Steel coils and related rolled-metal freight that fit a confirmed trailer, loading arrangement and carrier securement plan.",
+    "check": [
+      "Individual coil weights, outside diameters, widths and eye orientation",
+      "Coil racks, cradles, dunnage and rated securement equipment required by the shipper and carrier",
+      "Crane or forklift capacity, loading sequence and pickup-site access",
+      "Trailer deck dimensions, axle distribution and any weather-protection requirements",
+      "Destination unloading equipment, appointment window and inspection process"
+    ],
+    "steps": [
+      "Request a coil list or load diagram showing weight, dimensions and eye orientation.",
+      "Confirm the carrier's trailer configuration, coil racks and loading responsibility.",
+      "Agree on securement, blocking, edge protection and condition documentation before loading.",
+      "Verify route, weight and appointment requirements for the actual shipment before dispatch."
+    ],
+    "risk": "Do not infer coil weight, securement method or legal axle compliance from a total shipment weight. The shipper and qualified carrier must approve the actual loading and securement plan.",
+    "faqs": [
+      [
+        "Can every flatbed carry steel coils?",
+        "No. Trailer configuration, coil weight, loading method, securement equipment and carrier acceptance must match the shipment."
+      ],
+      [
+        "What should be included in a coil freight quote?",
+        "Coil count, individual weights and dimensions, eye orientation, origin/destination, loading method and unloading requirements."
+      ],
+      [
+        "Are coil racks always supplied?",
+        "No. Confirm whether the shipper, receiver or carrier supplies the required racks or cradles."
+      ]
+    ]
+  },
+  "structural-steel-beam-freight-transport": {
+    "lead": "Structural-steel freight is shaped by beam length, bundle weight, lifting points and the way the material will be unloaded at the destination.",
+    "fit": "Bundled beams, channels, columns and other fabricated steel pieces that can be supported and secured on the selected open-deck equipment.",
+    "check": [
+      "Piece and bundle lengths, width, height and verified weight",
+      "Bundle configuration, center of gravity and protection for finished surfaces",
+      "Crane, forklift or side-loading access at pickup and delivery",
+      "Deck length, support spacing, dunnage and securement points",
+      "Job-site access, unloading sequence and receiving appointment"
+    ],
+    "steps": [
+      "Collect a piece list or drawing with dimensions and weights.",
+      "Confirm the loading equipment and the order in which bundles will be placed.",
+      "Review supports, blocking, edge protection and securement with the carrier.",
+      "Confirm delivery access, lift capacity and the unloading sequence before dispatch."
+    ],
+    "risk": "Long steel pieces can shift or overhang if the loading plan is incomplete. Confirm dimensions, support points and route requirements with the carrier; this page is not a securement or permit determination.",
+    "faqs": [
+      [
+        "What dimensions matter for steel beams?",
+        "Length, bundle width and height, individual and total weight, plus any projections or irregular shapes."
+      ],
+      [
+        "Can beams be unloaded by forklift?",
+        "Only when the bundle weight, fork spacing, lifting points and site equipment are suitable."
+      ],
+      [
+        "Should the shipper send a load drawing?",
+        "Yes. A dimensioned drawing or clear photos can help the carrier assess fit and loading sequence."
+      ]
+    ]
+  },
+  "lumber-engineered-wood-freight-shipping": {
+    "lead": "Lumber and engineered-wood freight needs a bundle-level plan for length, weight, moisture protection and the equipment available at both ends.",
+    "fit": "Packaged lumber, trusses, engineered wood and similar building products that fit the confirmed trailer and loading arrangement.",
+    "check": [
+      "Bundle lengths, widths, heights, count and total weight",
+      "Packaging condition, banding and protection from weather or road spray",
+      "Forklift or crane access and the bundle loading sequence",
+      "Trailer deck length, dunnage, overhang and securement requirements",
+      "Mill, yard or job-site receiving hours and unloading capability"
+    ],
+    "steps": [
+      "Prepare a bundle list with dimensions, weight and packaging details.",
+      "Confirm whether tarping or other weather protection is required.",
+      "Match the trailer and loading method to the longest and heaviest bundle.",
+      "Agree on the delivery location, unloading equipment and proof-of-delivery process."
+    ],
+    "risk": "Do not assume a job site can unload long bundles or that a tarp is included. Confirm site access, weather protection and the actual equipment before accepting the move.",
+    "faqs": [
+      [
+        "Can lumber move on a standard flatbed?",
+        "Sometimes. Bundle length, weight, loading method, weather protection and securement determine the suitable trailer."
+      ],
+      [
+        "What information helps price a lumber load?",
+        "Bundle dimensions and weights, count, origin/destination, tarp needs and loading/unloading equipment."
+      ],
+      [
+        "Can trusses be handled like dimensional lumber?",
+        "Not automatically. Shape, packaging, length and lifting points can require a different loading plan."
+      ]
+    ]
+  },
+  "roofing-materials-flatbed-freight": {
+    "lead": "Roofing-material freight often combines long bundles, palletized supplies and job-site deliveries where unloading access matters as much as the linehaul.",
+    "fit": "Packaged roofing materials and related building products for distributors, warehouses and construction sites, subject to equipment and site confirmation.",
+    "check": [
+      "Product type, pallet or bundle count, dimensions and total weight",
+      "Packaging protection for shingles, membranes, panels or accessories",
+      "Tarping or weather-protection requirements from the shipper",
+      "Forklift, crane or ground-level unloading capability",
+      "Job-site entrance, turning space, surface conditions and delivery window"
+    ],
+    "steps": [
+      "Separate the shipment by product and bundle dimensions.",
+      "Confirm whether the destination is a warehouse dock or active job site.",
+      "Agree on tarping, unloading responsibility and any site restrictions.",
+      "Document the delivery appointment and proof-of-delivery requirements."
+    ],
+    "risk": "A job-site address does not prove that a tractor-trailer can reach the unloading point. Confirm road surface, overhead clearance, turning room and equipment before dispatch.",
+    "faqs": [
+      [
+        "Can roofing materials be delivered directly to a job site?",
+        "Only when the actual vehicle, access route, unloading method and site schedule are suitable."
+      ],
+      [
+        "Should roofing loads be tarped?",
+        "Follow the shipper's packaging and weather-protection instructions and confirm the required cover with the carrier."
+      ],
+      [
+        "What is needed for a quote?",
+        "Product and pallet details, dimensions, weight, lane, ready date and job-site unloading information."
+      ]
+    ]
+  },
+  "pipe-tubing-flatbed-freight-shipping": {
+    "lead": "Pipe and tubing freight is sensitive to length, bundle support, diameter and how the load will be restrained without damaging the product.",
+    "fit": "Bundled metal or industrial pipe and tubing that fits the selected open-deck equipment and an approved support and securement plan.",
+    "check": [
+      "Pipe material, outside diameter, wall or bundle dimensions and total weight",
+      "Individual lengths, bundle count, end protection and packaging",
+      "Dunnage, support spacing, blocking and securement points",
+      "Crane, forklift or side-loading access at both facilities",
+      "Destination unloading equipment, storage area and appointment window"
+    ],
+    "steps": [
+      "Request a bundle list showing lengths, diameters, weights and packaging.",
+      "Confirm whether the shipper requires specific dunnage or end protection.",
+      "Review loading sequence and securement with the carrier before pickup.",
+      "Confirm the receiver can unload and stage the full length of the material."
+    ],
+    "risk": "Long or round freight can roll, flex or shift if supports and securement are unsuitable. The carrier must approve the actual loading plan and applicable securement requirements.",
+    "faqs": [
+      [
+        "Can pipe be loaded on any flatbed?",
+        "No. Length, diameter, weight, support spacing, loading access and securement determine trailer suitability."
+      ],
+      [
+        "What photos are useful?",
+        "Bundle ends, labels, dimensions, support points and the loading area."
+      ],
+      [
+        "Does pipe freight always need tarping?",
+        "Not always. Follow the product and shipper's protection instructions and confirm them before dispatch."
+      ]
+    ]
+  },
+  "solar-panel-racking-freight-shipping": {
+    "lead": "Solar-project freight can include fragile palletized panels, long racking bundles and electrical components that need different equipment and handling plans.",
+    "fit": "Packaged solar panels, mounting rails and project materials moving between manufacturers, distribution yards and installation sites.",
+    "check": [
+      "Separate panel pallets, racking bundles and electrical components by dimensions and weight",
+      "Packaging, corner protection, stack limits and handling labels",
+      "Dry-van or open-deck suitability for each product group",
+      "Project-site access, laydown area, forklift capacity and delivery sequencing",
+      "Installation deadline, receiving contact and condition-inspection process"
+    ],
+    "steps": [
+      "Obtain a shipment breakdown by product type and packaging.",
+      "Confirm which items require enclosed protection and which can move on open deck.",
+      "Coordinate delivery sequence with the site and its unloading equipment.",
+      "Record packaging condition and any visible damage at handoff."
+    ],
+    "risk": "Do not assume all solar cargo can share one trailer or be unloaded at an active site. Confirm packaging, handling limits and the installation site's access before dispatch.",
+    "faqs": [
+      [
+        "Can solar panels and racking move together?",
+        "They may, if packaging, dimensions, weight, trailer fit and unloading sequence are compatible."
+      ],
+      [
+        "What should be protected most carefully?",
+        "Follow manufacturer packaging and handling instructions, especially for glass panels and sensitive electrical components."
+      ],
+      [
+        "Can a truck deliver directly to a solar project site?",
+        "Only after site access, receiving hours, unloading equipment and the exact delivery point are confirmed."
+      ]
+    ]
+  },
+  "hvac-equipment-freight-delivery": {
+    "lead": "HVAC freight ranges from boxed parts to large rooftop units, so equipment dimensions and the receiving site's lifting plan should be confirmed before a vehicle is assigned.",
+    "fit": "Packaged HVAC units, condensers, air handlers, ductwork and related commercial mechanical equipment, subject to the shipment's size and handling requirements.",
+    "check": [
+      "Model or item list, crate dimensions, weight and number of pieces",
+      "Fragile panels, coils, protrusions and manufacturer handling labels",
+      "Forklift, dock, liftgate or crane requirements at each end",
+      "Vehicle clearance, parking and access to the delivery point",
+      "Appointment, site contact and whether delivery is curbside or dock-only"
+    ],
+    "steps": [
+      "Collect dimensions and weights for the largest and heaviest pieces.",
+      "Confirm packaging and any keep-upright or no-stack instructions.",
+      "Match the equipment to site access and unloading capability.",
+      "Document the agreed delivery scope and proof-of-delivery process."
+    ],
+    "risk": "Transportation does not automatically include rooftop placement, rigging, installation or inside delivery. Those services must be separately confirmed in writing.",
+    "faqs": [
+      [
+        "Can rooftop units be delivered by box truck?",
+        "It depends on crate size, payload, unloading method and the actual vehicle's interior dimensions."
+      ],
+      [
+        "Is crane service included?",
+        "Not unless a separate scope and qualified provider are confirmed."
+      ],
+      [
+        "What information helps quote HVAC freight?",
+        "Piece dimensions and weights, pickup/delivery access, unloading method and required delivery window."
+      ]
+    ]
+  },
+  "industrial-machinery-freight-brokerage": {
+    "lead": "Industrial machinery moves require more than a machine's catalog weight: attachments, skids, center of gravity and lifting points affect trailer selection and handling.",
+    "fit": "Factory equipment, presses, machine tools, compressors and other industrial units that can be safely loaded and transported on confirmed equipment.",
+    "check": [
+      "Actual transport weight and dimensions including skids, guards and attachments",
+      "Center of gravity, lifting points and manufacturer handling instructions",
+      "Rigging, forklift or crane capacity and loading-surface conditions",
+      "Trailer deck, axle configuration, blocking and securement plan",
+      "Route constraints, delivery access and unloading appointment"
+    ],
+    "steps": [
+      "Request manufacturer specifications and photos of the actual shipping configuration.",
+      "Confirm who supplies rigging, loading equipment and qualified operators.",
+      "Have the carrier review deck fit, weight distribution and securement.",
+      "Verify route and site access before confirming the shipment."
+    ],
+    "risk": "A brochure weight may exclude tooling, fluids, attachments or packaging. Use the actual shipping configuration and qualified carrier review; do not treat this page as a lift plan or permit determination.",
+    "faqs": [
+      [
+        "Can industrial machinery move on a flatbed?",
+        "Some units can, but dimensions, weight, lifting method, protection and route determine the correct equipment."
+      ],
+      [
+        "Should a machine be drained before shipping?",
+        "Follow the manufacturer's and shipper's preparation instructions and disclose any fluids or special handling requirements."
+      ],
+      [
+        "What should be included in the quote request?",
+        "Machine model, actual dimensions and weight, photos, lifting points, origin/destination and loading/unloading plan."
+      ]
+    ]
+  },
+  "lowboy-construction-equipment-freight": {
+    "lead": "Construction-equipment freight may require a lowboy, RGN or another specialized trailer depending on machine height, weight, ground clearance and loading method.",
+    "fit": "Excavators, loaders, dozers and other construction machines that can be loaded onto a suitable heavy-haul configuration and routed after review.",
+    "check": [
+      "Machine make/model, transport weight and dimensions with attachments",
+      "Track or tire condition, ground clearance and whether the machine can self-load",
+      "Deck height, well dimensions, ramps, axle groups and carrier capacity",
+      "Loading surface, access, permits and route-specific restrictions",
+      "Origin and destination site access, escorts and unloading responsibilities"
+    ],
+    "steps": [
+      "Obtain the machine's actual transport configuration and attachment list.",
+      "Confirm the selected trailer's deck, ramp and capacity specifications.",
+      "Have the carrier evaluate loaded dimensions, weight distribution and route.",
+      "Agree on who operates, loads, blocks and secures the machine."
+    ],
+    "risk": "A lowboy label does not establish that a load is legal or suitable. Permits, axle weights, clearances and escorts vary by route and must be verified by the carrier and permitting specialists.",
+    "faqs": [
+      [
+        "Is a lowboy the same as an RGN?",
+        "No. Trailer design, deck configuration and loading method differ; select by machine fit and carrier specification."
+      ],
+      [
+        "Can construction equipment drive onto the trailer?",
+        "Only when the machine, ramps, ground clearance, operator and loading surface make that method suitable."
+      ],
+      [
+        "Are permits included automatically?",
+        "No. Requirements and responsibility must be confirmed for the actual loaded dimensions, weights and route."
+      ]
+    ]
+  },
+  "agricultural-equipment-freight-transport": {
+    "lead": "Agricultural-equipment freight needs a transport profile that includes attachments, tire or track dimensions and the route between the farm, dealer and receiving site.",
+    "fit": "Tractors, combines, implements and other farm equipment that fit a confirmed trailer and carrier operating plan.",
+    "check": [
+      "Make/model, actual transport weight and overall dimensions",
+      "Headers, booms, dual tires, mirrors and other removable attachments",
+      "Loading method, ramps, ground clearance and lifting points",
+      "Loaded height, width, axle weights and route restrictions",
+      "Pickup access, seasonal timing and destination unloading capability"
+    ],
+    "steps": [
+      "Collect manufacturer specifications and verify the machine's current configuration.",
+      "List attachments that will travel with the machine or separately.",
+      "Confirm trailer, loading method and carrier acceptance.",
+      "Review route, permits and site access before setting the delivery window."
+    ],
+    "risk": "Published equipment dimensions may differ from the machine as configured. Verify attachments and transport measurements; any permit or route determination must be made for the actual load and jurisdictions.",
+    "faqs": [
+      [
+        "Can farm equipment move on a step deck?",
+        "Sometimes. Machine height, width, weight, loading method and trailer dimensions determine the fit."
+      ],
+      [
+        "Should attachments ship separately?",
+        "That depends on dimensions, securement, protection and the carrier's loading plan."
+      ],
+      [
+        "What is important during harvest season?",
+        "Ready dates, dealer/farm access, loading equipment and receiving windows should be confirmed early."
+      ]
+    ]
+  },
+  "automotive-parts-truckload-freight": {
+    "lead": "Automotive-parts freight often depends on packaging consistency, plant receiving windows and the timing of shipments between suppliers, warehouses and assembly locations.",
+    "fit": "Palletized or packaged automotive components moving between manufacturers, suppliers, distribution centers and commercial facilities.",
+    "check": [
+      "Part description, packaging type, pallet count, dimensions and total weight",
+      "Stackability, protection against moisture or movement and any handling labels",
+      "Pickup release time, shipping documents and plant receiving appointment",
+      "Dock access, trailer requirements and unload responsibility",
+      "Delivery sequence, shortage/exception contact and proof-of-delivery requirements"
+    ],
+    "steps": [
+      "Prepare a shipment profile with pallet dimensions and packaging details.",
+      "Confirm release and receiving appointments at both facilities.",
+      "Match the freight to dry-van or other suitable equipment.",
+      "Agree on exception communication and delivery documentation."
+    ],
+    "risk": "A requested just-in-time window is not a guaranteed appointment. Confirm freight readiness, facility acceptance and carrier capacity before communicating a committed delivery time.",
+    "faqs": [
+      [
+        "What information helps quote automotive parts freight?",
+        "Lane, ready date, pallet count, dimensions, weight, packaging and plant receiving hours."
+      ],
+      [
+        "Can mixed part numbers travel together?",
+        "Only when packaging, labeling, loading sequence and receiver instructions allow it."
+      ],
+      [
+        "Does a truckload quote include line-side delivery?",
+        "No. Delivery scope is limited to the agreed receiving point unless additional handling is confirmed."
+      ]
+    ]
+  },
+  "warehouse-racking-freight-transport": {
+    "lead": "Warehouse-racking freight can contain long uprights, beams, braces and irregular bundles, making piece length and unloading sequence central to equipment selection.",
+    "fit": "Palletized or bundled storage-rack components moving from manufacturers or distribution yards to warehouses and installation sites.",
+    "check": [
+      "Upright and beam lengths, bundle count, dimensions and total weight",
+      "Packaging, banding, protrusions and protection for finished surfaces",
+      "Trailer deck length, support spacing and securement points",
+      "Forklift or crane capacity and unloading sequence at destination",
+      "Site access, staging area, receiving window and delivery contact"
+    ],
+    "steps": [
+      "Request a bundle list with the longest pieces identified.",
+      "Confirm whether the destination can unload and stage long components.",
+      "Review dunnage, support and securement with the carrier.",
+      "Document delivery scope and condition at handoff."
+    ],
+    "risk": "Long rack components may not fit through a facility entrance or staging aisle even when the truck can reach the property. Confirm the unloading point and handling plan before dispatch.",
+    "faqs": [
+      [
+        "Can warehouse racking move in a dry van?",
+        "Some packaged components can; length, packaging, loading access and protection determine whether enclosed equipment fits."
+      ],
+      [
+        "What should be measured?",
+        "The longest upright or beam, bundle dimensions, weight and any protruding parts."
+      ],
+      [
+        "Is installation included?",
+        "No. Installation and rack assembly are outside a freight quote unless separately agreed."
+      ]
+    ]
+  },
+  "trade-show-exhibit-freight-shipping": {
+    "lead": "Trade-show exhibit freight is deadline-driven: crates, cases and pallets must reach the correct venue or advance warehouse within the event's published receiving window.",
+    "fit": "Packaged exhibit materials, displays, cases, crates and event supplies moving between offices, exhibit houses, warehouses and venues.",
+    "check": [
+      "Crate, case and pallet count with dimensions and weights",
+      "Event name, venue address, receiving window and material-handling instructions",
+      "Advance warehouse versus direct-to-show-site delivery requirements",
+      "Dock access, appointment, unloading equipment and on-site contact",
+      "Move-out, return-shipping scope and any separate decorator or drayage charges"
+    ],
+    "steps": [
+      "Obtain the exhibitor kit and confirm the official freight address and deadline.",
+      "Prepare piece-level dimensions, weights, labels and shipping documents.",
+      "Confirm who handles dock appointments, on-site material handling and move-out.",
+      "Arrange return instructions before the event closes if return freight is required."
+    ],
+    "risk": "Venue drayage, dock-to-booth handling, storage, labor and exhibit setup are not automatically included in transportation. Confirm each service and charge with the show contractor and carrier.",
+    "faqs": [
+      [
+        "Should exhibits go to an advance warehouse or the venue?",
+        "Follow the event's exhibitor manual and compare its deadlines, handling rules and charges before choosing."
+      ],
+      [
+        "Does freight delivery include booth setup?",
+        "No. Booth setup and decorator services are separate unless expressly contracted."
+      ],
+      [
+        "What happens after the show?",
+        "Move-out and return freight need their own deadlines, labels, pickup arrangements and receiving address."
+      ]
+    ]
+  },
+  "paper-roll-freight-transport": {
+    "lead": "Paper-roll freight needs the roll diameter, width, weight and core protection documented so the carrier can evaluate support, loading orientation and trailer fit.",
+    "fit": "Paper, packaging and related rolled products that can be carried on confirmed equipment with suitable roll handling and protection.",
+    "check": [
+      "Roll count, diameter, width, individual weight and core size",
+      "Roll orientation, chocks, cradles, blocking and edge protection requirements",
+      "Moisture protection and packaging condition",
+      "Forklift, clamp or other loading equipment and operator responsibility",
+      "Trailer dimensions, load sequence, delivery access and receiving appointment"
+    ],
+    "steps": [
+      "Request a roll list with dimensions, weights and orientation instructions.",
+      "Confirm the shipper's required loading equipment and support method.",
+      "Review moisture protection, blocking and securement with the carrier.",
+      "Verify the receiver can unload the rolls using the agreed method."
+    ],
+    "risk": "Paper rolls can be damaged by improper clamp pressure, moisture or movement. Follow the manufacturer's and shipper's handling instructions and confirm the receiver's unloading equipment.",
+    "faqs": [
+      [
+        "Can paper rolls be shipped in a dry van?",
+        "Often, if the roll dimensions, weight, loading method and protection requirements fit the trailer."
+      ],
+      [
+        "Why does roll orientation matter?",
+        "It affects support, stability, loading sequence and the risk of damage."
+      ],
+      [
+        "What should be included in a quote?",
+        "Roll count, diameter, width, weight, packaging, lane and loading/unloading equipment."
+      ]
+    ]
+  },
+  "palletized-beverage-freight-shipping": {
+    "lead": "Palletized beverage freight is influenced by pallet weight, liquid packaging, stackability and the receiving facility's dock and appointment rules.",
+    "fit": "Packaged beverages and related palletized products moving between manufacturers, distributors, warehouses and retail receiving facilities.",
+    "check": [
+      "Pallet count, footprint, height, gross weight and stackability",
+      "Packaging type, wrap condition, slip sheets and damage-prevention needs",
+      "Temperature or light-protection instructions if specified by the shipper",
+      "Dock access, loading method, receiving hours and appointment",
+      "Pallet exchange, delivery receipt and shortage/damage reporting process"
+    ],
+    "steps": [
+      "Confirm the pallet profile and whether loads may be stacked.",
+      "Check the total weight and trailer capacity with the carrier.",
+      "Agree on pallet exchange, unloading and condition documentation.",
+      "Confirm the receiving appointment and exception contact before pickup."
+    ],
+    "risk": "Do not assume pallets can be double-stacked or that a retailer will accept an unplanned arrival. Packaging, weight, stackability and receiving rules must be confirmed.",
+    "faqs": [
+      [
+        "What affects a beverage freight quote?",
+        "Pallet count, dimensions, total weight, lane, stackability and appointment requirements."
+      ],
+      [
+        "Is temperature control always required?",
+        "No. Follow the product's written shipping instructions; do not assume a temperature requirement."
+      ],
+      [
+        "Are pallet exchanges included?",
+        "Only when the shipper, receiver and carrier agree on the pallet type and exchange process."
+      ]
+    ]
+  },
+  "produce-reefer-freight-shipping": {
+    "lead": "Produce reefer freight depends on the commodity-specific instructions supplied by the shipper, including setpoint, product condition, airflow and receiving requirements.",
+    "fit": "Fresh produce and other temperature-sensitive agricultural products that are accepted by a qualified refrigerated carrier and compatible trailer.",
+    "check": [
+      "Exact commodity, packaging, maturity/condition and any handling restrictions",
+      "Written setpoint, tolerance and continuous or cycle-mode instructions",
+      "Pre-cooling, product temperature and airflow or pallet-loading requirements",
+      "Trailer cleanliness, previous-load restrictions, seals and temperature records",
+      "Pickup and receiver appointments, inspection process and rejection protocol"
+    ],
+    "steps": [
+      "Obtain written temperature and handling instructions from the shipper.",
+      "Confirm trailer readiness, cleanliness and any pre-cooling requirement.",
+      "Review pallet pattern and airflow with the carrier before loading.",
+      "Agree on temperature documentation and the process for reporting exceptions."
+    ],
+    "risk": "There is no universal produce temperature. Requirements vary by commodity and shipper; never substitute a generic chart for the written shipping instructions or promise a temperature outcome.",
+    "faqs": [
+      [
+        "What temperature should produce travel at?",
+        "Use the shipper's commodity-specific written setpoint and tolerance; different produce items have different requirements."
+      ],
+      [
+        "Does the reefer cool warm product quickly?",
+        "A refrigeration unit maintains its operating environment; the shipper and carrier must agree on product condition and pre-cooling before loading."
+      ],
+      [
+        "What records should be requested?",
+        "The agreed temperature records, loading details, seal information and signed delivery documentation."
+      ]
+    ]
+  },
+  "frozen-food-reefer-freight-shipping": {
+    "lead": "Frozen-food freight requires a refrigerated trailer and written handling instructions that match the product, packaging and receiving facility.",
+    "fit": "Packaged frozen food and other shipper-approved frozen products accepted by a qualified reefer carrier.",
+    "check": [
+      "Product description, packaging, pallet count and total weight",
+      "Written setpoint, tolerance and required operating mode",
+      "Trailer cleanliness, previous cargo, pre-cooling and inspection requirements",
+      "Loading sequence, door-open time, seals and temperature-recording needs",
+      "Receiver appointment, temperature-check process and exception contacts"
+    ],
+    "steps": [
+      "Obtain the product's written temperature and handling specification.",
+      "Confirm trailer condition and pre-cooling responsibility before loading.",
+      "Agree on the operating mode and temperature documentation with the carrier.",
+      "Set the receiver's appointment and the process for documenting any exception."
+    ],
+    "risk": "Do not assume a generic frozen-food temperature or operating mode. The shipper's product specification and carrier acceptance govern the shipment.",
+    "faqs": [
+      [
+        "What setpoint should frozen food use?",
+        "The shipper must specify the setpoint and tolerance for the actual product and packaging."
+      ],
+      [
+        "Should a reefer be pre-cooled?",
+        "Follow the shipper's written instructions and confirm responsibility with the carrier before loading."
+      ],
+      [
+        "What if a temperature exception occurs?",
+        "Use the agreed notification, documentation and disposition process; do not improvise a product-safety decision."
+      ]
+    ]
+  },
+  "dairy-reefer-freight-shipping": {
+    "lead": "Dairy reefer freight requires clear product-specific temperature instructions, sanitation expectations and a receiving process that can handle the shipment on arrival.",
+    "fit": "Packaged dairy products and other shipper-approved chilled goods suitable for the selected refrigerated trailer and carrier.",
+    "check": [
+      "Product type, packaging, pallet profile and total weight",
+      "Written temperature setpoint, tolerance and operating instructions",
+      "Trailer sanitation, previous-load and wash documentation requirements",
+      "Pre-cooling, loading sequence, seal and temperature-record needs",
+      "Pickup/delivery appointments and receiver inspection process"
+    ],
+    "steps": [
+      "Collect the product specification and any food-safety handling instructions.",
+      "Confirm trailer cleanliness, prior-load acceptance and required documentation.",
+      "Agree on temperature instructions, loading time and seal process.",
+      "Coordinate the receiver's appointment and exception-reporting contact."
+    ],
+    "risk": "Dairy products do not all share one shipping specification. Do not infer temperatures, sanitation standards or previous-load acceptance; obtain written requirements from the shipper and receiver.",
+    "faqs": [
+      [
+        "Can all dairy products use the same reefer setting?",
+        "No. Product type, packaging and shipper requirements determine the written setpoint and tolerance."
+      ],
+      [
+        "What sanitation records may be required?",
+        "The shipper or receiver may specify wash, inspection or previous-load documentation; confirm before dispatch."
+      ],
+      [
+        "Who confirms the receiving temperature process?",
+        "The shipper and receiver should define the inspection and documentation requirements before pickup."
+      ]
+    ]
+  },
+  "electrical-transformer-freight-transport": {
+    "lead": "Transformer freight can involve concentrated weight, delicate components and lifting points that require a shipment-specific heavy-haul review.",
+    "fit": "Electrical transformers and related power equipment that can be transported on a suitable trailer with an approved loading and route plan.",
+    "check": [
+      "Actual transport dimensions, weight, center of gravity and shipping configuration",
+      "Manufacturer lifting points, skid/base design and protection requirements",
+      "Crane capacity, loading surface, rigging responsibility and securement plan",
+      "Trailer deck, axle configuration, loaded dimensions and route constraints",
+      "Utility/site access, delivery window, unloading equipment and receiving contact"
+    ],
+    "steps": [
+      "Obtain the manufacturer's transport drawing and actual shipping weight.",
+      "Confirm lifting, blocking and securement requirements with qualified specialists.",
+      "Have the carrier review trailer fit, weight distribution and route constraints.",
+      "Confirm site access, unloading plan and delivery documentation before dispatch."
+    ],
+    "risk": "Transformer weights and lifting requirements vary widely. Do not infer capacity, lifting points, permits or route feasibility; qualified carrier and engineering review are required for the actual unit.",
+    "faqs": [
+      [
+        "Can a transformer move on a standard flatbed?",
+        "Some smaller units may, but weight, dimensions, center of gravity and loading requirements determine the equipment."
+      ],
+      [
+        "Why is a transport drawing important?",
+        "It identifies dimensions, weight distribution, lifting points and handling limits that a carrier needs to review."
+      ],
+      [
+        "Does the freight quote include crane service?",
+        "Not unless a separate crane and rigging scope is confirmed in writing."
+      ]
+    ]
+  },
+  "industrial-generator-freight-transport": {
+    "lead": "Industrial-generator freight should be planned around the unit's shipping weight, dimensions, lifting points and preparation instructions rather than its electrical output rating.",
+    "fit": "Packaged or skid-mounted industrial generators and related power equipment that fit a confirmed trailer and carrier handling plan.",
+    "check": [
+      "Manufacturer model, actual shipping weight and transport dimensions",
+      "Skid, enclosure, exhaust, radiator and protruding-component protection",
+      "Fuel or fluid status and shipper preparation instructions",
+      "Lifting points, crane/forklift capacity and securement requirements",
+      "Route, site access, unloading plan and receiving appointment"
+    ],
+    "steps": [
+      "Request the generator's transport drawing and shipping configuration.",
+      "Confirm any draining, isolation or preparation instructions with the shipper.",
+      "Review loading points, trailer fit and securement with the carrier.",
+      "Agree on the delivery point, unloading equipment and proof of delivery."
+    ],
+    "risk": "Do not assume a generator is empty, non-regulated or ready to load. Follow the manufacturer's and shipper's preparation instructions and have the carrier review the actual shipment.",
+    "faqs": [
+      [
+        "What determines the trailer for a generator?",
+        "Shipping dimensions, weight, skid configuration, loading method and route determine the suitable equipment."
+      ],
+      [
+        "Should fuel or fluids be removed?",
+        "Follow the manufacturer's, shipper's and applicable carrier instructions; disclose the actual condition before dispatch."
+      ],
+      [
+        "Is installation part of transportation?",
+        "No. Commissioning, electrical connection and installation are separate services unless expressly contracted."
+      ]
+    ]
+  }
+}
 };
 const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#39;");
 const valid=s=>/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(s||''));
