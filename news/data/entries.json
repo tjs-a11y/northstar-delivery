@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-12",
+    "subject": "Diesel falls 16.5 cents; Mexico tariff threat returns",
+    "headline": "Diesel drops 16.5 cents as Trump threatens to double Mexico tariffs",
+    "script": "Pump prices ease but stay above $6, a new tariff threat hits cross-border freight, and small-fleet capacity keeps shrinking.\n\nThe U.S. average for diesel fell 16.5 cents to $6.127 a gallon, but trade policy just got shakier for cross-border lanes.",
+    "url": "briefs/2026-11-12.html",
+    "dieselPrice": {
+      "period": "2026-11-09",
+      "dollarsPerGallon": 6.127
+    },
+    "topHeadline": "Diesel drops 16.5 cents as Trump threatens to double Mexico tariffs",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Diesel 101: Why Truck Stop Diesel Is Still Above $6 a Gallon as Crude Falls",
+        "link": "https://www.freightwaves.com/news/diesel-101-why-truck-stop-diesel-is-still-above-6-a-gallon-as-crude-falls"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trump threatens to double Mexico tariffs over alleged migrant influx",
+        "link": "https://www.freightwaves.com/news/trump-threatens-to-double-mexico-tariffs-over-alleged-migrant-influx"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "US midterm shift adds trade uncertainty as trans-Pacific ocean freight rates stay elevated",
+        "link": "https://www.freightwaves.com/news/us-midterm-shift-adds-trade-uncertainty-as-trans-pacific-ocean-freight-rates-stay-elevated"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Manufacturing advocates make case for tariffs following midterm results",
+        "link": "https://www.supplychaindive.com/news/manufacturing-advocates-make-case-for-tariffs-following-midterm-results/874456/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Why Owner-Operators Are Leaving The Small-Fleet Tier, And Where Their Trucks Go Next",
+        "link": "https://www.freightwaves.com/news/why-owner-operators-are-leaving-the-small-fleet-tier-and-where-their-trucks-go-next"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-11",
     "subject": "Diesel falls 16.5 cents to $6.127; tighter peak tests shippers",
     "headline": "Diesel slides 16.5 cents as a tighter peak squeezes old shipper bid playbooks",

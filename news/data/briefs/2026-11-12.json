@@ -1,0 +1,557 @@
+{
+  "brief": {
+    "subject": "Diesel falls 16.5 cents; Mexico tariff threat returns",
+    "headline": "Diesel drops 16.5 cents as Trump threatens to double Mexico tariffs",
+    "dek": "Pump prices ease but stay above $6, a new tariff threat hits cross-border freight, and small-fleet capacity keeps shrinking.",
+    "lede": "The U.S. average for diesel fell 16.5 cents to $6.127 a gallon, but trade policy just got shakier for cross-border lanes.",
+    "sections": [
+      {
+        "heading": "Diesel eases but stays above $6",
+        "bullets": [
+          "$6.127 per gallon: the national diesel average for the week of 2026-11-09, still a heavy weight on cost per mile.",
+          "Down 16.5 cents (2.6%) week over week, a modest break for carriers running tight margins.",
+          "Down 5.2 cents over four weeks, so relief is building slowly, not arriving all at once.",
+          "$6.23/gal at truck stops on Nov. 9, up 65% YoY even as Brent fell 21%, so refining margins are keeping pump prices high."
+        ],
+        "source_ids": [
+          "F1",
+          "H7"
+        ]
+      },
+      {
+        "heading": "Tariff fight heats up again",
+        "bullets": [
+          "Doubled Mexico tariffs are on the table unless the border migrant increase stops, a direct risk to cross-border freight volumes.",
+          "Democrats now control both chambers of Congress, adding uncertainty to the trade outlook and shipper planning.",
+          "Three bills in Congress would sharply limit presidential tariff power, and experts see possible bipartisan support.",
+          "Manufacturing advocates argue against rolling back trade enforcement, so expect a drawn-out policy fight."
+        ],
+        "source_ids": [
+          "H2",
+          "H6",
+          "H11",
+          "H3"
+        ]
+      },
+      {
+        "heading": "Small-fleet tier keeps shrinking",
+        "bullets": [
+          "About 362,000 tractors now run with one-to-six-truck carriers, down from a 2023 peak near 398,000.",
+          "Not all of that is failures; many trucks are moving elsewhere rather than leaving the industry.",
+          "15 bankruptcy filings and more than 1,000 job cuts in recent weeks show freight distress is ongoing."
+        ],
+        "source_ids": [
+          "H16",
+          "H17"
+        ]
+      },
+      {
+        "heading": "Ocean imports cool from peak",
+        "bullets": [
+          "Transpacific ocean rates eased slightly as U.S. port demand slows, though they remain elevated year over year.",
+          "Imports are coming off a near-record peak, which could thin out port drayage and import-driven loads.",
+          "Air cargo shows few signs of a late-year volume surge, hinting at a muted holiday freight finish."
+        ],
+        "source_ids": [
+          "H20",
+          "H6",
+          "H18"
+        ]
+      },
+      {
+        "heading": "Rail gains ground on intermodal",
+        "bullets": [
+          "6.6% year-over-year growth in U.S. rail traffic, led by intermodal, means more competition for long-haul truckload freight.",
+          "BLET ended its Wheeling & Lake Erie strike after winning protections for union conductors' work.",
+          "Genesee & Wyoming plans to split into three rail holding companies and sell dozens of short lines."
+        ],
+        "source_ids": [
+          "H14",
+          "H4",
+          "H13"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 16.5 cents to $6.127, Trump threatens to double Mexico tariffs, small-fleet tractor counts drop and rail intermodal climbs 6.6%."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-12T17:52:09.837Z",
+    "date": "2026-11-12",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "previous": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "weeklyChangeCents": -16.5,
+      "weeklyChangePct": -2.6,
+      "fourWeekChangeCents": -5.2,
+      "formatted": {
+        "latest": "$6.127",
+        "weeklyChange": "down 16.5 cents",
+        "weeklyChangePct": "2.6%",
+        "fourWeekChange": "down 5.2 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tractor Supply partners with Uber to offer on-demand delivery",
+        "link": "https://www.freightwaves.com/news/tractor-supply-partners-with-uber-to-offer-on-demand-delivery",
+        "published": "2026-11-12T16:15:36.000Z",
+        "snippet": "Tractor Supply Company is teaming up with Uber to give customers another option for fast same-day delivery of digital orders, underscoring the degree to which retailers are embracing quick commerce as table stakes for growing business. Under the collaboration announced Thursday, customers can now shop from nearly 2,500 Tractor Supply (NASDAQ: TSCO) stores across the […] The post Tractor Supply par",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Fulfillment",
+          "e-commerce",
+          "On-demand delivery",
+          "Tractor Supply",
+          "Uber"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trump threatens to double Mexico tariffs over alleged migrant influx",
+        "link": "https://www.freightwaves.com/news/trump-threatens-to-double-mexico-tariffs-over-alleged-migrant-influx",
+        "published": "2026-11-12T16:13:14.000Z",
+        "snippet": "President Donald Trump threatened to double tariffs on Mexican imports unless Mexico halts the alleged increase of migrants arriving at the border. The post Trump threatens to double Mexico tariffs over alleged migrant influx appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Tariffs",
+          "Trucking",
+          "Trump tariffs",
+          "US-Mexico border",
+          "US-Mexico trade",
+          "US-Mexico trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H3",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing advocates make case for tariffs following midterm results",
+        "link": "https://www.supplychaindive.com/news/manufacturing-advocates-make-case-for-tariffs-following-midterm-results/874456/",
+        "published": "2026-11-12T16:08:17.000Z",
+        "snippet": "Although polls show the public is tired of import taxes, rolling back trade enforcement would be a “serious mistake,” per an Alliance for American Manufacturing report.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "BLET ends Wheeling & Lake Erie strike",
+        "link": "https://www.freightwaves.com/news/blet-ends-wheeling-lake-erie-strike",
+        "published": "2026-11-12T15:39:34.000Z",
+        "snippet": "BLET said it ended its strike against Wheeling & Lake Erie after securing an agreement protecting union conductors’ work. The post BLET ends Wheeling & Lake Erie strike appeared first on FreightWaves.",
+        "categories": [
+          "Modes",
+          "News",
+          "Rail",
+          "Brotherhood of Locomotive Engineers and Trainmen",
+          "labor",
+          "railroad",
+          "Strike",
+          "Wheeling & Lake Erie Railway"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS’ Teamsters contract expires in 2028. Shippers should prepare now.",
+        "link": "https://www.supplychaindive.com/news/ups-teamsters-contract-expires-in-2028-shippers-should-prepare-now/874374/",
+        "published": "2026-11-12T15:34:00.000Z",
+        "snippet": "Even with a potential clash a ways out, shippers should ensure they have other established carrier relationships to mitigate strike risk, experts say.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US midterm shift adds trade uncertainty as trans-Pacific ocean freight rates stay elevated",
+        "link": "https://www.freightwaves.com/news/us-midterm-shift-adds-trade-uncertainty-as-trans-pacific-ocean-freight-rates-stay-elevated",
+        "published": "2026-11-12T14:25:28.000Z",
+        "snippet": "Democrats’ victories in both chambers of Congress has added uncertainty to the trade outlook as ocean imports ease from a near-record peak. The post US midterm shift adds trade uncertainty as trans-Pacific ocean freight rates stay elevated appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "China",
+          "container shipping",
+          "Freightos"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Diesel 101: Why Truck Stop Diesel Is Still Above $6 a Gallon as Crude Falls",
+        "link": "https://www.freightwaves.com/news/diesel-101-why-truck-stop-diesel-is-still-above-6-a-gallon-as-crude-falls",
+        "published": "2026-11-12T14:24:00.000Z",
+        "snippet": "Truck stop diesel hit $6.23/gal on Nov. 9, up 65% YoY, even as Brent fell 21%. SONAR's Diesel 101 sitrep explains the crack spread and what comes next. The post Diesel 101: Why Truck Stop Diesel Is Still Above $6 a Gallon as Crude Falls appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "SONAR Sitreps",
+          "carriers",
+          "diesel",
+          "freight intelligence",
+          "Fuel",
+          "Shippers",
+          "SONAR"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FedEx enhances European road and air networks",
+        "link": "https://www.freightwaves.com/news/fedex-enhances-european-road-and-air-networks",
+        "published": "2026-11-12T14:12:18.000Z",
+        "snippet": "FedEx is making infrastructure investments at key locations in Europe, while also consolidating operations across the continent for greater efficiency. The post FedEx enhances European road and air networks appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "Supply Chains",
+          "air cargo",
+          "Europe",
+          "FedEx",
+          "Germany",
+          "Madrid"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "One of 3 ratings agencies now has XPO as investment-grade",
+        "link": "https://www.freightwaves.com/news/one-of-3-ratings-agencies-now-has-xpo-as-investment-grade",
+        "published": "2026-11-12T13:19:10.000Z",
+        "snippet": "LTL carrier XPO is now an investment-grade credit at one of the three major ratings agencies. Fitch Ratings has upgraded its rating on XPO (NYSE: XPO) to BBB-. That is one notch above the cutoff between investment-grade and non-investment grade debt. It comes just a few months after both Moody’s (NYSE: MCO) and S&P Global […] The post One of 3 ratings agencies now has XPO as investment-grade appea",
+        "categories": [
+          "Company Earnings",
+          "LTL",
+          "Modes",
+          "News",
+          "Fitch Ratings",
+          "Moody's",
+          "S&P Global Ratings",
+          "XPO"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ITF report ties part of retail’s $850B returns to freight",
+        "link": "https://www.freightwaves.com/news/itf-group-report-retail-returns-freight",
+        "published": "2026-11-12T13:00:00.000Z",
+        "snippet": "NRF projected $849.9 billion in 2025 returns, down from $890 billion in 2024. ITF Group's report says retailers book part of that cost in the wrong department. The post ITF report ties part of retail’s $850B returns to freight appeared first on FreightWaves.",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Fulfillment",
+          "Logistics & Brokerage",
+          "News",
+          "ITF",
+          "ITF Group",
+          "logistics",
+          "Modern Shipper"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/",
+        "published": "2026-11-12T12:25:00.000Z",
+        "snippet": "Three bills in Congress would significantly restrict presidential tariff power if they become law, and experts say there's appetite for change in trade policy.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FarEye turns profitable in Q4 as EMEA revenue jumps 51%",
+        "link": "https://www.freightwaves.com/news/fareye-q4-profit-emea-revenue",
+        "published": "2026-11-12T12:00:00.000Z",
+        "snippet": "FarEye reported its first profitable quarter as fiscal 2026 revenue from operations rose 24.58% to $27.9 million, led by a 51.17% jump in EMEA revenue The post FarEye turns profitable in Q4 as EMEA revenue jumps 51% appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "Technology & Startups",
+          "company earnings",
+          "delivery management software",
+          "FarEye",
+          "Kushal Nahata",
+          "Last-mile"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Genesee & Wyoming prepares to split into three rail holding companies",
+        "link": "https://www.freightwaves.com/news/genesee-wyoming-prepares-to-split-into-three-rail-holding-companies",
+        "published": "2026-11-12T11:08:00.000Z",
+        "snippet": "The largest U.S. short line railroad operator is restructuring as it plans to sell off dozens of lines. The post Genesee & Wyoming prepares to split into three rail holding companies appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Modes",
+          "News",
+          "Rail",
+          "Top Stories",
+          "Brookfield",
+          "Genesee & Wyoming",
+          "GIC"
+        ],
+        "creator": "Trains.com Staff"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Intermodal leads U.S. rail traffic up 6.6% from a year ago",
+        "link": "https://www.freightwaves.com/news/intermodal-leads-u-s-rail-traffic-up-6-6-from-a-year-ago",
+        "published": "2026-11-12T11:00:00.000Z",
+        "snippet": "U.S. rail traffic advanced as strong intermodal growth outweighed some carload declines. The post Intermodal leads U.S. rail traffic up 6.6% from a year ago appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Modes",
+          "News",
+          "Rail",
+          "Top Stories",
+          "Association of American Railroads",
+          "carloads",
+          "Commodities"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New cyber thief gang targets transports; Hunt, Ryder and Echo hit",
+        "link": "https://www.freightwaves.com/news/new-cyber-thief-gang-targets-transports-hunt-ryder-and-echo-hit",
+        "published": "2026-11-12T01:59:44.000Z",
+        "snippet": "Actions by a relatively new group of cybercriminals that have targeted many transportation companies in turn have led to lawsuits filed by employees of three big names that have gotten caught up in the crook’s web. The cyber criminals operate under the name Whitearmor. Ben Wilkens, the director of cybersecurity at the National Motor Freight […] The post New cyber thief gang targets transports; Hun",
+        "categories": [
+          "Logistics & Brokerage",
+          "Modes",
+          "News",
+          "Top Stories",
+          "Cybersecurity",
+          "Echo Global Logistics",
+          "J.B. Hunt",
+          "National Motor Freight Traffic Association"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Why Owner-Operators Are Leaving The Small-Fleet Tier, And Where Their Trucks Go Next",
+        "link": "https://www.freightwaves.com/news/why-owner-operators-are-leaving-the-small-fleet-tier-and-where-their-trucks-go-next",
+        "published": "2026-11-11T22:48:14.000Z",
+        "snippet": "For three and a half years the smallest tier of trucking has been quietly emptying out, with the number of tractors run by one-to-six-truck carriers sliding from a 2023 peak near 398,000 all the way back to about 362,000, and the easy explanation, that owner-operators are simply going out of business, misses what the federal […] The post Why Owner-Operators Are Leaving The Small-Fleet Tier, And Wh",
+        "categories": [
+          "Analysis & Insights",
+          "Drivers & Workforce",
+          "News",
+          "Playbook: Featured"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Freight distress persists as logistics layoffs top 1,000, bankruptcies mount",
+        "link": "https://www.freightwaves.com/news/freight-distress-persists-as-logistics-layoffs-top-1000-bankruptcies-mount",
+        "published": "2026-11-11T22:20:40.000Z",
+        "snippet": "More than 1,000 job cuts and 15 bankruptcy filings highlight financial strains across the freight and logistics sector in recent weeks. The post Freight distress persists as logistics layoffs top 1,000, bankruptcies mount appeared first on FreightWaves.",
+        "categories": [
+          "Layoffs & Bankruptcies",
+          "News",
+          "layoffs and bankruptcies",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Air cargo’s hopes for end-of-year volume surge dwindle",
+        "link": "https://www.supplychaindive.com/news/air-cargos-hopes-for-end-of-year-volume-surge-dwindle/874430/",
+        "published": "2026-11-11T18:55:52.000Z",
+        "snippet": "Market growth remains steady, but pressured capacity and other traditional signals of a late burst in demand were lacking in October, Xeneta reported.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "BMW announces new battery supply deals for the US, Europe",
+        "link": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/",
+        "published": "2026-11-11T17:15:00.000Z",
+        "snippet": "The automaker contracted with battery cell manufacturers Samsung SDI and LG Energy Solution as it aims for a more localized supply chain for future electric vehicles.",
+        "categories": [],
+        "creator": "Eric Walz"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Transpacific ocean rates ease slightly as peak winds down",
+        "link": "https://www.supplychaindive.com/news/transpacific-ocean-rates-ease-slightly-as-peak-winds-down/874262/",
+        "published": "2026-11-11T15:48:40.000Z",
+        "snippet": "Slowing demand at U.S. ports is helping ease rates, but costs remain elevated on a year-over-year basis.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "CarParts.com revs up in-house last-mile delivery for cost, speed benefits",
+        "link": "https://www.supplychaindive.com/news/carpartscom-revs-up-in-house-last-mile-delivery-for-cost-speed-benefits/874287/",
+        "published": "2026-11-11T15:23:46.000Z",
+        "snippet": "The cost savings opportunity will be “substantial” as the company aims to deliver 300,000 packages a year via its internal network, per CEO David Meniane.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Asics boosts inventory management using warehouse drones",
+        "link": "https://www.supplychaindive.com/news/asics-boosts-inventory-management-using-warehouse-drones/874273/",
+        "published": "2026-11-11T15:00:00.000Z",
+        "snippet": "By using the technology, the footwear brand improved misplaced inventory recovery while slashing manual labor hours and increasing counting frequency.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Honda to invest $3B in new Ohio hybrid vehicle plant",
+        "link": "https://www.supplychaindive.com/news/honda-to-invest-3b-in-new-ohio-hybrid-vehicle-plant/874281/",
+        "published": "2026-11-11T12:39:00.000Z",
+        "snippet": "The factory will create 2,000 jobs, and as part of Honda’s focus on hybrids and swift development, it’s keeping close to the automaker’s existing U.S. footprint.",
+        "categories": [],
+        "creator": "Bengt Halvorson"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Canada Goose will revisit pricing to blunt tariffs next year, CFO says",
+        "link": "https://www.supplychaindive.com/news/canada-goose-will-revisit-pricing-to-blunt-tariffs-next-year-cfo-says/874196/",
+        "published": "2026-11-10T15:11:00.000Z",
+        "snippet": "The Toronto-based luxury apparel company worked hard to get its products into the U.S. before new import tariffs became effective in August.",
+        "categories": [],
+        "creator": "Maura Webber Sadovi"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
