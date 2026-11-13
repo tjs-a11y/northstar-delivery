@@ -1,5 +1,60 @@
 [
   {
+    "date": "2026-11-13",
+    "subject": "FMCSA pulls 133 ELDs; Mexico tariff threat; LA rail dwell",
+    "headline": "FMCSA Revokes 133 ELDs as Mexico Tariff Threat Clouds Cross-Border Freight",
+    "script": "Regulators pull 133 logging devices, Trump threatens to double Mexico tariffs, and LA port volume and rail delays climb together.\n\nFMCSA removed 133 electronic logging devices from its approved registry, citing fraud and compliance failures. Carriers should confirm their ELD is still listed.",
+    "url": "briefs/2026-11-13.html",
+    "dieselPrice": null,
+    "topHeadline": "FMCSA Revokes 133 ELDs as Mexico Tariff Threat Clouds Cross-Border Freight",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "FMCSA revokes 133 electronic logging devices in fraud crackdown",
+        "link": "https://www.freightwaves.com/news/fmcsa-revokes-133-electronic-logging-devices-in-fraud-crackdown"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trump threatens to double Mexico tariffs over alleged migrant influx",
+        "link": "https://www.freightwaves.com/news/trump-threatens-to-double-mexico-tariffs-over-alleged-migrant-influx"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Record October as Los Angeles tops 1 Million TEUs for second straight month",
+        "link": "https://www.freightwaves.com/news/record-october-as-los-angeles-tops-1-million-teus-for-second-straight-month"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "After $604M verdict, fleets face AI camera blind spots",
+        "link": "https://www.freightwaves.com/news/ai-dash-cam-false-negatives-fleet-liability"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-12",
     "subject": "Diesel falls 16.5 cents; Mexico tariff threat returns",
     "headline": "Diesel drops 16.5 cents as Trump threatens to double Mexico tariffs",

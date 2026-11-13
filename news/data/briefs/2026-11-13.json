@@ -1,0 +1,514 @@
+{
+  "brief": {
+    "subject": "FMCSA pulls 133 ELDs; Mexico tariff threat; LA rail dwell",
+    "headline": "FMCSA Revokes 133 ELDs as Mexico Tariff Threat Clouds Cross-Border Freight",
+    "dek": "Regulators pull 133 logging devices, Trump threatens to double Mexico tariffs, and LA port volume and rail delays climb together.",
+    "lede": "FMCSA removed 133 electronic logging devices from its approved registry, citing fraud and compliance failures. Carriers should confirm their ELD is still listed.",
+    "sections": [
+      {
+        "heading": "133 ELDs Pulled From Registry",
+        "bullets": [
+          "133 devices: FMCSA struck them from its approved ELD list in a fraud crackdown.",
+          "Regulators cited widespread compliance failures and evidence of fraud behind the removals.",
+          "Running a revoked device can put your logs and roadside inspections at risk, so verify your unit's status now."
+        ],
+        "source_ids": [
+          "H4"
+        ]
+      },
+      {
+        "heading": "Mexico Tariffs Could Double",
+        "bullets": [
+          "Doubled tariffs: Trump threatened them on Mexican imports unless Mexico stops migrant caravans.",
+          "Effective immediately: the president said the higher levies would hit if Mexico fails to act.",
+          "Cross-border and border-lane carriers could see freight volumes swing quickly if the threat is carried out."
+        ],
+        "source_ids": [
+          "H15",
+          "H17"
+        ]
+      },
+      {
+        "heading": "LA Booms While Rail Backs Up",
+        "bullets": [
+          "Over 1 million TEUs: Los Angeles topped that mark for a second straight month in a record October.",
+          "5%: October cargo ran ahead of 2025, keeping Southern California drayage demand strong.",
+          "Over nine days: rail-bound containers are sitting idle at the port, per Executive Director Gene Seroka.",
+          "Long rail dwell can push more boxes toward trucks and tie up chassis and terminal time."
+        ],
+        "source_ids": [
+          "H9",
+          "H1"
+        ]
+      },
+      {
+        "heading": "Dash Cams and Nuclear Verdicts",
+        "bullets": [
+          "$604M: a recent verdict has defense attorneys warning fleets about gaps in AI-only dash cams.",
+          "Plaintiff lawyers hunt for systemic failure, not just crash facts, says defense attorney Doug Marcello.",
+          "Risky driving a camera recorded but nobody reviewed can become evidence against a small fleet."
+        ],
+        "source_ids": [
+          "H10"
+        ]
+      },
+      {
+        "heading": "Trade Policy Gets Murkier",
+        "bullets": [
+          "Both chambers: Democrats' midterm wins add uncertainty to the trade outlook.",
+          "Three bills in Congress would sharply limit presidential tariff power if they become law.",
+          "Trans-Pacific ocean rates stay elevated as imports ease from a near-record peak, a signal for port-lane demand."
+        ],
+        "source_ids": [
+          "H21",
+          "H22"
+        ]
+      }
+    ],
+    "seo_description": "FMCSA revokes 133 ELDs, Trump threatens double Mexico tariffs, and Port of LA tops 1 million TEUs as rail dwell tops nine days."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-13T17:28:09.347Z",
+    "date": "2026-11-13",
+    "timezone": "America/Chicago",
+    "fuel": null,
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/",
+        "published": "2026-11-13T16:04:00.000Z",
+        "snippet": "Wait times for idle containers set for rail transport have reached over nine days, Executive Director Gene Seroka said.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "JD Sports leverages tech for faster replenishment",
+        "link": "https://www.supplychaindive.com/news/jd-sports-leverages-tech-for-faster-replenishment/874427/",
+        "published": "2026-11-13T15:55:00.000Z",
+        "snippet": "The sportswear retailer is partnering with Zebra to gain real-time inventory visibility across its omnichannel operations, citing 98% on-shelf availability.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "White House to extend Jones Act waiver as deadline nears, sources say",
+        "link": "https://www.freightwaves.com/news/white-house-to-extend-jones-act-waiver-as-deadline-nears-sources-say",
+        "published": "2026-11-13T15:02:13.000Z",
+        "snippet": "Sources say President Trump is likely to extend the Jones Act waiver allowing foreign vessels to haul cargo between U.S. ports. The post White House to extend Jones Act waiver as deadline nears, sources say appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "News",
+          "Top Stories",
+          "coastwise shipping",
+          "Fuel prices",
+          "Iran war",
+          "Jones Act"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FMCSA revokes 133 electronic logging devices in fraud crackdown",
+        "link": "https://www.freightwaves.com/news/fmcsa-revokes-133-electronic-logging-devices-in-fraud-crackdown",
+        "published": "2026-11-13T15:00:12.000Z",
+        "snippet": "Federal regulators removed 133 electronic logging devices from their approved registry, citing widespread compliance failures and evidence of fraud. The post FMCSA revokes 133 electronic logging devices in fraud crackdown appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Freight Fraud",
+          "News",
+          "ELDs",
+          "electronic logging devices",
+          "FMCSA",
+          "Fraud",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Proficient Auto Logistics eyes margin recovery after challenging Q3",
+        "link": "https://www.freightwaves.com/news/proficient-auto-logistics-eyes-margin-recovery-after-challenging-q3",
+        "published": "2026-11-13T14:42:23.000Z",
+        "snippet": "Shares of Proficient Auto Logistics were down 20% in early trading on Friday as investors contemplate the car hauler’s third-quarter net loss and margin recovery plan. The post Proficient Auto Logistics eyes margin recovery after challenging Q3 appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "News",
+          "auto carriers",
+          "car haulers",
+          "company earnings",
+          "Jack Cooper",
+          "PAL",
+          "Proficient Auto Logistics"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H6",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart more than doubles planned drone delivery sites",
+        "link": "https://www.supplychaindive.com/news/walmart-more-than-doubles-planned-drone-delivery-sites/874580/",
+        "published": "2026-11-13T14:37:21.000Z",
+        "snippet": "An expansion with drone operator Zipline will allow the retailer to make rapid air delivery available to customers nationwide over the next several years.",
+        "categories": [],
+        "creator": "Nicole Silberstein"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USPS readies 2027 rate increase, permanent fuel surcharge",
+        "link": "https://www.supplychaindive.com/news/usps-readies-2027-rate-increase-permanent-fuel-surcharge/874524/",
+        "published": "2026-11-13T14:26:13.000Z",
+        "snippet": "The agency plans to increase prices by 5.9% on average for services like USPS Ground Advantage and Priority Mail in January.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Cargojet fleet optimization boosts productivity, fuels record Q3 revenue",
+        "link": "https://www.freightwaves.com/news/cargojet-fleet-optimization-boosts-productivity-fuels-record-q3-revenue",
+        "published": "2026-11-13T14:20:58.000Z",
+        "snippet": "Cargojet rode a strong air cargo market and the productivity gains from its fleet consolidation strategy to its highest-ever revenue and operating profit in a third quarter. The post Cargojet fleet optimization boosts productivity, fuels record Q3 revenue appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Company Earnings",
+          "air cargo",
+          "airfreight",
+          "Cargojet",
+          "earnings",
+          "freighter aircraft"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Record October as Los Angeles tops 1 Million TEUs for second straight month",
+        "link": "https://www.freightwaves.com/news/record-october-as-los-angeles-tops-1-million-teus-for-second-straight-month",
+        "published": "2026-11-13T14:08:21.000Z",
+        "snippet": "The Port of Los Angeles handled more than 1 million TEUs for the second straight month as cargo surged 5% ahead of 2025. The post Record October as Los Angeles tops 1 Million TEUs for second straight month appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "dwell time",
+          "imports"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "After $604M verdict, fleets face AI camera blind spots",
+        "link": "https://www.freightwaves.com/news/ai-dash-cam-false-negatives-fleet-liability",
+        "published": "2026-11-13T12:30:00.000Z",
+        "snippet": "CHARLOTTE, N.C. — Nuclear verdicts against trucking companies rarely grow out of the facts of the crash itself, according to trucking defense attorney Doug Marcello. Plaintiff attorneys look for evidence of systemic failure, and Marcello said AI-only dash cams are giving them a new place to find it: risky driving the camera recorded but the […] The post After $604M verdict, fleets face AI camera b",
+        "categories": [
+          "Compliance & Regulation",
+          "Equipment & Tech",
+          "Legal Issues",
+          "News",
+          "AI dash cams",
+          "ATA",
+          "ATA MCE",
+          "ATA MCE 2026"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Evergreen Marine nine-month profit up 18% to $2.16 billion",
+        "link": "https://www.freightwaves.com/news/evergreen-marine-nine-month-profit-up-18-to-2-16-billion",
+        "published": "2026-11-13T11:40:00.000Z",
+        "snippet": "Evergreen Marine reported nine-month revenue of $10.29 billion as stronger peak-season demand, higher freight rates and constrained shipping capacity lifted earnings. The post Evergreen Marine nine-month profit up 18% to $2.16 billion appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Company Earnings",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "Capacity",
+          "container shipping"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "What The B-1 Visa Lets A Foreign Truck Driver Legally Do In The United States",
+        "link": "https://www.freightwaves.com/news/what-the-b-1-visa-lets-a-foreign-truck-driver-legally-do-in-the-united-states",
+        "published": "2026-11-12T21:32:41.000Z",
+        "snippet": "Foreign truck drivers have become one of the most contested subjects in American freight over the past two years, and most of the heat comes from a basic confusion about what a B-1 visa actually authorizes, because the visa lets a Mexican or Canadian driver do a specific and fairly narrow set of things on […] The post What The B-1 Visa Lets A Foreign Truck Driver Legally Do In The United States ap",
+        "categories": [
+          "Compliance & Regulation",
+          "Cross-Border (Mexico/Canada)",
+          "Legal Issues",
+          "News"
+        ],
+        "creator": "Adam Wingfield"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico truck exports soar 159% as production jumps 130% in October",
+        "link": "https://www.freightwaves.com/news/mexico-truck-exports-soar-159-as-production-jumps-130-in-october",
+        "published": "2026-11-12T19:03:15.000Z",
+        "snippet": "Mexico's heavy-duty vehicle exports surged 158.9% and production climbed 129.6% in October. The post Mexico truck exports soar 159% as production jumps 130% in October appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "ANPACT",
+          "INEGI",
+          "Trucking",
+          "US-Mexico trade",
+          "US-Mexico trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Hapag-Lloyd profit jumps as stronger freight rates drive guidance upgrade",
+        "link": "https://www.freightwaves.com/news/hapag-lloyd-profit-jumps-as-stronger-freight-rates-drive-guidance-upgrade",
+        "published": "2026-11-12T18:47:32.000Z",
+        "snippet": "Hapag-Lloyd reported third-quarter profit surged and lifted its full-year earnings forecast as freight rates strengthened despite broadly flat shipping volumes. The post Hapag-Lloyd profit jumps as stronger freight rates drive guidance upgrade appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Company Earnings",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "earnings"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/",
+        "published": "2026-11-12T18:03:58.000Z",
+        "snippet": "The levies would be effective immediately if the country does not halt the movement of caravans into the U.S., the president said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tractor Supply partners with Uber to offer on-demand delivery",
+        "link": "https://www.freightwaves.com/news/tractor-supply-partners-with-uber-to-offer-on-demand-delivery",
+        "published": "2026-11-12T16:15:36.000Z",
+        "snippet": "Tractor Supply Company is teaming up with Uber to give customers another option for fast same-day delivery of digital orders, underscoring the degree to which retailers are embracing quick commerce as table stakes for growing business. Under the collaboration announced Thursday, customers can now shop from nearly 2,500 Tractor Supply (NASDAQ: TSCO) stores across the […] The post Tractor Supply par",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Fulfillment",
+          "e-commerce",
+          "On-demand delivery",
+          "Tractor Supply",
+          "Uber"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trump threatens to double Mexico tariffs over alleged migrant influx",
+        "link": "https://www.freightwaves.com/news/trump-threatens-to-double-mexico-tariffs-over-alleged-migrant-influx",
+        "published": "2026-11-12T16:13:14.000Z",
+        "snippet": "President Donald Trump threatened to double tariffs on Mexican imports unless Mexico halts the alleged increase of migrants arriving at the border. The post Trump threatens to double Mexico tariffs over alleged migrant influx appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Tariffs",
+          "Trucking",
+          "Trump tariffs",
+          "US-Mexico border",
+          "US-Mexico trade",
+          "US-Mexico trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing advocates make case for tariffs following midterm results",
+        "link": "https://www.supplychaindive.com/news/manufacturing-advocates-make-case-for-tariffs-following-midterm-results/874456/",
+        "published": "2026-11-12T16:08:17.000Z",
+        "snippet": "Although polls show the public is tired of import taxes, rolling back trade enforcement would be a “serious mistake,” per an Alliance for American Manufacturing report.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H19",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "BLET ends Wheeling & Lake Erie strike",
+        "link": "https://www.freightwaves.com/news/blet-ends-wheeling-lake-erie-strike",
+        "published": "2026-11-12T15:39:34.000Z",
+        "snippet": "BLET said it ended its strike against Wheeling & Lake Erie after securing an agreement protecting union conductors’ work. The post BLET ends Wheeling & Lake Erie strike appeared first on FreightWaves.",
+        "categories": [
+          "Modes",
+          "News",
+          "Rail",
+          "Brotherhood of Locomotive Engineers and Trainmen",
+          "labor",
+          "railroad",
+          "Strike",
+          "Wheeling & Lake Erie Railway"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS’ Teamsters contract expires in 2028. Shippers should prepare now.",
+        "link": "https://www.supplychaindive.com/news/ups-teamsters-contract-expires-in-2028-shippers-should-prepare-now/874374/",
+        "published": "2026-11-12T15:34:00.000Z",
+        "snippet": "Even with a potential clash a ways out, shippers should ensure they have other established carrier relationships to mitigate strike risk, experts say.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "US midterm shift adds trade uncertainty as trans-Pacific ocean freight rates stay elevated",
+        "link": "https://www.freightwaves.com/news/us-midterm-shift-adds-trade-uncertainty-as-trans-pacific-ocean-freight-rates-stay-elevated",
+        "published": "2026-11-12T14:25:28.000Z",
+        "snippet": "Democrats’ victories in both chambers of Congress has added uncertainty to the trade outlook as ocean imports ease from a near-record peak. The post US midterm shift adds trade uncertainty as trans-Pacific ocean freight rates stay elevated appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "China",
+          "container shipping",
+          "Freightos"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/",
+        "published": "2026-11-12T12:25:00.000Z",
+        "snippet": "Three bills in Congress would significantly restrict presidential tariff power if they become law, and experts say there's appetite for change in trade policy.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Air cargo’s hopes for end-of-year volume surge dwindle",
+        "link": "https://www.supplychaindive.com/news/air-cargos-hopes-for-end-of-year-volume-surge-dwindle/874430/",
+        "published": "2026-11-11T18:55:52.000Z",
+        "snippet": "Market growth remains steady, but pressured capacity and other traditional signals of a late burst in demand were lacking in October, Xeneta reported.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H24",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "BMW announces new battery supply deals for the US, Europe",
+        "link": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/",
+        "published": "2026-11-11T17:15:00.000Z",
+        "snippet": "The automaker contracted with battery cell manufacturers Samsung SDI and LG Energy Solution as it aims for a more localized supply chain for future electric vehicles.",
+        "categories": [],
+        "creator": "Eric Walz"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [],
+    "errors": [
+      {
+        "source": "EIA diesel",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "signals": [
+    {
+      "key": "weekend",
+      "reason": "Friday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
