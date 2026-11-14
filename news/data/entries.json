@@ -1,5 +1,60 @@
 [
   {
+    "date": "2026-11-14",
+    "subject": "Court sides with NY on CDLs; AI cargo theft tops $150M",
+    "headline": "Appeals Court Overturns NY Funding Denial Over Non-Domiciled CDLs",
+    "script": "New York wins a CDL funding fight, AI cargo theft passes $150 million, Mexico tariffs threatened, and LA rail dwell tops nine days.\n\nA federal appeals court unanimously overturned DOT's denial of funds to New York in a dispute over how long non-domiciled CDLs stay valid.",
+    "url": "briefs/2026-11-14.html",
+    "dieselPrice": null,
+    "topHeadline": "Appeals Court Overturns NY Funding Denial Over Non-Domiciled CDLs",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Denial of funds to NY over non domiciled CDLs overturned: appellate court",
+        "link": "https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "AI cargo thefts top $150 million from June 2025 to June 2026",
+        "link": "https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Suspect in $100M Brink’s jewelry theft agrees to plead guilty in related cargo robbery case",
+        "link": "https://www.freightwaves.com/news/suspect-in-100m-brinks-jewelry-theft-agrees-to-plead-guilty-in-related-cargo-robbery-case"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-13",
     "subject": "FMCSA pulls 133 ELDs; Mexico tariff threat; LA rail dwell",
     "headline": "FMCSA Revokes 133 ELDs as Mexico Tariff Threat Clouds Cross-Border Freight",

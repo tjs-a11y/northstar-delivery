@@ -1,0 +1,469 @@
+{
+  "brief": {
+    "subject": "Court sides with NY on CDLs; AI cargo theft tops $150M",
+    "headline": "Appeals Court Overturns NY Funding Denial Over Non-Domiciled CDLs",
+    "dek": "New York wins a CDL funding fight, AI cargo theft passes $150 million, Mexico tariffs threatened, and LA rail dwell tops nine days.",
+    "lede": "A federal appeals court unanimously overturned DOT's denial of funds to New York in a dispute over how long non-domiciled CDLs stay valid.",
+    "sections": [
+      {
+        "heading": "NY Wins Non-Domiciled CDL Fight",
+        "bullets": [
+          "Unanimous: a three-judge Second Circuit panel sided with New York against the Department of Transportation.",
+          "The fight centered on how long a non-domiciled CDL can remain in effect, plus DOT withholding funds from the state.",
+          "Watch for ripple effects on driver licensing rules and on how other states issue these CDLs."
+        ],
+        "source_ids": [
+          "H1"
+        ]
+      },
+      {
+        "heading": "Fake Carriers Drive Cargo Theft",
+        "bullets": [
+          "More than $150 million in AI equipment was stolen from June 2025 to June 2026, per Overhaul.",
+          "92% of reported incidents involved fraudulent carrier identities and falsified shipping documents, putting legitimate carriers' identities at risk.",
+          "A suspect in the $100 million Brink's jewelry theft agreed to plead guilty in a related cargo robbery case.",
+          "Court records show the group tracked commercial trucks and hit unattended loads, a reminder to limit unattended stops on high-value freight."
+        ],
+        "source_ids": [
+          "H3",
+          "H13"
+        ]
+      },
+      {
+        "heading": "Tariff Threats on Mexico Freight",
+        "bullets": [
+          "The president threatened to double tariffs on Mexico immediately unless it halts migrant caravans into the U.S.",
+          "Cross-border carriers could see sudden volume swings if the higher levies take effect.",
+          "Three bills in Congress would significantly restrict presidential tariff power if they become law."
+        ],
+        "source_ids": [
+          "H18",
+          "H21"
+        ]
+      },
+      {
+        "heading": "LA Rail Dwell Tops Nine Days",
+        "bullets": [
+          "Over nine days: rail-bound containers are sitting idle at the Port of Los Angeles, per Executive Director Gene Seroka.",
+          "Slow rail can push more Southern California freight onto trucks and stretch drayage wait times."
+        ],
+        "source_ids": [
+          "H14"
+        ]
+      },
+      {
+        "heading": "USPS Raises Rates, Adds Surcharge",
+        "bullets": [
+          "5.9% average price increase planned in January for services like USPS Ground Advantage and Priority Mail.",
+          "11% permanent fuel surcharge is coming alongside the parcel rate hike.",
+          "Higher postal costs may nudge some shippers toward other parcel and final-mile options."
+        ],
+        "source_ids": [
+          "H10",
+          "H17"
+        ]
+      }
+    ],
+    "seo_description": "Appeals court backs NY on non-domiciled CDLs, AI cargo theft tops $150M, Mexico tariff threat, LA rail dwell over nine days, USPS rate hikes."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-14T16:20:01.059Z",
+    "date": "2026-11-14",
+    "timezone": "America/Chicago",
+    "fuel": null,
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Denial of funds to NY over non domiciled CDLs overturned: appellate court",
+        "link": "https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court",
+        "published": "2026-11-13T22:27:15.000Z",
+        "snippet": "New York State has come out on top in a legal battle with the Department of Transportation over how long a non-domiciled CDL can stay in effect. In a unanimous decision issued Friday by the U.S. Court of Appeals for the Second Circuit, a three-judge panel agreed with New York’s argument that denial of a […] The post Denial of funds to NY over non domiciled CDLs overturned: appellate court appeared",
+        "categories": [
+          "Drivers & Workforce",
+          "Legal Issues",
+          "News",
+          "Top Stories",
+          "Department of transportation",
+          "Federal Motor Carrier Safety Administration",
+          "non domiciled cdls"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tanker strikes cruise riverboat in New Orleans",
+        "link": "https://www.freightwaves.com/news/tanker-strikes-cruise-riverboat-in-new-orleans",
+        "published": "2026-11-13T21:25:44.000Z",
+        "snippet": "Rescuers pulled multiple people to safety after a tanker struck a docked cruise riverboat Friday in New Orleans. The post Tanker strikes cruise riverboat in New Orleans appeared first on FreightWaves.",
+        "categories": [
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "accident",
+          "American Heritage",
+          "Asphalt Atlantic",
+          "cruise ships"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI cargo thefts top $150 million from June 2025 to June 2026",
+        "link": "https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026",
+        "published": "2026-11-13T21:11:42.000Z",
+        "snippet": "Cargo thieves stole more than $150 million in AI equipment this year, with fraudulent carrier identities and falsified shipping documents involved in 92% of reported incidents, according to Overhaul. The post AI cargo thefts top $150 million from June 2025 to June 2026 appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Freight Fraud",
+          "FreightTech Award",
+          "News",
+          "cargo theft",
+          "Freight",
+          "FreightWaves",
+          "Overhaul"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking Recession Continues: Why Carriers Face Layoffs and Bankruptcies",
+        "link": "https://www.freightwaves.com/news/trucking-recession-continues-why-carriers-face-layoffs-and-bankruptcies",
+        "published": "2026-11-13T19:48:58.000Z",
+        "snippet": "The freight market is seeing some interesting trends with mixed volumes and rising rates across modes, but small carriers are under immense pressure. We’re breaking down tender rejections, spot rates, and contract rates, highlighting why some carriers face layoffs and bankruptcies despite a recovering market. Plus, learn about the lowest truck count since early 2022. […] The post Trucking Recessio",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Freightos’ founder accuses company of ‘rigging’ proxy vote as company opposes his proposals",
+        "link": "https://www.freightwaves.com/news/freightos-founder-accuses-company-of-rigging-proxy-vote-as-company-opposes-his-proposals",
+        "published": "2026-11-13T19:48:52.000Z",
+        "snippet": "Freightos' board unanimously recommended rejecting three proposals from founder and former CEO Zvi Schreiber ahead of the company's Dec. 16 annual general meeting, setting up a shareholder vote on leadership, governance and business strategy. The post Freightos’ founder accuses company of ‘rigging’ proxy vote as company opposes his proposals appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "News",
+          "company earnings",
+          "Freight",
+          "Freightos",
+          "FreightWaves",
+          "logistics",
+          "Technology"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "RICO Case Against TQL, CH Robinson: What’s At Stake for Brokers?",
+        "link": "https://www.freightwaves.com/news/rico-case-against-tql-ch-robinson-whats-at-stake-for-brokers",
+        "published": "2026-11-13T19:48:35.000Z",
+        "snippet": "A civil RICO lawsuit against C.H. Robinson and TQL by six motor carriers alleges racketeering and collaboration with illegal carriers to depress prices, causing lost business. With jury selection set for 2028, what does this drawn-out legal battle mean for the freight industry? Attorney Matt Leffler breaks down the complexities, motions to dismiss, and potential […] The post RICO Case Against TQL,",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Uninsured? What Mexican Border Freight Risks You’re Missing",
+        "link": "https://www.freightwaves.com/news/uninsured-what-mexican-border-freight-risks-youre-missing",
+        "published": "2026-11-13T19:48:06.000Z",
+        "snippet": "Shipping freight into Mexico comes with unique risks, but are you properly insured? Andy Kuchar from Centerline Insurance Company reveals why relying on “contingent” coverage can leave you exposed and what steps brokers and shippers must take to protect their trailers and cargo. Learn how direct per-shipment insurance offers greater security and flexibility for your […] The post Uninsured? What Me",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Humble Robotics: $51M Fuels Autonomous Electric Freight Future",
+        "link": "https://www.freightwaves.com/news/humble-robotics-51m-fuels-autonomous-electric-freight-future",
+        "published": "2026-11-13T19:45:23.000Z",
+        "snippet": "Humble Robotics is shaking up short-haul logistics with a massive $51 million Series A funding round. Founder & CEO Eyal Cohen unveils the vision behind their electric autonomous freight haulers – a “skateboard” chassis combining tractor and trailer for lighter, more efficient transport. Learn how their unified autonomy approach and focus on repetitive short-distance moves […] The post Humble Robo",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "CMA CGM triples profit as Q3 freight rates and cargo volumes rise",
+        "link": "https://www.freightwaves.com/news/cma-cgm-triples-profit-as-q3-freight-rates-and-cargo-volumes-rise",
+        "published": "2026-11-13T19:19:11.000Z",
+        "snippet": "Shipping drives earnings growth, while logistics margins weaken despite higher revenue. The post CMA CGM triples profit as Q3 freight rates and cargo volumes rise appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Company Earnings",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "#trade",
+          "CMA CGM"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "USPS to add 11% permanent fuel surcharge along with parcel rate hike",
+        "link": "https://www.freightwaves.com/news/usps-to-add-11-permanent-fuel-surcharge-along-with-parcel-rate-hike",
+        "published": "2026-11-13T19:00:38.000Z",
+        "snippet": "The U.S. Postal Service is chasing revenue more aggressively than in the past with a series of price and surcharge adjustments. The post USPS to add 11% permanent fuel surcharge along with parcel rate hike appeared first on FreightWaves.",
+        "categories": [
+          "Logistics & Brokerage",
+          "Parcel & Last Mile",
+          "fuel surcharge",
+          "Parcel rates",
+          "U.S. Postal Service",
+          "USPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amazon-focused bill likely to pass in NYC but only after changes",
+        "link": "https://www.freightwaves.com/news/amazon-focused-bill-likely-to-pass-in-nyc-but-only-after-changes",
+        "published": "2026-11-13T17:56:15.000Z",
+        "snippet": "New York–It is increasingly clear that before the end of 2026, the New York City Council will likely pass legislation that will be called the Delivery Protection Act, a law that from the start had Amazon and its Delivery Service Provider (DSP) model in its sights. What is not known is what will be in […] The post Amazon-focused bill likely to pass in NYC but only after changes appeared first on Fr",
+        "categories": [
+          "Drivers & Workforce",
+          "Legal Issues",
+          "News",
+          "Top Stories",
+          "Amazon",
+          "Delivery Protection Act",
+          "FedEx",
+          "Teamsters"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Truckers Die at 61? The Health Crisis We Ignore",
+        "link": "https://www.freightwaves.com/news/truckers-die-at-61-the-health-crisis-we-ignore",
+        "published": "2026-11-13T17:41:28.000Z",
+        "snippet": "Truck drivers die at 61? Jeremy Reymer breaks down the driver health crisis, mental health tools, sleep, nutrition and the 5 axles of health. In this FreightWaves Today interview, the Project 61 founder explains why trucking works against nearly every basic rule of long-term health—and what drivers, fleets and the industry can do about it. […] The post Truckers Die at 61? The Health Crisis We Igno",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Suspect in $100M Brink’s jewelry theft agrees to plead guilty in related cargo robbery case",
+        "link": "https://www.freightwaves.com/news/suspect-in-100m-brinks-jewelry-theft-agrees-to-plead-guilty-in-related-cargo-robbery-case",
+        "published": "2026-11-13T17:11:35.000Z",
+        "snippet": "A suspect in the $100 million Brink's jewelry theft has admitted participating in a coordinated cargo theft operation. Federal court records reveal how the group tracked commercial trucks, targeted unattended shipments and concealed its activities. The post Suspect in $100M Brink’s jewelry theft agrees to plead guilty in related cargo robbery case appeared first on FreightWaves.",
+        "categories": [
+          "Freight Fraud",
+          "News",
+          "Top Stories",
+          "Truckload",
+          "California",
+          "cargo theft",
+          "Trade show",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/",
+        "published": "2026-11-13T16:04:00.000Z",
+        "snippet": "Wait times for idle containers set for rail transport have reached over nine days, Executive Director Gene Seroka said.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "JD Sports leverages tech for faster replenishment",
+        "link": "https://www.supplychaindive.com/news/jd-sports-leverages-tech-for-faster-replenishment/874427/",
+        "published": "2026-11-13T15:55:00.000Z",
+        "snippet": "The sportswear retailer is partnering with Zebra to gain real-time inventory visibility across its omnichannel operations, citing 98% on-shelf availability.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart more than doubles planned drone delivery sites",
+        "link": "https://www.supplychaindive.com/news/walmart-more-than-doubles-planned-drone-delivery-sites/874580/",
+        "published": "2026-11-13T14:37:21.000Z",
+        "snippet": "An expansion with drone operator Zipline will allow the retailer to make rapid air delivery available to customers nationwide over the next several years.",
+        "categories": [],
+        "creator": "Nicole Silberstein"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USPS readies 2027 rate increase, permanent fuel surcharge",
+        "link": "https://www.supplychaindive.com/news/usps-readies-2027-rate-increase-permanent-fuel-surcharge/874524/",
+        "published": "2026-11-13T14:26:13.000Z",
+        "snippet": "The agency plans to increase prices by 5.9% on average for services like USPS Ground Advantage and Priority Mail in January.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/",
+        "published": "2026-11-12T18:03:58.000Z",
+        "snippet": "The levies would be effective immediately if the country does not halt the movement of caravans into the U.S., the president said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Manufacturing advocates make case for tariffs following midterm results",
+        "link": "https://www.supplychaindive.com/news/manufacturing-advocates-make-case-for-tariffs-following-midterm-results/874456/",
+        "published": "2026-11-12T16:08:17.000Z",
+        "snippet": "Although polls show the public is tired of import taxes, rolling back trade enforcement would be a “serious mistake,” per an Alliance for American Manufacturing report.",
+        "categories": [],
+        "creator": "Nathan Owens"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UPS’ Teamsters contract expires in 2028. Shippers should prepare now.",
+        "link": "https://www.supplychaindive.com/news/ups-teamsters-contract-expires-in-2028-shippers-should-prepare-now/874374/",
+        "published": "2026-11-12T15:34:00.000Z",
+        "snippet": "Even with a potential clash a ways out, shippers should ensure they have other established carrier relationships to mitigate strike risk, experts say.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/",
+        "published": "2026-11-12T12:25:00.000Z",
+        "snippet": "Three bills in Congress would significantly restrict presidential tariff power if they become law, and experts say there's appetite for change in trade policy.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Air cargo’s hopes for end-of-year volume surge dwindle",
+        "link": "https://www.supplychaindive.com/news/air-cargos-hopes-for-end-of-year-volume-surge-dwindle/874430/",
+        "published": "2026-11-11T18:55:52.000Z",
+        "snippet": "Market growth remains steady, but pressured capacity and other traditional signals of a late burst in demand were lacking in October, Xeneta reported.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "BMW announces new battery supply deals for the US, Europe",
+        "link": "https://www.supplychaindive.com/news/bmw-announces-new-battery-supply-deals-for-the-us-europe/874409/",
+        "published": "2026-11-11T17:15:00.000Z",
+        "snippet": "The automaker contracted with battery cell manufacturers Samsung SDI and LG Energy Solution as it aims for a more localized supply chain for future electric vehicles.",
+        "categories": [],
+        "creator": "Eric Walz"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Trailer Flexibility Is Becoming a Growth Strategy for Carriers",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": [
+      {
+        "source": "EIA diesel",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "signals": [
+    {
+      "key": "weekend",
+      "reason": "Saturday edition",
+      "evidence": []
+    }
+  ],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "riddlebound",
+      "product": "Riddlebound",
+      "url": "https://riddlebound.app/",
+      "ref": false,
+      "label": "Unwind over the weekend with interactive thrillers",
+      "copy": "Off the clock this weekend? Riddlebound novels hide codes and clues inside the story. Crack them to unlock what happens next. The first books are coming soon; start now with the free SIGNAL 309 audio drama.",
+      "signal": "weekend",
+      "priority": 9,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
