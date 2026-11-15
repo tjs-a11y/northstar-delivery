@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-15",
+    "subject": "Diesel drops 16.5 cents as spot rates jump early",
+    "headline": "Diesel falls to $6.127 while holiday spot rates take off early",
+    "script": "Fuel relief, an early spot-rate run, Mexico tariff threats and a court win for New York on non-domiciled CDLs.\n\nDiesel fell 16.5 cents to $6.127 a gallon, giving carriers some margin relief just as spot rates climb earlier than usual ahead of the holidays.",
+    "url": "briefs/2026-11-15.html",
+    "dieselPrice": {
+      "period": "2026-11-09",
+      "dollarsPerGallon": 6.127
+    },
+    "topHeadline": "Diesel falls to $6.127 while holiday spot rates take off early",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Spot rates jump ahead of holidays",
+        "link": "https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Recession Continues: Why Carriers Face Layoffs and Bankruptcies",
+        "link": "https://www.freightwaves.com/news/trucking-recession-continues-why-carriers-face-layoffs-and-bankruptcies"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-texas-cross-border-traffic-rises-by-400-trucks-through-saturday-pilot"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Bipartisan push possible to curb Trump tariffs",
+        "link": "https://www.supplychaindive.com/news/bipartisan-push-possible-to-curb-trump-tariffs/874347/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Denial of funds to NY over non domiciled CDLs overturned: appellate court",
+        "link": "https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-14",
     "subject": "Court sides with NY on CDLs; AI cargo theft tops $150M",
     "headline": "Appeals Court Overturns NY Funding Denial Over Non-Domiciled CDLs",
