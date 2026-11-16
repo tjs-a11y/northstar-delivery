@@ -1,0 +1,541 @@
+{
+  "brief": {
+    "subject": "Diesel down 16.5 cents as truckload rates and imports climb",
+    "headline": "Diesel Falls to $6.127 While October Truckload Rates Surge and Imports Set a Record",
+    "dek": "Cheaper fuel meets firmer rates, record container imports, rising AI cargo theft and a fresh tariff threat on Mexico freight.",
+    "lede": "Diesel dropped 16.5 cents to $6.127 a gallon just as truckload rates posted significant October gains. That widens margins for carriers hauling in a tightening market.",
+    "sections": [
+      {
+        "heading": "Diesel Takes a Big Weekly Drop",
+        "bullets": [
+          "$6.127 per gallon is the U.S. average retail diesel price for the week of 2026-11-09.",
+          "Down 16.5 cents (2.6%) from the prior week, a meaningful break on fuel costs per load.",
+          "Down 5.2 cents over four weeks, so the relief is recent rather than a long trend."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Rates Heat Up Before the Holidays",
+        "bullets": [
+          "Truckload rates posted significant gains in October, per Cass Information Systems.",
+          "Shipment counts grew for a third consecutive month, a sign that demand is firming under the rate gains.",
+          "Spot rates are climbing ahead of the holidays earlier than usual, which creates room to push for better linehaul pay."
+        ],
+        "source_ids": [
+          "H6",
+          "H15"
+        ]
+      },
+      {
+        "heading": "Record Imports Clog Ports and Rail",
+        "bullets": [
+          "2.67 million TEUs of U.S. container imports in October set a monthly record, per Descartes.",
+          "Imports rose 16% year over year and topped the prior record from May 2022, which means more freight for drayage and outbound loads.",
+          "Port delays are rising, so expect longer waits at terminals.",
+          "At the Port of Los Angeles, containers waiting for rail are sitting over nine days, which could shift more volume to trucks."
+        ],
+        "source_ids": [
+          "H10",
+          "H19"
+        ]
+      },
+      {
+        "heading": "AI Cargo Theft Tops $150 Million",
+        "bullets": [
+          "More than $150 million in AI equipment was stolen from June 2025 to June 2026, per Overhaul.",
+          "92% of reported incidents involved fraudulent carrier identities or falsified shipping documents.",
+          "Carriers should expect brokers to tighten identity checks on high-value tech loads."
+        ],
+        "source_ids": [
+          "H18"
+        ]
+      },
+      {
+        "heading": "Mexico Freight Faces Tariff Threat",
+        "bullets": [
+          "The president threatened to double tariffs on Mexico unless it halts migrant caravans, effective immediately if triggered.",
+          "$75.4B in truck freight moved between the U.S. and Mexico in September, so cross-border haulers have a lot at stake.",
+          "Texas cross-border traffic rose by 400 trucks under a Saturday pilot program."
+        ],
+        "source_ids": [
+          "H23",
+          "H14"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 16.5 cents to $6.127, October truckload rates surge, container imports hit a record and AI cargo theft tops $150 million."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-16T19:58:17.767Z",
+    "date": "2026-11-16",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "previous": {
+        "period": "2026-11-02",
+        "value": 6.292
+      },
+      "weeklyChangeCents": -16.5,
+      "weeklyChangePct": -2.6,
+      "fourWeekChangeCents": -5.2,
+      "formatted": {
+        "latest": "$6.127",
+        "weeklyChange": "down 16.5 cents",
+        "weeklyChangePct": "2.6%",
+        "fourWeekChange": "down 5.2 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        },
+        {
+          "period": "2026-09-14",
+          "value": 6.285
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Q3 2026 Freight Earnings: Rates, Capacity and 2027 Bid Outlook",
+        "link": "https://www.freightwaves.com/news/q3-2026-freight-earnings-rates-capacity-and-2027-bid-outlook",
+        "published": "2026-11-16T19:00:00.000Z",
+        "snippet": "Q3 2026 Freight Earnings: What 74 Companies Told Us Rates turned, costs bit and capacity kept leaving. Here is what the Q3 2026 freight earnings season says about the market heading into the 2027 bid season. The short answer By the numbers The Q3 2026 freight earnings season is nearly complete. Of the 71 companies […] The post Q3 2026 Freight Earnings: Rates, Capacity and 2027 Bid Outlook appeared",
+        "categories": [
+          "Inside SONAR",
+          "News",
+          "SONAR Sitreps",
+          "company earnings",
+          "Freight",
+          "logistics",
+          "SONAR",
+          "SONAR data analytics"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "FedEx expands capacity at southern China air hub",
+        "link": "https://www.freightwaves.com/news/fedex-expands-capacity-at-southern-china-air-hub",
+        "published": "2026-11-16T18:29:20.000Z",
+        "snippet": "FedEx has opened a new air cargo terminal at Guangzhou airport in China. The post FedEx expands capacity at southern China air hub appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "air cargo",
+          "China",
+          "FedEx",
+          "global trade",
+          "Guangzhou Airport;"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "New logistics firm linked to collapsed R&R transportation empire",
+        "link": "https://www.freightwaves.com/news/new-logistics-firm-linked-to-collapsed-rr-transportation-empire",
+        "published": "2026-11-16T18:00:51.000Z",
+        "snippet": "Pennsylvania records tie members of the Francis family to a logistics company formed before R&R's shutdown. The post New logistics firm linked to collapsed R&R transportation empire appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Truckload",
+          "layoffs and bankruptcies",
+          "R&R",
+          "R&R Family of Companies",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Union Pacific police in shootout after alleged train robbery on southern California freight line",
+        "link": "https://www.freightwaves.com/news/union-pacific-police-in-shootout-after-alleged-train-robbery-on-southern-california-freight-line",
+        "published": "2026-11-16T17:32:43.000Z",
+        "snippet": "No injuries were reported after late-night gunfire involving railroad police in southern California. The post Union Pacific police in shootout after alleged train robbery on southern California freight line appeared first on FreightWaves.",
+        "categories": [
+          "Freight Fraud",
+          "News",
+          "Rail",
+          "Top Stories",
+          "BNSF",
+          "cargo theft",
+          "railroad",
+          "southern California"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Small sellers rethink free shipping over USPS 11% fuel fee",
+        "link": "https://www.freightwaves.com/news/small-sellers-free-shipping-usps-fuel-surcharge",
+        "published": "2026-11-16T17:09:09.000Z",
+        "snippet": "One brand raised its free-shipping minimum to $100 and another reversed the same move after conversion fell by half, as one maker on X weighs reopening a shop before peak. The post Small sellers rethink free shipping over USPS 11% fuel fee appeared first on FreightWaves.",
+        "categories": [
+          "E-commerce & Fulfillment",
+          "Fulfillment",
+          "News",
+          "Parcel & Last Mile",
+          "eBay",
+          "Etsy",
+          "FedEx",
+          "free shipping"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "October TL rates surge as shipment counts extend positive streak",
+        "link": "https://www.freightwaves.com/news/october-tl-rates-surge-as-shipment-counts-extend-positive-streak",
+        "published": "2026-11-16T16:44:14.000Z",
+        "snippet": "Truckload rates posted significant gains in October alongside a third consecutive month of shipment count growth, according to a monthly report from Cass Information Systems. The post October TL rates surge as shipment counts extend positive streak appeared first on FreightWaves.",
+        "categories": [
+          "News",
+          "Truckload",
+          "Cass Information Systems",
+          "Cass TL Linehaul Index",
+          "TL capacity",
+          "TL carriers",
+          "transportation prices",
+          "truckload contract rates"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "UPS accident in Miami sidelines 767 freighter during busy shipping season",
+        "link": "https://www.freightwaves.com/news/ups-accident-in-miami-sidelines-767-freighter-during-busy-shipping-season",
+        "published": "2026-11-16T16:16:51.000Z",
+        "snippet": "UPS will lose some operating flexibility during the peak shipping season after one of its Boeing 767 cargo jets was damaged in an accident over the weekend. The post UPS accident in Miami sidelines 767 freighter during busy shipping season appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "accident",
+          "air cargo",
+          "Boeing 767 freighter",
+          "miami international airport",
+          "UPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "AI-backed tools power Reformation’s inventory management",
+        "link": "https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/",
+        "published": "2026-11-16T15:40:00.000Z",
+        "snippet": "The apparel company is leveraging the technology to monitor demand and make informed production decisions.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H9",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UniUni to tap carriers like Gofo for some peak season deliveries",
+        "link": "https://www.supplychaindive.com/news/uniuni-to-tap-carriers-like-gofo-for-some-peak-season-deliveries/874556/",
+        "published": "2026-11-16T15:17:36.000Z",
+        "snippet": "The delivery provider said handing off select packages will benefit last-mile efficiency as it looks to improve its financial outlook.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "U.S. container imports hit record 2.67 million TEUs in October as port delays rise",
+        "link": "https://www.freightwaves.com/news/u-s-container-imports-hit-record-2-67-million-teus-in-october-as-port-delays-rise",
+        "published": "2026-11-16T14:41:06.000Z",
+        "snippet": "U.S. container imports rose 16% year over year in October, surpassing the previous monthly record set in May 2022, according to Descartes. The post U.S. container imports hit record 2.67 million TEUs in October as port delays rise appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "China",
+          "container shipping",
+          "Descartes"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H11",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx launches China-US air capacity ahead of peak season",
+        "link": "https://www.supplychaindive.com/news/fedex-launches-china-us-air-capacity-ahead-of-peak-season/874590/",
+        "published": "2026-11-16T12:25:00.000Z",
+        "snippet": "Weekly routes will connect manufacturing hubs in Shanghai and Guangzhou to U.S. destinations to support artificial intelligence-driven demand.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H12",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "From cost center to growth engine: The supply chain value shift",
+        "link": "https://www.supplychaindive.com/spons/from-cost-center-to-growth-engine-the-supply-chain-value-shift/874220/",
+        "published": "2026-11-16T10:00:00.000Z",
+        "snippet": "The resilience era is over. Learn how leading companies are converting supply chain investments into margin, market share and growth.",
+        "categories": [],
+        "creator": "Susana Castella Gonzalo and Brad Elpers"
+      },
+      {
+        "id": "H13",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Business continuity starts before supply chain disruption",
+        "link": "https://www.supplychaindive.com/spons/business-continuity-starts-before-supply-chain-disruption/874344/",
+        "published": "2026-11-16T10:00:00.000Z",
+        "snippet": "Discover how Crisis24 AiiA helps leaders anticipate supply chain risks and make informed business continuity decisions.",
+        "categories": [],
+        "creator": "Farijah “Doc” St. Clair, Head of Technology and Intelligence at Crisis24 AiiA"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-texas-cross-border-traffic-rises-by-400-trucks-through-saturday-pilot",
+        "published": "2026-11-15T12:00:00.000Z",
+        "snippet": "This week in Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot; Truck freight between US and Mexico reaches $75.4B in September; and Teleflex invests $5M in new medical device manufacturing facility in Mexico. The post Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Top Stories",
+          "Borderlands",
+          "Laredo",
+          "Trucking",
+          "US-Mexico trucking",
+          "World Trade Bridge"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Spot rates jump ahead of holidays",
+        "link": "https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays",
+        "published": "2026-11-15T01:30:00.000Z",
+        "snippet": "Trucking spot rates are off to the races earlier than usual. Was this part of the shipper playbook? The post Spot rates jump ahead of holidays appeared first on FreightWaves.",
+        "categories": [
+          "Chart of the Week",
+          "SONAR",
+          "imports",
+          "inventory management",
+          "Logistics Managers Index",
+          "trucking capacity",
+          "trucking demand",
+          "Trucking spot rates"
+        ],
+        "creator": "Zach Strickland, FW Market Expert &#38; Market Analyst"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Denial of funds to NY over non domiciled CDLs overturned: appellate court",
+        "link": "https://www.freightwaves.com/news/denial-of-funds-to-ny-over-non-domiciled-cdls-overturned-appellate-court",
+        "published": "2026-11-13T22:27:15.000Z",
+        "snippet": "New York State has come out on top in a legal battle with the Department of Transportation over how long a non-domiciled CDL can stay in effect. In a unanimous decision issued Friday by the U.S. Court of Appeals for the Second Circuit, a three-judge panel agreed with New York’s argument that denial of a […] The post Denial of funds to NY over non domiciled CDLs overturned: appellate court appeared",
+        "categories": [
+          "Drivers & Workforce",
+          "Legal Issues",
+          "News",
+          "Top Stories",
+          "Department of transportation",
+          "Federal Motor Carrier Safety Administration",
+          "non domiciled cdls"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tanker strikes cruise riverboat in New Orleans",
+        "link": "https://www.freightwaves.com/news/tanker-strikes-cruise-riverboat-in-new-orleans",
+        "published": "2026-11-13T21:25:44.000Z",
+        "snippet": "Rescuers pulled multiple people to safety after a tanker struck a docked cruise riverboat Friday in New Orleans. The post Tanker strikes cruise riverboat in New Orleans appeared first on FreightWaves.",
+        "categories": [
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "accident",
+          "American Heritage",
+          "Asphalt Atlantic",
+          "cruise ships"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H18",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI cargo thefts top $150 million from June 2025 to June 2026",
+        "link": "https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026",
+        "published": "2026-11-13T21:11:42.000Z",
+        "snippet": "Cargo thieves stole more than $150 million in AI equipment this year, with fraudulent carrier identities and falsified shipping documents involved in 92% of reported incidents, according to Overhaul. The post AI cargo thefts top $150 million from June 2025 to June 2026 appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Freight Fraud",
+          "FreightTech Award",
+          "News",
+          "cargo theft",
+          "Freight",
+          "FreightWaves",
+          "Overhaul"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/",
+        "published": "2026-11-13T16:04:00.000Z",
+        "snippet": "Wait times for idle containers set for rail transport have reached over nine days, Executive Director Gene Seroka said.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "JD Sports leverages tech for faster replenishment",
+        "link": "https://www.supplychaindive.com/news/jd-sports-leverages-tech-for-faster-replenishment/874427/",
+        "published": "2026-11-13T15:55:00.000Z",
+        "snippet": "The sportswear retailer is partnering with Zebra to gain real-time inventory visibility across its omnichannel operations, citing 98% on-shelf availability.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart more than doubles planned drone delivery sites",
+        "link": "https://www.supplychaindive.com/news/walmart-more-than-doubles-planned-drone-delivery-sites/874580/",
+        "published": "2026-11-13T14:37:21.000Z",
+        "snippet": "An expansion with drone operator Zipline will allow the retailer to make rapid air delivery available to customers nationwide over the next several years.",
+        "categories": [],
+        "creator": "Nicole Silberstein"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "USPS readies 2027 rate increase, permanent fuel surcharge",
+        "link": "https://www.supplychaindive.com/news/usps-readies-2027-rate-increase-permanent-fuel-surcharge/874524/",
+        "published": "2026-11-13T14:26:13.000Z",
+        "snippet": "The agency plans to increase prices by 5.9% on average for services like USPS Ground Advantage and Priority Mail in January.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/",
+        "published": "2026-11-12T18:03:58.000Z",
+        "snippet": "The levies would be effective immediately if the country does not halt the movement of caravans into the U.S., the president said.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "The Best Customer Service in Air Cargo Is the Call You Never Have to Take",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

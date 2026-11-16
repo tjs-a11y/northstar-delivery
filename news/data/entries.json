@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-16",
+    "subject": "Diesel down 16.5 cents as truckload rates and imports climb",
+    "headline": "Diesel Falls to $6.127 While October Truckload Rates Surge and Imports Set a Record",
+    "script": "Cheaper fuel meets firmer rates, record container imports, rising AI cargo theft and a fresh tariff threat on Mexico freight.\n\nDiesel dropped 16.5 cents to $6.127 a gallon just as truckload rates posted significant October gains. That widens margins for carriers hauling in a tightening market.",
+    "url": "briefs/2026-11-16.html",
+    "dieselPrice": {
+      "period": "2026-11-09",
+      "dollarsPerGallon": 6.127
+    },
+    "topHeadline": "Diesel Falls to $6.127 While October Truckload Rates Surge and Imports Set a Record",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "October TL rates surge as shipment counts extend positive streak",
+        "link": "https://www.freightwaves.com/news/october-tl-rates-surge-as-shipment-counts-extend-positive-streak"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Spot rates jump ahead of holidays",
+        "link": "https://www.freightwaves.com/news/spot-rates-jump-ahead-of-holidays"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "U.S. container imports hit record 2.67 million TEUs in October as port delays rise",
+        "link": "https://www.freightwaves.com/news/u-s-container-imports-hit-record-2-67-million-teus-in-october-as-port-delays-rise"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Port of Los Angeles grapples with elevated rail dwell times",
+        "link": "https://www.supplychaindive.com/news/port-of-los-angeles-grapples-with-elevated-rail-dwell-times/874553/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "AI cargo thefts top $150 million from June 2025 to June 2026",
+        "link": "https://www.freightwaves.com/news/ai-cargo-thefts-top-150-million-from-june-2025-to-june-2026"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Trump threatens to double Mexico tariffs over migrant caravans",
+        "link": "https://www.supplychaindive.com/news/trump-threatens-to-double-mexico-tariffs-over-migrant-caravans/874534/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-15",
     "subject": "Diesel drops 16.5 cents as spot rates jump early",
     "headline": "Diesel falls to $6.127 while holiday spot rates take off early",
