@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-17",
+    "subject": "Diesel drops under $6 as truckload demand softens",
+    "headline": "Diesel Falls Below $6 While Truckload Volumes Slip and Rejections Ease",
+    "script": "Diesel dropped 19.0 cents to $5.937, truckload volume weakened, and spot rates firmed to $3.56 as rejections hit their lowest since early May.\n\nThe U.S. average retail diesel price fell 19.0 cents to $5.937 per gallon. That relief arrives as truckload demand softens and carriers lose some pricing leverage.",
+    "url": "briefs/2026-11-17.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel Falls Below $6 While Truckload Volumes Slip and Rejections Ease",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Oil market slide brings benchmark diesel under $6 level",
+        "link": "https://www.freightwaves.com/news/oil-market-slide-brings-benchmark-diesel-under-6-level"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "SONAR Pricing Power Index Falls to 68 as Truckload Demand Weakens",
+        "link": "https://www.freightwaves.com/news/sonar-pricing-power-index-falls-to-68-as-truckload-demand-weakens"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Broker RXO says TL spot rates not entering deflationary phase",
+        "link": "https://www.freightwaves.com/news/broker-rxo-says-tl-spot-rates-not-entering-deflationary-phase"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Amazon to expand fuel and logistics surcharge to more services",
+        "link": "https://www.supplychaindive.com/news/amazon-to-expand-fuel-and-logistics-surcharge-to-more-services/874693/"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Red Sea overcapacity looms as ocean container spot rates still 50% above year-ago",
+        "link": "https://www.freightwaves.com/news/red-sea-overcapacity-looms-as-ocean-container-spot-rates-still-50-above-year-ago"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Police recover $4.5 million in stolen vehicles bound for West Africa, arrest 12",
+        "link": "https://www.freightwaves.com/news/police-recover-4-5-million-in-stolen-vehicles-bound-for-west-africa-arrest-12"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-16",
     "subject": "Diesel down 16.5 cents as truckload rates and imports climb",
     "headline": "Diesel Falls to $6.127 While October Truckload Rates Surge and Imports Set a Record",

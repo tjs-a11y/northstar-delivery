@@ -1,0 +1,500 @@
+{
+  "brief": {
+    "subject": "Diesel drops under $6 as truckload demand softens",
+    "headline": "Diesel Falls Below $6 While Truckload Volumes Slip and Rejections Ease",
+    "dek": "Diesel dropped 19.0 cents to $5.937, truckload volume weakened, and spot rates firmed to $3.56 as rejections hit their lowest since early May.",
+    "lede": "The U.S. average retail diesel price fell 19.0 cents to $5.937 per gallon. That relief arrives as truckload demand softens and carriers lose some pricing leverage.",
+    "sections": [
+      {
+        "heading": "Diesel Breaks Below $6",
+        "bullets": [
+          "$5.937 per gallon: the national average retail diesel price for the week of 2026-11-16.",
+          "Down 19.0 cents (3.1%) from the prior week, a meaningful cut to per-mile fuel cost.",
+          "Down 33.9 cents over four weeks, so the decline is a trend, not a one-week blip.",
+          "Fuel surcharges are pegged to this benchmark, so expect surcharge payments to shrink as prices fall."
+        ],
+        "source_ids": [
+          "F1",
+          "H5"
+        ]
+      },
+      {
+        "heading": "Truckload Demand Cools",
+        "bullets": [
+          "68: SONAR's Pricing Power Index fell as truckload demand weakened, trimming carriers' negotiating leverage.",
+          "13th percentile: accepted truckload volume gave back its recent gains, so expect fewer loads to choose from.",
+          "Tender rejections eased to their lowest level since early May, a sign capacity is loosening.",
+          "$3.56: the national spot rate still firmed, and broker RXO says the market is not turning deflationary."
+        ],
+        "source_ids": [
+          "H3",
+          "H1"
+        ]
+      },
+      {
+        "heading": "Amazon Widens Fuel Surcharge",
+        "bullets": [
+          "3.5%: Amazon's fuel and logistics surcharge will extend to bulk storage and replenishment transportation fees.",
+          "The change takes effect in February, which shows shippers are still under pressure from fuel costs."
+        ],
+        "source_ids": [
+          "H8"
+        ]
+      },
+      {
+        "heading": "Ocean Rates High, Capacity Building",
+        "bullets": [
+          "Ocean container spot rates are still 50% above a year ago, driven by congestion and fuel costs.",
+          "A growing vessel fleet and the return of Red Sea services could bring overcapacity, which would shift import timing for drayage."
+        ],
+        "source_ids": [
+          "H2"
+        ]
+      },
+      {
+        "heading": "Stolen-Vehicle Ring Busted",
+        "bullets": [
+          "$4.5 million: police recovered 96 stolen vehicles that were headed to West Africa.",
+          "12 arrests so far and two suspects still wanted, a reminder to keep securing equipment at yards and stops."
+        ],
+        "source_ids": [
+          "H11"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 19.0 cents to $5.937, truckload volume weakens, spot rate firms to $3.56, and Amazon expands its 3.5% fuel surcharge."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-17T18:54:50.996Z",
+    "date": "2026-11-17",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-16",
+        "value": 5.937
+      },
+      "previous": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "weeklyChangeCents": -19,
+      "weeklyChangePct": -3.1,
+      "fourWeekChangeCents": -33.9,
+      "formatted": {
+        "latest": "$5.937",
+        "weeklyChange": "down 19.0 cents",
+        "weeklyChangePct": "3.1%",
+        "fourWeekChange": "down 33.9 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-16",
+          "value": 5.937
+        },
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Broker RXO says TL spot rates not entering deflationary phase",
+        "link": "https://www.freightwaves.com/news/broker-rxo-says-tl-spot-rates-not-entering-deflationary-phase",
+        "published": "2026-11-17T17:13:00.000Z",
+        "snippet": "Although truckload spot rates have moderated, freight broker RXO stated Tuesday that the market is not entering a deflationary phase. The post Broker RXO says TL spot rates not entering deflationary phase appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Top Stories",
+          "Truckload",
+          "3PLs",
+          "company earnings",
+          "freight brokers",
+          "RXO",
+          "RXO Curve"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Red Sea overcapacity looms as ocean container spot rates still 50% above year-ago",
+        "link": "https://www.freightwaves.com/news/red-sea-overcapacity-looms-as-ocean-container-spot-rates-still-50-above-year-ago",
+        "published": "2026-11-17T16:28:34.000Z",
+        "snippet": "Ocean freight rates remain elevated as congestion, fuel costs and service disruptions support prices. But an expanding fleet and return of Red Sea services are raising capacity concerns. The post Red Sea overcapacity looms as ocean container spot rates still 50% above year-ago appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Top Stories",
+          "container shipping",
+          "container vessel capacity",
+          "Freightos",
+          "International Longshore and Warehouse Union",
+          "ocean rates"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SONAR Pricing Power Index Falls to 68 as Truckload Demand Weakens",
+        "link": "https://www.freightwaves.com/news/sonar-pricing-power-index-falls-to-68-as-truckload-demand-weakens",
+        "published": "2026-11-17T15:59:57.000Z",
+        "snippet": "Accepted truckload volume gave back its recent gains and fell to the 13th percentile, intermodal contract rates dropped to the 65th percentile and ocean bookings declined for a second straight week. Rail volume held near its five-year high, the national spot rate firmed to $3.56 and rejections eased to their lowest level since early May. […] The post SONAR Pricing Power Index Falls to 68 as Truckl",
+        "categories": [
+          "Inside SONAR",
+          "News",
+          "Pricing Power Index",
+          "freight market intelligence",
+          "market intelligence"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How to prepare for the most severe El Niño on record",
+        "link": "https://www.supplychaindive.com/news/how-to-prepare-for-the-most-severe-el-nino-on-record/874732/",
+        "published": "2026-11-17T15:57:00.000Z",
+        "snippet": "As this year's severe weather approaches, manufacturers should audit their systems for failure risks and take other protective measures, experts say.",
+        "categories": [],
+        "creator": "Michelle No"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Oil market slide brings benchmark diesel under $6 level",
+        "link": "https://www.freightwaves.com/news/oil-market-slide-brings-benchmark-diesel-under-6-level",
+        "published": "2026-11-17T15:50:51.000Z",
+        "snippet": "Oil prices are in the middle of their biggest downturn since the military action by the U.S. and Israel began at the start of March, and the benchmark price used for most fuel surcharges is trying to keep up. The Department of Energy/Energy Information Administration average retail diesel price fell 19 cents/gallon effective Monday, published […] The post Oil market slide brings benchmark diesel u",
+        "categories": [
+          "Analysis & Insights",
+          "Fuel & Energy",
+          "Playbook: Fuel Game Plan",
+          "Top Stories"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H6",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Fashion brand nixes dedicated fulfillment model to boost transit times",
+        "link": "https://www.supplychaindive.com/news/fashion-brand-nixes-dedicated-fulfillment-model-to-boost-transit-times/874630/",
+        "published": "2026-11-17T15:23:00.000Z",
+        "snippet": "For Love & Lemons is now shipping orders from a Cart.com facility in Texas, helping it lower storage costs and provide speedier deliveries.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Wrangler parent company plans to beef up inventory spending",
+        "link": "https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/",
+        "published": "2026-11-17T15:08:00.000Z",
+        "snippet": "Kontoor Brands said it will invest $50 million to recover from a bumpy Q3 for its supply chain that saw inventory fall 6% year over year.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H8",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon to expand fuel and logistics surcharge to more services",
+        "link": "https://www.supplychaindive.com/news/amazon-to-expand-fuel-and-logistics-surcharge-to-more-services/874693/",
+        "published": "2026-11-17T14:36:17.000Z",
+        "snippet": "The 3.5% surcharge will apply to transportation fees for bulk storage and replenishment services starting in February as the company faces fuel cost pressures.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Truck Parking Club hands CPC 7 drop yards in two months",
+        "link": "https://www.freightwaves.com/news/truck-parking-club-cpc-drop-yards",
+        "published": "2026-11-17T14:18:46.000Z",
+        "snippet": "CPC Fleet Solutions once spent one to two months finding each drop yard. Through Truck Parking Club, it secured seven yards for 47 trucks and more than 120 trailers in two months. The post Truck Parking Club hands CPC 7 drop yards in two months appeared first on FreightWaves.",
+        "categories": [
+          "Technology & Startups",
+          "Truckload",
+          "CPC Fleet Solutions",
+          "CPC Logistics",
+          "drop yards",
+          "Fleet Parking",
+          "Private fleets",
+          "Technology"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Shippers Are Finally Ready to Fix the Supply Chain Behind the Freight Bill",
+        "link": "https://www.freightwaves.com/news/shippers-are-finally-ready-to-fix-the-supply-chain-behind-the-freight-bill",
+        "published": "2026-11-17T14:05:00.000Z",
+        "snippet": "Rising rates are pushing shippers to rebuild carrier relationships and fix upstream processes. NFI’s Chuck Papa explains what to prioritize for 2027. The post Shippers Are Finally Ready to Fix the Supply Chain Behind the Freight Bill appeared first on FreightWaves.",
+        "categories": [
+          "News"
+        ],
+        "creator": "Mary Goodson"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Police recover $4.5 million in stolen vehicles bound for West Africa, arrest 12",
+        "link": "https://www.freightwaves.com/news/police-recover-4-5-million-in-stolen-vehicles-bound-for-west-africa-arrest-12",
+        "published": "2026-11-16T22:46:26.000Z",
+        "snippet": "Project Cadetta uncovered 96 stolen vehicles and produced hundreds of charges, with two more suspects still wanted. The post Police recover $4.5 million in stolen vehicles bound for West Africa, arrest 12 appeared first on FreightWaves.",
+        "categories": [
+          "Maritime",
+          "News",
+          "Top Stories",
+          "Warehousing",
+          "Canada",
+          "container shipping",
+          "Theft"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Meta pays Nevoya to put 25 electric trucks on I-10",
+        "link": "https://www.freightwaves.com/news/meta-nevoya-electric-trucks-i-10",
+        "published": "2026-11-16T22:04:10.000Z",
+        "snippet": "Meta will buy environmental attribute certificates tied to 25 Nevoya battery-electric trucks running between San Bernardino and Phoenix starting in 2027. The post Meta pays Nevoya to put 25 electric trucks on I-10 appeared first on FreightWaves.",
+        "categories": [
+          "Fuel & Energy",
+          "Truckload",
+          "book and claim",
+          "Center for Green Market Activation",
+          "Electric trucks",
+          "environmental attribute certificates",
+          "Google",
+          "ICCT"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Amazon workers’ union gets a contract, but it’s in Canada",
+        "link": "https://www.freightwaves.com/news/amazon-workers-union-gets-a-contract-but-its-in-canada",
+        "published": "2026-11-16T21:15:20.000Z",
+        "snippet": "Amazon has its first deal with a union in North America, but it came from a top-down process in a Canadian province, rather than traditional collective bargaining. The Amazon view of what happened for its workers at a Delta, British Columbia fulfillment center, a Vancouver suburb, was stark. The contract for a group of workers […] The post Amazon workers’ union gets a contract, but it’s in Canada ",
+        "categories": [
+          "Analysis & Insights",
+          "Drivers & Workforce",
+          "Legal Issues",
+          "News",
+          "Top Stories",
+          "Amazon",
+          "British Columbia Labour Relations Board",
+          "Unifor"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "50% Spike: Spot Rates SOAR Earlier Than Expected",
+        "link": "https://www.freightwaves.com/news/50-spike-spot-rates-soar-earlier-than-expected",
+        "published": "2026-11-16T20:41:25.000Z",
+        "snippet": "The freight market is entering its peak season in an unprecedented state, with spot rates already up over 50% compared to last year and climbing earlier than ever before. Capacity constraints, particularly in key regions like Southern California, are pushing tender rejections to new highs. Retailers’ last-minute holiday orders are intensifying pressure on ports and […] The post 50% Spike: Spot Rat",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "STG Logistics | New CEO’s Plan to Awaken a “Sleeping Giant”",
+        "link": "https://www.freightwaves.com/news/stg-logistics-new-ceos-plan-to-awaken-a-sleeping-giant",
+        "published": "2026-11-16T20:41:00.000Z",
+        "snippet": "Jack Holmes, former CEO of UPS Freight, reveals why he ended a decade of retirement to become the new CEO of STG Logistics. He shares his vision for transforming the “sleeping giant” through strategic investments in technology and intermodal assets, focusing on culture and long-term growth. Discover how STG Logistics plans to redefine its brand […] The post STG Logistics | New CEO’s Plan to Awaken",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL Preps for Peak: 7,000 Workers & Robotics Growth",
+        "link": "https://www.freightwaves.com/news/dhl-preps-for-peak-7000-workers-robotics-growth",
+        "published": "2026-11-16T20:40:31.000Z",
+        "snippet": "Peak season is getting longer and less predictable. Kraig Foreman, President of eCommerce at DHL Supply Chain, joins us to discuss how evolving consumer behavior and early deals are shaping this year’s holiday logistics landscape. Discover DHL’s strategy, including adding robots and hiring thousands of temporary workers, and how private label brands are changing the […] The post DHL Preps for Peak",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H17",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Fresh Produce: Why 30% Is Lost Before It Reaches Stores?",
+        "link": "https://www.freightwaves.com/news/fresh-produce-why-30-is-lost-before-it-reaches-stores",
+        "published": "2026-11-16T20:40:00.000Z",
+        "snippet": "This video reveals the shocking amount of fresh produce lost in the supply chain before it even reaches consumers. Learn how temperature mismanagement directly impacts shelf life, leading to significant waste and higher costs. DeltaTrak and Dr. Jeffrey Brecht explain how new technologies like Fresh IDX can predict spoilage, optimize delivery, and recover lost revenue, […] The post Fresh Produce: W",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "AI-backed tools power Reformation’s inventory management",
+        "link": "https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/",
+        "published": "2026-11-16T15:40:00.000Z",
+        "snippet": "The apparel company is leveraging the technology to monitor demand and make informed production decisions.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UniUni to tap carriers like Gofo for some peak season deliveries",
+        "link": "https://www.supplychaindive.com/news/uniuni-to-tap-carriers-like-gofo-for-some-peak-season-deliveries/874556/",
+        "published": "2026-11-16T15:17:36.000Z",
+        "snippet": "The delivery provider said handing off select packages will benefit last-mile efficiency as it looks to improve its financial outlook.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Conagra Brands to close Missouri ingredients plant",
+        "link": "https://www.supplychaindive.com/news/conagra-brands-to-close-missouri-ingredients-plant/874617/",
+        "published": "2026-11-16T13:02:00.000Z",
+        "snippet": "Production at the facility, which employs 442 workers, will primarily be transferred to locations in Arkansas.",
+        "categories": [],
+        "creator": "Christopher Doering"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "FedEx launches China-US air capacity ahead of peak season",
+        "link": "https://www.supplychaindive.com/news/fedex-launches-china-us-air-capacity-ahead-of-peak-season/874590/",
+        "published": "2026-11-16T12:25:00.000Z",
+        "snippet": "Weekly routes will connect manufacturing hubs in Shanghai and Guangzhou to U.S. destinations to support artificial intelligence-driven demand.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "From cost center to growth engine: The supply chain value shift",
+        "link": "https://www.supplychaindive.com/spons/from-cost-center-to-growth-engine-the-supply-chain-value-shift/874220/",
+        "published": "2026-11-16T10:00:00.000Z",
+        "snippet": "The resilience era is over. Learn how leading companies are converting supply chain investments into margin, market share and growth.",
+        "categories": [],
+        "creator": "Susana Castella Gonzalo and Brad Elpers"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Business continuity starts before supply chain disruption",
+        "link": "https://www.supplychaindive.com/spons/business-continuity-starts-before-supply-chain-disruption/874344/",
+        "published": "2026-11-16T10:00:00.000Z",
+        "snippet": "Discover how Crisis24 AiiA helps leaders anticipate supply chain risks and make informed business continuity decisions.",
+        "categories": [],
+        "creator": "Farijah “Doc” St. Clair, Head of Technology and Intelligence at Crisis24 AiiA"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "SmartKargo’s AI Apps Put the Industry’s AI Case to the Test",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
