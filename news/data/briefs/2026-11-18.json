@@ -1,0 +1,503 @@
+{
+  "brief": {
+    "subject": "Diesel falls 19.0 cents to $5.937; capacity keeps shrinking",
+    "headline": "Diesel Drops to $5.937 as Truckload Capacity Thins Despite Rate Recovery",
+    "dek": "Diesel fell 19.0 cents this week, carriers keep exiting despite stronger rates, and the Supreme Court reopens shipper liability questions.",
+    "lede": "Diesel fell 19.0 cents to $5.937 per gallon this week, a welcome break on the biggest variable cost for small carriers.",
+    "sections": [
+      {
+        "heading": "Diesel Slides Again",
+        "bullets": [
+          "$5.937 per gallon is the U.S. average retail diesel price for the week of 2026-11-16.",
+          "Down 19.0 cents (3.1%) from the prior week, easing per-mile costs heading into late November.",
+          "Down 33.9 cents over four weeks, a sustained drop worth checking against your fuel surcharge schedules."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Rates Up, Carriers Still Exiting",
+        "bullets": [
+          "Truckload rates climbed much faster than costs in 2026, yet carrier failures continue, according to SONAR data.",
+          "Capacity is still declining as rates recover, a lag that could strengthen carrier leverage in 2027 contract bids.",
+          "Tender rejections are running at more than double last year's level, a sign shippers are struggling to cover freight."
+        ],
+        "source_ids": [
+          "H8",
+          "H4"
+        ]
+      },
+      {
+        "heading": "Shipper Liability Back in Play",
+        "bullets": [
+          "The U.S. Supreme Court sent Casarez vs. Irigoyen Farms back to a lower court on Monday via grant, vacate, remand.",
+          "The move could set up a major ruling on whether shippers and receivers share liability after Montgomery.",
+          "Outcome could shape how shippers vet and select carriers, including smaller operators."
+        ],
+        "source_ids": [
+          "H13"
+        ]
+      },
+      {
+        "heading": "Enforcement Blitzes Sideline Trucks",
+        "bullets": [
+          "Over 284 out-of-service violations turned up in recent enforcement operations across the U.S. and Canada.",
+          "More than 76 drivers and 208 trucks were placed out of service, a reminder to tighten pre-trip checks and paperwork."
+        ],
+        "source_ids": [
+          "H2"
+        ]
+      },
+      {
+        "heading": "Big Players Signal Cost Relief",
+        "bullets": [
+          "J.B. Hunt told investors cost pressures are easing and it is winning new dedicated business.",
+          "J.B. Hunt said BNSF's rail outage had minimal impact on its volumes.",
+          "Amazon's 3.5% fuel and logistics surcharge expands to bulk storage and replenishment transportation fees starting in February."
+        ],
+        "source_ids": [
+          "H6",
+          "H18"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls 19.0 cents to $5.937, truckload capacity keeps shrinking as rates rise, and SCOTUS revives shipper liability questions."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-18T18:36:09.389Z",
+    "date": "2026-11-18",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-16",
+        "value": 5.937
+      },
+      "previous": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "weeklyChangeCents": -19,
+      "weeklyChangePct": -3.1,
+      "fourWeekChangeCents": -33.9,
+      "formatted": {
+        "latest": "$5.937",
+        "weeklyChange": "down 19.0 cents",
+        "weeklyChangePct": "3.1%",
+        "fourWeekChange": "down 33.9 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-16",
+          "value": 5.937
+        },
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL Forwarding launches first-ever dedicated freighter service for India",
+        "link": "https://www.freightwaves.com/news/dhl-forwarding-launches-first-ever-dedicated-freighter-service-for-india",
+        "published": "2026-11-18T17:37:49.000Z",
+        "snippet": "DHL Forwarding, the freight intermediary business of DHL Group, has rented a bundled 747 freighter transportation service to offer shippers dedicated cargo space in and out of India for the first time. The post DHL Forwarding launches first-ever dedicated freighter service for India appeared first on FreightWaves.",
+        "categories": [
+          "Air Cargo",
+          "Logistics & Brokerage",
+          "dedicated capacity",
+          "DHL",
+          "freighter aircraft",
+          "India"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Over 284 out-of-service violations uncovered in latest truck enforcement blitzes",
+        "link": "https://www.freightwaves.com/news/over-284-out-of-service-violations-uncovered-in-latest-truck-enforcement-blitzes",
+        "published": "2026-11-18T17:25:46.000Z",
+        "snippet": "Recent commercial vehicle enforcement operations across the U.S. and Canada put more than 76 drivers and 208 trucks out-of-service. The post Over 284 out-of-service violations uncovered in latest truck enforcement blitzes appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "News",
+          "CDL enforcement",
+          "compliance",
+          "out of service",
+          "Out of service violations",
+          "Regulation",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Trump Crackdown Aims At The Driver, However The Same Government Keeps Clearing The Company Behind Him",
+        "link": "https://www.freightwaves.com/news/the-trump-crackdown-aims-at-the-driver-however-the-same-government-keeps-clearing-the-company-behind-him",
+        "published": "2026-11-18T16:51:46.000Z",
+        "snippet": "Editor’s note: Rob Carpenter is an independent contributor to FreightWaves. The reporting, analysis and opinions in this piece are his own and do not necessarily reflect the views of FreightWaves or its affiliates. On July 2, 2026, a Michigan inspector pulled over a truck running under USDOT 2566250, registered to Gamboa Logistic Inc. of Beavercreek, […] The post The Trump Crackdown Aims At The Dr",
+        "categories": [
+          "Compliance & Regulation",
+          "Legal Issues",
+          "News",
+          "Playbook: Compliance & Safety"
+        ],
+        "creator": "Contributed Content"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Carriers can now pass loads they can’t cover to 7 vetted peers",
+        "link": "https://www.freightwaves.com/news/graypool-exchange-carriers-pass-uncovered-loads",
+        "published": "2026-11-18T16:40:00.000Z",
+        "snippet": "With tender rejections more than double last year's level, Graypool opened an invitation-only exchange where carriers trade freight they can't run with one another. The post Carriers can now pass loads they can’t cover to 7 vetted peers appeared first on FreightWaves.",
+        "categories": [
+          "Technology & Startups",
+          "Truckload",
+          "carrier-to-carrier freight exchange",
+          "freight exchange",
+          "Graypool",
+          "Graypool Exchange",
+          "HOPTEK",
+          "Marc Held"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H5",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Starbucks inventory availability at ‘all-time high’ with daily deliveries, CEO says",
+        "link": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/",
+        "published": "2026-11-18T15:38:15.000Z",
+        "snippet": "The coffeehouse chain has been testing a 24-hour operating model to improve inventory availability and build an overall faster, more reliable supply chain.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "J.B. Hunt sees cost pressures ease, touts dedicated wins",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-sees-cost-pressures-ease-touts-dedicated-wins",
+        "published": "2026-11-18T14:27:51.000Z",
+        "snippet": "J.B. Hunt flags easing cost pressures, dedicated wins and a minimal volume impact from BNSF’s rail outage at an investor conference on Tuesday. The post J.B. Hunt sees cost pressures ease, touts dedicated wins appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Truckload",
+          "company earnings",
+          "dedicated carrier",
+          "intermodal marketing companies",
+          "intermodal pricing",
+          "J.B. Hunt",
+          "J.B. Hunt Transport Services"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H7",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Jim Beam won’t resume production at flagship distillery next year",
+        "link": "https://www.supplychaindive.com/news/jim-beam-wont-resume-production-at-flagship-distillery-next-year/875019/",
+        "published": "2026-11-18T14:25:00.000Z",
+        "snippet": "The Suntory-owned whiskey is moving production to another facility in Kentucky as value spirits brands continue to struggle.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "The Lag Effect: Trucking Capacity Declines as Rates Recover",
+        "link": "https://www.freightwaves.com/news/the-lag-effect-trucking-capacity-declines-as-rates-recover",
+        "published": "2026-11-18T14:04:00.000Z",
+        "snippet": "Truckload rates rose far faster than costs in 2026, yet carriers keep failing. SONAR data shows why, and what it means for 2027 contract bids. The post The Lag Effect: Trucking Capacity Declines as Rates Recover appeared first on FreightWaves.",
+        "categories": [
+          "Inside SONAR",
+          "SONAR Sitreps",
+          "bankruptcies",
+          "layoffs and bankruptcies",
+          "SONAR",
+          "SONAR Sitrep",
+          "Trucking",
+          "truckload costs"
+        ],
+        "creator": "Julie Van de Kamp"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Redwood report lists 9 warning signs for shippers picking a 4PL",
+        "link": "https://www.freightwaves.com/news/redwood-state-of-4pl-2027-warning-signs",
+        "published": "2026-11-18T13:00:00.000Z",
+        "snippet": "The Chicago-based 4PL's new report gives shippers a maturity model, a buyer's checklist, and 10 predictions through 2031, built around its case for an open orchestration model. The post Redwood report lists 9 warning signs for shippers picking a 4PL appeared first on FreightWaves.",
+        "categories": [
+          "Logistics & Brokerage",
+          "Technology & Startups",
+          "4PL",
+          "4PLs",
+          "agentic AI",
+          "Better Supply Chains",
+          "EELCO",
+          "Gartner"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Nasdaq gives Hub Group more time to produce delayed financial filings",
+        "link": "https://www.freightwaves.com/news/nasdaq-gives-hub-group-more-time-to-produce-delayed-financial-filings",
+        "published": "2026-11-17T22:54:31.000Z",
+        "snippet": "Hub Group announced that Nasdaq has granted an extension through the end of the year for the company to submit its overdue financial filings, allowing its stock to remain listed on the exchange. The post Nasdaq gives Hub Group more time to produce delayed financial filings appeared first on FreightWaves.",
+        "categories": [
+          "Company Earnings",
+          "Intermodal",
+          "company earnings",
+          "Hub Group accounting error",
+          "Hub Group delisting",
+          "intermodal marketing companies"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "UPS to acquire Australian healthcare specialist Smartway Logistics",
+        "link": "https://www.freightwaves.com/news/ups-to-acquire-australian-healthcare-specialist-smartway-logistics",
+        "published": "2026-11-17T22:43:37.000Z",
+        "snippet": "UPS continues to invest heavily in healthcare logistics, announcing on Tuesday a deal for Australia-based Smartway Logistics. The post UPS to acquire Australian healthcare specialist Smartway Logistics appeared first on FreightWaves.",
+        "categories": [
+          "Breaking News",
+          "Logistics & Brokerage",
+          "Top Stories",
+          "Australia",
+          "healthcare logistics",
+          "UPS"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Western Star films 49X logger in Daimler vocational push",
+        "link": "https://www.freightwaves.com/news/western-star-49x-on-the-job-vocational",
+        "published": "2026-11-17T21:57:04.000Z",
+        "snippet": "Western Star’s new video series features Tessmer Trucking’s 49X, part of a push that retired the 57X tractor and leans the brand into vocational work. The post Western Star films 49X logger in Daimler vocational push appeared first on FreightWaves.",
+        "categories": [
+          "Equipment & Tech",
+          "Daimler Truck",
+          "Daimler Truck North America",
+          "Detroit",
+          "Detroit DT12",
+          "Kodiak AI",
+          "Logging",
+          "On the Job series"
+        ],
+        "creator": "Thomas Wasson"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "SCOTUS action revives shipper/receiver liability post-Montgomery",
+        "link": "https://www.freightwaves.com/news/scotus-action-revives-shipper-receiver-liability-post-montgomery",
+        "published": "2026-11-17T21:19:22.000Z",
+        "snippet": "A decision handed down by the U.S. Supreme Court Monday is setting up the possibility of a major decision on the question of shipper and recipient liability in a post-Montgomery world. The high court granted certiorari in the case of Casarez vs. Irigoyen Farms et. al. in an action known as a Grant, Vacate, Remand […] The post SCOTUS action revives shipper/receiver liability post-Montgomery appeare",
+        "categories": [
+          "Analysis & Insights",
+          "Legal Issues",
+          "Logistics & Brokerage",
+          "Top Stories",
+          "Home Depot",
+          "Irigoyen Farms",
+          "Montgomery vs. Caribe Transport II",
+          "Walmart"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "US Foods to test inventory-scanning robots at 6 more warehouses",
+        "link": "https://www.supplychaindive.com/news/us-foods-to-test-inventory-scanning-robots-at-6-more-warehouses/874829/",
+        "published": "2026-11-17T19:18:00.000Z",
+        "snippet": "The food service distributor plans to begin piloting the technology in each of the facilities by year-end, CEO David Flitman told investors.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How to prepare for the most severe El Niño on record",
+        "link": "https://www.supplychaindive.com/news/how-to-prepare-for-the-most-severe-el-nino-on-record/874732/",
+        "published": "2026-11-17T15:57:00.000Z",
+        "snippet": "As this year's severe weather approaches, manufacturers should audit their systems for failure risks and take other protective measures, experts say.",
+        "categories": [],
+        "creator": "Michelle No"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Fashion brand nixes dedicated fulfillment model to boost transit times",
+        "link": "https://www.supplychaindive.com/news/fashion-brand-nixes-dedicated-fulfillment-model-to-boost-transit-times/874630/",
+        "published": "2026-11-17T15:23:00.000Z",
+        "snippet": "For Love & Lemons is now shipping orders from a Cart.com facility in Texas, helping it lower storage costs and provide speedier deliveries.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Wrangler parent company plans to beef up inventory spending",
+        "link": "https://www.supplychaindive.com/news/wrangler-parent-company-plans-to-beef-up-inventory-spending/874783/",
+        "published": "2026-11-17T15:08:00.000Z",
+        "snippet": "Kontoor Brands said it will invest $50 million to recover from a bumpy Q3 for its supply chain that saw inventory fall 6% year over year.",
+        "categories": [],
+        "creator": "Phil Neuffer"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon to expand fuel and logistics surcharge to more services",
+        "link": "https://www.supplychaindive.com/news/amazon-to-expand-fuel-and-logistics-surcharge-to-more-services/874693/",
+        "published": "2026-11-17T14:36:17.000Z",
+        "snippet": "The 3.5% surcharge will apply to transportation fees for bulk storage and replenishment services starting in February as the company faces fuel cost pressures.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "AI-backed tools power Reformation’s inventory management",
+        "link": "https://www.supplychaindive.com/news/ai-backed-tools-power-reformations-inventory-management/874645/",
+        "published": "2026-11-16T15:40:00.000Z",
+        "snippet": "The apparel company is leveraging the technology to monitor demand and make informed production decisions.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "UniUni to tap carriers like Gofo for some peak season deliveries",
+        "link": "https://www.supplychaindive.com/news/uniuni-to-tap-carriers-like-gofo-for-some-peak-season-deliveries/874556/",
+        "published": "2026-11-16T15:17:36.000Z",
+        "snippet": "The delivery provider said handing off select packages will benefit last-mile efficiency as it looks to improve its financial outlook.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Conagra Brands to close Missouri ingredients plant",
+        "link": "https://www.supplychaindive.com/news/conagra-brands-to-close-missouri-ingredients-plant/874617/",
+        "published": "2026-11-16T13:02:00.000Z",
+        "snippet": "Production at the facility, which employs 442 workers, will primarily be transferred to locations in Arkansas.",
+        "categories": [],
+        "creator": "Christopher Doering"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Veterans and Team Driving: How Werner Is Building a Pipeline Around Both",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Running the Business by the Numbers",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Owning the Business, Not Just the Truck",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

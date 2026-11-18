@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-18",
+    "subject": "Diesel falls 19.0 cents to $5.937; capacity keeps shrinking",
+    "headline": "Diesel Drops to $5.937 as Truckload Capacity Thins Despite Rate Recovery",
+    "script": "Diesel fell 19.0 cents this week, carriers keep exiting despite stronger rates, and the Supreme Court reopens shipper liability questions.\n\nDiesel fell 19.0 cents to $5.937 per gallon this week, a welcome break on the biggest variable cost for small carriers.",
+    "url": "briefs/2026-11-18.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel Drops to $5.937 as Truckload Capacity Thins Despite Rate Recovery",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "The Lag Effect: Trucking Capacity Declines as Rates Recover",
+        "link": "https://www.freightwaves.com/news/the-lag-effect-trucking-capacity-declines-as-rates-recover"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Carriers can now pass loads they can’t cover to 7 vetted peers",
+        "link": "https://www.freightwaves.com/news/graypool-exchange-carriers-pass-uncovered-loads"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "SCOTUS action revives shipper/receiver liability post-Montgomery",
+        "link": "https://www.freightwaves.com/news/scotus-action-revives-shipper-receiver-liability-post-montgomery"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Over 284 out-of-service violations uncovered in latest truck enforcement blitzes",
+        "link": "https://www.freightwaves.com/news/over-284-out-of-service-violations-uncovered-in-latest-truck-enforcement-blitzes"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "J.B. Hunt sees cost pressures ease, touts dedicated wins",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-sees-cost-pressures-ease-touts-dedicated-wins"
+      },
+      {
+        "source": "Supply Chain Dive",
+        "title": "Amazon to expand fuel and logistics surcharge to more services",
+        "link": "https://www.supplychaindive.com/news/amazon-to-expand-fuel-and-logistics-surcharge-to-more-services/874693/"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-17",
     "subject": "Diesel drops under $6 as truckload demand softens",
     "headline": "Diesel Falls Below $6 While Truckload Volumes Slip and Rejections Ease",
