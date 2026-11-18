@@ -8,22 +8,24 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../.
 const base = "https://northstardeliveryservice.com/freight-guides/";
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const hub = fs.readFileSync(path.join(root, "freight-guides/index.html"), "utf8");
-const urls = [...sitemap.matchAll(/<loc>(https:\/\/northstardeliveryservice\.com\/freight-guides\/([^<]*)<\/loc>/g)]
-  .map((m) => ({ url: m[1], tail: m[2] }))
-  .filter((x) => x.tail && x.tail.endsWith("/") && !x.tail.includes("/index.html"));
+const urls = sitemap
+  .split("<loc>").slice(1)
+  .map((part) => part.split("</loc>")[0])
+  .filter((url) => url.startsWith(base) && url !== base);
 
 test("every freight-guide sitemap URL has a matching canonical page", () => {
   assert.ok(urls.length >= 8, "expected freight guide URLs in sitemap");
-  for (const entry of urls) {
-    const slug = entry.tail.replace(/\/$/, "");
+  for (const url of urls) {
+    const tail = url.slice(base.length);
+    const slug = tail.endsWith("/") ? tail.slice(0, -1) : tail;
     const file = path.join(root, "freight-guides", slug, "index.html");
-    assert.ok(fs.existsSync(file), `missing page for ${entry.url}`);
+    assert.ok(fs.existsSync(file), `missing page for ${url}`);
     const html = fs.readFileSync(file, "utf8");
-    assert.ok(html.includes(`<link rel="canonical" href="${entry.url}">`), `canonical mismatch for ${entry.url}`);
-    assert.match(html, /<title>[^<]+<\/title>/, `missing title for ${entry.url}`);
-    assert.match(html, /<meta name="description" content="[^"]+"/, `missing description for ${entry.url}`);
-    assert.match(html, /<h1>[^<]+<\/h1>/, `missing H1 for ${entry.url}`);
-    assert.match(html, /href="\/(tools|ship)\//, `missing relevant internal CTA for ${entry.url}`);
+    assert.ok(html.includes(`<link rel="canonical" href="${url}">`), `canonical mismatch for ${url}`);
+    assert.match(html, /<title>[^<]+<\/title>/, `missing title for ${url}`);
+    assert.match(html, /<meta name="description" content="[^"]+"/, `missing description for ${url}`);
+    assert.match(html, /<h1>[^<]+<\/h1>/, `missing H1 for ${url}`);
+    assert.ok(html.includes('href="/tools/') || html.includes('href="/ship/'), `missing relevant internal CTA for ${url}`);
   }
 });
 
