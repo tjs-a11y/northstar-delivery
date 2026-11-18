@@ -7,6 +7,8 @@ on:
       - 'scripts/marketing/test/**'
       - 'package.json'
       - 'package-lock.json'
+      - 'sitemap.xml'
+      - 'freight-guides/**'
       - '.github/workflows/northstar-sitemap-check.yml'
   push:
     branches: [main]
