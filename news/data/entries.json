@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-19",
+    "subject": "Diesel drops 19 cents as spot rates climb; port strike risk grows",
+    "headline": "Diesel Falls to $5.937 While Spot Rates Rise; LA-Long Beach Strike Risk Builds",
+    "script": "Fuel relief, firmer spot pricing, fresh fraud and theft warnings, and labor trouble brewing at the nation's busiest container port.\n\nDiesel fell 19.0 cents to $5.937 a gallon this week, while spot rates moved higher. That combination is widening margins for carriers hauling on the spot market.",
+    "url": "briefs/2026-11-19.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel Falls to $5.937 While Spot Rates Rise; LA-Long Beach Strike Risk Builds",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Diesel: Are Sky-High Prices Finally Over?",
+        "link": "https://www.freightwaves.com/news/diesel-are-sky-high-prices-finally-over"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Spot Rates Defy Fuel Costs: An Unexpected Market Move",
+        "link": "https://www.freightwaves.com/news/trucking-spot-rates-defy-fuel-costs-an-unexpected-market-move"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Why Truckload Rates Feel Disappointing Despite Strong Numbers",
+        "link": "https://www.freightwaves.com/news/why-truckload-rates-feel-disappointing-despite-strong-numbers"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Economy in 2024: A K-Shape Threatens Consumer Demand",
+        "link": "https://www.freightwaves.com/news/trucking-economy-in-2024-a-k-shape-threatens-consumer-demand"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "ATA spells out short- and long-term solutions to halt ELD fraud",
+        "link": "https://www.freightwaves.com/news/ata-spells-out-short-and-long-term-solutions-to-halt-eld-fraud"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Rail Freight Fraud: Organized Crime’s New Tactic?",
+        "link": "https://www.freightwaves.com/news/rail-freight-fraud-organized-crimes-new-tactic"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fraud_trend"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-18",
     "subject": "Diesel falls 19.0 cents to $5.937; capacity keeps shrinking",
     "headline": "Diesel Drops to $5.937 as Truckload Capacity Thins Despite Rate Recovery",

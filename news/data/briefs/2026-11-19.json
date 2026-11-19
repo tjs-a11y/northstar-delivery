@@ -1,0 +1,492 @@
+{
+  "brief": {
+    "subject": "Diesel drops 19 cents as spot rates climb; port strike risk grows",
+    "headline": "Diesel Falls to $5.937 While Spot Rates Rise; LA-Long Beach Strike Risk Builds",
+    "dek": "Fuel relief, firmer spot pricing, fresh fraud and theft warnings, and labor trouble brewing at the nation's busiest container port.",
+    "lede": "Diesel fell 19.0 cents to $5.937 a gallon this week, while spot rates moved higher. That combination is widening margins for carriers hauling on the spot market.",
+    "sections": [
+      {
+        "heading": "Diesel Slides Below $6",
+        "bullets": [
+          "$5.937 per gallon is the national diesel average for the week of 2026-11-16, lowering per-mile fuel cost.",
+          "Down 19.0 cents (3.1%) from the prior week, the biggest relief at the pump in recent weeks.",
+          "Down 33.9 cents over four weeks, which also shrinks fuel surcharge revenue on contract freight.",
+          "Forecasts now point to a 2026 crude surplus, though geopolitical tensions keep risk alive."
+        ],
+        "source_ids": [
+          "F1",
+          "H15"
+        ]
+      },
+      {
+        "heading": "Spot Rates Climb Against Fuel",
+        "bullets": [
+          "Dry van spot rates hit a new high even as fuel prices fell, an unusual split that favors spot haulers.",
+          "Despite strong headline numbers, many carriers still find rates disappointing heading into routing-guide season.",
+          "One analyst sees tight capacity driving a longer, steadier rate cycle into 2027, though that is a forecast."
+        ],
+        "source_ids": [
+          "H12",
+          "H8",
+          "H14"
+        ]
+      },
+      {
+        "heading": "Fraud and Theft Stay Hot",
+        "bullets": [
+          "The ATA is pushing FMCSA to tighten ELD certification so the devices are harder to exploit in freight fraud.",
+          "Organized crews are stealing cargo from slow-moving trains in California, a sign theft rings keep adapting.",
+          "$1.5 million in drugs was intercepted after ABF Freight workers flagged a shipment, and a fraudulent-ID pickup led to four guilty pleas.",
+          "Verify every pickup's identity and paperwork, because bad actors are targeting all modes."
+        ],
+        "source_ids": [
+          "H11",
+          "H13",
+          "H16"
+        ]
+      },
+      {
+        "heading": "LA-Long Beach Labor Trouble",
+        "bullets": [
+          "Employers say contract talks with an ILWU local have stalled, raising strike risk at the busiest U.S. container port.",
+          "A disruption could strand drayage capacity and scramble outbound loads from Southern California.",
+          "5 million container units moved through the Port of LA in five months, its best stretch in 118 years."
+        ],
+        "source_ids": [
+          "H6",
+          "H9"
+        ]
+      }
+    ],
+    "seo_description": "Diesel falls to $5.937 as spot rates rise, fraud and cargo theft warnings mount, and LA-Long Beach port strike risk grows for truckers."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-19T18:47:55.594Z",
+    "date": "2026-11-19",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-16",
+        "value": 5.937
+      },
+      "previous": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "weeklyChangeCents": -19,
+      "weeklyChangePct": -3.1,
+      "fourWeekChangeCents": -33.9,
+      "formatted": {
+        "latest": "$5.937",
+        "weeklyChange": "down 19.0 cents",
+        "weeklyChangePct": "3.1%",
+        "fourWeekChange": "down 33.9 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-16",
+          "value": 5.937
+        },
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Honda invests $462M in Alabama plant to boost production",
+        "link": "https://www.supplychaindive.com/news/honda-invests-462m-in-alabama-plant-to-boost-production/875189/",
+        "published": "2026-11-19T16:33:34.000Z",
+        "snippet": "The automaker will use the funds to increase production capacity of high-demand models.",
+        "categories": [],
+        "creator": "Eric Walz"
+      },
+      {
+        "id": "H2",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Home Depot built the missing logistics piece for its Pro business",
+        "link": "https://www.supplychaindive.com/news/how-home-depot-built-the-missing-logistics-piece-for-its-pro-business/874331/",
+        "published": "2026-11-19T15:58:00.000Z",
+        "snippet": "Through new flatbed distribution centers, acquisitions and technology, the home improvement retailer has enhanced its last-mile delivery capabilities to better serve contractor customers.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Ship pilot indicted after fatal Houston collision linked to cellphone distraction",
+        "link": "https://www.freightwaves.com/news/ship-pilot-indicted-after-fatal-houston-collision-linked-to-cellphone-distraction",
+        "published": "2026-11-19T15:16:34.000Z",
+        "snippet": "A ship pilot faces up to 10 years in prison after being indicted for a 2024 incident that allegedly caused a seaman’s death in the Houston Ship Channel. The post Ship pilot indicted after fatal Houston collision linked to cellphone distraction appeared first on FreightWaves.",
+        "categories": [
+          "Maritime",
+          "News",
+          "barges",
+          "container vessels",
+          "Houston Ship Channel",
+          "Shipping",
+          "vehicular manslaughter"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H4",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Brooks Running is using supplier data to address human rights risks",
+        "link": "https://www.supplychaindive.com/news/how-brooks-running-is-using-supplier-data-to-address-human-rights-risks/875090/",
+        "published": "2026-11-19T15:07:46.000Z",
+        "snippet": "The brand conducts an annual mock detention exercise with suppliers to improve visibility over a broader range of materials and downstream compliance.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Expeditors enters new logistics frontier supporting Kennedy space missions",
+        "link": "https://www.freightwaves.com/news/expeditors-enters-new-logistics-frontier-supporting-kennedy-space-missions",
+        "published": "2026-11-19T14:50:51.000Z",
+        "snippet": "Expeditors International has expanded its capabilities into providing logistics services for the space industry, starting with a new opportunity at NASA’s Kennedy Space Center. The post Expeditors enters new logistics frontier supporting Kennedy space missions appeared first on FreightWaves.",
+        "categories": [
+          "Industrials & Manufacturing",
+          "Logistics & Brokerage",
+          "Top Stories",
+          "Expeditors",
+          "logistics management",
+          "NASA",
+          "space cargo"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H6",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "LA-Long Beach port strike risk grows as employers say ILWU talks stalled",
+        "link": "https://www.freightwaves.com/news/la-long-beach-port-strike-risk-grows-as-employers-say-ilwu-talks-stalled",
+        "published": "2026-11-18T22:37:39.000Z",
+        "snippet": "A contract dispute between employers and an ILWU local could disrupt cargo movement at the busiest U.S. container port. The post LA-Long Beach port strike risk grows as employers say ILWU talks stalled appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "Top Stories",
+          "container shipping",
+          "International Longshore and Warehouse Union",
+          "labor",
+          "Pacific Maritime Association"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "From more footage to more focus: Find your fleet’s videosafety stage",
+        "link": "https://www.freightwaves.com/news/from-more-footage-to-more-focus-find-your-fleets-videosafety-stage",
+        "published": "2026-11-18T20:02:46.000Z",
+        "snippet": "Cameras can show what happened on a route. Whether they help a driver avoid the nextcollision depends on two things: what the camera tells the driver on the road and whatyour safety team does with the footage afterward. Fleet safety managers know the pattern. Footage builds up faster than anyone canreview it, investigations crowd out […] The post From more footage to more focus: Find your fleet’s ",
+        "categories": [
+          "News"
+        ],
+        "creator": "Mary Goodson"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Why Truckload Rates Feel Disappointing Despite Strong Numbers",
+        "link": "https://www.freightwaves.com/news/why-truckload-rates-feel-disappointing-despite-strong-numbers",
+        "published": "2026-11-18T19:50:07.000Z",
+        "snippet": "This FreightWaves SONAR update dives deep into the current freight market, analyzing peak season performance, truckload rejection rates, and their impact on spot and contract rates. Discover why carriers might feel disappointed despite seemingly strong numbers, and what this means for shippers preparing their routing guides for next year. We also break down the latest […] The post Why Truckload Ra",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Port of LA Crushes Records: 5M Containers in 5 Months!",
+        "link": "https://www.freightwaves.com/news/port-of-la-crushes-records-5m-containers-in-5-months",
+        "published": "2026-11-18T19:34:42.000Z",
+        "snippet": "The Port of Los Angeles just had its best five-month stretch in 118 years, moving over 5 million container units. Executive Director Gene Seroka breaks down the surging cargo, the unexpected return of China’s market share post-tariff changes, and the challenges facing American farmers. Seroka calls for more stable trade policies to boost exports and […] The post Port of LA Crushes Records: 5M Cont",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "AI for Logistics: Why 81% of AI Projects Fail",
+        "link": "https://www.freightwaves.com/news/ai-for-logistics-why-81-of-ai-projects-fail",
+        "published": "2026-11-18T19:34:09.000Z",
+        "snippet": "AI tech promises huge returns for logistics, but many companies are seeing disappointing results. Lean Solutions Group CEO Jack Freker reveals a critical flaw: 81% of firms neglect the organizational transformation needed for AI to truly deliver. Learn which processes need human intelligence, which can be automated, and how a balanced “expert in the loop” […] The post AI for Logistics: Why 81% of ",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ATA spells out short- and long-term solutions to halt ELD fraud",
+        "link": "https://www.freightwaves.com/news/ata-spells-out-short-and-long-term-solutions-to-halt-eld-fraud",
+        "published": "2026-11-18T19:12:53.000Z",
+        "snippet": "The American Trucking Association wants the Federal Motor Carrier Safety Administration to go outside in its quest to dramatically slow the use of Electronic Logging Devices (ELDs) in freight fraud. In a report released earlier this week, the ATA said a certification program for approving ELDs for use in the U.S. should take many of […] The post ATA spells out short- and long-term solutions to hal",
+        "categories": [
+          "Analysis & Insights",
+          "Compliance & Regulation",
+          "Drivers & Workforce",
+          "Top Stories",
+          "ELDs",
+          "Federal Motor Carrier Safety Administration",
+          "freight fraud",
+          "Hours of service"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking Spot Rates Defy Fuel Costs: An Unexpected Market Move",
+        "link": "https://www.freightwaves.com/news/trucking-spot-rates-defy-fuel-costs-an-unexpected-market-move",
+        "published": "2026-11-18T19:10:17.000Z",
+        "snippet": "Spot rates are climbing, defying falling fuel prices. Dive deep into the National Truckload Index (NTI) data with FreightWaves to understand this unusual market divergence. We’ll explore the real drivers behind rising spot rates and what it means for holiday shipping and your supply chain strategy. Dry van spot rates jumped to their highest level […] The post Trucking Spot Rates Defy Fuel Costs: A",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Rail Freight Fraud: Organized Crime’s New Tactic?",
+        "link": "https://www.freightwaves.com/news/rail-freight-fraud-organized-crimes-new-tactic",
+        "published": "2026-11-18T19:09:49.000Z",
+        "snippet": "FreightWaves Today dives into shocking reports of cargo theft on California trains, where organized criminals are targeting slow-moving rail cars. Bill Stephens from Trains Magazine and Jean Savage, CEO of Trinity Industries, discuss the implications for the rail industry, market cycles, and the outlook for railcar demand and pricing. Discover how these incidents affect the […] The post Rail Freig",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H14",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking Economy in 2024: A K-Shape Threatens Consumer Demand",
+        "link": "https://www.freightwaves.com/news/trucking-economy-in-2024-a-k-shape-threatens-consumer-demand",
+        "published": "2026-11-18T18:58:39.000Z",
+        "snippet": "The trucking economy is navigating a unique ‘K-shaped’ recovery, with industrial strength diverging from struggling consumer demand. Bloomberg Intelligence analyst Lee Klaskow unpacks why this trend, coupled with tight capacity, could lead to a prolonged, less volatile rate cycle extending into 2027. We discuss the unexpected tailwinds from AI and data centers, the impact of […] The post Trucking ",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H15",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Diesel: Are Sky-High Prices Finally Over?",
+        "link": "https://www.freightwaves.com/news/diesel-are-sky-high-prices-finally-over",
+        "published": "2026-11-18T18:52:43.000Z",
+        "snippet": "Diesel prices are seeing a significant drop, with benchmark fuel falling below the $6 mark. FreightWaves’ John Kingston breaks down the latest oil market data, including a surprising 19-cent decline this week and new forecasts predicting a crude surplus for 2026. Despite ongoing geopolitical tensions, the market is showing unexpected stability in food prices. Kingston […] The post Diesel: Are Sky-",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H16",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "ABF Freight workers uncover $1.5M drug shipment headed to Ohio",
+        "link": "https://www.freightwaves.com/news/abf-freight-workers-uncover-1-5m-drug-shipment-headed-to-ohio",
+        "published": "2026-11-18T18:51:32.000Z",
+        "snippet": "A $1.5 million drug shipment from California never reached its intended recipients. After ABF Freight workers alerted authorities, federal agents monitored a pickup involving fraudulent identification. Four men later pleaded guilty. The post ABF Freight workers uncover $1.5M drug shipment headed to Ohio appeared first on FreightWaves.",
+        "categories": [
+          "Freight Fraud",
+          "LTL",
+          "News",
+          "Top Stories",
+          "distribution center",
+          "Shipping",
+          "Trucking"
+        ],
+        "creator": "Phil Brink"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon’s first Puerto Rico delivery station speeds up shipping",
+        "link": "https://www.supplychaindive.com/news/amazons-first-puerto-rico-delivery-station-speeds-up-shipping/874996/",
+        "published": "2026-11-18T17:35:00.000Z",
+        "snippet": "The 100,000-square-foot site can bring delivery time down to about two days for customers in the San Juan metro area, compared to two weeks.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Starbucks inventory availability at ‘all-time high’ with daily deliveries, CEO says",
+        "link": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/",
+        "published": "2026-11-18T15:38:15.000Z",
+        "snippet": "The coffeehouse chain has been testing a 24-hour operating model to improve inventory availability and build a faster, more reliable supply chain.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Jim Beam won’t resume production at flagship distillery next year",
+        "link": "https://www.supplychaindive.com/news/jim-beam-wont-resume-production-at-flagship-distillery-next-year/875019/",
+        "published": "2026-11-18T14:25:00.000Z",
+        "snippet": "The Suntory-owned whiskey is moving production to another facility in Kentucky as value spirits brands continue to struggle.",
+        "categories": [],
+        "creator": "Laurel Deppen"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "PepsiCo improves deforestation-free sourcing for key commodities",
+        "link": "https://www.supplychaindive.com/news/pepsico-improves-deforestation-free-sourcing-for-key-commodities/874963/",
+        "published": "2026-11-18T12:59:00.000Z",
+        "snippet": "The Doritos maker sourced 94% of ingredients such as palm oil and sugar cane without forest clearance in 2025, up from 90% the year before.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "US Foods to test inventory-scanning robots at 6 more warehouses",
+        "link": "https://www.supplychaindive.com/news/us-foods-to-test-inventory-scanning-robots-at-6-more-warehouses/874829/",
+        "published": "2026-11-17T19:18:00.000Z",
+        "snippet": "The food service distributor plans to begin piloting the technology in each of the facilities by year-end, CEO David Flitman told investors.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How to prepare for the most severe El Niño on record",
+        "link": "https://www.supplychaindive.com/news/how-to-prepare-for-the-most-severe-el-nino-on-record/874732/",
+        "published": "2026-11-17T15:57:00.000Z",
+        "snippet": "As this year's severe weather approaches, manufacturers should audit their systems for failure risks and take other protective measures, experts say.",
+        "categories": [],
+        "creator": "Michelle No"
+      },
+      {
+        "id": "H23",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Fashion brand nixes dedicated fulfillment model to boost transit times",
+        "link": "https://www.supplychaindive.com/news/fashion-brand-nixes-dedicated-fulfillment-model-to-boost-transit-times/874630/",
+        "published": "2026-11-17T15:23:00.000Z",
+        "snippet": "For Love & Lemons is now shipping orders from a Cart.com facility in Texas, helping it lower storage costs and provide speedier deliveries.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Supply chain software has an 18-month go-live problem",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [
+    {
+      "key": "fraud_trend",
+      "reason": "2 fraud or theft headlines in the last 72 hours",
+      "evidence": [
+        "H11",
+        "H13"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "id": "loadmark",
+      "product": "Loadmark",
+      "url": "https://loadmark.io/",
+      "ref": false,
+      "label": "Secure your loads today",
+      "copy": "Fraud and theft keep hitting freight. Loadmark gives every load one shared status, confirmed by independent witnesses, so a fake pickup or a ghost carrier stands out. Free for carriers, drivers and receivers.",
+      "signal": "fraud_trend",
+      "priority": 1,
+      "placement": "top",
+      "evidence": [
+        "H11",
+        "H13"
+      ]
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}
