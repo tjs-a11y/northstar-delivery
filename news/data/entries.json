@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-11-20",
+    "subject": "Diesel drops 19 cents, DOL contractor rule lands, theft cases",
+    "headline": "Diesel Falls to $5.937 as DOL Finalizes Contractor Rule and Cargo Theft Cases Mount",
+    "script": "Diesel slides again, the DOL keeps its contractor rule mostly unchanged, and two big cargo theft cases hit Southern California.\n\nDiesel fell 19.0 cents to $5.937 a gallon, giving owner-operators more relief at the pump heading into Thanksgiving week.",
+    "url": "briefs/2026-11-20.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel Falls to $5.937 as DOL Finalizes Contractor Rule and Cargo Theft Cases Mount",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "DOL sticks with independent contractor proposal, trucking applauds",
+        "link": "https://www.freightwaves.com/news/dol-sticks-with-independent-contractor-proposal-trucking-applauds"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucker sentenced in $7.2 million cargo theft scheme involving legitimate freight contracts",
+        "link": "https://www.freightwaves.com/news/trucker-sentenced-in-7-2-million-cargo-theft-scheme-involving-legitimate-freight-contracts"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "14 charged in $22.5 million cargo theft ring that stopped moving freight trains",
+        "link": "https://www.freightwaves.com/news/14-charged-in-22-5-million-cargo-theft-ring-that-stopped-moving-freight-trains"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Rejection Rates: Why Holiday Shipping Gets SPICY",
+        "link": "https://www.freightwaves.com/news/trucking-rejection-rates-why-holiday-shipping-gets-spicy"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "US rail traffic rises 7.3% as intermodal gains 10.7% in latest week",
+        "link": "https://www.freightwaves.com/news/us-rail-traffic-rises-7-3-as-intermodal-gains-10-7-in-latest-week"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Union Pacific–Norfolk Southern merger draws labor support, shipper concerns",
+        "link": "https://www.freightwaves.com/news/union-pacific-norfolk-southern-merger-draws-labor-support-shipper-concerns"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fraud_trend"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-19",
     "subject": "Diesel drops 19 cents as spot rates climb; port strike risk grows",
     "headline": "Diesel Falls to $5.937 While Spot Rates Rise; LA-Long Beach Strike Risk Builds",
