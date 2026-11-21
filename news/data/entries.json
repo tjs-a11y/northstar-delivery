@@ -1,5 +1,58 @@
 [
   {
+    "date": "2026-11-21",
+    "subject": "Diesel drops 19 cents as cargo theft cases pile up",
+    "headline": "Diesel falls to $5.937, two big cargo theft cases hit court, LA-Long Beach deal",
+    "script": "Fuel relief continues, theft prosecutions mount, a port strike is averted, and a key broker liability case moves forward.\n\nDiesel fell 19.0 cents to $5.937 a gallon, extending a four-week slide. Meanwhile, two federal theft cases show how crooks exploit legitimate freight.",
+    "url": "briefs/2026-11-21.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel falls to $5.937, two big cargo theft cases hit court, LA-Long Beach deal",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Trucker sentenced in $7.2 million cargo theft scheme involving legitimate freight contracts",
+        "link": "https://www.freightwaves.com/news/trucker-sentenced-in-7-2-million-cargo-theft-scheme-involving-legitimate-freight-contracts"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "14 charged in $22.5 million cargo theft ring that stopped moving freight trains",
+        "link": "https://www.freightwaves.com/news/14-charged-in-22-5-million-cargo-theft-ring-that-stopped-moving-freight-trains"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Tentative union deal averts strike at Port of LA-Long Beach",
+        "link": "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Rejection Rates: Why Holiday Shipping Gets SPICY",
+        "link": "https://www.freightwaves.com/news/trucking-rejection-rates-why-holiday-shipping-gets-spicy"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "J.B. Hunt broker liability case proceeding after split decision",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-broker-liability-case-proceeding-after-split-decision"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "loadmark",
+        "signal": "fraud_trend"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      },
+      {
+        "id": "riddlebound",
+        "signal": "weekend"
+      }
+    ]
+  },
+  {
     "date": "2026-11-20",
     "subject": "Diesel drops 19 cents, DOL contractor rule lands, theft cases",
     "headline": "Diesel Falls to $5.937 as DOL Finalizes Contractor Rule and Cargo Theft Cases Mount",
