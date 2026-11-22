@@ -1,0 +1,509 @@
+{
+  "brief": {
+    "subject": "Diesel falls 19.0 cents as holiday capacity starts to tighten",
+    "headline": "Diesel slides to $5.937 while pre-Thanksgiving freight tightens and LA-Long Beach avoids a strike",
+    "dek": "Fuel relief continues, tender rejections may climb into the holiday, a port strike threat eases, and broker liability law keeps shifting.",
+    "lede": "Diesel fell 19.0 cents to $5.937 a gallon just as early data points to a tightening market ahead of Thanksgiving. Lower fuel and firmer demand could widen margins this week.",
+    "sections": [
+      {
+        "heading": "Diesel keeps sliding",
+        "bullets": [
+          "$5.937 per gallon: the U.S. average retail diesel price for the week of 2026-11-16.",
+          "Down 19.0 cents (3.1%) from the prior week, a meaningful cut to per-mile fuel costs.",
+          "Down 33.9 cents over four weeks, so check whether fuel surcharge tables are lagging the drop."
+        ],
+        "source_ids": [
+          "F1"
+        ]
+      },
+      {
+        "heading": "Holiday capacity is tightening",
+        "bullets": [
+          "Tender rejections could top 14% before Thanksgiving, according to a SONAR-based outlook, as low inventories spur last-minute shipping.",
+          "That forecast points to stronger spot leverage for carriers with open trucks during holiday week.",
+          "Backup carriers are charging shippers more in tight markets, so contingency freight should not be priced cheap."
+        ],
+        "source_ids": [
+          "H8",
+          "H2"
+        ]
+      },
+      {
+        "heading": "Port strike threat eases",
+        "bullets": [
+          "A tentative union deal averts an immediate strike at the Port of LA-Long Beach, the nation's busiest container complex.",
+          "The accord follows more than a year of bargaining, including federally mediated talks.",
+          "Drayage and Southern California lanes should avoid a sudden holiday shutdown, though the deal is not yet final."
+        ],
+        "source_ids": [
+          "H3"
+        ]
+      },
+      {
+        "heading": "Broker liability case moves forward",
+        "bullets": [
+          "J.B. Hunt's brokerage won one ruling and lost another in Arizona federal court on Thursday.",
+          "The case is becoming a key test of broker liability after the Montgomery vs. Caribe Transport II decision.",
+          "Expect brokers to scrutinize carrier vetting more closely as these rulings shape their legal exposure."
+        ],
+        "source_ids": [
+          "H5"
+        ]
+      },
+      {
+        "heading": "Mexico shifts on trucking safety",
+        "bullets": [
+          "29 agreements on highway security were reached by Mexican trucking groups and authorities after a nationwide strike.",
+          "Mexico also added digital compliance requirements for carriers seeking voluntary safety certification.",
+          "Cross-border carriers and their Mexican partners should watch for changing paperwork and security conditions."
+        ],
+        "source_ids": [
+          "H1",
+          "H10"
+        ]
+      }
+    ],
+    "seo_description": "Diesel drops to $5.937, holiday tender rejections may top 14%, LA-Long Beach strike averted, and broker liability case advances."
+  },
+  "harvest": {
+    "generatedAt": "2026-11-22T17:34:37.324Z",
+    "date": "2026-11-22",
+    "timezone": "America/Chicago",
+    "fuel": {
+      "id": "F1",
+      "series": "EMD_EPD2D_PTE_NUS_DPG",
+      "source": "U.S. Energy Information Administration (EIA)",
+      "link": "https://www.eia.gov/petroleum/gasdiesel/",
+      "unit": "dollars per gallon",
+      "latest": {
+        "period": "2026-11-16",
+        "value": 5.937
+      },
+      "previous": {
+        "period": "2026-11-09",
+        "value": 6.127
+      },
+      "weeklyChangeCents": -19,
+      "weeklyChangePct": -3.1,
+      "fourWeekChangeCents": -33.9,
+      "formatted": {
+        "latest": "$5.937",
+        "weeklyChange": "down 19.0 cents",
+        "weeklyChangePct": "3.1%",
+        "fourWeekChange": "down 33.9 cents"
+      },
+      "weeks": [
+        {
+          "period": "2026-11-16",
+          "value": 5.937
+        },
+        {
+          "period": "2026-11-09",
+          "value": 6.127
+        },
+        {
+          "period": "2026-11-02",
+          "value": 6.292
+        },
+        {
+          "period": "2026-10-26",
+          "value": 6.352
+        },
+        {
+          "period": "2026-10-19",
+          "value": 6.276
+        },
+        {
+          "period": "2026-10-12",
+          "value": 6.179
+        },
+        {
+          "period": "2026-10-05",
+          "value": 6.199
+        },
+        {
+          "period": "2026-09-28",
+          "value": 6.382
+        },
+        {
+          "period": "2026-09-21",
+          "value": 6.529
+        }
+      ]
+    },
+    "headlines": [
+      {
+        "id": "H1",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Borderlands Mexico: Truckers secure 29 agreements on highway safety after nationwide strike",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-truckers-secure-29-agreements-on-highway-safety-after-nationwide-strike",
+        "published": "2026-11-22T12:00:00.000Z",
+        "snippet": "Mexican trucking organizations have advanced new agreements with government authorities aimed at improving highway security and freight transportation conditions. The post Borderlands Mexico: Truckers secure 29 agreements on highway safety after nationwide strike appeared first on FreightWaves.",
+        "categories": [
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "Top Stories",
+          "Borderlands",
+          "cargo theft",
+          "Protest",
+          "Strike",
+          "Trucking"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H2",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Shippers’ backup plan is getting more expensive",
+        "link": "https://www.freightwaves.com/news/shippers-backup-plan-is-getting-more-expensive",
+        "published": "2026-11-22T01:30:00.000Z",
+        "snippet": "Contingency carriers are not standing by waiting for shippers to give them business when the market is tight. The post Shippers’ backup plan is getting more expensive appeared first on FreightWaves.",
+        "categories": [
+          "Chart of the Week",
+          "SONAR",
+          "primary carrier acceptance",
+          "Routing guides",
+          "transportation management",
+          "trucking capacity",
+          "trucking costs",
+          "Trucking rates"
+        ],
+        "creator": "Zach Strickland, FW Market Expert &#38; Market Analyst"
+      },
+      {
+        "id": "H3",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Tentative union deal averts strike at Port of LA-Long Beach",
+        "link": "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach",
+        "published": "2026-11-21T14:57:00.000Z",
+        "snippet": "A tentative accord eases the immediate threat of a strike at the nation’s busiest container port complex after more than a year of bargaining and federally mediated negotiations. The post Tentative union deal averts strike at Port of LA-Long Beach appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Maritime",
+          "Modes",
+          "Top Stories",
+          "Contract dispute",
+          "Disruptions",
+          "International Longshore and Warehouse Union",
+          "labor"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H4",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "DHL Express makes customs clearance easier for small cross-border shippers",
+        "link": "https://www.freightwaves.com/news/dhl-express-makes-customs-clearance-easier-for-small-cross-border-shippers",
+        "published": "2026-11-21T13:38:56.000Z",
+        "snippet": "DHL Express has introduced a new AI-generated product identifier for customs clearance that takes the guesswork out of the process. The post DHL Express makes customs clearance easier for small cross-border shippers appeared first on FreightWaves.",
+        "categories": [
+          "Supply Chains",
+          "Trade Compliance",
+          "customs",
+          "DHL Express",
+          "trade compliance"
+        ],
+        "creator": "Eric Kulisch"
+      },
+      {
+        "id": "H5",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "J.B. Hunt broker liability case proceeding after split decision",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-broker-liability-case-proceeding-after-split-decision",
+        "published": "2026-11-20T22:09:00.000Z",
+        "snippet": "The brokerage arm of J.B. Hunt won one and lost one in an Arizona federal court Thursday in what now is shaping up to be one of the key cases on broker liability as the industry moves to a new legal landscape following the decision in Montgomery vs. Caribe Transport II. The U.S. District Court […] The post J.B. Hunt broker liability case proceeding after split decision appeared first on FreightWav",
+        "categories": [
+          "Analysis & Insights",
+          "Legal Issues",
+          "Modes",
+          "Top Stories",
+          "Borderlanders Inc.",
+          "J.B. Hunt",
+          "Montgomery vs. Caribe Transport II"
+        ],
+        "creator": "John Kingston"
+      },
+      {
+        "id": "H6",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Walmart’s sub-30-minute delivery volume surges in Q3",
+        "link": "https://www.supplychaindive.com/news/walmarts-sub-30-minute-delivery-volume-surges-in-q3/875339/",
+        "published": "2026-11-20T19:38:00.000Z",
+        "snippet": "The retailer could speed up deliveries even further with faster pick times at stores, U.S. President and CEO David Guggina said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H7",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Groundtruth launches AI platform to automate freight billing with J.B. Hunt partnership",
+        "link": "https://www.freightwaves.com/news/groundtruth-launches-ai-platform-to-automate-freight-billing-with-j-b-hunt-partnership",
+        "published": "2026-11-20T17:41:03.000Z",
+        "snippet": "Groundtruth aims to reduce manual invoice reconciliation by using AI to validate freight charges before bills reach customers. The startup is nearly fully deployed across J.B. Hunt and is now offering its platform to carriers, brokers and freight forwarders. The post Groundtruth launches AI platform to automate freight billing with J.B. Hunt partnership appeared first on FreightWaves.",
+        "categories": [
+          "Logistics & Brokerage",
+          "News",
+          "Payments & Finance",
+          "Technology & Startups",
+          "Truckload",
+          "Freight",
+          "FreightWaves",
+          "logistics"
+        ],
+        "creator": "Patrick Hatzis"
+      },
+      {
+        "id": "H8",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Trucking Rejection Rates: Why Holiday Shipping Gets SPICY",
+        "link": "https://www.freightwaves.com/news/trucking-rejection-rates-why-holiday-shipping-gets-spicy",
+        "published": "2026-11-20T17:30:03.000Z",
+        "snippet": "FreightWaves SONAR data reveals early signals of a tightening market ahead of Thanksgiving. Historically, this period sees a slight increase in tender rejection rates. This year, expect a significant jump potentially pushing rates over 14% as low inventory levels drive last-minute shipping demands. Coupled with potential port strikes, capacity could become extremely constrained in certain […] The ",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H9",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Q3 Shipping Costs Down 3.3% – Where Did The Savings Go?",
+        "link": "https://www.freightwaves.com/news/q3-shipping-costs-down-3-3-where-did-the-savings-go",
+        "published": "2026-11-20T17:29:13.000Z",
+        "snippet": "Carrier rates fell last quarter, but operators barely felt the savings. Eric Lemus from Deposco breaks down the unexpected disconnect in Q3 shipping costs. A shift to heavier packages, faster service, and residential deliveries meant higher per-package costs, offsetting carrier rate reductions. Learn why operators focused on customer satisfaction and how these trends will impact […] The post Q3 Sh",
+        "categories": [
+          "FreightWaves Today"
+        ],
+        "creator": "FreightWaves Staff"
+      },
+      {
+        "id": "H10",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Mexico tightens trucking oversight with new digital compliance rules",
+        "link": "https://www.freightwaves.com/news/mexico-tightens-trucking-oversight-with-new-digital-compliance-rules",
+        "published": "2026-11-20T16:37:12.000Z",
+        "snippet": "Mexico has introduced new requirements for trucking companies seeking voluntary certification under a program aimed at improving highway safety and compliance. The post Mexico tightens trucking oversight with new digital compliance rules appeared first on FreightWaves.",
+        "categories": [
+          "Compliance & Regulation",
+          "Cross-Border (Mexico/Canada)",
+          "News",
+          "safety regulations",
+          "Trucking",
+          "US-Mexico trade",
+          "Weight restrictions"
+        ],
+        "creator": "Noi Mahoney"
+      },
+      {
+        "id": "H11",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Zim Q3 profit surges to $830 million as freight rates jump 55%",
+        "link": "https://www.freightwaves.com/news/zim-q3-profit-surges-to-830-million-as-freight-rates-jump-55",
+        "published": "2026-11-20T16:26:00.000Z",
+        "snippet": "Zim raised its annual earnings forecast and declared a $243 million dividend after third-quarter profit surged, while its Hapag-Lloyd takeover awaits approvals. The post Zim Q3 profit surges to $830 million as freight rates jump 55% appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Company Earnings",
+          "Maritime",
+          "Modes",
+          "News",
+          "Top Stories",
+          "container shipping",
+          "forwarders"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H12",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "Union Pacific–Norfolk Southern merger draws labor support, shipper concerns",
+        "link": "https://www.freightwaves.com/news/union-pacific-norfolk-southern-merger-draws-labor-support-shipper-concerns",
+        "published": "2026-11-20T16:10:31.000Z",
+        "snippet": "Union Pacific and Norfolk Southern are defending their proposed coast-to-coast merger against a request to end its regulatory review. The post Union Pacific–Norfolk Southern merger draws labor support, shipper concerns appeared first on FreightWaves.",
+        "categories": [
+          "Analysis & Insights",
+          "Modes",
+          "Rail",
+          "Top Stories",
+          "Canadian National",
+          "CPKC",
+          "Norfolk Southern",
+          "rail shippers"
+        ],
+        "creator": "Stuart Chirls"
+      },
+      {
+        "id": "H13",
+        "source": "FreightWaves",
+        "category": "freight",
+        "title": "BlueGrace Logistics secures Littlejohn as new private equity partner",
+        "link": "https://www.freightwaves.com/news/bluegrace-logistics-secures-littlejohn-as-new-private-equity-partner",
+        "published": "2026-11-20T15:37:46.000Z",
+        "snippet": "Littlejohn & Co., a middle-market private equity firm, is stepping in as the main growth partner for BlueGrace Logistics. The post BlueGrace Logistics secures Littlejohn as new private equity partner appeared first on FreightWaves.",
+        "categories": [
+          "LTL",
+          "M&A",
+          "3PLs",
+          "BlueGrace Logistics",
+          "freight brokers",
+          "private equity",
+          "transportation M&A"
+        ],
+        "creator": "Todd Maiden"
+      },
+      {
+        "id": "H14",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Nvidia gets more supplier capacity to meet AI demand",
+        "link": "https://www.supplychaindive.com/news/nvidia-gets-more-supplier-capacity-to-meet-ai-demand/875238/",
+        "published": "2026-11-20T15:19:00.000Z",
+        "snippet": "The chipmaker unveiled the latest production agreements a month after securing other deals from partners.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H15",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Cal-Maine halts egg production at Florida plant after bird flu outbreak",
+        "link": "https://www.supplychaindive.com/news/cal-maine-halts-egg-production-at-florida-plant-after-bird-flu-outbreak/875316/",
+        "published": "2026-11-20T15:09:00.000Z",
+        "snippet": "A resurgence of avian influenza comes as the industry deals with an oversupply of eggs and a crash in consumer prices.",
+        "categories": [],
+        "creator": "Sarah Zimmerman"
+      },
+      {
+        "id": "H16",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Target boosts on-shelf availability, aided by stronger tech",
+        "link": "https://www.supplychaindive.com/news/target-boosts-on-shelf-availability-aided-by-stronger-tech/875117/",
+        "published": "2026-11-20T14:38:53.000Z",
+        "snippet": "The retailer is using artificial intelligence and advanced data science to make smarter and faster inventory decisions, COO Lisa Roath said.",
+        "categories": [],
+        "creator": "Max Garland"
+      },
+      {
+        "id": "H17",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Meta strikes deals to boost low-carbon materials production",
+        "link": "https://www.supplychaindive.com/news/meta-strikes-deals-to-boost-low-carbon-materials-production/875095/",
+        "published": "2026-11-19T17:30:00.000Z",
+        "snippet": "The multiyear agreements would cover concrete, plastics and steel and help offset emissions in Meta’s data center supply chain, the Facebook parent company said.",
+        "categories": [],
+        "creator": "Antone Gonsalves"
+      },
+      {
+        "id": "H18",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Honda invests $462M in Alabama plant to boost production",
+        "link": "https://www.supplychaindive.com/news/honda-invests-462m-in-alabama-plant-to-boost-production/875189/",
+        "published": "2026-11-19T16:33:34.000Z",
+        "snippet": "The automaker will use the funds to increase production capacity of high-demand models.",
+        "categories": [],
+        "creator": "Eric Walz"
+      },
+      {
+        "id": "H19",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Home Depot built the missing logistics piece for its Pro business",
+        "link": "https://www.supplychaindive.com/news/how-home-depot-built-the-missing-logistics-piece-for-its-pro-business/874331/",
+        "published": "2026-11-19T15:58:00.000Z",
+        "snippet": "Through new flatbed distribution centers, acquisitions and technology, the home improvement retailer has enhanced its last-mile delivery capabilities to better serve contractor customers.",
+        "categories": [],
+        "creator": "Alejandra Carranza"
+      },
+      {
+        "id": "H20",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "How Brooks Running is using supplier data to address human rights risks",
+        "link": "https://www.supplychaindive.com/news/how-brooks-running-is-using-supplier-data-to-address-human-rights-risks/875090/",
+        "published": "2026-11-19T15:07:46.000Z",
+        "snippet": "The brand conducts an annual mock detention exercise with suppliers to improve visibility over a broader range of materials and downstream compliance.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H21",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Amazon’s first Puerto Rico delivery station speeds up shipping",
+        "link": "https://www.supplychaindive.com/news/amazons-first-puerto-rico-delivery-station-speeds-up-shipping/874996/",
+        "published": "2026-11-18T17:35:00.000Z",
+        "snippet": "The 100,000-square-foot site can bring delivery time down to about two days for customers in the San Juan metro area, compared to two weeks.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      },
+      {
+        "id": "H22",
+        "source": "Supply Chain Dive",
+        "category": "tariff-trade",
+        "title": "Starbucks inventory availability at ‘all-time high’ with daily deliveries, CEO says",
+        "link": "https://www.supplychaindive.com/news/starbucks-inventory-availability-at-all-time-high-with-daily-deliveries/874923/",
+        "published": "2026-11-18T15:38:15.000Z",
+        "snippet": "The coffeehouse chain has been testing a 24-hour operating model to improve inventory availability and build a faster, more reliable supply chain.",
+        "categories": [],
+        "creator": "Kelly Stroh"
+      }
+    ],
+    "regulatory": [],
+    "skipped": [
+      {
+        "source": "FreightWaves",
+        "title": "Industrial Demand Is Broadening. So Is Competition for Space",
+        "reason": "Sponsored Insights"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Good Carriers, Wrong Drivers: Why Cargo Theft Is Moving Past Carrier Vetting",
+        "reason": "Sponsored Insights"
+      }
+    ],
+    "errors": []
+  },
+  "signals": [],
+  "ctas": [
+    {
+      "id": "rate-con-checker",
+      "product": "Quickwell Rate Con Checker",
+      "url": "https://quickwell.app/rate-con-checker/",
+      "ref": true,
+      "label": "Check your next rate con",
+      "copy": "Before you sign the next rate confirmation, paste it into Rate Con Checker. It flags risky fine print: fines, TONU, detention and setoff.",
+      "signal": "default",
+      "priority": 4,
+      "placement": "end",
+      "evidence": []
+    },
+    {
+      "id": "freightsidekick",
+      "product": "Freight Sidekick",
+      "url": "https://freightsidekick.com/freight-quote",
+      "partner": true,
+      "partnerRef": "northstardeliverysolutions",
+      "label": "Get an instant freight quote",
+      "copy": "Shipping freight? Get an instant LTL or truckload quote for your lane through our booking partner, Freight Sidekick — every major equipment type across the 48 states.",
+      "signal": "standing",
+      "priority": 6,
+      "placement": "end",
+      "evidence": []
+    }
+  ]
+}

@@ -1,5 +1,59 @@
 [
   {
+    "date": "2026-11-22",
+    "subject": "Diesel falls 19.0 cents as holiday capacity starts to tighten",
+    "headline": "Diesel slides to $5.937 while pre-Thanksgiving freight tightens and LA-Long Beach avoids a strike",
+    "script": "Fuel relief continues, tender rejections may climb into the holiday, a port strike threat eases, and broker liability law keeps shifting.\n\nDiesel fell 19.0 cents to $5.937 a gallon just as early data points to a tightening market ahead of Thanksgiving. Lower fuel and firmer demand could widen margins this week.",
+    "url": "briefs/2026-11-22.html",
+    "dieselPrice": {
+      "period": "2026-11-16",
+      "dollarsPerGallon": 5.937
+    },
+    "topHeadline": "Diesel slides to $5.937 while pre-Thanksgiving freight tightens and LA-Long Beach avoids a strike",
+    "sources": [
+      {
+        "source": "FreightWaves",
+        "title": "Trucking Rejection Rates: Why Holiday Shipping Gets SPICY",
+        "link": "https://www.freightwaves.com/news/trucking-rejection-rates-why-holiday-shipping-gets-spicy"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Shippers’ backup plan is getting more expensive",
+        "link": "https://www.freightwaves.com/news/shippers-backup-plan-is-getting-more-expensive"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Tentative union deal averts strike at Port of LA-Long Beach",
+        "link": "https://www.freightwaves.com/news/tentative-union-deal-averts-strike-at-port-of-la-long-beach"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "J.B. Hunt broker liability case proceeding after split decision",
+        "link": "https://www.freightwaves.com/news/j-b-hunt-broker-liability-case-proceeding-after-split-decision"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Borderlands Mexico: Truckers secure 29 agreements on highway safety after nationwide strike",
+        "link": "https://www.freightwaves.com/news/borderlands-mexico-truckers-secure-29-agreements-on-highway-safety-after-nationwide-strike"
+      },
+      {
+        "source": "FreightWaves",
+        "title": "Mexico tightens trucking oversight with new digital compliance rules",
+        "link": "https://www.freightwaves.com/news/mexico-tightens-trucking-oversight-with-new-digital-compliance-rules"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "rate-con-checker",
+        "signal": "default"
+      },
+      {
+        "id": "freightsidekick",
+        "signal": "standing"
+      }
+    ]
+  },
+  {
     "date": "2026-11-21",
     "subject": "Diesel drops 19 cents as cargo theft cases pile up",
     "headline": "Diesel falls to $5.937, two big cargo theft cases hit court, LA-Long Beach deal",
